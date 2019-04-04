@@ -1,0 +1,12 @@
+---
+# O-RAN JJB template variable default values
+
+- defaults:
+    name: global
+
+    # lf-infra-defaults
+    gerrit-server-name: gerrit.oran-osc.org
+    jenkins-ssh-credential: jenkins
+    lftools-version: <1.0.0
+    mvn-site-id: 'oran-site'
+    mvn-staging-id: 'oran-staging'
