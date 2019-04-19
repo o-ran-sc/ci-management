@@ -1,13 +1,32 @@
 ---
+- ci_jobs_common: &ci_jobs_common
+    name: ci-jobs-common
+    # Defines common ci-jobs configuration
+
+    project: ci-management
+    project-name: ci-management
+    build-node: centos7-builder-1c-1g
+
 - project:
     name: ci-jobs
 
     jobs:
       - '{project-name}-ci-jobs'
 
-    project: ci-management
-    project-name: ci-management
-    build-node: centos7-builder-1c-1g
+    <<: *ci_jobs_common
 
     views:
       - project-view
+
+- project:
+    name: openstack-cron
+
+    jobs:
+      - gerrit-openstack-cron
+
+    <<: *ci_jobs_common
+
+    jenkins-urls: >
+        https://jenkins.oran-osc.org/
+        https://jenkins.oran-osc.org/sandbox
+    openstack-cloud: vex
