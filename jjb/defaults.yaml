@@ -8,5 +8,30 @@
     gerrit-server-name: gerrit.oran-osc.org
     jenkins-ssh-credential: jenkins
     lftools-version: <1.0.0
+
+    archive-artifacts: ''
+
+    # Nexus3 docker registries
+    container-public-registry: nexus3.o-ran-sc.org:10001
+    container-snapshot-registry: nexus3.o-ran-sc.org:10003
+    container-staging-registry:  nexus3.o-ran-sc.org:10004
+
+    # Default java version
+    java-version: openjdk8
+
+    # Default maven version
+    mvn-version: mvn35
+    # Default maven goals
+    mvn-goals: 'clean install'
+    # Default JVM invocation options
+    mvn-opts: ''
     mvn-site-id: 'oran-site'
     mvn-staging-id: 'oran-staging'
+    mvn-snapshot-id: snapshots
+    staging-profile-id: 14a1ca3fc76ce
+
+    # Nexus2 for jars
+    nexus-snapshot-repo: snapshots
+
+    # Javadoc
+    javadoc-path: org.o-ran-sc.$PROJECT/$STREAM
