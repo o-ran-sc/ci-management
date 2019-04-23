@@ -1,0 +1,36 @@
+---
+- project:
+    name: ric-dashboard-project-view
+    project-name: ric-dashboard
+    views:
+      - project-view
+
+- project:
+    name: portal-ric-dashboard-project
+    # jenkins job name prefix
+    project-name: ric-dashboard
+    # git repo
+    project: portal/ric-dashboard
+    mvn-settings: ric-dashboard-settings
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    nexus-iq-namespace: 'oran-'
+    build-node: centos7-docker-4c-4g
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+      - '{project-name}-maven-javadoc-jobs'
+      # - gerrit-maven-clm
+    stream:
+      - master:
+          branch: master
+
+- project:
+    name: portal-ric-dashboard-sonar
+    project-name: ric-dashboard
+    project: portal/ric-dashboard
+    mvn-settings: ric-dashboard-settings
+    branch: master
+    build-node: centos7-docker-4c-4g
+    jobs:
+      - gerrit-maven-sonar
