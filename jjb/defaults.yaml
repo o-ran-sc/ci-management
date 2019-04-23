@@ -10,3 +10,33 @@
     lftools-version: <1.0.0
     mvn-site-id: 'oran-site'
     mvn-staging-id: 'oran-staging'
+
+    archive-artifacts: ''
+
+    # default gerrit server definition
+    gerrit-server-name: gerrit.oran-osc.org
+
+    # Default java version
+    java-version: openjdk8
+
+    # Default maven version
+    mvn-version: mvn35
+    # Default maven goals
+    mvn-goals: 'clean install'
+    # Default JVM invocation options
+    mvn-opts: ''
+
+    # Nexus2 for jars
+    mvn-snapshot-id: snapshots
+    nexus-snapshot-repo: snapshots
+    mvn-staging-id: staging
+    staging-profile-id: 0000000000000 # TBD
+    mvn-site-id: site
+
+    # Nexus3 for dockers
+    nexus3-public-registry: nexus3.oran-osc.org:10001
+    nexus3-snapshot-registry: nexus3.oran-osc.org:10003
+    nexus3-staging-registry:  nexus3.oran-osc.org:10004
+
+    # Javadoc
+    javadoc-path: org.oran-osc.$PROJECT/$STREAM
