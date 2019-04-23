@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5c61d6af_04db55dd",
+        "filename": "jjb/oran-jjb/oran-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-04-23T20:17:29Z",
+      "side": 1,
+      "message": "These templates look strikingly similar to templates in Acumos (which I believe you developed). Is there a good reason that you\u0027re porting them into ORAN and not contributing them into global-jjb so that they\u0027re easier to access?",
+      "revId": "613e91b0e9db52825f3913b068d1527feafcdaaa",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    }
+  ]
+}
