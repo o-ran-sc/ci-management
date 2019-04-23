@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f2c5f18f_6c6c50cd",
+        "filename": "jjb/defaults.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-04-23T21:37:23Z",
+      "side": 1,
+      "message": "I can\u0027t yet. Ops hasn\u0027t given me Nexus systems to configure. Why they haven\u0027t yet, I don\u0027t know, but they have been made aware that they\u0027re now blocking the final release of Jenkins to the project.",
+      "parentUuid": "ba787280_698323b3",
+      "range": {
+        "startLine": 32,
+        "startChar": 4,
+        "endLine": 32,
+        "endChar": 37
+      },
+      "revId": "613e91b0e9db52825f3913b068d1527feafcdaaa",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5c61d6af_04db55dd",
         "filename": "jjb/oran-jjb/oran-maven-jobs.yaml",
         "patchSetId": 2
