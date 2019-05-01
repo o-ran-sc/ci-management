@@ -6,7 +6,6 @@
     project: ci-management
     project-name: ci-management
     build-node: centos7-builder-1c-1g
-    packer-version: 1.4.0
 
 - project:
     name: packer-verify
