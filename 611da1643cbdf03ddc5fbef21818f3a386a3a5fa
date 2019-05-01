@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "679e78f5_ce39e9af",
+        "filename": "jjb/defaults.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-05-01T16:11:17Z",
+      "side": 1,
+      "message": "o-ran-sc (see comment on the javadoc-path as to why this change has to happen)",
+      "range": {
+        "startLine": 15,
+        "startChar": 38,
+        "endLine": 15,
+        "endChar": 46
+      },
+      "revId": "611da1643cbdf03ddc5fbef21818f3a386a3a5fa",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "959e2666_1c7566f4",
+        "filename": "jjb/defaults.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-05-01T16:11:17Z",
+      "side": 1,
+      "message": "o-ran-sc",
+      "range": {
+        "startLine": 16,
+        "startChar": 40,
+        "endLine": 16,
+        "endChar": 48
+      },
+      "revId": "611da1643cbdf03ddc5fbef21818f3a386a3a5fa",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "22183f8d_f87c0933",
+        "filename": "jjb/defaults.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-05-01T16:11:17Z",
+      "side": 1,
+      "message": "o-ran-sc",
+      "range": {
+        "startLine": 17,
+        "startChar": 40,
+        "endLine": 17,
+        "endChar": 48
+      },
+      "revId": "611da1643cbdf03ddc5fbef21818f3a386a3a5fa",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99c17c76_76e0904e",
+        "filename": "jjb/defaults.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-05-01T16:11:17Z",
+      "side": 1,
+      "message": "So... I\u0027ve been informed that the domain for all the CI has to change to o-ran-sc.org and not oran-osc.org. Nexus has been configured with a locator of org.o-ran-sc as the top level. As such, this path probably needs to be changed.\n\nThe URL for Gerrit and Jenkins will be shifting once renaming operations have all completed. Nexus 2 is already this way and the Nexus 3 system will also be on the new domain.",
+      "revId": "611da1643cbdf03ddc5fbef21818f3a386a3a5fa",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    }
+  ]
+}
