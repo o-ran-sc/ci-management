@@ -1,0 +1,7 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+2: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Submitted-by: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Submitted-at: Wed, 01 May 2019 16:22:29 +0000
+Reviewed-on: https://gerrit.oran-osc.org/r/78
+Project: ci-management
+Branch: refs/heads/master
