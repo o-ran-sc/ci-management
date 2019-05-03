@@ -1,6 +1,6 @@
 ---
 - project:
-    name: ric-dashboard-project-view
+    name: portal-ric-dashboard-project-view
     project-name: ric-dashboard
     views:
       - project-view
@@ -8,7 +8,7 @@
 - project:
     name: portal-ric-dashboard-project
     # jenkins job name prefix
-    project-name: ric-dashboard
+    project-name: portal-ric-dashboard
     # git repo
     project: portal/ric-dashboard
     mvn-settings: ric-dashboard-settings
@@ -19,7 +19,6 @@
       - gerrit-maven-docker-verify
       - gerrit-maven-docker-merge
       - gerrit-maven-docker-stage
-      - '{project-name}-maven-javadoc-jobs'
       # - gerrit-maven-clm
     stream:
       - master:
@@ -27,7 +26,7 @@
 
 - project:
     name: portal-ric-dashboard-sonar
-    project-name: ric-dashboard
+    project-name: portal-ric-dashboard
     project: portal/ric-dashboard
     mvn-settings: ric-dashboard-settings
     branch: master
