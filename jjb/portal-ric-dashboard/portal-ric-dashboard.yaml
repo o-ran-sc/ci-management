@@ -33,3 +33,8 @@
     build-node: ubuntu1804-docker-4c-4g
     jobs:
       - gerrit-maven-sonar
+
+    sonarcloud: true
+    sonarcloud-project-key: o-ran-sc_portal-ric-dashboard
+    sonarcloud-project-organization: o-ran-sc
+    sonarcloud-api-token: d9e23c28dc39b6d7531d2ecabf122ce84e6253ef
