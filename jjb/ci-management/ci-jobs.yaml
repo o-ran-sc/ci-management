@@ -27,6 +27,6 @@
     <<: *ci_jobs_common
 
     jenkins-urls: >
-        https://jenkins.oran-osc.org/
-        https://jenkins.oran-osc.org/sandbox
+        https://jenkins.o-ran-sc.org/
+        https://jenkins.o-ran-sc.org/sandbox
     openstack-cloud: vex
