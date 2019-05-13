@@ -5,7 +5,7 @@
     name: global
 
     # lf-infra-defaults
-    gerrit-server-name: gerrit.oran-osc.org
+    gerrit-server-name: gerrit.o-ran-sc.org
     jenkins-ssh-credential: jenkins
     lftools-version: <1.0.0
 

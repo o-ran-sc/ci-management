@@ -42,7 +42,7 @@ Check sanity by running the Jenkins job-builder script in this directory:
 Login (after requesting membership in group
 oran-jenkins-sandbox-access) at the Jenkins sandbox:
 
-    https://jenkins.oran-osc.org/sandbox
+    https://jenkins.o-ran-sc.org/sandbox
 
 Get the authentication token from the sandbox:
     a) click on your user name (top right)
@@ -60,7 +60,7 @@ credentials (user name and API token from above)::
 
     [jenkins]
     query_plugins_info=False
-    url=https://jenkins.oran-osc.org/sandbox
+    url=https://jenkins.o-ran-sc.org/sandbox
     user=YOUR-USER-NAME
     password=YOUR-API-TOKEN
 
