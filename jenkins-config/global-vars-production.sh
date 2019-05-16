@@ -5,4 +5,6 @@ JENKINS_HOSTNAME=vex-sjc-oran-jenkins-prod-1
 LOGS_SERVER=https://logs.o-ran-sc.org
 NEXUS_URL=https://nexus.o-ran-sc.org
 REGISTRY_PORTS=10001 10002 10003 10004
+SIGUL_BRDIGE_IP=10.32.4.8
+SIGUL_KEY=oran-release-2019
 SILO=production
