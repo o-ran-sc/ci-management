@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8904246d_88cc8dfa",
+        "filename": "docker/README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2019-05-29T17:17:15Z",
+      "side": 1,
+      "message": "software",
+      "range": {
+        "startLine": 5,
+        "startChar": 9,
+        "endLine": 5,
+        "endChar": 16
+      },
+      "revId": "e8133d9cc5960d7d64cd48f8d78dad5671c55bf3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
