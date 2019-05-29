@@ -1,0 +1,30 @@
+---
+- ci_docker_common: &ci_docker_common
+    name: ci-docker-common
+    # Defines common ci-docker configuration
+
+    project: ci-management
+    project-name: ci-management
+    build-node: ubuntu1804-docker-4c-4g
+    container-public-registry: nexus3.o-ran-sc.org:10001
+    # use the staging repo bcos all builds are RCs
+    container-push-registry:  nexus3.o-ran-sc.org:10004
+    docker-use-params-from: yaml-file-params
+    # TODO: rename mvn-settings
+    mvn-settings: ci-management-settings
+    stream:
+      - master:
+          branch: master
+
+- project:
+    name: b-alpine-c-cpp-project
+    docker-name: b-alpine-c-cpp
+    # subdirectory
+    docker-root: docker/b-alpine-c-cpp
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'docker/b-alpine-c-cpp/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+
+    <<: *ci_docker_common
