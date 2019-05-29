@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1e378429_c91943cd",
+        "filename": "docker/b-alpine-c-go/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2019-05-29T14:03:53Z",
+      "side": 1,
+      "message": "probably want to add build-base as well, if only to get \u0027make\u0027, but also because this claims to be C+go, not just go.",
+      "revId": "a1919cf8bdbaff50f72f70f07277338023bbc0a5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
