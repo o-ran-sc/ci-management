@@ -1,0 +1,69 @@
+---
+- ci_docker_common: &ci_docker_common
+    # Defines common ci-docker configuration
+    name: ci-docker-common
+    # git repo
+    project: ci-management
+    build-node: ubuntu1804-docker-4c-4g
+    container-public-registry: nexus3.o-ran-sc.org:10001
+    # use the staging repo bcos all builds are RCs
+    container-push-registry:  nexus3.o-ran-sc.org:10004
+    # default to YAML
+    docker-use-params-from: yaml-file-params
+    # maven settings file has docker credentials
+    mvn-settings: ci-management-settings
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *ci_docker_common
+    # job template name
+    name: build-alpine-c-cpp
+    # jenkins job name prefix
+    project-name: '{project}-{name}'
+    # docker image name
+    docker-name: '{name}'
+    # subdirectory with dockerfile
+    docker-root: 'docker/{name}'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'docker/{name}/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+
+- project:
+    <<: *ci_docker_common
+    name: build-alpine-c-go
+    project-name: '{project}-{name}'
+    docker-name: '{name}'
+    docker-root: 'docker/{name}'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'docker/{name}/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+
+- project:
+    <<: *ci_docker_common
+    name: build-ubuntu-c-cpp
+    project-name: '{project}-{name}'
+    docker-name: '{name}'
+    docker-root: 'docker/{name}'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'docker/{name}/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+
+- project:
+    <<: *ci_docker_common
+    name: build-ubuntu-c-go
+    project-name: '{project}-{name}'
+    docker-name: '{name}'
+    docker-root: 'docker/{name}'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'docker/{name}/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
