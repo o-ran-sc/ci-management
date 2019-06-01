@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad399f84_d8fa4113",
+        "filename": "jjb/ric-plt-a1/ric-plt-a1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-06-01T19:35:54Z",
+      "side": 1,
+      "message": "Anchors don\u0027t traverse document boundaries, though JJB itself recognizes that they exist. As such, the anchor should probably be named more specific to this particular project as trying to reference it in another project later will fail.\n\nNOTE: Yes, there is a flag to JJB that allows anchors to traverse document boundaries but it works very poorly and the use of it is strongly discouraged as it can cause weird issues across configurations.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 24
+      },
+      "revId": "67d3f5e84d0cadf5d770dd5e2c68b12a9128a090",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
