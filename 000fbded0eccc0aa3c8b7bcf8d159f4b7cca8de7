@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7cda4a6e_36f4796c",
+        "filename": "jjb/ric-plt-a1/ric-plt-a1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-06-02T00:04:17Z",
+      "side": 1,
+      "message": "Dangling white space",
+      "range": {
+        "startLine": 11,
+        "startChar": 50,
+        "endLine": 11,
+        "endChar": 51
+      },
+      "revId": "000fbded0eccc0aa3c8b7bcf8d159f4b7cca8de7",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
