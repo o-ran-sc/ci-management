@@ -22,6 +22,30 @@
       "revId": "67d3f5e84d0cadf5d770dd5e2c68b12a9128a090",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d70dea3f_4094fd94",
+        "filename": "jjb/ric-plt-a1/ric-plt-a1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-06-02T00:16:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ad399f84_d8fa4113",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 24
+      },
+      "revId": "67d3f5e84d0cadf5d770dd5e2c68b12a9128a090",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
