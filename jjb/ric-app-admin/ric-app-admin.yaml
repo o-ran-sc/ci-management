@@ -1,0 +1,40 @@
+---
+- project:
+    name: ric-app-admin-project-view
+    project-name: ric-app-admin
+    views:
+      - project-view
+
+- admin_docker_common: &admin_docker_common
+    # values apply to all RIC docker-build projects.
+    # factored out in case ric-app-admin needs multiple projects.
+    # use a specific name to prevent reuse attempts
+    # bcos anchors don't cross document boundaries.
+    name: admin-docker-common
+    build-node: ubuntu1804-docker-4c-4g
+    # pull from the public mirror + releases registry
+    container-public-registry: nexus3.o-ran-sc.org:10001
+    # push to the staging repo bcos all builds are RCs
+    container-push-registry:  nexus3.o-ran-sc.org:10004
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # source of docker tag
+    docker-use-params-from: yaml-file-params
+    stream:
+      - master:
+          branch: master
+
+- project:
+    name: ric-app-admin
+    # git repo
+    project: ric-app/admin
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    # maven settings file has docker credentials
+    mvn-settings: ric-app-admin-settings
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    <<: *admin_docker_common
+
