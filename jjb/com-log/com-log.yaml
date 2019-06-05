@@ -1,0 +1,40 @@
+---
+- project:
+    name: com-log-project-view
+    project-name: com-log
+    views:
+      - project-view
+
+- log_docker_common: &log_docker_common
+    # values apply to all RIC docker-build projects.
+    # factored out in case log needs multiple projects.
+    # use a specific name to prevent reuse attempts
+    # bcos anchors don't cross document boundaries.
+    name: log-docker-common
+    build-node: ubuntu1804-docker-4c-4g
+    # pull from the public mirror + releases registry
+    container-public-registry: nexus3.o-ran-sc.org:10001
+    # push to the staging repo bcos all builds are RCs
+    container-push-registry:  nexus3.o-ran-sc.org:10004
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # source of docker tag
+    docker-use-params-from: yaml-file-params
+    stream:
+      - master:
+          branch: master
+
+- project:
+    name: com-log
+    # git repo
+    project: com/log
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    # maven settings file has docker credentials
+    mvn-settings: com-log-settings
+    jobs:
+      # verify only; no merge bcos no image is pushed
+      - gerrit-docker-verify
+    <<: *log_docker_common
