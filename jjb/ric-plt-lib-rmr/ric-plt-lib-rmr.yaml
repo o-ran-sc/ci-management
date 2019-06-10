@@ -16,10 +16,6 @@
     container-public-registry: nexus3.o-ran-sc.org:10001
     # push to the staging repo bcos all builds are RCs
     container-push-registry:  nexus3.o-ran-sc.org:10004
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
-    # source of docker tag
-    docker-use-params-from: yaml-file-params
     stream:
       - master:
           branch: master
@@ -30,8 +26,12 @@
     project: ric-plt/lib/rmr
     # jenkins job name prefix
     project-name: '{name}'
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host -f ci/Dockerfile'
     # image name
     docker-name: '{name}'
+    # image tag, use a fixed value
+    container-tag-method: latest
     # maven settings file has docker credentials
     mvn-settings: ric-plt-lib-rmr-settings
     jobs:
