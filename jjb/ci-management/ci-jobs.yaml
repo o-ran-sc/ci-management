@@ -12,6 +12,7 @@
 
     jobs:
       - '{project-name}-ci-jobs'
+      - '{project-name}-info-yaml-verify'
 
     <<: *ci_jobs_common
 
