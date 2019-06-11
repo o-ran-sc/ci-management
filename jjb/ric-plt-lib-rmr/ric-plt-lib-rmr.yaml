@@ -38,3 +38,12 @@
       # verify only; no merge bcos no image is pushed
       - gerrit-docker-verify
     <<: *rmr_docker_common
+
+- project:
+    name: ric-plt-lib-rmr-info
+    project: ric-plt/lib/rmr
+    project-name: ric-plt-lib-rmr
+    build-node: centos7-builder-1c-1g
+
+    jobs:
+      - gerrit-info-yaml-verify
