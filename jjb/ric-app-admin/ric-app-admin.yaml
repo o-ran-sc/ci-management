@@ -38,3 +38,11 @@
       - '{project-name}-gerrit-docker-jobs'
     <<: *admin_docker_common
 
+- project:
+    name: ric-app-admin-info
+    project: ric-app/admin
+    project-name: ric-app-admin
+    build-node: centos7-builder-1c-1g
+
+    jobs:
+      - gerrit-info-yaml-verify
