@@ -38,3 +38,12 @@
       # verify only; no merge bcos no image is pushed
       - gerrit-docker-verify
     <<: *log_docker_common
+
+- project:
+    name: com-log-info
+    project: com/log
+    project-name: com-log
+    build-node: centos7-builder-1c-1g
+
+    jobs:
+      - gerrit-info-yaml-verify
