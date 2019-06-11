@@ -38,3 +38,12 @@
       # verify only; no merge bcos no image is pushed
       - gerrit-docker-verify
     <<: *asn1_docker_common
+
+- project:
+    name: com-asn1-info
+    project: com/asn1
+    project-name: com-asn1
+    build-node: centos7-builder-1c-1g
+
+    jobs:
+      - gerrit-info-yaml-verify
