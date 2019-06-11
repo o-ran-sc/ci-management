@@ -12,6 +12,7 @@
 
     jobs:
       - '{project-name}-ci-jobs'
+      - 'gerrit-info-yaml-verify'
 
     <<: *ci_jobs_common
 
