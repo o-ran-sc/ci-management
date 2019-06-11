@@ -37,3 +37,12 @@
     jobs:
       - '{project-name}-gerrit-docker-jobs'
     <<: *rtmgr_docker_common
+
+- project:
+    name: ric-plt-rtmgr-info
+    project: ric-plt/rtmgr
+    project-name: ric-plt-rtmgr
+    build-node: centos7-builder-1c-1g
+
+    jobs:
+      - gerrit-info-yaml-verify
