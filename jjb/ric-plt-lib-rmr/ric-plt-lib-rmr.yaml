@@ -30,13 +30,16 @@
     docker-build-args: '--network=host -f ci/Dockerfile'
     # image name
     docker-name: '{name}'
-    # image tag, use a fixed value
+    # image tag; use a fixed value bcos image not pushed
     container-tag-method: latest
     # maven settings file has docker credentials
     mvn-settings: ric-plt-lib-rmr-settings
+    # copy deb to Jenkins filesystem
+    post_docker_build_script: |
+        bash ci/extract-build-artifacts.sh
     jobs:
-      # verify only; no merge bcos no image is pushed
-      - gerrit-docker-verify
+      # merge pushes deb, not image
+      - '{project-name}-gerrit-docker-jobs'
     <<: *rmr_docker_common
 
 - project:
