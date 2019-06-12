@@ -19,17 +19,23 @@
 set -eux -o pipefail
 echo "--> copy-rmr-packages.sh"
 
-# extracts to host the artifacts created by the builder
+# extracts artifacts created by the builder
 
-# This file is created by RMr library build process
-# with path(s) to the generated artifact(s)
-file="/tmp/rmr_deb_path"
+# file with paths of generated deb, rpm packages
+pkgs="/tmp/build_output.yml"
 
-# create a container from the image by running a trivial command
+# access builder files by creating a container with a trivial command
 # environment variables are injected in previous Jenkins steps
-container=$(docker run -d "$CONTAINER_PUSH_REGISTRY"/"$DOCKER_NAME":"$DOCKER_IMAGE_TAG" ls "$file")
-docker logs "$container"
-docker cp "$container:$file" .
-filebase=$(basename "$file")
-deb=$(cat "$filebase")
-docker cp "$container:$deb" .
+container=$(docker run -d "$CONTAINER_PUSH_REGISTRY"/"$DOCKER_NAME":"$DOCKER_IMAGE_TAG" ls)
+docker cp "$container":"$pkgs" .
+pkgs_base=$(basename "$pkgs")
+
+deb=$(yq -r .deb "$pkgs_base")
+docker cp "$container":"$deb" .
+deb_base=$(basename "$deb")
+echo "Push file $deb_base" # TODO
+
+rpm=$(yq -r .rpm "$pkgs_base")
+docker cp "$container":"$rpm" .
+rpm_base=$(basename "$rpm")
+echo "Push file $rpm_base" # TODO

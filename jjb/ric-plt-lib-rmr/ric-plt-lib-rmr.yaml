@@ -38,8 +38,8 @@
     post_docker_build_script: !include-raw-escape:
       - shell/copy-rmr-packages.sh
     jobs:
-      # merge pushes deb, not image
-      - '{project-name}-gerrit-docker-jobs'
+      # TODO: define a merge template to push package, not image
+      - gerrit-docker-verify
     <<: *rmr_docker_common
 
 - project:
