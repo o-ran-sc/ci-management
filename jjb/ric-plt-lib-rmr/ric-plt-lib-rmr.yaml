@@ -9,12 +9,12 @@
     # values apply to all RIC docker-build projects.
     # factored out in case rmr needs multiple projects.
     # use a specific name to prevent reuse attempts
-    # bcos anchors don't cross document boundaries.
+    # because anchors don't cross document boundaries.
     name: rmr-docker-common
     build-node: ubuntu1804-docker-4c-4g
     # pull from the public mirror + releases registry
     container-public-registry: nexus3.o-ran-sc.org:10001
-    # push to the staging repo bcos all builds are RCs
+    # push to the staging repo because all builds are RCs
     container-push-registry:  nexus3.o-ran-sc.org:10004
     stream:
       - master:
@@ -30,13 +30,16 @@
     docker-build-args: '--network=host -f ci/Dockerfile'
     # image name
     docker-name: '{name}'
-    # image tag, use a fixed value
+    # image tag; use a fixed value
     container-tag-method: latest
     # maven settings file has docker credentials
     mvn-settings: ric-plt-lib-rmr-settings
+    # copy deb to Jenkins filesystem
+    post_docker_build_script: !include-raw-escape:
+      - shell/copy-rmr-packages.sh
     jobs:
-      # verify only; no merge bcos no image is pushed
-      - gerrit-docker-verify
+      # merge pushes deb, not image
+      - '{project-name}-gerrit-docker-jobs'
     <<: *rmr_docker_common
 
 - project:
