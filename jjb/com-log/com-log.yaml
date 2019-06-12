@@ -15,7 +15,7 @@
     # pull from the public mirror + releases registry
     container-public-registry: nexus3.o-ran-sc.org:10001
     # push to the staging repo bcos all builds are RCs
-    container-push-registry:  nexus3.o-ran-sc.org:10004
+    container-push-registry: nexus3.o-ran-sc.org:10004
     stream:
       - master:
           branch: master

@@ -14,7 +14,7 @@
     # Nexus3 docker registries
     container-public-registry: nexus3.o-ran-sc.org:10001
     container-snapshot-registry: nexus3.o-ran-sc.org:10003
-    container-staging-registry:  nexus3.o-ran-sc.org:10004
+    container-staging-registry: nexus3.o-ran-sc.org:10004
 
     # Default java version
     java-version: openjdk8

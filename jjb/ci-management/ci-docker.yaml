@@ -7,7 +7,7 @@
     build-node: ubuntu1804-docker-4c-4g
     container-public-registry: nexus3.o-ran-sc.org:10001
     # use the staging repo bcos all builds are RCs
-    container-push-registry:  nexus3.o-ran-sc.org:10004
+    container-push-registry: nexus3.o-ran-sc.org:10004
     # use host network to clone from our gerrit
     docker-build-args: '--network=host'
     # default to YAML
