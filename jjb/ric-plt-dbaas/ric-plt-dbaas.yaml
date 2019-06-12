@@ -17,7 +17,7 @@
     # push to the staging repo bcos all builds are RCs
     container-push-registry: nexus3.o-ran-sc.org:10004
     # source of docker tag
-    docker-use-params-from: yaml-file-params
+    container-tag-method: yaml-file
     stream:
       - master:
           branch: master

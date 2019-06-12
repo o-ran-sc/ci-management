@@ -11,7 +11,7 @@
     # use host network to clone from our gerrit
     docker-build-args: '--network=host'
     # default to YAML
-    docker-use-params-from: yaml-file-params
+    container-tag-method: yaml-file
     # maven settings file has docker credentials
     mvn-settings: ci-management-settings
     stream:

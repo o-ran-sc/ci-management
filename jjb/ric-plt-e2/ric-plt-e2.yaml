@@ -19,7 +19,7 @@
     # use host network to clone from our gerrit
     docker-build-args: '--network=host'
     # source of docker tag
-    docker-use-params-from: yaml-file-params
+    container-tag-method: yaml-file
     stream:
       - master:
           branch: master
