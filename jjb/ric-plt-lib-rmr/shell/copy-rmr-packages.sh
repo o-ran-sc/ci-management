@@ -25,9 +25,9 @@ echo "--> copy-rmr-packages.sh"
 # with path(s) to the generated artifact(s)
 file="/tmp/rmr_deb_path"
 
-# Create a container from the build image by running a trivial command.
-# DOCKER_NAME and DOCKER_IMAGE_TAG are injected by previous steps
-container=$(docker run -d "$DOCKER_NAME":"$DOCKER_IMAGE_TAG" ls "$file")
+# create a container from the image by running a trivial command
+# environment variables are injected in previous Jenkins steps
+container=$(docker run -d "$CONTAINER_PUSH_REGISTRY"/"$DOCKER_NAME":"$DOCKER_IMAGE_TAG" ls "$file")
 docker logs "$container"
 docker cp "$container:$file" .
 filebase=$(basename "$file")
