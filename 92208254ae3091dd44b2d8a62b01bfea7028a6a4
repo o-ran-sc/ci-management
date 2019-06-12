@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "65b4c4b0_ac530808",
+        "filename": "jjb/ric-plt-lib-rmr/ric-plt-lib-rmr.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-06-12T15:36:09Z",
+      "side": 1,
+      "message": "because",
+      "range": {
+        "startLine": 33,
+        "startChar": 35,
+        "endLine": 33,
+        "endChar": 39
+      },
+      "revId": "92208254ae3091dd44b2d8a62b01bfea7028a6a4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a88fb5d9_5477103b",
+        "filename": "jjb/ric-plt-lib-rmr/ric-plt-lib-rmr.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-06-12T15:36:09Z",
+      "side": 1,
+      "message": "That\u0027s one way to do this. I was actually recommending just moving the script into a jjb shell include.",
+      "revId": "92208254ae3091dd44b2d8a62b01bfea7028a6a4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
