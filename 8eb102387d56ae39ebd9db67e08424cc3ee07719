@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9c2d4a05_0d297c7f",
+        "filename": "jjb/ric-plt-lib-rmr/ric-plt-lib-rmr.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-06-12T15:00:44Z",
+      "side": 1,
+      "message": "because",
+      "range": {
+        "startLine": 33,
+        "startChar": 35,
+        "endLine": 33,
+        "endChar": 39
+      },
+      "revId": "8eb102387d56ae39ebd9db67e08424cc3ee07719",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0767215_4882accf",
+        "filename": "jjb/ric-plt-lib-rmr/ric-plt-lib-rmr.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-06-12T15:00:44Z",
+      "side": 1,
+      "message": "I\u0027m not a fan of inlining shell scripts into JJB. I would recommend moving this to an included script. If it can be made generic enough for other projects to use it then put the included script at ci-management/shell. If it needs to be specific to ric-plt-lib-rmr then put it in ci-management/jjb/ric-plt-rmr/shell\n\nDoing this allows us to run shellcheck (or some other linter if needs be) against the script code so we can detect bad coding practices or problems.",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 35
+      },
+      "revId": "8eb102387d56ae39ebd9db67e08424cc3ee07719",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
