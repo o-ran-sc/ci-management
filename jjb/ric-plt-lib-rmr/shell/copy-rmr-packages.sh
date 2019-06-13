@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/bash -l
+# use login flag to get $HOME/.local/bin in PATH
+
 #==================================================================================
 #       Copyright (c) 2019 Nokia
 #       Copyright (c) 2018-2019 AT&T Intellectual Property.
@@ -20,7 +22,6 @@ set -eux -o pipefail
 echo "--> copy-rmr-packages.sh"
 
 # extracts artifacts created by the builder
-
 # file with paths of generated deb, rpm packages
 pkgs="/tmp/build_output.yml"
 
@@ -30,6 +31,7 @@ container=$(docker run -d "$CONTAINER_PUSH_REGISTRY"/"$DOCKER_NAME":"$DOCKER_IMA
 docker cp "$container":"$pkgs" .
 pkgs_base=$(basename "$pkgs")
 
+# pip installs yq to $HOME/.local/bin
 deb=$(yq -r .deb "$pkgs_base")
 docker cp "$container":"$deb" .
 deb_base=$(basename "$deb")
