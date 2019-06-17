@@ -20,7 +20,7 @@
 
 - project:
     <<: *ci_docker_common
-    name: bldr-ric-debian-python
+    name: bldr-debian-python-nng
     project-name: '{project}-{name}'
     docker-name: '{name}'
     docker-root: 'docker/{name}'
