@@ -1,4 +1,5 @@
 # O-RAN-SC
+
 #
 # Copyright (C) 2019 AT&T Intellectual Property and Nokia
 #
@@ -14,22 +15,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Builder image with CI tools for most RIC components
+# Builder image with superset of CI tools for RIC components
 # Based on Ubuntu 16.04
-# Adds standard packages gcc and g++ 5.4, sctp boost etc.
+# Adds standard packages gcc and g++ 5.4, sctp etc.
 # Adds Golang 1.12 from binary distro to /usr/local/go
 # Adds Cmake 3.14.5 from binary distro to /usr/local/bin
 # Adds Ninja 1.9 from binary distro to /usr/local/bin
 # Adds Nanomsg Next Gen libs by cloning and building
+# Adds Boost 1.69 from source distro by building
 
-FROM ubuntu:16.04
+FROM nexus3.o-ran-sc.org:10001/ubuntu:16.04
 
 RUN apt-get update && apt-get install -y \
     build-essential software-properties-common \
     git zip wget make gcc g++  \
     libsctp-dev lksctp-tools \
     zlibc zlib1g zlib1g-dev \
-    python-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev \
+    python-dev autotools-dev libicu-dev libbz2-dev \
     autoconf autoconf-archive libtool automake pkg-config
 
 WORKDIR /tmp
@@ -54,3 +56,12 @@ RUN git clone https://github.com/nanomsg/nng.git \
     && cmake -DBUILD_SHARED_LIBS=1 -G Ninja .. \
     && ninja \
     && ninja install
+
+RUN wget -nv https://dl.bintray.com/boostorg/release/1.69.0/source/boost_1_69_0.zip \
+    && unzip -q boost_1_69_0.zip \
+    && cd boost_1_69_0 \
+    && ./bootstrap.sh --prefix=/usr/ \
+    && ./b2 \
+    && ./b2 install \
+    && cd ../ \
+    && rm -rf boost_1_69_0.zip boost_1_69_0
