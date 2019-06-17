@@ -14,10 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Builder image: Debian stretch
-# standard packages: Python, cmake, etc.
-# RIC libraries: mcdlog, rmr
-# inherits C and C++ tools from buildpack-deps:stretch
+
+# Builder image with CI tools for RIC components
+# uses Python 3.7 (Debian stretch) base which has
+# C and C++ tools from buildpack-deps:stretch then adds:
+# Ninja 1.9 from binary distro to /usr/local/bin
+# Nanomsg Next Gen libs by cloning and building
 
 FROM python:3.7
 
@@ -29,10 +31,15 @@ RUN apt-get update && apt-get -q -y install \
   libtool \
   pkg-config
 
-# version 0.0.2, not pinned
-RUN cd /tmp && git clone https://gerrit.o-ran-sc.org/r/com/log \
-  && cd log && ./autogen.sh && ./configure && make && make install
+RUN wget -nv https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-linux.zip \
+    && unzip ninja-linux.zip \
+    && chmod +x ninja \
+    && mv ninja /usr/local/bin
 
-# version 1.0.24
-RUN cd /tmp && git clone https://gerrit.o-ran-sc.org/r/ric-plt/lib/rmr \
-  && cd rmr && git checkout a012cf63dfdad3656c995cb06c316fd208c63b98 && cmake . && make install
+RUN git clone https://github.com/nanomsg/nng.git \
+    && cd nng \
+    && mkdir build \
+    && cd build \
+    && cmake -DBUILD_SHARED_LIBS=1 -G Ninja .. \
+    && ninja \
+    && ninja install
