@@ -32,6 +32,8 @@
     project-name: '{name}'
     # image name
     docker-name: '{name}'
+    # subdirectory
+    docker-root: RIC-E2-TERMINATION
     # maven settings file has docker credentials
     mvn-settings: ric-plt-e2-settings
     jobs:
