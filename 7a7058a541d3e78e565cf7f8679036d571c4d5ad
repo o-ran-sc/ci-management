@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3d64d8a9_d41a4a00",
+        "filename": "docker/bldr-debian-python-nng/container-tag.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2019-06-17T21:35:35Z",
+      "side": 1,
+      "message": "Haven\u0027t tested our scripts with a tag like this.. but i think it should be fine..",
+      "range": {
+        "startLine": 4,
+        "startChar": 5,
+        "endLine": 4,
+        "endChar": 12
+      },
+      "revId": "7a7058a541d3e78e565cf7f8679036d571c4d5ad",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
