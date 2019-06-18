@@ -50,6 +50,7 @@ RUN wget -nv https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja
 
 RUN git clone https://github.com/nanomsg/nng.git \
     && cd nng \
+    && git checkout v1.1.1 \
     && mkdir build \
     && cd build \
     && cmake -DBUILD_SHARED_LIBS=1 -G Ninja .. \

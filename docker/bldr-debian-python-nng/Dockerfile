@@ -14,7 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 # Builder image with CI tools for RIC components
 # uses Python 3.7 (Debian stretch) base which has
 # C and C++ tools from buildpack-deps:stretch then adds:
@@ -38,6 +37,7 @@ RUN wget -nv https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja
 
 RUN git clone https://github.com/nanomsg/nng.git \
     && cd nng \
+    && git checkout v1.1.1 \
     && mkdir build \
     && cd build \
     && cmake -DBUILD_SHARED_LIBS=1 -G Ninja .. \
