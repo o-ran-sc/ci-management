@@ -23,21 +23,23 @@ echo "--> copy-rmr-packages.sh"
 
 # extracts artifacts created by the builder
 # file with paths of generated deb, rpm packages
-pkgs="/tmp/build_output.yml"
+pkgs="build_packages.yml"
 
 # access builder files by creating a container with a trivial command
 # environment variables are injected in previous Jenkins steps
 container=$(docker run -d "$CONTAINER_PUSH_REGISTRY"/"$DOCKER_NAME":"$DOCKER_IMAGE_TAG" ls)
-docker cp "$container":"$pkgs" .
-pkgs_base=$(basename "$pkgs")
+docker cp "$container":"/tmp/$pkgs" .
 
 # pip installs yq to $HOME/.local/bin
-deb=$(yq -r .deb "$pkgs_base")
-docker cp "$container":"$deb" .
-deb_base=$(basename "$deb")
-echo "Push file $deb_base" # TODO
 
-rpm=$(yq -r .rpm "$pkgs_base")
-docker cp "$container":"$rpm" .
-rpm_base=$(basename "$rpm")
-echo "Push file $rpm_base" # TODO
+for index in 0 1
+do
+    deb=$(yq -r ".packages[$index].deb" "$pkgs")
+    docker cp "$container":"$deb" .
+    deb_base=$(basename "$deb")
+    echo "Push file $deb_base" # TODO
+    rpm=$(yq -r ".packages[$index].rpm" "$pkgs")
+    docker cp "$container":"$rpm" .
+    rpm=$(basename "$rpm")
+    echo "Push file $rpm" # TODO
+done
