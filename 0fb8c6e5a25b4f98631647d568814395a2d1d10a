@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1428c535_e639aeab",
+        "filename": "docker/bldr-alpine-python-nng/Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2019-06-20T18:16:15Z",
+      "side": 1,
+      "message": "will do.",
+      "parentUuid": "467873a9_865a3b2b",
+      "range": {
+        "startLine": 15,
+        "startChar": 21,
+        "endLine": 15,
+        "endChar": 46
+      },
+      "revId": "0fb8c6e5a25b4f98631647d568814395a2d1d10a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "02be3e9e_1433031e",
         "filename": "docker/bldr-alpine-python-nng/Dockerfile",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2019-06-20T18:07:27Z",
       "side": 1,
       "message": "If you can live with my Dockerfile style, please add all in one shot, and possibly alphabetize them",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 22
+      },
+      "revId": "0fb8c6e5a25b4f98631647d568814395a2d1d10a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d38bdca5_13154d61",
+        "filename": "docker/bldr-alpine-python-nng/Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2019-06-20T18:16:15Z",
+      "side": 1,
+      "message": "unless you _strongly_ object, i really kind of prefer this style as it makes it immediately obvious where a failure happened and also avoids the common syntax issue of missing a backslash at the end of a line.  it also keeps stements shorter and more readable.",
+      "parentUuid": "02be3e9e_1433031e",
       "range": {
         "startLine": 19,
         "startChar": 0,
@@ -83,6 +131,30 @@
       "side": 1,
       "message": "Like this if you can live with it:\n\nRUN git clone https://github.com/nanomsg/nng.git \\\n    \u0026\u0026 cd nng \\\n    \u0026\u0026 git checkout v1.1.1 \\\n    \u0026\u0026 mkdir build \\\n    \u0026\u0026 cd build \\\n    \u0026\u0026 cmake -DBUILD_SHARED_LIBS\u003d1 -G Ninja .. \\\n    \u0026\u0026 ninja \\\n    \u0026\u0026 ninja install\n\nHmm I note from your example that I have not cleaned up afterwards, that might be a good thing.",
       "parentUuid": "84b55e57_4b30ca64",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 19
+      },
+      "revId": "0fb8c6e5a25b4f98631647d568814395a2d1d10a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f29b0b9_8f9567ca",
+        "filename": "docker/bldr-alpine-python-nng/Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2019-06-20T18:16:15Z",
+      "side": 1,
+      "message": "see above: splitting things across multiple statements makes things more readable, makes it easier to insert new commands, makes errors easier to track and avoids some simple possible syntax fails.",
+      "parentUuid": "8cfe806d_047ee427",
       "range": {
         "startLine": 36,
         "startChar": 0,
