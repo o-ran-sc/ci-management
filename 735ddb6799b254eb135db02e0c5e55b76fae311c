@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8bfcb2_ec008f01",
+        "filename": "docker/bldr-alpine-python-nng/Dockerfile",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-06-20T18:44:55Z",
+      "side": 1,
+      "message": "please remove trailing whitespace.  The LF releng team will not merge anything with this problem.  I know, it\u0027s silly.",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 26,
+        "endChar": 9
+      },
+      "revId": "735ddb6799b254eb135db02e0c5e55b76fae311c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
