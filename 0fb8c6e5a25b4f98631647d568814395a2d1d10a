@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "467873a9_865a3b2b",
+        "filename": "docker/bldr-alpine-python-nng/Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-06-20T18:07:27Z",
+      "side": 1,
+      "message": "Not needed, pls drop",
+      "range": {
+        "startLine": 15,
+        "startChar": 21,
+        "endLine": 15,
+        "endChar": 46
+      },
+      "revId": "0fb8c6e5a25b4f98631647d568814395a2d1d10a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02be3e9e_1433031e",
+        "filename": "docker/bldr-alpine-python-nng/Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-06-20T18:07:27Z",
+      "side": 1,
+      "message": "If you can live with my Dockerfile style, please add all in one shot, and possibly alphabetize them",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 22
+      },
+      "revId": "0fb8c6e5a25b4f98631647d568814395a2d1d10a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84b55e57_4b30ca64",
+        "filename": "docker/bldr-alpine-python-nng/Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-06-20T18:07:27Z",
+      "side": 1,
+      "message": "Is there a reason you opted to do so much work at the Docker level?  It\u0027s convenient to just do \"RUN cmake \u0026\u0026 foo \u0026\u0026 bar \u0026\u0026 baz\"",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 19
+      },
+      "revId": "0fb8c6e5a25b4f98631647d568814395a2d1d10a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e17c6f5a_ee1b9010",
+        "filename": "docker/bldr-alpine-python-nng/container-tag.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-06-20T18:07:27Z",
+      "side": 1,
+      "message": "Maybe insert \"a3-\" here indicating Alpine 3?",
+      "range": {
+        "startLine": 2,
+        "startChar": 7,
+        "endLine": 2,
+        "endChar": 8
+      },
+      "revId": "0fb8c6e5a25b4f98631647d568814395a2d1d10a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
