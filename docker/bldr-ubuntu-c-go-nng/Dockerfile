@@ -16,22 +16,39 @@
 
 # Builder image with superset of CI tools for RIC components
 # Uses Ubuntu 16.04 base then adds:
-# Standard packages gcc and g++ 5.4, sctp etc.
+# Standard apt packages including gcc and g++ 5.4
 # Cmake 3.14.5 from binary distro to /usr/local/bin
 # Golang 1.12 from binary distro to /usr/local/go
 # Ninja 1.9 from binary distro to /usr/local/bin
-# Nanomsg Next Gen libs by cloning and building
-# Boost 1.69 from source distro by building
+# Nanomsg Next Gen v1.1.1 from source distro
+# Boost 1.69 from source distro
 
 FROM nexus3.o-ran-sc.org:10001/ubuntu:16.04
 
 RUN apt-get update && apt-get install -y \
-    build-essential software-properties-common \
-    git zip wget make gcc g++  \
-    libsctp-dev lksctp-tools \
-    zlibc zlib1g zlib1g-dev \
-    python-dev autotools-dev libicu-dev libbz2-dev \
-    autoconf autoconf-archive libtool automake pkg-config
+    apt-utils \
+    autoconf \
+    autoconf-archive \
+    automake \
+    autotools-dev \
+    build-essential \
+    g++  \
+    gcc \
+    git \
+    libbz2-dev \
+    libicu-dev \
+    libsctp-dev \
+    libtool \
+    lksctp-tools \
+    make \
+    python-dev \
+    pkg-config \
+    software-properties-common \
+    wget \
+    zlib1g \
+    zlib1g-dev \
+    zlibc \
+    zip
 
 WORKDIR /tmp
 
