@@ -41,3 +41,15 @@
         pattern: 'docker/{name}/.*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
+
+- project:
+    <<: *ci_docker_common
+    name: bldr-alpine-python-nng
+    project-name: '{project}-{name}'
+    docker-name: '{name}'
+    docker-root: 'docker/{name}'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'docker/{name}/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
