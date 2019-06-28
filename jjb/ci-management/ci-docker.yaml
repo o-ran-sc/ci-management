@@ -32,7 +32,19 @@
 
 - project:
     <<: *ci_docker_common
-    name: bldr-ubuntu-c-go-nng
+    name: bldr-ubuntu16-c-go-nng
+    project-name: '{project}-{name}'
+    docker-name: '{name}'
+    docker-root: 'docker/{name}'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'docker/{name}/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+
+- project:
+    <<: *ci_docker_common
+    name: bldr-ubuntu18-c-go-nng
     project-name: '{project}-{name}'
     docker-name: '{name}'
     docker-root: 'docker/{name}'
