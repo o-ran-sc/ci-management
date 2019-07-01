@@ -20,7 +20,7 @@
 
 - project:
     <<: *ci_docker_common
-    name: bldr-debian-python-nng
+    name: bldr-alpine-python
     project-name: '{project}-{name}'
     docker-name: '{name}'
     docker-root: 'docker/{name}'
@@ -32,7 +32,7 @@
 
 - project:
     <<: *ci_docker_common
-    name: bldr-ubuntu16-c-go-nng
+    name: bldr-debian-python
     project-name: '{project}-{name}'
     docker-name: '{name}'
     docker-root: 'docker/{name}'
@@ -44,7 +44,7 @@
 
 - project:
     <<: *ci_docker_common
-    name: bldr-ubuntu18-c-go-nng
+    name: bldr-ubuntu16-c-go
     project-name: '{project}-{name}'
     docker-name: '{name}'
     docker-root: 'docker/{name}'
@@ -56,7 +56,7 @@
 
 - project:
     <<: *ci_docker_common
-    name: bldr-alpine-python-nng
+    name: bldr-ubuntu18-c-go
     project-name: '{project}-{name}'
     docker-name: '{name}'
     docker-root: 'docker/{name}'
