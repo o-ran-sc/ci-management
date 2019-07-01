@@ -12,7 +12,7 @@
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
-FROM python:3-alpine
+FROM python:3.7-alpine
 
 RUN apk update && \
  apk add \
@@ -33,9 +33,8 @@ RUN git clone --branch v2015.09.25 git://git.sv.gnu.org/autoconf-archive.git
 RUN cp /tmp/autoconf-archive/m4/* /usr/share/aclocal
 RUN rm -rf /tmp/autoconf-archive
 
-RUN git clone https://github.com/nanomsg/nng
+RUN git clone --branch v1.1.1 https://github.com/nanomsg/nng.git
 WORKDIR /tmp/nng
-RUN git checkout v1.1.1
 RUN mkdir /tmp/nng/build
 WORKDIR /tmp/nng/build
 RUN cmake -DBUILD_SHARED_LIBS=1 -G Ninja ..
