@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "053781f8_7583ba40",
+        "filename": "jjb/it-dep/ric-infra-nexus.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000046
+      },
+      "writtenOn": "2019-07-08T20:16:48Z",
+      "side": 1,
+      "message": "I see what you meant. Yes I will revise this file so that all the it/dep jobs can be included here in the future.",
+      "parentUuid": "7c91bcc2_23066a71",
+      "range": {
+        "startLine": 3,
+        "startChar": 10,
+        "endLine": 3,
+        "endChar": 38
+      },
+      "revId": "6ef0acec239f4d23137ff57c7a92689edae2a246",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3e6643ea_cf37b66d",
         "filename": "jjb/it-dep/ric-infra-nexus.yaml",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2019-07-08T19:55:55Z",
       "side": 1,
       "message": "so this name, the view name, should be simply \u0027it-dep\u0027 to be consistent with other repos/files",
+      "range": {
+        "startLine": 4,
+        "startChar": 18,
+        "endLine": 4,
+        "endChar": 33
+      },
+      "revId": "6ef0acec239f4d23137ff57c7a92689edae2a246",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54c1741d_3f22d996",
+        "filename": "jjb/it-dep/ric-infra-nexus.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000046
+      },
+      "writtenOn": "2019-07-08T20:16:48Z",
+      "side": 1,
+      "message": "Yup.",
+      "parentUuid": "3e6643ea_cf37b66d",
       "range": {
         "startLine": 4,
         "startChar": 18,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "7764d886_ee1e9d57",
+        "filename": "jjb/it-dep/ric-infra-nexus.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000046
+      },
+      "writtenOn": "2019-07-08T20:16:48Z",
+      "side": 1,
+      "message": "yup",
+      "parentUuid": "0e559e29_b327b571",
+      "range": {
+        "startLine": 8,
+        "startChar": 2,
+        "endLine": 8,
+        "endChar": 21
+      },
+      "revId": "6ef0acec239f4d23137ff57c7a92689edae2a246",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4c9110ab_543b3633",
         "filename": "jjb/it-dep/ric-infra-nexus.yaml",
         "patchSetId": 2
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "e0c2a3de_f39d4839",
+        "filename": "jjb/it-dep/ric-infra-nexus.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000046
+      },
+      "writtenOn": "2019-07-08T20:16:48Z",
+      "side": 1,
+      "message": "yes, There is a container-tag.yaml file at ric-infra/10-Nexus/docker",
+      "parentUuid": "4c9110ab_543b3633",
+      "range": {
+        "startLine": 22,
+        "startChar": 26,
+        "endLine": 22,
+        "endChar": 35
+      },
+      "revId": "6ef0acec239f4d23137ff57c7a92689edae2a246",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4cb42e37_584c2bdd",
         "filename": "jjb/it-dep/ric-infra-nexus.yaml",
         "patchSetId": 2
@@ -105,6 +201,30 @@
       "writtenOn": "2019-07-08T19:55:55Z",
       "side": 1,
       "message": "why is the docker root different from the container-tag-yaml-dir?",
+      "range": {
+        "startLine": 38,
+        "startChar": 43,
+        "endLine": 38,
+        "endChar": 64
+      },
+      "revId": "6ef0acec239f4d23137ff57c7a92689edae2a246",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "175aedf5_e1c2d3ea",
+        "filename": "jjb/it-dep/ric-infra-nexus.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000046
+      },
+      "writtenOn": "2019-07-08T20:16:48Z",
+      "side": 1,
+      "message": "Because ric-infra/10-Nexus/docker/nexus-repository-helm is the directory of the submodule from nexus community. I don\u0027t want to fork their codes so that I decided not to put the container-tag.yaml file in their directory.",
+      "parentUuid": "4cb42e37_584c2bdd",
       "range": {
         "startLine": 38,
         "startChar": 43,
