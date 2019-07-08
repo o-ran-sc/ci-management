@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7c91bcc2_23066a71",
+        "filename": "jjb/it-dep/ric-infra-nexus.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-08T19:55:55Z",
+      "side": 1,
+      "message": "Sorry I missed this in the previous change set. This value should be \u0027it-dep-project-view\u0027.   There is exactly one view in Jenkins for each repository.  You only define the view in one of the yaml files, and this is the first one for it-dep, so define it here.",
+      "range": {
+        "startLine": 3,
+        "startChar": 10,
+        "endLine": 3,
+        "endChar": 38
+      },
+      "revId": "6ef0acec239f4d23137ff57c7a92689edae2a246",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e6643ea_cf37b66d",
+        "filename": "jjb/it-dep/ric-infra-nexus.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-08T19:55:55Z",
+      "side": 1,
+      "message": "so this name, the view name, should be simply \u0027it-dep\u0027 to be consistent with other repos/files",
+      "range": {
+        "startLine": 4,
+        "startChar": 18,
+        "endLine": 4,
+        "endChar": 33
+      },
+      "revId": "6ef0acec239f4d23137ff57c7a92689edae2a246",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0e559e29_b327b571",
+        "filename": "jjb/it-dep/ric-infra-nexus.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-08T19:55:55Z",
+      "side": 1,
+      "message": "maybe, possibly, name this it_dep_common.  Then you can reuse it here as you add new docker builder jobs",
+      "range": {
+        "startLine": 8,
+        "startChar": 2,
+        "endLine": 8,
+        "endChar": 21
+      },
+      "revId": "6ef0acec239f4d23137ff57c7a92689edae2a246",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4c9110ab_543b3633",
+        "filename": "jjb/it-dep/ric-infra-nexus.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-08T19:55:55Z",
+      "side": 1,
+      "message": "are you sure about the YAML file?  Do you want git describe?  Because there is no container-tag.yaml file next to your Dockerfile in that directory.",
+      "range": {
+        "startLine": 22,
+        "startChar": 26,
+        "endLine": 22,
+        "endChar": 35
+      },
+      "revId": "6ef0acec239f4d23137ff57c7a92689edae2a246",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4cb42e37_584c2bdd",
+        "filename": "jjb/it-dep/ric-infra-nexus.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-07-08T19:55:55Z",
+      "side": 1,
+      "message": "why is the docker root different from the container-tag-yaml-dir?",
+      "range": {
+        "startLine": 38,
+        "startChar": 43,
+        "endLine": 38,
+        "endChar": 64
+      },
+      "revId": "6ef0acec239f4d23137ff57c7a92689edae2a246",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
