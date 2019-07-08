@@ -1,0 +1,55 @@
+---
+- project:
+    name: it-dep-project-view
+    project-name: it-dep
+    views:
+      - project-view
+
+- it_dep_docker_common: &it_dep_docker_common
+    # values apply to all RIC docker-build projects.
+    # factored out in case nexus needs multiple projects.
+    # use a specific name to prevent reuse attempts
+    # bcos anchors don't cross document boundaries.
+    name: it-dep-docker_common
+    build-node: ubuntu1804-docker-4c-4g
+    # pull from the public mirror + releases registry
+    container-public-registry: nexus3.o-ran-sc.org:10001
+    # push to the staging repo bcos all builds are RCs
+    container-push-registry: nexus3.o-ran-sc.org:10004
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # source of docker tag
+    container-tag-method: yaml-file
+    stream:
+      - master:
+          branch: master
+
+- project:
+    name: nexus-repository-helm
+    # git repo
+    project: it/dep
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    # subdirectory
+    docker-root: ric-infra/10-Nexus/docker/nexus-repository-helm
+    # location of the container tag yaml file
+    container-tag-yaml-dir: ric-infra/10-Nexus/docker
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ric-infra/10-Nexus/docker/.*'
+    # maven settings file has docker credentials
+    mvn-settings: it-dep-settings
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    <<: *it_dep_docker_common
+
+- project:
+    name: it-dep-info
+    project: it/dep
+    project-name: it-dep
+    build-node: centos7-builder-1c-1g
+
+    jobs:
+      - gerrit-info-yaml-verify
