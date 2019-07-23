@@ -12,6 +12,8 @@
     docker-build-args: '--network=host'
     # default to YAML
     container-tag-method: yaml-file
+    # build every Saturday
+    cron: 'H H * * 6'
     # maven settings file has docker credentials
     mvn-settings: ci-management-settings
     stream:
