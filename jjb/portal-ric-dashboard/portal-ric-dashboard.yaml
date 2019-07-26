@@ -20,7 +20,7 @@
       - gerrit-maven-docker-verify
       - gerrit-maven-docker-merge
       - gerrit-maven-docker-stage
-      # - gerrit-maven-clm
+      - gerrit-maven-clm
     stream:
       - master:
           branch: master
