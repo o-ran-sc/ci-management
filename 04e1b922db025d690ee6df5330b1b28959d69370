@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f5e5a4cb_d10e8066",
+        "filename": "jjb/it-test/it-test.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2019-07-26T17:18:48Z",
+      "side": 1,
+      "message": "dumb question: presumably this triggers on changes anywhere in the subtree of the trigger_file_path?  in other words, if i change ric_robot_suite/foo/bar/baz.txt but nothing in ric_robot_suite itself, the job will still trigger?",
+      "revId": "04e1b922db025d690ee6df5330b1b28959d69370",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
