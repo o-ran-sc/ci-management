@@ -35,6 +35,7 @@
     # maven settings file has docker credentials
     mvn-settings: ric-plt-a1-settings
     jobs:
+      - gerrit-python-xc-clm
       - '{project-name}-gerrit-docker-jobs'
     <<: *a1_docker_common
 
