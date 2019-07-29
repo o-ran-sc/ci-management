@@ -39,10 +39,18 @@
     project-name: '{name}'
     # image name
     docker-name: '{name}'
-    # subdirectory
-    docker-root: 'ric_robot_suite/docker/nanobot'
+    # start in parent directory with shared files
+    docker-root: ric_robot_suite
+    # dockerfile is in subdir of docker root
+    docker-build-args: -f docker/nanobot/Dockerfile
+    # tag file is in subdir
+    container-tag-yaml-dir: ric_robot_suite/docker/nanobot
     # maven settings file has docker credentials
     mvn-settings: it-test-settings
+    # build only on relevant changes
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ric_robot_suite/.*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
     <<: *it_test_common
@@ -55,10 +63,18 @@
     project-name: '{name}'
     # image name
     docker-name: '{name}'
-    # subdirectory
-    docker-root: 'ric_robot_suite/docker/ric-robot'
+    # start in parent directory with shared files
+    docker-root: ric_robot_suite
+    # dockerfile is in subdir of docker root
+    docker-build-args: -f docker/ric-robot/Dockerfile
+    # tag file is in subdir
+    container-tag-yaml-dir: ric_robot_suite/docker/ric-robot
     # maven settings file has docker credentials
     mvn-settings: it-test-settings
+    # build only on relevant changes
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ric_robot_suite/.*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
     <<: *it_test_common
