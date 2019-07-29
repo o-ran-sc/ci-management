@@ -1,0 +1,52 @@
+---
+- project:
+    name: it-dep-project-view
+    project-name: it-dep
+    views:
+      - project-view
+
+- project:
+    name: it-dep-info
+    project: it/dep
+    project-name: it-dep
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- it_dep_common: &it_dep_common
+    # values apply to all RIC docker-build projects.
+    # use a specific name to prevent reuse attempts
+    # bcos anchors don't cross document boundaries.
+    name: it-dep-docker-common
+    build-node: ubuntu1804-docker-4c-4g
+    # pull from the public mirror + releases registry
+    container-public-registry: nexus3.o-ran-sc.org:10001
+    # push to the staging repo bcos all builds are RCs
+    container-push-registry: nexus3.o-ran-sc.org:10004
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # source of docker tag
+    container-tag-method: yaml-file
+    stream:
+      - master:
+          branch: master
+
+- project:
+    # Verify helm charts using a Docker build process.
+    # no image needs to be pushed, so there is no merge job.
+    name: it-dep-helm-verify
+    # git repo
+    project: it/dep
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    # dockerfile is in subdir
+    docker-build-args: -f ci/Dockerfile
+    # tag file is in subdir
+    container-tag-yaml-dir: ci
+    # maven settings file has docker credentials
+    mvn-settings: it-dep-settings
+    jobs:
+      - gerrit-docker-verify
+    <<: *it_dep_common
