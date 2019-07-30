@@ -1,7 +1,4 @@
-#!/bin/bash -l
-# use login flag to get $HOME/.local/bin in PATH
-# bcos pip installs yq to $HOME/.local/bin
-
+#!/bin/bash
 #==================================================================================
 #       Copyright (c) 2019 Nokia
 #       Copyright (c) 2018-2019 AT&T Intellectual Property.
@@ -22,20 +19,10 @@
 set -eux -o pipefail
 echo "--> copy-rmr-packages.sh"
 
-# extracts artifacts created by the builder
-# file with paths of generated deb, rpm packages
-pkgs="build_packages.yml"
-
-# access builder files within a container created by running a trivial command
-# environment variables are injected in previous Jenkins steps
-container=$(docker run -d "$CONTAINER_PUSH_REGISTRY"/"$DOCKER_NAME":"$DOCKER_IMAGE_TAG" ls)
-docker cp "${container}:/tmp/${pkgs}" .
-
-count=$(yq -r '.files | length' $pkgs)
-# modern bash syntax is helpful
-for (( i = 0; i < count; i++ )); do
-    file=$(yq -r ".files[$i]" "$pkgs")
-    docker cp "$container":"$file" .
-    base=$(basename "$file")
-    echo "Push file $base" # TODO
-done
+# Launches the docker image, which has an entrypoint script
+# that copies all artifacts created by the builder to /data.
+# Environment variables are injected in previous Jenkins steps.
+TGT=/tmp/data
+mkdir "$TGT"
+docker run -v "$TGT":/data "$CONTAINER_PUSH_REGISTRY"/"$DOCKER_NAME":"$DOCKER_IMAGE_TAG"
+ls "$TGT"
