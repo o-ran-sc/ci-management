@@ -34,8 +34,11 @@
     container-tag-method: latest
     # maven settings file has docker credentials
     mvn-settings: com-log-settings
+    # copy packages to Jenkins filesystem
+    post_docker_build_script: !include-raw-escape:
+      - ../shell/export-packages.sh
     jobs:
-      # verify only; no merge bcos no image is pushed
+      # TODO: define a merge template to push package, not image
       - gerrit-docker-verify
     <<: *log_docker_common
 
@@ -44,6 +47,5 @@
     project: com/log
     project-name: com-log
     build-node: centos7-builder-1c-1g
-
     jobs:
       - gerrit-info-yaml-verify

@@ -34,9 +34,9 @@
     container-tag-method: latest
     # maven settings file has docker credentials
     mvn-settings: ric-plt-lib-rmr-settings
-    # copy deb to Jenkins filesystem
+    # copy packages to Jenkins filesystem
     post_docker_build_script: !include-raw-escape:
-      - shell/copy-rmr-packages.sh
+      - ../shell/export-packages.sh
     jobs:
       # TODO: define a merge template to push package, not image
       - gerrit-docker-verify
