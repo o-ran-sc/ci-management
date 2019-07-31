@@ -22,7 +22,8 @@ echo "--> export-packages.sh"
 # Launches the docker image, which has an entrypoint script
 # that copies artifacts created by the builder to a directory.
 # Environment variables are injected in previous Jenkins steps.
-HOST=/tmp/export
+# The push script searches the workspace, so do not use /tmp etc.
+HOST=$WORKSPACE/export-packages-$$
 GUEST=/export
 mkdir -p "$HOST"
 docker run -v "$HOST":"$GUEST" "$CONTAINER_PUSH_REGISTRY"/"$DOCKER_NAME":"$DOCKER_IMAGE_TAG" "$GUEST"
