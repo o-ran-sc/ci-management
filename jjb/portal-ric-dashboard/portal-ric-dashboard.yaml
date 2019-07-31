@@ -14,7 +14,6 @@
     mvn-settings: portal-ric-dashboard-settings
     mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
     java-version: openjdk11
-    nexus-iq-namespace: 'oran-'
     build-node: ubuntu1804-docker-4c-4g
     jobs:
       - gerrit-maven-docker-verify
@@ -33,6 +32,7 @@
     java-version: openjdk11
     branch: master
     build-node: ubuntu1804-docker-4c-4g
+    nexus-iq-namespace: 'oran-'
     jobs:
       - gerrit-maven-clm
 
@@ -45,12 +45,12 @@
     java-version: openjdk11
     branch: master
     build-node: ubuntu1804-docker-4c-4g
-    jobs:
-      - gerrit-maven-sonar
     sonarcloud: true
     sonarcloud-project-key: o-ran-sc_portal-ric-dashboard
     sonarcloud-project-organization: o-ran-sc
     sonarcloud-api-token: d9e23c28dc39b6d7531d2ecabf122ce84e6253ef
+    jobs:
+      - gerrit-maven-sonar
 
 - project:
     name: portal-ric-dashboard-info
