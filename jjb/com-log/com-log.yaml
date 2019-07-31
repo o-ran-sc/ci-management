@@ -34,12 +34,9 @@
     container-tag-method: latest
     # maven settings file has docker credentials
     mvn-settings: com-log-settings
-    # copy packages to Jenkins filesystem
-    post_docker_build_script: !include-raw-escape:
-      - ../shell/export-packages.sh
     jobs:
-      # TODO: define a merge template to push package, not image
       - gerrit-docker-verify
+      - oran-gerrit-docker-ci-pc-merge
     <<: *log_docker_common
 
 - project:
