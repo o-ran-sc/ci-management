@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fecf5cd4_645deb6d",
+        "filename": "jjb/it-dep/it-dep.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2019-08-02T17:09:57Z",
+      "side": 1,
+      "message": "Yes i think we can do that since it is defined in line 61\nSimilar to how line 61 has \"{name}\"",
+      "parentUuid": "53f85a06_5db4e14e",
+      "range": {
+        "startLine": 67,
+        "startChar": 18,
+        "endLine": 67,
+        "endChar": 44
+      },
+      "revId": "7a13cc32c7daaf2882834293c29edebeb2adafba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c0057c05_37736924",
         "filename": "jjb/it-dep/it-dep.yaml",
         "patchSetId": 4
