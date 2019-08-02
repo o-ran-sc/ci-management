@@ -22,13 +22,13 @@
 
 - project:
     <<: *ci_docker_common
-    name: bldr-alpine-python
+    name: bldr-alpine3
     project-name: '{project}-{name}'
     docker-name: '{name}'
     docker-root: 'docker/{name}'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'docker/{name}/.*'
+        pattern: '{docker-root}/.*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
 
@@ -40,7 +40,7 @@
     docker-root: 'docker/{name}'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'docker/{name}/.*'
+        pattern: '{docker-root}/.*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
 
@@ -52,7 +52,7 @@
     docker-root: 'docker/{name}'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'docker/{name}/.*'
+        pattern: '{docker-root}/.*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
 
@@ -64,6 +64,6 @@
     docker-root: 'docker/{name}'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'docker/{name}/.*'
+        pattern: '{docker-root}/.*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
