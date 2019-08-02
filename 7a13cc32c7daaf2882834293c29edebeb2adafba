@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "53f85a06_5db4e14e",
+        "filename": "jjb/it-dep/it-dep.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-08-02T15:31:37Z",
+      "side": 1,
+      "message": "Jessica, a question for the expert: could this be written as \u0027{docker-root}/.*\u0027 to avoid duplication?",
+      "range": {
+        "startLine": 67,
+        "startChar": 18,
+        "endLine": 67,
+        "endChar": 44
+      },
+      "revId": "7a13cc32c7daaf2882834293c29edebeb2adafba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0057c05_37736924",
+        "filename": "jjb/it-dep/it-dep.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-08-02T15:31:37Z",
+      "side": 1,
+      "message": "Jessica, similar question here.",
+      "range": {
+        "startLine": 85,
+        "startChar": 18,
+        "endLine": 85,
+        "endChar": 49
+      },
+      "revId": "7a13cc32c7daaf2882834293c29edebeb2adafba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
