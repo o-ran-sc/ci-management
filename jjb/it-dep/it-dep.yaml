@@ -23,6 +23,8 @@
     container-public-registry: nexus3.o-ran-sc.org:10001
     # push to the staging repo bcos all builds are RCs
     container-push-registry: nexus3.o-ran-sc.org:10004
+    # maven settings file has docker credentials
+    mvn-settings: it-dep-settings
     # use host network to clone from our gerrit
     docker-build-args: '--network=host'
     # source of docker tag
@@ -45,8 +47,42 @@
     docker-build-args: -f ci/Dockerfile
     # any tag will do
     container-tag-method: latest
-    # maven settings file has docker credentials
-    mvn-settings: it-dep-settings
     jobs:
       - gerrit-docker-verify
+    <<: *it_dep_common
+
+- project:
+    name: it-dep-secret
+    # git repo
+    project: it/dep
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    # root of docker build
+    docker-root: ric-infra/25-tiller/docker
+    # build only on relevant changes
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ric-infra/25-tiller/docker/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    <<: *it_dep_common
+
+- project:
+    name: it-dep-init
+    # git repo
+    project: it/dep
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    # root of docker build
+    docker-root: ric-common/Initcontainer/docker
+    # maven settings file has docker credentials
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ric-common/Initcontainer/docker/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
     <<: *it_dep_common
