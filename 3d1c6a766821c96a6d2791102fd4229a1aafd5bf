@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "deeefcd1_d2ad3c32",
+        "filename": "jjb/it-dep/it-dep.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-08-02T09:36:56Z",
+      "side": 1,
+      "message": "this seems a little misleading",
+      "range": {
+        "startLine": 62,
+        "startChar": 6,
+        "endLine": 62,
+        "endChar": 49
+      },
+      "revId": "3d1c6a766821c96a6d2791102fd4229a1aafd5bf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad9f7228_18d43394",
+        "filename": "jjb/it-dep/it-dep.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-08-02T09:36:56Z",
+      "side": 1,
+      "message": "you can remove this entirely, \".\" is assumed",
+      "range": {
+        "startLine": 64,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 38
+      },
+      "revId": "3d1c6a766821c96a6d2791102fd4229a1aafd5bf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0d45a20_f7711125",
+        "filename": "jjb/it-dep/it-dep.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-08-02T09:36:56Z",
+      "side": 1,
+      "message": "Tag file is expected to be in docker-root, only need this if it\u0027s somewhere else.  I suggest just removing entirely.",
+      "range": {
+        "startLine": 66,
+        "startChar": 4,
+        "endLine": 67,
+        "endChar": 54
+      },
+      "revId": "3d1c6a766821c96a6d2791102fd4229a1aafd5bf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5556cd5d_9e02a283",
+        "filename": "jjb/it-dep/it-dep.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-08-02T09:36:56Z",
+      "side": 1,
+      "message": "see above",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 86,
+        "endChar": 49
+      },
+      "revId": "3d1c6a766821c96a6d2791102fd4229a1aafd5bf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9e0f5b0_8a75c070",
+        "filename": "jjb/it-dep/it-dep.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-08-02T09:36:56Z",
+      "side": 1,
+      "message": "see above",
+      "range": {
+        "startLine": 88,
+        "startChar": 4,
+        "endLine": 89,
+        "endChar": 38
+      },
+      "revId": "3d1c6a766821c96a6d2791102fd4229a1aafd5bf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2d206998_e09b74ed",
+        "filename": "jjb/it-dep/it-dep.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-08-02T09:36:56Z",
+      "side": 1,
+      "message": "see above",
+      "range": {
+        "startLine": 90,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 59
+      },
+      "revId": "3d1c6a766821c96a6d2791102fd4229a1aafd5bf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
