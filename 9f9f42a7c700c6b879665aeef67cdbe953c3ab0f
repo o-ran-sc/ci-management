@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d77e3df0_50434cb2",
+        "filename": "jjb/oran-jjb/oran-docker-ci-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2019-08-02T20:23:56Z",
+      "side": 1,
+      "message": "Pls add license header.",
+      "revId": "9f9f42a7c700c6b879665aeef67cdbe953c3ab0f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "749a41e9_6fed5e3e",
+        "filename": "jjb/oran-jjb/shell/packagecloud-push.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2019-08-02T20:23:56Z",
+      "side": 1,
+      "message": "pls check license header",
+      "revId": "9f9f42a7c700c6b879665aeef67cdbe953c3ab0f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
