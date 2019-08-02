@@ -1,0 +1,187 @@
+---
+#   Copyright (c) 2019 AT&T Intellectual Property.
+#   Copyright (c) 2019 Nokia.
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+
+# Macros and templates for using Docker as the CI system.
+# The merge template calls builders to build in docker,
+# export files, then push to PackageCloud.
+# The docker image is discarded, not pushed to a registry.
+# Uses builders defined in, and mirrors the structure of,
+# global-jjb resource jjb/lf-docker-jobs.yaml
+
+- builder:
+    name: oran-packagecloud-file-provider
+    builders:
+      - config-file-provider:
+          files:
+            - file-id: ".packagecloud"
+              target: "$HOME/.packagecloud"
+      - config-file-provider:
+          files:
+            - file-id: "packagecloud_api"
+              target: "$HOME/packagecloud_api"
+
+# This shell script launches the container, which copies
+# build products to a mounted volume.  Script needs vars
+# CONTAINER_PUSH_REGISTRY, DOCKER_NAME and DOCKER_IMAGE_TAG
+# as set by lf-docker-get-container-tag and lf-docker-build.
+- builder:
+    name: oran-docker-build-export
+    builders:
+      - shell: !include-raw-escape:
+          - shell/export-packages.sh
+
+- builder:
+    # {packagecloud-account} is PackageCloud account ID; example: oran
+    # {packagecloud-repo} is PackageCloud repository; example: master, staging
+    # {debian-distribution-versions} is list of DEB package distro/version strings
+    #    separated by space; example: ubuntu/bionic debian/stretch
+    # {rpm-distribution-versions} is list of RPM package distro/version strings
+    #    separated by space; example: el/4 el/5
+    name: oran-packagecloud-push
+    builders:
+      - inject:
+          properties-content: |
+            PACKAGECLOUD_ACCOUNT={packagecloud-account}
+            PACKAGECLOUD_REPO={packagecloud-repo}
+            DEBIAN_DISTRIBUTION_VERSIONS={debian-distribution-versions}
+            RPM_DISTRIBUTION_VERSIONS={rpm-distribution-versions}
+      - shell: !include-raw-escape:
+          - shell/packagecloud-push.sh
+
+# Different name, same content as lf_docker_common
+- oran_docker_common: &oran_docker_common
+    name: oran-docker-ci-common
+
+    project-type: freestyle
+    node: "{build-node}"
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 60
+    submodule-disable: false
+    submodule-recursive: true
+    submodule-timeout: 10
+    pre_docker_build_script: "# pre docker build script goes here"
+    post_docker_build_script: "# post docker build script goes here"
+    disable-job: "false"
+    docker-root: "$WORKSPACE"
+    docker-build-args: ""
+    git-url: "$GIT_URL/$PROJECT"
+    # TODO: how to interpolate value of {docker-root} parameter?
+    container-tag-yaml-dir: ""
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: "{disable-job}"
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+
+    parameters:
+      - lf-infra-parameters:
+          branch: "{branch}"
+          project: "{project}"
+          refspec: "refs/heads/{branch}"
+          stream: "{stream}"
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    publishers:
+      - lf-infra-publish
+
+- oran_docker_ci_pc_merge_common: &oran_docker_ci_pc_merge_common
+    name: oran-docker-ci-pc-merge-common
+    cron: ""
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-disable: "{submodule-disable}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          choosing-strategy: gerrit
+
+    gerrit_merge_triggers:
+      - change-merged-event
+      - comment-added-contains-event:
+          comment-contains-value: remerge$
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: ".*"
+
+    builders:
+      - lf-infra-pre-build
+      - config-file-provider:
+          files:
+            - file-id: ".packagecloud"
+              target: "$HOME/.packagecloud"
+      - lf-infra-docker-login:
+          global-settings-file: "global-settings"
+          settings-file: "{mvn-settings}"
+      - shell: "{pre_docker_build_script}"
+      - lf-docker-get-container-tag:
+          container-tag-method: "{container-tag-method}"
+          container-tag-yaml-dir: "{container-tag-yaml-dir}"
+          docker-root: "{docker-root}"
+      - lf-docker-build:
+          docker-build-args: "{docker-build-args}"
+          docker-name: "{docker-name}"
+          docker-root: "{docker-root}"
+          container-public-registry: "{container-public-registry}"
+          container-push-registry: "{container-push-registry}"
+      - shell: "{post_docker_build_script}"
+      - oran-docker-build-export
+      - oran-packagecloud-push:
+          packagecloud-account: "{packagecloud-account}"
+          packagecloud-repo: "{packagecloud-repo}"
+          debian-distribution-versions: "{debian-distribution-versions}"
+          rpm-distribution-versions: "{rpm-distribution-versions}"
+      - lf-provide-maven-settings-cleanup
+
+- job-template:
+    name: "{project-name}-docker-ci-pc-merge-{stream}"
+    id: oran-gerrit-docker-ci-pc-merge
+
+    <<: *oran_docker_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *oran_docker_ci_pc_merge_common
+
+    triggers:
+      - timed: "{obj:cron}"
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_merge_triggers}"
+          projects:
+            - project-compare-type: ANT
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
