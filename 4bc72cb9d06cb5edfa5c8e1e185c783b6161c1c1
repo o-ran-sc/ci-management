@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d82cef54_e442c260",
+        "filename": "jjb/it-dep/it-dep.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-08-02T14:54:23Z",
+      "side": 1,
+      "message": "pls remove, this is the default",
+      "range": {
+        "startLine": 64,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 36
+      },
+      "revId": "4bc72cb9d06cb5edfa5c8e1e185c783b6161c1c1",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b2e4e82_6d24eebf",
+        "filename": "jjb/it-dep/it-dep.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-08-02T14:54:23Z",
+      "side": 1,
+      "message": "pls remove, this is the default",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 87,
+        "endChar": 36
+      },
+      "revId": "4bc72cb9d06cb5edfa5c8e1e185c783b6161c1c1",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
