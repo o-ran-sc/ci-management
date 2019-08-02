@@ -69,6 +69,24 @@
       "revId": "9f9f42a7c700c6b879665aeef67cdbe953c3ab0f",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "13272178_b25f1f23",
+        "filename": "jjb/oran-jjb/shell/packagecloud-push.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2019-08-02T21:46:13Z",
+      "side": 1,
+      "message": "Modified EPL code needs to be under EPL.  This is the right thing to do.  I was not very sure if we could include EPL code inside of our Apache2 project.  Seems all right after reading some of the materials.  +1 for now.  We will deal with it if LF objects or any of the licensing scan picks this up.",
+      "parentUuid": "ca10987e_84eb7cfe",
+      "revId": "9f9f42a7c700c6b879665aeef67cdbe953c3ab0f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
