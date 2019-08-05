@@ -5,45 +5,36 @@
     views:
       - project-view
 
-- a1_docker_common: &a1_docker_common
-    # values apply to all RIC docker-build projects.
-    # factored out in case a1 needs multiple projects.
-    # use a specific name to prevent reuse attempts
-    # bcos anchors don't cross document boundaries.
-    name: a1-docker-common
-    build-node: ubuntu1804-docker-4c-4g
-    # pull from the public mirror + releases registry
-    container-public-registry: nexus3.o-ran-sc.org:10001
-    # push to the staging repo bcos all builds are RCs
-    container-push-registry: nexus3.o-ran-sc.org:10004
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
-    # source of docker tag
-    container-tag-method: yaml-file
-    stream:
-      - master:
-          branch: master
-
-- project:
-    name: ric-plt-a1
-    # git repo
-    project: ric-plt/a1
-    # jenkins job name prefix
-    project-name: '{name}'
-    # image name
-    docker-name: '{name}'
-    # maven settings file has docker credentials
-    mvn-settings: ric-plt-a1-settings
-    jobs:
-      - gerrit-python-xc-clm
-      - '{project-name}-gerrit-docker-jobs'
-    <<: *a1_docker_common
-
 - project:
     name: ric-plt-a1-info
     project: ric-plt/a1
     project-name: ric-plt-a1
     build-node: centos7-builder-1c-1g
-
     jobs:
       - gerrit-info-yaml-verify
+
+- a1_docker_common: &a1_docker_common
+    # values apply to all A1 docker projects
+    name: a1-docker-common
+    # git repo
+    project: ric-plt/a1
+    # jenkins job name prefix
+    project-name: ric-plt-a1
+    # maven settings file has docker credentials
+    mvn-settings: ric-plt-a1-settings
+
+- project:
+    <<: *a1_docker_common
+    name: ric-plt-a1
+    # image name
+    docker-name: '{name}'
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    jobs:
+      - gerrit-python-xc-clm
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master

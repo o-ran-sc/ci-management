@@ -5,44 +5,35 @@
     views:
       - project-view
 
-- submgr_docker_common: &submgr_docker_common
-    # values apply to all RIC docker-build projects.
-    # factored out in case this needs multiple projects.
-    # use a specific name to prevent reuse attempts
-    # bcos anchors don't cross document boundaries.
-    name: submgr-docker-common
-    build-node: ubuntu1804-docker-4c-4g
-    # pull from the public mirror + releases registry
-    container-public-registry: nexus3.o-ran-sc.org:10001
-    # push to the staging repo bcos all builds are RCs
-    container-push-registry: nexus3.o-ran-sc.org:10004
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
-    # source of docker tag
-    container-tag-method: yaml-file
-    stream:
-      - master:
-          branch: master
-
-- project:
-    name: ric-plt-submgr
-    # git repo
-    project: ric-plt/submgr
-    # jenkins job name prefix
-    project-name: '{name}'
-    # image name
-    docker-name: '{name}'
-    # maven settings file has docker credentials
-    mvn-settings: ric-plt-submgr-settings
-    jobs:
-      - '{project-name}-gerrit-docker-jobs'
-    <<: *submgr_docker_common
-
 - project:
     name: ric-plt-submgr-info
     project: ric-plt/submgr
     project-name: ric-plt-submgr
     build-node: centos7-builder-1c-1g
-
     jobs:
       - gerrit-info-yaml-verify
+
+- submgr_docker_common: &submgr_docker_common
+    # values apply to all submgr docker projects
+    name: submgr-docker-common
+    # git repo
+    project: ric-plt/submgr
+    # jenkins job name prefix
+    project-name: ric-plt-submgr
+    # maven settings file has docker credentials
+    mvn-settings: ric-plt-submgr-settings
+
+- project:
+    <<: *submgr_docker_common
+    name: ric-plt-submgr
+    # image name
+    docker-name: '{name}'
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
