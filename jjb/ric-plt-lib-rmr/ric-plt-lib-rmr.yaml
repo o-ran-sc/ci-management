@@ -5,45 +5,36 @@
     views:
       - project-view
 
-- rmr_docker_common: &rmr_docker_common
-    # values apply to all RIC docker-build projects.
-    # factored out in case rmr needs multiple projects.
-    # use a specific name to prevent reuse attempts
-    # because anchors don't cross document boundaries.
-    name: rmr-docker-common
-    build-node: ubuntu1804-docker-4c-4g
-    # pull from the public mirror + releases registry
-    container-public-registry: nexus3.o-ran-sc.org:10001
-    # push to the staging repo because all builds are RCs
-    container-push-registry: nexus3.o-ran-sc.org:10004
-    stream:
-      - master:
-          branch: master
-
-- project:
-    name: ric-plt-lib-rmr
-    # git repo
-    project: ric-plt/lib/rmr
-    # jenkins job name prefix
-    project-name: '{name}'
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host -f ci/Dockerfile'
-    # image name
-    docker-name: '{name}'
-    # image tag; use a fixed value
-    container-tag-method: latest
-    # maven settings file has docker credentials
-    mvn-settings: ric-plt-lib-rmr-settings
-    jobs:
-      - gerrit-docker-verify
-      - oran-gerrit-docker-ci-pc-merge
-    <<: *rmr_docker_common
-
 - project:
     name: ric-plt-lib-rmr-info
     project: ric-plt/lib/rmr
     project-name: ric-plt-lib-rmr
     build-node: centos7-builder-1c-1g
-
     jobs:
       - gerrit-info-yaml-verify
+
+- rmr_docker_common: &rmr_docker_common
+    # values apply to all RMR docker projects
+    name: rmr-docker-common
+    # git repo
+    project: ric-plt/lib/rmr
+    # jenkins job name prefix
+    project-name: ric-plt-lib-rmr
+    # maven settings file has docker credentials
+    mvn-settings: ric-plt-lib-rmr-settings
+
+- project:
+    name: ric-plt-lib-rmr
+    # image name
+    docker-name: '{name}'
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host -f ci/Dockerfile'
+    # image tag; use a fixed value
+    container-tag-method: latest
+    jobs:
+      - gerrit-docker-verify
+      - oran-gerrit-docker-ci-pc-merge
+    stream:
+      - master:
+          branch: master
+    <<: *rmr_docker_common

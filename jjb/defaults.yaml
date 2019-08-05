@@ -11,14 +11,19 @@
 
     archive-artifacts: ''
 
+    # most jobs invoke docker
+    build-node: ubuntu1804-docker-4c-4g
+
     # Nexus3 docker registries
     container-public-registry: nexus3.o-ran-sc.org:10001
     container-snapshot-registry: nexus3.o-ran-sc.org:10003
     container-staging-registry: nexus3.o-ran-sc.org:10004
+    # templates use the push registry key;
+    # counter-intuitively, the quotes here are REQUIRED
+    container-push-registry: '{container-staging-registry}'
 
-    # Default java version
-    java-version: openjdk8
-
+    # Don't define default java version here,
+    # it will not be used by lf-maven-jobs.
     # Default maven version
     mvn-version: mvn35
     # Default maven goals

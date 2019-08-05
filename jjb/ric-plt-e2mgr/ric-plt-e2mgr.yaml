@@ -5,46 +5,37 @@
     views:
       - project-view
 
-- e2mgr_docker_common: &e2mgr_docker_common
-    # values apply to all RIC docker-build projects.
-    # factored out in case this needs multiple projects.
-    # use a specific name to prevent reuse attempts
-    # bcos anchors don't cross document boundaries.
-    name: e2mgr-docker-common
-    build-node: ubuntu1804-docker-4c-4g
-    # pull from the public mirror + releases registry
-    container-public-registry: nexus3.o-ran-sc.org:10001
-    # push to the staging repo bcos all builds are RCs
-    container-push-registry: nexus3.o-ran-sc.org:10004
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
-    # source of docker tag
-    container-tag-method: yaml-file
-    stream:
-      - master:
-          branch: master
-
-- project:
-    name: ric-plt-e2mgr
-    # git repo
-    project: ric-plt/e2mgr
-    # jenkins job name prefix
-    project-name: '{name}'
-    # image name
-    docker-name: '{name}'
-    # maven settings file has docker credentials
-    mvn-settings: ric-plt-e2mgr-settings
-    # Dockerfile is in a subdir
-    docker-root: E2Manager
-    jobs:
-      - '{project-name}-gerrit-docker-jobs'
-    <<: *e2mgr_docker_common
-
 - project:
     name: ric-plt-e2mgr-info
     project: ric-plt/e2mgr
     project-name: ric-plt-e2mgr
     build-node: centos7-builder-1c-1g
-
     jobs:
       - gerrit-info-yaml-verify
+
+- e2mgr_docker_common: &e2mgr_docker_common
+    # values apply to all E2MGR docker projects
+    name: e2mgr-docker-common
+    # git repo
+    project: ric-plt/e2mgr
+    # jenkins job name prefix
+    project-name: ric-plt-e2mgr
+    # maven settings file has docker credentials
+    mvn-settings: ric-plt-e2mgr-settings
+
+- project:
+    name: ric-plt-e2mgr
+    # image name
+    docker-name: '{name}'
+    # Dockerfile is in a subdir
+    docker-root: E2Manager
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+    <<: *e2mgr_docker_common
