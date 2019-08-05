@@ -14,27 +14,25 @@
       - gerrit-info-yaml-verify
 
 - it_test_common: &it_test_common
-    # values apply to all RIC docker-build projects.
-    # use a specific name to prevent reuse attempts
-    # bcos anchors don't cross document boundaries.
+    # values apply to all it/test docker projects
     name: it-test-docker-common
-    build-node: ubuntu1804-docker-4c-4g
-    # pull from the public mirror + releases registry
-    container-public-registry: nexus3.o-ran-sc.org:10001
-    # push to the staging repo bcos all builds are RCs
-    container-push-registry: nexus3.o-ran-sc.org:10004
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    # git repo
+    project: it/test
     # source of docker tag
     container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # maven settings file has docker credentials
+    mvn-settings: it-test-settings
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
     stream:
       - master:
           branch: master
 
 - project:
+    <<: *it_test_common
     name: it-test-nanobot
-    # git repo
-    project: it/test
     # jenkins job name prefix
     project-name: '{name}'
     # image name
@@ -45,20 +43,14 @@
     docker-build-args: -f docker/nanobot/Dockerfile
     # tag file is in subdir
     container-tag-yaml-dir: ric_robot_suite/docker/nanobot
-    # maven settings file has docker credentials
-    mvn-settings: it-test-settings
     # build only on relevant changes
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'ric_robot_suite/.*'
-    jobs:
-      - '{project-name}-gerrit-docker-jobs'
-    <<: *it_test_common
+        pattern: '{docker-root}/.*'
 
 - project:
+    <<: *it_test_common
     name: it-test-ric-robot
-    # git repo
-    project: it/test
     # jenkins job name prefix
     project-name: '{name}'
     # image name
@@ -69,12 +61,7 @@
     docker-build-args: -f docker/ric-robot/Dockerfile
     # tag file is in subdir
     container-tag-yaml-dir: ric_robot_suite/docker/ric-robot
-    # maven settings file has docker credentials
-    mvn-settings: it-test-settings
     # build only on relevant changes
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'ric_robot_suite/.*'
-    jobs:
-      - '{project-name}-gerrit-docker-jobs'
-    <<: *it_test_common
+        pattern: '{docker-root}/.*'

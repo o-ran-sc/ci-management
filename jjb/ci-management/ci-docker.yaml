@@ -4,18 +4,16 @@
     name: ci-docker-common
     # git repo
     project: ci-management
-    build-node: ubuntu1804-docker-4c-4g
-    container-public-registry: nexus3.o-ran-sc.org:10001
-    # use the staging repo bcos all builds are RCs
-    container-push-registry: nexus3.o-ran-sc.org:10004
+    # maven settings file has docker credentials
+    mvn-settings: ci-management-settings
+    # build every Saturday
+    cron: 'H H * * 6'
     # use host network to clone from our gerrit
     docker-build-args: '--network=host'
     # default to YAML
     container-tag-method: yaml-file
-    # build every Saturday
-    cron: 'H H * * 6'
-    # maven settings file has docker credentials
-    mvn-settings: ci-management-settings
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
     stream:
       - master:
           branch: master
@@ -41,8 +39,6 @@
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'docker/{name}/.*'
-    jobs:
-      - '{project-name}-gerrit-docker-jobs'
 
 - project:
     <<: *ci_docker_common
@@ -53,8 +49,6 @@
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'docker/{name}/.*'
-    jobs:
-      - '{project-name}-gerrit-docker-jobs'
 
 - project:
     <<: *ci_docker_common
@@ -65,5 +59,3 @@
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'docker/{name}/.*'
-    jobs:
-      - '{project-name}-gerrit-docker-jobs'

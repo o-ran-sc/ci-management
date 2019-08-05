@@ -1,19 +1,23 @@
 # Continuous Integration for O-RAN SC at LF
 
-This repo contains configuration files for Jenkins jobs for the O-RAN
-SC project.
+This repo contains configuration files for Jenkins jobs for the
+O-RAN SC project.
 
-## Custom JJB templates for Docker Java projects
+## Defaults.yaml
 
-Custom JJB templates are defined for projects that use Maven to
-compile Java code and build a Docker image.  These projects should use
-the following jobs in the project.yaml file::
+To avoid repetition, many required configuration parameter values
+are defined in the defaults.yaml file.
+
+## Custom JJB templates for Docker CI PackageCloud projects
+
+Custom JJB templates are defined for projects that use Docker to
+compile code and build DEB/RPM packages, then push the packages to
+PackageCloud.io.  These projects should use the following jobs in
+their respective project.yaml file::
 
     jobs:
-      - gerrit-maven-docker-verify
-      - gerrit-maven-docker-merge
-      - gerrit-maven-docker-stage
-
+      - gerrit-docker-verify
+      - oran-gerrit-docker-ci-pc-merge
 
 ## Testing the templates
 

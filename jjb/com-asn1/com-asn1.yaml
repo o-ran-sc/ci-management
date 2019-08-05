@@ -5,45 +5,36 @@
     views:
       - project-view
 
-- asn1_docker_common: &asn1_docker_common
-    # values apply to all RIC docker-build projects.
-    # factored out in case this needs multiple projects.
-    # use a specific name to prevent reuse attempts
-    # bcos anchors don't cross document boundaries.
-    name: asn1-docker-common
-    build-node: ubuntu1804-docker-4c-4g
-    # pull from the public mirror + releases registry
-    container-public-registry: nexus3.o-ran-sc.org:10001
-    # push to the staging repo bcos all builds are RCs
-    container-push-registry: nexus3.o-ran-sc.org:10004
-    stream:
-      - master:
-          branch: master
-
-- project:
-    name: com-asn1
-    # git repo
-    project: com/asn1
-    # jenkins job name prefix
-    project-name: '{name}'
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host -f ci/Dockerfile'
-    # image name
-    docker-name: '{name}'
-    # image tag, use a fixed value
-    container-tag-method: latest
-    # maven settings file has docker credentials
-    mvn-settings: com-asn1-settings
-    jobs:
-      # verify only; no merge bcos no image is pushed
-      - gerrit-docker-verify
-    <<: *asn1_docker_common
-
 - project:
     name: com-asn1-info
     project: com/asn1
     project-name: com-asn1
     build-node: centos7-builder-1c-1g
-
     jobs:
       - gerrit-info-yaml-verify
+
+- asn1_docker_common: &asn1_docker_common
+    # values for ASN1 docker projects
+    name: asn1-docker-common
+    # git repo
+    project: com/asn1
+    # jenkins job name prefix
+    project-name: com-asn1
+    # maven settings file has docker credentials
+    mvn-settings: com-asn1-settings
+
+- project:
+    <<: *asn1_docker_common
+    name: com-asn1
+    # image name
+    docker-name: '{name}'
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host -f ci/Dockerfile'
+    # image tag, use a fixed value
+    container-tag-method: latest
+    jobs:
+      # verify only; no merge bcos no image is pushed
+      - gerrit-docker-verify
+    stream:
+      - master:
+          branch: master
