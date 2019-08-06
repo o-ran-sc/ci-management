@@ -28,7 +28,7 @@
     docker-root: 'docker/{name}'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '{docker-root}/.*'
+        pattern: 'docker/{name}/.*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
 
@@ -40,7 +40,7 @@
     docker-root: 'docker/{name}'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '{docker-root}/.*'
+        pattern: 'docker/{name}/.*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
 
@@ -52,7 +52,7 @@
     docker-root: 'docker/{name}'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '{docker-root}/.*'
+        pattern: 'docker/{name}/.*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
 
@@ -64,6 +64,6 @@
     docker-root: 'docker/{name}'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '{docker-root}/.*'
+        pattern: 'docker/{name}/.*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
