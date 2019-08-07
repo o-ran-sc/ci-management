@@ -24,9 +24,11 @@
 # mdc log library (libmdclog.so, libmdbclog.so.X.X.X; see below for pinned version)
 # rmr library (librmr_nng.so, libmdclog.so..X.X.X; see below for pinned version)
 # How to get a library file from this Docker base image:
-# COPY --from=nexus3.o-ran-sc.org:10004/bldr-alpine3:1-a3.9 /usr/local/lib64/libnng.so.X.X.X /usr/local/lib64
+# COPY --from=nexus3.o-ran-sc.org:10004/bldr-alpine3:1-a3.9 /usr/local/lib64/libnng.so.X.X.X /usr/local/lib
+# COPY --from=nexus3.o-ran-sc.org:10004/bldr-alpine3:1-a3.9 /usr/local/lib64/librmr_nng.so.X.X.X /usr/local/lib
 # COPY --from=nexus3.o-ran-sc.org:10004/bldr-alpine3:1-a3.9 /usr/local/lib/libmdclog.so.X.X.X /usr/local/lib
-# COPY --from=nexus3.o-ran-sc.org:10004/bldr-alpine3:1-a3.9 /usr/local/lib/librmr_nng.so.X.X.X /usr/local/lib
+# Some packages install to /usr/local/lib, others to /usr/local/lib64
+# Alpine by default searches /usr/local/lib but not /usr/local/lib64
 
 FROM python:3.7-alpine
 RUN apk update && apk add \
@@ -69,7 +71,7 @@ RUN cd /tmp \
 
 # RMR, version is pinned
 RUN cd /tmp \
-    && git clone --branch 1.0.36 https://gerrit.o-ran-sc.org/r/ric-plt/lib/rmr \
+    && git clone --branch 1.0.45 https://gerrit.o-ran-sc.org/r/ric-plt/lib/rmr \
     && cd rmr \
     && mkdir build \
     && cd build \
