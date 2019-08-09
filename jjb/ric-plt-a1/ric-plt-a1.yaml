@@ -51,3 +51,14 @@
     docker-build-args: '-f Dockerfile-Unit-Test'
     jobs:
       - gerrit-docker-verify
+
+- project:
+    <<: *a1_docker_common
+    name: ric-plt-a1-sonar
+    branch: master
+    sonarcloud: true
+    sonarcloud-project-key: o-ran-sc_ric-plt-a1
+    sonarcloud-project-organization: o-ran-sc
+    sonarcloud-api-token: d9e23c28dc39b6d7531d2ecabf122ce84e6253ef
+    jobs:
+      - gerrit-tox-sonar
