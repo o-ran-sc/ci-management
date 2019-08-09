@@ -38,3 +38,15 @@
     stream:
       - master:
           branch: master
+
+# runs unit tests on verify only
+- project:
+    <<: *a1_docker_common
+    name: ric-plt-a1-test
+    # image name, but is never pushed
+    docker-name: '{name}'
+    # source of docker tag
+    container-tag-method: latest
+    docker-build-args: '-f Dockerfile-Unit-Test'
+    jobs:
+      - gerrit-docker-verify
