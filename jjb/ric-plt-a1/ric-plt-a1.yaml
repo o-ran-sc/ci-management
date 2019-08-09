@@ -22,6 +22,9 @@
     project-name: ric-plt-a1
     # maven settings file has docker credentials
     mvn-settings: ric-plt-a1-settings
+    stream:
+      - master:
+          branch: master
 
 - project:
     <<: *a1_docker_common
@@ -35,6 +38,16 @@
     jobs:
       - gerrit-python-xc-clm
       - '{project-name}-gerrit-docker-jobs'
-    stream:
-      - master:
-          branch: master
+
+# runs unit tests on verify only
+- project:
+    <<: *a1_docker_common
+    name: ric-plt-a1-test
+    project-name: ric-plt-a1-test
+    # image name, but is never pushed
+    docker-name: '{name}'
+    # source of docker tag
+    container-tag-method: latest
+    docker-build-args: '-f Dockerfile-Unit-Test'
+    jobs:
+      - gerrit-docker-verify
