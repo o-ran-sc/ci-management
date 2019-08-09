@@ -34,6 +34,7 @@
     docker-build-args: '--network=host'
     jobs:
       - gerrit-python-xc-clm
+      - gerrit-tox-sonar
       - '{project-name}-gerrit-docker-jobs'
     stream:
       - master:
