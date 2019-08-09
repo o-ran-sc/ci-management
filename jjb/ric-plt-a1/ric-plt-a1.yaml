@@ -22,9 +22,6 @@
     project-name: ric-plt-a1
     # maven settings file has docker credentials
     mvn-settings: ric-plt-a1-settings
-    stream:
-      - master:
-          branch: master
 
 - project:
     <<: *a1_docker_common
@@ -35,6 +32,9 @@
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
     docker-build-args: '--network=host'
+    stream:
+      - master:
+          branch: master
     jobs:
       - gerrit-python-xc-clm
       - '{project-name}-gerrit-docker-jobs'
@@ -49,5 +49,19 @@
     # source of docker tag
     container-tag-method: latest
     docker-build-args: '-f Dockerfile-Unit-Test'
+    stream:
+      - master:
+          branch: master
     jobs:
       - gerrit-docker-verify
+
+- project:
+    <<: *a1_docker_common
+    name: ric-plt-a1-sonar
+    branch: master
+    sonarcloud: true
+    sonarcloud-project-key: o-ran-sc_ric-plt-a1
+    sonarcloud-project-organization: o-ran-sc
+    sonarcloud-api-token: d9e23c28dc39b6d7531d2ecabf122ce84e6253ef
+    jobs:
+      - gerrit-tox-sonar
