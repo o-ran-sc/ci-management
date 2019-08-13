@@ -16,6 +16,24 @@
       "revId": "49cef07c62cbe24c13c2d0e0087d506a65c1fcee",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "43d90fcf_45e5008d",
+        "filename": "jenkins-config/clouds/openstack/cattle/ubuntu1804-docker-4c-4g.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-08-13T17:53:46Z",
+      "side": 1,
+      "message": "So you prefer files with no newline at the end?  That drives me NUTS.  But ok ok you win.",
+      "parentUuid": "a0973e2c_dfd79a9e",
+      "revId": "49cef07c62cbe24c13c2d0e0087d506a65c1fcee",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
