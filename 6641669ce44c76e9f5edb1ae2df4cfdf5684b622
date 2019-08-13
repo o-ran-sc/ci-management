@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1c2e162a_aff3443d",
+        "filename": "jenkins-config/clouds/openstack/cattle/ubuntu1804-docker-4c-4g.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2019-08-13T16:14:40Z",
+      "side": 1,
+      "message": "This node is meant to be a docker node.. I believe people will be confused if the node name and label are docker but the image is builder.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 30
+      },
+      "revId": "6641669ce44c76e9f5edb1ae2df4cfdf5684b622",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    }
+  ]
+}
