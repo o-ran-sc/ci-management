@@ -71,7 +71,7 @@ RUN cd /tmp \
 
 # RMR, version is pinned
 RUN cd /tmp \
-    && git clone --branch 1.1.0 https://gerrit.o-ran-sc.org/r/ric-plt/lib/rmr \
+    && git clone --branch 1.2.0 https://gerrit.o-ran-sc.org/r/ric-plt/lib/rmr \
     && cd rmr \
     && mkdir build \
     && cd build \
