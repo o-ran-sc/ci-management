@@ -1,0 +1,39 @@
+---
+- project:
+    name: ric-plt-vespamgr-project-view
+    project-name: ric-plt-vespamgr
+    views:
+      - project-view
+
+- project:
+    name: ric-plt-vespamgr-info
+    project: ric-plt/vespamgr
+    project-name: ric-plt-vespamgr
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- vespamgr_docker_common: &vespamgr_docker_common
+    # values apply to all vespamgr docker projects
+    name: vespamgr-docker-common
+    # git repo
+    project: ric-plt/vespamgr
+    # jenkins job name prefix
+    project-name: ric-plt-vespamgr
+    # maven settings file has docker credentials
+    mvn-settings: ric-plt-vespamgr-settings
+
+- project:
+    <<: *vespamgr_docker_common
+    name: ric-plt-vespamgr
+    # image name
+    docker-name: '{name}'
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use host network
+    docker-build-args: '--network=host'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
