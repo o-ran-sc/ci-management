@@ -1,0 +1,40 @@
+---
+- project:
+    name: ric-plt-tracelibgo-project-view
+    project-name: ric-plt-tracelibgo
+    views:
+      - project-view
+
+- project:
+    name: ric-plt-tracelibgo-info
+    project: ric-plt/tracelibgo
+    project-name: ric-plt-tracelibgo
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- tracelibgo_docker_common: &tracelibgo_docker_common
+    # values apply to all tracelibgo docker projects
+    name: tracelibgo-docker-common
+    # git repo
+    project: ric-plt/tracelibgo
+    # jenkins job name prefix
+    project-name: ric-plt-tracelibgo
+    # maven settings file has docker credentials
+    mvn-settings: ric-plt-tracelibgo-settings
+
+- project:
+    <<: *tracelibgo_docker_common
+    name: ric-plt-tracelibgo
+    # image name, altho it is never pushed
+    docker-name: '{name}'
+    # use host network
+    docker-build-args: '--network=host -f ci/Dockerfile'
+    # image tag; use a fixed value
+    container-tag-method: latest
+    jobs:
+      - gerrit-docker-verify
+      - oran-gerrit-docker-ci-pc-merge
+    stream:
+      - master:
+          branch: master
