@@ -1,1 +1,2 @@
-../common-packer/provision/local-docker.yaml
+---
+- import_playbook: ../common-packer/provision/docker.yaml
