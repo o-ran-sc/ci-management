@@ -1,1 +1,11 @@
-../common-packer/provision/local-docker.yaml
+---
+- import_playbook: ../common-packer/provision/docker.yaml
+
+  tasks:
+    - name: 'Install rake gem'
+      command: 'gem install rake'
+      become: true
+
+    - name: 'Install PackageCloud'
+      command: 'gem install package_cloud'
+      become: true
