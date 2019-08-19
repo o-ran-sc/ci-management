@@ -3,6 +3,7 @@
 This repo contains configuration files for Jenkins jobs for the
 O-RAN SC project.
 
+
 ## Defaults.yaml
 
 To avoid repetition, many required configuration parameter values
