@@ -38,3 +38,22 @@
     stream:
       - master:
           branch: master
+
+# runs unit tests on verify only
+- project:
+    <<: *rmr_docker_common
+    name: ric-plt-lib-rmr-test
+    project-name: ric-plt-lib-rmr-test
+    # image name, but is never pushed
+    docker-name: '{name}'
+    # source of docker tag
+    container-tag-method: latest
+    # subdirectory
+    docker-root: src/bindings/rmr-python
+    # Dockerfile
+    docker-build-args: '-f Dockerfile-Unit-Test'
+    stream:
+      - master:
+          branch: master
+    jobs:
+      - gerrit-docker-verify
