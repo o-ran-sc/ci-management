@@ -48,7 +48,7 @@
     docker-name: '{name}'
     # source of docker tag
     container-tag-method: latest
-    docker-build-args: '-f Dockerfile-Unit-Test'
+    docker-build-args: '--network=host -f Dockerfile-Unit-Test'
     build-timeout: 10
     stream:
       - master:
