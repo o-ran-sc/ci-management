@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d1c5e004_2ee75f00",
+        "filename": "jjb/oam/oam-info.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-08-23T18:09:29Z",
+      "side": 1,
+      "message": "the convention here up to now has been, one file per subdirectory, and named the same as the parent directory.  So if I may, I suggest just \"oam.info\" and I expect it will grow over time.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 3
+      },
+      "revId": "ba74454986ddb4fecd26dc7bef2156b4d44064b4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
