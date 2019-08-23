@@ -30,7 +30,7 @@
     docker-name: '{name}'
     # source of docker tag
     container-tag-method: yaml-file
-    # use host network to clone from our gerrit
+    # use host network to get outside
     docker-build-args: '--network=host'
     stream:
       - master:
@@ -46,9 +46,10 @@
     project-name: ric-plt-a1-test
     # image name, but is never pushed
     docker-name: '{name}'
+    # use host network to get outside
+    docker-build-args: '--network=host -f Dockerfile-Unit-Test'
     # source of docker tag
     container-tag-method: latest
-    docker-build-args: '-f Dockerfile-Unit-Test'
     build-timeout: 10
     stream:
       - master:
