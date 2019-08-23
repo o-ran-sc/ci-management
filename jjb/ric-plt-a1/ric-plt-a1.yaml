@@ -49,6 +49,7 @@
     # source of docker tag
     container-tag-method: latest
     docker-build-args: '-f Dockerfile-Unit-Test'
+    build-timeout: 10
     stream:
       - master:
           branch: master
