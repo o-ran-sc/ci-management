@@ -42,7 +42,7 @@
     javadoc-path: org.o-ran-sc.$PROJECT/$STREAM
 
     # Config for PackageCloud.IO archive of DEB/RPM packages
-    packagecloud-account: oran
+    packagecloud-account: o-ran-sc
     packagecloud-repo: staging
     debian-distribution-versions: debian/stretch
     rpm-distribution-versions: el/5
