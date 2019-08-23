@@ -1,0 +1,8 @@
+---
+- project:
+    name: oam-info
+    project-name: oam
+    jobs:
+      - gerrit-info-yaml-verify
+    project: oam
+    branch: master
