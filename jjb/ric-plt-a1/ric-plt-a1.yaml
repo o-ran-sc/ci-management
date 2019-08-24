@@ -48,7 +48,8 @@
     docker-name: '{name}'
     # source of docker tag
     container-tag-method: latest
-    docker-build-args: '-f Dockerfile-Unit-Test'
+    # running without network = host led to repeated and numerous timeouts.
+    docker-build-args: '--network=host -f Dockerfile-Unit-Test'
     build-timeout: 10
     stream:
       - master:
