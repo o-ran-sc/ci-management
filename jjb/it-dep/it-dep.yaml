@@ -52,7 +52,7 @@
     # image name
     docker-name: '{name}'
     # root of docker build
-    docker-root: ric-infra/25-tiller/docker
+    docker-root: ric-infra/45-Tiller/docker
     # build only on relevant changes
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
