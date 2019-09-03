@@ -28,7 +28,7 @@
     name: ric-plt-lib-rmr
     # image name
     docker-name: '{name}'
-    # use host network to clone from our gerrit
+    # use host network to use network resources
     docker-build-args: '--network=host -f ci/Dockerfile'
     # image tag; use a fixed value
     container-tag-method: latest
@@ -50,8 +50,8 @@
     container-tag-method: latest
     # subdirectory
     docker-root: src/bindings/rmr-python
-    # Dockerfile
-    docker-build-args: '-f Dockerfile-Unit-Test'
+    # use host network to use network resources
+    docker-build-args: '--network=host -f Dockerfile-Unit-Test'
     stream:
       - master:
           branch: master
