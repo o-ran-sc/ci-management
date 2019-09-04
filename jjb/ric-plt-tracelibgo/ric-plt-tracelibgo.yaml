@@ -23,6 +23,7 @@
     # maven settings file has docker credentials
     mvn-settings: ric-plt-tracelibgo-settings
 
+# runs unit tests on verify only
 - project:
     <<: *tracelibgo_docker_common
     name: ric-plt-tracelibgo
@@ -34,7 +35,6 @@
     container-tag-method: latest
     jobs:
       - gerrit-docker-verify
-      - oran-gerrit-docker-ci-pc-merge
     stream:
       - master:
           branch: master
