@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1e86ce1a_4934a66d",
+        "filename": "jjb/oam/oam.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2019-09-05T18:33:49Z",
+      "side": 1,
+      "message": "We might want to add the branch parameter\nbranch: master",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 10
+      },
+      "revId": "36e0ee7b625b6f8dfb928f946268811caadb93fe",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    }
+  ]
+}
