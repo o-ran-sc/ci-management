@@ -1,0 +1,13 @@
+---
+- project:
+    name: oam-project-view
+    project-name: oam
+    views:
+      - project-view
+
+- project:
+    name: oam-info
+    project: oam
+    project-name: oam
+    jobs:
+      - gerrit-info-yaml-verify
