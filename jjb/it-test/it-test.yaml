@@ -40,7 +40,7 @@
     # start in parent directory with shared files
     docker-root: ric_robot_suite
     # dockerfile is in subdir of docker root
-    docker-build-args: -f docker/nanobot/Dockerfile
+    docker-build-args: '--network=host -f docker/nanobot/Dockerfile'
     # tag file is in subdir
     container-tag-yaml-dir: ric_robot_suite/docker/nanobot
     # build only on relevant changes
@@ -58,7 +58,7 @@
     # start in parent directory with shared files
     docker-root: ric_robot_suite
     # dockerfile is in subdir of docker root
-    docker-build-args: -f docker/ric-robot/Dockerfile
+    docker-build-args: '--network=host -f docker/ric-robot/Dockerfile'
     # tag file is in subdir
     container-tag-yaml-dir: ric_robot_suite/docker/ric-robot
     # build only on relevant changes
