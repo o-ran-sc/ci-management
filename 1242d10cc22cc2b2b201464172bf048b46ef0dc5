@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d748316d_00b64bb1",
+        "filename": "jjb/ric-plt-a1/ric-plt-a1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-09-12T20:18:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fd8549a_9486a105",
+      "range": {
+        "startLine": 37,
+        "startChar": 22,
+        "endLine": 37,
+        "endChar": 41
+      },
+      "revId": "1242d10cc22cc2b2b201464172bf048b46ef0dc5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "50c1f57c_3edb5cf3",
         "filename": "jjb/ric-plt-a1/ric-plt-a1.yaml",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "1242d10cc22cc2b2b201464172bf048b46ef0dc5",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7843b200_21a6d90d",
+        "filename": "jjb/ric-plt-a1/ric-plt-a1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-09-12T20:18:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50c1f57c_3edb5cf3",
+      "range": {
+        "startLine": 55,
+        "startChar": 22,
+        "endLine": 55,
+        "endChar": 41
+      },
+      "revId": "1242d10cc22cc2b2b201464172bf048b46ef0dc5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
