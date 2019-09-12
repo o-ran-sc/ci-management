@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "43a1deff_16df4e2e",
+        "filename": "jjb/ric-plt-a1/ric-plt-a1.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000074
+      },
+      "writtenOn": "2019-09-12T19:36:46Z",
+      "side": 1,
+      "message": "can you please add a comment about build-node as a breadcrumb for others",
+      "revId": "48ac6d1c08102d8885dd67bd5e1daec6b0caa643",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf678918_ecd6bf6a",
+        "filename": "jjb/shell/install-deb-nng-rmr.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000074
+      },
+      "writtenOn": "2019-09-12T19:36:46Z",
+      "side": 1,
+      "message": "blank",
+      "revId": "48ac6d1c08102d8885dd67bd5e1daec6b0caa643",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
