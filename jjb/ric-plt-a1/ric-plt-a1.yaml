@@ -32,35 +32,26 @@
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
     docker-build-args: '--network=host'
+    build-node: ubuntu1804-docker-4c-4g
+    pre-build-script: !include-raw-escape:
+      - ../shell/install-deb-nng-rmr.sh
+    python-version: python3
     stream:
       - master:
           branch: master
     jobs:
-      - gerrit-python-xc-clm
+      - gerrit-tox-verify
       - '{project-name}-gerrit-docker-jobs'
-
-# runs unit tests on verify only
-- project:
-    <<: *a1_docker_common
-    name: ric-plt-a1-test
-    project-name: ric-plt-a1-test
-    # image name, but is never pushed
-    docker-name: '{name}'
-    # source of docker tag
-    container-tag-method: latest
-    # running without network = host led to repeated and numerous timeouts.
-    docker-build-args: '--network=host -f Dockerfile-Unit-Test'
-    build-timeout: 10
-    stream:
-      - master:
-          branch: master
-    jobs:
-      - gerrit-docker-verify
+      - gerrit-python-xc-clm
 
 - project:
     <<: *a1_docker_common
     name: ric-plt-a1-sonar
     branch: master
+    python-version: python3
+    build-node: ubuntu1804-docker-4c-4g
+    pre-build-script: !include-raw-escape:
+      - ../shell/install-deb-nng-rmr.sh
     sonarcloud: true
     sonarcloud-project-key: o-ran-sc_ric-plt-a1
     sonarcloud-project-organization: o-ran-sc
