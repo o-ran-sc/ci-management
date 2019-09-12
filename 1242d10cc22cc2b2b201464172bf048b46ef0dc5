@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fd8549a_9486a105",
+        "filename": "jjb/ric-plt-a1/ric-plt-a1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-09-12T20:12:30Z",
+      "side": 1,
+      "message": "This should probably be !include-raw not !include-raw-escape\n\nUsing !include-raw-escape tells JJB to parse for an {var} strings and replace them, not having them defined will net you unexpected $ scattered throughout your script instead of the intended variable calls.",
+      "range": {
+        "startLine": 37,
+        "startChar": 22,
+        "endLine": 37,
+        "endChar": 41
+      },
+      "revId": "1242d10cc22cc2b2b201464172bf048b46ef0dc5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50c1f57c_3edb5cf3",
+        "filename": "jjb/ric-plt-a1/ric-plt-a1.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-09-12T20:12:30Z",
+      "side": 1,
+      "message": "This should probably be !include-raw not !include-raw-escape\n\nUsing !include-raw-escape tells JJB to parse for an {var} strings and replace them, not having them defined will net you unexpected $ scattered throughout your script instead of the intended variable calls.",
+      "range": {
+        "startLine": 55,
+        "startChar": 22,
+        "endLine": 55,
+        "endChar": 41
+      },
+      "revId": "1242d10cc22cc2b2b201464172bf048b46ef0dc5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
