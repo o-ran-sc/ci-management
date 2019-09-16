@@ -13,9 +13,9 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- a1_docker_common: &a1_docker_common
-    # values apply to all A1 docker projects
-    name: a1-docker-common
+- a1_common: &a1_common
+    # values apply to all A1 projects
+    name: a1-common
     # git repo
     project: ric-plt/a1
     # jenkins job name prefix
@@ -24,14 +24,24 @@
     mvn-settings: ric-plt-a1-settings
 
 - project:
-    <<: *a1_docker_common
+    <<: *a1_common
     name: ric-plt-a1
     # image name
     docker-name: '{name}'
     # source of docker tag
     container-tag-method: yaml-file
-    # use host network to clone from our gerrit
+    # use host network
     docker-build-args: '--network=host'
+    build-node: ubuntu1804-docker-4c-4g
+    stream:
+      - master:
+          branch: master
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+
+- project:
+    <<: *a1_common
+    name: ric-plt-a1-verify
     # the install script assumes an ubuntu image
     build-node: ubuntu1804-builder-2c-2g
     pre-build-script: !include-raw-escape:
@@ -42,11 +52,10 @@
           branch: master
     jobs:
       - gerrit-tox-verify
-      - '{project-name}-gerrit-docker-jobs'
       - gerrit-python-xc-clm
 
 - project:
-    <<: *a1_docker_common
+    <<: *a1_common
     name: ric-plt-a1-sonar
     branch: master
     python-version: python3
