@@ -1,0 +1,21 @@
+---
+- project:
+    name: doc-project-view
+    project-name: doc
+    views:
+      - project-view
+
+- project:
+    name: doc-info
+    project: doc
+    project-name: doc
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- project:
+    name: docs-python
+    project: "docs"
+    project-name: "docs"
+    jobs:
+      - gerrit-tox-verify
