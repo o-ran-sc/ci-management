@@ -16,16 +16,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Installs NNG from source and RMR from PackageCloud on Ubuntu
+# Installs NNG from source and RMR from PackageCloud on CentOS
 
-echo "---> install-deb-nng-rmr.sh"
+echo "---> install-rpm-nng-rmr.sh"
 
 set -eu
 
 echo "Install packages"
-sudo apt-get update
-sudo apt-get install -y \
-    cmake \
+sudo yum install -y \
+    cmake3 \
     ninja-build
 
 echo "Clone and build NNG"
@@ -33,12 +32,12 @@ git clone --branch v1.1.1 https://github.com/nanomsg/nng.git
 (cd nng \
     && mkdir build \
     && cd build \
-    && cmake -DBUILD_SHARED_LIBS=1 -G Ninja .. \
-    && ninja \
-    && sudo ninja install)
+    && cmake3 -DBUILD_SHARED_LIBS=1 -G Ninja .. \
+    && ninja-build \
+    && sudo ninja-build install)
 
-ver="1.4.0"
+ver="1.4.0-1"
 echo "Download RMR library ${ver}"
-wget --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/debian/stretch/rmr_${ver}_amd64.deb/download.deb
+wget --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/el/5/rmr-${ver}.x86_64.rpm/download.rpm
 echo "Install RMR library ${ver}"
-sudo dpkg -i rmr_${ver}_amd64.deb
+sudo rpm -vi rmr-${ver}.x86_64.rpm
