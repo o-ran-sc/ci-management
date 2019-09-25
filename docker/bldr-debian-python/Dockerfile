@@ -35,8 +35,9 @@ RUN wget -nv https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja
     && chmod +x ninja \
     && mv ninja /usr/local/bin
 
-RUN git clone --branch v1.1.1 https://github.com/nanomsg/nng.git \
+RUN git clone https://github.com/nanomsg/nng.git \
     && cd nng \
+    && git checkout e618abf8f3db2a94269a79c8901a51148d48fcc2 \
     && mkdir build \
     && cd build \
     && cmake -DBUILD_SHARED_LIBS=1 -G Ninja .. \

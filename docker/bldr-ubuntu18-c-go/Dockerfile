@@ -20,7 +20,7 @@
 # Cmake 3.14.5 from binary distro to /usr/local/bin
 # Golang 1.12 from binary distro to /usr/local/go
 # Ninja 1.9 from binary distro to /usr/local/bin
-# Nanomsg Next Gen v1.1.1 from source distro
+# Nanomsg Next Gen (e618abf8f3db2a94269a79c8901a51148d48fcc2) from source distro
 # Boost 1.69 from source distro
 
 FROM nexus3.o-ran-sc.org:10001/ubuntu:18.04
@@ -64,8 +64,9 @@ RUN wget -nv https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja
     && chmod +x ninja \
     && mv ninja /usr/local/bin
 
-RUN git clone --branch v1.1.1 https://github.com/nanomsg/nng.git \
+RUN git clone https://github.com/nanomsg/nng.git \
     && cd nng \
+    && git checkout e618abf8f3db2a94269a79c8901a51148d48fcc2 \
     && mkdir build \
     && cd build \
     && cmake -DBUILD_SHARED_LIBS=1 -G Ninja .. \

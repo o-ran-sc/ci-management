@@ -52,8 +52,9 @@ RUN cd /tmp \
 
 # NNG, version is pinned
 RUN cd /tmp \
-    && git clone --branch v1.1.1 https://github.com/nanomsg/nng.git \
+    && git clone https://github.com/nanomsg/nng.git \
     && cd nng \
+    && git checkout e618abf8f3db2a94269a79c8901a51148d48fcc2 \
     && mkdir build \
     && cd build \
     && cmake -DBUILD_SHARED_LIBS=1 -G Ninja .. \
