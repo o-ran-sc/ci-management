@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f95e2d7_06adb3b6",
+        "filename": "docker/bldr-alpine3/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-09-25T19:53:48Z",
+      "side": 1,
+      "message": "perhaps a comment, or a link, or something, ANYTHING, to remind people WHY it\u0027s pinned, why it\u0027s pinned to a SHA code instead of a tag, etc?",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 1
+      },
+      "revId": "ab770d534dc148b530122ec495ab7a5d7b258289",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f01b1092_d1e7796d",
+        "filename": "docker/bldr-ubuntu16-c-go/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-09-25T19:53:48Z",
+      "side": 1,
+      "message": "Keep this up to date is impossible.  I note I didn\u0027t add it to the debian-python Dockerfile.  Should we just flush it entirely?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 1
+      },
+      "revId": "ab770d534dc148b530122ec495ab7a5d7b258289",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
