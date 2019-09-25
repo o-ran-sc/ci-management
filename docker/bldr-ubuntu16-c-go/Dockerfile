@@ -15,13 +15,6 @@
 # limitations under the License.
 
 # Builder image with superset of CI tools for RIC components
-# Uses Ubuntu 16.04 base then adds:
-# Standard apt packages including gcc and g++ 5.4
-# Cmake 3.14.5 from binary distro to /usr/local/bin
-# Golang 1.12 from binary distro to /usr/local/go
-# Ninja 1.9 from binary distro to /usr/local/bin
-# Nanomsg Next Gen v1.1.1 from source distro
-# Boost 1.69 from source distro
 
 FROM nexus3.o-ran-sc.org:10001/ubuntu:16.04
 
@@ -64,8 +57,12 @@ RUN wget -nv https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja
     && chmod +x ninja \
     && mv ninja /usr/local/bin
 
-RUN git clone --branch v1.1.1 https://github.com/nanomsg/nng.git \
+# NNG repo is not frequently tagged so it's pinned to a commit hash. 
+# This commit provides fix to the proxy-reconnect
+# bug that we identified:  https://github.com/nanomsg/nng/issues/970
+RUN git clone https://github.com/nanomsg/nng.git \
     && cd nng \
+    && git checkout e618abf8f3db2a94269a79c8901a51148d48fcc2 \
     && mkdir build \
     && cd build \
     && cmake -DBUILD_SHARED_LIBS=1 -G Ninja .. \
