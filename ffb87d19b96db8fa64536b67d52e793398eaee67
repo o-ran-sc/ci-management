@@ -22,6 +22,30 @@
       "revId": "ffb87d19b96db8fa64536b67d52e793398eaee67",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b052188_5837bf6d",
+        "filename": "docker/bldr-alpine3/Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2019-09-25T21:13:37Z",
+      "side": 1,
+      "message": "Will do.   One of my biggest gripes (specifically with python programmers, but it probably isn\u0027t limited to their community) is the complete anal-retentive nature with trailing whitespace.  I don\u0027t buy the \u0027wastes space on the disk\u0027 argument because if that were the case then they should trash every CTL-M that precedes a newline when they edit in DOS/Windoz!  I don\u0027t know who first thought it was a crime, but it seems that a programmer\u0027s time is better spent doing things other than sweeping up the crumbs :)        End rant, and given that it serves to prevent a -1 for such a thing I\u0027ll adjust.     On a related note.... .md files must drive them buggy given that trailing white space is an indicator, but don\u0027t get me started about using white space to carry meaning!!",
+      "parentUuid": "d44ea233_169c8773",
+      "range": {
+        "startLine": 53,
+        "startChar": 68,
+        "endLine": 53,
+        "endChar": 69
+      },
+      "revId": "ffb87d19b96db8fa64536b67d52e793398eaee67",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
