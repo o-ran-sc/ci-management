@@ -1,4 +1,4 @@
 # Not feasible to show all the software versions
 # here so just use a counter plus the base image
 ---
-tag: 1-u16.04-nng1.1.1
+tag: 2-u16.04-nng1.1.1
