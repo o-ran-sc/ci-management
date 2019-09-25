@@ -50,10 +50,13 @@ RUN cd /tmp \
     && cp /tmp/autoconf-archive/m4/* /usr/share/aclocal \
     && rm -rf /tmp/autoconf-archive
 
-# NNG, version is pinned
+# NNG repo is not frequently tagged so it's pinned to a commit hash.
+# This commit provides fix to the proxy-reconnect
+# bug that we identified:  https://github.com/nanomsg/nng/issues/970
 RUN cd /tmp \
-    && git clone --branch v1.1.1 https://github.com/nanomsg/nng.git \
+    && git clone https://github.com/nanomsg/nng.git \
     && cd nng \
+    && git checkout e618abf8f3db2a94269a79c8901a51148d48fcc2 \
     && mkdir build \
     && cd build \
     && cmake -DBUILD_SHARED_LIBS=1 -G Ninja .. \
