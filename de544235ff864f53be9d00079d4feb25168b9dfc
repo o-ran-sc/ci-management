@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "cb4d3723_c4eb409f",
+        "filename": "docker/bldr-debian-python/container-tag.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2019-09-26T13:36:00Z",
+      "side": 1,
+      "message": "Ok, pushed changes which just uses -nng on all tags.",
+      "parentUuid": "b8c93803_5710d398",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 4
+      },
+      "revId": "de544235ff864f53be9d00079d4feb25168b9dfc",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "869c695b_31a9ecd0",
         "filename": "docker/bldr-ubuntu16-c-go/container-tag.yaml",
         "patchSetId": 5
