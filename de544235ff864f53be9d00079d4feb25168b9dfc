@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b8c93803_5710d398",
+        "filename": "docker/bldr-debian-python/container-tag.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2019-09-26T13:11:57Z",
+      "side": 1,
+      "message": "Trying to think of something \u0027useful\u0027, but nothing easily identifies the NNG commit used. I think we should drop the version and just keep the nng so that from a docker image list it\u0027s obvious that the image is built with an nng library.  I don\u0027t think we change nng enough to worry about the exact version from the outside. \n\nFrom that perspective, I\u0027d also suggest adding nng to the alpine tag. \n\nComments/thoughts on that?",
+      "parentUuid": "c8bb20d3_5f6f6dfc",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 4
+      },
+      "revId": "de544235ff864f53be9d00079d4feb25168b9dfc",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "869c695b_31a9ecd0",
         "filename": "docker/bldr-ubuntu16-c-go/container-tag.yaml",
         "patchSetId": 5
