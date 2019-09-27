@@ -13,25 +13,25 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- rmr_docker_common: &rmr_docker_common
-    # values apply to all RMR docker projects
-    name: rmr-docker-common
+- rmr_common: &rmr_common
+    name: rmr-common
     # git repo
     project: ric-plt/lib/rmr
     # jenkins job name prefix
     project-name: ric-plt-lib-rmr
-    # maven settings file has docker credentials
+    # maven settings file has credentials
     mvn-settings: ric-plt-lib-rmr-settings
 
+# build and publish packages to PackageCloud.io
 - project:
-    <<: *rmr_docker_common
+    <<: *rmr_common
     name: ric-plt-lib-rmr
+    # image is not pushed, use trivial tag
+    container-tag-method: latest
     # image name
     docker-name: '{name}'
-    # use host network to use network resources
+    # use host network for network resources
     docker-build-args: '--network=host -f ci/Dockerfile'
-    # image tag; use a fixed value
-    container-tag-method: latest
     jobs:
       - gerrit-docker-verify
       - oran-gerrit-docker-ci-pc-merge
@@ -39,21 +39,19 @@
       - master:
           branch: master
 
-# runs tox tests on verify only
+# build and publish distributions to PyPI
 - project:
-    <<: *rmr_docker_common
-    name: ric-plt-lib-rmr-python-test
+    <<: *rmr_common
+    name: ric-plt-lib-rmr-python
     project-name: '{name}'
-    # image name, but is never pushed
-    docker-name: '{name}'
-    # source of docker tag
-    container-tag-method: latest
+    # sigul requires centos
+    build-node: centos7-builder-1c-1g
+    # install prereqs
+    pre-build-script: !include-raw-escape: ../shell/install-rpm-nng-rmr.sh
     # subdirectory
-    docker-root: src/bindings/rmr-python
-    # use host network to use network resources
-    docker-build-args: '--network=host -f Dockerfile-Unit-Test'
+    tox-dir: src/bindings/rmr-python
     stream:
       - master:
           branch: master
     jobs:
-      - gerrit-docker-verify
+      - '{project-name}-gerrit-pypi-jobs'
