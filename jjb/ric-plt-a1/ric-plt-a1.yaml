@@ -44,8 +44,7 @@
     name: ric-plt-a1-verify
     # the install script assumes an ubuntu image
     build-node: ubuntu1804-builder-2c-2g
-    pre-build-script: !include-raw-escape:
-      - ../shell/install-deb-nng-rmr.sh
+    pre-build-script: !include-raw-escape: ../shell/install-debian-nng-rmr.sh
     python-version: python3
     stream:
       - master:
@@ -61,8 +60,7 @@
     python-version: python3
     # the install script assumes an ubuntu image
     build-node: ubuntu1804-builder-2c-2g
-    pre-build-script: !include-raw-escape:
-      - ../shell/install-deb-nng-rmr.sh
+    pre-build-script: !include-raw-escape: ../shell/install-debian-nng-rmr.sh
     sonarcloud: true
     sonarcloud-project-key: o-ran-sc_ric-plt-a1
     sonarcloud-project-organization: o-ran-sc

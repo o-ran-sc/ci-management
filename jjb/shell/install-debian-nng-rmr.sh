@@ -16,10 +16,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Installs NNG from source and RMR from PackageCloud on Ubuntu18.04
-# Reads RMR version number from repo file rmr-version.yaml
+# Debian install script for NNG and RMR from source 
+# Reads RMR branch name from repo file rmr-version.yaml
+# in directory $TOX_DIR
 
-echo "---> install-deb-nng-rmr.sh"
+echo "---> install-debian-nng-rmr.sh"
 
 set -eu
 
@@ -35,35 +36,24 @@ cd "$WORKSPACE/$TOX_DIR"
 version_file=rmr-version.yaml
 if [[ -f $version_file ]]; then
     # pipeline is less elegant than yq but that requires venv and pip install
-    ver=$(grep "^version:" "$version_file" | cut -d: -f2 | xargs )
+    branch=$(grep "^branch:" "$version_file" | cut -d: -f2 | xargs )
 else
     echo "File $version_file not found."
     exit 1
 fi
-if [[ -z $ver ]]; then
-    echo "Failed to get RMR version string from file $version_file"
+if [[ -z $branch ]]; then
+    echo "Failed to get RMR branch from file $version_file"
     exit 1
 else
-    echo "RMR version string is ${ver}"
+    echo "RMR branch is ${branch}"
 fi
 
-# NNG repo is not frequently tagged so it's pinned to a commit hash.
-# This commit provides fix to the proxy-reconnect
-# bug that we identified:  https://github.com/nanomsg/nng/issues/970
-echo "Clone and build NNG"
-git clone https://github.com/nanomsg/nng.git
-(cd nng \
-    && git checkout e618abf8f3db2a94269a79c8901a51148d48fcc2 \
+cd /tmp
+git clone --branch ${branch} https://gerrit.o-ran-sc.org/r/ric-plt/lib/rmr \
+    && cd rmr \
     && mkdir build \
     && cd build \
-    && cmake -DBUILD_SHARED_LIBS=1 -G Ninja .. \
-    && ninja \
-    && sudo ninja install)
+    && cmake .. -DPACK_EXTERNALS=1 \
+    && sudo make install
 
-deb="rmr_${ver}_amd64.deb"
-echo "Download RMR library ${ver} as file ${deb}"
-wget --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/debian/stretch/${deb}/download.deb
-echo "Install RMR library file ${deb}"
-sudo dpkg -i ${deb}
-
-echo "---> install-deb-nng-rmr.sh ends"
+echo "---> install-debian-nng-rmr.sh ends"

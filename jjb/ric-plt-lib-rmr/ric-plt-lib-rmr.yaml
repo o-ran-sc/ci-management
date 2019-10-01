@@ -51,7 +51,7 @@
     # sigul requires centos
     build-node: centos7-builder-1c-1g
     # install prereqs
-    pre-build-script: !include-raw-escape: ../shell/install-rpm-nng-rmr.sh
+    pre-build-script: !include-raw-escape: ../shell/install-centos-nng-rmr.sh
     # bindings live in a subdirectory
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -61,4 +61,23 @@
       - master:
           branch: master
     jobs:
-      - '{project-name}-gerrit-pypi-jobs'
+      - gerrit-pypi-verify
+      - gerrit-pypi-merge
+
+# Temporary workaround to avoid overriding 
+# gerrit_trigger_file_paths on release jobs
+- project:
+    <<: *rmr_common
+    name: ric-plt-lib-rmr-python-workaround
+    project-name: ric-plt-lib-rmr-python
+    # sigul requires centos
+    build-node: centos7-builder-1c-1g
+    # install prereqs
+    pre-build-script: !include-raw-escape: ../shell/install-centos-nng-rmr.sh
+    tox-dir: src/bindings/rmr-python
+    stream:
+      - master:
+          branch: master
+    jobs:
+      - gerrit-pypi-release-verify
+      - gerrit-pypi-release-merge
