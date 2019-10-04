@@ -33,6 +33,7 @@
       - gerrit-maven-docker-verify
       - gerrit-maven-docker-merge
       - gerrit-maven-docker-stage
+      - "{project-name}-rtd-jobs"
     stream:
       - master:
           branch: master
