@@ -1,0 +1,8 @@
+---
+- project:
+    name: sim-e2-interface-info
+    project: sim/e2-interface
+    project-name: sim-e2-interface
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify

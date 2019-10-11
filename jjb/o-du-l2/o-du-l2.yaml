@@ -9,7 +9,7 @@
     name: o-du-l2-info
     project: o-du/l2
     project-name: o-du-l2
-    branch: master
+    build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
 

@@ -5,6 +5,14 @@
     views:
       - project-view
 
+- project:
+    name: ric-plt-sdlpy-info
+    project: ric-plt/sdlpy
+    project-name: ric-plt-sdlpy
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
 - sdlpy_common: &sdlpy_common
     name: sdlpy-common
     # git repo
@@ -15,13 +23,6 @@
     mvn-settings: ric-plt-sdlpy-settings
     # release job requires centos
     build-node: centos7-builder-1c-1g
-
-# committer management
-- project:
-    name: ric-plt-sdlpy-info
-    <<: *sdlpy_common
-    jobs:
-      - gerrit-info-yaml-verify
 
 # verify distribution and publish to test.pypi.org
 - project:
