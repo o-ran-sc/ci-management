@@ -1,8 +1,0 @@
----
-- project:
-    name: ric-plt-ric-dep-info
-    project-name: ric-plt-ric-dep
-    jobs:
-      - gerrit-info-yaml-verify
-    project: ric-plt/ric-dep
-    branch: master

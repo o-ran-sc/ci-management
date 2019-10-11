@@ -9,7 +9,7 @@
     name: scp-ocu-openlte-info
     project: scp/ocu/openlte
     project-name: scp-ocu-openlte
-    branch: master
+    build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
 

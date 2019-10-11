@@ -1,8 +1,0 @@
----
-- project:
-    name: ric-plt-demo1-info
-    project-name: ric-plt-demo1
-    jobs:
-      - gerrit-info-yaml-verify
-    project: ric-plt/demo1
-    branch: master
