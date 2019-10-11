@@ -1,0 +1,10 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Xiaohua Zhang <xiaohua.zhang@windriver.com>
+Code-Review+1: Chris Lott <cl778h@att.com>
+Code-Review+1: Lusheng Ji <lji@research.att.com>
+Code-Review+2: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Fri, 11 Oct 2019 16:02:23 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/1138
+Project: ci-management
+Branch: refs/heads/master
