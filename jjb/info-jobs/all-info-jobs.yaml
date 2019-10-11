@@ -1,0 +1,554 @@
+---
+- project:
+    name: aal-lib-info
+    project-name: aal-lib
+    jobs:
+      - gerrit-info-yaml-verify
+    project: aal/lib
+    branch: master
+- project:
+    name: aal-logic-info
+    project-name: aal-logic
+    jobs:
+      - gerrit-info-yaml-verify
+    project: aal/logic
+    branch: master
+- project:
+    name: aal-mgmt-info
+    project-name: aal-mgmt
+    jobs:
+      - gerrit-info-yaml-verify
+    project: aal/mgmt
+    branch: master
+- project:
+    name: aal-virt-info
+    project-name: aal-virt
+    jobs:
+      - gerrit-info-yaml-verify
+    project: aal/virt
+    branch: master
+- project:
+    name: ci-management-info
+    project-name: ci-management
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ci-management
+    branch: master
+- project:
+    name: com-asn1-info
+    project-name: com-asn1
+    jobs:
+      - gerrit-info-yaml-verify
+    project: com/asn1
+    branch: master
+- project:
+    name: com-asn1c-info
+    project-name: com-asn1c
+    jobs:
+      - gerrit-info-yaml-verify
+    project: com/asn1c
+    branch: master
+- project:
+    name: com-golog-info
+    project-name: com-golog
+    jobs:
+      - gerrit-info-yaml-verify
+    project: com/golog
+    branch: master
+- project:
+    name: com-gs-lite-info
+    project-name: com-gs-lite
+    jobs:
+      - gerrit-info-yaml-verify
+    project: com/gs-lite
+    branch: master
+- project:
+    name: com-log-info
+    project-name: com-log
+    jobs:
+      - gerrit-info-yaml-verify
+    project: com/log
+    branch: master
+- project:
+    name: com-pylog-info
+    project-name: com-pylog
+    jobs:
+      - gerrit-info-yaml-verify
+    project: com/pylog
+    branch: master
+- project:
+    name: com-sctp-info
+    project-name: com-sctp
+    jobs:
+      - gerrit-info-yaml-verify
+    project: com/sctp
+    branch: master
+- project:
+    name: doc-info
+    project-name: doc
+    jobs:
+      - gerrit-info-yaml-verify
+    project: doc
+    branch: master
+- project:
+    name: gnb-int-build-info
+    project-name: gnb-int-build
+    jobs:
+      - gerrit-info-yaml-verify
+    project: gnb-int/build
+    branch: master
+- project:
+    name: gnb-int-common-info
+    project-name: gnb-int-common
+    jobs:
+      - gerrit-info-yaml-verify
+    project: gnb-int/common
+    branch: master
+- project:
+    name: gnb-int-src-info
+    project-name: gnb-int-src
+    jobs:
+      - gerrit-info-yaml-verify
+    project: gnb-int/src
+    branch: master
+- project:
+    name: imp-fm-info
+    project-name: imp-fm
+    jobs:
+      - gerrit-info-yaml-verify
+    project: imp/fm
+    branch: master
+- project:
+    name: imp-metal-info
+    project-name: imp-metal
+    jobs:
+      - gerrit-info-yaml-verify
+    project: imp/metal
+    branch: master
+- project:
+    name: imp-metal-api-info
+    project-name: imp-metal-api
+    jobs:
+      - gerrit-info-yaml-verify
+    project: imp/metal-api
+    branch: master
+- project:
+    name: it-dep-info
+    project-name: it-dep
+    jobs:
+      - gerrit-info-yaml-verify
+    project: it/dep
+    branch: master
+- project:
+    name: it-dev-info
+    project-name: it-dev
+    jobs:
+      - gerrit-info-yaml-verify
+    project: it/dev
+    branch: master
+- project:
+    name: it-int-info
+    project-name: it-int
+    jobs:
+      - gerrit-info-yaml-verify
+    project: it/int
+    branch: master
+- project:
+    name: it-otf-info
+    project-name: it-otf
+    jobs:
+      - gerrit-info-yaml-verify
+    project: it/otf
+    branch: master
+- project:
+    name: it-test-info
+    project-name: it-test
+    jobs:
+      - gerrit-info-yaml-verify
+    project: it/test
+    branch: master
+- project:
+    name: log-info
+    project-name: log
+    jobs:
+      - gerrit-info-yaml-verify
+    project: log
+    branch: master
+- project:
+    name: nonrtric-info
+    project-name: nonrtric
+    jobs:
+      - gerrit-info-yaml-verify
+    project: nonrtric
+    branch: master
+- project:
+    name: o-cu-e2-info
+    project-name: o-cu-e2
+    jobs:
+      - gerrit-info-yaml-verify
+    project: o-cu/e2
+    branch: master
+- project:
+    name: o-cu-sim-info
+    project-name: o-cu-sim
+    jobs:
+      - gerrit-info-yaml-verify
+    project: o-cu/sim
+    branch: master
+- project:
+    name: o-du-info
+    project-name: o-du
+    jobs:
+      - gerrit-info-yaml-verify
+    project: o-du
+    branch: master
+- project:
+    name: o-du-l2-info
+    project-name: o-du-l2
+    jobs:
+      - gerrit-info-yaml-verify
+    project: o-du/l2
+    branch: master
+- project:
+    name: o-du-phy-info
+    project-name: o-du-phy
+    jobs:
+      - gerrit-info-yaml-verify
+    project: o-du/phy
+    branch: master
+- project:
+    name: o-du-sim-info
+    project-name: o-du-sim
+    jobs:
+      - gerrit-info-yaml-verify
+    project: o-du/sim
+    branch: master
+- project:
+    name: o-ru-sim-info
+    project-name: o-ru-sim
+    jobs:
+      - gerrit-info-yaml-verify
+    project: o-ru/sim
+    branch: master
+- project:
+    name: oam-info
+    project-name: oam
+    jobs:
+      - gerrit-info-yaml-verify
+    project: oam
+    branch: master
+- project:
+    name: oran-osc.github.io-info
+    project-name: oran-osc.github.io
+    jobs:
+      - gerrit-info-yaml-verify
+    project: oran-osc.github.io
+    branch: master
+- project:
+    name: portal-ric-dashboard-info
+    project-name: portal-ric-dashboard
+    jobs:
+      - gerrit-info-yaml-verify
+    project: portal/ric-dashboard
+    branch: master
+- project:
+    name: pti-rtp-info
+    project-name: pti-rtp
+    jobs:
+      - gerrit-info-yaml-verify
+    project: pti/rtp
+    branch: master
+- project:
+    name: ric-app-admin-info
+    project-name: ric-app-admin
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-app/admin
+    branch: master
+- project:
+    name: ric-app-demo-info
+    project-name: ric-app-demo
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-app/demo
+    branch: master
+- project:
+    name: ric-app-kpimon-info
+    project-name: ric-app-kpimon
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-app/kpimon
+    branch: master
+- project:
+    name: ric-app-mc-info
+    project-name: ric-app-mc
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-app/mc
+    branch: master
+- project:
+    name: ric-app-ml-info
+    project-name: ric-app-ml
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-app/ml
+    branch: master
+- project:
+    name: ric-app-reporter-info
+    project-name: ric-app-reporter
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-app/reporter
+    branch: master
+- project:
+    name: ric-app-uemgr-info
+    project-name: ric-app-uemgr
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-app/uemgr
+    branch: master
+- project:
+    name: ric-nrt-a1-info
+    project-name: ric-nrt-a1
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-nrt/a1
+    branch: master
+- project:
+    name: ric-nrt-oam-info
+    project-name: ric-nrt-oam
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-nrt/oam
+    branch: master
+- project:
+    name: ric-plt-a1-info
+    project-name: ric-plt-a1
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/a1
+    branch: master
+- project:
+    name: ric-plt-appmgr-info
+    project-name: ric-plt-appmgr
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/appmgr
+    branch: master
+- project:
+    name: ric-plt-asn1-documents-info
+    project-name: ric-plt-asn1-documents
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/asn1-documents
+    branch: master
+- project:
+    name: ric-plt-dbaas-info
+    project-name: ric-plt-dbaas
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/dbaas
+    branch: master
+- project:
+    name: ric-plt-dbaas-hiredis-vip-info
+    project-name: ric-plt-dbaas-hiredis-vip
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/dbaas/hiredis-vip
+    branch: master
+- project:
+    name: ric-plt-e2-info
+    project-name: ric-plt-e2
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/e2
+    branch: master
+- project:
+    name: ric-plt-e2mgr-info
+    project-name: ric-plt-e2mgr
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/e2mgr
+    branch: master
+- project:
+    name: ric-plt-jaegeradapter-info
+    project-name: ric-plt-jaegeradapter
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/jaegeradapter
+    branch: master
+- project:
+    name: ric-plt-lib-rmr-info
+    project-name: ric-plt-lib-rmr
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/lib/rmr
+    branch: master
+- project:
+    name: ric-plt-nodeb-rnib-info
+    project-name: ric-plt-nodeb-rnib
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/nodeb-rnib
+    branch: master
+- project:
+    name: ric-plt-rtmgr-info
+    project-name: ric-plt-rtmgr
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/rtmgr
+    branch: master
+- project:
+    name: ric-plt-sdl-info
+    project-name: ric-plt-sdl
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/sdl
+    branch: master
+- project:
+    name: ric-plt-sdl-config-info
+    project-name: ric-plt-sdl-config
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/sdl/config
+    branch: master
+- project:
+    name: ric-plt-sdlgo-info
+    project-name: ric-plt-sdlgo
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/sdlgo
+    branch: master
+- project:
+    name: ric-plt-sdlpy-info
+    project-name: ric-plt-sdlpy
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/sdlpy
+    branch: master
+- project:
+    name: ric-plt-streaming-protobufs-info
+    project-name: ric-plt-streaming-protobufs
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/streaming-protobufs
+    branch: master
+- project:
+    name: ric-plt-submgr-info
+    project-name: ric-plt-submgr
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/submgr
+    branch: master
+- project:
+    name: ric-plt-tracelibcpp-info
+    project-name: ric-plt-tracelibcpp
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/tracelibcpp
+    branch: master
+- project:
+    name: ric-plt-tracelibgo-info
+    project-name: ric-plt-tracelibgo
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/tracelibgo
+    branch: master
+- project:
+    name: ric-plt-ue-nib-info
+    project-name: ric-plt-ue-nib
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/ue-nib
+    branch: master
+- project:
+    name: ric-plt-utils-info
+    project-name: ric-plt-utils
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/utils
+    branch: master
+- project:
+    name: ric-plt-vespamgr-info
+    project-name: ric-plt-vespamgr
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/vespamgr
+    branch: master
+- project:
+    name: ric-plt-xapp-frame-info
+    project-name: ric-plt-xapp-frame
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/xapp-frame
+    branch: master
+- project:
+    name: scp-oam-modeling-info
+    project-name: scp-oam-modeling
+    jobs:
+      - gerrit-info-yaml-verify
+    project: scp/oam/modeling
+    branch: master
+- project:
+    name: scp-ocu-openlte-info
+    project-name: scp-ocu-openlte
+    jobs:
+      - gerrit-info-yaml-verify
+    project: scp/ocu/openlte
+    branch: master
+- project:
+    name: sim-info
+    project-name: sim
+    jobs:
+      - gerrit-info-yaml-verify
+    project: sim
+    branch: master
+- project:
+    name: sim-a1-interface-info
+    project-name: sim-a1-interface
+    jobs:
+      - gerrit-info-yaml-verify
+    project: sim/a1-interface
+    branch: master
+- project:
+    name: sim-e1-interface-info
+    project-name: sim-e1-interface
+    jobs:
+      - gerrit-info-yaml-verify
+    project: sim/e1-interface
+    branch: master
+- project:
+    name: sim-e2-interface-info
+    project-name: sim-e2-interface
+    jobs:
+      - gerrit-info-yaml-verify
+    project: sim/e2-interface
+    branch: master
+- project:
+    name: sim-f1-interface-info
+    project-name: sim-f1-interface
+    jobs:
+      - gerrit-info-yaml-verify
+    project: sim/f1-interface
+    branch: master
+- project:
+    name: sim-fh-interface-info
+    project-name: sim-fh-interface
+    jobs:
+      - gerrit-info-yaml-verify
+    project: sim/fh-interface
+    branch: master
+- project:
+    name: sim-o1-interface-info
+    project-name: sim-o1-interface
+    jobs:
+      - gerrit-info-yaml-verify
+    project: sim/o1-interface
+    branch: master
+- project:
+    name: tracelibgo-info
+    project-name: tracelibgo
+    jobs:
+      - gerrit-info-yaml-verify
+    project: tracelibgo
+    branch: master
