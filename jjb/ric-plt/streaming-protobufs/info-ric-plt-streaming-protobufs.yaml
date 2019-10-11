@@ -2,7 +2,7 @@
 - project:
     name: ric-plt-streaming-protobufs-info
     project-name: ric-plt-streaming-protobufs
+    project: ric-plt/streaming-protobufs
+    build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
-    project: ric-plt/streaming-protobufs
-    branch: master

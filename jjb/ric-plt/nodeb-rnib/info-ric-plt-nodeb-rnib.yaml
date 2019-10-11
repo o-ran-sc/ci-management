@@ -2,7 +2,7 @@
 - project:
     name: ric-plt-nodeb-rnib-info
     project-name: ric-plt-nodeb-rnib
+    project: ric-plt/nodeb-rnib
+    build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
-    project: ric-plt/nodeb-rnib
-    branch: master
