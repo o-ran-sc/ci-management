@@ -1,0 +1,8 @@
+---
+- project:
+    name: scp-oam-modeling-info
+    project: scp/oam/modeling
+    project-name: scp-oam-modeling
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify

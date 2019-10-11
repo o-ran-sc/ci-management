@@ -1,0 +1,8 @@
+---
+- project:
+    name: o-ran-sc.github.io-info
+    project: o-ran-sc.github.io
+    project-name: o-ran-sc.github.io
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
