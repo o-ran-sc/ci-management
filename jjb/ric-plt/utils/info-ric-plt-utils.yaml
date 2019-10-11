@@ -2,7 +2,7 @@
 - project:
     name: ric-plt-utils-info
     project-name: ric-plt-utils
+    project: ric-plt/utils
+    build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
-    project: ric-plt/utils
-    branch: master

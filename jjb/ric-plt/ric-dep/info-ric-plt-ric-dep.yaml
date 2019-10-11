@@ -2,7 +2,7 @@
 - project:
     name: ric-plt-ric-dep-info
     project-name: ric-plt-ric-dep
+    project: ric-plt/ric-dep
+    build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
-    project: ric-plt/ric-dep
-    branch: master

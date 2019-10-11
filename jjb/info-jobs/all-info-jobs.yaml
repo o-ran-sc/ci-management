@@ -1,0 +1,175 @@
+---
+- project:
+    name: aal-lib-info
+    project-name: aal-lib
+    jobs:
+      - gerrit-info-yaml-verify
+    project: aal/lib
+- project:
+    name: aal-logic-info
+    project-name: aal-logic
+    jobs:
+      - gerrit-info-yaml-verify
+    project: aal/logic
+- project:
+    name: aal-mgmt-info
+    project-name: aal-mgmt
+    jobs:
+      - gerrit-info-yaml-verify
+    project: aal/mgmt
+- project:
+    name: aal-virt-info
+    project-name: aal-virt
+    jobs:
+      - gerrit-info-yaml-verify
+    project: aal/virt
+- project:
+    name: com-asn1c-info
+    project-name: com-asn1c
+    jobs:
+      - gerrit-info-yaml-verify
+    project: com/asn1c
+- project:
+    name: com-sctp-info
+    project-name: com-sctp
+    jobs:
+      - gerrit-info-yaml-verify
+    project: com/sctp
+- project:
+    name: gnb-int-build-info
+    project-name: gnb-int-build
+    jobs:
+      - gerrit-info-yaml-verify
+    project: gnb-int/build
+- project:
+    name: gnb-int-common-info
+    project-name: gnb-int-common
+    jobs:
+      - gerrit-info-yaml-verify
+    project: gnb-int/common
+- project:
+    name: gnb-int-src-info
+    project-name: gnb-int-src
+    jobs:
+      - gerrit-info-yaml-verify
+    project: gnb-int/src
+- project:
+    name: it-dev-info
+    project-name: it-dev
+    jobs:
+      - gerrit-info-yaml-verify
+    project: it/dev
+- project:
+    name: it-int-info
+    project-name: it-int
+    jobs:
+      - gerrit-info-yaml-verify
+    project: it/int
+- project:
+    name: log-info
+    project-name: log
+    jobs:
+      - gerrit-info-yaml-verify
+    project: log
+- project:
+    name: o-cu-e2-info
+    project-name: o-cu-e2
+    jobs:
+      - gerrit-info-yaml-verify
+    project: o-cu/e2
+- project:
+    name: o-cu-sim-info
+    project-name: o-cu-sim
+    jobs:
+      - gerrit-info-yaml-verify
+    project: o-cu/sim
+- project:
+    name: o-du-info
+    project-name: o-du
+    jobs:
+      - gerrit-info-yaml-verify
+    project: o-du
+- project:
+    name: o-du-sim-info
+    project-name: o-du-sim
+    jobs:
+      - gerrit-info-yaml-verify
+    project: o-du/sim
+- project:
+    name: o-ru-sim-info
+    project-name: o-ru-sim
+    jobs:
+      - gerrit-info-yaml-verify
+    project: o-ru/sim
+- project:
+    name: oran-osc.github.io-info
+    project-name: oran-osc.github.io
+    jobs:
+      - gerrit-info-yaml-verify
+    project: oran-osc.github.io
+- project:
+    name: ric-nrt-a1-info
+    project-name: ric-nrt-a1
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-nrt/a1
+- project:
+    name: ric-nrt-oam-info
+    project-name: ric-nrt-oam
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-nrt/oam
+- project:
+    name: ric-plt-sdl-config-info
+    project-name: ric-plt-sdl-config
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/sdl/config
+- project:
+    name: scp-oam-modeling-info
+    project-name: scp-oam-modeling
+    jobs:
+      - gerrit-info-yaml-verify
+    project: scp/oam/modeling
+- project:
+    name: sim-info
+    project-name: sim
+    jobs:
+      - gerrit-info-yaml-verify
+    project: sim
+- project:
+    name: sim-a1-interface-info
+    project-name: sim-a1-interface
+    jobs:
+      - gerrit-info-yaml-verify
+    project: sim/a1-interface
+- project:
+    name: sim-e1-interface-info
+    project-name: sim-e1-interface
+    jobs:
+      - gerrit-info-yaml-verify
+    project: sim/e1-interface
+- project:
+    name: sim-e2-interface-info
+    project-name: sim-e2-interface
+    jobs:
+      - gerrit-info-yaml-verify
+    project: sim/e2-interface
+- project:
+    name: sim-f1-interface-info
+    project-name: sim-f1-interface
+    jobs:
+      - gerrit-info-yaml-verify
+    project: sim/f1-interface
+- project:
+    name: sim-fh-interface-info
+    project-name: sim-fh-interface
+    jobs:
+      - gerrit-info-yaml-verify
+    project: sim/fh-interface
+- project:
+    name: tracelibgo-info
+    project-name: tracelibgo
+    jobs:
+      - gerrit-info-yaml-verify
+    project: tracelibgo

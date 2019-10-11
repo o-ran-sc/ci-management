@@ -2,7 +2,7 @@
 - project:
     name: ric-plt-jaegeradapter-info
     project-name: ric-plt-jaegeradapter
+    project: ric-plt/jaegeradapter
+    build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
-    project: ric-plt/jaegeradapter
-    branch: master
