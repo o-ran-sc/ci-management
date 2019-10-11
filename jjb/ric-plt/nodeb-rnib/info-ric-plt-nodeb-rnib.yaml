@@ -1,8 +1,0 @@
----
-- project:
-    name: ric-plt-nodeb-rnib-info
-    project-name: ric-plt-nodeb-rnib
-    jobs:
-      - gerrit-info-yaml-verify
-    project: ric-plt/nodeb-rnib
-    branch: master

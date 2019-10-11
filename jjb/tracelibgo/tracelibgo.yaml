@@ -1,0 +1,8 @@
+---
+- project:
+    name: tracelibgo-info
+    project: tracelibgo
+    project-name: tracelibgo
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify

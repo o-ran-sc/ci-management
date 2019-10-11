@@ -1,8 +1,0 @@
----
-- project:
-    name: ric-plt-jaegeradapter-info
-    project-name: ric-plt-jaegeradapter
-    jobs:
-      - gerrit-info-yaml-verify
-    project: ric-plt/jaegeradapter
-    branch: master

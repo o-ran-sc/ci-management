@@ -1,8 +1,0 @@
----
-- project:
-    name: ric-plt-utils-info
-    project-name: ric-plt-utils
-    jobs:
-      - gerrit-info-yaml-verify
-    project: ric-plt/utils
-    branch: master

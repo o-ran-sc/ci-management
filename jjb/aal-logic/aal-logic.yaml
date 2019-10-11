@@ -1,0 +1,8 @@
+---
+- project:
+    name: aal-logic-info
+    project: aal/logic
+    project-name: aal-logic
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify

@@ -1,8 +1,0 @@
----
-- project:
-    name: ric-plt-dbaas-hiredis-vip-info
-    project-name: ric-plt-dbaas-hiredis-vip
-    jobs:
-      - gerrit-info-yaml-verify
-    project: ric-plt/dbaas/hiredis-vip
-    branch: master
