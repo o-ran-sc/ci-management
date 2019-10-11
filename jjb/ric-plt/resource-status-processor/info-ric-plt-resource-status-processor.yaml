@@ -1,8 +1,0 @@
----
-- project:
-    name: ric-plt-resource-status-processor-info
-    project-name: ric-plt-resource-status-processor
-    jobs:
-      - gerrit-info-yaml-verify
-    project: ric-plt/resource-status-processor
-    branch: master

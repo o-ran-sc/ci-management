@@ -9,7 +9,7 @@
     name: nonrtric-info
     project: nonrtric
     project-name: nonrtric
-    branch: master
+    build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
 

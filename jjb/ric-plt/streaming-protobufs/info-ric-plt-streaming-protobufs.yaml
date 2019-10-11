@@ -1,8 +1,0 @@
----
-- project:
-    name: ric-plt-streaming-protobufs-info
-    project-name: ric-plt-streaming-protobufs
-    jobs:
-      - gerrit-info-yaml-verify
-    project: ric-plt/streaming-protobufs
-    branch: master

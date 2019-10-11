@@ -1,0 +1,8 @@
+---
+- project:
+    name: ric-plt-sdl-config-info
+    project: ric-plt/sdl/config
+    project-name: ric-plt-sdl-config
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
