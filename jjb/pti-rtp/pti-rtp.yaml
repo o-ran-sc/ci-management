@@ -1,0 +1,15 @@
+---
+- project:
+    name: pti-rtp-project-view
+    project-name: pti-rtp
+    views:
+      - project-view
+
+- project:
+    name: pti-rtp-info
+    project: pti/rtp
+    project-name: pti-rtp
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
