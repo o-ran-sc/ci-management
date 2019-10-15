@@ -82,3 +82,21 @@
     jobs:
       - gerrit-pypi-release-verify
       - gerrit-pypi-release-merge
+
+- project:
+    <<: *rmr_common
+    name: ric-plt-lib-rmr-python-sonar
+    project-name: ric-plt-lib-rmr-python
+    branch: master
+    python-version: python3
+    # the pre-build-script installs debian packages
+    build-node: ubuntu1804-builder-2c-2ga
+    # install prereqs
+    pre-build-script: !include-raw-escape: ../shell/install-deb-nng-rmr.sh
+    sonarcloud: true
+    sonarcloud-api-token: '{sonarcloud_api_token}'
+    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
+    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    tox-dir: src/bindings/rmr-python
+    jobs:
+      - gerrit-tox-sonar
