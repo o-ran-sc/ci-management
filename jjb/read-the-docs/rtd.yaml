@@ -1,0 +1,18 @@
+---
+- project:
+    name: rtdv2-verify-global
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - 'rtdv2-verify-global'
+    stream:
+      - master:
+          branch: 'master'
+
+- project:
+    name: rtdv2-merge-global
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - 'rtdv2-merge-global'
+    stream:
+      - master:
+          branch: 'master'
