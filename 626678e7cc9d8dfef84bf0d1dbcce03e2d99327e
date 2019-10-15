@@ -22,6 +22,30 @@
       "revId": "626678e7cc9d8dfef84bf0d1dbcce03e2d99327e",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4be0bd2b_3ee9ec56",
+        "filename": "jjb/defaults.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2019-10-15T20:56:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b9bd2ec_97c04c2c",
+      "range": {
+        "startLine": 51,
+        "startChar": 36,
+        "endLine": 51,
+        "endChar": 53
+      },
+      "revId": "626678e7cc9d8dfef84bf0d1dbcce03e2d99327e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
