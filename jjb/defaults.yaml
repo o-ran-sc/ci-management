@@ -51,3 +51,5 @@
     sonarcloud_project_organization: o-ran-sc
     sonarcloud_api_token: d9e23c28dc39b6d7531d2ecabf122ce84e6253ef
 
+    # Release config
+    jenkins-ssh-release-credential: jenkins-release
