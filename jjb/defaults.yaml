@@ -46,3 +46,6 @@
     packagecloud-repo: staging
     debian-distribution-versions: debian/stretch
     rpm-distribution-versions: el/5
+
+    # Release config
+    jenkins-ssh-release-credential: 'jenkins-release'
