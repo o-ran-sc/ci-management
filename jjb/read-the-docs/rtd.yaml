@@ -1,0 +1,23 @@
+---
+# Global read the docs jobs
+#
+# jobs trigger for all projects on any changes
+# to files in the docs/* directory
+
+- project:
+    name: rtdv3-global-verify
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - 'rtdv3-global-verify'
+    stream:
+      - master:
+          branch: 'master'
+
+- project:
+    name: rtdv3-global-merge
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - 'rtdv3-global-merge'
+    stream:
+      - master:
+          branch: 'master'
