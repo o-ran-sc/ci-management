@@ -1,0 +1,6 @@
+---
+- project:
+    name: kubernetes-3node-cluster
+    jobs:
+      - kubernetes-3node
+    project: 'dw-project'
