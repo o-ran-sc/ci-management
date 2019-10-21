@@ -1,0 +1,61 @@
+---
+heat_template_version: 2016-04-08
+
+parameters:
+    job_name:
+        type: string
+        description: Name of job running this template
+    ssh_key:
+        type: string
+        description: SSH Key name to use (Public key must exist in OpenStack)
+    index:
+        type: number
+    group:
+        type: number
+        default: "0"
+    vm_flavor:
+        type: string
+        default: v1-standard-1
+        description: OpenStack Flavor to use
+    vm_image:
+        type: string
+        description: VM Image to spin up
+
+resources:
+    port:
+        type: "OS::Neutron::Port"
+        properties:
+            allowed_address_pairs:
+                - ip_address: 10.32.6.0/23
+            network: oranci
+    instance:
+        type: "OS::Nova::Server"
+        properties:
+            image: {get_param: vm_image}
+            flavor: {get_param: vm_flavor}
+            name:
+                str_replace:
+                    template: JOB_NAME-GROUP-VM_TYPE-INDEX
+                    params:
+                        "JOB_NAME": {get_param: job_name}
+                        "VM_TYPE":
+                            str_split:
+                                - ' - '
+                                - {get_param: vm_image}
+                                - 2
+                        "GROUP": {get_param: group}
+                        "INDEX": {get_param: index}
+            networks:
+                - port: {get_resource: port}
+            key_name: {get_param: ssh_key}
+            # user_data: |
+            #     #!/bin/bash
+            #     until host google.com &>/dev/null
+            #     do
+            #         echo "Waiting until google.com is resolvable..."
+            #     done
+
+outputs:
+    ip:
+        description: IP address of the instance
+        value: {get_attr: [instance, networks, odlci, 0]}
