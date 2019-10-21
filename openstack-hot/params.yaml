@@ -1,0 +1,6 @@
+parameters:
+  vm_0_count: 3
+  vm_0_flavor: 'v2-highcpu-4'
+  vm_0_image: 'Ubuntu 18.04 LTS (x86_64) [2018-08-23]'
+  job_name: '59768-9'
+  ssh_key: 'jenkins-ssh'

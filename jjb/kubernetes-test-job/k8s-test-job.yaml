@@ -1,0 +1,8 @@
+- project:
+    name: testing-k8s
+    project: k8s
+    project-name: k8s
+    views:
+      - project-view
+    jobs:
+      - '{name}-kubernetes-3node'

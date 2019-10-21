@@ -1,0 +1,39 @@
+---
+- job-template:
+    name: '{name}-kubernetes-3node'
+#    project: 'k8s'
+
+    #####################
+    # Default variables #
+    #####################
+
+    openstack-cloud: vex
+    ssh-key: jenkins-ssh
+    openstack-heat-template: kubernetes-1-instance-type.yaml
+    openstack-heat-template-dir: openstack-hot
+
+    k8s_system_flavor: 'v2-highcpu-4'
+    k8s_system_image: 'LF - Ubuntu 18.04 LTS (2019-06-24)'
+
+
+    #####################
+    # Job configuration #
+    #####################
+
+    parameters:
+      - kubernetes-stack-1-type:
+          vm_0_count: 3
+          vm_0_flavor: '{k8s_system_flavor}'
+          vm_0_image: '{k8s_system_image}'
+          ssh-key: '{ssh-key}'
+
+    builders:
+      - lf-infra-pre-build
+      - kubernetes-stack-1-type:
+          openstack-cloud: '{openstack-cloud}'
+          openstack-heat-template: '{openstack-heat-template}'
+          openstack-heat-template-dir: '{openstack-heat-template-dir}'
+    publishers:
+      - lf-stack-delete:
+          openstack-cloud: '{openstack-cloud}'
+#      - lf-infra-publish
