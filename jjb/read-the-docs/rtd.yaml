@@ -5,7 +5,7 @@
 ---
 - project:
     name: rtdv3-view
-    project-name: read-the-docs
+    project-name: rtdv3
     views:
       - project-view
 
