@@ -43,11 +43,10 @@
       - master:
           branch: master
 
-# build and publish distributions to PyPI
+# build and publish distributions to test.pypi.org
 - project:
     <<: *rmr_common
-    name: ric-plt-lib-rmr-python
-    project-name: '{name}'
+    name: ric-plt-lib-rmr-python-pypi
     # sigul requires centos
     build-node: centos7-builder-1c-1g
     # install prereqs
@@ -61,27 +60,16 @@
       - master:
           branch: master
     jobs:
-      - gerrit-pypi-verify
-      - gerrit-pypi-merge:
-          pypi-repo: pypi-test
+      - '{project-name}-gerrit-pypi-jobs'
 
-# Temporary workaround to avoid overriding
-# gerrit_trigger_file_paths on release jobs
+# promote distributions from test to pypi.org
 - project:
     <<: *rmr_common
-    name: ric-plt-lib-rmr-python-workaround
-    project-name: ric-plt-lib-rmr-python
+    name: ric-plt-lib-rmr-python-pypi-release
     # sigul requires centos
     build-node: centos7-builder-1c-1g
-    # install prereqs
-    pre-build-script: !include-raw-escape: ../shell/install-rpm-nng-rmr.sh
-    tox-dir: src/bindings/rmr-python
-    stream:
-      - master:
-          branch: master
     jobs:
-      - gerrit-pypi-release-verify
-      - gerrit-pypi-release-merge
+      - '{project-name}-gerrit-pypi-release-jobs'
 
 - project:
     <<: *rmr_common
