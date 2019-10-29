@@ -12,6 +12,10 @@
     regex: ''
 
 - view:
+    name: All
+    view-type: all
+
+- view:
     name: CLM
     description: 'List of CLM jobs'
     view-type: list
