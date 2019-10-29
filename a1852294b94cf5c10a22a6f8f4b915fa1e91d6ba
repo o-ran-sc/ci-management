@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f3b0004_1444af94",
+        "filename": "jjb/common-views.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-10-29T23:47:38Z",
+      "side": 1,
+      "message": "This has no regex. How can this work?  Does it need \"*\" ?",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 3
+      },
+      "revId": "a1852294b94cf5c10a22a6f8f4b915fa1e91d6ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
