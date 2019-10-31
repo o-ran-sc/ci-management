@@ -80,7 +80,7 @@
     branch: master
     python-version: python3
     # the pre-build-script installs debian packages
-    build-node: ubuntu1804-builder-2c-2ga
+    build-node: ubuntu1804-builder-2c-2g
     # install prereqs
     pre-build-script: !include-raw-escape: ../shell/install-deb-nng-rmr.sh
     sonarcloud: true
