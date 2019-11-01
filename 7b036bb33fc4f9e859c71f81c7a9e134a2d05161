@@ -1,0 +1,7 @@
+Code-Review+2: Daniel Pono Takamori <dtakamori@contractor.linuxfoundation.org>
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Submitted-by: DW Talton <dtalton@contractor.linuxfoundation.org>
+Submitted-at: Fri, 01 Nov 2019 18:26:19 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/1325
+Project: ci-management
+Branch: refs/heads/master
