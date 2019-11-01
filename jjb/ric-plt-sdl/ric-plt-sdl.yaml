@@ -1,0 +1,40 @@
+---
+- project:
+    name: ric-plt-sdl-project-view
+    project-name: ric-plt-sdl
+    views:
+      - project-view
+
+- project:
+    name: ric-plt-sdl-info
+    project: ric-plt/sdl
+    project-name: ric-plt-sdl
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- sdl_docker_common: &sdl_docker_common
+    # values apply to all ric-plt/sdl docker projects
+    name: sdl-docker-common
+    # git repo
+    project: ric-plt/sdl
+    # jenkins job name prefix
+    project-name: ric-plt-sdl
+    # maven settings file has docker credentials
+    mvn-settings: ric-plt-sdl-settings
+
+- project:
+    <<: *sdl_docker_common
+    name: ric-plt-sdl
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host -f ci/Dockerfile'
+    # image name
+    docker-name: '{name}'
+    # image tag, use a fixed value
+    container-tag-method: latest
+    jobs:
+      - gerrit-docker-verify
+      - oran-gerrit-docker-ci-pc-merge
+    stream:
+      - master:
+          branch: master
