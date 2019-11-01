@@ -1,0 +1,42 @@
+---
+- project:
+    name: com-pylog-project-view
+    project-name: com-pylog
+    views:
+      - project-view
+
+- project:
+    name: com-pylog-info
+    project: com/pylog
+    project-name: com-pylog
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- pylog_common: &pylog_common
+    name: pylog-common
+    # git repo
+    project: com/pylog
+    # jenkins job name prefix
+    project-name: com-pylog
+    # maven settings file has docker credentials
+    mvn-settings: com-pylog-settings
+    # sigul requires centos
+    build-node: centos7-builder-1c-1g
+
+# build package and publish to test.pypi.org
+- project:
+    <<: *pylog_common
+    name: pylog-pypi
+    stream:
+      - master:
+          branch: master
+    jobs:
+      - '{project-name}-gerrit-pypi-jobs'
+
+# promote package from test.pypi.org to pypi.org
+- project:
+    <<: *pylog_common
+    name: pylog-pypi-release
+    jobs:
+      - '{project-name}-gerrit-pypi-release-jobs'
