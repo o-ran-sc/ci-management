@@ -34,7 +34,9 @@
     container-tag-method: latest
     jobs:
       - gerrit-docker-verify
-      - oran-gerrit-docker-ci-pc-merge
+      - oran-gerrit-docker-ci-pc-merge:
+          # stage every Saturday
+          cron: 'H H * * 6'
     stream:
       - master:
           branch: master
