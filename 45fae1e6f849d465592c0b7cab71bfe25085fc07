@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f29972c0_67458884",
+        "filename": "jjb/ric-plt-resource-status-manager/ric-plt-resource-status-manager.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-02T18:12:28Z",
+      "side": 1,
+      "message": "please note that macros like this should use underscores, not hyphens, in their declaration",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 3
+      },
+      "revId": "45fae1e6f849d465592c0b7cab71bfe25085fc07",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a5bf9b5_93eb7bfa",
+        "filename": "jjb/ric-plt-resource-status-manager/ric-plt-resource-status-manager.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-02T18:12:28Z",
+      "side": 1,
+      "message": "pls see above",
+      "range": {
+        "startLine": 27,
+        "startChar": 17,
+        "endLine": 27,
+        "endChar": 18
+      },
+      "revId": "45fae1e6f849d465592c0b7cab71bfe25085fc07",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
