@@ -22,6 +22,30 @@
       "revId": "8cb5a0bfaa9ee46bc217511f2b244c95a625a445",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65639ecf_2e6a6e65",
+        "filename": "jjb/ric-plt-resource-status-manager/ric-plt-resource-status-manager.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2019-11-03T18:26:07Z",
+      "side": 1,
+      "message": "Fixed.  Thanks!  Now you know from where I copied this file to modify...",
+      "parentUuid": "dcdf0491_e74b106b",
+      "range": {
+        "startLine": 17,
+        "startChar": 26,
+        "endLine": 17,
+        "endChar": 31
+      },
+      "revId": "8cb5a0bfaa9ee46bc217511f2b244c95a625a445",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
