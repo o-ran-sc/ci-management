@@ -48,11 +48,12 @@
       - ../shell/install-deb-nng-rmr.sh
     python-version: python3
     stream:
-      - master:
-          branch: master
+      # run verify on all branches
+      # the ANT pattern is **/{branch}, we are exploiting that.
+      - all:
+          branch: '*'
     jobs:
       - gerrit-tox-verify
-      - gerrit-python-xc-clm
 
 - project:
     <<: *a1_common
