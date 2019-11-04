@@ -32,7 +32,9 @@
     jobs:
       - gerrit-maven-docker-verify
       - gerrit-maven-docker-merge
-      - gerrit-maven-docker-stage
+      - gerrit-maven-docker-stage:
+          # stage every Saturday, not daily
+          cron: 'H H * * 6'
     stream:
       - master:
           branch: master
