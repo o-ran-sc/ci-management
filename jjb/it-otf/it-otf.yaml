@@ -1,0 +1,136 @@
+---
+#   Copyright (c) 2019 AT&T Intellectual Property.
+#   Copyright (c) 2019 Nokia.
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+
+- project:
+    name: it-otf-project-view
+    project-name: it-otf
+    views:
+      - project-view
+
+- project:
+    name: it-otf-info
+    project: it/otf
+    project-name: it-otf
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- it_otf_common: &it_otf_common
+    # values apply to all it/otf docker projects
+    name: it-otf-docker-common
+    # git repo
+    project: it/otf
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # maven settings file has docker credentials
+    mvn-settings: it-otf-settings
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *it_otf_common
+    name: it-otf-oran-ric-test-head
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    # start in parent directory with shared files
+    docker-root: oran-ric-test-head
+    # dockerfile is in subdir of docker root
+    docker-build-args: '--network=host'
+    # tag file is in subdir
+    container-tag-yaml-dir: '{docker-root}'
+    # build only on relevant changes
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '{docker-root}/.*'
+
+- project:
+    <<: *it_otf_common
+    name: it-otf-frontend
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    # start in parent directory with shared files
+    docker-root: otf-frontend
+    # dockerfile is in subdir of docker root
+    docker-build-args: '--network=host'
+    # tag file is in subdir
+    container-tag-yaml-dir: '{docker-root}'
+    # build only on relevant changes
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '{docker-root}/.*'
+
+- project:
+    <<: *it_otf_common
+    name: it-otf-ping-test-head
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    # start in parent directory with shared files
+    docker-root: otf-ping-test-head
+    # dockerfile is in subdir of docker root
+    docker-build-args: '--network=host'
+    # tag file is in subdir
+    container-tag-yaml-dir: '{docker-root}'
+    # build only on relevant changes
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '{docker-root}/.*'
+
+- project:
+    <<: *it_otf_common
+    name: it-otf-robot-test-head
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    # start in parent directory with shared files
+    docker-root: otf-robot-test-head
+    # dockerfile is in subdir of docker root
+    docker-build-args: '--network=host'
+    # tag file is in subdir
+    container-tag-yaml-dir: '{docker-root}'
+    # build only on relevant changes
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '{docker-root}/.*'
+
+- project:
+    <<: *it_otf_common
+    name: it-otf-ssh-test-head
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    # start in parent directory with shared files
+    docker-root: otf-ssh-test-head
+    # dockerfile is in subdir of docker root
+    docker-build-args: '--network=host'
+    # tag file is in subdir
+    container-tag-yaml-dir: '{docker-root}'
+    # build only on relevant changes
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '{docker-root}/.*'
