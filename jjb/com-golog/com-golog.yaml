@@ -1,0 +1,40 @@
+---
+- project:
+    name: com-golog-project-view
+    project-name: com-golog
+    views:
+      - project-view
+
+- project:
+    name: com-golog-info
+    project: com/golog
+    project-name: com-golog
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- golog_docker_common: &golog_docker_common
+    # values apply to all golog docker projects
+    name: golog-docker-common
+    # git repo
+    project: com/golog
+    # jenkins job name prefix
+    project-name: com-golog
+    # maven settings file has docker credentials
+    mvn-settings: com-golog-settings
+
+# runs unit tests on verify only
+- project:
+    <<: *golog_docker_common
+    name: com-golog
+    # image name, altho it is never pushed
+    docker-name: '{name}'
+    # use host network
+    docker-build-args: '--network=host -f ci/Dockerfile'
+    # image tag; use a fixed value
+    container-tag-method: latest
+    jobs:
+      - gerrit-docker-verify
+    stream:
+      - master:
+          branch: master
