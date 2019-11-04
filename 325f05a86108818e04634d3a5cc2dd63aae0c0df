@@ -1,0 +1,418 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fe35138_dcc5fd42",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "Is this it/otf or it/test?",
+      "range": {
+        "startLine": 25,
+        "startChar": 13,
+        "endLine": 25,
+        "endChar": 20
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03885c55_812ffe0f",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "Test or otf?",
+      "range": {
+        "startLine": 32,
+        "startChar": 29,
+        "endLine": 32,
+        "endChar": 33
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75a15595_cf320906",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "See above, looks wrong",
+      "range": {
+        "startLine": 35,
+        "startChar": 13,
+        "endLine": 35,
+        "endChar": 20
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8276a8a7_67851ed9",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "Probably we should be putting the o-ran-sc/ prefix here",
+      "range": {
+        "startLine": 54,
+        "startChar": 19,
+        "endLine": 54,
+        "endChar": 23
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d2592b8_afc26d49",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "This is the default, no need to specify \"-f Dockerfile\"",
+      "range": {
+        "startLine": 58,
+        "startChar": 39,
+        "endLine": 58,
+        "endChar": 52
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ac28846_3465077c",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "\u0027{docker-root}\u0027",
+      "range": {
+        "startLine": 60,
+        "startChar": 27,
+        "endLine": 60,
+        "endChar": 46
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2cbde8bd_ca384656",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "Prefix",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 3
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2cd886c4_e1c34a05",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "Skip, this is the default",
+      "range": {
+        "startLine": 76,
+        "startChar": 39,
+        "endLine": 76,
+        "endChar": 52
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02da6549_0ea77854",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "\u0027{docker-root}\u0027",
+      "range": {
+        "startLine": 78,
+        "startChar": 28,
+        "endLine": 78,
+        "endChar": 40
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb030097_ed3b7c2b",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "Remove trailing whitespace pls",
+      "range": {
+        "startLine": 86,
+        "startChar": 31,
+        "endLine": 86,
+        "endChar": 32
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63a644d9_9fc63f21",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "Prefix",
+      "range": {
+        "startLine": 90,
+        "startChar": 17,
+        "endLine": 90,
+        "endChar": 25
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b7e78f5_a1b9a4ee",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "\u0027{docker-root}\u0027",
+      "range": {
+        "startLine": 96,
+        "startChar": 27,
+        "endLine": 96,
+        "endChar": 46
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "500381c8_8e4de28c",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "Prefix",
+      "range": {
+        "startLine": 108,
+        "startChar": 19,
+        "endLine": 108,
+        "endChar": 23
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "642499c6_c259a7fe",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "Skip",
+      "range": {
+        "startLine": 112,
+        "startChar": 39,
+        "endLine": 112,
+        "endChar": 52
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a20ccd0_f39ed777",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "\u0027{docker-root}\u0027",
+      "range": {
+        "startLine": 114,
+        "startChar": 28,
+        "endLine": 114,
+        "endChar": 47
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ccac4fb_dab1269f",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "Prefix?",
+      "range": {
+        "startLine": 126,
+        "startChar": 17,
+        "endLine": 126,
+        "endChar": 25
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6aebac4e_c42603aa",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "Skip",
+      "range": {
+        "startLine": 130,
+        "startChar": 39,
+        "endLine": 130,
+        "endChar": 52
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e2a0ccb_35946e2b",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-04T22:17:55Z",
+      "side": 1,
+      "message": "\u0027{docker-root}\u0027",
+      "range": {
+        "startLine": 132,
+        "startChar": 28,
+        "endLine": 132,
+        "endChar": 45
+      },
+      "revId": "325f05a86108818e04634d3a5cc2dd63aae0c0df",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
