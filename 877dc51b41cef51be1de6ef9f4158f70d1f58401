@@ -1,0 +1,8 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Roni Riska <roni.riska@nokia.com>
+Code-Review+2: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Mon, 04 Nov 2019 18:50:42 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/1323
+Project: ci-management
+Branch: refs/heads/master
