@@ -22,6 +22,30 @@
       "revId": "3a29981070a18346aa84a5a1c504f05d8505b0e5",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02c94be0_2cd51a79",
+        "filename": "jjb/com-golog/com-golog.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-11-04T15:05:36Z",
+      "side": 1,
+      "message": "Sure, but where should I add that? I cannot find any examples in this repo.",
+      "parentUuid": "f5dd3b97_6494d108",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 3
+      },
+      "revId": "3a29981070a18346aa84a5a1c504f05d8505b0e5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
