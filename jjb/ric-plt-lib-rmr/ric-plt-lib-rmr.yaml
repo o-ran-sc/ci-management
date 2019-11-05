@@ -40,8 +40,9 @@
       - gerrit-docker-verify
       - oran-gerrit-docker-ci-pc-merge
     stream:
-      - master:
-          branch: master
+      # push from all branches
+      - all:
+          branch: '*'
 
 # build and publish distributions to test.pypi.org
 - project:
@@ -58,8 +59,9 @@
       - compare-type: REG_EXP
         pattern: 'src/bindings/rmr-python/.*'
     stream:
-      - master:
-          branch: master
+      # push from all branches
+      - all:
+          branch: '*'
     jobs:
       - '{project-name}-gerrit-pypi-jobs'
 
