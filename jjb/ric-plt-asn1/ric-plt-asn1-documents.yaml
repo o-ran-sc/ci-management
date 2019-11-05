@@ -1,0 +1,14 @@
+---
+- project:
+    name: ric-plt-asn1-documents-project-view
+    project-name: ric-plt-asn1-documents
+    views:
+      - project-view
+
+- project:
+    name: ric-plt-asn1-documents-info
+    project: ric-plt/asn1-documents
+    project-name: ric-plt-asn1-documents
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
