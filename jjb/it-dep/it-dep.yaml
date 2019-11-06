@@ -44,6 +44,25 @@
     jobs:
       - gerrit-docker-verify
 
+# build and publish packages to PackageCloud.io
+- project:
+    <<: *it_dep_common
+    name: it-dep-package
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image is not pushed, use trivial tag
+    container-tag-method: latest
+    # image name
+    docker-name: '{name}'
+    # use host network for network resources
+    docker-build-args: '--network=host -f ci/Dockerfile-package'
+    jobs:
+      - gerrit-docker-verify
+      - oran-gerrit-docker-ci-pc-merge
+    stream:
+      - master:
+          branch: master
+
 - project:
     <<: *it_dep_common
     name: it-dep-secret
