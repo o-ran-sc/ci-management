@@ -28,6 +28,11 @@
 - project:
     <<: *pylog_common
     name: pylog-pypi
+    # the code is in a subdirectory
+    tox-dir: mdclogpy
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'mdclogpy/.*'
     stream:
       - master:
           branch: master
