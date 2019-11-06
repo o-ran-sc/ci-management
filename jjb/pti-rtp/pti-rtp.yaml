@@ -13,3 +13,14 @@
     jobs:
       - gerrit-info-yaml-verify
 
+- project:
+    name: pti-rtp-verify
+    project: pti/rtp
+    project-name: pti-rtp
+    # use a centos with big memory; docker not required
+    build-node: centos7-docker-2c-8g
+    # runs about 30 minutes
+    build-timeout: 60
+    script: !include-raw-escape: verify-pti-rtp-centos.sh
+    jobs:
+      - oran-verify-shell
