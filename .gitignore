@@ -6,3 +6,7 @@ jenkins.ini
 .galaxy/
 *.retry
 cloud-env.json
+
+# IDE
+
+.idea/

@@ -1,0 +1,14 @@
+---
+- project:
+    name: nonrtric-project-view
+    project-name: nonrtric
+    views:
+      - project-view
+
+- project:
+    name: nonrtric-info
+    project: nonrtric
+    project-name: nonrtric
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
