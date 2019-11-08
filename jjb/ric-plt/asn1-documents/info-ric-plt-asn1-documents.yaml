@@ -1,0 +1,8 @@
+---
+- project:
+    name: ric-plt-asn1-documents-info
+    project-name: ric-plt-asn1-documents
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/asn1-documents
+    branch: master
