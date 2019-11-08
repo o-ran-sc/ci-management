@@ -12,47 +12,31 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 ---
-#
-# Template for verifying gerrit changeset by shell script.
-# Runs on changeset branch to verify new commits; can also run on master.
-#
-# Required parameters:
-#   build-node:     label (flavor) of jenkins build minion
-#   project:        git repository
-#   project-name:   Jenkins job name prefix
-#   script:         shell script to execute
-# Optional parameters:
-#   branch:         git branch, defaults to master
-#   stream:         friendly stream name (often same as branch), defaults to master
-- job-template:
-    name: '{project-name}-verify-shell-{stream}'
-    id: oran-verify-shell
+- oran_shell_common: &oran_shell_common
+    name: oran-shell-common
 
     ######################
     # Default parameters #
     ######################
 
+    archive-artifacts: >
+      **/*.log
     branch: master
     build-days-to-keep: 7
     build-timeout: 15
+    cron: ''
+    concurrent: false
     disable-job: false
+    gerrit-skip-vote: false
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+    stream: master
+    submodule-disable: false
+    submodule-recursive: true
+    submodule-timeout: 10
+
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: '.*'
-    gerrit-skip-vote: false
-    gerrit_verify_triggers:
-      - patchset-created-event:
-          exclude-drafts: true
-          exclude-trivial-rebase: false
-          exclude-no-code-change: false
-      - draft-published-event
-      - comment-added-contains-event:
-          comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
-    git-url: '$GIT_URL/$PROJECT'
-    stream: master
-    submodule-recursive: true
-    submodule-timeout: 10
-    submodule-disable: false
 
     #####################
     # Job Configuration #
@@ -71,11 +55,46 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: '{archive-artifacts}'
+          description: Artifacts to archive to the logs server.
 
     wrappers:
       - lf-infra-wrappers:
           build-timeout: '{build-timeout}'
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    builders:
+      - shell: '{script}'
+
+    publishers:
+      - lf-infra-publish
+
+# Verify gerrit changeset by shell script.
+# Runs on changeset branch to verify new commits; can be run on any branch.
+#
+# Required parameters:
+#   build-node:     label (flavor) of jenkins build minion
+#   project:        git repository
+#   project-name:   Jenkins job name prefix
+#   script:         shell script to execute
+# Optional parameters:
+#   branch:         git branch pattern, defaults to master
+#   stream:         friendly stream name (often same as branch), defaults to master
+- job-template:
+    name: '{project-name}-shell-verify-{stream}'
+    id: oran-shell-verify
+    <<: *oran_shell_common
+
+    gerrit_verify_triggers:
+      - patchset-created-event:
+          exclude-drafts: true
+          exclude-trivial-rebase: false
+          exclude-no-code-change: false
+      - draft-published-event
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
 
     scm:
       - lf-infra-gerrit-scm:
@@ -89,6 +108,7 @@
           choosing-strategy: gerrit
 
     triggers:
+      - timed: '{obj:cron}'
       - gerrit:
           server-name: '{gerrit-server-name}'
           trigger-on: '{obj:gerrit_verify_triggers}'
@@ -105,8 +125,47 @@
             unstable: '{gerrit-skip-vote}'
             notbuilt: '{gerrit-skip-vote}'
 
-    builders:
-      - shell: '{script}'
+# Build from gerrit by shell script.
+# Triggered automatically by merge; can be run on any branch.
+#
+# Required parameters:
+#   build-node:     label (flavor) of jenkins build minion
+#   project:        git repository
+#   project-name:   Jenkins job name prefix
+#   script:         shell script to execute
+# Optional parameters:
+#   branch:         git branch pattern, defaults to master
+#   stream:         friendly stream name (often same as branch), defaults to master
+- job-template:
+    name: '{project-name}-shell-merge-{stream}'
+    id: oran-shell-merge
+    <<: *oran_shell_common
 
-    publishers:
-      - lf-infra-publish
+    gerrit_merge_triggers:
+      - change-merged-event
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+remerge\s*$'
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
+          choosing-strategy: default
+
+    triggers:
+      - timed: '{obj:cron}'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_merge_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
