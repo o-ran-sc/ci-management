@@ -1,0 +1,8 @@
+---
+- project:
+    name: ric-plt-sdlpy-info
+    project-name: ric-plt-sdlpy
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/sdlpy
+    branch: master
