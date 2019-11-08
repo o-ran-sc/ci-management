@@ -1,0 +1,8 @@
+---
+- project:
+    name: ric-plt-lib-rmr-info
+    project-name: ric-plt-lib-rmr
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/lib/rmr
+    branch: master
