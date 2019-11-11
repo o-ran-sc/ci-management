@@ -21,11 +21,6 @@
     project-name: ric-plt-lib-rmr
     # maven settings file has credentials
     mvn-settings: ric-plt-lib-rmr-settings
-
-# build and publish packages to PackageCloud.io
-- project:
-    <<: *rmr_common
-    name: ric-plt-lib-rmr
     # image is not pushed, use trivial tag
     container-tag-method: latest
     # image name
@@ -36,19 +31,35 @@
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: '^((?!src/bindings|\/COMMIT_MSG).)*$'
+
+# verify RMR changes targeted at any branch
+- project:
+    <<: *rmr_common
+    name: ric-plt-lib-rmr-verify
     jobs:
       - gerrit-docker-verify
-      - oran-gerrit-docker-ci-pc-merge
     stream:
-      # verify and push from all branches
       - all:
           branch: '*'
 
-# build and publish distributions to test.pypi.org
+# build RMR and publish to PackageCloud.io on merge to master branch
 - project:
     <<: *rmr_common
-    name: ric-plt-lib-rmr-python-pypi
+    name: ric-plt-lib-rmr-merge
+    jobs:
+      - oran-gerrit-docker-ci-pc-merge
+    stream:
+      - master:
+          branch: master
+
+- rmr_python_common: &rmr_python_common
+    name: rmr-python-common
+    # git repo
+    project: ric-plt/lib/rmr
+    # jenkins job name prefix
     project-name: ric-plt-lib-rmr-python
+    # maven settings file has credentials
+    mvn-settings: ric-plt-lib-rmr-settings
     # sigul requires centos
     build-node: centos7-builder-1c-1g
     # install prereqs
@@ -58,27 +69,37 @@
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'src/bindings/rmr-python/.*'
+
+# verify binding changes targeted at any branch
+- project:
+    <<: *rmr_python_common
+    name: ric-plt-lib-rmr-python-pypi-verify
     stream:
-      # verify and push from all branches
       - all:
           branch: '*'
     jobs:
-      - '{project-name}-gerrit-pypi-jobs'
+      - gerrit-pypi-verify
+
+# build and publish distributions to test.pypi.org from master
+- project:
+    <<: *rmr_python_common
+    name: ric-plt-lib-rmr-python-pypi-merge
+    stream:
+      - master:
+          branch: master
+    jobs:
+      - gerrit-pypi-verify
 
 # promote distributions from test to pypi.org
 - project:
-    <<: *rmr_common
+    <<: *rmr_python_common
     name: ric-plt-lib-rmr-python-pypi-release
-    project-name: ric-plt-lib-rmr-python
-    # sigul requires centos
-    build-node: centos7-builder-1c-1g
     jobs:
       - '{project-name}-gerrit-pypi-release-jobs'
 
 - project:
-    <<: *rmr_common
+    <<: *rmr_python_common
     name: ric-plt-lib-rmr-python-sonar
-    project-name: ric-plt-lib-rmr-python
     branch: master
     python-version: python3
     # the pre-build-script installs debian packages
