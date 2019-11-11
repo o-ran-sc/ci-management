@@ -1,0 +1,40 @@
+---
+- project:
+    name: ric-plt-xapp-frame-project-view
+    project-name: ric-plt-xapp-frame
+    views:
+      - project-view
+
+- project:
+    name: ric-plt-xapp-frame-info
+    project: ric-plt/xapp-frame
+    project-name: ric-plt-xapp-frame
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- xapp_frame_docker_common: &xapp_frame_docker_common
+    # values apply to all xapp-frame docker projects
+    name: xapp-frame-docker-common
+    # git repo
+    project: ric-plt/xapp-frame
+    # jenkins job name prefix
+    project-name: ric-plt-xapp-frame
+    # maven settings file has docker credentials
+    mvn-settings: ric-plt-xapp-frame-settings
+
+# runs unit tests on verify only
+- project:
+    <<: *xapp_frame_docker_common
+    name: ric-plt-xapp-frame
+    # image name, altho it is never pushed
+    docker-name: '{name}'
+    # use host network
+    docker-build-args: '--network=host -f ci/Dockerfile'
+    # image tag; use a fixed value
+    container-tag-method: latest
+    jobs:
+      - gerrit-docker-verify
+    stream:
+      - master:
+          branch: master
