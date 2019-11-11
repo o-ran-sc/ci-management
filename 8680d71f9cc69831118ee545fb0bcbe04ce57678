@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e069b5e_38d3d6c1",
+        "filename": "jjb/ric-plt-xapp-frame/ric-plt-xapp-frame.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-11T10:23:49Z",
+      "side": 1,
+      "message": "I know this is tiny, but please be consistent with hyphen and underscore. In all other jjb file macros, this line uses underscores only.",
+      "range": {
+        "startLine": 16,
+        "startChar": 6,
+        "endLine": 16,
+        "endChar": 13
+      },
+      "revId": "8680d71f9cc69831118ee545fb0bcbe04ce57678",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ee5750c_cf65211a",
+        "filename": "jjb/ric-plt-xapp-frame/ric-plt-xapp-frame.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-11T10:23:49Z",
+      "side": 1,
+      "message": "See above",
+      "range": {
+        "startLine": 28,
+        "startChar": 13,
+        "endLine": 28,
+        "endChar": 14
+      },
+      "revId": "8680d71f9cc69831118ee545fb0bcbe04ce57678",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d621936_809adb97",
+        "filename": "jjb/ric-plt-xapp-frame/ric-plt-xapp-frame.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-11T10:23:49Z",
+      "side": 1,
+      "message": "Some projects use a ci subdirectory; any chance of doing the same here?",
+      "range": {
+        "startLine": 33,
+        "startChar": 42,
+        "endLine": 33,
+        "endChar": 47
+      },
+      "revId": "8680d71f9cc69831118ee545fb0bcbe04ce57678",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
