@@ -1,0 +1,14 @@
+---
+- project:
+    name: com-gs-lite-project-view
+    project-name: com-gs-lite
+    views:
+      - project-view
+
+- project:
+    name: com-gs-lite-info
+    project: com/gs-lite
+    project-name: com-gs-lite
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
