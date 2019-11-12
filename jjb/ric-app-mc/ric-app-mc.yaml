@@ -24,16 +24,44 @@
     mvn-settings: ric-app-mc-settings
 
 - project:
+    <<: *ci_docker_common
     <<: *mc_docker_common
     name: ric-app-mc
     # image name
     docker-name: '{name}'
     # source of docker tag
     container-tag-method: yaml-file
+    container-tag-yaml-dir: '{docker-root}/ci/mc-core'
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: '--network=host -f ci/mc-core/Dockerfile'
+    # ANT style regex (**) are used, so this matches any file under mc-core
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'mc-core/**/*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
     stream:
       - master:
           branch: master
+
+- project:
+    <<: *ci_docker_common
+    <<: *mc_docker_common
+    name: ric-plt-mc_listener
+    project-name: ric-app-mc_listener
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host -f ci/listener/Dockerfile'
+    # image name
+    docker-name: '{name}'
+    # image tag, use a fixed value
+    container-tag-method: yaml-file
+    container-tag-yaml-dir: '{docker-root}/ci/listener'
+    # ANT style regex (**) are used, so this matches any file under listener
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'sidecars/listener/**/*'
+    stream:
+      - master:
+          branch: 'master'
+    jobs:
+      - ric-app-mc-gerrit-docker-jobs
