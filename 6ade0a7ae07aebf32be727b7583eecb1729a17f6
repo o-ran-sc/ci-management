@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4a6c4b03_94570a76",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-12T08:02:00Z",
+      "side": 1,
+      "message": "Suggest you remove this from the common macro. You repeat it in every project below; in some it\u0027s appropriate to repeat (value is different).",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 39
+      },
+      "revId": "6ade0a7ae07aebf32be727b7583eecb1729a17f6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
