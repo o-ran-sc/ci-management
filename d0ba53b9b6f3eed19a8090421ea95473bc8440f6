@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "e9192879_7a78c956",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-12T14:21:20Z",
+      "side": 1,
+      "message": "This is not needed. This is configuration, not code.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "d0ba53b9b6f3eed19a8090421ea95473bc8440f6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6dc3bfc7_e3543829",
         "filename": "jjb/nonrtric/nonrtric.yaml",
         "patchSetId": 2
@@ -22,6 +45,115 @@
       "revId": "d0ba53b9b6f3eed19a8090421ea95473bc8440f6",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "93165a78_7669a066",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-12T14:21:20Z",
+      "side": 1,
+      "message": "There is no absolute requirement to define a macro like this. It\u0027s a good choice if you anticipate adding more projects in the same repo.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 3
+      },
+      "revId": "d0ba53b9b6f3eed19a8090421ea95473bc8440f6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6211724b_d50402e1",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-12T14:21:20Z",
+      "side": 1,
+      "message": "Please use a hyphen in the name to be consistent with other macros",
+      "range": {
+        "startLine": 33,
+        "startChar": 18,
+        "endLine": 33,
+        "endChar": 19
+      },
+      "revId": "d0ba53b9b6f3eed19a8090421ea95473bc8440f6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dbb228d5_3ab216f6",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-12T14:21:20Z",
+      "side": 1,
+      "message": "Please remove extra whitespace lines, one is enuf",
+      "revId": "d0ba53b9b6f3eed19a8090421ea95473bc8440f6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2bf2b71f_53dc3f8b",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-12T14:21:20Z",
+      "side": 1,
+      "message": "This is defined in your macro, why repeat it here?",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 3
+      },
+      "revId": "d0ba53b9b6f3eed19a8090421ea95473bc8440f6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a35cd808_25e40b89",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-12T14:21:20Z",
+      "side": 1,
+      "message": "do not use single quotes around these plain strings",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 2
+      },
+      "revId": "d0ba53b9b6f3eed19a8090421ea95473bc8440f6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
