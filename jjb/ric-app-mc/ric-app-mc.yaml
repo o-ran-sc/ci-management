@@ -3,7 +3,7 @@
     name: ric-app-mc-project-view
     project-name: ric-app-mc
     views:
-      - project-view
+        - project-view
 
 - project:
     name: ric-app-mc-info
@@ -11,29 +11,57 @@
     project-name: ric-app-mc
     build-node: centos7-builder-1c-1g
     jobs:
-      - gerrit-info-yaml-verify
+        - gerrit-info-yaml-verify
 
-- mc_docker_common: &mc_docker_common
+- omc_common: &mc_common
     # values apply to all MC projects
-    name: mc-docker-common
+    name: mc-common
     # git repo
     project: ric-app/mc
-    # jenkins job name prefix
-    project-name: ric-app-mc
     # maven settings file has docker credentials
     mvn-settings: ric-app-mc-settings
 
 - project:
-    <<: *mc_docker_common
+    <<: *mc_common
     name: ric-app-mc
+    # jenkins job name prefix
+    project-name: '{name}'
     # image name
     docker-name: '{name}'
+    docker-root: mc-core
     # source of docker tag
     container-tag-method: yaml-file
-    # use host network to clone from our gerrit
+    container-tag-yaml-dir: '{docker-root}'
+    # use host network
     docker-build-args: '--network=host'
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '{docker-root}/.*'
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+        - '{project-name}-gerrit-docker-jobs'
     stream:
-      - master:
-          branch: master
+        - master:
+            branch: master
+
+- project:
+    <<: *mc_common
+    name: ric-app-mc-listener
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    docker-root: sidecars/listener
+    # source of docker tag
+    container-tag-method: yaml-file
+    container-tag-yaml-dir: '{docker-root}'
+    # use host network
+    docker-build-args: '--network=host'
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '{docker-root}/.*'
+    jobs:
+        - '{project-name}-gerrit-docker-jobs'
+    stream:
+        - master:
+            branch: 'master'
+
