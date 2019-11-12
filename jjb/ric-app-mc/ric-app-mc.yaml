@@ -1,39 +1,67 @@
 ---
 - project:
-    name: ric-app-mc-project-view
-    project-name: ric-app-mc
-    views:
-      - project-view
+  name: ric-app-mc-project-view
+  project-name: ric-app-mc
+  views:
+    - project-view
 
 - project:
-    name: ric-app-mc-info
-    project: ric-app/mc
-    project-name: ric-app-mc
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
+  name: ric-app-mc-info
+  project: ric-app/mc
+  project-name: ric-app-mc
+  build-node: centos7-builder-1c-1g
+  jobs:
+    - gerrit-info-yaml-verify
 
-- mc_docker_common: &mc_docker_common
-    # values apply to all MC projects
-    name: mc-docker-common
-    # git repo
-    project: ric-app/mc
-    # jenkins job name prefix
-    project-name: ric-app-mc
-    # maven settings file has docker credentials
-    mvn-settings: ric-app-mc-settings
+- mc_common: &mc_common
+  # values apply to all MC projects
+  name: mc-common
+  # git repo
+  project: ric-app/mc
+  # maven settings file has docker credentials
+  mvn-settings: ric-app-mc-settings
 
 - project:
-    <<: *mc_docker_common
-    name: ric-app-mc
-    # image name
-    docker-name: '{name}'
-    # source of docker tag
-    container-tag-method: yaml-file
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
-    jobs:
-      - '{project-name}-gerrit-docker-jobs'
-    stream:
-      - master:
-          branch: master
+  <<: *mc_common
+  name: ric-app-mc
+  # jenkins job name prefix
+  project-name: '{name}'
+  # source of docker tag
+  container-tag-method: yaml-file
+  container-tag-yaml-dir: mc-core
+  # image name
+  docker-name: '{name}'
+  docker-root: mc-core
+  # use host network
+  docker-build-args: '--network=host'
+  gerrit_trigger_file_paths:
+    - compare-type: REG_EXP
+      pattern: 'mc-core/.*'
+  jobs:
+    - '{project-name}-gerrit-docker-jobs'
+  stream:
+    - master:
+      branch: master
+
+- project:
+  <<: *mc_common
+  name: ric-app-mc-listener
+  # jenkins job name prefix
+  project-name: '{name}'
+  # source of docker tag
+  container-tag-method: yaml-file
+  container-tag-yaml-dir: sidecars/listener
+  # image name
+  docker-name: '{name}'
+  docker-root: sidecars/listener
+  # use host network
+  docker-build-args: '--network=host'
+  gerrit_trigger_file_paths:
+    - compare-type: REG_EXP
+      pattern: 'sidecars/listener/.*'
+  jobs:
+    - '{project-name}-gerrit-docker-jobs'
+  stream:
+    - master:
+      branch: 'master'
+
