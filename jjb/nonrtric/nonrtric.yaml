@@ -1,4 +1,18 @@
 ---
+#   Copyright (c) 2019 Nordix Foundation.
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+
 - project:
     name: nonrtric-project-view
     project-name: nonrtric
@@ -12,3 +26,30 @@
     branch: master
     jobs:
       - gerrit-info-yaml-verify
+
+- nonrtric_jdk11: &nonrtric_jdk11
+    # values apply to all projects here
+    name: nonrtric_jdk11
+    # git repo
+    project: nonrtric
+    # jenkins job name prefix
+    project-name: nonrtric
+    # maven settings file has docker credentials
+    mvn-settings: nonrtric-settings
+    # defaults.yaml value is NOT used due to value set in lf-maven-jobs.yaml
+    java-version: openjdk11
+    mvn-version: mvn36
+
+
+
+- project:
+    <<: *nonrtric_jdk11
+    project-name: nonrtric
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    jobs:
+      - 'gerrit-maven-docker-verify'
+      - 'gerrit-maven-docker-merge'
+      - 'gerrit-maven-docker-stage'
+    stream:
+      - master:
+          branch: master
