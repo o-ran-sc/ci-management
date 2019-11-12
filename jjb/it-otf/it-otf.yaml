@@ -35,8 +35,6 @@
     project: it/otf
     # source of docker tag
     container-tag-method: yaml-file
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
     # maven settings file has docker credentials
     mvn-settings: it-otf-settings
     jobs:
@@ -130,6 +128,42 @@
     docker-build-args: '--network=host'
     # tag file is in subdir
     container-tag-yaml-dir: '{docker-root}'
+    # build only on relevant changes
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '{docker-root}/.*'
+
+- project:
+    <<: *it_otf_common
+    name: it-otf-camunda
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    # start in parent directory with shared files
+    docker-root: otf-camunda
+    # dockerfile is in subdir of docker root
+    docker-build-args: '--network=host -f ./docker/Dockerfile'
+    # tag file is in subdir
+    container-tag-yaml-dir: '{docker-root}/docker'
+    # build only on relevant changes
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '{docker-root}/.*'
+
+- project:
+    <<: *it_otf_common
+    name: it-otf-service-api
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    # start in parent directory with shared files
+    docker-root: otf-service-api
+    # dockerfile is in subdir of docker root
+    docker-build-args: '--network=host -f ./docker/Dockerfile'
+    # tag file is in subdir
+    container-tag-yaml-dir: '{docker-root}/docker'
     # build only on relevant changes
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
