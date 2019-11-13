@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b5c2b959_189e1726",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-13T21:10:29Z",
+      "side": 1,
+      "message": "Scott what is this \"omc\"?  Please fix",
+      "range": {
+        "startLine": 16,
+        "startChar": 2,
+        "endLine": 16,
+        "endChar": 3
+      },
+      "revId": "d25cbb10d2288428d41976f63230597fdcd22e83",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6af07bf4_c1ffc0a0",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-13T21:10:29Z",
+      "side": 1,
+      "message": "Please remove quotes to be consistent with line 44",
+      "range": {
+        "startLine": 66,
+        "startChar": 20,
+        "endLine": 66,
+        "endChar": 28
+      },
+      "revId": "d25cbb10d2288428d41976f63230597fdcd22e83",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
