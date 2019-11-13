@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "53c62434_4d992ff9",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-13T16:02:59Z",
+      "side": 1,
+      "message": "unnecessary ws change",
+      "revId": "2546fa7b69974a6bf94393e72dd4d7786c0f0b5c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d0335ec_40016937",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-13T16:02:59Z",
+      "side": 1,
+      "message": "Please don\u0027t add whitespace changes like this, it\u0027s distracting",
+      "range": {
+        "startLine": 7,
+        "startChar": 6,
+        "endLine": 7,
+        "endChar": 8
+      },
+      "revId": "2546fa7b69974a6bf94393e72dd4d7786c0f0b5c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c32e11f_3051376b",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-13T16:02:59Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 15,
+        "startChar": 6,
+        "endLine": 15,
+        "endChar": 8
+      },
+      "revId": "2546fa7b69974a6bf94393e72dd4d7786c0f0b5c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3dc1312d_ee112a4c",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-13T16:02:59Z",
+      "side": 1,
+      "message": "Missing indent.",
+      "range": {
+        "startLine": 39,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 6
+      },
+      "revId": "2546fa7b69974a6bf94393e72dd4d7786c0f0b5c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5320b7b4_2b321e9b",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-13T16:02:59Z",
+      "side": 1,
+      "message": "missing indent",
+      "range": {
+        "startLine": 61,
+        "startChar": 4,
+        "endLine": 61,
+        "endChar": 6
+      },
+      "revId": "2546fa7b69974a6bf94393e72dd4d7786c0f0b5c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
