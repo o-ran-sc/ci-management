@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "cf7b65fa_ff343034",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2019-11-13T18:58:37Z",
+      "side": 1,
+      "message": "Oops. I intended to do that; done.",
+      "parentUuid": "c66d2eaa_d0224e54",
+      "range": {
+        "startLine": 34,
+        "startChar": 4,
+        "endLine": 34,
+        "endChar": 24
+      },
+      "revId": "40901798eea23e9e6c6193b2c0c9aa9e2c5c03d1",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f12b433b_28794cd3",
         "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
         "patchSetId": 12
@@ -39,6 +63,24 @@
       "revId": "40901798eea23e9e6c6193b2c0c9aa9e2c5c03d1",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b9eaf9f_a47d6731",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2019-11-13T18:58:37Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f12b433b_28794cd3",
+      "revId": "40901798eea23e9e6c6193b2c0c9aa9e2c5c03d1",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     },
     {
       "key": {
@@ -62,6 +104,30 @@
       "revId": "40901798eea23e9e6c6193b2c0c9aa9e2c5c03d1",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4452a3a1_ffabe675",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2019-11-13T18:58:37Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0b31be05_a8d9d317",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 3
+      },
+      "revId": "40901798eea23e9e6c6193b2c0c9aa9e2c5c03d1",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
