@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "03db1c86_24b20747",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-13T16:29:19Z",
+      "side": 1,
+      "message": "Well Scott, now you have changed every single line. I see that I have been inconsistent about 2 vs 4 spaces of indentation.  I will try to do better.  You might set an example for me here. I recommend 4.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 18
+      },
+      "revId": "ad8264002eeeedaaad253b2ba0ebe1cdb944d32c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
