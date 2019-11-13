@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38eb98e9_5ec68166",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-13T16:04:02Z",
+      "side": 1,
+      "message": "Still indented wrong here",
+      "range": {
+        "startLine": 39,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "25716c0b37b3c869e7c77e32d1b58ff7c0cd76ad",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b38a9925_18c061da",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-13T16:04:02Z",
+      "side": 1,
+      "message": "Here too",
+      "range": {
+        "startLine": 61,
+        "startChar": 4,
+        "endLine": 61,
+        "endChar": 5
+      },
+      "revId": "25716c0b37b3c869e7c77e32d1b58ff7c0cd76ad",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
