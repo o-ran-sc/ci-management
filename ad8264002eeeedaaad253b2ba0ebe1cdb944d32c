@@ -22,6 +22,30 @@
       "revId": "ad8264002eeeedaaad253b2ba0ebe1cdb944d32c",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09bcea84_c11f588b",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2019-11-13T16:36:27Z",
+      "side": 1,
+      "message": "I prefer 4 as well.  Waiting for vetting to tell me what else is wrong, and then I\u0027ll adjust everything to 4.",
+      "parentUuid": "03db1c86_24b20747",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 18
+      },
+      "revId": "ad8264002eeeedaaad253b2ba0ebe1cdb944d32c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
