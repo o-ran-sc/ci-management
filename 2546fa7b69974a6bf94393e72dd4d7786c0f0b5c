@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "dc4b87ef_bc0111bb",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2019-11-13T16:23:55Z",
+      "side": 1,
+      "message": "I cut/pasted your example completely over top the old \"junk\"; that deleted all leading whitespace and left me to retab/space.  My indent is 4, but it wasn\u0027t obvious to me. I\u0027ll adjust to 2.",
+      "parentUuid": "7d0335ec_40016937",
+      "range": {
+        "startLine": 7,
+        "startChar": 6,
+        "endLine": 7,
+        "endChar": 8
+      },
+      "revId": "2546fa7b69974a6bf94393e72dd4d7786c0f0b5c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0c32e11f_3051376b",
         "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
         "patchSetId": 7
@@ -62,6 +86,30 @@
       "revId": "2546fa7b69974a6bf94393e72dd4d7786c0f0b5c",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c816f34d_82497d03",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2019-11-13T16:23:55Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0c32e11f_3051376b",
+      "range": {
+        "startLine": 15,
+        "startChar": 6,
+        "endLine": 15,
+        "endChar": 8
+      },
+      "revId": "2546fa7b69974a6bf94393e72dd4d7786c0f0b5c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     },
     {
       "key": {
@@ -88,6 +136,30 @@
     },
     {
       "key": {
+        "uuid": "ac3b9066_5e6f7d71",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2019-11-13T16:23:55Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3dc1312d_ee112a4c",
+      "range": {
+        "startLine": 39,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 6
+      },
+      "revId": "2546fa7b69974a6bf94393e72dd4d7786c0f0b5c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5320b7b4_2b321e9b",
         "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
         "patchSetId": 7
@@ -108,6 +180,30 @@
       "revId": "2546fa7b69974a6bf94393e72dd4d7786c0f0b5c",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe96582e_16a14a44",
+        "filename": "jjb/ric-app-mc/ric-app-mc.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2019-11-13T16:23:55Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5320b7b4_2b321e9b",
+      "range": {
+        "startLine": 61,
+        "startChar": 4,
+        "endLine": 61,
+        "endChar": 6
+      },
+      "revId": "2546fa7b69974a6bf94393e72dd4d7786c0f0b5c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
