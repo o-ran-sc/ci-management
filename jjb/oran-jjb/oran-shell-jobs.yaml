@@ -29,6 +29,7 @@
     disable-job: false
     gerrit-skip-vote: false
     git-url: '$GIT_URL/$GERRIT_PROJECT'
+    mvn-global-settings: global-settings
     stream: master
     submodule-disable: false
     submodule-recursive: true
@@ -66,7 +67,12 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     builders:
+      - lf-infra-pre-build
+      - lf-provide-maven-settings:
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - shell: '{script}'
+      - lf-provide-maven-settings-cleanup
 
     publishers:
       - lf-infra-publish
