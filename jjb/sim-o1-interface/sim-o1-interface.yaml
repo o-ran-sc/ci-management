@@ -1,0 +1,66 @@
+---
+- project:
+    name: sim-o1-interface-project-view
+    project-name: sim-o1-interface
+    views:
+      - project-view
+
+- project:
+    name: sim-o1-interface-info
+    project: sim/o1-interface
+    project-name: sim-o1-interface
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
+
+- sim_o1_interface_common: &sim_o1_interface_common
+    # values apply to all sim/o1-interface docker projects
+    name: sim-o1-interface-common
+    # git repo
+    project: sim/o1-interface
+    # maven settings file has docker credentials
+    mvn-settings: sim-o1-interface-settings
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # source of docker tag
+    container-tag-method: yaml-file
+
+- project:
+    <<: *sim_o1_interface_common
+    name: sim-o1-interface-manager
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    # dockerfile is in subdir; needed because Dockerfile includes files outside of build context
+    docker-build-args: -f ntsimulator/deploy/manager/Dockerfile
+    # tag file is in subdir
+    container-tag-yaml-dir: ntsimulator/deploy/manager
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ntsimulator/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *sim_o1_interface_common
+    name: sim-o1-interface-device
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: '{name}'
+    # dockerfile is in subdir; needed because Dockerfile includes files outside of build context
+    docker-build-args: -f ntsimulator/deploy/Dockerfile
+    # tag file is in subdir
+    container-tag-yaml-dir: ntsimulator/deploy
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ntsimulator/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
