@@ -24,3 +24,16 @@
     script: !include-raw-escape: verify-pti-rtp-centos.sh
     jobs:
       - oran-shell-verify
+
+- project:
+    name: pti-rtp-release
+    project: pti/rtp
+    project-name: pti-rtp
+    # use a centos with big memory; docker not required
+    build-node: centos7-docker-2c-8g
+    # runs about 30 minutes
+    build-timeout: 600
+    script: !include-raw-escape: build-pti-rtp-centos.sh
+    jobs:
+      - oran-shell-merge
+
