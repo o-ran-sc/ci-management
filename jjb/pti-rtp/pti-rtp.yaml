@@ -13,14 +13,36 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- project:
-    name: pti-rtp-verify
+- pti_rtp_common: &pti_rtp_common
+    name: pti-rtp-common
+    # git repo
     project: pti/rtp
+    # jenkins job name prefix
     project-name: pti-rtp
+    # maven settings file has credentials
+    mvn-settings: pti-rtp-settings
     # use a centos with big memory; docker not required
     build-node: centos7-docker-2c-8g
-    # runs about 30 minutes
+
+- project:
+    <<: *pti_rtp_common
+    name: pti-rtp-verify
+    # runs about 40 minutes
     build-timeout: 60
-    script: !include-raw-escape: verify-pti-rtp-centos.sh
+    script: !include-raw-escape:
+        - install-yocto-prereq-centos.sh
+        - verify-yocto.sh
     jobs:
       - oran-shell-verify
+
+- project:
+    <<: *pti_rtp_common
+    name: pti-rtp-merge
+    # runs about 9 hours
+    build-timeout: 600
+    script: !include-raw-escape:
+        - install-yocto-prereq-centos.sh
+        - build-yocto.sh
+        - upload-yocto.sh
+    jobs:
+      - oran-shell-merge
