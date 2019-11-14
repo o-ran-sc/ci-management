@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e386bef0_20d84cc8",
+        "filename": "jjb/pti-rtp/build-pti-rtp-centos.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-14T11:36:34Z",
+      "side": 1,
+      "message": "Yes this is the really important part here.",
+      "range": {
+        "startLine": 42,
+        "startChar": 2,
+        "endLine": 42,
+        "endChar": 5
+      },
+      "revId": "b0c6dd7c37d4efeb33e8df0b18b2b212bc6d9942",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a73c555e_7b5dde83",
+        "filename": "jjb/pti-rtp/pti-rtp.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-14T11:36:34Z",
+      "side": 1,
+      "message": "This is not a release, it\u0027s a build or merge.  Release is something very different.",
+      "range": {
+        "startLine": 29,
+        "startChar": 18,
+        "endLine": 29,
+        "endChar": 25
+      },
+      "revId": "b0c6dd7c37d4efeb33e8df0b18b2b212bc6d9942",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e67849c_bfb1fc1c",
+        "filename": "jjb/pti-rtp/pti-rtp.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-14T11:36:34Z",
+      "side": 1,
+      "message": "This comment is not right.",
+      "range": {
+        "startLine": 34,
+        "startChar": 17,
+        "endLine": 34,
+        "endChar": 27
+      },
+      "revId": "b0c6dd7c37d4efeb33e8df0b18b2b212bc6d9942",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "435dd141_2b64e919",
+        "filename": "jjb/pti-rtp/pti-rtp.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-14T11:36:34Z",
+      "side": 1,
+      "message": "Below is the version that I prepared while waiting for your build shell script, please consider using it.\n\n- pti_rtp_common: \u0026pti_rtp_common\n    name: pti-rtp-common\n    # git repo\n    project: pti/rtp\n    # jenkins job name prefix\n    project-name: pti-rtp\n    # maven settings file has credentials\n    mvn-settings: pti-rtp-settings\n    # use a centos with big memory; docker not required\n    build-node: centos7-docker-2c-8g\n\n- project:\n    \u003c\u003c: *pti_rtp_common\n    name: pti-rtp-verify\n    # runs about 40 minutes\n    build-timeout: 60\n    script: !include-raw-escape: verify-pti-rtp-centos.sh\n    jobs:\n      - oran-shell-verify\n\n- project:\n    \u003c\u003c: *pti_rtp_common\n    name: pti-rtp-merge\n    # runs about 600 minutes\n    build-timeout: 700\n    script: !include-raw-escape: build-pti-rtp-centos.sh\n    jobs:\n      - oran-shell-merge",
+      "revId": "b0c6dd7c37d4efeb33e8df0b18b2b212bc6d9942",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
