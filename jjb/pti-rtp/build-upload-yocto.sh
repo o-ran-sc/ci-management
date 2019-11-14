@@ -14,28 +14,26 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-# Installs prerequisites on CentOS then invokes the pti/rtp build script
-# to test creation of a Yocto image.  The "-n" flag skips bitbake.
+# Builds a Yocto image and uploads to Nexus.
+# Assumes prereqs have already been installed.
 
-echo "--> verify-pti-rtp-centos.sh"
+echo "--> build-upload-yocto.sh"
 
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
-pkgs="gawk make wget tar bzip2 gzip python unzip perl patch \
-     diffutils diffstat cpp gcc gcc-c++ glibc-devel texinfo chrpath socat \
-     perl-Data-Dumper perl-Text-ParseWords perl-Thread-Queue perl-Digest-SHA \
-     python3-pip xz which SDL-devel xterm"
-echo "INFO: installing epel-release and packages $pkgs"
-sudo yum install -y epel-release \
-  && sudo yum makecache \
-  && sudo yum install -y $pkgs
-
 dir=workspace
 echo "INFO: creating workspace $dir"
 mkdir $dir
-cmd="./scripts/build_oran.sh -w $dir -n"
+cmd="./scripts/build_oran.sh -w $dir"
 echo "INFO: invoking build script: $cmd"
 $cmd
 
-echo "--> verify-pti-rtp-centos.sh ends"
+NEXUS_REPO_URL="https://nexus.o-ran-sc.org/content/sites/images"
+NEXUS_URL="https://nexus.o-ran-sc.org"
+NEXUS_REPO_ID="images"
+echo "INFO: TODO: upload to NEXUS_REPO_URL $NEXUS_REPO_URL"
+echo "INFO: TODO: upload to NEXUS_URL      $NEXUS_URL"
+echo "INFO: TODO: upload to NEXUS_REPO_ID  $NEXUS_REPO_ID"
+
+echo "--> build-upload-yocto.sh ends"
