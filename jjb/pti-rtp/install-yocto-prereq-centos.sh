@@ -14,10 +14,9 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-# Installs prerequisites on CentOS then invokes the pti/rtp build script
-# to test creation of a Yocto image.  The "-n" flag skips bitbake.
+# Installs Yocto build prerequisites on CentOS.
 
-echo "--> verify-pti-rtp-centos.sh"
+echo "--> install-yocto-prereq-centos.sh"
 
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
@@ -31,11 +30,4 @@ sudo yum install -y epel-release \
   && sudo yum makecache \
   && sudo yum install -y $pkgs
 
-dir=workspace
-echo "INFO: creating workspace $dir"
-mkdir $dir
-cmd="./scripts/build_oran.sh -w $dir -n"
-echo "INFO: invoking build script: $cmd"
-$cmd
-
-echo "--> verify-pti-rtp-centos.sh ends"
+echo "--> install-yocto-prereq-centos.sh ends"
