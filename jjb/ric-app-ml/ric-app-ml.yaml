@@ -1,0 +1,57 @@
+---
+#   Copyright (c) 2019 AT&T Intellectual Property.
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+- project:
+    name: ric-app-ml-project-view
+    project-name: ric-app-ml
+    views:
+      - project-view
+
+- project:
+    name: ric-app-ml-info
+    project: ric-app/ml
+    project-name: ric-app-ml
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- ric_app_ml_docker_common: &ric_app_ml_docker_common
+    # values apply to all admin docker projects
+    name: ric-app-ml-docker-common
+    # git repo
+    project: ric-app/ml
+    # jenkins job name prefix
+    project-name: ric-app-ml
+    # maven settings file has docker credentials
+    mvn-settings: ric-app-ml-settings
+
+- project:
+    <<: *ric_app_ml_docker_common
+    name: ric-app-ml
+    # image name
+    docker-name: '{name}'
+    # root of docker build
+    docker-root: AcumosXappAdapter
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '{docker-root}/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
