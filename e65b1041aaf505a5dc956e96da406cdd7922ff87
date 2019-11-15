@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "18732e1a_67ae50b9",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2019-11-15T17:09:47Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "9b388c94_ae9f779d",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 39
+      },
+      "revId": "e65b1041aaf505a5dc956e96da406cdd7922ff87",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "03be437f_a1a2f086",
         "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
         "patchSetId": 5
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "6fa73085_c213bb0f",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2019-11-15T17:09:47Z",
+      "side": 1,
+      "message": "Removed, put the paths relative to docker-root. Verified in sandbox, works fine: https://jenkins.o-ran-sc.org/sandbox/view/All/job/sim-o1-interface-manager-docker-verify-master/2/console",
+      "parentUuid": "03be437f_a1a2f086",
+      "range": {
+        "startLine": 37,
+        "startChar": 42,
+        "endLine": 37,
+        "endChar": 53
+      },
+      "revId": "e65b1041aaf505a5dc956e96da406cdd7922ff87",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cab852d3_ad2aeac8",
         "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
         "patchSetId": 5
@@ -68,6 +116,30 @@
       "revId": "e65b1041aaf505a5dc956e96da406cdd7922ff87",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a70dbd9_6d443cb3",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2019-11-15T17:09:47Z",
+      "side": 1,
+      "message": "I changed them for the manager only, pointing to folders specific to the manager code. The result is that a device will be always built, even if we make changes just for the manager. But, the manager will not be rebuilt if the changes are for the device. I am good with this.",
+      "parentUuid": "cab852d3_ad2aeac8",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 3
+      },
+      "revId": "e65b1041aaf505a5dc956e96da406cdd7922ff87",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
