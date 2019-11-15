@@ -16,6 +16,24 @@
       "revId": "a203580184800b915279f9c8d592ef591df890c4",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6d81a621_44cd500b",
+        "filename": "jjb/pti-rtp/build-upload-yocto.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-15T21:03:34Z",
+      "side": 1,
+      "message": "I agree this is highly tailored for a single project, but I modeled it after the akraino ISO upload script.  I welcome your suggestions for making this more generic.",
+      "parentUuid": "a07bc5b8_bb6608b9",
+      "revId": "a203580184800b915279f9c8d592ef591df890c4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
