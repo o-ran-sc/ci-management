@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b388c94_ae9f779d",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-15T15:45:55Z",
+      "side": 1,
+      "message": "Remove these entries since they are invariably overridden.",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 39
+      },
+      "revId": "e65b1041aaf505a5dc956e96da406cdd7922ff87",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03be437f_a1a2f086",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-15T15:45:55Z",
+      "side": 1,
+      "message": "I think this will not work -- pretty sure this has to be relative to docker-root.  Which is why I want to see the job run in the sandbox.",
+      "range": {
+        "startLine": 37,
+        "startChar": 42,
+        "endLine": 37,
+        "endChar": 53
+      },
+      "revId": "e65b1041aaf505a5dc956e96da406cdd7922ff87",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cab852d3_ad2aeac8",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-15T15:45:55Z",
+      "side": 1,
+      "message": "Here\u0027s a potential problem. Because the patterns are identical, both verify jobs will fire up on ANY submitted change within the ntsimulator subdirectory, and both will run on any merge.  Are you ok with that?  If so, you can completely drop the gerrit_trigger_file_paths configurations from both jobs, they are not doing you much good :(",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 3
+      },
+      "revId": "e65b1041aaf505a5dc956e96da406cdd7922ff87",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
