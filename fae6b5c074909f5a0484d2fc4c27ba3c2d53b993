@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "20566d34_c025c448",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-15T14:41:03Z",
+      "side": 1,
+      "message": "I feel you must specify docker-root\u003dntsimulator because you have limited the trigger file paths to that. \n\nAlso you have overridden, and lost, the docker-build-args from the macro.  The network\u003dhost part is important!\n\nThe dockerfile should not pull in files from outside the build context, that\u0027s an anti-pattern.",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 3
+      },
+      "revId": "fae6b5c074909f5a0484d2fc4c27ba3c2d53b993",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b253868e_35023f8b",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-15T14:41:03Z",
+      "side": 1,
+      "message": "See above",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 3
+      },
+      "revId": "fae6b5c074909f5a0484d2fc4c27ba3c2d53b993",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
