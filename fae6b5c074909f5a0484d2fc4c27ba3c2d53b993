@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1490a05a_d2dcc3f6",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2019-11-15T14:57:35Z",
+      "side": 1,
+      "message": "Ok, I understand. But how to solve this?\n\nIt might be an anti-pattern, but this is the case now: the same codebase is shared by two entities, the \"ntsimulator manager\" and the \"simulated device\" (it might be the case that they could be separated at some point in time, but it is not yet the case).\n\nAnd we need to produce two different docker images: one for the \"ntsimulator manager\", with its own details in the Dockerfile, and another docker image for the \"simulated device\", with its own particularities in the Dockerfile.\n\nThis is the reason why two separate Dockerfiles are present now in the code and include files from outside the build.\n\nDo you have any suggestion about how to address this? I don\u0027t think that we can issue major changes in the code for the Amber release.",
+      "parentUuid": "20566d34_c025c448",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 3
+      },
+      "revId": "fae6b5c074909f5a0484d2fc4c27ba3c2d53b993",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b253868e_35023f8b",
         "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2019-11-15T14:41:03Z",
       "side": 1,
       "message": "See above",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 3
+      },
+      "revId": "fae6b5c074909f5a0484d2fc4c27ba3c2d53b993",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61e5e25b_f0cdbbab",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2019-11-15T14:57:35Z",
+      "side": 1,
+      "message": "Same as above.",
+      "parentUuid": "b253868e_35023f8b",
       "range": {
         "startLine": 56,
         "startChar": 0,
