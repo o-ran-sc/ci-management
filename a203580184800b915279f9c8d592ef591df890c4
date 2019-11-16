@@ -52,6 +52,24 @@
       "revId": "a203580184800b915279f9c8d592ef591df890c4",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "606fbff0_ed793d2f",
+        "filename": "jjb/pti-rtp/build-upload-yocto.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-16T11:40:24Z",
+      "side": 1,
+      "message": "Thanks for the review, I split the build-upload into two separate scripts. I will have to think about parameterization a bit more, and my time is short right now.",
+      "parentUuid": "45f5c3ca_3ca35061",
+      "revId": "a203580184800b915279f9c8d592ef591df890c4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
