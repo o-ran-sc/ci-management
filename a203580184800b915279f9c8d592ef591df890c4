@@ -34,6 +34,24 @@
       "revId": "a203580184800b915279f9c8d592ef591df890c4",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "45f5c3ca_3ca35061",
+        "filename": "jjb/pti-rtp/build-upload-yocto.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2019-11-16T00:25:33Z",
+      "side": 1,
+      "message": "Well, as I stated on your previous IT ticket, I don\u0027t think what Akraino did is necessarily the best model.\n\nI think if you just parameterized some things, it would be significantly more reusable. And maybe split this into two scripts, so that the build and push are separate steps. Then, at least for the push, you could pretty much just pass in the repo name, iso path, and the destination path (it might even be worthwhile to expect the iso path to match the destination path, and move the iso to where you\u0027ll want it in the build script).",
+      "parentUuid": "6d81a621_44cd500b",
+      "revId": "a203580184800b915279f9c8d592ef591df890c4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
