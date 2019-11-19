@@ -18,6 +18,8 @@
     name: it-dep-docker-common
     # git repo
     project: it/dep
+    # jenkins job name prefix
+    project-name: it-dep
     # maven settings file has docker credentials
     mvn-settings: it-dep-settings
     # use host network to clone from our gerrit
@@ -36,7 +38,7 @@
     # jenkins job name prefix
     project-name: '{name}'
     # image name
-    docker-name: '{name}'
+    docker-name: 'o-ran-sc/{name}'
     # dockerfile is in subdir
     docker-build-args: -f ci/Dockerfile
     # any tag will do
@@ -53,7 +55,7 @@
     # image is not pushed, use trivial tag
     container-tag-method: latest
     # image name
-    docker-name: '{name}'
+    docker-name: 'o-ran-sc/{name}'
     # use host network for network resources
     docker-build-args: '--network=host -f ci/Dockerfile-package'
     jobs:
@@ -69,7 +71,7 @@
     # jenkins job name prefix
     project-name: '{name}'
     # image name
-    docker-name: '{name}'
+    docker-name: 'o-ran-sc/{name}'
     # root of docker build
     docker-root: ric-infra/45-Tiller/docker
     # build only on relevant changes
@@ -85,7 +87,7 @@
     # jenkins job name prefix
     project-name: '{name}'
     # image name
-    docker-name: '{name}'
+    docker-name: 'o-ran-sc/{name}'
     # root of docker build
     docker-root: ric-common/Initcontainer/docker
     gerrit_trigger_file_paths:
@@ -93,3 +95,14 @@
         pattern: '{docker-root}/.*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
+
+- project:
+    <<: *it_dep_common
+    name: it-dep-release
+    branch: master
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
