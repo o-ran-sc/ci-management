@@ -18,6 +18,8 @@
     name: sim-o1-interface-common
     # git repo
     project: sim/o1-interface
+    # jenkins job name prefix
+    project-name: sim-o1-interface
     # maven settings file has docker credentials
     mvn-settings: sim-o1-interface-settings
     # source of docker tag
@@ -29,7 +31,7 @@
     # jenkins job name prefix
     project-name: '{name}'
     # image name
-    docker-name: '{name}'
+    docker-name: 'o-ran-sc/{name}'
     docker-root: ntsimulator
     # dockerfile is in subdir; needed because Dockerfile includes files outside of build context
     docker-build-args: '--network=host -f deploy/manager/Dockerfile'
@@ -54,7 +56,7 @@
     # jenkins job name prefix
     project-name: '{name}'
     # image name
-    docker-name: '{name}'
+    docker-name: 'o-ran-sc/{name}'
     docker-root: ntsimulator
     # dockerfile is in subdir; needed because Dockerfile includes files outside of build context
     docker-build-args: '--network=host -f deploy/Dockerfile'
@@ -68,3 +70,13 @@
     stream:
       - master:
           branch: master
+
+- project:
+    <<: *sim_o1_interface_common
+    name: sim-o1-interface-release
+    branch: master
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
