@@ -27,7 +27,7 @@
     <<: *e2mgr_docker_common
     name: ric-plt-e2mgr
     # image name
-    docker-name: '{name}'
+    docker-name: 'o-ran-sc/{name}'
     # Dockerfile is in a subdir
     docker-root: E2Manager
     # source of docker tag
@@ -39,3 +39,13 @@
     stream:
       - master:
           branch: master
+
+- project:
+    <<: *e2mgr_docker_common
+    name: ric-plt-e2mgr-release
+    branch: master
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'

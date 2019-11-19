@@ -27,7 +27,7 @@
     <<: *a1_common
     name: ric-plt-a1
     # image name
-    docker-name: '{name}'
+    docker-name: 'o-ran-sc/{name}'
     # source of docker tag
     container-tag-method: yaml-file
     # use host network
@@ -70,3 +70,13 @@
     sonarcloud-project-organization: '{sonarcloud_project_organization}'
     jobs:
       - gerrit-tox-sonar
+
+- project:
+    <<: *a1_common
+    name: ricc-plt-a1-release
+    branch: master
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'

@@ -27,7 +27,7 @@
     <<: *dbaas_docker_common
     name: ric-plt-dbaas
     # image name
-    docker-name: '{name}'
+    docker-name: 'o-ran-sc/{name}'
     # Specify docker file and host network
     docker-build-args: '--network=host -f docker/Dockerfile.redis'
     # source of docker tag
@@ -37,3 +37,13 @@
     stream:
       - master:
           branch: master
+
+- project:
+    <<: *dbaas_docker_common
+    name: ric-plt-dbaas-release
+    branch: master
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'

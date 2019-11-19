@@ -27,7 +27,7 @@
     <<: *vespamgr_docker_common
     name: ric-plt-vespamgr
     # image name
-    docker-name: '{name}'
+    docker-name: 'o-ran-sc/{name}'
     # source of docker tag
     container-tag-method: yaml-file
     # use host network
@@ -37,3 +37,13 @@
     stream:
       - master:
           branch: master
+
+- project:
+    <<: *vespamgr_docker_common
+    name: ric-plt-vespamgr-release
+    branch: master
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
