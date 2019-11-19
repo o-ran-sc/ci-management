@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5c4d2a5b_56dc6f0e",
+        "filename": "jjb/pti-rtp/fake-build.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2019-11-19T18:24:21Z",
+      "side": 1,
+      "message": "Was this intended to be part of the change? Because I don\u0027t see any reason for it to be included.",
+      "revId": "b8393a6ecca60d8a8548c0819b334620ca435b74",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    }
+  ]
+}
