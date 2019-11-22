@@ -150,6 +150,7 @@
           container-tag-method: "{container-tag-method}"
           container-tag-yaml-dir: "{container-tag-yaml-dir}"
           docker-root: "{docker-root}"
+          docker-get-container-tag-script: "{docker-get-container-tag-script}"
       - lf-docker-build:
           docker-build-args: "{docker-build-args}"
           docker-name: "{docker-name}"
