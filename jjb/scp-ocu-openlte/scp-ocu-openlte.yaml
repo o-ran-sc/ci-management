@@ -29,7 +29,7 @@
     <<: *scp_ocu_openlte_common
     name: scp-ocu-openlte
     # image name
-    docker-name: 'o-ran-scp/{name}'
+    docker-name: 'o-ran-sc/scp/ocu-openlte'
     docker-build-args: '--network=host'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
