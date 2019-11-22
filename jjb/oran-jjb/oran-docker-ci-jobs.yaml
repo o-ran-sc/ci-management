@@ -81,6 +81,7 @@
     pre_docker_build_script: "# pre docker build script goes here"
     post_docker_build_script: "# post docker build script goes here"
     disable-job: "false"
+    docker-get-container-tag-script: "../shell/docker-get-container-tag.sh"
     docker-root: "$WORKSPACE"
     docker-build-args: ""
     git-url: "$GIT_URL/$PROJECT"
@@ -150,6 +151,7 @@
           container-tag-method: "{container-tag-method}"
           container-tag-yaml-dir: "{container-tag-yaml-dir}"
           docker-root: "{docker-root}"
+          docker-get-container-tag-script: "{docker-get-container-tag-script}"
       - lf-docker-build:
           docker-build-args: "{docker-build-args}"
           docker-name: "{docker-name}"
