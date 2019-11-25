@@ -1,0 +1,8 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Luis Farias <Luis.farias@intel.com>
+Code-Review+2: Eric Ball <eball@linuxfoundation.org>
+Submitted-by: Eric Ball <eball@linuxfoundation.org>
+Submitted-at: Mon, 25 Nov 2019 22:18:19 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/1769
+Project: ci-management
+Branch: refs/heads/master
