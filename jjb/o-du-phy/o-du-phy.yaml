@@ -1,0 +1,44 @@
+---
+- project:
+    name: o-du-phy-project-view
+    project-name: o-du-phy
+    views:
+      - project-view
+
+- project:
+    name: o-du-phy-info
+    project: o-du/phy
+    project-name: o-du-phy
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- o_du_phy_common: &o_du_phy_common
+    # values apply to all o-du/phy docker projects
+    name: o-du-phy-docker-common
+    # git repo
+    project: o-du/phy
+    # jenkins job name prefix
+    project-name: o-du-phy
+    # maven settings file has docker credentials
+    mvn-settings: o-du-phy-settings
+
+# build and publish packages to PackageCloud.io
+- project:
+    <<: *o_du_phy_common
+    name: o-du-phy-package
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image is not pushed, use trivial tag
+    container-tag-method: latest
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # use host network for network resources
+    docker-build-args: '--network=host -f Dockerfile'
+    jobs:
+      - gerrit-docker-verify
+    #  - oran-gerrit-docker-ci-pc-merge
+    stream:
+      - master:
+          branch: master
+
