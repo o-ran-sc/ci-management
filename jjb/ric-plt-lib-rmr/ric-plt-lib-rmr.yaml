@@ -113,3 +113,21 @@
     tox-dir: src/bindings/rmr-python
     jobs:
       - gerrit-tox-sonar
+        
+- project:
+    project: ric-plt/lib/rmr
+    project-name: ric-plt-lib-rmr
+    name: ric-plt-lib-rmr-release-verify
+    branch: master
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-packagecloud-verify
+
+- project:
+    project: ric-plt/lib/rmr
+    project-name: ric-plt-lib-rmr
+    name: ric-plt-lib-rmr-release-merge
+    branch: master
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-packagecloud-merge
