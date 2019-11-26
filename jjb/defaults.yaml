@@ -30,8 +30,8 @@
     mvn-goals: 'clean install'
     # Default JVM invocation options
     mvn-opts: ''
-    mvn-site-id: 'oran-site'
-    mvn-staging-id: 'oran-staging'
+    mvn-site-id: site
+    mvn-staging-id: staging
     mvn-snapshot-id: snapshots
     staging-profile-id: 14a1ca3fc76ce
 
