@@ -51,6 +51,13 @@ RUN wget -nv https://github.com/Kitware/CMake/releases/download/v3.14.5/cmake-3.
 RUN wget -nv https://dl.google.com/go/go1.12.linux-amd64.tar.gz \
     && tar -xf go1.12.linux-amd64.tar.gz \
     && mv go /usr/local
+ENV PATH=$PATH:/usr/local/go/bin:/usr/lib/go-1.12/bin
+RUN go get -u github.com/ory/go-acc \
+    && mv ~/go/bin/go-acc /usr/local/go/bin
+
+RUN wget -nv https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip \
+    && unzip sonar-scanner-cli-3.2.0.1227-linux.zip \
+    && mv sonar-scanner-3.2.0.1227-linux /usr/local/
 
 RUN wget -nv https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-linux.zip \
     && unzip ninja-linux.zip \
