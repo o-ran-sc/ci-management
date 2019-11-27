@@ -39,6 +39,8 @@
 - project:
     <<: *pti_rtp_common
     name: pti-rtp-merge
+    # demand 200GB storage
+    build-node: centos7-docker-2c-8g-200g
     # runs about 9 hours
     build-timeout: 600
     script: !include-raw-escape:
