@@ -40,3 +40,14 @@
     stream:
       - master:
           branch: master
+
+- project:
+    name: com-log-release
+    project: com/log
+    project-name: com-log
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-packagecloud-release-verify
+      - gerrit-packagecloud-release-merge
+
+
