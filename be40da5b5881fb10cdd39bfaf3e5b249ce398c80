@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0522c93b_c95695fb",
+        "filename": "jjb/com-log/com-log.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-29T14:00:04Z",
+      "side": 1,
+      "message": "The content is fine but again I hope you will forgive me for being extremely picky.  Please remove the trailing blank lines.  The LF #RelEng team will not merge when unnecessary whitespace is present.",
+      "revId": "be40da5b5881fb10cdd39bfaf3e5b249ce398c80",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
