@@ -38,3 +38,21 @@
     stream:
       - master:
           branch: master
+
+- project:
+    project: ric-plt/sdl
+    project-name: ric-plt-sdl
+    name: ric-plt-sdl-release-verify
+    branch: master
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-packagecloud-release-verify
+
+- project:
+    project: ric-plt/sdl
+    project-name: ric-plt-sdl
+    name: ric-plt-sdl-release-merge
+    branch: master
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-packagecloud-release-merge
