@@ -42,7 +42,7 @@
     # demand 200GB storage
     build-node: centos7-docker-2c-8g-200g
     # runs about 9 hours
-    build-timeout: 600
+    build-timeout: 1200
     script: !include-raw-escape:
         - install-yocto-prereq-centos.sh
         - build-yocto.sh
