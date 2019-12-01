@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "44ee2219_dc5eb391",
+        "filename": "jjb/pti-rtp/pti-rtp.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-12-01T11:02:44Z",
+      "side": 1,
+      "message": "Please update this comment with the time you observed, also cores and memory size of the build minion",
+      "range": {
+        "startLine": 44,
+        "startChar": 6,
+        "endLine": 44,
+        "endChar": 24
+      },
+      "revId": "b8648cb46ee989c982ffd5295cbba6e1d4093d87",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
