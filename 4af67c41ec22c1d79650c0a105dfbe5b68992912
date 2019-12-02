@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "43ed61fd_6dc93e98",
+        "filename": "jjb/pti-rtp/pti-rtp.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2019-12-02T08:42:13Z",
+      "side": 1,
+      "message": "Has anything change with the merge job which is causing the job to exceed the build timeout? If yes, please change this to a smaller value (1200mins is more appropriate). If you set this to a value that is too large, in cases when the job is non-responsive would simply keep the VM/node online increasing adding to the unnecessary costs.",
+      "range": {
+        "startLine": 45,
+        "startChar": 19,
+        "endLine": 45,
+        "endChar": 23
+      },
+      "revId": "4af67c41ec22c1d79650c0a105dfbe5b68992912",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
