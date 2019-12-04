@@ -1,0 +1,59 @@
+---
+- project:
+    name: ric-plt-sdlpy-project-view
+    project-name: ric-plt-sdlpy
+    views:
+      - project-view
+
+- sdlpy_common: &sdlpy_common
+    name: sdlpy-common
+    # git repo
+    project: ric-plt/sdlpy
+    # jenkins job name prefix
+    project-name: ric-plt-sdlpy
+    # maven settings file has credentials
+    mvn-settings: ric-plt-sdlpy-settings
+    # release job requires centos
+    build-node: centos7-builder-1c-1g
+
+# committer management
+- project:
+    name: ric-plt-sdlpy-info
+    <<: *sdlpy_common
+    jobs:
+      - gerrit-info-yaml-verify
+
+# verify distribution and publish to test.pypi.org
+- project:
+    name: ric-plt-sdlpy-pypi
+    <<: *sdlpy_common
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ricsdl-package/.*'
+    tox-dir: ricsdl-package
+    jobs:
+      - '{project-name}-gerrit-pypi-jobs'
+    stream:
+      - master:
+          branch: master
+
+# promote distribution from test.pypi.org to pypi.org
+- project:
+    name: ric-plt-sdlpy-release
+    <<: *sdlpy_common
+    jobs:
+      - '{project-name}-gerrit-pypi-release-jobs'
+
+# analyze unit test coverage
+- project:
+    name: ric-plt-sdlpy-sonar
+    <<: *sdlpy_common
+    branch: master
+    python-version: python3
+    sonarcloud: true
+    sonarcloud-api-token: '{sonarcloud_api_token}'
+    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
+    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    tox-dir: ricsdl-package
+    jobs:
+      - gerrit-tox-sonar
