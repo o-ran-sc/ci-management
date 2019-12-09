@@ -24,6 +24,8 @@
     mvn-site-id: site
     # use a centos with big memory; docker not required
     build-node: centos7-docker-2c-8g
+    # use a non-recursive pattern
+    archive-artifacts: *.log
 
 - project:
     <<: *pti_rtp_common
@@ -41,7 +43,7 @@
     name: pti-rtp-merge
     # demand 200GB storage
     build-node: centos7-docker-2c-8g-200g
-    # runs about 9 hours
+    # runs about 18 hours
     build-timeout: 1200
     script: !include-raw-escape:
         - install-yocto-prereq-centos.sh
