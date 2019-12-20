@@ -1,3 +1,5 @@
+# This Ansible playbook adds packages to the
+# O-RAN-SC build minion image that has Docker.
 ---
 - import_playbook: ../common-packer/provision/docker.yaml
 
@@ -16,3 +18,8 @@
     - name: 'Install PackageCloud'
       command: 'gem install package_cloud'
       become: true
+
+    - include_role:
+        name: fubarhouse.golang
+      vars:
+        go_version: 1.12
