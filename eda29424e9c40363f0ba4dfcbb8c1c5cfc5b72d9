@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fe177c78_aee04bdb",
+        "filename": "jjb/rtdv3/rtdv3.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-01-08T21:32:49Z",
+      "side": 1,
+      "message": "the ANT pattern is **/{branch}, so I think this should be a single asterisk within the quotes",
+      "range": {
+        "startLine": 27,
+        "startChar": 18,
+        "endLine": 27,
+        "endChar": 22
+      },
+      "revId": "eda29424e9c40363f0ba4dfcbb8c1c5cfc5b72d9",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
