@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "47d175d4_ee1d5768",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-01-08T21:33:44Z",
+      "side": 1,
+      "message": "I am pretty certain that Coala doesn\u0027t complain about this verb :) but please consider improving the message here.",
+      "revId": "eda29424e9c40363f0ba4dfcbb8c1c5cfc5b72d9",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fe177c78_aee04bdb",
         "filename": "jjb/rtdv3/rtdv3.yaml",
         "patchSetId": 1
