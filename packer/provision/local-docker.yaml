@@ -11,13 +11,13 @@
     - include_role: name=lfit.system-update
 
   tasks:
-    - name: 'Install rake gem'
-      command: 'gem install rake'
-      become: true
-
-    - name: 'Install PackageCloud'
-      command: 'gem install package_cloud'
-      become: true
+    - include_role:
+        name: fubarhouse.ruby
+      vars:
+        ruby_version: 2.4.0
+        ruby_packages:
+          - rake
+          - package_cloud
 
     - include_role:
         name: fubarhouse.golang
