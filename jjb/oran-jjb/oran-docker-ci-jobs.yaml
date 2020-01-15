@@ -73,7 +73,7 @@
     ######################
 
     branch: master
-    build-days-to-keep: 7
+    build-days-to-keep: 30
     build-timeout: 60
     submodule-disable: false
     submodule-recursive: true
