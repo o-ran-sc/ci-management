@@ -51,8 +51,10 @@
 - project:
     <<: *portal_ric_dashboard_common
     name: portal-ric-dashboard-sonar
-    mvn-goals: test
     branch: master
+    # template goal install attempts build of image
+    # but this job does not login at Docker registry
+    mvn-params: -Ddocker.skip=true
     sonarcloud: true
     sonarcloud-api-token: '{sonarcloud_api_token}'
     sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
