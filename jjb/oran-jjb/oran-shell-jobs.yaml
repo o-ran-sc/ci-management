@@ -22,7 +22,7 @@
     archive-artifacts: >
       **/*.log
     branch: master
-    build-days-to-keep: 7
+    build-days-to-keep: 30
     build-timeout: 15
     cron: ''
     concurrent: false

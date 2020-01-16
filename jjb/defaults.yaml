@@ -9,6 +9,10 @@
     jenkins-ssh-credential: jenkins
     lftools-version: <1.0.0
 
+    # build discards
+    build-days-to-keep: 30
+
+    # pattern for build files to archive
     archive-artifacts: ''
 
     # most jobs invoke docker
