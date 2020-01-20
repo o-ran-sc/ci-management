@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1448cd7c_280154c6",
+        "filename": "jenkins-config/clouds/openstack/cattle/centos7-docker-2c-8g.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2020-01-20T21:17:18Z",
+      "side": 1,
+      "message": "Please remove this line. The new image is 20gb (which is the default).",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 14
+      },
+      "revId": "9a3de4c964535aada500af4616e0b7ff72ee51f2",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
