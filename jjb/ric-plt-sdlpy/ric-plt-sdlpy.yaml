@@ -55,5 +55,6 @@
     sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
     sonarcloud-project-organization: '{sonarcloud_project_organization}'
     tox-dir: ricsdl-package
+    mvn-params: -f ricdsl-package
     jobs:
       - gerrit-tox-sonar
