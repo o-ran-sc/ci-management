@@ -49,11 +49,11 @@
     name: ric-plt-sdlpy-sonar
     <<: *sdlpy_common
     branch: master
-    python-version: python3
     sonarcloud: true
     sonarcloud-api-token: '{sonarcloud_api_token}'
     sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
     sonarcloud-project-organization: '{sonarcloud_project_organization}'
     tox-dir: ricsdl-package
+    mvn-params: -f ricsdl-package
     jobs:
       - gerrit-tox-sonar
