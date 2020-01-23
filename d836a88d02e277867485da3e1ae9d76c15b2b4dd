@@ -22,6 +22,30 @@
       "revId": "d836a88d02e277867485da3e1ae9d76c15b2b4dd",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4867a863_c94c8881",
+        "filename": "packer/provision/local-docker.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2020-01-23T16:33:58Z",
+      "side": 1,
+      "message": "That would be because... I screwed up. I found that the above method doesn\u0027t effectively install package_cloud (even with full debugging on, I couldn\u0027t find what the issue was. It ran the task and succeeded, but it wasn\u0027t available on the built image). I\u0027ve removed the bad installation above in my latest patch.",
+      "parentUuid": "4f83c984_8f3f2376",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 4
+      },
+      "revId": "d836a88d02e277867485da3e1ae9d76c15b2b4dd",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
