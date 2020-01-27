@@ -1,0 +1,9 @@
+# build nodeb-rnib  and publish to PackageCloud.io on merge to master branch
+- project:
+    
+    name: dodeb-rnib-merge
+    jobs:
+      - oran-gerrit-docker-ci-pc-merge
+    stream:
+      - master:
+          branch: master
