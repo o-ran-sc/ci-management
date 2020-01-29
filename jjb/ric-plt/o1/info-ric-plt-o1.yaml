@@ -1,0 +1,9 @@
+---
+- project:
+    name: ric-plt-o1-info
+    project-name: ric-plt-o1
+    build-node: centos7-builder-2c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/o1
+    branch: master
