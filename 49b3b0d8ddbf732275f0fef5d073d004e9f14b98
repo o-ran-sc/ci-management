@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b7c9c23_f61e398d",
+        "filename": "jenkins-config/clouds/openstack/cattle/centos7-docker-2c-8g.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2020-01-29T16:45:24Z",
+      "side": 1,
+      "message": "We also need to add \"VOLUME_SIZE\u003d20\" to centos7 for it to work properly. I generally prefer fairly atomic commits, but adding that in here should fix all the builders in one shot.",
+      "revId": "49b3b0d8ddbf732275f0fef5d073d004e9f14b98",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
