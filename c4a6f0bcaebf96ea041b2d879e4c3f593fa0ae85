@@ -1,0 +1,7 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+2: Aric Gardner <agardner@linuxfoundation.org>
+Submitted-by: Aric Gardner <agardner@linuxfoundation.org>
+Submitted-at: Thu, 30 Jan 2020 17:20:23 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/2376
+Project: ci-management
+Branch: refs/heads/master
