@@ -14,7 +14,7 @@
       - gerrit-info-yaml-verify
 
 - it_dep_common: &it_dep_common
-    # values apply to all it/dep docker projects
+    # values apply to all it/dep projects
     name: it-dep-docker-common
     # git repo
     project: it/dep
@@ -26,9 +26,6 @@
     docker-build-args: '--network=host'
     # source of docker tag
     container-tag-method: yaml-file
-    stream:
-      - master:
-          branch: master
 
 - project:
     <<: *it_dep_common
@@ -45,6 +42,9 @@
     container-tag-method: latest
     jobs:
       - gerrit-docker-verify
+    stream:
+      - all:
+          branch: '*'
 
 # build and publish packages to PackageCloud.io
 - project:
@@ -80,6 +80,9 @@
         pattern: '{docker-root}/.*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
 
 - project:
     <<: *it_dep_common
@@ -95,6 +98,9 @@
         pattern: '{docker-root}/.*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
 
 - project:
     <<: *it_dep_common
@@ -105,4 +111,3 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
-
