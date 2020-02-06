@@ -48,8 +48,8 @@ RUN wget -nv https://github.com/Kitware/CMake/releases/download/v3.14.5/cmake-3.
     && chmod +x cmake-3.14.5-Linux-x86_64.sh \
     && ./cmake-3.14.5-Linux-x86_64.sh --prefix=/usr/local --skip-license
 
-RUN wget -nv https://dl.google.com/go/go1.12.linux-amd64.tar.gz \
-    && tar -xf go1.12.linux-amd64.tar.gz \
+RUN wget -nv https://dl.google.com/go/go1.12.16.linux-amd64.tar.gz \
+    && tar -xf go1.12.16.linux-amd64.tar.gz \
     && mv go /usr/local
 ENV PATH=$PATH:/usr/local/go/bin:/usr/lib/go-1.12/bin
 RUN go get -u github.com/ory/go-acc \
