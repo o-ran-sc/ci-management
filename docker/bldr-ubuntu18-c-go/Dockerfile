@@ -1,6 +1,6 @@
 # O-RAN-SC
 #
-# Copyright (C) 2019 AT&T Intellectual Property and Nokia
+# Copyright (C) 2019-2020 AT&T Intellectual Property and Nokia
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -44,25 +44,55 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /tmp
 
-RUN wget -nv https://github.com/Kitware/CMake/releases/download/v3.14.5/cmake-3.14.5-Linux-x86_64.sh \
-    && chmod +x cmake-3.14.5-Linux-x86_64.sh \
-    && ./cmake-3.14.5-Linux-x86_64.sh --prefix=/usr/local --skip-license
+# Install go versions in /opt
+RUN mkdir -p /opt/go
 
-RUN wget -nv https://dl.google.com/go/go1.12.linux-amd64.tar.gz \
-    && tar -xf go1.12.linux-amd64.tar.gz \
-    && mv go /usr/local
-ENV PATH=$PATH:/usr/local/go/bin:/usr/lib/go-1.12/bin
-RUN go get -u github.com/ory/go-acc \
-    && mv ~/go/bin/go-acc /usr/local/go/bin
+ARG g12="1.12.16"
+RUN wget -nv https://dl.google.com/go/go${g12}.linux-amd64.tar.gz \
+    && tar -xf go${g12}.linux-amd64.tar.gz \
+    && mv go /opt/go/1.12 \
+    && rm -f go*.gz
 
-RUN wget -nv https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip \
-    && unzip sonar-scanner-cli-3.2.0.1227-linux.zip \
-    && mv sonar-scanner-3.2.0.1227-linux /usr/local/
+ARG g13="1.13.7"
+RUN wget -nv https://dl.google.com/go/go${g13}.linux-amd64.tar.gz \
+    && tar -xf go${g13}.linux-amd64.tar.gz \
+    && mv go /opt/go/1.13 \
+    && rm -f go*.gz
 
+ENV GOPATH=/root/go
+# Default path has go version 1.12.x
+# Use /opt/go/1.13/bin for version 1.13.x
+ENV PATH=$PATH:/opt/go/1.12/bin:$GOPATH/bin
+
+# This installs go-acc to GOPATH
+RUN go version \
+    && go get -v github.com/ory/go-acc \
+    && go-acc --help
+
+# install a recent version of cmake, ubuntu repo version is old
+ARG cv="3.14.5"
+RUN wget -nv https://github.com/Kitware/CMake/releases/download/v${cv}/cmake-${cv}-Linux-x86_64.sh \
+    && chmod +x cmake-${cv}-Linux-x86_64.sh \
+    && ./cmake-${cv}-Linux-x86_64.sh --prefix=/usr/local --skip-license \
+    && rm -f cmake*.sh
+
+# install a recent version of ninja-build, ubuntu repo version is old
 RUN wget -nv https://github.com/ninja-build/ninja/releases/download/v1.9.0/ninja-linux.zip \
     && unzip ninja-linux.zip \
     && chmod +x ninja \
-    && mv ninja /usr/local/bin
+    && mv ninja /usr/local/bin \
+    && rm -f ninja*.zip
+
+# sonar-scanner is not available in ubuntu repo
+ARG sv="4.2.0.1873"
+RUN wget -nv https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${sv}-linux.zip \
+    && unzip sonar-scanner-cli-${sv}-linux.zip \
+    && mv sonar-scanner-${sv}-linux /usr/local/sonar-scanner \
+    && rm -f sonar*.zip
+
+# golangci-lint is not available in ubuntu repo
+RUN wget -O- -nv https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $GOPATH/bin v1.23.6 \
+    && rm -f install.sh
 
 # NNG repo is not frequently tagged so it's pinned to a commit hash.
 # This commit provides fix to the proxy-reconnect
@@ -74,13 +104,17 @@ RUN git clone https://github.com/nanomsg/nng.git \
     && cd build \
     && cmake -DBUILD_SHARED_LIBS=1 -G Ninja .. \
     && ninja \
-    && ninja install
+    && ninja install \
+    && cd ../.. \
+    && rm -rf nng
 
-RUN wget -nv https://dl.bintray.com/boostorg/release/1.69.0/source/boost_1_69_0.zip \
-    && unzip -q boost_1_69_0.zip \
-    && cd boost_1_69_0 \
+# install a recent version of boost, ubuntu repo version is old
+ARG bv="1_69_0"
+RUN wget -nv https://dl.bintray.com/boostorg/release/1.69.0/source/boost_${bv}.zip \
+    && unzip -q boost_${bv}.zip \
+    && cd boost_${bv} \
     && ./bootstrap.sh --prefix=/usr/ \
     && ./b2 \
     && ./b2 install \
     && cd ../ \
-    && rm -rf boost_1_69_0.zip boost_1_69_0
+    && rm -rf boost*.zip boost_${bv}
