@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d3fb287d_f8da9e75",
+        "filename": "jjb/ric-plt-e2mgr/ric-plt-e2mgr.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-02-07T18:46:11Z",
+      "side": 1,
+      "message": "This definition of the builder is in the global JJB namespace.  I can define exactly one of these.  If I define a second builder named \"lf-sonar-prescan\" with content appropriate for another project I get this error:\n\njenkins_jobs.errors.JenkinsJobsException: Duplicate entry found in \u0027/Users/clott/git/o-ran-sc/ci-management/jjb/ric-plt-e2mgr/ric-plt-e2mgr.yaml: \u0027lf-sonar-prescan\u0027 already defined",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 4
+      },
+      "revId": "3f294072a6b5143063e62756fa4c5492457f1cb4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca5dc5c9_3ac22719",
+        "filename": "jjb/ric-plt-e2mgr/ric-plt-e2mgr.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-02-07T18:46:11Z",
+      "side": 1,
+      "message": "How can I define a builder that\u0027s local to this project only?",
+      "range": {
+        "startLine": 68,
+        "startChar": 4,
+        "endLine": 68,
+        "endChar": 8
+      },
+      "revId": "3f294072a6b5143063e62756fa4c5492457f1cb4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
