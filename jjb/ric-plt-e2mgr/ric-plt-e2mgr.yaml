@@ -49,3 +49,39 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
+
+
+# This depends on builder lf-sonar-prescan
+# defined in oran-sonar-builder.yaml
+- project:
+    name: ric-plt-e2mgr-sonar
+    project: ric-plt/e2mgr
+    project-name: ric-plt-e2mgr
+    # docker-enabled nodes have golang
+    # build script assumes ubuntu
+    # centos minion PATH has /opt/go/1.12/bin
+    # but ubuntu minion does NOT
+    build-node: ubuntu1804-docker-4c-4g
+    jobs:
+      - gerrit-sonar-prescan:
+          sonar-project-file: ""
+          # sonarcloud values are in defaults.yaml
+          sonar-properties: |
+            # Required metadata
+            sonar.login={sonarcloud_api_token}
+            sonar.projectKey={sonarcloud_project_organization}_{project-name}
+            sonar.projectName={project-name}
+            sonar.organization={sonarcloud_project_organization}
+             # Encoding
+            sonar.build.sourceEncoding=UTF-8
+             # Language
+            sonar.language=go
+             # Source directory
+            sonar.sources=E2Manager
+             # Unit tests
+            # sonar.go.golangci-lint.reportPaths=sca.txt
+            sonar.go.coverage.reportPaths=E2Manager/coverage.txt
+            # Inclusions
+            sonar.inclusions=**/**.go
+            # Exclusions
+            sonar.exclusions=**/mocks/**.go,**/tests/**.go
