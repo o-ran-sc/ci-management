@@ -177,3 +177,13 @@
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
               file-paths: '{obj:gerrit_trigger_file_paths}'
+
+- builder:
+    name: lf-sonar-prescan
+    builders:
+      - conditional-step:
+          condition-kind: regex-match
+          regex: ^ric-plt-e2mgr-sonar-prescan$
+          label: $JOB_NAME
+          steps:
+            - shell: !include-raw: shell/e2mgr-prescan.sh
