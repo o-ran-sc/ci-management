@@ -45,6 +45,30 @@
       "revId": "3f294072a6b5143063e62756fa4c5492457f1cb4",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "317915f5_0d7adb99",
+        "filename": "jjb/ric-plt-e2mgr/ric-plt-e2mgr.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-02-07T18:49:22Z",
+      "side": 1,
+      "message": "sorry that was vague. I should have written:\n\nI think I need to define a builder named \"lf-sonar-prescan\" that\u0027s within the scope of the project, or within the scope of the gerrit-sonar-prescan job.  What\u0027s the trick?",
+      "parentUuid": "ca5dc5c9_3ac22719",
+      "range": {
+        "startLine": 68,
+        "startChar": 4,
+        "endLine": 68,
+        "endChar": 8
+      },
+      "revId": "3f294072a6b5143063e62756fa4c5492457f1cb4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
