@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "83d6b60a_c4ad4665",
+        "filename": "jjb/oran-jjb/oran-shell-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-02-10T16:21:44Z",
+      "side": 1,
+      "message": "So every time there\u0027s a new project that wants to use this, we have to add a new conditional build step?\n\nI am not a fan.",
+      "range": {
+        "startLine": 181,
+        "startChar": 2,
+        "endLine": 189,
+        "endChar": 53
+      },
+      "revId": "7fc5db040c37019251a24cb7302a2b5d2a044fa8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
