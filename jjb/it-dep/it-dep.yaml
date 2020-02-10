@@ -73,7 +73,7 @@
     # image name
     docker-name: 'o-ran-sc/{name}'
     # root of docker build
-    docker-root: ric-infra/45-Tiller/docker
+    docker-root: ci/tiller-secret-gen
     # build only on relevant changes
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
