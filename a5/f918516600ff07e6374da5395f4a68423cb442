@@ -1,0 +1,8 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Chris Lott <cl778h@att.com>
+Code-Review+2: Aric Gardner <agardner@linuxfoundation.org>
+Submitted-by: Aric Gardner <agardner@linuxfoundation.org>
+Submitted-at: Mon, 10 Feb 2020 21:44:28 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/2465
+Project: ci-management
+Branch: refs/heads/master
