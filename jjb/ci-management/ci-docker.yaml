@@ -40,7 +40,7 @@
       - compare-type: REG_EXP
         pattern: 'docker/{name}/.*'
 
-- project:
+ project:
     <<: *ci_docker_common
     name: bldr-ubuntu16-c-go
     project-name: '{project}-{name}'
