@@ -59,3 +59,13 @@
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'docker/{name}/.*'
+
+- project:
+    <<: *ci_docker_common
+    name: bldr-alpine3-go
+    project-name: '{project}-{name}'
+    docker-name: '{name}'
+    docker-root: 'docker/{name}'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'docker/{name}/.*'
