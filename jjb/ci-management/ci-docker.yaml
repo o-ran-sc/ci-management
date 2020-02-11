@@ -32,16 +32,6 @@
 
 - project:
     <<: *ci_docker_common
-    name: bldr-debian-python
-    project-name: '{project}-{name}'
-    docker-name: '{name}'
-    docker-root: 'docker/{name}'
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'docker/{name}/.*'
-
-- project:
-    <<: *ci_docker_common
     name: bldr-ubuntu16-c-go
     project-name: '{project}-{name}'
     docker-name: '{name}'
