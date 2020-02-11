@@ -1,6 +1,8 @@
 ---
+# Job configurations for base docker build images
+
+# This macro factors out common configuration
 - ci_docker_common: &ci_docker_common
-    # Defines common ci-docker configuration
     name: ci-docker-common
     # git repo
     project: ci-management
@@ -10,62 +12,46 @@
     cron: 'H H * * 6'
     # use host network to clone from our gerrit
     docker-build-args: '--network=host'
-    # default to YAML
+    # get tag from YAML
     container-tag-method: yaml-file
+    # name key is overridden by project template
+    # Jenkins job prefix
+    project-name: '{project}-{name}'
+    # Docker image name
+    docker-name: '{name}'
+    # Directory with Dockerfile
+    docker-root: 'docker/{name}'
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'docker/{name}/.*'
+    # Includes verify and merge jobs
     jobs:
       - '{project-name}-gerrit-docker-jobs'
+    # Only build master branch
     stream:
       - master:
           branch: master
 
+# Each project name is a subdirectory in ci-management/docker
+# with a Dockerfile and a container-tag.yaml file
+
 - project:
-    <<: *ci_docker_common
     name: bldr-alpine3
-    project-name: '{project}-{name}'
-    docker-name: '{name}'
-    docker-root: 'docker/{name}'
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'docker/{name}/.*'
-    jobs:
-      - '{project-name}-gerrit-docker-jobs'
+    <<: *ci_docker_common
 
 - project:
-    <<: *ci_docker_common
-    name: bldr-debian-python
-    project-name: '{project}-{name}'
-    docker-name: '{name}'
-    docker-root: 'docker/{name}'
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'docker/{name}/.*'
-
-- project:
-    <<: *ci_docker_common
-    name: bldr-ubuntu16-c-go
-    project-name: '{project}-{name}'
-    docker-name: '{name}'
-    docker-root: 'docker/{name}'
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'docker/{name}/.*'
-
-- project:
-    <<: *ci_docker_common
-    name: bldr-ubuntu18-c-go
-    project-name: '{project}-{name}'
-    docker-name: '{name}'
-    docker-root: 'docker/{name}'
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'docker/{name}/.*'
-
-- project:
-    <<: *ci_docker_common
     name: bldr-alpine3-go
-    project-name: '{project}-{name}'
-    docker-name: '{name}'
-    docker-root: 'docker/{name}'
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'docker/{name}/.*'
+    <<: *ci_docker_common
+
+- project:
+    name: bldr-debian-python
+    <<: *ci_docker_common
+
+- project:
+    name: bldr-ubuntu16-c-go
+    <<: *ci_docker_common
+
+- project:
+    name: bldr-ubuntu18-c-go
+    <<: *ci_docker_common
