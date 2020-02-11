@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "86ca1c78_c8ebc9f5",
+        "filename": "docker/bldr-ubuntu18-c-go/Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000074
+      },
+      "writtenOn": "2020-02-11T14:43:10Z",
+      "side": 1,
+      "message": "could you please add a comment here about what the user of this image has to do with their PATH if they want 1.13.7 thanks",
+      "revId": "c3568248e353143d2c82e8da5869b614f37bfe8b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
