@@ -16,6 +16,24 @@
       "revId": "c3568248e353143d2c82e8da5869b614f37bfe8b",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0b80e6e_1df52b9d",
+        "filename": "docker/bldr-ubuntu18-c-go/Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-02-11T19:23:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "86ca1c78_c8ebc9f5",
+      "revId": "c3568248e353143d2c82e8da5869b614f37bfe8b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
