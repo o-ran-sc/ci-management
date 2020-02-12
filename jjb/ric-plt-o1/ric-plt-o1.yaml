@@ -12,3 +12,38 @@
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- o1_docker_common: &o1_docker_common
+    # values apply to all docker projects
+    name: o1-docker-common
+    # git repo
+    project: ric-plt/o1
+    # jenkins job name prefix
+    project-name: ric-plt-o1
+    # maven settings file has docker credentials
+    mvn-settings: ric-plt-o1-settings
+
+- project:
+    <<: *o1_docker_common
+    name: ric-plt-o1
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use host for network access
+    docker-build-args: '--network=host'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *o1_docker_common
+    name: ric-plt-o1-release
+    branch: master
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
