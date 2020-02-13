@@ -7,25 +7,40 @@
   become_user: root
   become_method: sudo
 
+  vars:
+    golang_version: 1.12
+    gopath: '/opt/go/{{golang_version}}/bin'
+
   pre_tasks:
     - include_role: name=lfit.system-update
 
   tasks:
-    - include_role:
-        name: geerlingguy.ruby
-      vars:
-        ruby_install_gems:
-          - rake
-        ruby_install_bundler: false
-        ruby_install_from_source: true
-        ansible_become: true
+    # COMMENTING OUT TO SPEED UP TESTING
+    # DO NOT MERGE THIS CHANGE WITH THIS TASK COMMENTED OUT
 
-    - name: 'Install PackageCloud'
-      command: 'gem install package_cloud'
-      become: true
+    # - include_role:
+    #     name: geerlingguy.ruby
+    #   vars:
+    #     ruby_install_gems:
+    #       - rake
+    #     ruby_install_bundler: false
+    #     ruby_install_from_source: true
+    #     ansible_become: true
+    #
+    # - name: 'Install PackageCloud'
+    #   command: 'gem install package_cloud'
+    #   become: true
 
     - include_role:
         name: gantsign.golang
       vars:
-        golang_version: 1.12
         ansible_become: true
+
+    - name: Add Go to Ubuntu path
+      lineinfile:
+        path: /etc/environment
+        regexp: 'PATH=(["]*)((?!.*?{{gopath}}).*?)(["]*)$'
+        line: 'PATH=\1\2:{{gopath}}\3'
+        backrefs: yes
+      when: ansible_distribution == 'Ubuntu'
+      become: yes
