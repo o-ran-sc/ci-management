@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c14ac8bc_c4e4bf71",
+        "filename": "packer/provision/local-docker.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-02-13T14:04:31Z",
+      "side": 1,
+      "message": "1.12 is a totally valid version string, but that\u0027s a year old. The latest in the 1.12 series is 1.12.16.  May we please have the latest?\n\nhttps://golang.org/doc/devel/release.html#go1.12.minor",
+      "range": {
+        "startLine": 11,
+        "startChar": 20,
+        "endLine": 11,
+        "endChar": 24
+      },
+      "revId": "0f9a200d3c91985a5ebb6c6367b18a060086c592",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
