@@ -22,6 +22,30 @@
       "revId": "461b4709e9b1ef00ee054485d58b37753e7922eb",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a1d7ac8_30ce7c72",
+        "filename": "packer/provision/local-docker.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2020-02-13T15:23:46Z",
+      "side": 1,
+      "message": "I can test that after this is working. I\u0027m not going to change a variable from a known-good config while I\u0027m testing a change that utilizes that variable.",
+      "parentUuid": "082e708f_c33d7a55",
+      "range": {
+        "startLine": 11,
+        "startChar": 20,
+        "endLine": 11,
+        "endChar": 24
+      },
+      "revId": "461b4709e9b1ef00ee054485d58b37753e7922eb",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
