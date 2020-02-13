@@ -7,6 +7,9 @@
   become_user: root
   become_method: sudo
 
+  vars:
+    golang_version: 1.12
+
   pre_tasks:
     - include_role: name=lfit.system-update
 
@@ -27,5 +30,19 @@
     - include_role:
         name: gantsign.golang
       vars:
-        golang_version: 1.12
         ansible_become: true
+
+    - name: Add Go to Ubuntu path
+      blockinfile:
+        path: /etc/bash.bashrc
+        block: |
+          if [ -d /etc/profile.d ]; then
+            for i in /etc/profile.d/*.sh; do
+              if [ -r $i ]; then
+                . $i
+              fi
+            done
+            unset i
+          fi
+      when: ansible_distribution == 'Ubuntu'
+      become: yes
