@@ -177,3 +177,48 @@
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
               file-paths: '{obj:gerrit_trigger_file_paths}'
+
+
+# Release artifact from gerrit by shell script.
+# Triggered automatically by release comment; can be run on any branch.
+#
+# Required parameters:
+#   build-node:     label (flavor) of jenkins build minion
+#   project:        git repository
+#   project-name:   Jenkins job name prefix
+#   script:         shell script to execute
+# Optional parameters:
+#   branch:         git branch pattern, defaults to master
+#   stream:         friendly stream name (often same as branch), defaults to master
+- job-template:
+  name: '{project-name}-shell-release-merge-{stream}'
+  id: oran-shell-release-merge
+  <<: *oran_shell_common
+
+  gerrit_release_triggers:
+    - comment-added-contains-event:
+        comment-contains-value: '^Patch Set\s+\d+:\s+release\s*$'
+
+  scm:
+    - lf-infra-gerrit-scm:
+        jenkins-ssh-credential: '{jenkins-ssh-credential}'
+        git-url: '{git-url}'
+        refspec: '$GERRIT_REFSPEC'
+        branch: '$GERRIT_BRANCH'
+        submodule-recursive: '{submodule-recursive}'
+        submodule-timeout: '{submodule-timeout}'
+        submodule-disable: '{submodule-disable}'
+        choosing-strategy: default
+
+  triggers:
+    - gerrit:
+        server-name: '{gerrit-server-name}'
+        trigger-on: '{obj:gerrit_release_triggers}'
+        projects:
+          - project-compare-type: ANT
+            project-pattern: '{project}'
+            branches:
+              - branch-compare-type: ANT
+                branch-pattern: '**/{branch}'
+            file-paths: '{obj:gerrit_trigger_file_paths}'
+

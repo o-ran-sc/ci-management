@@ -41,6 +41,18 @@
 - project:
     <<: *pti_rtp_common
     name: pti-rtp-merge
+    # runs about 40 minutes
+    build-timeout: 60
+    script: !include-raw-escape:
+        - install-yocto-prereq-centos.sh
+        - verify-yocto.sh
+    jobs:
+      - oran-shell-merge
+
+
+- project:
+    <<: *pti_rtp_common
+    name: pti-rtp-release-merge
     # demand 200GB storage
     build-node: centos7-docker-2c-8g-200g
     # runs about 18 hours
@@ -50,4 +62,4 @@
         - build-yocto.sh
         - upload-yocto.sh
     jobs:
-      - oran-shell-merge
+      - oran-shell-release-merge
