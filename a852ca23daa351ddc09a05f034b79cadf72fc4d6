@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "50f3f701_26bf806c",
+        "filename": "jjb/oran-jjb/oran-shell-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-02-19T13:51:44Z",
+      "side": 1,
+      "message": "file, not patch",
+      "range": {
+        "startLine": 182,
+        "startChar": 54,
+        "endLine": 182,
+        "endChar": 59
+      },
+      "revId": "a852ca23daa351ddc09a05f034b79cadf72fc4d6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "732a6ead_8b531ef2",
+        "filename": "jjb/oran-jjb/oran-shell-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-02-19T13:51:44Z",
+      "side": 1,
+      "message": "Please document the gerrit_release_file_paths parameter",
+      "range": {
+        "startLine": 190,
+        "startChar": 2,
+        "endLine": 190,
+        "endChar": 21
+      },
+      "revId": "a852ca23daa351ddc09a05f034b79cadf72fc4d6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
