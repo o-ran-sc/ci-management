@@ -198,7 +198,7 @@
 
     gerrit_release_file_paths:
       - compare-type: REG_EXP
-        pattern: 'releases\/oran-shell-release.*\.yaml'
+        pattern: 'releases\/oran-shell-release\.*\.yaml'
 
     scm:
       - lf-infra-gerrit-scm:
