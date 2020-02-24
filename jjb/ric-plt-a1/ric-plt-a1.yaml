@@ -58,7 +58,6 @@
 - project:
     <<: *a1_common
     name: ric-plt-a1-sonar
-    branch: master
     python-version: python3
     # the install script assumes an ubuntu image
     build-node: ubuntu1804-builder-2c-2g
