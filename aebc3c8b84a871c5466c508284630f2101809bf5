@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c6bc08ed_b6c871cd",
+        "filename": "jjb/ric-plt-xapp-frame-py/ric-plt-xapp-frame-py.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-02-24T20:23:57Z",
+      "side": 1,
+      "message": "why not just py_common",
+      "range": {
+        "startLine": 16,
+        "startChar": 15,
+        "endLine": 16,
+        "endChar": 16
+      },
+      "revId": "aebc3c8b84a871c5466c508284630f2101809bf5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a7a2953_460f3cea",
+        "filename": "jjb/ric-plt-xapp-frame-py/ric-plt-xapp-frame-py.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-02-24T20:23:57Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 18
+      },
+      "revId": "aebc3c8b84a871c5466c508284630f2101809bf5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
