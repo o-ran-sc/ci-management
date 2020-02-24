@@ -1,0 +1,61 @@
+---
+- project:
+    name: ric-plt-xapp-frame-py-project-view
+    project-name: ric-plt-xapp-frame-py
+    views:
+      - project-view
+
+- project:
+    name: ric-plt-xapp-frame-py-info
+    project: ric-plt/xapp-frame-py
+    project-name: ric-plt-xapp-frame-py
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- xapp-frame-py_common: &xapp-frame-py_common
+    name: xapp-frame-py-common
+    # git repo
+    project: ric-plt/xapp-frame-py
+    # jenkins job name prefix
+    project-name: ric-plt-xapp-frame-py
+    # maven settings file has credentials
+    mvn-settings: ric-plt-xapp-frame-py-settings
+    # release job requires centos
+    # does it?
+
+# verify distribution and publish to test.pypi.org
+- project:
+    name: ric-plt-xapp-frame-py-pypi
+    <<: *xapp-frame-py_common
+    jobs:
+      - '{project-name}-gerrit-pypi-jobs'
+    stream:
+      - master:
+          branch: master
+
+# promote distribution from test.pypi.org to pypi.org
+- project:
+    name: ric-plt-xapp-frame-py-release
+    <<: *xapp-frame-py_common
+    # maven release requires sigul which requires centos
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - '{project-name}-gerrit-pypi-release-jobs'
+
+# analyze unit test coverage
+- project:
+    name: ric-plt-xapp-frame-py-sonar
+    <<: *xapp-frame-py_common
+    branch: master
+    python-version: python3
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    pre-build-script: !include-raw-escape:
+      - ../shell/install-deb-nng-rmr.sh
+    sonarcloud: true
+    sonarcloud-api-token: '{sonarcloud_api_token}'
+    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
+    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    jobs:
+      - gerrit-tox-sonar
