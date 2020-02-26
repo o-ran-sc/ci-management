@@ -1,0 +1,8 @@
+---
+- project:
+    name: ric-plt-xapp-frame-cpp-info
+    project: ric-plt/xapp-frame-cpp
+    project-name: ric-plt-xapp-frame-cpp
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
