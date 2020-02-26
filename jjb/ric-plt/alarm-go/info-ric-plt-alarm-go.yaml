@@ -1,0 +1,9 @@
+---
+- project:
+    name: ric-plt-alarm-go-info
+    project-name: ric-plt-alarm-go
+    build-node: centos7-builder-2c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-plt/alarm-go
+    branch: master
