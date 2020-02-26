@@ -13,6 +13,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
+# 2019 CI - build RMR in a docker container
+
 - rmr_common: &rmr_common
     name: rmr-common
     # git repo
@@ -51,6 +53,60 @@
     stream:
       - master:
           branch: master
+
+# promote packages from staging to release
+- project:
+    project: ric-plt/lib/rmr
+    project-name: ric-plt-lib-rmr
+    name: ric-plt-lib-rmr-release-verify
+    branch: master
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-packagecloud-release-verify
+      - gerrit-packagecloud-release-merge
+
+# 2020 CI - build RMR on the node directly
+
+- rmr_cmake_common: &rmr_cmake_common
+    name: rmr-cmake-common
+    # git repo
+    project: ric-plt/lib/rmr
+    # jenkins job name prefix
+    project-name: ric-plt-lib-rmr
+    # maven settings file has credentials
+    mvn-settings: ric-plt-lib-rmr-settings
+    # use an ubuntu
+    build-node: ubuntu1804-builder-2c-2g
+
+- project:
+    name: ric-plt-lib-rmr-cmake
+    <<: *rmr_cmake_common
+    # exclude changes in the bindings subdirectory
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '^((?!src/bindings|\/COMMIT_MSG).)*$'
+    jobs:
+      - gerrit-cmake-verify
+    stream:
+      - master:
+          branch: master
+
+- project:
+    name: ric-plt-lib-rmr-sonar
+    <<: *rmr_cmake_common
+    # bug in lf-c-cpp-jobs.yaml?
+    stream: ignore-me
+    # bug in cmake-sonar.sh?
+    make-opts: all
+    # config for cmake-sonar.sh
+    sonar-scanner-version: 4.2.0.1873
+    sonarcloud-api-token: '{sonarcloud_api_token}'
+    sonarcloud-organization: '{sonarcloud_project_organization}'
+    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
+    jobs:
+      - gerrit-cmake-sonar
+
+# RMR Python bindings
 
 - rmr_python_common: &rmr_python_common
     name: rmr-python-common
@@ -113,21 +169,3 @@
     tox-dir: src/bindings/rmr-python
     jobs:
       - gerrit-tox-sonar
-
-- project:
-    project: ric-plt/lib/rmr
-    project-name: ric-plt-lib-rmr
-    name: ric-plt-lib-rmr-release-verify
-    branch: master
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-packagecloud-release-verify
-
-- project:
-    project: ric-plt/lib/rmr
-    project-name: ric-plt-lib-rmr
-    name: ric-plt-lib-rmr-release-merge
-    branch: master
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-packagecloud-release-merge
