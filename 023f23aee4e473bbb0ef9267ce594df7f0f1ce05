@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfa25644_0866ece5",
+        "filename": "jjb/ric-plt/xapp-frame-py/info-ric-plt-xapp-frame-py.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-02-26T16:42:35Z",
+      "side": 1,
+      "message": "O-RAN-SC does not have a build node of this name",
+      "range": {
+        "startLine": 5,
+        "startChar": 16,
+        "endLine": 5,
+        "endChar": 37
+      },
+      "revId": "023f23aee4e473bbb0ef9267ce594df7f0f1ce05",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
