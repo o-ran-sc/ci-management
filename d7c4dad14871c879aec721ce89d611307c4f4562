@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "55cc2846_eadb1761",
+        "filename": "jjb/ric-plt-e2mgr/ric-plt-e2mgr.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-02-26T20:14:18Z",
+      "side": 1,
+      "message": "why in heaven do I have a PYTHON property here?",
+      "range": {
+        "startLine": 75,
+        "startChar": 14,
+        "endLine": 75,
+        "endChar": 20
+      },
+      "revId": "d7c4dad14871c879aec721ce89d611307c4f4562",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
