@@ -21,6 +21,8 @@
     project-name: ric-plt-xapp-frame-py
     # maven settings file has credentials
     mvn-settings: ric-plt-xapp-frame-py-settings
+    # dont run docs on verify
+    tox-envs: code,flake8
 
 # verify distribution and publish to test.pypi.org
 - project:
@@ -39,7 +41,7 @@
 - project:
     name: ric-plt-xapp-frame-py-release
     <<: *py_common
-    # maven release requires sigul which requires centos
+    # release requires sigul which requires centos
     build-node: centos7-builder-1c-1g
     jobs:
       - '{project-name}-gerrit-pypi-release-jobs'
