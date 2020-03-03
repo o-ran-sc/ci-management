@@ -19,6 +19,8 @@
     project: ric-plt/xapp-frame-py
     # jenkins job name prefix
     project-name: ric-plt-xapp-frame-py
+    # maven settings file has credentials
+    mvn-settings: ric-plt-xapp-frame-py-settings
     # dont run docs on verify
     tox-envs: code,flake8
     build-node: ubuntu1804-builder-2c-2g
