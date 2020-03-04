@@ -30,8 +30,8 @@
 - project:
     <<: *pti_rtp_common
     name: pti-rtp-verify
-    # runs about 40 minutes
-    build-timeout: 60
+    # runs about 50~80 minutes
+    build-timeout: 120
     script: !include-raw-escape:
         - install-yocto-prereq-centos.sh
         - verify-yocto.sh
@@ -41,8 +41,8 @@
 - project:
     <<: *pti_rtp_common
     name: pti-rtp-merge
-    # runs about 40 minutes
-    build-timeout: 60
+    # runs about 50~80 minutes
+    build-timeout: 120
     script: !include-raw-escape:
         - install-yocto-prereq-centos.sh
         - verify-yocto.sh
