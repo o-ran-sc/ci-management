@@ -27,7 +27,6 @@
     pre-build-script: !include-raw-escape:
       - ../shell/install-deb-nng-rmr.sh
 
-# verify distribution and publish to test.pypi.org
 - project:
     name: ric-plt-xapp-frame-py-pypi
     <<: *py_common
@@ -37,7 +36,6 @@
       - master:
           branch: master
 
-# promote distribution from test.pypi.org to pypi.org
 - project:
     name: ric-plt-xapp-frame-py-release
     <<: *py_common
@@ -46,13 +44,18 @@
     jobs:
       - '{project-name}-gerrit-pypi-release-jobs'
 
-# analyze unit test coverage
 - project:
-    name: ric-plt-xapp-frame-py-sonar
+    name: ric-plt-xapp-frame-py-sonarqube
     <<: *py_common
-    sonarcloud: true
-    sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=ricxappframe
+        sonar.exclusions=setup.py,tests/*.py
+        sonar.python.coverage.reportPaths=coverage.xml
     jobs:
-      - gerrit-tox-sonar
+      - gerrit-tox-sonarqube
