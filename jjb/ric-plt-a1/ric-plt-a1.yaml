@@ -25,7 +25,7 @@
 
 - project:
     <<: *a1_common
-    name: ric-plt-a1
+    name: ric-plt-a1-docker
     # image name
     docker-name: 'o-ran-sc/{name}'
     # source of docker tag
@@ -57,22 +57,27 @@
 
 - project:
     <<: *a1_common
-    name: ric-plt-a1-sonar
+    name: ric-plt-a1-sonarqube
     python-version: python3
     # the install script assumes an ubuntu image
     build-node: ubuntu1804-builder-2c-2g
     pre-build-script: !include-raw-escape:
       - ../shell/install-deb-nng-rmr.sh
-    sonarcloud: true
-    sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=a1
+        sonar.python.coverage.reportPaths=coverage.xml
     jobs:
-      - gerrit-tox-sonar
+      - gerrit-tox-sonarqube
 
 - project:
     <<: *a1_common
-    name: ricc-plt-a1-release
+    name: ric-plt-a1-release
     branch: master
     # maven release requires sigul which requires centos
     # container release requires docker
