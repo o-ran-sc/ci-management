@@ -1,3 +1,6 @@
+# The ric-plt/lib/rmr repository contains two projects:
+# 1) C shared library published as deb/rpm to PackageCloud.io
+# 2) Python bindings published as package to PyPI.org
 ---
 - project:
     name: ric-plt-lib-rmr-project-view
@@ -17,63 +20,105 @@
     name: rmr-common
     # git repo
     project: ric-plt/lib/rmr
-    # jenkins job name prefix
-    project-name: ric-plt-lib-rmr
-    # maven settings file has credentials
+    # maven settings file has credentials to archive artifacts
     mvn-settings: ric-plt-lib-rmr-settings
-    # image is not pushed, use trivial tag
-    container-tag-method: latest
-    # image name
-    docker-name: '{name}'
-    # use host network for network resources
-    docker-build-args: '--network=host -f ci/Dockerfile'
-    # exclude changes in the bindings subdirectory
+
+### RMR C LIBRARY ###
+
+- rmr_c_common: &rmr_c_common
+    name: rmr-c-common
+    # jenkins job name prefix
+    project-name: ric-plt-lib-rmr-c
+    # use an ubuntu for its modern compiler
+    build-node: ubuntu1804-builder-2c-2g
+    # verify and sonar use cmake
+    cmake-opts: -DDEV_PKG=1
+    make-opts: install test ARGS=-V
+    # exclude irrelevant changes
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: '^((?!src/bindings|\/COMMIT_MSG).)*$'
 
-# verify RMR changes targeted at any branch
+# verify c changes on every branch
 - project:
+    name: ric-plt-lib-rmr-c-verify
     <<: *rmr_common
-    name: ric-plt-lib-rmr-verify
+    <<: *rmr_c_common
     jobs:
-      - gerrit-docker-verify
+      - gerrit-cmake-verify
     stream:
-      - all:
+      - master:
           branch: '*'
 
-# build RMR and publish to PackageCloud.io on merge to master branch
+# build deb/rpm using Docker and publish to PackageCloud.io
+# on merge to master branch
 - project:
     <<: *rmr_common
-    name: ric-plt-lib-rmr-merge
+    <<: *rmr_c_common
+    name: ric-plt-lib-rmr-c-package
+    # need docker
+    build-node: centos7-docker-2c-8g
+    # image is not pushed, use simple name and tag
+    docker-name: '{name}'
+    container-tag-method: latest
+    # use host network for network resources
+    docker-build-args: '--network=host -f ci/Dockerfile'
     jobs:
       - oran-gerrit-docker-ci-pc-merge
     stream:
       - master:
           branch: master
 
-- rmr_python_common: &rmr_python_common
-    name: rmr-python-common
-    # git repo
-    project: ric-plt/lib/rmr
+# promote deb/rpm from staging to release at PackageCloud.io
+- project:
+    <<: *rmr_common
+    name: ric-plt-lib-rmr-c-release
+    # release uses sigul which requires centos
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-packagecloud-release-verify
+      - gerrit-packagecloud-release-merge
+
+# analyze C code and test coverage
+- project:
+    name: ric-plt-lib-rmr-c-sonar
+    <<: *rmr_common
+    <<: *rmr_c_common
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=src/rmr
+        sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
+        sonar.cfamily.gcov.reportsPath=test
+    jobs:
+      - gerrit-cmake-sonarqube
+
+### RMR PYTHON PACKAGE ###
+
+- rmr_py_common: &rmr_py_common
+    name: rmr-py-common
     # jenkins job name prefix
-    project-name: ric-plt-lib-rmr-python
-    # maven settings file has credentials
-    mvn-settings: ric-plt-lib-rmr-settings
-    # sigul requires centos
+    project-name: ric-plt-lib-rmr-py
+    # the pre-build-script installs RHEL packages
     build-node: centos7-builder-1c-1g
     # install prereqs
     pre-build-script: !include-raw-escape: ../shell/install-rpm-nng-rmr.sh
+    python-version: python3.6
     # bindings live in a subdirectory
     tox-dir: src/bindings/rmr-python
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'src/bindings/rmr-python/.*'
 
-# verify binding changes targeted at any branch
+# verify py changes on every branch
 - project:
-    <<: *rmr_python_common
-    name: ric-plt-lib-rmr-python-pypi-verify
+    <<: *rmr_common
+    <<: *rmr_py_common
+    name: ric-plt-lib-rmr-py-verify
     stream:
       - all:
           branch: '*'
@@ -82,52 +127,37 @@
 
 # build and publish distributions to test.pypi.org from master
 - project:
-    <<: *rmr_python_common
-    name: ric-plt-lib-rmr-python-pypi-merge
+    <<: *rmr_common
+    <<: *rmr_py_common
+    name: ric-plt-lib-rmr-py-merge
     stream:
       - master:
           branch: master
     jobs:
       - gerrit-pypi-merge
 
-# promote distributions from test to pypi.org
+# promote package from test.pypi.org to pypi.org
 - project:
-    <<: *rmr_python_common
-    name: ric-plt-lib-rmr-python-pypi-release
+    <<: *rmr_common
+    <<: *rmr_py_common
+    name: ric-plt-lib-rmr-py-release
     jobs:
       - '{project-name}-gerrit-pypi-release-jobs'
 
+# analyze Py code and test coverage
 - project:
-    <<: *rmr_python_common
-    name: ric-plt-lib-rmr-python-sonar
-    branch: master
-    python-version: python3
-    # the pre-build-script installs debian packages
-    build-node: ubuntu1804-builder-2c-2g
-    # install prereqs
-    pre-build-script: !include-raw-escape: ../shell/install-deb-nng-rmr.sh
-    sonarcloud: true
-    sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
-    tox-dir: src/bindings/rmr-python
+    <<: *rmr_common
+    <<: *rmr_py_common
+    name: ric-plt-lib-rmr-py-sonarqube
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=src/bindings/rmr-python
+        sonar.exclusions=setup.py,tests/*.py
+        sonar.python.coverage.reportPaths=coverage.xml
     jobs:
-      - gerrit-tox-sonar
-
-- project:
-    project: ric-plt/lib/rmr
-    project-name: ric-plt-lib-rmr
-    name: ric-plt-lib-rmr-release-verify
-    branch: master
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-packagecloud-release-verify
-
-- project:
-    project: ric-plt/lib/rmr
-    project-name: ric-plt-lib-rmr
-    name: ric-plt-lib-rmr-release-merge
-    branch: master
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-packagecloud-release-merge
+      - gerrit-tox-sonarqube
