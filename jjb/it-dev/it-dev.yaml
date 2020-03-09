@@ -1,8 +1,55 @@
 ---
 - project:
+    name: it-dev-project-view
+    project-name: it-dev
+    views:
+      - project-view
+
+- project:
     name: it-dev-info
     project: it/dev
     project-name: it-dev
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- it_dev_common: &it_dev_common
+    # values apply to all it/dev projects
+    name: it-dev-docker-common
+    # git repo
+    project: it/dev
+    # jenkins job name prefix
+    project-name: it-dev
+    # maven settings file has docker credentials
+    mvn-settings: it-dev-settings
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # source of docker tag
+    container-tag-method: yaml-file
+
+- project:
+    <<: *it_dev_common
+    name: it-dev-helm-manager
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # dockerfile is in subdir
+    docker-build-args: -f ci/HelmManager/Dockerfile
+    # container-tag.yaml is in subdir
+    container-tag-yaml-dir: ci/HelmManager
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *it_dev_common
+    name: ric-dev-helm-manager-release
+    branch: master
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
