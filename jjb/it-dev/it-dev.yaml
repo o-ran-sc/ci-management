@@ -1,8 +1,97 @@
 ---
 - project:
+    name: it-dev-project-view
+    project-name: it-dev
+    views:
+      - project-view
+
+- project:
     name: it-dev-info
     project: it/dev
     project-name: it-dev
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- it_dev_docker_common: &it_dev_docker_common
+    # values apply to all it/dev projects
+    name: it-dev-docker-common
+    # git repo
+    project: it/dev
+    # jenkins job name prefix
+    project-name: it-dev
+    # maven settings file has docker credentials
+    mvn-settings: it-dev-settings
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # source of docker tag
+    container-tag-method: yaml-file
+
+- project:
+    <<: *it_dev_docker_common
+    name: it-dev-xapp-onboarder
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # dockerfile is in subdir
+    docker-build-args: -f ci/xapp_onboarder/Dockerfile
+    # container-tag.yaml is in subdir
+    container-tag-yaml-dir: ci/xapp_onboarder
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *it_dev_docker_common
+    name: ric-dev-xapp-onboarder-release
+    branch: master
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+### RMR PYTHON PACKAGE ###
+
+
+
+- project:
+    <<: *it_dev_common
+    name: it-dev-xapp-onboarder-py-sonarqube
+    project-name: '{name}'
+    python-version: python3.6
+    tox-dir: xapp_onboarder
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'xapp_onboarder/.*'
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=xapp_onboarder
+        sonar.exclusions=setup.py,tests/*.py
+        sonar.python.coverage.reportPaths=coverage.xml
+    jobs:
+      - gerrit-tox-sonarqube
+
+- project:
+    <<: *it_dev_common
+    name: it-dev-xapp-onboarder-pypi
+    project-name: '{name}'
+    tox-dir: xapp_onboarder
+    python-version: python3.6
+    gerrit_trigger_file_paths:
+     - compare-type: REG_EXP
+       pattern: 'xapp_onboarder/.*'
+    parallel: false
+    jobs:
+      - '{project-name}-gerrit-pypi-jobs'
+    stream:
+      - master:
+          branch: master
