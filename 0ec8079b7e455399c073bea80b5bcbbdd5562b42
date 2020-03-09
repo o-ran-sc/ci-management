@@ -46,6 +46,53 @@
       "revId": "0ec8079b7e455399c073bea80b5bcbbdd5562b42",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "19e6bbfa_b227b0c3",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-09T20:55:17Z",
+      "side": 1,
+      "message": "I see it now, sorry.",
+      "parentUuid": "9359080f_be8690b0",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 4
+      },
+      "revId": "0ec8079b7e455399c073bea80b5bcbbdd5562b42",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9355881_ba530281",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-09T20:55:17Z",
+      "side": 1,
+      "message": "I\u0027m concerned this docker root will not work. Remember that docker copies everything in from there down only -- no sibling directories etc.  It\u0027s like \"chroot ci\"",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 4
+      },
+      "revId": "0ec8079b7e455399c073bea80b5bcbbdd5562b42",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
