@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6c9987f2_3f49a908",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-09T20:03:06Z",
+      "side": 1,
+      "message": "I don\u0027t see a \"ci\" directory in it/dev",
+      "range": {
+        "startLine": 38,
+        "startChar": 17,
+        "endLine": 38,
+        "endChar": 19
+      },
+      "revId": "426d6b2fdf3de5f69788de6cd47072a40860400d",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "193551a0_e9802361",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-09T20:03:06Z",
+      "side": 1,
+      "message": "pls remove this comment does not match config",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 2
+      },
+      "revId": "426d6b2fdf3de5f69788de6cd47072a40860400d",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
