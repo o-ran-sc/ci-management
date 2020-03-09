@@ -93,6 +93,29 @@
       "revId": "0ec8079b7e455399c073bea80b5bcbbdd5562b42",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b546951d_60e0d46e",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-09T20:56:15Z",
+      "side": 1,
+      "message": "Instead of a docker-root, I think you\u0027ll have to use a docker build argument:  -f ci",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 19
+      },
+      "revId": "0ec8079b7e455399c073bea80b5bcbbdd5562b42",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
