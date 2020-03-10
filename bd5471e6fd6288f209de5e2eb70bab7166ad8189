@@ -22,6 +22,30 @@
       "revId": "bd5471e6fd6288f209de5e2eb70bab7166ad8189",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c359ad6_b2bd2ec5",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000046
+      },
+      "writtenOn": "2020-03-10T18:44:47Z",
+      "side": 1,
+      "message": "This is following the naming convention for all the o-ran-sc images. They all put the repo name in front of their image name. what do you think?",
+      "parentUuid": "4d39b62a_e0e4b495",
+      "range": {
+        "startLine": 36,
+        "startChar": 28,
+        "endLine": 36,
+        "endChar": 32
+      },
+      "revId": "bd5471e6fd6288f209de5e2eb70bab7166ad8189",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
