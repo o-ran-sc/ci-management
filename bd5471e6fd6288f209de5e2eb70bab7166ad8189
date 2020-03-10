@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4d39b62a_e0e4b495",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-10T15:02:15Z",
+      "side": 1,
+      "message": "I sorta think your docker name should be o-ran-sc/helm-manager (not o-ran-sc/it-dev-helm-manager) but that\u0027s totally up to you.",
+      "range": {
+        "startLine": 36,
+        "startChar": 28,
+        "endLine": 36,
+        "endChar": 32
+      },
+      "revId": "bd5471e6fd6288f209de5e2eb70bab7166ad8189",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
