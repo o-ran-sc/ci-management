@@ -1,0 +1,14 @@
+---
+- project:
+    name: ric-app-qp-project-view
+    project-name: ric-app-qp
+    views:
+      - project-view
+
+- project:
+    name: ric-app-qp-info
+    project: ric-app/qp
+    project-name: ric-app-qp
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
