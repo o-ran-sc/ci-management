@@ -1,0 +1,9 @@
+---
+- project:
+    name: ric-app-ts-info
+    project-name: ric-app-ts
+    build-node: centos7-builder-2c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+    project: ric-app/ts
+    branch: master
