@@ -1,0 +1,14 @@
+---
+- project:
+    name: ric-app-ts-project-view
+    project-name: ric-app-ts
+    views:
+      - project-view
+
+- project:
+    name: ric-app-ts-info
+    project: ric-app/ts
+    project-name: ric-app-ts
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
