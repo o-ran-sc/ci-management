@@ -1,0 +1,14 @@
+---
+- project:
+    name: ric-app-qp-driver-project-view
+    project-name: ric-app-qp-driver
+    views:
+      - project-view
+
+- project:
+    name: ric-app-qp-driver-info
+    project: ric-app/qp-driver
+    project-name: ric-app-qp-driver
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
