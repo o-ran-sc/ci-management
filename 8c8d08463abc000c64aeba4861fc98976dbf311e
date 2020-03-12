@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7fa74289_76fb7a69",
+        "filename": "jjb/portal/nonrtric-controlpanel/portal-nonrtric-controlpanel.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-12T19:24:09Z",
+      "side": 1,
+      "message": "looks wrong, seem to be missing the hyphen in front here, does this format work?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 4
+      },
+      "revId": "8c8d08463abc000c64aeba4861fc98976dbf311e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
