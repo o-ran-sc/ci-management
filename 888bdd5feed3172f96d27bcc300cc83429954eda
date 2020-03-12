@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "85700b79_cf1afac1",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-12T19:41:29Z",
+      "side": 1,
+      "message": "Please remove these from your common alias/anchor macro.  Move to your sole docker project.",
+      "range": {
+        "startLine": 25,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 35
+      },
+      "revId": "888bdd5feed3172f96d27bcc300cc83429954eda",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
