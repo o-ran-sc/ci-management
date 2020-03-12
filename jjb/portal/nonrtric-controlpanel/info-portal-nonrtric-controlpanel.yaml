@@ -1,0 +1,9 @@
+---
+- project:
+    name: portal-nonrtric-controlpanel-info
+    project-name: portal-nonrtric-controlpanel
+    build-node: centos7-builder-2c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+    project: portal/nonrtric-controlpanel
+    branch: master
