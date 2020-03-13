@@ -22,6 +22,30 @@
       "revId": "2ab70fd23f4747925888da88a7d4e09b95e40b8c",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31018fc1_d7d8cf55",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-13T17:38:21Z",
+      "side": 1,
+      "message": "However, I see the docker job does NOT have this trigger file path, but it should.  So move lines 60..62 to appear between existing lines 38 and 39.",
+      "parentUuid": "5e8e6e86_1cbbaf01",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 36
+      },
+      "revId": "2ab70fd23f4747925888da88a7d4e09b95e40b8c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
