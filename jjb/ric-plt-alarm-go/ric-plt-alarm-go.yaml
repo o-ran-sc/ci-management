@@ -45,7 +45,7 @@
     name: ric-plt-alarm-go-sonarqube
     # docker-enabled nodes have golang
     # build script needs ubuntu
-    build-node: ubuntu1804-docker-2c-8g
+    build-node: ubuntu1804-docker-4c-4g
     sonar-prescan-script: !include-raw-escape: build-alarm-go-ubuntu.sh
     sonar-project-file: ""
     # use sonarcloud values from defaults.yaml
