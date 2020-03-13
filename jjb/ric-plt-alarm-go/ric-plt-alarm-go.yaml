@@ -1,8 +1,70 @@
 ---
 - project:
+    name: ric-plt-alarm-go-project-view
+    project-name: ric-plt-alarm-go
+    views:
+      - project-view
+
+- project:
     name: ric-plt-alarm-go-info
     project: ric-plt/alarm-go
     project-name: ric-plt-alarm-go
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- alarm_go_common: &alarm_go_common
+    # values apply to all projects
+    name: alarm-go-common
+    # git repo
+    project: ric-plt/alarm-go
+    # jenkins job name prefix
+    project-name: ric-plt-alarm-go
+    # maven settings file has docker credentials
+    mvn-settings: ric-plt-alarm-go-settings
+
+- project:
+    <<: *alarm_go_common
+    name: ric-plt-alarm-go-docker
+    # image name
+    docker-name: 'o-ran-sc/ric-plt-alarm-go'
+    # source of docker tag
+    container-tag-method: yaml-file
+    container-tag-yaml-dir: adapter
+    # use host network
+    docker-build-args: '-f adapter/Dockerfile --network=host'
+    build-node: ubuntu1804-docker-4c-4g
+    stream:
+      - master:
+          branch: master
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+
+- project:
+    <<: *alarm_go_common
+    name: ric-plt-alarm-go-sonarqube
+    # docker-enabled nodes have golang
+    build-node: ubuntu1804-docker-2c-8g
+    sonar-prescan-script: !include-raw-escape: build-alarm-go.sh
+    sonar-project-file: ""
+    # use sonarcloud values from defaults.yaml
+    sonar-properties: |
+        # Required metadata
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        # Encoding
+        sonar.build.sourceEncoding=UTF-8
+        # Language
+        sonar.language=go
+        # Source
+        sonar.sources=.
+        # Unit tests
+        sonar.go.coverage.reportPaths=coverage.xml
+        # Inclusions
+        sonar.inclusions=**/*.go
+        # Exclusions
+        sonar.exclusions=**/*_test.go
+    jobs:
+      - gerrit-sonar-prescan-script
