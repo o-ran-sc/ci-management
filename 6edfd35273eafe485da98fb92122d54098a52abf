@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fb2350ab_d0fbc6e0",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-13T01:18:40Z",
+      "side": 1,
+      "message": "pls remove -docker",
+      "range": {
+        "startLine": 18,
+        "startChar": 17,
+        "endLine": 18,
+        "endChar": 23
+      },
+      "revId": "6edfd35273eafe485da98fb92122d54098a52abf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08586ae5_00835aab",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-13T01:18:40Z",
+      "side": 1,
+      "message": "pls remove RMR",
+      "range": {
+        "startLine": 54,
+        "startChar": 4,
+        "endLine": 54,
+        "endChar": 7
+      },
+      "revId": "6edfd35273eafe485da98fb92122d54098a52abf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bea1af0f_111a0b5f",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-13T01:18:40Z",
+      "side": 1,
+      "message": "Pls remove extra blank lines",
+      "revId": "6edfd35273eafe485da98fb92122d54098a52abf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12c8b3d3_21d10883",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-13T01:18:40Z",
+      "side": 1,
+      "message": "just a minor thing, probably want to name this it-dev-xapp-onboarder-py (strip the -sonarqube) because the job that is created will append -tox-sonarqube again, which is kind of redundant.",
+      "range": {
+        "startLine": 60,
+        "startChar": 35,
+        "endLine": 60,
+        "endChar": 44
+      },
+      "revId": "6edfd35273eafe485da98fb92122d54098a52abf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0204acf9_baa6b5f2",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-13T01:18:40Z",
+      "side": 1,
+      "message": "same thing here, the job will add -pypi suffix in Jenkins, so you might not want to start with that suffix unless you really like seeing it twice :)",
+      "range": {
+        "startLine": 82,
+        "startChar": 32,
+        "endLine": 82,
+        "endChar": 36
+      },
+      "revId": "6edfd35273eafe485da98fb92122d54098a52abf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
