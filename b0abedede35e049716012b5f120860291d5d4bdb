@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "20658694_a9ab2f1d",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-13T15:36:12Z",
+      "side": 1,
+      "message": "pls add suffix -docker\n\nthat will fix the dupe name problem",
+      "range": {
+        "startLine": 28,
+        "startChar": 22,
+        "endLine": 28,
+        "endChar": 31
+      },
+      "revId": "b0abedede35e049716012b5f120860291d5d4bdb",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18f0596f_411cfdac",
+        "filename": "jjb/it-dev/it-dev.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-13T15:36:12Z",
+      "side": 1,
+      "message": "sorry felix that was bad advice I gave you before. the NAME was fine, you could put that -pypi suffix back.  but the project-name should not have a \"-pypi\" suffix you might want to use:\n\n    project-name: it-dev-xapp-onboarder",
+      "range": {
+        "startLine": 78,
+        "startChar": 22,
+        "endLine": 78,
+        "endChar": 31
+      },
+      "revId": "b0abedede35e049716012b5f120860291d5d4bdb",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
