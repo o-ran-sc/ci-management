@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "21076ee6_c67aa2f6",
+        "filename": "jjb/ric-app-qp-driver/ric-app-qp-driver.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-16T15:52:27Z",
+      "side": 1,
+      "message": "if you really REALLY want to get crazy you can make a qpd_common_py block with only the python stuff, so you don\u0027t feed those to the docker or release jobs, but it\u0027s not at all required.",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 20,
+        "endChar": 25
+      },
+      "revId": "9d99b5bf3f62a3e2d65d6fedb3c56db169155743",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "feeefa58_8a597186",
+        "filename": "jjb/ric-app-qp-driver/ric-app-qp-driver.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-16T15:52:27Z",
+      "side": 1,
+      "message": "pls put a comment here that this parameter is only read by tox-verify and tox-sonarqube",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 20
+      },
+      "revId": "9d99b5bf3f62a3e2d65d6fedb3c56db169155743",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
