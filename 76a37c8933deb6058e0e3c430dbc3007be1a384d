@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9679853d_ac7e4956",
+        "filename": "jjb/ric-app-qp-driver/ric-app-qp-driver.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-16T18:15:32Z",
+      "side": 1,
+      "message": "if you revisit this, pls remove the python anchor here, the info verify job ignores all of that python config.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 4
+      },
+      "revId": "76a37c8933deb6058e0e3c430dbc3007be1a384d",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92faedd3_c03660a6",
+        "filename": "jjb/ric-app-qp-driver/ric-app-qp-driver.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-16T18:15:32Z",
+      "side": 1,
+      "message": "here you need the python anchor with config for tox",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 4
+      },
+      "revId": "76a37c8933deb6058e0e3c430dbc3007be1a384d",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
