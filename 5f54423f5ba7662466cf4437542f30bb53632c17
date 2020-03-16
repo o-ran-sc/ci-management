@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b12431ba_79c41086",
+        "filename": "docker/bldr-alpine3-go/Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-16T18:10:10Z",
+      "side": 1,
+      "message": "keeping up with google, that\u0027s all",
+      "parentUuid": "b6007414_39b15eeb",
+      "revId": "5f54423f5ba7662466cf4437542f30bb53632c17",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "91edf65f_cc933aff",
         "filename": "docker/bldr-alpine3-go/container-tag.yaml",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2020-03-16T16:28:04Z",
       "side": 1,
       "message": "what does this 1 to 3 jump mean?",
+      "revId": "5f54423f5ba7662466cf4437542f30bb53632c17",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9fa69c27_733f5bc0",
+        "filename": "docker/bldr-alpine3-go/container-tag.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-16T18:10:10Z",
+      "side": 1,
+      "message": "That means I made a dumb mistake, should go to 2.  hang on.",
+      "parentUuid": "91edf65f_cc933aff",
       "revId": "5f54423f5ba7662466cf4437542f30bb53632c17",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
