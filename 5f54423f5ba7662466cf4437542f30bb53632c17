@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "91edf65f_cc933aff",
+        "filename": "docker/bldr-alpine3-go/container-tag.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000074
+      },
+      "writtenOn": "2020-03-16T16:28:04Z",
+      "side": 1,
+      "message": "what does this 1 to 3 jump mean?",
+      "revId": "5f54423f5ba7662466cf4437542f30bb53632c17",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
