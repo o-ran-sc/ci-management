@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "b6007414_39b15eeb",
+        "filename": "docker/bldr-alpine3-go/Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000074
+      },
+      "writtenOn": "2020-03-16T16:28:35Z",
+      "side": 1,
+      "message": "was there a specific request for this change? Who requested this?",
+      "revId": "5f54423f5ba7662466cf4437542f30bb53632c17",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "91edf65f_cc933aff",
         "filename": "docker/bldr-alpine3-go/container-tag.yaml",
         "patchSetId": 2
