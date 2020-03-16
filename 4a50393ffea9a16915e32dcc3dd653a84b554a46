@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "215a342f_f60ee79c",
+        "filename": "docker/bldr-ubuntu18-c-go/Dockerfile",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2020-03-16T23:12:31Z",
+      "side": 1,
+      "message": "Sorry to nitpick, but please clean up the whitespace here.",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 1
+      },
+      "revId": "4a50393ffea9a16915e32dcc3dd653a84b554a46",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
