@@ -13,23 +13,26 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- it_dev_common: &it_dev_common
-    # values apply to all it/dev projects
-    name: it-dev-common
+- it_dev_xo_common: &it_dev_xo_common
+    name: it-dev-xo-common
     # git repo
     project: it/dev
     # jenkins job name prefix
-    project-name: it-dev
+    project-name: it-dev-xapp-onboarder
     # maven settings file has docker credentials
     mvn-settings: it-dev-settings
 
+- it_dev_xo_py_common: &it_dev_xo_py_common
+    name: it-dev-xo-py-common
+    python-version: python3.6
+    tox-dir: xapp_onboarder
+    tox-envs: py36-lf
+
 - project:
-    <<: *it_dev_common
+    <<: *it_dev_xo_common
     name: it-dev-xapp-onboarder-docker
-    # jenkins job name prefix
-    project-name: '{name}'
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: 'o-ran-sc/xapp-onboarder'
     # source of docker tag
     container-tag-method: yaml-file
     # dockerfile is in subdir
@@ -46,8 +49,10 @@
           branch: master
 
 - project:
-    <<: *it_dev_common
-    name: ric-dev-xapp-onboarder-release
+    <<: *it_dev_xo_common
+    name: it-dev-xapp-onboarder-release
+    # one release job for all items in repo
+    project-name: it-dev
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
@@ -55,11 +60,9 @@
       - '{project-name}-gerrit-release-jobs'
 
 - project:
-    <<: *it_dev_common
-    name: it-dev-xapp-onboarder-py
-    project-name: '{name}'
-    python-version: python3.6
-    tox-dir: xapp_onboarder
+    <<: *it_dev_xo_common
+    <<: *it_dev_xo_py_common
+    name: it-dev-xapp-onboarder-sonarqube
     sonar-project-file: ""
     sonar-properties: |
         sonar.login={sonarcloud_api_token}
@@ -74,11 +77,9 @@
       - gerrit-tox-sonarqube
 
 - project:
-    <<: *it_dev_common
+    <<: *it_dev_xo_common
+    <<: *it_dev_xo_py_common
     name: it-dev-xapp-onboarder-pypi
-    project-name: it-dev-xapp-onboarder
-    tox-dir: xapp_onboarder
-    python-version: python3.6
     gerrit_trigger_file_paths:
      - compare-type: REG_EXP
        pattern: 'xapp_onboarder/.*'
