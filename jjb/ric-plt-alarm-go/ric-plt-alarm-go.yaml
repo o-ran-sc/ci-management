@@ -27,7 +27,7 @@
     <<: *alarm_go_common
     name: ric-plt-alarm-go-docker
     # image name
-    docker-name: 'o-ran-sc/ric-plt-alarm-go'
+    docker-name: 'o-ran-sc/ric-plt-alarmadapter'
     # source of docker tag
     container-tag-method: yaml-file
     container-tag-yaml-dir: adapter
@@ -46,7 +46,7 @@
     # docker-enabled nodes have golang
     # build script needs ubuntu
     build-node: ubuntu1804-docker-4c-4g
-    sonar-prescan-script: !include-raw-escape: build-alarm-go-ubuntu.sh
+    sonar-prescan-script: !include-raw-escape: prescan-alarm-go-ubuntu.sh
     sonar-project-file: ""
     # use sonarcloud values from defaults.yaml
     sonar-properties: |
@@ -62,7 +62,7 @@
         # Source
         sonar.sources=.
         # Unit tests
-        sonar.go.coverage.reportPaths=coverage.xml
+        sonar.go.coverage.reportPaths=adapter/cover.out,alarm/cover.out
         # Inclusions
         sonar.inclusions=**/*.go
         # Exclusions
