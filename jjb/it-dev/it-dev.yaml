@@ -60,6 +60,7 @@
     project-name: '{name}'
     python-version: python3.6
     tox-dir: xapp_onboarder
+    tox-envs: py36-lf
     sonar-project-file: ""
     sonar-properties: |
         sonar.login={sonarcloud_api_token}
