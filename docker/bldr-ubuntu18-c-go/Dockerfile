@@ -36,6 +36,7 @@ RUN apt-get update && apt-get install -y \
     python-dev \
     pkg-config \
     software-properties-common \
+    sudo \
     wget \
     zlib1g \
     zlib1g-dev \

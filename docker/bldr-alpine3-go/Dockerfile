@@ -23,7 +23,7 @@
 
 # install a well known working rmr
 FROM golang:1.13.8-alpine3.11
-RUN apk update && apk add autoconf automake build-base cmake libtool ninja pkgconfig git
+RUN apk update && apk add autoconf automake build-base cmake libtool ninja pkgconfig git sudo
 RUN git clone --branch 1.13.1 https://gerrit.oran-osc.org/r/ric-plt/lib/rmr \
     && cd rmr \
     && mkdir .build; cd .build \

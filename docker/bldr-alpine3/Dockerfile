@@ -40,6 +40,7 @@ RUN apk update && apk add \
   ninja \
   pkgconfig \
   python-dev \
+  sudo \
   git \
   go
 
