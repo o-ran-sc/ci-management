@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "55db92f1_7ff7f7d5",
+        "filename": "jjb/ric-app-qp-driver/ric-app-qp-driver.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000074
+      },
+      "writtenOn": "2020-03-17T14:53:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9679853d_ac7e4956",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 4
+      },
+      "revId": "76a37c8933deb6058e0e3c430dbc3007be1a384d",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "92faedd3_c03660a6",
         "filename": "jjb/ric-app-qp-driver/ric-app-qp-driver.yaml",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2020-03-16T18:15:32Z",
       "side": 1,
       "message": "here you need the python anchor with config for tox",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 4
+      },
+      "revId": "76a37c8933deb6058e0e3c430dbc3007be1a384d",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb19bb8f_93d86051",
+        "filename": "jjb/ric-app-qp-driver/ric-app-qp-driver.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000074
+      },
+      "writtenOn": "2020-03-17T14:53:00Z",
+      "side": 1,
+      "message": "yes put it in wrong spot thanks",
+      "parentUuid": "92faedd3_c03660a6",
       "range": {
         "startLine": 55,
         "startChar": 0,
