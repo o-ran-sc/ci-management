@@ -57,6 +57,14 @@
 
 - project:
     <<: *a1_common
+    name: ric-plt-a1-nexusiq-clm
+    build-node: centos7-builder-1c-1g
+    nexus-iq-namespace: oran-
+    jobs:
+      - gerrit-python-xc-clm
+
+- project:
+    <<: *a1_common
     name: ric-plt-a1-sonarqube
     python-version: python3
     # the install script assumes an ubuntu image
