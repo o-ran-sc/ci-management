@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8f3ef189_f0cad0f2",
+        "filename": "jjb/sim-a1-interface/sim-a1-interface.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000211
+      },
+      "writtenOn": "2020-03-18T11:39:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1920d2e_e5490e22",
+      "range": {
+        "startLine": 16,
+        "startChar": 18,
+        "endLine": 16,
+        "endChar": 19
+      },
+      "revId": "544bfb355d0bfb1840e6aae3719163c40b32e744",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e14b0f2_cf3303fe",
         "filename": "jjb/sim-a1-interface/sim-a1-interface.yaml",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "f7adc4fe_c43d5b62",
+        "filename": "jjb/sim-a1-interface/sim-a1-interface.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000211
+      },
+      "writtenOn": "2020-03-18T11:39:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e14b0f2_cf3303fe",
+      "range": {
+        "startLine": 18,
+        "startChar": 26,
+        "endLine": 18,
+        "endChar": 27
+      },
+      "revId": "544bfb355d0bfb1840e6aae3719163c40b32e744",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "acfc5371_0a03969d",
         "filename": "jjb/sim-a1-interface/sim-a1-interface.yaml",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2020-03-18T11:12:28Z",
       "side": 1,
       "message": "do you want this image staged daily?",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 2
+      },
+      "revId": "544bfb355d0bfb1840e6aae3719163c40b32e744",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "985f4070_eb909712",
+        "filename": "jjb/sim-a1-interface/sim-a1-interface.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000211
+      },
+      "writtenOn": "2020-03-18T11:39:15Z",
+      "side": 1,
+      "message": "since I am planning to write a auto end to end test and need to fetch images from nexus, I want it stage everyday, so I can test my autotest script once the image is there. After that, we can change here to stage the image every week for example.",
+      "parentUuid": "acfc5371_0a03969d",
       "range": {
         "startLine": 35,
         "startChar": 0,
