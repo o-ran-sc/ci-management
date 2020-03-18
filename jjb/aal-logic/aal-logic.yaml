@@ -1,5 +1,11 @@
 ---
 - project:
+    name: aal-logic-project-view
+    project-name: aal-logic
+    views:
+      - project-view
+
+- project:
     name: aal-logic-info
     project: aal/logic
     project-name: aal-logic
