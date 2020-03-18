@@ -1,8 +1,71 @@
 ---
 - project:
+    name: sim-a1-interface-project-view
+    project-name: sim-a1-interface
+    views:
+      - project-view
+
+- project:
     name: sim-a1-interface-info
     project: sim/a1-interface
     project-name: sim-a1-interface
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- sim_a1_interface_common: &sim_a1_interface_common
+    # values apply to all projects here
+    name: sim-a1-interface-common
+    # git repo
+    project: sim/a1-interface
+    # jenkins job name prefix
+    project-name: sim-a1-interface
+    # maven settings file has docker credentials
+    mvn-settings: sim-a1-interface-settings
+
+- project:
+    <<: *sim_a1_interface_common
+    name: sim-a1-interface-docker
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use tag yaml from subdirectory
+    container-tag-yaml-dir: near-rt-ric-simulator/scripts
+    # use host network
+    docker-build-args: '--network=host'
+    build-node: ubuntu1804-docker-4c-4g
+    stream:
+      - master:
+          branch: master
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+
+- project:
+    <<: *sim_a1_interface_common
+    name: sim-a1-interface-sonarqube
+    python-version: python3
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=near-rt-ric-simulator
+        sonar.python.coverage.reportPaths=coverage.xml
+    jobs:
+      - gerrit-tox-sonarqube
+
+
+- project:
+    <<: *sim_a1_interface_common
+    name: sim-a1-interface-release
+    branch: master
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
