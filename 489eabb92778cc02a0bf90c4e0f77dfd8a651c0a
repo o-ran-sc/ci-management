@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2fe1c975_2adcd651",
+        "filename": "jjb/portal-nonrtric-controlpanel/portal-nonrtric-controlpanel.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-19T14:59:19Z",
+      "side": 1,
+      "message": "Please consider using \"{project-name}-gerrit-maven-docker-jobs\" from the start, instead of these three.  This job group gets the three you list PLUS the CLM job.  CLM works for at least one Java/Maven projects, but we might have to get a credential configured for yours.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 33
+      },
+      "revId": "489eabb92778cc02a0bf90c4e0f77dfd8a651c0a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9fa0e661_d6a41c61",
+        "filename": "jjb/portal-nonrtric-controlpanel/portal-nonrtric-controlpanel.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-19T14:59:19Z",
+      "side": 1,
+      "message": "pls remove, release job listens on all branches, this is ignored",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 4
+      },
+      "revId": "489eabb92778cc02a0bf90c4e0f77dfd8a651c0a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
