@@ -12,3 +12,49 @@
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- portal_nonrtric_controlpanel_common: &portal_nonrtric_controlpanel_common
+    # values apply to all projects here
+    name: portal-nonrtric-controlpanel-common
+    # git repo
+    project: portal/nonrtric-controlpanel
+    # jenkins job name prefix
+    project-name: portal-nonrtric-controlpanel
+    # maven settings file has docker credentials
+    mvn-settings: portal-nonrtric-controlpanel-settings
+    # defaults.yaml value is NOT used due to value set in lf-maven-jobs.yaml
+    java-version: openjdk11
+    mvn-version: mvn36
+
+- project:
+    <<: *portal_nonrtric_controlpanel_common
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *portal_nonrtric_controlpanel_common
+    name: portal-nonrtric-controlpanel-release
+    branch: master
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *portal_nonrtric_controlpanel_common
+    name: portal-nonrtric-controlpanel-sonar
+    # template goal install builds docker image unnecessarily
+    mvn-params: -Ddocker.skip=true
+    sonarcloud: true
+    sonarcloud-api-token: '{sonarcloud_api_token}'
+    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
+    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    jobs:
+      - gerrit-maven-sonar
