@@ -1,6 +1,6 @@
 # O-RAN-SC
 #
-# Copyright (C) 2019 AT&T Intellectual Property and Nokia
+# Copyright (C) 2019-2020 AT&T Intellectual Property and Nokia
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,21 +14,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Builder image Alpine 3.9
+# This is an all-things-to-all-ORAN-people build image with:
+# alpine v 3.11
 # gcc/g++ v 8
-# golang v 1.12
+# golang v 1.13.4
 # python 3.7
-# nng library (libnng.so, libnng.so.X.X.X; see below for pinned version)
-# Includes RIC libraries as a distribution path because
-# PackageCloud does not support Alpine .apk (yet):
+# nng library (rmr.h, libnng.so, libnng.so.X.X.X; version pinned by RMR)
 # mdc log library (libmdclog.so, libmdbclog.so.X.X.X; see below for pinned version)
 # rmr library (librmr_nng.so, libmdclog.so..X.X.X; see below for pinned version)
-# How to get a library file from this Docker base image:
-# COPY --from=nexus3.o-ran-sc.org:10004/bldr-alpine3:1-a3.9 /usr/local/lib64/libnng.so.X.X.X /usr/local/lib
-# COPY --from=nexus3.o-ran-sc.org:10004/bldr-alpine3:1-a3.9 /usr/local/lib64/librmr_nng.so.X.X.X /usr/local/lib
-# COPY --from=nexus3.o-ran-sc.org:10004/bldr-alpine3:1-a3.9 /usr/local/lib/libmdclog.so.X.X.X /usr/local/lib
+#
 # Some packages install to /usr/local/lib, others to /usr/local/lib64
 # Alpine by default searches /usr/local/lib but not /usr/local/lib64
+#
+# How to get library files from this Docker base image:
+# COPY --from=nexus3.o-ran-sc.org:10004/bldr-alpine3:TAG /usr/local/lib64/libnng.so.X.X.X /usr/local/lib
+# COPY --from=nexus3.o-ran-sc.org:10004/bldr-alpine3:TAG /usr/local/lib64/librmr_nng.so.X.X.X /usr/local/lib
+# COPY --from=nexus3.o-ran-sc.org:10004/bldr-alpine3:TAG /usr/local/lib/libmdclog.so.X.X.X /usr/local/lib
 
 FROM python:3.7-alpine
 RUN apk update && apk add \
@@ -51,19 +52,6 @@ RUN cd /tmp \
     && cp /tmp/autoconf-archive/m4/* /usr/share/aclocal \
     && rm -rf /tmp/autoconf-archive
 
-# NNG repo is not frequently tagged so it's pinned to a commit hash.
-# This commit provides fix to the proxy-reconnect
-# bug that we identified:  https://github.com/nanomsg/nng/issues/970
-RUN cd /tmp \
-    && git clone https://github.com/nanomsg/nng.git \
-    && cd nng \
-    && git checkout e618abf8f3db2a94269a79c8901a51148d48fcc2 \
-    && mkdir build \
-    && cd build \
-    && cmake -DBUILD_SHARED_LIBS=1 -G Ninja .. \
-    && ninja \
-    && ninja install
-
 # MCDLOG, version is pinned
 RUN cd /tmp \
    && git clone --branch v0.0.4 https://gerrit.o-ran-sc.org/r/com/log \
@@ -73,11 +61,13 @@ RUN cd /tmp \
    && make \
    && make install
 
-# RMR, version is pinned
-RUN cd /tmp \
-    && git clone --branch 1.3.0 https://gerrit.o-ran-sc.org/r/ric-plt/lib/rmr \
+# install a well known working rmr including development header files,
+# which uses a submodule to install NNG at a known commit
+RUN apk update && apk add autoconf automake build-base cmake libtool ninja pkgconfig git sudo
+RUN git clone --branch 3.6.1 https://gerrit.oran-osc.org/r/ric-plt/lib/rmr \
     && cd rmr \
-    && mkdir build \
-    && cd build \
-    && cmake .. \
-    && make install
+    && mkdir .build; cd .build \
+    && echo "<<<installing rmr devel headers>>>" \
+    && cmake .. -DDEV_PKG=1; make install \
+    && echo "<<< installing rmr .so>>>" \
+    && cmake .. -DPACK_EXTERNALS=1; make install
