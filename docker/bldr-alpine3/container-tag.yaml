@@ -1,4 +1,3 @@
 # Not feasible to show all the software versions
-# here so just use a counter plus the base image
 ---
-tag: 6-a3.9-nng
+tag: 7-a3.11-nng-rmr3
