@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0eee21c1_308d7748",
+        "filename": "jjb/sim-a1-interface/sim-a1-interface.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-20T13:53:38Z",
+      "side": 1,
+      "message": "To help Docker find your files you will need to configure the docker root AND use -f.  You will also want to limit the trigger with a file path.  For a useful example please see the JJB for ric-app-mc. Here\u0027s an excerpt that I adjusted for the needs here:\n\n    docker-root: near-rt-ric-simulator\n    # source of docker tag\n    container-tag-method: yaml-file\n    container-tag-yaml-dir: \u0027{docker-root}/scripts\u0027\n    # use local dockerfile and host network\n    docker-build-args: \u0027-f scripts/Dockerfile --network\u003dhost\u0027\n    gerrit_trigger_file_paths:\n        - compare-type: REG_EXP\n          pattern: \u0027{docker-root}/.*\u0027",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 4
+      },
+      "revId": "eb472d4034c5290a51a5302bbe6842fcd4a0aef4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
