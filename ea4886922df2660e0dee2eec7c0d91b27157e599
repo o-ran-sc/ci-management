@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7297bcb2_47d3cfdd",
+        "filename": "jjb/sim-a1-interface/sim-a1-interface.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-20T13:00:10Z",
+      "side": 1,
+      "message": "Just noticed that your docker image name will have \"docker\" in it.  That\u0027s kind of redundant.  Suggest you make a fix here to use a better name.  I suspect you might prefer an image name like \"o-ran-sc/a1-simulator\" (just as a first guess).",
+      "range": {
+        "startLine": 30,
+        "startChar": 28,
+        "endLine": 30,
+        "endChar": 32
+      },
+      "revId": "ea4886922df2660e0dee2eec7c0d91b27157e599",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e33503d9_a0f1b760",
+        "filename": "jjb/sim-a1-interface/sim-a1-interface.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-20T13:00:10Z",
+      "side": 1,
+      "message": "there is no install script configured here, please remove this comment.",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 2
+      },
+      "revId": "ea4886922df2660e0dee2eec7c0d91b27157e599",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d0b55418_e69dd173",
+        "filename": "jjb/sim-a1-interface/sim-a1-interface.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-20T13:00:10Z",
+      "side": 1,
+      "message": "please remove this, the release job ignores branch.  More accurately, the release job is configured to listen on all branches, and you cannot override that behavior with this config parameter.",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 4
+      },
+      "revId": "ea4886922df2660e0dee2eec7c0d91b27157e599",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
