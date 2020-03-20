@@ -27,7 +27,7 @@
     <<: *a1_common
     name: ric-plt-a1-docker
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: 'o-ran-sc/ric-plt-a1'
     # source of docker tag
     container-tag-method: yaml-file
     # use host network
