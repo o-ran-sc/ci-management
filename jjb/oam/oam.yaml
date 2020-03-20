@@ -12,3 +12,39 @@
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- project:
+    # project contains features of nonrtric-o1-controller
+    name: oam-features
+    project: oam
+    project-name: oam-features
+    mvn-params: "-f features"
+    mvn-settings: 'nonrtric-settings'
+    # due to a strange macro / variable translation problem this needs to be
+    # passed as a string block to properly get the properties correctly defined
+    # in the job
+    maven-deploy-properties: |
+      deployAtEnd=true
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'features/.*'
+    maven-version: "mvn35"
+    mvn-opts: '-Xmx3072m -XX:MaxPermSize=1024m'
+    build-node: ubuntu1804-builder-4c-4g
+    jobs:
+      - gerrit-maven-verify
+      - gerrit-maven-merge
+      - gerrit-maven-stage
+      - gerrit-maven-clm
+    stream:
+      - 'master':
+          branch: 'master'
+
+- project:
+    name: oam-features-release
+    project: oam
+    project-name: oam-features-release
+    mvn-params: "-f features"
+    mvn-settings: 'nonrtric-settings'
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
