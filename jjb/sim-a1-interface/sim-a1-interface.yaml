@@ -20,8 +20,6 @@
     project: sim/a1-interface
     # jenkins job name prefix
     project-name: sim-a1-interface
-    # maven settings file has docker credentials
-    mvn-settings: sim-a1-interface-settings
 
 - project:
     <<: *sim_a1_interface_common
@@ -40,24 +38,6 @@
           branch: master
     jobs:
       - '{project-name}-gerrit-docker-jobs'
-
-- project:
-    <<: *sim_a1_interface_common
-    name: sim-a1-interface-sonarqube
-    python-version: python3
-    build-node: ubuntu1804-builder-2c-2g
-    sonar-project-file: ""
-    sonar-properties: |
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        sonar.build.sourceEncoding=UTF-8
-        sonar.sources=near-rt-ric-simulator
-        sonar.python.coverage.reportPaths=coverage.xml
-    jobs:
-      - gerrit-tox-sonarqube
-
 
 - project:
     <<: *sim_a1_interface_common
