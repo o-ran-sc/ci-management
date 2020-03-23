@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "11661248_e39180f6",
+        "filename": "jjb/oam/oam.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-23T19:21:55Z",
+      "side": 1,
+      "message": "please drop \"-features\" this release job can promote any artifact built from this repo, features, parents etc.",
+      "range": {
+        "startLine": 61,
+        "startChar": 14,
+        "endLine": 61,
+        "endChar": 22
+      },
+      "revId": "4d6a4b49bc96bd90c81c17430268d64ac8e63639",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
