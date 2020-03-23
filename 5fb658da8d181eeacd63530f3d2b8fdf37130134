@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "7a97525f_4011bd40",
+        "filename": "jjb/oam/oam-features.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-23T17:00:28Z",
+      "side": 1,
+      "message": "Herbert, if you have three different artifacts that need to be built, you need a project definition for each one of them; in other words, three sets of gerrit-maven-* jobs and streams and etc.  One jenkins job -\u003e one artifact.  Exception: the release job is sorta black magic.",
+      "parentUuid": "71a0c54b_e18537a5",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 2
+      },
+      "revId": "5fb658da8d181eeacd63530f3d2b8fdf37130134",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d54b2a6c_ec162870",
         "filename": "jjb/oam/oam-features.yaml",
         "patchSetId": 1
