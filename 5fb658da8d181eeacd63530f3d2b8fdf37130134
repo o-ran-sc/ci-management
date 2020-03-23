@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ccfa72f3_6472b275",
+        "filename": "jjb/oam/oam-features.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000115
+      },
+      "writtenOn": "2020-03-23T16:34:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2ee3123_c5620de6",
+      "range": {
+        "startLine": 8,
+        "startChar": 4,
+        "endLine": 8,
+        "endChar": 8
+      },
+      "revId": "5fb658da8d181eeacd63530f3d2b8fdf37130134",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b3967450_75b6b2b9",
         "filename": "jjb/oam/oam-features.yaml",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "5fb658da8d181eeacd63530f3d2b8fdf37130134",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "71a0c54b_e18537a5",
+        "filename": "jjb/oam/oam-features.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000115
+      },
+      "writtenOn": "2020-03-23T16:34:07Z",
+      "side": 1,
+      "message": "There is no top level pom. features, parents and distributions need to be three different version streams .. \nBut there is a separated block now.",
+      "parentUuid": "b3967450_75b6b2b9",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 2
+      },
+      "revId": "5fb658da8d181eeacd63530f3d2b8fdf37130134",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "e823dfe8_2b89e3b6",
+        "filename": "jjb/oam/oam-features.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000115
+      },
+      "writtenOn": "2020-03-23T16:34:07Z",
+      "side": 1,
+      "message": "At the moment it is java8 .. in the next version java 11 is additionally used. To make it clear I added the java-version for java8.",
+      "parentUuid": "d54b2a6c_ec162870",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 4
+      },
+      "revId": "5fb658da8d181eeacd63530f3d2b8fdf37130134",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "90ad963c_ab376ba4",
         "filename": "jjb/oam/oam-features.yaml",
         "patchSetId": 1
@@ -91,6 +163,30 @@
       "revId": "5fb658da8d181eeacd63530f3d2b8fdf37130134",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a4280a00_4b99ed63",
+        "filename": "jjb/oam/oam-features.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000115
+      },
+      "writtenOn": "2020-03-23T16:34:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "90ad963c_ab376ba4",
+      "range": {
+        "startLine": 27,
+        "startChar": 16,
+        "endLine": 27,
+        "endChar": 40
+      },
+      "revId": "5fb658da8d181eeacd63530f3d2b8fdf37130134",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
