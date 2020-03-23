@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7157a75d_e8b43c38",
+        "filename": "jjb/oam/oam.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-23T15:37:12Z",
+      "side": 1,
+      "message": "So now you\u0027ve worked your way to the point where an anchor/alias would help you reduce redundancy in your file. It might look like this:\n\n- oam_features_common: \u0026oam_features_common\n    # values apply to all projects here\n    name: oam-features-common\n    # git repo\n    project: oam\n    # jenkins job name prefix\n    project-name: oam-features\n    # maven settings file has docker credentials\n    mvn-settings: oam-settings\n    # defaults.yaml value is NOT used due to value set in lf-maven-jobs.yaml\n    java-version: openjdk11\n\nI know you\u0027re not ready for JDK11 yet, so you might have to skip that line.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 2
+      },
+      "revId": "3013ab03ea9faccadc0af5d87d422c78c46b267c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "961a6aca_624918de",
+        "filename": "jjb/oam/oam.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-23T15:37:12Z",
+      "side": 1,
+      "message": "This is yaml, you don\u0027t need double-quote characters here for such a simple string.  But if you absolutely insist on using quotation marks, please choose one  (\") or the other (\u0027) and be consistent.",
+      "range": {
+        "startLine": 21,
+        "startChar": 28,
+        "endLine": 21,
+        "endChar": 29
+      },
+      "revId": "3013ab03ea9faccadc0af5d87d422c78c46b267c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0f8e952_812a2272",
+        "filename": "jjb/oam/oam.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-23T15:37:12Z",
+      "side": 1,
+      "message": "You are in the OAM project so you need to use oam-settings",
+      "range": {
+        "startLine": 22,
+        "startChar": 19,
+        "endLine": 22,
+        "endChar": 27
+      },
+      "revId": "3013ab03ea9faccadc0af5d87d422c78c46b267c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3dbad812_4fef8886",
+        "filename": "jjb/oam/oam.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-23T15:37:12Z",
+      "side": 1,
+      "message": "CLM already?  You could defer this until things are working :) But if you\u0027re going for the full set of scans then you should also add sonar.",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 3
+      },
+      "revId": "3013ab03ea9faccadc0af5d87d422c78c46b267c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01a23bf7_81163f86",
+        "filename": "jjb/oam/oam.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-23T15:37:12Z",
+      "side": 1,
+      "message": "This will need mvn-settings to get credentials",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 4
+      },
+      "revId": "3013ab03ea9faccadc0af5d87d422c78c46b267c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3541ad0b_cb95eec6",
+        "filename": "jjb/oam/oam.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-23T15:37:12Z",
+      "side": 1,
+      "message": "ps drop \"release\" suffix, the job template will add that.  with the setting you have here you will get jobs like this:\n\noam-features-release-release-verify\noam-features-release-release-merge",
+      "range": {
+        "startLine": 46,
+        "startChar": 31,
+        "endLine": 46,
+        "endChar": 38
+      },
+      "revId": "3013ab03ea9faccadc0af5d87d422c78c46b267c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88ebc4ea_e6b139e8",
+        "filename": "jjb/oam/oam.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-23T15:37:12Z",
+      "side": 1,
+      "message": "Pls remove mvn-* the release job ignores those\n\nand add the build node label I suggested previously, centos7-docker-2c-8g",
+      "range": {
+        "startLine": 47,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 37
+      },
+      "revId": "3013ab03ea9faccadc0af5d87d422c78c46b267c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
