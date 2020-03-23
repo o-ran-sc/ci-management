@@ -1,0 +1,57 @@
+---
+# Job configurations for base docker build images
+
+# This macro factors out common configuration
+- it_dev_docker_common: &it_dev_docker_common
+    name: it-dev-docker-common
+    # git repo
+    project: it/dev
+    # maven settings file has docker credentials
+    mvn-settings: it-dev-settings
+    # build every Saturday
+    cron: 'H H * * 6'
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # Jenkins job prefix
+    project-name: 'it-dev-{img}'
+    # Docker image name
+    docker-name: '{img}'
+    # Directory with Dockerfile
+    docker-root: 'docker/{img}'
+    # Limit build trigger to appropriate files;
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'bldr-imgs/{img}/.*'
+    # Includes verify and merge jobs
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    # Only build master branch
+    stream:
+      - master:
+          branch: master
+
+# Each project name is a subdirectory in bldr-images
+# with a Dockerfile and a container-tag.yaml file
+# TODO: coalesce name+img after removing projects from ci-management
+
+- project:
+    name: it-dev-alpine3
+    img: bldr-alpine3
+    <<: *it_dev_docker_common
+
+- project:
+    name: it-dev-alpine3-go
+    img: bldr-alpine3-go
+    <<: *it_dev_docker_common
+
+- project:
+    name: it-dev-ubuntu16-c-go
+    img: bldr-ubuntu16-c-go
+    <<: *it_dev_docker_common
+
+- project:
+    name: it-dev-ubuntu18-c-go
+    img: bldr-ubuntu18-c-go
+    <<: *it_dev_docker_common
