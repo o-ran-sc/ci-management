@@ -19,7 +19,7 @@
     # Docker image name
     docker-name: '{img}'
     # Directory with Dockerfile
-    docker-root: 'docker/{img}'
+    docker-root: 'bldr-imgs/{img}'
     # Limit build trigger to appropriate files;
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
