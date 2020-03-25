@@ -1,0 +1,46 @@
+---
+#   Copyright (c) 2020 AT&T Intellectual Property.
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+
+# Macros to invoke shell scripts for PackageCloud
+
+- builder:
+    name: oran-packagecloud-file-provider
+    builders:
+      - config-file-provider:
+          files:
+            - file-id: ".packagecloud"
+              target: "$HOME/.packagecloud"
+      - config-file-provider:
+          files:
+            - file-id: "packagecloud_api"
+              target: "$HOME/packagecloud_api"
+
+- builder:
+    # {packagecloud-account} is PackageCloud account ID; example: oran
+    # {packagecloud-repo} is PackageCloud repository; example: master, staging
+    # {debian-distribution-versions} is list of DEB package distro/version strings
+    #    separated by space; example: ubuntu/bionic debian/stretch
+    # {rpm-distribution-versions} is list of RPM package distro/version strings
+    #    separated by space; example: el/4 el/5
+    name: oran-packagecloud-push
+    builders:
+      - inject:
+          properties-content: |
+            PACKAGECLOUD_ACCOUNT={packagecloud-account}
+            PACKAGECLOUD_REPO={packagecloud-repo}
+            DEBIAN_DISTRIBUTION_VERSIONS={debian-distribution-versions}
+            RPM_DISTRIBUTION_VERSIONS={rpm-distribution-versions}
+      - shell: !include-raw-escape:
+          - shell/packagecloud-push.sh
