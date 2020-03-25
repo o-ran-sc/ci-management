@@ -62,7 +62,7 @@ git clone https://github.com/nanomsg/nng.git
 # RPM packager adds suffix "-1" to version
 rpm="rmr-${ver}-1.x86_64.rpm"
 echo "Download RMR library ${ver} as file ${rpm}"
-wget --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/el/5/${rpm}/download.rpm
+wget -nv --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/el/5/${rpm}/download.rpm
 echo "Install RMR library file ${rpm}"
 sudo rpm -iv ${rpm}
 

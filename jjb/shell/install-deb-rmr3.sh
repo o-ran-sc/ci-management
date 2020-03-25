@@ -44,7 +44,7 @@ fi
 # TODO use release repo, not staging
 repo=staging
 for deb in "rmr_${ver}_amd64.deb" "rmr-dev_${ver}_amd64.deb"; do
-    wget -q --content-disposition "https://packagecloud.io/o-ran-sc/${repo}/packages/debian/stretch/${deb}/download.deb"
+    wget -nv --content-disposition "https://packagecloud.io/o-ran-sc/${repo}/packages/debian/stretch/${deb}/download.deb"
     sudo dpkg -i "${deb}"
 done
 

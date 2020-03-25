@@ -45,7 +45,7 @@ fi
 # RPM packager adds suffix "-1" to version
 repo=staging
 for rpm in "rmr-${ver}-1.x86_64.rpm" "rmr-devel-${ver}-1.x86_64.rpm"; do
-    wget -q --content-disposition https://packagecloud.io/o-ran-sc/${repo}/packages/el/5/${rpm}/download.rpm
+    wget -nv --content-disposition https://packagecloud.io/o-ran-sc/${repo}/packages/el/5/${rpm}/download.rpm
     sudo rpm -iv ${rpm}
 done
 
