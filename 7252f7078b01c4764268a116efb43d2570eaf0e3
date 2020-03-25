@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ad9c878_51fb4c12",
+        "filename": "jjb/oran-jjb/oran-c-cpp-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2020-03-25T21:16:36Z",
+      "side": 1,
+      "message": "Nokia too?",
+      "revId": "7252f7078b01c4764268a116efb43d2570eaf0e3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f15b691_26f1f9e2",
+        "filename": "jjb/oran-jjb/oran-package-cloud-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2020-03-25T21:16:36Z",
+      "side": 1,
+      "message": "2020? or at least 2019-2020 if this was snarfed from code written in 2019. Same for the Nokia line too.",
+      "revId": "7252f7078b01c4764268a116efb43d2570eaf0e3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "230d14d8_83bce8fc",
+        "filename": "jjb/ric-plt-xapp-frame-cpp/ric-plt-xapp-frame-cpp.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2020-03-25T21:16:36Z",
+      "side": 1,
+      "message": "Other yaml files have a license; is this an exception for some reason? No problem if it is, but someone will eventually grumble about it missing if there isn\u0027t one, so it might as well be me.",
+      "revId": "7252f7078b01c4764268a116efb43d2570eaf0e3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
