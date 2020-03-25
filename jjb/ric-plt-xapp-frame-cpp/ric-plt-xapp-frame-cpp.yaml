@@ -23,21 +23,23 @@
     mvn-settings: ric-plt-xapp-frame-cpp-settings
     # test scripts depend on this name
     build-dir: $WORKSPACE/build
-    # use an ubuntu for its modern compiler and cmake
-    build-node: ubuntu1804-builder-2c-2g
-    # install RMR per version file in repo
+    # Use ubuntu base for cmake v3 
+    # Use docker variant for packagecloud ruby gem
+    build-node: ubuntu1804-docker-4c-4g
+    # install RMR per version file in repo for ubuntu
     pre-build: !include-raw-escape:
       - ../shell/install-deb-rmr3.sh
     # verify and sonar use cmake
     cmake-opts: -DDEV_PKG=1
     make-opts: install test ARGS=-V
 
-# verify changes
+# verify on changes, publish on merge
 - project:
     name: xapp-frame-cpp-verify
     <<: *xapp_frame_cpp_common
     jobs:
       - gerrit-cmake-verify
+      - oran-gerrit-cmake-pc-merge
     stream:
       - master:
           branch: master
