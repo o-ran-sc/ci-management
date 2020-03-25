@@ -1,0 +1,149 @@
+#   Copyright (c) 2020 AT&T Intellectual Property.
+#
+#   Licensed under the Apache License, Version 2.0 (the 'License');
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an 'AS IS' BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+---
+
+# This file is structured with a cmake alias/anchor, an alias/anchor,
+# and a job-template to simplify the task of lifting it to global-jjb.
+
+####################
+# COMMON FUNCTIONS #
+####################
+
+# Clone of lf_cmake_common which isn't visible here
+- oran_cmake_common: &oran_cmake_common
+    name: oran-cmake-common
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: "{build-node}"
+    disabled: "{disable-job}"
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - lf-cmake-parameters:
+          build-dir: "{build-dir}"
+          cmake-opts: "{cmake-opts}"
+          install-prefix: "{install-prefix}"
+          make-opts: "{make-opts}"
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    publishers:
+      - lf-infra-publish
+
+##################
+# CMAKE+PC STAGE #
+##################
+
+- oran_cmake_pc_stage: &oran_cmake_pc_stage
+    name: oran-cmake-pc-stage
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-dir: "$WORKSPACE/target"
+    build-timeout: 15
+    cmake-opts: ""
+    cron: "@weekly"
+    disable-job: false
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    install-prefix: "$BUILD_DIR/output"
+    make-opts: ""
+    pre-build: ""
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: ".*"
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - ".*"
+
+    builders:
+      - config-file-provider:
+          files:
+            - file-id: ".packagecloud"
+              target: "$HOME/.packagecloud"
+      - shell: "{pre-build}"
+      - shell: !include-raw-escape: ../../global-jjb/shell/cmake-build.sh
+      - oran-packagecloud-push:
+          packagecloud-account: "{packagecloud-account}"
+          packagecloud-repo: "{packagecloud-repo}"
+          debian-distribution-versions: "{debian-distribution-versions}"
+          rpm-distribution-versions: "{rpm-distribution-versions}"
+
+- job-template:
+    # build with cmake and publish to PackageCloud on command
+    name: "{project-name}-cmake-pc-stage-{stream}"
+    id: oran-gerrit-cmake-pc-stage
+    <<: *oran_cmake_common
+    <<: *oran_cmake_pc_stage
+
+    ######################
+    # Default parameters #
+    ######################
+
+    gerrit_stage_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+stage-relase\s*$'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          # stage jobs always build from tip
+          choosing-strategy: default
+
+    triggers:
+      - timed: "{obj:cron}"
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_stage_triggers}"
+          projects:
+            - project-compare-type: ANT
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
