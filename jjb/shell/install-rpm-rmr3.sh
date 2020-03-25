@@ -17,18 +17,20 @@
 # limitations under the License.
 
 # Installs RMR ver 3.x headers and shared-object libraries 
-# from PackageCloud on a CentOS
-# Reads RMR version number from repo file rmr-version.yaml
-# Does NOT install or assume NNG
+# from PackageCloud on a CentOS; does NOT install or assume NNG.
+# Reads RMR version number from repo file rmr-version.yaml like this:
+#   ---
+#   repo: staging             (this entry is optional)
+#   version: 3.6.1            (this entry is required)
 
 echo "---> install-rpm-rmr3.sh"
-
 # stop on error or unbound var, and be chatty
 set -eux
 
 version_file=rmr-version.yaml
 if [[ -f $version_file ]]; then
     # pipeline is less elegant than yq but that requires venv and pip install
+    repo=$(grep "^repo:" "$version_file" | cut -d: -f2 | xargs )
     ver=$(grep "^version:" "$version_file" | cut -d: -f2 | xargs )
 else
     echo "File $version_file not found."
@@ -37,15 +39,12 @@ fi
 if [[ -z $ver ]]; then
     echo "Failed to get RMR version string from file $version_file"
     exit 1
-else
-    echo "RMR version string is ${ver}"
 fi
-
-# TODO use release repo, not staging
+# default to release repo; accept override to use staging repo
+repo=${repo:-"release"}
 # RPM packager adds suffix "-1" to version
-repo=staging
 for rpm in "rmr-${ver}-1.x86_64.rpm" "rmr-devel-${ver}-1.x86_64.rpm"; do
-    wget -q --content-disposition https://packagecloud.io/o-ran-sc/${repo}/packages/el/5/${rpm}/download.rpm
+    wget -nv --content-disposition https://packagecloud.io/o-ran-sc/${repo}/packages/el/5/${rpm}/download.rpm
     sudo rpm -iv ${rpm}
 done
 

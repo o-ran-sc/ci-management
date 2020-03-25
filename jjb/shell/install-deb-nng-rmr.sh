@@ -62,7 +62,7 @@ git clone https://github.com/nanomsg/nng.git
 
 deb="rmr_${ver}_amd64.deb"
 echo "Download RMR library ${ver} as file ${deb}"
-wget --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/debian/stretch/${deb}/download.deb
+wget -nv --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/debian/stretch/${deb}/download.deb
 echo "Install RMR library file ${deb}"
 sudo dpkg -i ${deb}
 

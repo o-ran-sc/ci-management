@@ -17,18 +17,20 @@
 # limitations under the License.
 
 # Installs RMR ver 3.x headers and shared-object libraries 
-# from PackageCloud on a Debian; e.g., ubuntu 18.04
-# Reads RMR version number from repo file rmr-version.yaml
-# Does NOT install or assume NNG
+# from PackageCloud on a Debian; does NOT install or assume NNG.
+# Reads RMR version number from repo file rmr-version.yaml like this:
+#   ---
+#   repo: staging             (this entry is optional)
+#   version: 3.6.1            (this entry is required)
 
 echo "---> install-deb-rmr3.sh"
-
 # stop on error or unbound var, and be chatty
 set -eux
 
 version_file=rmr-version.yaml
 if [[ -f $version_file ]]; then
     # pipeline is less elegant than yq but that requires venv and pip install
+    repo=$(grep "^repo:" "$version_file" | cut -d: -f2 | xargs )
     ver=$(grep "^version:" "$version_file" | cut -d: -f2 | xargs)
 else
     echo "File $version_file not found."
@@ -37,14 +39,12 @@ fi
 if [[ -z $ver ]]; then
     echo "Failed to get RMR version string from file $version_file"
     exit 1
-else
-    echo "RMR version string is ${ver}"
 fi
-
-# TODO use release repo, not staging
-repo=staging
+# default to release repo; accept override to use staging repo
+repo=${repo:-"release"}
+# 
 for deb in "rmr_${ver}_amd64.deb" "rmr-dev_${ver}_amd64.deb"; do
-    wget -q --content-disposition "https://packagecloud.io/o-ran-sc/${repo}/packages/debian/stretch/${deb}/download.deb"
+    wget -nv --content-disposition "https://packagecloud.io/o-ran-sc/${repo}/packages/debian/stretch/${deb}/download.deb"
     sudo dpkg -i "${deb}"
 done
 
