@@ -36,18 +36,8 @@
 # Each project name is a subdirectory in ci-management/docker
 # with a Dockerfile and a container-tag.yaml file
 
-- project:
-    name: bldr-alpine3
-    <<: *ci_docker_common
-
-- project:
-    name: bldr-alpine3-go
-    <<: *ci_docker_common
-
+# This image is deprecated, projects should move to Ubuntu 18
+# TODO remove entirely
 - project:
     name: bldr-ubuntu16-c-go
-    <<: *ci_docker_common
-
-- project:
-    name: bldr-ubuntu18-c-go
     <<: *ci_docker_common
