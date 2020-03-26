@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "45c83eee_d9aa1699",
+        "filename": "jjb/scp-oam-modeling/scp-oam-modeling.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-26T11:12:39Z",
+      "side": 1,
+      "message": "minor typo",
+      "range": {
+        "startLine": 55,
+        "startChar": 18,
+        "endLine": 55,
+        "endChar": 25
+      },
+      "revId": "2e2275ddd46a5589e6f804b563bb64b55724c9b0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
