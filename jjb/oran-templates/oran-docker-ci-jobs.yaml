@@ -41,7 +41,7 @@
     name: oran-docker-build-export
     builders:
       - shell: !include-raw-escape:
-          - shell/export-packages.sh
+          - ../shell/export-packages.sh
 
 - builder:
     # {packagecloud-account} is PackageCloud account ID; example: oran
@@ -59,7 +59,7 @@
             DEBIAN_DISTRIBUTION_VERSIONS={debian-distribution-versions}
             RPM_DISTRIBUTION_VERSIONS={rpm-distribution-versions}
       - shell: !include-raw-escape:
-          - shell/packagecloud-push.sh
+          - ../shell/packagecloud-push.sh
 
 # Different name, same content as lf_docker_common
 - oran_docker_common: &oran_docker_common
