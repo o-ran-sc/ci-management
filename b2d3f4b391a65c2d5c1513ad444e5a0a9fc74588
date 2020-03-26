@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b3af3ef_e2bb5978",
+        "filename": "jjb/sim-a1-interface/sim-a1-interface.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-26T09:23:24Z",
+      "side": 1,
+      "message": "Why not use docker-root: near-rt-ric-simulator ?  With that configured you don\u0027t need container-tag-yaml-dir (it assumes docker-root) nor the -f in docker-build-args.  Do less work :)",
+      "range": {
+        "startLine": 34,
+        "startChar": 4,
+        "endLine": 34,
+        "endChar": 26
+      },
+      "revId": "b2d3f4b391a65c2d5c1513ad444e5a0a9fc74588",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
