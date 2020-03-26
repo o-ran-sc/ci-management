@@ -31,9 +31,9 @@
     # source of docker tag
     container-tag-method: yaml-file
     # use tag yaml from subdirectory
-    container-tag-yaml-dir: near-rt-ric-simulator/scripts
+    container-tag-yaml-dir: near-rt-ric-simulator
     # use host network
-    docker-build-args: '-f near-rt-ric-simulator/scripts/Dockerfile --network=host'
+    docker-build-args: '-f near-rt-ric-simulator/Dockerfile --network=host'
     build-node: ubuntu1804-docker-4c-4g
     stream:
       - master:
