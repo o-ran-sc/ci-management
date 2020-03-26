@@ -22,6 +22,30 @@
       "revId": "b2d3f4b391a65c2d5c1513ad444e5a0a9fc74588",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6ebe000_7e88bf04",
+        "filename": "jjb/sim-a1-interface/sim-a1-interface.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2020-03-26T12:38:38Z",
+      "side": 1,
+      "message": "Thank you for the tip!\n\nDone",
+      "parentUuid": "6b3af3ef_e2bb5978",
+      "range": {
+        "startLine": 34,
+        "startChar": 4,
+        "endLine": 34,
+        "endChar": 26
+      },
+      "revId": "b2d3f4b391a65c2d5c1513ad444e5a0a9fc74588",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
