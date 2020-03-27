@@ -15,23 +15,12 @@
 #   limitations under the License.
 
 # Macros and templates for using Docker as the CI system.
+
 # The merge template calls builders to build in docker,
 # export files, then push to PackageCloud.
 # The docker image is discarded, not pushed to a registry.
 # Uses builders defined in, and mirrors the structure of,
 # global-jjb resource jjb/lf-docker-jobs.yaml
-
-- builder:
-    name: oran-packagecloud-file-provider
-    builders:
-      - config-file-provider:
-          files:
-            - file-id: ".packagecloud"
-              target: "$HOME/.packagecloud"
-      - config-file-provider:
-          files:
-            - file-id: "packagecloud_api"
-              target: "$HOME/packagecloud_api"
 
 # This shell script launches the container, which copies
 # build products to a mounted volume.  Script needs vars
@@ -42,24 +31,6 @@
     builders:
       - shell: !include-raw-escape:
           - ../shell/export-packages.sh
-
-- builder:
-    # {packagecloud-account} is PackageCloud account ID; example: oran
-    # {packagecloud-repo} is PackageCloud repository; example: master, staging
-    # {debian-distribution-versions} is list of DEB package distro/version strings
-    #    separated by space; example: ubuntu/bionic debian/stretch
-    # {rpm-distribution-versions} is list of RPM package distro/version strings
-    #    separated by space; example: el/4 el/5
-    name: oran-packagecloud-push
-    builders:
-      - inject:
-          properties-content: |
-            PACKAGECLOUD_ACCOUNT={packagecloud-account}
-            PACKAGECLOUD_REPO={packagecloud-repo}
-            DEBIAN_DISTRIBUTION_VERSIONS={debian-distribution-versions}
-            RPM_DISTRIBUTION_VERSIONS={rpm-distribution-versions}
-      - shell: !include-raw-escape:
-          - ../shell/packagecloud-push.sh
 
 # Different name, same content as lf_docker_common
 - oran_docker_common: &oran_docker_common
