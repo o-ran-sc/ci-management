@@ -1,0 +1,9 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Scott Daniels <daniels@research.att.com>
+Code-Review+2: Houa Yang <hyang@contractor.linuxfoundation.org>
+Code-Review+2: Aric Gardner <agardner@linuxfoundation.org>
+Submitted-by: Aric Gardner <agardner@linuxfoundation.org>
+Submitted-at: Fri, 27 Mar 2020 15:54:35 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/3017
+Project: ci-management
+Branch: refs/heads/master
