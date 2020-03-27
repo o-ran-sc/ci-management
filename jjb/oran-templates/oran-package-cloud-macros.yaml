@@ -28,6 +28,7 @@
               target: "$HOME/packagecloud_api"
 
 - builder:
+    # {build-dir} is directory where cmake/make creates artifacts
     # {packagecloud-account} is PackageCloud account ID; example: oran
     # {packagecloud-repo} is PackageCloud repository; example: master, staging
     # {debian-distribution-versions} is list of DEB package distro/version strings
@@ -38,9 +39,9 @@
     builders:
       - inject:
           properties-content: |
+            BUILD_DIR={build-dir}
             PACKAGECLOUD_ACCOUNT={packagecloud-account}
             PACKAGECLOUD_REPO={packagecloud-repo}
             DEBIAN_DISTRIBUTION_VERSIONS={debian-distribution-versions}
             RPM_DISTRIBUTION_VERSIONS={rpm-distribution-versions}
-      - shell: !include-raw-escape:
-          - ../shell/packagecloud-push.sh
+      - shell: !include-raw-escape: ../shell/packagecloud-push.sh
