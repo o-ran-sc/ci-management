@@ -13,6 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
+# commmon for feature artifacts for nonrtric-o1-controller
 - oam_features_common: &oam_features_common
     # project contains features of nonrtric-o1-controller
     # values apply to all projects here
@@ -32,6 +33,7 @@
       - compare-type: REG_EXP
         pattern: 'features/.*'
 
+# build feature artifacts for nonrtric-o1-controller
 - project:
     <<: *oam_features_common
     name: oam-features
@@ -45,6 +47,7 @@
       - 'master':
           branch: 'master'
 
+# report test coverage periodically for feature artifacs
 - project:
     <<: *oam_features_common
     name: oam-features-sonar
@@ -56,6 +59,7 @@
     jobs:
       - gerrit-maven-sonar
 
+# promote artifacts and images to release registries
 - project:
     name: oam-release
     project-name: oam
@@ -65,17 +69,12 @@
     jobs:
       - '{project-name}-gerrit-release-jobs'
 
+# common for feature parents for nonrtric-o1-controller feature artifacts
 - oam_parent_common: &oam_parent_common
-    # project contains feature parents for nonrtric-o1-controller feature bundles
-    # values apply to all projects here
     name: oam-parent-common
-    # git repo
     project: oam
-    # jenkins job name prefix
     project-name: oam-parent
-    # maven settings file has docker credentials
     mvn-settings: oam-settings
-    # defaults.yaml value is NOT used due to value set in lf-maven-jobs.yaml
     java-version: openjdk8
     maven-version: mvn35
     mvn-opts: '-Xmx3072m -XX:MaxPermSize=1024m'
@@ -84,6 +83,7 @@
       - compare-type: REG_EXP
         pattern: 'parent/.*'
 
+# building feature parents for nonrtric-o1-controller feature artifacts
 - project:
     <<: *oam_parent_common
     name: oam-parents
@@ -97,6 +97,7 @@
       - 'master':
           branch: 'master'
 
+#  report test coverage periodically
 - project:
     <<: *oam_parent_common
     name: oam-parent-sonar
@@ -107,3 +108,29 @@
     build-node: ubuntu1604-builder-4c-4g
     jobs:
       - gerrit-maven-sonar
+
+# common for oam-distribution docker projects
+- oam_distribution_common: &oam_distribution_common
+    name: oam-distribution-common
+    project: oam
+    project-name: oam-distribution
+    mvn-settings: oam-settings
+    java-version: openjdk8
+    maven-version: mvn35
+    mvn-opts: '-Xmx3072m -XX:MaxPermSize=1024m'
+    mvn-params: '-f distribution -Dbuild.number=${{BUILD_NUMBER}}'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'distribution/.*'
+
+# build docker images for nonrtric-o1-controller
+- project:
+    <<: *oam_distribution_common
+    name: oam-distribution
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: 'master'
