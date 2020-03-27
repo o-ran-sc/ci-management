@@ -29,14 +29,27 @@
     # install RMR per version file in repo for ubuntu
     pre-build: !include-raw-escape:
       - ../shell/install-deb-rmr3.sh
-    # verify and sonar use cmake
-    cmake-opts: -DDEV_PKG=1
-    make-opts: install test ARGS=-V
 
-# verify on changes, publish on stage
+# development library - publish only
 - project:
-    name: xapp-frame-cpp-verify
+    name: xapp-frame-cpp-lib-dev
     <<: *xapp_frame_cpp_common
+    project-name: ric-plt-xapp-frame-cpp-dev
+    cmake-opts: -DDEV_PKG=1
+    make-opts: package ARGS=-V
+    jobs:
+      - oran-gerrit-cmake-pc-stage
+    stream:
+      - master:
+          branch: master
+
+# runtime library - test and publish
+- project:
+    name: xapp-frame-cpp-lib-rt
+    <<: *xapp_frame_cpp_common
+    project-name: ric-plt-xapp-frame-cpp-lib
+    cmake-opts: -DDEV_PKG=0
+    make-opts: test package ARGS=-V
     jobs:
       - gerrit-cmake-verify
       - oran-gerrit-cmake-pc-stage
@@ -48,6 +61,7 @@
 - project:
     name: xapp-frame-cpp-sonarqube
     <<: *xapp_frame_cpp_common
+    make-opts: test ARGS=-V
     sonar-project-file: ""
     sonar-properties: |
         sonar.login={sonarcloud_api_token}

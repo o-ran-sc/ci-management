@@ -68,7 +68,7 @@
 
     branch: master
     build-days-to-keep: 7
-    build-dir: "$WORKSPACE/target"
+    build-dir: "$WORKSPACE/build"
     build-timeout: 15
     cmake-opts: ""
     cron: "" # avoid for PackageCloud which rejects duplicates
@@ -99,6 +99,7 @@
       - shell: "{pre-build}"
       - shell: !include-raw-escape: ../../global-jjb/shell/cmake-build.sh
       - oran-packagecloud-push:
+          build-dir: "{build-dir}"
           packagecloud-account: "{packagecloud-account}"
           packagecloud-repo: "{packagecloud-repo}"
           debian-distribution-versions: "{debian-distribution-versions}"
