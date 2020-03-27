@@ -32,11 +32,11 @@
     docker-name: '{name}'
     # image tag, use a fixed value
     container-tag-method: latest
+    # prefix of .deb/.rpm file name
+    package-prefix: mdclog
     jobs:
       - gerrit-docker-verify
-      - oran-gerrit-docker-ci-pc-merge:
-          # stage every Saturday
-          cron: 'H H * * 6'
+      - oran-gerrit-docker-ci-pc-merge
     stream:
       - master:
           branch: master

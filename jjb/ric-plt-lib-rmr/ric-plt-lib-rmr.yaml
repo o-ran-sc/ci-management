@@ -65,6 +65,8 @@
     container-tag-method: latest
     # use host network for network resources
     docker-build-args: '--network=host -f ci/Dockerfile'
+    # prefix of deb/rpm files
+    package-prefix: rmr
     jobs:
       - oran-gerrit-docker-ci-pc-merge
     stream:

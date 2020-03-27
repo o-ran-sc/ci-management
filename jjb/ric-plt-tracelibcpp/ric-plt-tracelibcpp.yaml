@@ -32,6 +32,8 @@
     docker-build-args: '--network=host -f ci/Dockerfile'
     # image tag; use a fixed value
     container-tag-method: latest
+    # prefix of .deb/.rpm file name
+    package-prefix: tracelibcpp
     jobs:
       - gerrit-docker-verify
       - oran-gerrit-docker-ci-pc-merge

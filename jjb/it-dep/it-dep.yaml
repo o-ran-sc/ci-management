@@ -58,6 +58,8 @@
     docker-name: 'o-ran-sc/{name}'
     # use host network for network resources
     docker-build-args: '--network=host -f ci/Dockerfile-package'
+    # prefix of .deb/.rpm file
+    package-prefix: ric-deployment-tools
     jobs:
       - gerrit-docker-verify
       - oran-gerrit-docker-ci-pc-merge
