@@ -132,6 +132,7 @@
       - shell: "{post_docker_build_script}"
       - oran-docker-build-export
       - oran-packagecloud-push:
+          build-dir: export-packages # directory with deb/rpm files
           packagecloud-account: "{packagecloud-account}"
           packagecloud-repo: "{packagecloud-repo}"
           debian-distribution-versions: "{debian-distribution-versions}"
