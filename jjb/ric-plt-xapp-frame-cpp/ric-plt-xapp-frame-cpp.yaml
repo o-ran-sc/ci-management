@@ -37,6 +37,7 @@
 - project:
     name: xapp-frame-cpp-verify
     <<: *xapp_frame_cpp_common
+    package-prefix: ricxfcpp
     jobs:
       - gerrit-cmake-verify
       - oran-gerrit-cmake-pc-stage

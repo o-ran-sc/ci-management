@@ -101,6 +101,7 @@
       - oran-packagecloud-push:
           packagecloud-account: "{packagecloud-account}"
           packagecloud-repo: "{packagecloud-repo}"
+          package-prefix: "{package-prefix}"
           debian-distribution-versions: "{debian-distribution-versions}"
           rpm-distribution-versions: "{rpm-distribution-versions}"
 

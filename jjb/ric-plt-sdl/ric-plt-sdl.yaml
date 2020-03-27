@@ -32,6 +32,8 @@
     docker-name: '{name}'
     # image tag, use a fixed value
     container-tag-method: latest
+    # prefix of .deb/.rpm file name
+    package-prefix: sdl
     jobs:
       - gerrit-docker-verify
       - oran-gerrit-docker-ci-pc-merge
