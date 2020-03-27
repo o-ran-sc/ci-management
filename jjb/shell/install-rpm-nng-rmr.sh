@@ -65,5 +65,6 @@ echo "Download RMR library ${ver} as file ${rpm}"
 wget -nv --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/el/5/${rpm}/download.rpm
 echo "Install RMR library file ${rpm}"
 sudo rpm -iv ${rpm}
+rm -f ${rpm}
 
 echo "---> install-rpm-nng-rmr.sh ends"

@@ -46,6 +46,7 @@ repo=${repo:-"release"}
 for deb in "rmr_${ver}_amd64.deb" "rmr-dev_${ver}_amd64.deb"; do
     wget -nv --content-disposition "https://packagecloud.io/o-ran-sc/${repo}/packages/debian/stretch/${deb}/download.deb"
     sudo dpkg -i "${deb}"
+    rm -f "${deb}"
 done
 
 echo "---> install-deb-rmr3.sh ends"

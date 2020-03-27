@@ -65,5 +65,6 @@ echo "Download RMR library ${ver} as file ${deb}"
 wget -nv --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/debian/stretch/${deb}/download.deb
 echo "Install RMR library file ${deb}"
 sudo dpkg -i ${deb}
+rm -f ${deb}
 
 echo "---> install-deb-nng-rmr.sh ends"

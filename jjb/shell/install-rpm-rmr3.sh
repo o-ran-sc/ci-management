@@ -44,8 +44,9 @@ fi
 repo=${repo:-"release"}
 # RPM packager adds suffix "-1" to version
 for rpm in "rmr-${ver}-1.x86_64.rpm" "rmr-devel-${ver}-1.x86_64.rpm"; do
-    wget -nv --content-disposition https://packagecloud.io/o-ran-sc/${repo}/packages/el/5/${rpm}/download.rpm
-    sudo rpm -iv ${rpm}
+    wget -nv --content-disposition "https://packagecloud.io/o-ran-sc/${repo}/packages/el/5/${rpm}/download.rpm"
+    sudo rpm -iv "${rpm}"
+    rm -f "${rpm}"
 done
 
 echo "---> install-rpm-rmr3.sh ends"
