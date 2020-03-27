@@ -13,9 +13,8 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-# Macros to invoke shell scripts for PackageCloud
-
 - builder:
+    # provisions files required by package_cloud ruby gem
     name: oran-packagecloud-file-provider
     builders:
       - config-file-provider:
@@ -28,6 +27,8 @@
               target: "$HOME/packagecloud_api"
 
 - builder:
+    # Runs shell script to push packages to PackageCloud.
+    # {build-dir} is directory with deb/rpm files to push
     # {packagecloud-account} is PackageCloud account ID; example: oran
     # {packagecloud-repo} is PackageCloud repository; example: master, staging
     # {debian-distribution-versions} is list of DEB package distro/version strings
@@ -38,9 +39,9 @@
     builders:
       - inject:
           properties-content: |
+            BUILD_DIR={build-dir}
             PACKAGECLOUD_ACCOUNT={packagecloud-account}
             PACKAGECLOUD_REPO={packagecloud-repo}
             DEBIAN_DISTRIBUTION_VERSIONS={debian-distribution-versions}
             RPM_DISTRIBUTION_VERSIONS={rpm-distribution-versions}
-      - shell: !include-raw-escape:
-          - ../shell/packagecloud-push.sh
+      - shell: !include-raw-escape: ../shell/packagecloud-push.sh
