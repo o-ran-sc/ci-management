@@ -73,7 +73,7 @@
         # Source
         sonar.sources=E2Manager
         # Unit tests
-        sonar.go.coverage.reportPaths=coverage.xml
+        sonar.go.coverage.reportPaths=coverage.txt
         # Inclusions
         sonar.inclusions=**/**.go
         # Exclusions
