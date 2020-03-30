@@ -1,8 +1,35 @@
 ---
 - project:
-    name: ric-plt-ric-dep-info
+    name: ric-plt-ric-dep-project-view
     project-name: ric-plt-ric-dep
+    views:
+      - project-view
+
+- dep_common: &dep_common
+    name: dep-common
+    # git repo
     project: ric-plt/ric-dep
+    # jenkins job name prefix
+    project-name: ric-plt-ric-dep
+    # maven settings file has credentials
+    mvn-settings: ric-plt-ric-dep-settings
+
+- project:
+    <<: *dep_common
+    name: ric-plt-ric-dep-info
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- project:
+    <<: *dep_common
+    name: ric-plt-ric-dep-chart
+    project-name: '{name}'
+    build-node: ubuntu1804-builder-2c-2g
+    script: "cd bin && bash verify-ric-charts"
+    # limit scope to subdir with helm charts
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'helm/.*'
+    jobs:
+      - oran-shell-verify
