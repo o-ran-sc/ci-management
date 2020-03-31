@@ -31,42 +31,54 @@
     project-name: ric-plt-lib-rmr-c
     # test scripts depend on this name
     build-dir: $WORKSPACE/build
-    # use an ubuntu for its modern compiler
-    build-node: ubuntu1804-builder-2c-2g
-    # verify and sonar use cmake
-    cmake-opts: -DDEV_PKG=1
-    make-opts: install test ARGS=-V
+    # Use ubuntu base for cmake v3
+    # Use docker variant for packagecloud ruby gem
+    build-node: ubuntu1804-docker-4c-4g
+    # install alien package to build RPMS on ubuntu
+    pre-build: !include-raw-escape:
+      - ../shell/install-deb-alien.sh
     # exclude irrelevant changes
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: '^((?!src/bindings|\/COMMIT_MSG).)*$'
 
-# verify c changes on every branch
+# development library - test
 - project:
-    name: ric-plt-lib-rmr-c-verify
     <<: *rmr_common
     <<: *rmr_c_common
+    name: ric-plt-lib-rmr-c-rt-verify
+    project-name: ric-plt-lib-rmr-rt
+    pre-build: "bash ci/build_all.sh"
     jobs:
       - gerrit-cmake-verify
     stream:
-      - all:
-          branch: '*'
+      - master:
+          branch: master
 
-# build deb/rpm using Docker and publish to PackageCloud.io
-# on merge to master branch
+# development library - package and publish
 - project:
     <<: *rmr_common
     <<: *rmr_c_common
-    name: ric-plt-lib-rmr-c-package
-    # need docker
-    build-node: ubuntu1804-docker-4c-4g
-    # image is not pushed, use simple name and tag
-    docker-name: '{name}'
-    container-tag-method: latest
-    # use host network for network resources
-    docker-build-args: '--network=host -f ci/Dockerfile'
+    name: ric-plt-lib-rmr-c-dev
+    project-name: ric-plt-lib-rmr-dev
+    cmake-opts: -DDEV_PKG=1
+    make-opts: package ARGS=-V
     jobs:
-      - oran-gerrit-docker-ci-pc-merge
+      - oran-gerrit-cmake-pc-stage
+    stream:
+      - master:
+          branch: master
+
+# runtime library - package and publish
+- project:
+    <<: *rmr_common
+    <<: *rmr_c_common
+    name: ric-plt-lib-rmr-c-rt
+    project-name: ric-plt-lib-rmr-rt
+    cmake-opts: -DDEV_PKG=0
+    make-opts: package ARGS=-V
+    jobs:
+      - oran-gerrit-cmake-pc-stage
     stream:
       - master:
           branch: master
@@ -84,9 +96,10 @@
 
 # analyze C code and test coverage
 - project:
-    name: ric-plt-lib-rmr-c-sonar
+    name: ric-plt-lib-rmr-c-sonarqube
     <<: *rmr_common
     <<: *rmr_c_common
+    make-opts: test ARGS=-V
     sonar-project-file: ""
     sonar-properties: |
         sonar.login={sonarcloud_api_token}
