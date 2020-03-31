@@ -97,7 +97,7 @@
             - file-id: ".packagecloud"
               target: "$HOME/.packagecloud"
       - shell: "{pre-build}"
-      - shell: !include-raw-escape: ../../global-jjb/shell/cmake-build.sh
+      - shell: !include-raw-escape: ../shell/cmake-package.sh
       - oran-packagecloud-push:
           build-dir: "{build-dir}"
           packagecloud-account: "{packagecloud-account}"
