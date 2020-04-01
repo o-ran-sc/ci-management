@@ -85,7 +85,8 @@
        pattern: 'xapp_onboarder/.*'
     parallel: false
     jobs:
-      - '{project-name}-gerrit-pypi-jobs'
+      - gerrit-pypi-verify
+      - gerrit-pypi-stage
     stream:
       - master:
           branch: master
