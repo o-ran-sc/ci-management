@@ -137,7 +137,7 @@
       - master:
           branch: master
     jobs:
-      - gerrit-pypi-merge
+      - gerrit-pypi-stage
 
 # promote package from test.pypi.org to pypi.org
 - project:
