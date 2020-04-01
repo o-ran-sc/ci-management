@@ -31,7 +31,8 @@
     name: ric-plt-xapp-frame-py-pypi
     <<: *py_common
     jobs:
-      - '{project-name}-gerrit-pypi-jobs'
+      - gerrit-pypi-verify
+      - gerrit-pypi-stage
     stream:
       - master:
           branch: master
