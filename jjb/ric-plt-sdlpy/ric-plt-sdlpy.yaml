@@ -33,7 +33,8 @@
         pattern: 'ricsdl-package/.*'
     tox-dir: ricsdl-package
     jobs:
-      - '{project-name}-gerrit-pypi-jobs'
+      - gerrit-pypi-verify
+      - gerrit-pypi-stage
     stream:
       - master:
           branch: master
