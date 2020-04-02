@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ab4d2c5a_e072fef9",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-02T15:37:07Z",
+      "side": 1,
+      "message": "do you really want the docker image to be named \"o-ran-sc/sim-o1-interface-nts-manager\" ?  if it were my project I might choose something a bit shorter like \"o-ran-sc/nts-manager\" but of course that\u0027s entirely up to you.",
+      "range": {
+        "startLine": 34,
+        "startChar": 28,
+        "endLine": 34,
+        "endChar": 32
+      },
+      "revId": "a553815e622a500ac5dc4746d97f87eb72fcb42b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "918d6802_69eff046",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-02T15:37:07Z",
+      "side": 1,
+      "message": "Ok I\u0027m ignorant, this is the first time I\u0027ve seen a project use multiple expressions.  I need to learn exactly what happens here -- are the expressions AND-ed together, or are they OR-ed together?  At first look, guessing, I think the job will only start if the change set has a file path that matches every regex.",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 4
+      },
+      "revId": "a553815e622a500ac5dc4746d97f87eb72fcb42b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad6d13ea_170bed1d",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-02T15:37:07Z",
+      "side": 1,
+      "message": "here the name is gonna be o-ran-sc/sim-o1-interface-o-ran-sc-o-ran-ru\" which is super long and a bit redundant with o-ran-sc on both sides of the slash.  are you really sure you want this name?",
+      "range": {
+        "startLine": 80,
+        "startChar": 28,
+        "endLine": 80,
+        "endChar": 32
+      },
+      "revId": "a553815e622a500ac5dc4746d97f87eb72fcb42b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "74701aac_bd8ef05f",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-02T15:37:07Z",
+      "side": 1,
+      "message": "This trigger path is exactly the same as ru-fh, can it possibly be made more specific?",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 1
+      },
+      "revId": "a553815e622a500ac5dc4746d97f87eb72fcb42b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "678782e7_ca890256",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-02T15:37:07Z",
+      "side": 1,
+      "message": "This trigger path is the same as ru-fh and ran-ru above, can it be made more specific?  maybe not, but you are gonna have a LOT of docker jobs launched at commits in this directory.",
+      "range": {
+        "startLine": 109,
+        "startChar": 0,
+        "endLine": 109,
+        "endChar": 4
+      },
+      "revId": "a553815e622a500ac5dc4746d97f87eb72fcb42b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
