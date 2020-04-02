@@ -27,23 +27,23 @@
 
 - project:
     <<: *sim_o1_interface_common
-    name: sim-o1-interface-manager
+    name: sim-o1-interface-nts-manager
     # jenkins job name prefix
     project-name: '{name}'
     # image name
     docker-name: 'o-ran-sc/{name}'
     docker-root: ntsimulator
     # dockerfile is in subdir; needed because Dockerfile includes files outside of build context
-    docker-build-args: '--network=host -f deploy/manager/Dockerfile'
+    docker-build-args: '--network=host -f deploy/nts-manager/Dockerfile'
     # tag file is in subdir
-    container-tag-yaml-dir: ntsimulator/deploy/manager
+    container-tag-yaml-dir: ntsimulator/deploy/nts-manager
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'ntsimulator/deploy/manager/.*'
+        pattern: 'ntsimulator/deploy/nts-manager/.*'
       - compare-type: REG_EXP
         pattern: 'ntsimulator/src/ntsimulator-manager/.*'
       - compare-type: REG_EXP
-        pattern: 'ntsimulator/yang/manager/.*'
+        pattern: 'ntsimulator/yang/nts-manager/.*'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
     stream:
@@ -52,16 +52,58 @@
 
 - project:
     <<: *sim_o1_interface_common
-    name: sim-o1-interface-device
+    name: sim-o1-interface-o-ran-ru-fh
     # jenkins job name prefix
     project-name: '{name}'
     # image name
     docker-name: 'o-ran-sc/{name}'
     docker-root: ntsimulator
     # dockerfile is in subdir; needed because Dockerfile includes files outside of build context
-    docker-build-args: '--network=host -f deploy/Dockerfile'
+    docker-build-args: '--network=host -f deploy/o-ran/ru-fh/Dockerfile'
     # tag file is in subdir
-    container-tag-yaml-dir: ntsimulator/deploy
+    container-tag-yaml-dir: ntsimulator/deploy/o-ran/ru-fh
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ntsimulator/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *sim_o1_interface_common
+    name: sim-o1-interface-o-ran-sc-o-ran-ru
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    docker-root: ntsimulator
+    # dockerfile is in subdir; needed because Dockerfile includes files outside of build context
+    docker-build-args: '--network=host -f deploy/o-ran-sc/o-ran-ru/Dockerfile'
+    # tag file is in subdir
+    container-tag-yaml-dir: ntsimulator/deploy/o-ran-sc/o-ran-ru
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ntsimulator/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *sim_o1_interface_common
+    name: sim-o1-interface-x-ran
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    docker-root: ntsimulator
+    # dockerfile is in subdir; needed because Dockerfile includes files outside of build context
+    docker-build-args: '--network=host -f deploy/x-ran/Dockerfile'
+    # tag file is in subdir
+    container-tag-yaml-dir: ntsimulator/deploy/x-ran
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'ntsimulator/.*'
