@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d6bbd67d_8b85e524",
+        "filename": "jjb/ric-plt-e2mgr/ric-plt-e2mgr.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-02T10:36:36Z",
+      "side": 1,
+      "message": "this looks wrong, you have repeated the sonar.exclusions key.  Did you test this in the sandbox?",
+      "range": {
+        "startLine": 78,
+        "startChar": 25,
+        "endLine": 78,
+        "endChar": 41
+      },
+      "revId": "3b5a9951872af5a29daa54c0d9a5c373100aa10c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
