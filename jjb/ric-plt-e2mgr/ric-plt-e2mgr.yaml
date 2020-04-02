@@ -74,9 +74,7 @@
         sonar.sources=E2Manager
         # Unit tests
         sonar.go.coverage.reportPaths=E2Manager/coverage.txt
-        # Inclusions
-        sonar.inclusions=**/**.go
         # Exclusions
-        sonar.exclusions=**/mocks/**.go,**/tests/**.go
+        sonar.exclusions=**/*_test.go,**/generate_source.go,**/*_generated.go,**/build/**,**/.gogradle/**,**/mocks/**,**/tests/**,**/e2managererrors/**,**/enums/**
     jobs:
       - gerrit-sonar-prescan-script
