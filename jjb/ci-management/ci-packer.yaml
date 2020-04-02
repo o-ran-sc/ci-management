@@ -25,6 +25,7 @@
     templates: builder
     platforms:
       - centos-7
+      - centos-8
       - ubuntu-18.04
 
 - project:
