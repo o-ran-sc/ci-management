@@ -48,7 +48,9 @@
     <<: *rmr_c_common
     name: ric-plt-lib-rmr-c-verify
     project-name: ric-plt-lib-rmr-c
-    cmake-opts: -DDEV_PKG=1
+    cmake-opts: -DDEV_PKG=1 -DBUILD_DOC=1
+    # skip install in cmake-build.sh 
+    install: false
     make-opts: package test ARGS=-V
     jobs:
       - gerrit-cmake-verify
@@ -66,7 +68,7 @@
     make-opts: package ARGS=-V
     install-prefix: /usr/local
     jobs:
-      - oran-gerrit-cmake-pc-stage
+      - gerrit-cmake-packagecloud-stage
     stream:
       - master:
           branch: master
@@ -81,7 +83,7 @@
     make-opts: package ARGS=-V
     install-prefix: /usr/local
     jobs:
-      - oran-gerrit-cmake-pc-stage
+      - gerrit-cmake-packagecloud-stage
     stream:
       - master:
           branch: master
