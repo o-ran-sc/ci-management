@@ -38,7 +38,7 @@
     <<: *qpd_common
     name: ric-app-qp-driver-docker
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: 'o-ran-sc/ric-app-qp-driver'
     # source of docker tag
     container-tag-method: yaml-file
     # use host network
