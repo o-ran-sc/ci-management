@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9d52477a_915c989e",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-04-03T16:41:32Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "72ee9c43_d6840f9d",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 2
+      },
+      "revId": "0b17b1778b994d49c71def2d27cf0f64ba7cf170",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "340301c3_2d70b78e",
         "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
         "patchSetId": 2
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "71750f82_0a48443c",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-04-03T16:41:32Z",
+      "side": 1,
+      "message": "Understood now, changed accordingly.",
+      "parentUuid": "ea96e552_cf4532d5",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 4
+      },
+      "revId": "0b17b1778b994d49c71def2d27cf0f64ba7cf170",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d53a9c95_d686d83a",
         "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
         "patchSetId": 2
@@ -83,6 +131,30 @@
       "writtenOn": "2020-04-03T16:13:21Z",
       "side": 1,
       "message": "since this is common in all of your projects, you can actually move it to common if you like.  JJB kind of works forward and backward like this.",
+      "range": {
+        "startLine": 34,
+        "startChar": 4,
+        "endLine": 34,
+        "endChar": 15
+      },
+      "revId": "0b17b1778b994d49c71def2d27cf0f64ba7cf170",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2e25d51_1b564690",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-04-03T16:41:32Z",
+      "side": 1,
+      "message": "I keep this, since I made it different for the projects. Is it ok if I move the \"project-name\" to the common part, since it is the same in all?",
+      "parentUuid": "d53a9c95_d686d83a",
       "range": {
         "startLine": 34,
         "startChar": 4,
@@ -118,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "14ab9ed3_9233701b",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-04-03T16:41:32Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "b3350bed_cf079470",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 4
+      },
+      "revId": "0b17b1778b994d49c71def2d27cf0f64ba7cf170",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ef47ea56_1a193a2f",
         "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
         "patchSetId": 2
@@ -138,6 +234,30 @@
       "revId": "0b17b1778b994d49c71def2d27cf0f64ba7cf170",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f21343b6_12c6431a",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-04-03T16:41:32Z",
+      "side": 1,
+      "message": "Comment removed, I think it was here from historical reasons.",
+      "parentUuid": "ef47ea56_1a193a2f",
+      "range": {
+        "startLine": 36,
+        "startChar": 57,
+        "endLine": 36,
+        "endChar": 96
+      },
+      "revId": "0b17b1778b994d49c71def2d27cf0f64ba7cf170",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
