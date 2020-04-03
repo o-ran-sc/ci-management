@@ -1,0 +1,8 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Manoop Talasila <talasila@research.att.com>
+Code-Review+2: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Submitted-by: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Submitted-at: Fri, 03 Apr 2020 18:01:54 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/3140
+Project: ci-management
+Branch: refs/heads/master
