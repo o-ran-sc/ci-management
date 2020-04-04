@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ca69cda2_49849532",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-04-04T12:58:13Z",
+      "side": 1,
+      "message": "Ok, replaced.",
+      "parentUuid": "703d5261_e7f5309e",
+      "range": {
+        "startLine": 16,
+        "startChar": 45,
+        "endLine": 16,
+        "endChar": 51
+      },
+      "revId": "42f6f7370d3d7903e04a7cda5634afce1f740b20",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b672d8bc_489303aa",
         "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
         "patchSetId": 4
@@ -45,6 +69,30 @@
       "revId": "42f6f7370d3d7903e04a7cda5634afce1f740b20",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "170a2cca_a6a896c5",
+        "filename": "jjb/sim-o1-interface/sim-o1-interface.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-04-04T12:58:13Z",
+      "side": 1,
+      "message": "Ok, moved.",
+      "parentUuid": "b672d8bc_489303aa",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 4
+      },
+      "revId": "42f6f7370d3d7903e04a7cda5634afce1f740b20",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
