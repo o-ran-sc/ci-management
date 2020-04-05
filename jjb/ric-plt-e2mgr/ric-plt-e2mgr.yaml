@@ -77,6 +77,9 @@
         # Inclusions
         sonar.inclusions=**/**.go
         # Exclusions
-        sonar.exclusions=**/mocks/**.go,**/tests/**.go
+        sonar.exclusions=**/*_test.go,**/generate_source.go,**/*_generated.go,**/build/**,**/.gogradle/**,**/mocks/**,**/tests/**,**/e2managererrors/**,**/enums/**
+        sonar.c.file.suffixes=-
+        sonar.cpp.file.suffixes=-
+        sonar.objc.file.suffixes=-
     jobs:
       - gerrit-sonar-prescan-script
