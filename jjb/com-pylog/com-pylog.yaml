@@ -37,7 +37,8 @@
       - master:
           branch: master
     jobs:
-      - '{project-name}-gerrit-pypi-jobs'
+      - gerrit-pypi-verify
+      - gerrit-pypi-stage
 
 # promote package from test.pypi.org to pypi.org
 - project:
