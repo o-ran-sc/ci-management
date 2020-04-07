@@ -71,8 +71,8 @@
         sonar.organization={sonarcloud_project_organization}
         sonar.build.sourceEncoding=UTF-8
         sonar.sources=xapp_onboarder
-        sonar.exclusions=setup.py,tests/*.py
-        sonar.python.coverage.reportPaths=coverage.xml
+        sonar.exclusions=setup.py,xapp_onboarder/tests/*.py
+        sonar.python.coverage.reportPaths=xapp_onboarder/coverage.xml
     jobs:
       - gerrit-tox-sonarqube
 
