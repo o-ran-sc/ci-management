@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2742ee80_34af9cd0",
+        "filename": "jjb/ric-plt-rtmgr/prescan-rtmgr-ubuntu.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-07T13:38:52Z",
+      "side": 1,
+      "message": "This isn\u0027t harmful but you can skip it if you\u0027re not going to install anything.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 1
+      },
+      "revId": "5a3f949e2a625585edf3b89649a5bae8ece53408",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11f9b319_12b1941f",
+        "filename": "jjb/ric-plt-rtmgr/ric-plt-rtmgr.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-07T13:38:52Z",
+      "side": 1,
+      "message": "This key-value pair is in rtmgr_docker_common,  please don\u0027t repeat it",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 4
+      },
+      "revId": "5a3f949e2a625585edf3b89649a5bae8ece53408",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6634bd5e_64ddcfe3",
+        "filename": "jjb/ric-plt-rtmgr/ric-plt-rtmgr.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-07T13:38:52Z",
+      "side": 1,
+      "message": "This key-value pair is in rtmgr_docker_common,  please don\u0027t repeat it",
+      "range": {
+        "startLine": 55,
+        "startChar": 4,
+        "endLine": 55,
+        "endChar": 31
+      },
+      "revId": "5a3f949e2a625585edf3b89649a5bae8ece53408",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
