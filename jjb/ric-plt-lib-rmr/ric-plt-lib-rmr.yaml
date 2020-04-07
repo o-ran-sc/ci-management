@@ -1,6 +1,4 @@
-# The ric-plt/lib/rmr repository contains two projects:
-# 1) C shared library published as deb/rpm to PackageCloud.io
-# 2) Python bindings published as package to PyPI.org
+# C shared library published as deb/rpm to PackageCloud.io
 ---
 - project:
     name: ric-plt-lib-rmr-project-view
@@ -22,8 +20,6 @@
     project: ric-plt/lib/rmr
     # maven settings file has credentials to archive artifacts
     mvn-settings: ric-plt-lib-rmr-settings
-
-### RMR C LIBRARY ###
 
 - rmr_c_common: &rmr_c_common
     name: rmr-c-common
@@ -115,68 +111,3 @@
         sonar.cfamily.gcov.reportsPath=test
     jobs:
       - gerrit-cmake-sonarqube
-
-### RMR PYTHON PACKAGE ###
-
-- rmr_py_common: &rmr_py_common
-    name: rmr-py-common
-    # jenkins job name prefix
-    project-name: ric-plt-lib-rmr-py
-    # the pre-build-script installs RHEL packages
-    build-node: centos7-builder-1c-1g
-    # install prereqs
-    pre-build-script: !include-raw-escape: ../shell/install-rpm-nng-rmr.sh
-    python-version: python3.6
-    # bindings live in a subdirectory
-    tox-dir: src/bindings/rmr-python
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'src/bindings/rmr-python/.*'
-
-# verify py changes on every branch
-- project:
-    <<: *rmr_common
-    <<: *rmr_py_common
-    name: ric-plt-lib-rmr-py-verify
-    stream:
-      - all:
-          branch: '*'
-    jobs:
-      - gerrit-pypi-verify
-
-# build and publish distributions to test.pypi.org from master
-- project:
-    <<: *rmr_common
-    <<: *rmr_py_common
-    name: ric-plt-lib-rmr-py-merge
-    stream:
-      - master:
-          branch: master
-    jobs:
-      - gerrit-pypi-merge
-
-# promote package from test.pypi.org to pypi.org
-- project:
-    <<: *rmr_common
-    <<: *rmr_py_common
-    name: ric-plt-lib-rmr-py-release
-    jobs:
-      - '{project-name}-gerrit-pypi-release-jobs'
-
-# analyze Py code and test coverage
-- project:
-    <<: *rmr_common
-    <<: *rmr_py_common
-    name: ric-plt-lib-rmr-py-sonarqube
-    sonar-project-file: ""
-    sonar-properties: |
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        sonar.build.sourceEncoding=UTF-8
-        sonar.sources=src/bindings/rmr-python
-        sonar.exclusions=setup.py,tests/*.py
-        sonar.python.coverage.reportPaths=coverage.xml
-    jobs:
-      - gerrit-tox-sonarqube
