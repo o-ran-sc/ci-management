@@ -9,6 +9,9 @@
 
 - project:
     name: ci-jobs
+    # configure the gerrit-jjb-verify job
+    build-node-label-check: true
+    build-node-label-list: ""
 
     jobs:
       - '{project-name}-ci-jobs'
