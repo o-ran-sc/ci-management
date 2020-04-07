@@ -40,7 +40,7 @@
     cmake-opts: -DDEV_PKG=1
     make-opts: package ARGS=-V
     jobs:
-      - oran-gerrit-cmake-pc-stage
+      - gerrit-cmake-packagecloud-stage
     stream:
       - master:
           branch: master
@@ -54,7 +54,7 @@
     make-opts: test package ARGS=-V
     jobs:
       - gerrit-cmake-verify
-      - oran-gerrit-cmake-pc-stage
+      - gerrit-cmake-packagecloud-stage
     stream:
       - master:
           branch: master
