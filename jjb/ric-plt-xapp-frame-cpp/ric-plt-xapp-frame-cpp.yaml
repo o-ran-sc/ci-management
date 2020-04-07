@@ -26,35 +26,51 @@
     # Use ubuntu base for cmake v3
     # Use docker variant for packagecloud ruby gem
     build-node: ubuntu1804-docker-4c-4g
+    # pre-build scripts for CMake templates:
     # install alien package to build RPMS
-    # install RMR per version file in repo for ubuntu
+    # install RMR per version file in repo
     pre-build: !include-raw-escape:
       - ../shell/install-deb-alien.sh
       - ../shell/install-deb-rmr3.sh
+    # skip install in cmake-build.sh
+    install: false
 
-# development library - publish only
+# verify every commit
 - project:
-    name: xapp-frame-cpp-lib-dev
     <<: *xapp_frame_cpp_common
-    project-name: ric-plt-xapp-frame-cpp-dev
+    name: xapp-frame-cpp-verify
     cmake-opts: -DDEV_PKG=1
-    make-opts: package ARGS=-V
+    make-opts: package test ARGS=-V
     jobs:
-      - oran-gerrit-cmake-pc-stage
+      - gerrit-cmake-verify
     stream:
       - master:
           branch: master
 
-# runtime library - test and publish
+# development library - package and publish
 - project:
-    name: xapp-frame-cpp-lib-rt
     <<: *xapp_frame_cpp_common
-    project-name: ric-plt-xapp-frame-cpp-lib
-    cmake-opts: -DDEV_PKG=0
-    make-opts: test package ARGS=-V
+    name: ric-plt-xapp-frame-cpp-dev
+    project-name: '{name}'
+    cmake-opts: -DDEV_PKG=1
+    make-opts: package
+    install-prefix: /usr/local
     jobs:
-      - gerrit-cmake-verify
-      - oran-gerrit-cmake-pc-stage
+      - gerrit-cmake-packagecloud-stage
+    stream:
+      - master:
+          branch: master
+
+# runtime library - package and publish
+- project:
+    <<: *xapp_frame_cpp_common
+    name: ric-plt-xapp-frame-cpp-rt
+    project-name: '{name}'
+    cmake-opts: -DDEV_PKG=0
+    make-opts: package
+    install-prefix: /usr/local
+    jobs:
+      - gerrit-cmake-packagecloud-stage
     stream:
       - master:
           branch: master
