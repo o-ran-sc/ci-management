@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "eec6a4cf_ecbd3dc4",
+        "filename": "jjb/ric-plt-rtmgr/prescan-rtmgr-ubuntu.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000275
+      },
+      "writtenOn": "2020-04-07T10:28:17Z",
+      "side": 1,
+      "message": "I will add Nokia copy right as well.",
+      "parentUuid": "b9aec3e3_c5db6612",
+      "range": {
+        "startLine": 4,
+        "startChar": 23,
+        "endLine": 4,
+        "endChar": 50
+      },
+      "revId": "fd0e40191e1be03102270d21540bfefe45cc840c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ba49efd_b73f1989",
         "filename": "jjb/ric-plt-rtmgr/prescan-rtmgr-ubuntu.sh",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "386d42c0_966a55cf",
+        "filename": "jjb/ric-plt-rtmgr/prescan-rtmgr-ubuntu.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000275
+      },
+      "writtenOn": "2020-04-07T10:28:17Z",
+      "side": 1,
+      "message": "Removed now.",
+      "parentUuid": "0ba49efd_b73f1989",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 3
+      },
+      "revId": "fd0e40191e1be03102270d21540bfefe45cc840c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9500611e_d54ec9d6",
         "filename": "jjb/ric-plt-rtmgr/prescan-rtmgr-ubuntu.sh",
         "patchSetId": 1
@@ -68,6 +116,30 @@
       "revId": "fd0e40191e1be03102270d21540bfefe45cc840c",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa6105b6_d717d826",
+        "filename": "jjb/ric-plt-rtmgr/prescan-rtmgr-ubuntu.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000275
+      },
+      "writtenOn": "2020-04-07T10:28:17Z",
+      "side": 1,
+      "message": "Copy paste error. Corrected now.",
+      "parentUuid": "9500611e_d54ec9d6",
+      "range": {
+        "startLine": 41,
+        "startChar": 3,
+        "endLine": 41,
+        "endChar": 12
+      },
+      "revId": "fd0e40191e1be03102270d21540bfefe45cc840c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
