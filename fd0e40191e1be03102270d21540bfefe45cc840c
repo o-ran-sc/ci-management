@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b9aec3e3_c5db6612",
+        "filename": "jjb/ric-plt-rtmgr/prescan-rtmgr-ubuntu.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-07T09:47:34Z",
+      "side": 1,
+      "message": "maybe since you wrote this, you want to assert Nokia copyright :)",
+      "range": {
+        "startLine": 4,
+        "startChar": 23,
+        "endLine": 4,
+        "endChar": 50
+      },
+      "revId": "fd0e40191e1be03102270d21540bfefe45cc840c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ba49efd_b73f1989",
+        "filename": "jjb/ric-plt-rtmgr/prescan-rtmgr-ubuntu.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-07T09:47:34Z",
+      "side": 1,
+      "message": "Please stop installing NNG.  The project has switched to the SI95 version of RMR.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 3
+      },
+      "revId": "fd0e40191e1be03102270d21540bfefe45cc840c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9500611e_d54ec9d6",
+        "filename": "jjb/ric-plt-rtmgr/prescan-rtmgr-ubuntu.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-07T09:47:34Z",
+      "side": 1,
+      "message": "I thought this is for Route Manager?  Why do you use a directory named E2Manager here?",
+      "range": {
+        "startLine": 41,
+        "startChar": 3,
+        "endLine": 41,
+        "endChar": 12
+      },
+      "revId": "fd0e40191e1be03102270d21540bfefe45cc840c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
