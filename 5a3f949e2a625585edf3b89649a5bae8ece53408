@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "4ff7bd5b_fb9a4955",
+        "filename": "jjb/ric-plt-rtmgr/ric-plt-rtmgr.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-08T13:18:52Z",
+      "side": 1,
+      "message": "Think about the anchor \"rtmgr_docker_common\" as a bag of reusable key-value pairs that you are dropping into your project definition at line 52.  Because that bag already has pairs with keys  \"project\" and \"project-name\" and exactly the same values as you specified here on lines 54 and 55, you can simply remove lines 54 and 55.  The result will be the same.",
+      "parentUuid": "768bff2e_be420710",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 4
+      },
+      "revId": "5a3f949e2a625585edf3b89649a5bae8ece53408",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6634bd5e_64ddcfe3",
         "filename": "jjb/ric-plt-rtmgr/ric-plt-rtmgr.yaml",
         "patchSetId": 3
