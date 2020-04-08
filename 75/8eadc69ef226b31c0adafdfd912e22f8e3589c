@@ -1,0 +1,9 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Tommy Carpenter <tc677g@att.com>
+Code-Review+1: Matti Hiltunen <hiltunen@att.com>
+Code-Review+2: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Wed, 08 Apr 2020 17:35:27 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/3095
+Project: ci-management
+Branch: refs/heads/master
