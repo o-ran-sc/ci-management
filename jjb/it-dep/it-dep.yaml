@@ -40,6 +40,7 @@
     docker-build-args: -f ci/Dockerfile
     # any tag will do
     container-tag-method: latest
+    submodule-disable: true
     jobs:
       - gerrit-docker-verify
     stream:
