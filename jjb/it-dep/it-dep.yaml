@@ -59,8 +59,11 @@
     docker-name: 'o-ran-sc/{name}'
     # use host network for network resources
     docker-build-args: '--network=host -f ci/Dockerfile-package'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ci/package-tag.yaml'
     jobs:
-      - gerrit-docker-verify
+#      - gerrit-docker-verify
       - oran-gerrit-docker-ci-pc-merge
     stream:
       - master:
