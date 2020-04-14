@@ -59,6 +59,9 @@
     docker-name: 'o-ran-sc/{name}'
     # use host network for network resources
     docker-build-args: '--network=host -f ci/Dockerfile-package'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ci/package-tag.yaml'
     jobs:
       - gerrit-docker-verify
       - oran-gerrit-docker-ci-pc-merge
@@ -112,3 +115,12 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
+
+
+- project:
+    <<: *it_dep_common
+    name: it-dep-packagecloud-release
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - 'gerrit-packagecloud-release-verify'
+      - 'gerrit-packagecloud-release-merge'
