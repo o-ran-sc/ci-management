@@ -1,8 +1,49 @@
 ---
 - project:
+    name: sim-e2-interface-project-view
+    project-name: sim-e2-interface
+    views:
+      - project-view
+
+- project:
     name: sim-e2-interface-info
     project: sim/e2-interface
     project-name: sim-e2-interface
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- sim_e2_interface_docker: &sim_e2_interface_docker
+    # values apply to all sim/e2-interface docker projects
+    name: sim-e2-interface-common
+    # git repo
+    project: sim/e2-interface
+    # jenkins job name prefix
+    project-name: sim-e2-interface
+    # maven settings file has docker credentials
+    mvn-settings: sim-e2-interface-settings
+    # source of docker tag
+    container-tag-method: yaml-file
+    build-node: ubuntu1804-docker-4c-4g
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+        
+- project:
+    <<: *sim_e2_interface_docker
+    name: sim-e2-interface-e2sim
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/ntsim-e2-simulator'
+    # docker root
+    docker-root: e2sim
+    # dockerfile is in subdir
+    docker-build-args: '--network=host -f docker/Dockerfile'
+    # tag file is in subdir
+    container-tag-yaml-dir: e2sim/docker
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '{docker-root}/.*'
