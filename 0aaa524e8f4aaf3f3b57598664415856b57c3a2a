@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3e40de55_f265cee5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-04-15T13:50:11Z",
+      "side": 1,
+      "message": "Done. \n\nLink to jenkins job: https://jenkins.o-ran-sc.org/sandbox/view/All/job/sim-e2-interface-e2sim-docker-verify-master/12/console",
+      "parentUuid": "d9c60407_9acb9621",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 3
+      },
+      "revId": "0aaa524e8f4aaf3f3b57598664415856b57c3a2a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "196cf8ba_b3b980d2",
         "filename": "jjb/sim-e2-interface/sim-e2-interface.yaml",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "23103f0a_aa51c43f",
+        "filename": "jjb/sim-e2-interface/sim-e2-interface.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-04-15T13:50:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "196cf8ba_b3b980d2",
+      "range": {
+        "startLine": 18,
+        "startChar": 27,
+        "endLine": 18,
+        "endChar": 33
+      },
+      "revId": "0aaa524e8f4aaf3f3b57598664415856b57c3a2a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b1b87b54_02729c8f",
         "filename": "jjb/sim-e2-interface/sim-e2-interface.yaml",
         "patchSetId": 1
@@ -68,6 +116,30 @@
       "revId": "0aaa524e8f4aaf3f3b57598664415856b57c3a2a",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1920719_04d6a968",
+        "filename": "jjb/sim-e2-interface/sim-e2-interface.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-04-15T13:50:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b1b87b54_02729c8f",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 8
+      },
+      "revId": "0aaa524e8f4aaf3f3b57598664415856b57c3a2a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
