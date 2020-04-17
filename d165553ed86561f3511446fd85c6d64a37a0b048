@@ -45,6 +45,29 @@
       "revId": "d165553ed86561f3511446fd85c6d64a37a0b048",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad2050a0_195aa11b",
+        "filename": "jjb/it-dep/it-dep.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2020-04-17T23:06:47Z",
+      "side": 1,
+      "message": "This matches the default, and doesn\u0027t need to be here.",
+      "range": {
+        "startLine": 123,
+        "startChar": 4,
+        "endLine": 123,
+        "endChar": 37
+      },
+      "revId": "d165553ed86561f3511446fd85c6d64a37a0b048",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
