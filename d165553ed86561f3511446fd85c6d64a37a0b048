@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "20122c85_72269eae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-17T22:52:20Z",
+      "side": 1,
+      "message": "Currently",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 9
+      },
+      "revId": "d165553ed86561f3511446fd85c6d64a37a0b048",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eebc14be_6871877e",
+        "filename": "jjb/it-dep/it-dep.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-17T22:52:20Z",
+      "side": 1,
+      "message": "If you have to re-edit this file, please drop the branch: master line, it\u0027s ignored",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 112,
+        "endChar": 4
+      },
+      "revId": "d165553ed86561f3511446fd85c6d64a37a0b048",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
