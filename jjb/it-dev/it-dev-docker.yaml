@@ -15,15 +15,15 @@
     # get tag from YAML
     container-tag-method: yaml-file
     # Jenkins job prefix
-    project-name: 'it-dev-{img}'
+    project-name: 'it-dev-{name}'
     # Docker image name
-    docker-name: '{img}'
+    docker-name: '{name}'
     # Directory with Dockerfile
-    docker-root: 'bldr-imgs/{img}'
+    docker-root: 'bldr-imgs/{name}'
     # Limit build trigger to appropriate files;
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'bldr-imgs/{img}/.*'
+        pattern: 'bldr-imgs/{name}/.*'
     # Includes verify and merge jobs
     jobs:
       - '{project-name}-gerrit-docker-jobs'
@@ -32,21 +32,21 @@
       - master:
           branch: master
 
-# Each project name is a subdirectory in bldr-images
+# Each project name is a directory in o-ran-sc/it-dev/bldr-imgs
 # with a Dockerfile and a container-tag.yaml file
-# TODO: coalesce name+img after removing projects from ci-management
 
 - project:
-    name: it-dev-alpine3
-    img: bldr-alpine3
+    name: bldr-alpine3
     <<: *it_dev_docker_common
 
 - project:
-    name: it-dev-alpine3-go
-    img: bldr-alpine3-go
+    name: bldr-alpine3-go
     <<: *it_dev_docker_common
 
 - project:
-    name: it-dev-ubuntu18-c-go
-    img: bldr-ubuntu18-c-go
+    name: bldr-alpine3-rmr
+    <<: *it_dev_docker_common
+
+- project:
+    name: bldr-ubuntu18-c-go
     <<: *it_dev_docker_common
