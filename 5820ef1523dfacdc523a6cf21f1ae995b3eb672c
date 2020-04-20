@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c801c434_b4987403",
+        "filename": "jjb/ric-plt-nodeb-rnib/ric-plt-nodeb-rnib.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2020-04-20T22:01:40Z",
+      "side": 1,
+      "message": "Missing two important k-v pairs:\n    project: ric-plt/nodeb-rnib\n    mvn-settings: ric-plt-nodeb-rnib-settings",
+      "revId": "5820ef1523dfacdc523a6cf21f1ae995b3eb672c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d37f919_c844dc27",
+        "filename": "jjb/ric-plt-nodeb-rnib/ric-plt-nodeb-rnib.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2020-04-20T22:01:40Z",
+      "side": 1,
+      "message": "Missing two important k-v pairs:\n    project: ric-plt/nodeb-rnib\n    mvn-settings: ric-plt-nodeb-rnib-settings",
+      "revId": "5820ef1523dfacdc523a6cf21f1ae995b3eb672c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
