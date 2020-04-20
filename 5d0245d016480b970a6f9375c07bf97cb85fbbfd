@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "361adfba_032f3891",
+        "filename": "jjb/ric-plt-nodeb-rnib/ric-plt-nodeb-rnib.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-04-20T14:11:17Z",
+      "side": 1,
+      "message": "maybe your team has time to discuss if this C library can be built with the new CMake template, which also supports Sonar analysis, instead of the convoluted Docker approach?  I\u0027m available every day including very early U.S. Eastern time.",
+      "range": {
+        "startLine": 13,
+        "startChar": 2,
+        "endLine": 13,
+        "endChar": 9
+      },
+      "revId": "5d0245d016480b970a6f9375c07bf97cb85fbbfd",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
