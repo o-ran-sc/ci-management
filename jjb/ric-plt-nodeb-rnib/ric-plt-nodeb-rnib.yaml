@@ -1,8 +1,51 @@
 ---
 - project:
-    name: ric-plt-nodeb-rnib-info
+    name: ric-plt-nodeb-rnib-project-view
     project-name: ric-plt-nodeb-rnib
+    views:
+      - project-view
+
+- nodeb_rnib_common: &nodeb_rnib_common
+    # values apply to all projects
+    name: nodeb-rnib-common
+    # git repo
     project: ric-plt/nodeb-rnib
+    # jenkins job name prefix
+    project-name: ric-plt-nodeb-rnib
+    # maven settings file has docker credentials
+    mvn-settings: ric-plt-nodeb-rnib-settings
+
+- project:
+    <<: *nodeb_rnib_common
+    name: ric-plt-nodeb-rnib-info
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+# build deb/rpm using Docker and publish to PackageCloud.io
+# on merge to master branch
+- project:
+    <<: *nodeb_rnib_common
+    name: ric-plt-lib-nodeb-rnib-package
+    # need docker
+    build-node: ubuntu1804-docker-4c-4g
+    # image is not pushed, use simple name and tag
+    docker-name: '{name}'
+    container-tag-method: latest
+    # use host network for network resources
+    docker-build-args: '--network=host -f ci/Dockerfile'
+    jobs:
+      - oran-gerrit-docker-ci-pc-merge
+    stream:
+      - master:
+          branch: master
+
+# promote deb from staging to release at PackageCloud.io
+- project:
+    <<: *nodeb_rnib_common
+    name: ric-plt-lib-nodeb-rnib-release
+    # release uses sigul which requires centos
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-packagecloud-release-verify
+      - gerrit-packagecloud-release-merge
