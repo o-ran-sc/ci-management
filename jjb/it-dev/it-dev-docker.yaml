@@ -17,7 +17,7 @@
     # Jenkins job prefix
     project-name: 'it-dev-{name}'
     # Docker image name
-    docker-name: '{name}'
+    docker-name: 'o-ran-sc/{img}'
     # Directory with Dockerfile
     docker-root: 'bldr-imgs/{name}'
     # Limit build trigger to appropriate files;
