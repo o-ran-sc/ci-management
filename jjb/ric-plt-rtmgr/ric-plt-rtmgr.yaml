@@ -47,3 +47,34 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *rtmgr_docker_common
+    name: ric-plt-rtmgr-sonar
+    # prescan script requires ubuntu
+    # golang is only on docker-enabled nodes
+    build-node: ubuntu1804-docker-4c-4g
+    sonar-prescan-script: !include-raw-escape: prescan-rtmgr-ubuntu.sh
+    sonar-project-file: ""
+    # use sonarcloud values from defaults.yaml
+    sonar-properties: |
+        # Required metadata
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        # Encoding
+        sonar.build.sourceEncoding=UTF-8
+        # Language
+        sonar.language=go
+        # Source
+        sonar.sources=.
+        # Unit tests
+        sonar.go.coverage.reportPaths=./coverage.txt
+        # Inclusions
+        sonar.inclusions=pkg/**/**.go
+        # Exclusions
+        sonar.exclusions=cmd/**.go,pkg/stub/**.go,pkg/**/**_test.go
+    jobs:
+      - gerrit-sonar-prescan-script
+
