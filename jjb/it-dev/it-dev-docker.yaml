@@ -44,6 +44,10 @@
     <<: *it_dev_docker_common
 
 - project:
+    name: bldr-alpine3-mdclog
+    <<: *it_dev_docker_common
+
+- project:
     name: bldr-alpine3-rmr
     <<: *it_dev_docker_common
 
