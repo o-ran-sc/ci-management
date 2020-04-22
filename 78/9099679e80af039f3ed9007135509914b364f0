@@ -1,0 +1,8 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Jack Lucas <jflucas@research.att.com>
+Code-Review+2: Eric Ball <eball@linuxfoundation.org>
+Submitted-by: Eric Ball <eball@linuxfoundation.org>
+Submitted-at: Wed, 22 Apr 2020 14:41:43 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/3379
+Project: ci-management
+Branch: refs/heads/master
