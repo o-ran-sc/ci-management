@@ -60,3 +60,11 @@
         sonar.python.coverage.reportPaths=coverage.xml
     jobs:
       - gerrit-tox-sonarqube
+
+- project:
+    <<: *py_common
+    name: ric-plt-xapp-frame-py-nexus-iq
+    build-node: centos7-builder-1c-1g
+    nexus-iq-namespace: oran-
+    jobs:
+      - gerrit-tox-nexus-iq-clm
