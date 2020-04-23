@@ -35,6 +35,7 @@
     # use host network for network resources
     docker-build-args: '--network=host -f ci/Dockerfile'
     jobs:
+      - gerrit-docker-verify
       - oran-gerrit-docker-ci-pc-merge
     stream:
       - master:
