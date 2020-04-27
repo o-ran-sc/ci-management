@@ -12,3 +12,37 @@
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- qpd_common: &qpd_common
+    # required even though overridden everywhere
+    name: qpdcommon
+    # git repo
+    project: ric-app/qp
+    # jenkins job name prefix
+    project-name: ric-app-qp
+    # maven settings file has docker credentials
+    mvn-settings: ric-app-qp-settings
+
+- qpd_python: &qpd_python
+    # installs rmr which is needed for verify and sonar etc
+    name: qpdpy
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    pre-build-script: !include-raw-escape:
+      - ../shell/install-deb-nng-rmr.sh
+    # impt for verify and tox etc
+    python-version: python3
+    # no need to verify docs
+    tox-envs: code,flake8
+
+- project:
+    <<: *qpd_common
+    <<: *qpd_python
+    name: ric-app-qp-verify
+    jobs:
+      - gerrit-tox-verify
+    stream:
+      # run verify on all branches
+      # the ANT pattern is **/{branch}, we are exploiting that.
+      - all:
+          branch: '*'
