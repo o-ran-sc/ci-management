@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d20e70ea_9adc1e70",
+        "filename": "jjb/ric-plt-lib-rmr/ric-plt-lib-rmr.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2020-04-27T19:57:09Z",
+      "side": 1,
+      "message": "Isn\u0027t this reverting back to the original that failed? \n\nmake package test\n\nI think will work as the .debs will be there for the second step in the test.",
+      "revId": "ec1b7748dca3c5b56c75974fce9142a19d356be9",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
