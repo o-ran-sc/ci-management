@@ -100,7 +100,7 @@
     name: ric-plt-lib-rmr-c-sonarqube
     <<: *rmr_common
     <<: *rmr_c_common
-    make-opts: test ARGS=-V
+    make-opts: test ARGS="-R unit"
     sonar-project-file: ""
     sonar-properties: |
         sonar.login={sonarcloud_api_token}
