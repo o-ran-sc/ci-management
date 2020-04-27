@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a36b4957_536a50fa",
+        "filename": "jjb/ric-plt-lib-rmr/ric-plt-lib-rmr.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2020-04-27T19:50:32Z",
+      "side": 1,
+      "message": "This won\u0027t work. \n\nthe resulting command will be:   make test ARGS\u003d-R unit \nresulting in -R being assigned to the variable ARGS, and not \"-R unit\".",
+      "revId": "4fd7a02ebc5751fb03c99b3139468b63d96cfeb7",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
