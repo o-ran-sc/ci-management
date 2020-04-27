@@ -16,14 +16,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Installs RMR ver 3.x headers and shared-object libraries 
-# from PackageCloud on a CentOS; does NOT install or assume NNG.
+# Installs RMR headers and shared-object libraries from PackageCloud
+# on a CentOS; does NOT install or assume NNG.
 # Reads RMR version number from repo file rmr-version.yaml like this:
 #   ---
 #   repo: staging             (this entry is optional)
-#   version: 3.6.1            (this entry is required)
+#   version: 3.8.2            (this entry is required)
 
-echo "---> install-rpm-rmr3.sh"
+echo "---> install-rpm-rmr.sh"
 # stop on error or unbound var, and be chatty
 set -eux
 
@@ -49,4 +49,4 @@ for rpm in "rmr-${ver}-1.x86_64.rpm" "rmr-devel-${ver}-1.x86_64.rpm"; do
     rm -f "${rpm}"
 done
 
-echo "---> install-rpm-rmr3.sh ends"
+echo "---> install-rpm-rmr.sh ends"
