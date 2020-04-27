@@ -78,5 +78,7 @@
         sonar.inclusions=**/**.go
         # Exclusions
         sonar.exclusions=**/mocks/**.go,**/tests/**.go
+        # Test inclusions
+        sonar.test.inclusions=**/*_test.go
     jobs:
       - gerrit-sonar-prescan-script
