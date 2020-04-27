@@ -5,10 +5,84 @@
     views:
       - project-view
 
-- project:
-    name: ric-app-qp-info
+- qp_common: &qp_common
+    # required even though overridden everywhere
+    name: qp-common
+    # git repo
     project: ric-app/qp
+    # jenkins job name prefix
     project-name: ric-app-qp
+    # maven settings file has docker credentials
+    mvn-settings: ric-app-qp-settings
+
+- project:
+    <<: *qp_common
+    name: ric-app-qp-info
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- project:
+    <<: *qp_common
+    name: ric-app-qp-docker
+    # image name
+    docker-name: o-ran-sc/ric-app-qp
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use host network
+    docker-build-args: '--network=host'
+    build-node: ubuntu1804-docker-4c-4g
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *qp_common
+    name: ric-app-qp-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- qp_python: &qp_python
+    # settings for python builds
+    name: qp-python
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    pre-build-script: !include-raw-escape:
+      - ../shell/install-deb-rmr.sh
+    # impt for verify and tox etc
+    python-version: python3
+    # no need to verify docs
+    tox-envs: code,flake8
+
+- project:
+    <<: *qp_common
+    <<: *qp_python
+    name: ric-app-qp-py-verify
+    jobs:
+      - gerrit-tox-verify
+    stream:
+      # run verify on all branches
+      # the ANT pattern is **/{branch}, we are exploiting that.
+      - all:
+          branch: '*'
+
+- project:
+    <<: *qp_common
+    <<: *qp_python
+    name: ric-app-qp-sonarqube
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=qp
+        sonar.python.coverage.reportPaths=coverage.xml
+    jobs:
+      - gerrit-tox-sonarqube
