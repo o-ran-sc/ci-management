@@ -20,11 +20,8 @@
     project: ric-plt/lib/rmr
     # maven settings file has credentials to archive artifacts
     mvn-settings: ric-plt-lib-rmr-settings
-
-- rmr_c_common: &rmr_c_common
-    name: rmr-c-common
     # jenkins job name prefix
-    project-name: ric-plt-lib-rmr-c
+    project-name: ric-plt-lib-rmr
     # test scripts depend on this name
     build-dir: $WORKSPACE/.build
     # Use ubuntu base for cmake v3
@@ -41,9 +38,7 @@
 # verify every commit
 - project:
     <<: *rmr_common
-    <<: *rmr_c_common
-    name: ric-plt-lib-rmr-c-verify
-    project-name: ric-plt-lib-rmr-c
+    name: ric-plt-lib-rmr-verify
     cmake-opts: -DDEV_PKG=1 -DBUILD_DOC=1
     # skip install in cmake-build.sh
     install: false
@@ -57,9 +52,8 @@
 # development library - package and publish
 - project:
     <<: *rmr_common
-    <<: *rmr_c_common
-    name: ric-plt-lib-rmr-c-dev
-    project-name: ric-plt-lib-rmr-c-dev
+    name: ric-plt-lib-rmr-dev
+    project-name: ric-plt-lib-rmr-dev
     cmake-opts: -DDEV_PKG=1
     make-opts: package ARGS=-V
     install-prefix: /usr/local
@@ -72,9 +66,8 @@
 # runtime library - package and publish
 - project:
     <<: *rmr_common
-    <<: *rmr_c_common
-    name: ric-plt-lib-rmr-c-rt
-    project-name: ric-plt-lib-rmr-c-rt
+    name: ric-plt-lib-rmr-rt
+    project-name: ric-plt-lib-rmr-rt
     cmake-opts: -DDEV_PKG=0
     make-opts: package ARGS=-V
     install-prefix: /usr/local
@@ -87,8 +80,7 @@
 # promote deb/rpm from staging to release at PackageCloud.io
 - project:
     <<: *rmr_common
-    <<: *rmr_c_common
-    name: ric-plt-lib-rmr-c-release
+    name: ric-plt-lib-rmr-release
     # release uses sigul which requires centos
     build-node: centos7-builder-1c-1g
     jobs:
@@ -97,10 +89,9 @@
 
 # analyze C code and test coverage
 - project:
-    name: ric-plt-lib-rmr-c-sonarqube
+    name: ric-plt-lib-rmr-sonarqube
     <<: *rmr_common
-    <<: *rmr_c_common
-    make-opts: test ARGS="-R unit"
+    make-opts: package test ARGS=-V
     sonar-project-file: ""
     sonar-properties: |
         sonar.login={sonarcloud_api_token}
