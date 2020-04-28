@@ -47,6 +47,8 @@
     pre-build-script: !include-raw-escape:
       - ../shell/install-deb-rmr.sh
     python-version: python3
+    # skip docs on verify
+    tox-envs: code,flake8
     stream:
       # run verify on all branches
       # the ANT pattern is **/{branch}, we are exploiting that.
