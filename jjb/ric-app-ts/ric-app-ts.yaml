@@ -5,10 +5,44 @@
     views:
       - project-view
 
-- project:
-    name: ric-app-ts-info
+- ts_common: &ts_common
+    # values apply to all projects
+    name: ts-common
+    # git repo
     project: ric-app/ts
+    # maven settings file has docker credentials
+    mvn-settings: ric-app-ts-settings
+
+# verify on commit
+- project:
+    <<: *ts_common
+    name: ric-app-ts-verify
+    # jenkins prefix
+    project-name: '{name}'
+    # jenkins prefix
     project-name: ric-app-ts
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+# create image when source changes
+- project:
+    <<: *ts_common
+    # also used as imae name
+    name: ric-app-ts
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # source type of docker tag and location
+    container-tag-method: yaml-file
+    # use host network
+    docker-build-args: '--network=host'
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!docs/|\/COMMIT_MSG).)*$'
+    jobs:
+        - '{project-name}-gerrit-docker-jobs'
+    stream:
+        - master:
+            branch: master
