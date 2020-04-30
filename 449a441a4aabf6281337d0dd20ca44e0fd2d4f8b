@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f61344e2_7b5cff31",
+        "filename": "jjb/ric-app-ts/ric-app-ts.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2020-04-30T16:10:34Z",
+      "side": 1,
+      "message": "My goal here is to trigger on any change other than to a file in ./docs. The \"regex\" syntax I copied (and changed to be !docs/) doesn\u0027t look like any I\u0027ve ever seen before, so I\u0027m leery that it is correct.",
+      "revId": "449a441a4aabf6281337d0dd20ca44e0fd2d4f8b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
