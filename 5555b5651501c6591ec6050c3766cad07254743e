@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39b680b3_7fd9db3b",
+        "filename": "jjb/ric-app-ts/ric-app-ts.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-05-15T20:47:48Z",
+      "side": 1,
+      "message": "pls remove the extra blank lines at end, LF will decline to merge :(",
+      "revId": "5555b5651501c6591ec6050c3766cad07254743e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
