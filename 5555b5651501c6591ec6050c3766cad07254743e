@@ -16,6 +16,24 @@
       "revId": "5555b5651501c6591ec6050c3766cad07254743e",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c233e8ac_8e13106c",
+        "filename": "jjb/ric-app-ts/ric-app-ts.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2020-05-15T20:52:01Z",
+      "side": 1,
+      "message": "done. I hadn\u0027t even pulled the change to look at -- you must have it notify you when something is pushed in :)",
+      "parentUuid": "39b680b3_7fd9db3b",
+      "revId": "5555b5651501c6591ec6050c3766cad07254743e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
