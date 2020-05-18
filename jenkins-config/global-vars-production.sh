@@ -7,6 +7,7 @@ NEXUS_URL=https://nexus.o-ran-sc.org
 REGISTRY_PORTS=10001 10002 10003 10004
 RELEASE_EMAIL=collab-it+o-ran-sc-release@linuxfoundation.org
 RELEASE_USERNAME=o-ran-sc-release
+S3_BUCKET=
 SIGUL_BRIDGE_IP=10.32.4.8
 SIGUL_KEY=oran-release-2019
 SILO=production

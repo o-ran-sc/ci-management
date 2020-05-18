@@ -5,6 +5,7 @@ JENKINS_HOSTNAME=vex-sjc-oran-jenkins-sandbox-1
 LOGS_SERVER=https://logs.o-ran-sc.org
 NEXUS_URL=https://nexus.o-ran-sc.org
 REGISTRY_PORTS=10001 10002 10003 10004
+S3_BUCKET=
 SIGUL_BRIDGE_IP=10.32.4.8
 SIGUL_KEY=oran-sandbox
 SILO=sandbox
