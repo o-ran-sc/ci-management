@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5648ca8e_aaf21661",
+        "filename": "jjb/ric-plt-sdl/ric-plt-sdl.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-05-20T14:51:45Z",
+      "side": 1,
+      "message": "this is changing",
+      "range": {
+        "startLine": 60,
+        "startChar": 19,
+        "endLine": 60,
+        "endChar": 28
+      },
+      "revId": "47bf7902d0933d06bc9dc415fe801d65871ae936",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6db8ff68_020e95bb",
+        "filename": "jjb/ric-plt-sdl/ric-plt-sdl.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-05-20T14:51:45Z",
+      "side": 1,
+      "message": "this is changing",
+      "range": {
+        "startLine": 71,
+        "startChar": 15,
+        "endLine": 71,
+        "endChar": 24
+      },
+      "revId": "47bf7902d0933d06bc9dc415fe801d65871ae936",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
