@@ -1,0 +1,14 @@
+---
+- project:
+    name: oam-tr069-adapter-project-view
+    project-name: oam-tr069-adapter
+    views:
+      - project-view
+
+- project:
+    name: oam-tr069-adapter-info
+    project: oam/tr069-adapter
+    project-name: oam-tr069-adapter
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
