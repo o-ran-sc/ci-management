@@ -33,6 +33,10 @@
     # use host network
     docker-build-args: '--network=host'
     build-node: ubuntu1804-docker-4c-4g
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!docs/|?!releases/|\/COMMIT_MSG).)*$'
     stream:
       - master:
           branch: master
@@ -49,6 +53,10 @@
     python-version: python3
     # skip docs on verify
     tox-envs: code,flake8
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!docs/|?!releases/|\/COMMIT_MSG).)*$'
     stream:
       # run verify on all branches
       # the ANT pattern is **/{branch}, we are exploiting that.
