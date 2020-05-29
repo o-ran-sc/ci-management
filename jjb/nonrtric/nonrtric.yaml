@@ -37,6 +37,31 @@
       - master:
           branch: master
 
+# nonrtric:policy-agent
+# common for artifacts for nonrtric-policy-agent
+- nonrtric_policy_agent_common: &nonrtric_policy_agent_common
+    name: nonrtric-policy-agent-common
+    project-name: nonrtric-policy-agent
+    mvn-params: '-f policy-agent -DskipDocker=true'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'policy-agent/.*'
+
+# build feature artifacts for nonrtric-policy-agent
+- project:
+    <<: *nonrtric_jdk11
+    <<: *nonrtric_policy_agent_common
+    name: nonrtric-policy-agent
+    build-node: ubuntu1804-docker-4c-4g
+    jobs:
+      - gerrit-maven-verify
+      - gerrit-maven-merge
+      - gerrit-maven-stage
+      - gerrit-maven-clm
+    stream:
+      - master:
+          branch: master
+
 - project:
     <<: *nonrtric_jdk11
     name: nonrtric-release
