@@ -30,6 +30,10 @@
 - project:
     name: ric-plt-xapp-frame-py-pypi
     <<: *py_common
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
     jobs:
       - gerrit-pypi-verify
       - gerrit-pypi-stage
