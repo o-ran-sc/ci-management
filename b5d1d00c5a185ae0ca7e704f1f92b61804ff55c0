@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22e20bca_aaa39340",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-05-29T10:02:46Z",
+      "side": 1,
+      "message": "Is maven running out of memory - does the build fail without this?",
+      "range": {
+        "startLine": 45,
+        "startChar": 16,
+        "endLine": 45,
+        "endChar": 24
+      },
+      "revId": "b5d1d00c5a185ae0ca7e704f1f92b61804ff55c0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8740b3e1_fff2f03c",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-05-29T10:02:46Z",
+      "side": 1,
+      "message": "remove single quotes here",
+      "range": {
+        "startLine": 63,
+        "startChar": 8,
+        "endLine": 63,
+        "endChar": 17
+      },
+      "revId": "b5d1d00c5a185ae0ca7e704f1f92b61804ff55c0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd580ec7_bcac4987",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-05-29T10:02:46Z",
+      "side": 1,
+      "message": "remove single quotes here also",
+      "range": {
+        "startLine": 64,
+        "startChar": 18,
+        "endLine": 64,
+        "endChar": 26
+      },
+      "revId": "b5d1d00c5a185ae0ca7e704f1f92b61804ff55c0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
