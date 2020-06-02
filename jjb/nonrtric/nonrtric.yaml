@@ -13,18 +13,25 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- nonrtric_jdk11: &nonrtric_jdk11
-    # values apply to all projects here
-    name: nonrtric-jdk11
+- nonrtric_jdk_common: &nonrtric_jdk_common
+    name: nonrtric-jdk-common
     # git repo
     project: nonrtric
     # jenkins job name prefix
     project-name: nonrtric
     # maven settings file has docker credentials
     mvn-settings: nonrtric-settings
-    # defaults.yaml value is NOT used due to value set in lf-maven-jobs.yaml
-    java-version: openjdk11
     mvn-version: mvn36
+
+- nonrtric_jdk11: &nonrtric_jdk11
+    <<: *nonrtric_jdk_common
+    name: nonrtric-jdk11
+    java-version: openjdk11
+
+- nonrtric_jdk8: &nonrtric_jdk8
+    <<: *nonrtric_jdk_common
+    name: nonrtric-jdk8
+    java-version: openjdk8
 
 - project:
     <<: *nonrtric_jdk11
@@ -38,21 +45,56 @@
           branch: master
 
 # nonrtric:policy-agent
-# common for artifacts for nonrtric-policy-agent
-- nonrtric_policy_agent_common: &nonrtric_policy_agent_common
-    name: nonrtric-policy-agent-common
-    project-name: nonrtric-policy-agent
+# Maven artifacts for nonrtric-policy-agent
+- project:
+    <<: *nonrtric_jdk11
+    name: nonrtric-policy-agent
+    project-name: {name}
     mvn-opts: '-Ddocker.skip=true'
     mvn-params: '-f policy-agent'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'policy-agent/.*'
+    build-node: ubuntu1804-builder-4c-4g
+    jobs:
+      - gerrit-maven-verify
+      - gerrit-maven-merge
+      - gerrit-maven-stage
+      - gerrit-maven-clm
+    stream:
+      - master:
+          branch: master
 
-# build feature artifacts for nonrtric-policy-agent
+# nonrtric:sdnc-a1-controller-model
+# Maven artifacts for nonrtric-sdnc-a1-controller-model
 - project:
-    <<: *nonrtric_jdk11
-    <<: *nonrtric_policy_agent_common
-    name: nonrtric-policy-agent
+    <<: *nonrtric_jdk8
+    name: nonrtric-sdnc-a1-controller-model
+    project-name: {name}
+    mvn-params: '-f sdnc-a1-controller/northbound/nonrt-ric-api/model'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'sdnc-a1-controller/northbound/nonrt-ric-api/model/.*'
+    build-node: ubuntu1804-builder-4c-4g
+    jobs:
+      - gerrit-maven-verify
+      - gerrit-maven-merge
+      - gerrit-maven-stage
+      - gerrit-maven-clm
+    stream:
+      - master:
+          branch: master
+
+# nonrtric:sdnc-a1-controller-provider
+# Maven artifacts for nonrtric-sdnc-a1-controller-provider
+- project:
+    <<: *nonrtric_jdk8
+    name: nonrtric-sdnc-a1-controller-provider
+    project-name: {name}
+    mvn-params: '-f sdnc-a1-controller/northbound/nonrt-ric-api/provider'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'sdnc-a1-controller/northbound/nonrt-ric-api/provider/.*'
     build-node: ubuntu1804-builder-4c-4g
     jobs:
       - gerrit-maven-verify
