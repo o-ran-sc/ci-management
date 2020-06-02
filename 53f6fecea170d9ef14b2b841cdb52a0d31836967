@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "efa0433d_adb8f128",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-06-02T12:02:51Z",
+      "side": 1,
+      "message": "this comment should be removed, or moved to the jdk anchors",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 2
+      },
+      "revId": "53f6fecea170d9ef14b2b841cdb52a0d31836967",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "739a1c9e_6c2c77bf",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-06-02T12:02:51Z",
+      "side": 1,
+      "message": "perhaps this comment should be updated?",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 2
+      },
+      "revId": "53f6fecea170d9ef14b2b841cdb52a0d31836967",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15d73b65_f3c78233",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-06-02T12:02:51Z",
+      "side": 1,
+      "message": "This comment also isn\u0027t helpful",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 2
+      },
+      "revId": "53f6fecea170d9ef14b2b841cdb52a0d31836967",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "926cdc10_eadf1ab2",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-06-02T12:02:51Z",
+      "side": 1,
+      "message": "the name doesn\u0027t much matter, but \"-common\" is an unusual suffix for a project",
+      "range": {
+        "startLine": 55,
+        "startChar": 32,
+        "endLine": 55,
+        "endChar": 38
+      },
+      "revId": "53f6fecea170d9ef14b2b841cdb52a0d31836967",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c554860_afccab97",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-06-02T12:02:51Z",
+      "side": 1,
+      "message": "if name and project-name match, you can reuse the name value to avoid repeats, like this:\n\n    project-name: \u0027{name}\u0027",
+      "range": {
+        "startLine": 77,
+        "startChar": 18,
+        "endLine": 77,
+        "endChar": 51
+      },
+      "revId": "53f6fecea170d9ef14b2b841cdb52a0d31836967",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e86a92b_9c88dc03",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-06-02T12:02:51Z",
+      "side": 1,
+      "message": "See above re avoiding repeats",
+      "range": {
+        "startLine": 97,
+        "startChar": 18,
+        "endLine": 97,
+        "endChar": 54
+      },
+      "revId": "53f6fecea170d9ef14b2b841cdb52a0d31836967",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
