@@ -65,36 +65,16 @@
       - master:
           branch: master
 
-# nonrtric:sdnc-a1-controller-model
-# Maven artifacts for nonrtric-sdnc-a1-controller-model
+# nonrtric:sdnc-a1-controller
+# Maven artifacts for nonrtric-sdnc-a1-controller
 - project:
     <<: *nonrtric_jdk8
-    name: nonrtric-sdnc-a1-controller-model
+    name: nonrtric-sdnc-a1-controller
     project-name: '{name}'
-    mvn-params: '-f sdnc-a1-controller/northbound/nonrt-ric-api/model'
+    mvn-params: '-f sdnc-a1-controller/northbound'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'sdnc-a1-controller/northbound/nonrt-ric-api/model/.*'
-    build-node: ubuntu1804-builder-4c-4g
-    jobs:
-      - gerrit-maven-verify
-      - gerrit-maven-merge
-      - gerrit-maven-stage
-      - gerrit-maven-clm
-    stream:
-      - master:
-          branch: master
-
-# nonrtric:sdnc-a1-controller-provider
-# Maven artifacts for nonrtric-sdnc-a1-controller-provider
-- project:
-    <<: *nonrtric_jdk8
-    name: nonrtric-sdnc-a1-controller-provider
-    project-name: '{name}'
-    mvn-params: '-f sdnc-a1-controller/northbound/nonrt-ric-api/provider'
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'sdnc-a1-controller/northbound/nonrt-ric-api/provider/.*'
+        pattern: 'sdnc-a1-controller/northbound/.*'
     build-node: ubuntu1804-builder-4c-4g
     jobs:
       - gerrit-maven-verify
