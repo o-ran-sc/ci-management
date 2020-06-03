@@ -1,0 +1,8 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Guy Jacobson <gj2418@att.com>
+Code-Review+2: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Wed, 03 Jun 2020 19:55:06 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/3981
+Project: ci-management
+Branch: refs/heads/master
