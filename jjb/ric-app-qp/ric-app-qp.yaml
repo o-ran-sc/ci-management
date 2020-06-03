@@ -32,6 +32,10 @@
     # use host network
     docker-build-args: '--network=host'
     build-node: ubuntu1804-docker-4c-4g
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
     stream:
@@ -63,6 +67,10 @@
     <<: *qp_common
     <<: *qp_python
     name: ric-app-qp-py-verify
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
     jobs:
       - gerrit-tox-verify
     stream:
