@@ -62,3 +62,52 @@
         - upload-yocto.sh
     jobs:
       - oran-shell-release
+
+- project:
+    <<: *pti_rtp_common
+    name: pti-rtp-try-build
+    # runs about 35 hours
+    build-timeout: 2100
+    script: !include-raw-escape:
+        - install-yocto-prereq-centos.sh
+        - build-inf.sh
+    jobs:
+      - oran-shell-verify
+
+
+- project:
+    <<: *pti_rtp_common
+    name: pti-rtp-verify-inf
+    # runs about 50~80 minutes
+    build-timeout: 120
+    script: !include-raw-escape:
+        - install-yocto-prereq-centos.sh
+        - verify-inf.sh
+    jobs:
+      - oran-shell-verify
+
+
+- project:
+    <<: *pti_rtp_common
+    name: pti-rtp-merge-inf
+    # runs about 50~80 minutes
+    build-timeout: 120
+    script: !include-raw-escape:
+        - install-yocto-prereq-centos.sh
+        - verify-inf.sh
+    jobs:
+      - oran-shell-merge
+
+
+- project:
+    <<: *pti_rtp_common
+    name: pti-rtp-release-inf
+    # runs about 35 hours
+    build-timeout: 2100
+    script: !include-raw-escape:
+        - install-yocto-prereq-centos.sh
+        - build-inf.sh
+        - upload-inf.sh
+    jobs:
+      - oran-shell-release
+
