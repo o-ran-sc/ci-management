@@ -34,7 +34,7 @@
     build-timeout: 120
     script: !include-raw-escape:
         - install-yocto-prereq-centos.sh
-        - verify-yocto.sh
+        - verify-inf.sh
     jobs:
       - oran-shell-verify
 
@@ -45,7 +45,7 @@
     build-timeout: 120
     script: !include-raw-escape:
         - install-yocto-prereq-centos.sh
-        - verify-yocto.sh
+        - verify-inf.sh
     jobs:
       - oran-shell-merge
 
@@ -54,11 +54,11 @@
     name: pti-rtp-release-merge
     # demand 200GB storage
     build-node: centos7-docker-2c-8g-200g
-    # runs about 18 hours
-    build-timeout: 1200
+    # runs about 35 hours
+    build-timeout: 2100
     script: !include-raw-escape:
         - install-yocto-prereq-centos.sh
-        - build-yocto.sh
-        - upload-yocto.sh
+        - build-inf.sh
+        - upload-inf.sh
     jobs:
       - oran-shell-release

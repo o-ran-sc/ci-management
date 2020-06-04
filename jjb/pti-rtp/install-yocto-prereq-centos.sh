@@ -30,4 +30,7 @@ sudo yum install -y epel-release \
   && sudo yum makecache \
   && sudo yum install -y $pkgs
 
+git config --global user.name "oran inf builder"
+git config --global user.email "oran.inf@windriver.com"
+
 echo "--> install-yocto-prereq-centos.sh ends"
