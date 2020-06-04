@@ -13,37 +13,92 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- log_docker_common: &log_docker_common
-    # values apply to all com/log docker projects
-    name: log-docker-common
+- com_log_common: &com_log_common
+    # values apply to all com/log projects
+    name: com-log-common
     # git repo
     project: com/log
     # jenkins job name prefix
     project-name: com-log
     # maven settings file has docker credentials
     mvn-settings: com-log-settings
+    # verify/merge/package/sonar all require this
+    pre-build: !include-raw-escape: setup-com-log-build-deb.sh
 
+# compile code and run tests
 - project:
-    <<: *log_docker_common
-    name: com-log
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host -f ci/Dockerfile'
-    # image name
-    docker-name: '{name}'
-    # image tag, use a fixed value
-    container-tag-method: latest
+    <<: *com_log_common
+    name: com-log-lib
+    build-node: ubuntu1804-builder-2c-2g
+    make-opts: -j 2 test
     jobs:
-      - gerrit-docker-verify
-      - oran-gerrit-docker-ci-pc-merge
+      - gerrit-autotools-verify
     stream:
       - master:
           branch: master
 
+# common settings for building DEB and RPM packages
+- com_log_pkg_common: &com_log_pkg_common
+    name: com-log-pkg-common
+    # directory with package files
+    build-dir: pkg
+    # docker image has the package_cloud gem
+    build-node: ubuntu1804-docker-4c-4g
+    jobs:
+      - gerrit-autotools-packagecloud-stage
+    stream:
+      - master:
+          branch: master
+
+# build DEB package files
 - project:
+    <<: *com_log_common
+    <<: *com_log_pkg_common
+    name: com-log-deb
+    project-name: '{name}'
+    configure-opts: --with-deb-dir={build-dir}
+    make-opts: -j4 deb-pkg
+
+# build RPM package files
+- project:
+    <<: *com_log_common
+    <<: *com_log_pkg_common
+    name: com-log-rpm
+    project-name: '{name}'
+    configure-opts: --with-rpm-dir={build-dir}
+    # parallel jobs (option -j) fail on rpm build
+    # https://bugzilla.redhat.com/show_bug.cgi?id=1398405
+    make-opts: rpm-pkg
+
+# analyze C code and test coverage
+- project:
+    <<: *com_log_common
+    name: com-log-sonarqube
+    build-node: ubuntu1804-docker-4c-4g
+    # set appropriate CXXFLAGS
+    configure-opts: --with-gcov-report-dir=gcov_report
+    # use all cores
+    make-opts: -j4 test_gcov
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=src
+        sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
+        sonar.cfamily.cache.enabled=false
+        sonar.cfamily.gcov.reportsPath=gcov_report
+        sonar.cfamily.threads=4
+    jobs:
+      - gerrit-autotools-sonarqube
+
+- project:
+    <<: *com_log_common
+    # these templates ignore the pre-build script
     name: com-log-release
-    project: com/log
-    project-name: com-log
-    build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-packagecloud-release-verify
       - gerrit-packagecloud-release-merge
+
