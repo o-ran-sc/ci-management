@@ -40,6 +40,8 @@
       - gerrit-maven-docker-verify
       - gerrit-maven-docker-merge
       - gerrit-maven-docker-stage
+    post_docker_build_script: !include-raw-escape:
+      - run_integration.sh
     stream:
       - master:
           branch: master
