@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "e3b64203_d2513bf6",
+        "filename": "jjb/pti-rtp/build-inf.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-06-05T15:11:34Z",
+      "side": 1,
+      "message": "do you want to change this to \"Inf\" or is Yocto still the right word?",
+      "range": {
+        "startLine": 17,
+        "startChar": 11,
+        "endLine": 17,
+        "endChar": 16
+      },
+      "revId": "76b5afbe176cc753d4046cdb540103c49c46dda2",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "db7e972d_a6723b86",
         "filename": "jjb/pti-rtp/upload-inf.sh",
         "patchSetId": 3
