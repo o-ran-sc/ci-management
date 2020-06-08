@@ -22,6 +22,30 @@
       "revId": "2a788f6688b59bb03b347658873a83e90d84e7fd",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77cbaf8f_fae8cde4",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000247
+      },
+      "writtenOn": "2020-06-08T16:08:53Z",
+      "side": 1,
+      "message": "Done, yes, thanks for reminder.",
+      "parentUuid": "ca3f0f41_9c5561a8",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 4
+      },
+      "revId": "2a788f6688b59bb03b347658873a83e90d84e7fd",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
