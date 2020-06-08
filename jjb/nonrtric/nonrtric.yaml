@@ -50,7 +50,7 @@
     <<: *nonrtric_jdk11
     name: nonrtric-policy-agent
     project-name: '{name}'
-    mvn-opts: '-Ddocker.skip=true'
+    mvn-opts: '-Ddocker.skip=true -Dexec.skip=true'
     mvn-params: '-f policy-agent'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -71,6 +71,7 @@
     <<: *nonrtric_jdk8
     name: nonrtric-sdnc-a1-controller
     project-name: '{name}'
+    mvn-opts: '-Ddocker.skip=true -Dexec.skip=true'
     mvn-params: '-f sdnc-a1-controller/northbound'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -99,7 +100,7 @@
     <<: *nonrtric_jdk11
     name: nonrtric-sonar
     # template goal install builds docker image unnecessarily
-    mvn-params: -Ddocker.skip=true
+    mvn-params: '-Ddocker.skip=true -Dexec.skip=true'
     sonarcloud: true
     sonarcloud-api-token: '{sonarcloud_api_token}'
     sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
