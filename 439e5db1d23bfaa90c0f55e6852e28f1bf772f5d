@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "523e2661_b8153d1d",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-06-10T13:33:40Z",
+      "side": 1,
+      "message": "you are just adding the merge and stage jobs? Use the existing project that begins on line 36 and add these jobs between lines 41 and 42, there\u0027s no need for a separate project.",
+      "range": {
+        "startLine": 51,
+        "startChar": 5,
+        "endLine": 52,
+        "endChar": 33
+      },
+      "revId": "439e5db1d23bfaa90c0f55e6852e28f1bf772f5d",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
