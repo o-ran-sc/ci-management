@@ -1,0 +1,14 @@
+---
+- project:
+    name: scp-ocu-5gnr-project-view
+    project-name: scp-ocu-5gnr
+    views:
+      - project-view
+
+- project:
+    name: scp-ocu-5gnr-info
+    project: scp/ocu/5gnr
+    project-name: scp-ocu-5gnr
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
