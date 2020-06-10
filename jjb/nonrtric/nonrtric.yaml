@@ -35,9 +35,20 @@
 
 - project:
     <<: *nonrtric_jdk11
+    name: nonrtric_jdk11_verify
+    mvn-opts: -Dexec.skip=false
     mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
     jobs:
       - gerrit-maven-docker-verify
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *nonrtric_jdk11
+    mvn-opts: -Dexec.skip=true
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    jobs:
       - gerrit-maven-docker-merge
       - gerrit-maven-docker-stage
     stream:
