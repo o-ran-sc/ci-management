@@ -31,6 +31,10 @@
     name: com-log-lib
     build-node: ubuntu1804-builder-2c-2g
     make-opts: -j 2 test
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
     jobs:
       - gerrit-autotools-verify
     stream:
