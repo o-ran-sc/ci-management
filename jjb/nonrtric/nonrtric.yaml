@@ -35,9 +35,11 @@
 
 - project:
     <<: *nonrtric_jdk11
+    mvn-opts: -Dexec.skip=true
     mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
     jobs:
-      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-verify:
+          mvn-opts: -Dexec.skip=false
       - gerrit-maven-docker-merge
       - gerrit-maven-docker-stage
     stream:
