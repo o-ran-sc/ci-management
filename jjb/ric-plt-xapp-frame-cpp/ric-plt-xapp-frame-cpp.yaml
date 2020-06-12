@@ -75,6 +75,16 @@
       - master:
           branch: master
 
+# promote deb/rpm from staging to release at PackageCloud.io
+- project:
+    <<: *xapp_frame_cpp_common
+    name: ric-plt-xapp-frame-cpp-release
+    # release uses sigul which requires centos
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-packagecloud-release-verify
+      - gerrit-packagecloud-release-merge
+
 # analyze C code and test coverage
 - project:
     name: xapp-frame-cpp-sonarqube
