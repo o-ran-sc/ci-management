@@ -30,6 +30,33 @@
       - master:
           branch: master
 
+- it_otf_common: &it_otf_vth_common
+    # values apply to all it/otf docker projects
+    name: it-otf-vth-docker-common
+    # git repo
+    project: it/otf
+    # jenkins job name prefix
+    project-name: '{name}'
+    # source of docker tag
+    container-tag-method: yaml-file
+    # maven settings file has docker credentials
+    mvn-settings: it-otf-settings
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # dockerfile is in subdir of docker root
+    docker-build-args: '--network=host -f ./docker/Dockerfile'
+    # tag file is in subdir
+    container-tag-yaml-dir: '{docker-root}/docker'
+    # build only on relevant changes
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '{docker-root}/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
 - project:
     <<: *it_otf_common
     name: it-otf-oran-ric-test-head
@@ -141,74 +168,38 @@
 - project:
     <<: *it_otf_common
     name: it-otf-service-api
-    # jenkins job name prefix
-    project-name: '{name}'
-    # image name
-    docker-name: 'o-ran-sc/{name}'
     # start in parent directory with shared files
     docker-root: otf-service-api
-    # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host -f ./docker/Dockerfile'
-    # tag file is in subdir
-    container-tag-yaml-dir: '{docker-root}/docker'
-    # build only on relevant changes
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: '{docker-root}/.*'
 
 - project:
-    <<: *it_otf_common
+    <<: *it_otf_vth_common
     name: it-otf-smo-o1-vth
-    # jenkins job name prefix
-    project-name: '{name}'
-    # image name
-    docker-name: 'o-ran-sc/{name}'
     # start in parent directory with shared files
     docker-root: smo-o1-vth
-    # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host -f ./docker/Dockerfile'
-    # tag file is in subdir
-    container-tag-yaml-dir: '{docker-root}/docker'
-    # build only on relevant changes
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: '{docker-root}/.*'
 
 - project:
-    <<: *it_otf_common
+    <<: *it_otf_vth_common
     name: it-otf-dmaap-vth
-    # jenkins job name prefix
-    project-name: '{name}'
-    # image name
-    docker-name: 'o-ran-sc/{name}'
     # start in parent directory with shared files
     docker-root: dmaap-vth
-    # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host -f ./docker/Dockerfile'
-    # tag file is in subdir
-    container-tag-yaml-dir: '{docker-root}/docker'
-    # build only on relevant changes
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: '{docker-root}/.*'
 
 - project:
-    <<: *it_otf_common
+    <<: *it_otf_vth_common
     name: it-otf-a1-mediator-vth
-    # jenkins job name prefix
-    project-name: '{name}'
-    # image name
-    docker-name: 'o-ran-sc/{name}'
     # start in parent directory with shared files
     docker-root: a1-mediator-vth
-    # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host -f ./docker/Dockerfile'
-    # tag file is in subdir
-    container-tag-yaml-dir: '{docker-root}/docker'
-    # build only on relevant changes
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: '{docker-root}/.*'
+
+- project:
+    <<: *it_otf_vth_common
+    name: it-otf-a1-sdnc-vth
+    # start in parent directory with shared files
+    docker-root: a1-sdnc-vth
+
+- project:
+    <<: *it_otf_vth_common
+    name: it-otf-a1-policy-manager-vth
+    # start in parent directory with shared files
+    docker-root: a1-policy-manager-vth
 
 - project:
     <<: *it_otf_common
