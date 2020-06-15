@@ -212,6 +212,42 @@
 
 - project:
     <<: *it_otf_common
+    name: it-otf-a1-sdnc-vth
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # start in parent directory with shared files
+    docker-root: a1-sdnc-vth
+    # dockerfile is in subdir of docker root
+    docker-build-args: '--network=host -f ./docker/Dockerfile'
+    # tag file is in subdir
+    container-tag-yaml-dir: '{docker-root}/docker'
+    # build only on relevant changes
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '{docker-root}/.*'
+
+- project:
+    <<: *it_otf_common
+    name: it-otf-a1-policy-manager-vth
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # start in parent directory with shared files
+    docker-root: a1-policy-manager-vth
+    # dockerfile is in subdir of docker root
+    docker-build-args: '--network=host -f ./docker/Dockerfile'
+    # tag file is in subdir
+    container-tag-yaml-dir: '{docker-root}/docker'
+    # build only on relevant changes
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '{docker-root}/.*'
+
+- project:
+    <<: *it_otf_common
     name: it-otf-release
     branch: master
     # maven release requires sigul which requires centos
