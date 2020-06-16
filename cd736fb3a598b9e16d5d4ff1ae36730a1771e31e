@@ -22,6 +22,30 @@
       "revId": "cd736fb3a598b9e16d5d4ff1ae36730a1771e31e",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "765c4eb1_fc56427d",
+        "filename": "jjb/sim-e2-interface/sim-e2-interface.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-06-16T14:58:37Z",
+      "side": 1,
+      "message": "Thanks, Chris! It would be nice to learn new things about this, I am not that familiar with all the details. This job was anyway copy-pasted from my other sim/o1-interface repo, which has the anchor there ;-). I will nevertheless remove it, since it is redundant.",
+      "parentUuid": "33f26dba_498281ca",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 4
+      },
+      "revId": "cd736fb3a598b9e16d5d4ff1ae36730a1771e31e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
