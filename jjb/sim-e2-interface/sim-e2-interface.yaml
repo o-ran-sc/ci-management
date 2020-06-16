@@ -47,3 +47,11 @@
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: '{docker-root}/.*'
+
+- project:
+    <<: *sim_e2_interface_docker
+    name: sim-e2-interface-release
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'

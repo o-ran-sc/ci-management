@@ -97,7 +97,6 @@
         pattern: 'ntsimulator/.*'
 
 - project:
-    <<: *sim_o1_interface_docker
     name: sim-o1-interface-release
     branch: master
     # maven release requires sigul which requires centos
