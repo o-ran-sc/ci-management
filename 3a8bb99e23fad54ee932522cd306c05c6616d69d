@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "01dbef78_29b35b83",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-06-16T11:27:02Z",
+      "side": 1,
+      "message": "most projects don\u0027t use the full path in their docker image name; here you might want to use just o-ran-sc/a1-sdnc-vth, but of course that\u0027s entirely up to you",
+      "range": {
+        "startLine": 219,
+        "startChar": 0,
+        "endLine": 219,
+        "endChar": 4
+      },
+      "revId": "3a8bb99e23fad54ee932522cd306c05c6616d69d",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
