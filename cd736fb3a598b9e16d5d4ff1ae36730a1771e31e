@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "33f26dba_498281ca",
+        "filename": "jjb/sim-e2-interface/sim-e2-interface.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-06-16T14:26:45Z",
+      "side": 1,
+      "message": "Thanks for removing the branch: item.  Now that I look at this a bit more closely, I see that using the sim_e2_interface_docker anchor pulls in many key-value pairs that are wrong for the release job.  But they are probably ignored and the job will probably work as defined here.  If would like, I can coach you thru further cleanup, but I will not block merge. Please let me know.",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 4
+      },
+      "revId": "cd736fb3a598b9e16d5d4ff1ae36730a1771e31e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
