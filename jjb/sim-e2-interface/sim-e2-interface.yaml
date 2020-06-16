@@ -13,8 +13,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- sim_e2_interface_docker: &sim_e2_interface_docker
-    # values apply to all sim/e2-interface docker projects
+- sim_e2_interface_common: &sim_e2_interface_common
+    # values apply to all projects here
     name: sim-e2-interface-docker
     # git repo
     project: sim/e2-interface
@@ -22,20 +22,12 @@
     project-name: sim-e2-interface
     # maven settings file has docker credentials
     mvn-settings: sim-e2-interface-settings
-    # source of docker tag
-    container-tag-method: yaml-file
-    build-node: ubuntu1804-docker-4c-4g
-    jobs:
-      - '{project-name}-gerrit-docker-jobs'
-    stream:
-      - master:
-          branch: master
 
 - project:
-    <<: *sim_e2_interface_docker
+    <<: *sim_e2_interface_common
     name: sim-e2-interface-e2sim
-    # jenkins job name prefix
-    project-name: '{name}'
+    build-node: ubuntu1804-docker-4c-4g
+    container-tag-method: yaml-file
     # image name
     docker-name: 'o-ran-sc/ntsim-e2-simulator'
     # docker root
@@ -47,3 +39,17 @@
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: '{docker-root}/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *sim_e2_interface_common
+    name: sim-e2-interface-release
+    # sigul requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
