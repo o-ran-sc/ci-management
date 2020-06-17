@@ -22,6 +22,30 @@
       "revId": "3a8bb99e23fad54ee932522cd306c05c6616d69d",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da9baa83_3af99600",
+        "filename": "jjb/it-otf/it-otf.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1000408
+      },
+      "writtenOn": "2020-06-17T22:43:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "01dbef78_29b35b83",
+      "range": {
+        "startLine": 219,
+        "startChar": 0,
+        "endLine": 219,
+        "endChar": 4
+      },
+      "revId": "3a8bb99e23fad54ee932522cd306c05c6616d69d",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
