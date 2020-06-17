@@ -22,19 +22,10 @@
     # maven settings file has docker credentials
     mvn-settings: nonrtric-settings
     mvn-version: mvn36
-
-- nonrtric_jdk11: &nonrtric_jdk11
-    <<: *nonrtric_jdk_common
-    name: nonrtric-jdk11
     java-version: openjdk11
 
-- nonrtric_jdk8: &nonrtric_jdk8
-    <<: *nonrtric_jdk_common
-    name: nonrtric-jdk8
-    java-version: openjdk8
-
 - project:
-    <<: *nonrtric_jdk11
+    <<: *nonrtric_jdk_common
     mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
     jobs:
       - gerrit-maven-docker-verify:
@@ -48,7 +39,7 @@
 # nonrtric:policy-agent
 # Maven artifacts for nonrtric-policy-agent
 - project:
-    <<: *nonrtric_jdk11
+    <<: *nonrtric_jdk_common
     name: nonrtric-policy-agent
     project-name: '{name}'
     mvn-opts: '-Ddocker.skip=true -Dexec.skip=true'
@@ -69,7 +60,7 @@
 # nonrtric:sdnc-a1-controller
 # Maven artifacts for nonrtric-sdnc-a1-controller
 - project:
-    <<: *nonrtric_jdk8
+    <<: *nonrtric_jdk_common
     name: nonrtric-sdnc-a1-controller
     project-name: '{name}'
     mvn-opts: '-Ddocker.skip=true -Dexec.skip=true'
@@ -88,7 +79,7 @@
           branch: master
 
 - project:
-    <<: *nonrtric_jdk11
+    <<: *nonrtric_jdk_common
     name: nonrtric-release
     branch: master
     # maven release requires sigul which requires centos
@@ -98,7 +89,7 @@
       - '{project-name}-gerrit-release-jobs'
 
 - project:
-    <<: *nonrtric_jdk11
+    <<: *nonrtric_jdk_common
     name: nonrtric-sonar
     # template goal install builds docker image unnecessarily
     mvn-params: '-Ddocker.skip=true -Dexec.skip=true'
