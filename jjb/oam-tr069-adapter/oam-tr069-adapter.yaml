@@ -1,0 +1,59 @@
+---
+- project:
+    name: oam-tr069-adapter-project-view
+    project-name: oam-tr069-adapter
+    views:
+      - project-view
+
+- project:
+    name: oam-tr069-adapter-info
+    project: oam/tr069-adapter
+    project-name: oam-tr069-adapter
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- tr069-adapter-jdk08: &tr069-adapter-jdk08
+    # values apply to all projects here
+    name: tr069-adapter-jdk08
+    # git repo
+    project: oam/tr069-adapter
+    # jenkins job name prefix
+    project-name: oam-tr069-adapter
+    # defaults.yaml value is NOT used due to value set in lf-maven-jobs.yaml
+    java-version: openjdk8
+    mvn-version: mvn36
+
+- project:
+    <<: *tr069-adapter-jdk08
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *tr069-adapter-jdk08
+    name: tr069-adapter-sonar
+    # template goal install builds docker image unnecessarily
+    mvn-params: -Ddocker.skip=true
+    sonarcloud: true
+    sonarcloud-api-token: '{sonarcloud_api_token}'
+    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
+    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    jobs:
+      - gerrit-maven-sonar
+
+- project:
+    <<: *tr069-adapter-jdk08
+    name: tr069-adapter-release
+    branch: master
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
