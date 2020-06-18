@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8592b151_0cc9d287",
+        "filename": "jjb/oam-tr069-adapter/oam-tr069-adapter.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-06-18T10:06:21Z",
+      "side": 1,
+      "message": "Between line 24 and 25 add this:\n\n    mvn-settings: oam-tr069-adapter-settings",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 4
+      },
+      "revId": "0c4c4a17426f5fa7d5bc2622762cee0e69c3f7da",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
