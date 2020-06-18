@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ccd94d32_adf39416",
+        "filename": "jjb/oam-tr069-adapter/oam-tr069-adapter.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000444
+      },
+      "writtenOn": "2020-06-18T08:08:58Z",
+      "side": 0,
+      "message": "---\n- project:\n    name: oam-tr069-adapter-project-view\n    project-name: oam-tr069-adapter\n    views:\n      - project-view\n\n- project:\n    name: oam-tr069-adapter-info\n    project: oam/tr069-adapter\n    project-name: oam-tr069-adapter\n    build-node: centos7-builder-1c-1g\n    jobs:\n      - gerrit-info-yaml-verify\n\n- tr069-adapter-jdk08: \u0026tr069-adapter-jdk08\n    # values apply to all projects here\n    name: tr069-adapter-jdk08\n    # git repo\n    project: oam/tr069-adapter\n    # jenkins job name prefix\n    project-name: oam-tr069-adapter\n    # defaults.yaml value is NOT used due to value set in lf-maven-jobs.yaml\n    java-version: openjdk8\n    mvn-version: mvn36\n\n- project:\n    \u003c\u003c: *tr069-adapter-jdk08\n    mvn-params: -Dbuild.number\u003d${{BUILD_NUMBER}}\n    jobs:\n      - gerrit-maven-docker-verify\n      - gerrit-maven-docker-merge\n      - gerrit-maven-docker-stage\n    stream:\n      - master:\n          branch: master\n\n- project:\n    \u003c\u003c: *tr069-adapter-jdk08\n    name: tr069-adapter-sonar\n    # template goal install builds docker image unnecessarily\n    mvn-params: -Ddocker.skip\u003dtrue\n    sonarcloud: true\n    sonarcloud-api-token: \u0027{sonarcloud_api_token}\u0027\n    sonarcloud-project-key: \u0027{sonarcloud_project_organization}_{project-name}\u0027\n    sonarcloud-project-organization: \u0027{sonarcloud_project_organization}\u0027\n    jobs:\n      - gerrit-maven-sonar\n\n- project:\n    \u003c\u003c: *tr069-adapter-jdk08\n    name: tr069-adapter-release\n    branch: master\n    # maven release requires sigul which requires centos\n    # container release requires docker\n    build-node: centos7-docker-2c-8g\n    jobs:\n      - \u0027{project-name}-gerrit-release-jobs\u0027",
+      "revId": "b9e938c917d0ba6876857e35da183ace89ca8fb8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    }
+  ]
+}
