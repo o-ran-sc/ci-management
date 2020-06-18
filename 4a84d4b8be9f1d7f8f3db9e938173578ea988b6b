@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "e0cdd8dd_e19d27fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-06-18T14:47:09Z",
+      "side": 1,
+      "message": "As Chris says, this commit message is _way_ too long. We won\u0027t merge with it like this.\n\nSee https://chris.beams.io/posts/git-commit/ and https://fatbusinessman.com/2019/my-favourite-git-commit on how to write good commit messages",
+      "revId": "4a84d4b8be9f1d7f8f3db9e938173578ea988b6b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e5ed07bd_cd44b36b",
         "filename": "jjb/it-otf/it-otf.yaml",
         "patchSetId": 7
