@@ -69,3 +69,11 @@
         sonar.exclusions=**/*_test.go
     jobs:
       - gerrit-sonar-prescan-script
+
+- project:
+    <<: *alarm_go_common
+    name: ric-plt-alarm-go-release
+    branch: master
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
