@@ -1,0 +1,14 @@
+---
+- project:
+    name: scp-ric-app-kpimon-project-view
+    project-name: scp-ric-app-kpimon
+    views:
+      - project-view
+
+- project:
+    name: scp-ric-app-kpimon-info
+    project: scp/ric-app/kpimon
+    project-name: scp-ric-app-kpimon
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
