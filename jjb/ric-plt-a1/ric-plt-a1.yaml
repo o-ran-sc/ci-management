@@ -96,7 +96,6 @@
 - project:
     <<: *a1_common
     name: ric-plt-a1-release
-    branch: master
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g

@@ -43,7 +43,6 @@
 - project:
     <<: *resource_status_manager_docker_common
     name: ric-plt-resource-status-manager-release
-    branch: master
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g

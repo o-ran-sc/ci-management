@@ -41,7 +41,6 @@
 - project:
     <<: *rtmgr_docker_common
     name: ric-plt-rtmgr-release
-    branch: master
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g

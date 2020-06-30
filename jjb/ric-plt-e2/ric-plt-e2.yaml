@@ -43,7 +43,6 @@
 - project:
     <<: *e2_docker_common
     name: ric-plt-e2-release
-    branch: master
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
