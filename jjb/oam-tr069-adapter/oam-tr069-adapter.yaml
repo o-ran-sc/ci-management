@@ -51,7 +51,6 @@
 - project:
     <<: *tr069-adapter-jdk08
     name: tr069-adapter-release
-    branch: master
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g

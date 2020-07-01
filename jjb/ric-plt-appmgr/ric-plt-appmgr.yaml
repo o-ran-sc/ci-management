@@ -41,7 +41,6 @@
 - project:
     <<: *appmgr_docker_common
     name: ric-plt-appmgr-release
-    branch: master
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g

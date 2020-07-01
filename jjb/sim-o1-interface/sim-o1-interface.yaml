@@ -99,7 +99,6 @@
 - project:
     <<: *sim_o1_interface_docker
     name: sim-o1-interface-release
-    branch: master
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
