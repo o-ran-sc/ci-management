@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#   Copyright (C) 2019 Wind River Systems, Inc.
+#   Copyright (C) 2020 Wind River Systems, Inc.
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 # Uploads a Yocto image to Nexus.
 
-echo "--> upload-yocto.sh"
+echo "--> upload-inf.sh"
 
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
@@ -41,7 +41,8 @@ mkdir -p "$repo_iso_dir"
 
 # Expect ISO file: oran-image-inf-host-intel-x86-64.iso
 # in build subdir: workspace/prj_oran-inf/tmp-glibc/deploy/images/intel-x86-64/
-iso="workspace/prj_oran-inf/tmp-glibc/deploy/images/intel-x86-64/oran-image-inf-host-intel-x86-64.iso"
+#iso="workspace/prj_oran-inf/tmp-glibc/deploy/images/intel-x86-64/oran-image-inf-host-intel-x86-64.iso"
+iso="workspace/prj_oran_inf_anaconda/tmp-glibc/deploy/images/intel-corei7-64/inf-image-aio-installer-intel-corei7-64.iso"
 echo "INFO: copy $iso to staging directory $repo_iso_dir"
 cp "$iso" "$repo_iso_dir"
 
@@ -49,4 +50,4 @@ cmd="lftools deploy nexus $nexus_repo_url $repo_dir"
 echo "INFO: Upload ISO to Nexus: $cmd"
 $cmd
 
-echo "--> upload-yocto.sh ends"
+echo "--> upload-inf.sh ends"

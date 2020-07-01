@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#   Copyright (C) 2019 Wind River Systems, Inc.
+#   Copyright (C) 2020 Wind River Systems, Inc.
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -14,10 +14,10 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-# Builds a Yocto image for real.
+# Tests creation of a Yocto image.  The "-n" flag skips bitbake.
 # Assumes prereqs have already been installed.
 
-echo "--> build-yocto.sh"
+echo "--> verify-inf.sh"
 
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
@@ -25,8 +25,8 @@ set -eu -o pipefail
 dir=workspace
 echo "INFO: creating workspace $dir"
 mkdir $dir
-cmd="./scripts/build_oran.sh -w $dir"
+cmd="./scripts/build_inf.sh -w $dir -n"
 echo "INFO: invoking build script: $cmd"
 $cmd
 
-echo "--> build-yocto.sh ends"
+echo "--> verify-inf.sh ends"
