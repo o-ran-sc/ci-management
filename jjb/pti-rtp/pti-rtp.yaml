@@ -54,8 +54,8 @@
     name: pti-rtp-release-merge
     # demand 200GB storage
     build-node: centos7-docker-2c-8g-200g
-    # runs about 35 hours
-    build-timeout: 2100
+    # runs about 48 hours
+    build-timeout: 2880
     script: !include-raw-escape:
         - install-yocto-prereq-centos.sh
         - build-inf.sh
