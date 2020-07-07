@@ -1,0 +1,14 @@
+---
+- project:
+    name: ric-plt-utils-project-view
+    project-name: ric-plt-utils
+    views:
+      - project-view
+
+- project:
+    name: ric-plt-utils-info
+    project: ric-plt/utils
+    project-name: ric-plt-utils
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
