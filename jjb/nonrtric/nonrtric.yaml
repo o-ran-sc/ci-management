@@ -56,6 +56,8 @@
     stream:
       - master:
           branch: master
+      - bronze:
+          branch: bronze
 
 # nonrtric:sdnc-a1-controller
 # Maven artifacts for nonrtric-sdnc-a1-controller
@@ -77,6 +79,8 @@
     stream:
       - master:
           branch: master
+      - bronze:
+          branch: bronze
 
 - project:
     <<: *nonrtric_jdk_common
