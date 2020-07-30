@@ -35,6 +35,8 @@
     stream:
       - master:
           branch: master
+      - bronze:
+          branch: bronze
 
 # nonrtric:policy-agent
 # Maven artifacts for nonrtric-policy-agent
