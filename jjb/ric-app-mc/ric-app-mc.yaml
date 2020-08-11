@@ -74,3 +74,23 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
+
+# drive unit tests from root CMake file to gen/analyse coverage data
+- project:
+    <<: *mc_common
+    name: ric-app-mc-sonarqube
+    cmake-opts: ""
+    make-opts: test ARGS=-V
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=sidecars/listener
+        sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
+        sonar.cfamily.gcov.reportsPath=test
+        sonar.cfamily.threads=2
+    jobs:
+      - gerrit-cmake-sonarqube
