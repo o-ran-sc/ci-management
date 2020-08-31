@@ -96,9 +96,7 @@
         sonar.projectName={project-name}
         sonar.organization={sonarcloud_project_organization}
         sonar.build.sourceEncoding=UTF-8
-        sonar.sources=sidecars/listener
-        sonar.exclusions=sidecars/listener/test/**/*
-        sonar.coverage.exclusions=sidecars/listener/test/**/*
+        sonar.sources=sidecars/listener/src
         sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
         sonar.cfamily.gcov.reportsPath=sidecars/listener
         sonar.cfamily.threads=2
