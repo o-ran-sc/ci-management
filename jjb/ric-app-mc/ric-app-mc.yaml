@@ -96,9 +96,9 @@
         sonar.projectName={project-name}
         sonar.organization={sonarcloud_project_organization}
         sonar.build.sourceEncoding=UTF-8
-        sonar.sources=sidecars/listener/src
+        sonar.sources=sidecars/listener/src,mc-core/mc/mcnib
         sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
-        sonar.cfamily.gcov.reportsPath=sidecars/listener
+        sonar.cfamily.gcov.reportsPath=/tmp/gcov_rpts
         sonar.cfamily.threads=2
     jobs:
       - gerrit-cmake-sonarqube
