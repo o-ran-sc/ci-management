@@ -57,3 +57,7 @@
 
     # Release config
     jenkins-ssh-release-credential: jenkins-release
+
+    # openstack-cron notification defaults
+    failure-notification: "releng+oransc@linuxfoundation.org"
+    failure-notification-prefix: "[releng]"
