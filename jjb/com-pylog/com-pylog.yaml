@@ -30,6 +30,19 @@
     name: pylog-pypi
     # the code is in a subdirectory
     tox-dir: mdclogpy
+
+- project:
+    <<: *pylog_common
+    name: com-pylog-docker
+    # image name
+    docker-name: o-ran-sc/com-pylog
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use host network
+    docker-build-args: '--network=host'
+    build-node: centos7-docker-2c-8g
+    # do not trigger on changes in docs, releases
+
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'mdclogpy/.*'
@@ -40,9 +53,47 @@
       - gerrit-pypi-verify
       - gerrit-pypi-stage
 
+- pylog_python: &pylog_python
+    # settings for python builds
+    name: com-pylog-python
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    # impt for verify and tox etc
+    python-version: python3
+    # no need to verify docs
+    tox-envs: py3
+    tox-dir: mdclogpy
+
+
 # promote package from test.pypi.org to pypi.org
 - project:
     <<: *pylog_common
+    <<: *pylog_python
     name: pylog-pypi-release
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
     jobs:
       - '{project-name}-gerrit-pypi-release-jobs'
+    jobs:
+      - gerrit-tox-verify
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *pylog_common
+    <<: *pylog_python
+    name: com-pylog-sonarqube
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=mdclogpy
+        sonar.python.coverage.reportPaths=$TOX_DIR/coverage.xml
+    jobs:
+      - gerrit-tox-sonarqube
