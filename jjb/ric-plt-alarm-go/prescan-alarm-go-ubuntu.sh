@@ -20,7 +20,7 @@ git clone https://github.com/nanomsg/nng.git
     && sudo ninja install)
 
 # build script must start in this subdir
-cd adapter
-bash build_adapter_ubuntu.sh
+cd build
+bash build_ubuntu.sh
 
 echo "--> prescan-alarm-go-ubuntu.sh ends"

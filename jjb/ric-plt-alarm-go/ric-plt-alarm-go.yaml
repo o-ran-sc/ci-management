@@ -27,12 +27,12 @@
     <<: *alarm_go_common
     name: ric-plt-alarm-go-docker
     # image name
-    docker-name: 'o-ran-sc/ric-plt-alarmadapter'
+    docker-name: 'o-ran-sc/ric-plt-alarmmanager'
     # source of docker tag
     container-tag-method: yaml-file
-    container-tag-yaml-dir: adapter
+    container-tag-yaml-dir: build
     # use host network
-    docker-build-args: '-f adapter/Dockerfile --network=host'
+    docker-build-args: '-f build/Dockerfile --network=host'
     build-node: ubuntu1804-docker-4c-4g
     stream:
       - master:
@@ -62,7 +62,7 @@
         # Source
         sonar.sources=.
         # Unit tests
-        sonar.go.coverage.reportPaths=adapter/cover.out,alarm/cover.out
+        sonar.go.coverage.reportPaths=manager/cover.out,alarm/cover.out
         # Inclusions
         sonar.inclusions=**/*.go
         # Exclusions
