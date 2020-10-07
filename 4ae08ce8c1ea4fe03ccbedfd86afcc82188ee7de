@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad4bb566_0b290fdf",
+        "filename": "jjb/com-golog/prescan-golog-go-ubuntu.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000275
+      },
+      "writtenOn": "2020-10-07T07:50:33Z",
+      "side": 1,
+      "message": "LF recommendation is to use go-acc.\n\nYou can also configure sonar job and check the SONAR results.",
+      "revId": "4ae08ce8c1ea4fe03ccbedfd86afcc82188ee7de",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
