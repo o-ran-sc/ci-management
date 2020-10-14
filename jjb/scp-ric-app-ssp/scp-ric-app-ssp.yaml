@@ -1,0 +1,14 @@
+---
+- project:
+    name: scp-ric-app-ssp-project-view
+    project-name: scp-ric-app-ssp
+    views:
+      - project-view
+
+- project:
+    name: scp-ric-app-ssp-info
+    project: scp/ric-app/ssp
+    project-name: scp-ric-app-ssp
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
