@@ -1,0 +1,14 @@
+---
+- project:
+    name: smo-ves-project-view
+    project-name: smo-ves
+    views:
+      - project-view
+
+- project:
+    name: smo-ves-info
+    project: smo/ves
+    project-name: smo-ves
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
