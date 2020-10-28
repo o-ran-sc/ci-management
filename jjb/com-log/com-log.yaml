@@ -102,6 +102,8 @@
     <<: *com_log_common
     # these templates ignore the pre-build script
     name: com-log-release
+    # release uses sigul which requires centos
+    build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-packagecloud-release-verify
       - gerrit-packagecloud-release-merge
