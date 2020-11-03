@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e6bed664_3c1f41c7",
+        "filename": "jenkins-config/clouds/openstack/cattle/ubuntu1804-builder-2c-2g.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-11-03T19:36:42Z",
+      "side": 1,
+      "message": "This label already exists in the file",
+      "revId": "be006856c381a01ad332a4a8da3d65aba746887b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d1b47ac_3635d19a",
+        "filename": "jenkins-config/clouds/openstack/cattle/ubuntu1804-builder-4c-4g.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-11-03T19:36:42Z",
+      "side": 1,
+      "message": "This label already exists in the file",
+      "revId": "be006856c381a01ad332a4a8da3d65aba746887b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06c5d154_1d0ec33c",
+        "filename": "jenkins-config/clouds/openstack/cattle/ubuntu1804-docker-4c-4g.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-11-03T19:36:42Z",
+      "side": 1,
+      "message": "This label already exists in the file",
+      "revId": "be006856c381a01ad332a4a8da3d65aba746887b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
