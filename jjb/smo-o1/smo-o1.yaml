@@ -1,0 +1,14 @@
+---
+- project:
+    name: smo-o1-project-view
+    project-name: smo-o1
+    views:
+      - project-view
+
+- project:
+    name: smo-o1-info
+    project: smo/o1
+    project-name: smo-o1
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
