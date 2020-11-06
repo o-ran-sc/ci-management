@@ -24,6 +24,7 @@
     mvn-settings: sim-o1-interface-settings
     # source of docker tag
     container-tag-method: yaml-file
+    # if no container-tag-yaml-dir is defined, container-tag.yml is taken from the docker-root
     docker-root: ntsimulator
     build-node: ubuntu1804-docker-4c-4g
     jobs:
@@ -34,67 +35,59 @@
 
 - project:
     <<: *sim_o1_interface_docker
-    name: sim-o1-interface-ntsim-manager
+    name: sim-o1-interface-ntsim-ng-base
     # jenkins job name prefix
     project-name: '{name}'
     # image name
-    docker-name: 'o-ran-sc/ntsim-manager'
+    docker-name: 'o-ran-sc/nts-ng-base'
     # dockerfile is in subdir
-    docker-build-args: '--network=host -f deploy/nts-manager/Dockerfile'
-    # tag file is in subdir
-    container-tag-yaml-dir: ntsimulator/deploy/nts-manager
+    docker-build-args: '--network=host -f deploy/base/ubuntu.Dockerfile'
+    # tag file latest, since it is base for others
+    container-tag-method: latest
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ntsimulator/ntsim-ng/.*'
+      - compare-type: REG_EXP
+        pattern: 'ntsimulator/deploy/base/.*'
+
+- project:
+    <<: *sim_o1_interface_docker
+    name: sim-o1-interface-ntsim-ng-manager
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/ntsim-ng-manager'
+    # dockerfile is in subdir
+    docker-build-args: '--network=host -f deploy/nts-manager/ubuntu.Dockerfile'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'ntsimulator/deploy/nts-manager/.*'
-      - compare-type: REG_EXP
-        pattern: 'ntsimulator/src/ntsimulator-manager/.*'
-      - compare-type: REG_EXP
-        pattern: 'ntsimulator/yang/nts-manager/.*'
 
 - project:
     <<: *sim_o1_interface_docker
-    name: sim-o1-interface-o-ran-ru-fh
+    name: sim-o1-interface-ntsim-ng-o-ran-fh
     # jenkins job name prefix
     project-name: '{name}'
     # image name
-    docker-name: 'o-ran-sc/ntsim-o-ran-ru-fh'
+    docker-name: ' o-ran-sc/nts-ng-o-ran-fh'
     # dockerfile is in subdir
-    docker-build-args: '--network=host -f deploy/o-ran/ru-fh/Dockerfile'
-    # tag file is in subdir
-    container-tag-yaml-dir: ntsimulator/deploy/o-ran/ru-fh
+    docker-build-args: '--network=host -f deploy/o-ran/ubuntu.Dockerfile'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'ntsimulator/.*'
+        pattern: 'ntsimulator/deploy/o-ran/.*'
 
 - project:
     <<: *sim_o1_interface_docker
-    name: sim-o1-interface-o-ran-ru
+    name: sim-o1-interface-ntsim-ng-x-ran
     # jenkins job name prefix
     project-name: '{name}'
     # image name
-    docker-name: 'o-ran-sc/ntsim-o-ran-ru'
+    docker-name: 'o-ran-sc/nts-ng-x-ran'
     # dockerfile is in subdir
-    docker-build-args: '--network=host -f deploy/o-ran-sc/o-ran-ru/Dockerfile'
-    # tag file is in subdir
-    container-tag-yaml-dir: ntsimulator/deploy/o-ran-sc/o-ran-ru
+    docker-build-args: '--network=host -f deploy/x-ran/ubuntu.Dockerfile'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'ntsimulator/.*'
-
-- project:
-    <<: *sim_o1_interface_docker
-    name: sim-o1-interface-x-ran
-    # jenkins job name prefix
-    project-name: '{name}'
-    # image name
-    docker-name: 'o-ran-sc/ntsim-x-ran'
-    # dockerfile is in subdir
-    docker-build-args: '--network=host -f deploy/x-ran/Dockerfile'
-    # tag file is in subdir
-    container-tag-yaml-dir: ntsimulator/deploy/x-ran
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'ntsimulator/.*'
+        pattern: 'ntsimulator/deploy/x-ran/.*'
 
 - project:
     <<: *sim_o1_interface_docker
