@@ -1,0 +1,24 @@
+---
+- project:
+    name: ric-app-hw-python-project-view
+    project-name: ric-app-hw-python
+    views:
+      - project-view
+
+- hw-python_common: &hw-python_common
+    # values apply to all projects
+    name: hw-python-common
+    # git repo
+    project: ric-app/hw-python
+    # jenkins prefix
+    project-name: ric-app-hw-python
+    # maven settings file has docker credentials
+    mvn-settings: ric-app-hw-python-settings
+
+# verify INFO.yaml changes
+- project:
+    <<: *hw-python_common
+    name: ric-app-hw-python-info
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
