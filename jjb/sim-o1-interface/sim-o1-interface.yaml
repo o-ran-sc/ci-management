@@ -25,7 +25,6 @@
     # source of docker tag
     container-tag-method: yaml-file
     # if no container-tag-yaml-dir is defined, container-tag.yml is taken from the docker-root
-    docker-root: ntsimulator
     build-node: ubuntu1804-docker-4c-4g
     jobs:
       - '{project-name}-gerrit-docker-jobs'
@@ -44,6 +43,7 @@
     docker-build-args: '--network=host -f deploy/base/ubuntu.Dockerfile'
     # tag file latest, since it is base for others
     container-tag-method: latest
+    docker-root: ntsimulator
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'ntsimulator/ntsim-ng/.*'
@@ -58,7 +58,8 @@
     # image name
     docker-name: 'o-ran-sc/ntsim-ng-manager'
     # dockerfile is in subdir
-    docker-build-args: '--network=host -f deploy/nts-manager/ubuntu.Dockerfile'
+    docker-build-args: '--network=host -f ubuntu.Dockerfile'
+    docker-root: ntsimulator/deploy/nts-manager
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'ntsimulator/deploy/nts-manager/.*'
@@ -71,7 +72,8 @@
     # image name
     docker-name: ' o-ran-sc/nts-ng-o-ran-fh'
     # dockerfile is in subdir
-    docker-build-args: '--network=host -f deploy/o-ran/ubuntu.Dockerfile'
+    docker-build-args: '--network=host -f ubuntu.Dockerfile'
+    docker-root: ntsimulator/deploy/o-ran
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'ntsimulator/deploy/o-ran/.*'
@@ -84,7 +86,8 @@
     # image name
     docker-name: 'o-ran-sc/nts-ng-x-ran'
     # dockerfile is in subdir
-    docker-build-args: '--network=host -f deploy/x-ran/ubuntu.Dockerfile'
+    docker-build-args: '--network=host -f ubuntu.Dockerfile'
+    docker-root: ntsimulator/deploy/x-ran
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'ntsimulator/deploy/x-ran/.*'
