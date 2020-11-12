@@ -1,0 +1,14 @@
+---
+- project:
+    name: ric-plt-libe2ap-project-view
+    project-name: ric-plt-libe2ap
+    views:
+      - project-view
+
+- project:
+    name: ric-plt-libe2ap-info
+    project: ric-plt/libe2ap
+    project-name: ric-plt-libe2ap
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
