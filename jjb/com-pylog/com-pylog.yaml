@@ -30,6 +30,15 @@
     name: pylog-pypi
     # the code is in a subdirectory
     tox-dir: mdclogpy
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'mdclogpy/.*'
+    stream:
+      - master:
+          branch: master
+    jobs:
+      - gerrit-pypi-verify
+      - gerrit-pypi-stage
 
 - project:
     <<: *pylog_common
@@ -43,15 +52,6 @@
     build-node: centos7-docker-2c-8g
     # do not trigger on changes in docs, releases
 
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'mdclogpy/.*'
-    stream:
-      - master:
-          branch: master
-    jobs:
-      - gerrit-pypi-verify
-      - gerrit-pypi-stage
 
 - pylog_python: &pylog_python
     # settings for python builds
