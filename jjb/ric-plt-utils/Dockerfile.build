@@ -1,0 +1,83 @@
+# vi: ts=4 sw=4 noet:
+
+#==================================================================================
+#    Copyright (c) 2020 AT&T Intellectual Property.
+#    Copyright (c) 2020 Nokia
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+#==================================================================================
+
+# Build the munchkin container assuming that the current working directory is the
+# top of the munchkin portion of the shared repo.
+
+# ---- these are global and must be set before the first from directive
+#
+# package versions and locations for easier maintenance
+ARG RMR_VER=4.1.4
+ARG LOG_VER=0.0.4
+ARG FRAME_VER=2.2.0
+
+ARG PROD_URL_BASE=https://packagecloud.io/o-ran-sc/release/packages/debian/stretch/
+ARG BETA_URL_BASE=https://packagecloud.io/o-ran-sc/staging/packages/debian/stretch/
+
+ARG LOG_BASE=${PROD_URL_BASE}
+ARG RMR_BASE=${BETA_URL_BASE}
+ARG FRAME_BASE=${BETA_URL_BASE}
+
+
+# -----------------------------------------------------------------------------------------------------
+FROM ubuntu:18.04
+
+RUN    apt-get update \
+        && apt-get install -y git cmake make g++ wget curl libcurl4-gnutls-dev libcurlpp-dev libcurlpp0
+
+
+# sadly they need to be 'touched' to pull them into each stage
+ARG RMR_VER
+ARG LOG_VER
+ARG FRAME_VER
+ARG FRAME_BASE
+ARG RMR_BASE
+ARG LOG_BASE
+
+WORKDIR /playpen/down
+
+RUN    wget --content-disposition ${LOG_BASE}/mdclog_${LOG_VER}-1_amd64.deb/download.deb \
+        && wget --content-disposition ${LOG_BASE}/mdclog-dev_${LOG_VER}-1_amd64.deb/download.deb  \
+        && wget --content-disposition ${RMR_BASE}/rmr-dev_${RMR_VER}_amd64.deb/download.deb  \
+        && wget --content-disposition ${RMR_BASE}/rmr_${RMR_VER}_amd64.deb/download.deb  \
+        && wget --content-disposition ${FRAME_BASE}/ricxfcpp_${FRAME_VER}_amd64.deb/download.deb  \
+        && wget --content-disposition ${FRAME_BASE}/ricxfcpp-dev_${FRAME_VER}_amd64.deb/download.deb  \
+        && dpkg -i *deb
+
+
+
+WORKDIR /playpen/build
+COPY ./ ./
+
+# build the utility; installs into /usr/local/bin
+#
+RUN    rm -fr .build \
+        && mkdir .build \
+        && cd .build \
+        && cmake .. \
+        && make install \
+        && make test ARGS="-V"
+
+
+
+#RUN mkdir /var/mgxapp
+#COPY xapp_config.json /var/mgxapp/config.json
+
+#WORKDIR /playpen
+#CMD [ "munchkin", "-c", "/var/mgxapp/config.json" ]
