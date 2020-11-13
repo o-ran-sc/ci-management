@@ -7,8 +7,104 @@
 
 - project:
     name: ric-plt-utils-info
-    project: ric-plt/utils
+    project: ric-plt-utils
     project-name: ric-plt-utils
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- utils_common: &utils_common
+    name: utils-common
+    # git repo
+    project: ric-plt/utils
+    # jenkins job name prefix
+    project-name: ric-plt-utils
+    # maven settings file has credentials to archive artifacts
+    mvn-settings: ric-plt-utils-settings
+    # test scripts depend on this name
+    build-dir: $WORKSPACE/mgxapp/build
+    # Use ubuntu base for cmake v3
+    # Use docker variant for packagecloud ruby gem
+    build-node: ubuntu1804-docker-4c-4g
+    # pre-build scripts for CMake templates:
+    # install alien package to build RPMS
+    # install RMR per version file in repo
+    pre-build: !include-raw-escape:
+      - ../shell/install-deb-alien.sh
+      - ./cmake-sonarqube.sh
+    # skip install in cmake-build.sh
+    install: false
+
+# verify every commit
+- project:
+    <<: *utils_common
+    name: utils-verify
+    cmake-opts: -DDEV_PKG=1
+    make-opts: package test ARGS=-V
+    jobs:
+      - gerrit-cmake-verify
+    stream:
+      - master:
+          branch: master
+
+# development library - package and publish
+- project:
+    <<: *utils_common
+    name: ric-plt-utils-dev
+    project-name: '{name}'
+    cmake-opts: -DDEV_PKG=1
+    make-opts: package
+    install-prefix: /usr/local
+    jobs:
+      - gerrit-cmake-packagecloud-stage
+    stream:
+      - master:
+          branch: master
+
+# runtime library - package and publish
+- project:
+    <<: *utils_common
+    name: ric-plt-utils-rt
+    project-name: '{name}'
+    cmake-opts: -DDEV_PKG=0
+    make-opts: package
+    install-prefix: /usr/local
+    jobs:
+      - gerrit-cmake-packagecloud-stage
+    stream:
+      - master:
+          branch: master
+
+# promote deb/rpm from staging to release at PackageCloud.io
+- project:
+    <<: *utils_common
+    name: ric-plt-utils-release
+    # release uses sigul which requires centos
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-packagecloud-release-verify
+      - gerrit-packagecloud-release-merge
+
+# analyze C code and test coverage
+- project:
+    name: utils-sonarqube
+    <<: *utils_common
+    make-opts: test ARGS=-V
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.scanner.force-deprecated-java-version=true
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=mgxapp/src
+        sonar.cfamily.threads=4
+        sonar.cfamily.cache.enabled=false
+        sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
+        sonar.cfamily.gcov.reportsPath=test
+        sonar.c.file.suffixes=-
+        sonar.cpp.file.suffixes=-
+        sonar.objc.file.suffixes=-
+    jobs:
+      - gerrit-cmake-sonarqube
