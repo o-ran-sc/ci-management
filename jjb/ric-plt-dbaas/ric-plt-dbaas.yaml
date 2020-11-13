@@ -13,36 +13,91 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- dbaas_docker_common: &dbaas_docker_common
-    # values apply to all dbaas docker projects
-    name: dbaas-docker-common
+- dbaas_common: &dbaas_common
+    # values apply to all ric-plt/dbaas projects
+    name: dbaas-common
     # git repo
     project: ric-plt/dbaas
     # jenkins job name prefix
     project-name: ric-plt-dbaas
-    # maven settings file has docker credentials
+    # maven settings file has credentials
     mvn-settings: ric-plt-dbaas-settings
 
+# compile code and run tests
 - project:
-    <<: *dbaas_docker_common
-    name: ric-plt-dbaas
-    # image name
-    docker-name: 'o-ran-sc/{name}'
-    # Specify docker file and host network
-    docker-build-args: '--network=host -f docker/Dockerfile.redis'
-    # source of docker tag
-    container-tag-method: yaml-file
+    <<: *dbaas_common
+    name: ric-plt-dbaas-lib
+    pre-build: !include-raw-escape: setup-dbaas-build-deb.sh
+    build-node: ubuntu1804-builder-2c-2g
+    make-opts: -j 2 test
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - gerrit-autotools-verify
     stream:
       - master:
           branch: master
 
-- project:
-    <<: *dbaas_docker_common
-    name: ric-plt-dbaas-release
-    # maven release requires sigul which requires centos
-    # container release requires docker
-    build-node: centos7-docker-2c-8g
+# common settings for building DEB and RPM packages
+- dbaas_pkg_common: &dbaas_pkg_common
+    name: ric-plt-pkg-cmn
+    pre-build: !include-raw-escape: setup-dbaas-build-deb.sh
+    # directory with package files
+    build-dir: pkg
+    # docker image has the package_cloud gem
+    build-node: ubuntu1804-docker-4c-4g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - gerrit-autotools-packagecloud-stage
+    stream:
+      - master:
+          branch: master
+
+# build DEB package files
+- project:
+    <<: *dbaas_common
+    <<: *dbaas_pkg_common
+    name: ric-plt-dbaas-deb
+    project-name: '{name}'
+    configure-opts: --with-deb-dir={build-dir}
+    make-opts: -j4 deb-pkg
+
+# build RPM package files
+- project:
+    <<: *dbaas_common
+    <<: *dbaas_pkg_common
+    name: ric-plt-dbaas-rpm
+    project-name: '{name}'
+    configure-opts: --with-rpm-dir={build-dir}
+    # parallel jobs (option -j) fail on rpm build
+    # https://bugzilla.redhat.com/show_bug.cgi?id=1398405
+    make-opts: rpm-pkg
+
+# analyze C code and test coverage
+- project:
+    <<: *dbaas_common
+    name: ric-plt-lib-dbaas-sonarqube
+    pre-build: !include-raw-escape: setup-dbaas-build-deb.sh
+    build-node: ubuntu1804-docker-4c-4g
+    # set appropriate CXXFLAGS
+    configure-opts: --build=i686-pc-linux-gnu
+    # use all cores
+    make-opts: -j4 all
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=src
+        sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
+        sonar.cfamily.cache.enabled=false
+        sonar.cfamily.gcov.reportsPath=gcov_report
+        sonar.cfamily.threads=4
+    jobs:
+      - gerrit-autotools-sonarqube
+
+- project:
+    <<: *dbaas_common
+    name: ric-plt-dbaas-release
+    jobs:
+      - gerrit-packagecloud-release-verify
+      - gerrit-packagecloud-release-merge
