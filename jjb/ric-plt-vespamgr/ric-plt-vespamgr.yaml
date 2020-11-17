@@ -37,6 +37,35 @@
     stream:
       - master:
           branch: master
+- project:
+    <<: *vespamgr_docker_common
+    name: ric-plt-vespamgr-go-sonarqube
+    # docker-enabled nodes have golang
+    # build script needs ubuntu
+    build-node: ubuntu1804-docker-4c-4g
+    sonar-prescan-script: !include-raw-escape: prescan-ric-plt-vespamgr-ubuntu.sh
+    sonar-project-file: ""
+    # use sonarcloud values from defaults.yaml
+    sonar-properties: |
+        # Required metadata
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        # Encoding
+        sonar.build.sourceEncoding=UTF-8
+        # Language
+        sonar.language=go
+        # Source
+        sonar.sources=.
+        # Unit tests
+        sonar.go.coverage.reportPaths=**/cover.out
+        # Inclusions
+        sonar.inclusions=**/*.go
+        # Exclusions
+        sonar.exclusions=**/*_test.go
+    jobs:
+      - gerrit-sonar-prescan-script
 
 - project:
     <<: *vespamgr_docker_common
@@ -46,3 +75,4 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
+
