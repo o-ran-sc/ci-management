@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "88d38d40_2cd219b4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2020-11-17T15:55:46Z",
+      "side": 1,
+      "message": "Can you rewrite the commit log a bit? There should be a summary line, followed by an empty line and a body text. As a reference please take a look this guide:\nhttps://wiki.o-ran-sc.org/display/ORAN/ORAN+Developer%27s+Guide+to+CI+Resources+and+Processes+at+the+LF#ORANDeveloper\u0027sGuidetoCIResourcesandProcessesattheLF-Writegoodgitcommitmessages",
+      "revId": "f1171119dff43bdbf082cabb86e72be11a44e31a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
