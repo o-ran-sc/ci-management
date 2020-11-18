@@ -37,7 +37,7 @@
     # image name
     docker-name: 'o-ran-sc/{name}'
     # dockerfile is in subdir
-    docker-build-args: -f ci/Dockerfile
+    docker-build-args: '--network=host -f ci/Dockerfile'
     # any tag will do
     container-tag-method: latest
     submodule-disable: true
