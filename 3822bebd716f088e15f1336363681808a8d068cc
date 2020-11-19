@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f89b346_982f64df",
+        "filename": "jjb/it-dep/it-dep.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2020-11-19T15:17:08Z",
+      "side": 1,
+      "message": "Just curious: is there way to work around the timeout issue without network\u003dhost?  i don\u0027t have a huge problem with it, but it might raise security concerns.  on the other hand, if the LF is ok with jobs having this setting then it\u0027s probably ok.",
+      "revId": "3822bebd716f088e15f1336363681808a8d068cc",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
