@@ -1,8 +1,79 @@
 ---
 - project:
+    name: ric-plt-streaming-protobufs-project-view
+    project-name: ric-plt-streaming-protobufs
+    views:
+      - project-view
+
+- project:
     name: ric-plt-streaming-protobufs-info
     project-name: ric-plt-streaming-protobufs
     project: ric-plt/streaming-protobufs
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- streaming-protobufs_docker_common: &streaming-protobufs_docker_common
+    # values apply to all streaming-protobufs docker projects
+    name: streaming-protobufs-docker-common
+    # git repo
+    project: ric-plt/streaming-protobufs
+    # jenkins job name prefix
+    project-name: ric-plt-streaming-protobufs
+    # maven settings file has docker credentials
+    mvn-settings: ric-plt-streaming-protobufs-settings
+
+# runs unit tests on verify only
+- project:
+    <<: *streaming-protobufs_docker_common
+    name: ric-plt-streaming-protobufs
+    # image name, altho it is never pushed
+    docker-name: '{name}'
+    # use host network
+    docker-build-args: '--network=host -f ci/Dockerfile'
+    # image tag; use a fixed value
+    container-tag-method: latest
+    jobs:
+      - gerrit-docker-verify
+    stream:
+      - master:
+          branch: master
+- project:
+    <<: *streaming-protobufs_docker_common
+    name: ric-plt-streaming-protobufs-go-sonarqube
+    # docker-enabled nodes have golang
+    # build script needs ubuntu
+    build-node: ubuntu1804-docker-4c-4g
+    sonar-prescan-script: !include-raw-escape: prescan-ric-plt-streaming-protobufs-ubuntu.sh
+    sonar-project-file: ""
+    # use sonarcloud values from defaults.yaml
+    sonar-properties: |
+        # Required metadata
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        # Encoding
+        sonar.build.sourceEncoding=UTF-8
+        # Language
+        sonar.language=go
+        # Source
+        sonar.sources=.
+        # Unit tests
+        sonar.go.coverage.reportPaths=**/cover.out
+        # Inclusions
+        sonar.inclusions=**/*.go
+        # Exclusions
+        sonar.exclusions=**/*_test.go
+    jobs:
+      - gerrit-sonar-prescan-script
+
+- project:
+    <<: *streaming-protobufs_docker_common
+    name: ric-plt-streaming-protobufs-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
