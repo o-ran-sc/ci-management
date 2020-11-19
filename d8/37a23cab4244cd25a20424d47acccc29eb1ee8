@@ -1,0 +1,9 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Timo Tietavainen <timo.tietavainen@nokia.com>
+Code-Review+1: Abdul Wahid W <abdulwahid.w@nokia.com>
+Code-Review+2: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Thu, 19 Nov 2020 17:45:58 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/5086
+Project: ci-management
+Branch: refs/heads/master
