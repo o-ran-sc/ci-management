@@ -1,0 +1,10 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Henrik Andersson <henrik.b.andersson@est.tech>
+Code-Review+1: Bj�rn Magnusson <bjorn.magnusson@est.tech>
+Code-Review+1: Patrik Buhr <patrik.buhr@est.tech>
+Code-Review+2: Anil Belur <abelur@linuxfoundation.org>
+Submitted-by: Anil Belur <abelur@linuxfoundation.org>
+Submitted-at: Fri, 27 Nov 2020 07:13:07 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/5155
+Project: ci-management
+Branch: refs/heads/master
