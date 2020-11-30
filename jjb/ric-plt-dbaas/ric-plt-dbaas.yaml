@@ -29,7 +29,7 @@
     name: ric-plt-dbaas-lib
     pre-build: !include-raw-escape: setup-dbaas-build-deb.sh
     build-node: ubuntu1804-builder-2c-2g
-    make-opts: -j 2 test
+    make-opts: -j2 all
     jobs:
       - gerrit-autotools-verify
     stream:
