@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7e0c8175_aa7f39f3",
+        "filename": "jjb/ric-plt-dbaas/ric-plt-dbaas.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2020-11-30T10:12:24Z",
+      "side": 1,
+      "message": "Common question, what this change now means? If we remove \"test\" from here does it now mean that we are not anymore running at all any unit tests by the Jenkins verify-master job? We should be able to run unit tests in verify-master job.",
+      "revId": "a2027d8d086dd7b3f76fac19582dd62387109f66",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
