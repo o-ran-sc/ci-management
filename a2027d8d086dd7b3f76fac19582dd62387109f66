@@ -16,6 +16,24 @@
       "revId": "a2027d8d086dd7b3f76fac19582dd62387109f66",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b29491b_9425cee4",
+        "filename": "jjb/ric-plt-dbaas/ric-plt-dbaas.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000676
+      },
+      "writtenOn": "2020-12-03T04:40:57Z",
+      "side": 1,
+      "message": "make options are build parameters so any make target could be passed to job. anyway, based on your comments \"all\" target has been used now to address it.",
+      "parentUuid": "7e0c8175_aa7f39f3",
+      "revId": "a2027d8d086dd7b3f76fac19582dd62387109f66",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
