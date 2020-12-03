@@ -34,6 +34,24 @@
       "revId": "a2027d8d086dd7b3f76fac19582dd62387109f66",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a9bf0346_02667632",
+        "filename": "jjb/ric-plt-dbaas/ric-plt-dbaas.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2020-12-03T05:17:47Z",
+      "side": 1,
+      "message": "I do not understand why you remove \u0027test\u0027 make option from here. Does it now mean that we are not anymore running any unit tests here during Jenkins verify job?\n\nError what we have seen in dbaas repo\u0027s Jenkins verification job logs:\nhttps://jenkins.o-ran-sc.org/job/ric-plt-dbaas-autotools-verify-master/1/console\nmake: *** No rule to make target \u0027test\u0027.  Stop\nCould it be possible that jjb tries to run \"make test\" wrongly under dbaas repo\u0027s root? Instead we should go to dbass repo\u0027s redismodule directory and run there make command, because jjb/ric-plt-dbaas/setup-dbaas-build-deb.sh configures that to be as a build directory for the dbaas source code by \"autoreconf --install\" command.",
+      "parentUuid": "9b29491b_9425cee4",
+      "revId": "a2027d8d086dd7b3f76fac19582dd62387109f66",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
     }
   ]
 }
