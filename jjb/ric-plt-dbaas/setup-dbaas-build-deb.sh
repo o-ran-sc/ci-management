@@ -1,7 +1,9 @@
 #!/bin/bash
 ##############################################################################
 #
-#   Copyright (c) 2020 HCL Technology.
+#   Copyright (c) 2020 AT&T Intellectual Property.
+#   Copyright (c) 2020 Nokia.
+#   Copyright (c) 2020 HCL Technologies
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -20,22 +22,55 @@
 # Installs prerequisites needed to compile & test SDL code
 # and build RPM/DEB packages on a Debian/Ubuntu machine.
 
-echo "--> setup-sdl-build-deb.sh"
+echo "--> setup-dbaas-build-deb.sh"
 
 # Ensure we fail the job if any steps fail.
 set -eux -o pipefail
 
+# NOTE: The valgrind false positive problem could also potentially be solved
+# with valgrind suppression files but that kind of approach may be fragile.
+
 # install prereqs
 sudo apt-get update && sudo apt-get -q -y install \
-  autoconf-archive libhiredis-dev rpm valgrind \
-  libboost-filesystem-dev libboost-program-options-dev libboost-system-dev
+   automake \
+    autoconf \
+    cmake \
+    curl \
+    g++ \
+    gcc \
+    libtool \
+    make \
+    pkg-config \
+    valgrind \
+    lcov
 
-# generate configure script
-cd redismodule
-autoreconf --install
-cd ..
+# Cpputest built-in memory checks generate false positives in valgrind.
+# This is solved by compiling cpputest with memory checking disabled.
+
+mkdir -p cpputest/builddir
+cd cpputest
+
 curl -L https://github.com/cpputest/cpputest/releases/download/v3.8/cpputest-3.8.tar.gz | \
     tar --strip-components=1 -xzf -
-cmake -DCMAKE_BUILD_TYPE=Debug -DBUILD_COVERAGE=ON -DMEMORY_LEAK_DETECTION=OFF .
+cd builddir
+cmake -DMEMORY_LEAK_DETECTION=OFF .. && \
 sudo make install
-echo "--> setup-sdl-build-deb.sh ends"
+cd ../..
+# generate configure script
+cd redismodule
+./autogen.sh && \
+    ./configure && \
+sudo make test
+
+# generate configure script with memory checking disabled.
+
+./autogen.sh && \
+    ./configure --disable-unit-test-memcheck && \
+sudo make test
+cd ..
+
+#Copy configure to $WORKSPACE
+
+cp -r cpputest/* .
+
+echo "--> setup-dbaas-build-deb.sh ends"
