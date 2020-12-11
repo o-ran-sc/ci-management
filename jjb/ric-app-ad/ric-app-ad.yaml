@@ -5,10 +5,90 @@
     views:
       - project-view
 
-- project:
-    name: ric-app-ad-info
+- ad_common: &ad_common
+    # required even though overridden everywhere
+    name: ad-common
+    # git repo
     project: ric-app/ad
+    # jenkins job name prefix
     project-name: ric-app-ad
+    # maven settings file has docker credentials
+    mvn-settings: ric-app-ad-settings
+
+- project:
+    <<: *ad_common
+    name: ric-app-ad-info
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- project:
+    <<: *ad_common
+    name: ric-app-ad-docker
+    # image name
+    docker-name: o-ran-sc/ric-app-ad
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use host network
+    docker-build-args: '--network=host'
+    build-node: ubuntu1804-docker-4c-4g
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *ad_common
+    name: ric-app-ad-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- ad_python: &ad_python
+    # settings for python builds
+    name: ad-python
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    pre-build-script: !include-raw-escape:
+      - ../shell/install-deb-rmr.sh
+    # impt for verify and tox etc
+    python-version: python3
+    # no need to verify docs
+    tox-envs: code,flake8
+
+- project:
+    <<: *ad_common
+    <<: *ad_python
+    name: ric-app-ad-py-verify
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
+    jobs:
+      - gerrit-tox-verify
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *ad_common
+    <<: *ad_python
+    name: ric-app-ad-sonarqube
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=ad
+        sonar.python.coverage.reportPaths=coverage.xml
+    jobs:
+      - gerrit-tox-sonarqube
