@@ -33,6 +33,7 @@
     # no image needs to be pushed, so there is no merge job.
     name: it-dep-helm
     # jenkins job name prefix
+    build-timeout: 120
     project-name: '{name}'
     # image name
     docker-name: 'o-ran-sc/{name}'
