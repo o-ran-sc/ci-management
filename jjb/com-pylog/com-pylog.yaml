@@ -72,11 +72,10 @@
     name: pylog-pypi-release
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
-        - compare-type: REG_EXP
-          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
+      - compare-type: REG_EXP
+        pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
     jobs:
       - '{project-name}-gerrit-pypi-release-jobs'
-    jobs:
       - gerrit-tox-verify
     stream:
       - master:
