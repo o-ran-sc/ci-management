@@ -37,6 +37,29 @@
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
+    name: nonrtric-controlpanel-frontend
+    # image name
+    docker-name: 'o-ran-sc/nonrtric-controlpanel'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: 'webapp-frontend/'
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'webapp-frontend/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *portal_nonrtric_controlpanel_common
     name: portal-nonrtric-controlpanel-release
     # maven release requires sigul which requires centos
     # container release requires docker
