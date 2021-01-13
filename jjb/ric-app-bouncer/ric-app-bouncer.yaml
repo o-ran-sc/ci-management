@@ -1,0 +1,14 @@
+---
+- project:
+    name: ric-app-bouncer-project-view
+    project-name: ric-app-bouncer
+    views:
+      - project-view
+
+- project:
+    name: ric-app-bouncer-info
+    project: ric-app/bouncer
+    project-name: ric-app-bouncer
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
