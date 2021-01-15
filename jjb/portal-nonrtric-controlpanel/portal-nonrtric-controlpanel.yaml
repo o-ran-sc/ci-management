@@ -29,6 +29,10 @@
 - project:
     <<: *portal_nonrtric_controlpanel_common
     mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    # do not trigger on changes in directory webapp-frontend/
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!webapp-frontend\/|\/COMMIT_MSG).)*$'
     jobs:
       - "{project-name}-gerrit-maven-docker-jobs"
     stream:
