@@ -34,8 +34,8 @@
     stream:
       - master:
           branch: master
-      - bronze:
-          branch: bronze
+      - cherry:
+          branch: cherry
 
 # nonrtric:policy-agent
 # Maven artifacts for nonrtric-policy-agent
@@ -57,8 +57,8 @@
     stream:
       - master:
           branch: master
-      - bronze:
-          branch: bronze
+      - cherry:
+          branch: cherry
 
 # nonrtric:sdnc-a1-controller
 # Maven artifacts for nonrtric-sdnc-a1-controller
@@ -80,8 +80,8 @@
     stream:
       - master:
           branch: master
-      - bronze:
-          branch: bronze
+      - cherry:
+          branch: cherry
 
 # nonrtric:enrichment-coordinator-service
 # Maven artifacts for nonrtric-enrichment-coordinator-service
@@ -103,6 +103,8 @@
     stream:
       - master:
           branch: master
+      - cherry:
+          branch: cherry
 
 # nonrtric:r-app-catalogue
 # Maven artifacts for r-app-catalogue
@@ -124,6 +126,8 @@
     stream:
       - master:
           branch: master
+      - cherry:
+          branch: cherry
 
 - project:
     <<: *nonrtric_jdk_common
