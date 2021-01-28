@@ -38,6 +38,8 @@
     stream:
       - master:
           branch: master
+      - cherry:
+          branch: cherry
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
