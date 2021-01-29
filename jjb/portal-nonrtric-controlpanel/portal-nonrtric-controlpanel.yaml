@@ -29,10 +29,10 @@
 - project:
     <<: *portal_nonrtric_controlpanel_common
     mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
-    # do not trigger on changes in directory webapp-frontend/
+    # do not trigger on changes in directories webapp-frontend/ and nonrtric-gateway/
     gerrit_trigger_file_paths:
         - compare-type: REG_EXP
-          pattern: '^((?!webapp-frontend\/|\/COMMIT_MSG).)*$'
+          pattern: '^((?!webapp-frontend\/|nonrtric-gateway\/|\/COMMIT_MSG).)*$'
     jobs:
       - "{project-name}-gerrit-maven-docker-jobs"
     stream:
@@ -89,6 +89,7 @@
     <<: *portal_nonrtric_controlpanel_common
     name: portal-nonrtric-controlpanel-gateway
     project-name: '{name}'
+    mvn-params: '-f nonrtric-gateway'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'nonrtric-gateway/.*'
@@ -106,6 +107,7 @@
     <<: *portal_nonrtric_controlpanel_common
     name: portal-nonrtric-controlpanel-gateway-docker
     project-name: '{name}'
+    mvn-params: '-P docker -f nonrtric-gateway'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'nonrtric-gateway/.*'
