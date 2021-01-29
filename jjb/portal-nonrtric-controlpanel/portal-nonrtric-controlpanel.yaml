@@ -89,6 +89,7 @@
     <<: *portal_nonrtric_controlpanel_common
     name: portal-nonrtric-controlpanel-gateway
     project-name: '{name}'
+    mvn-opts: '-Ddocker.skip=true'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'nonrtric-gateway/.*'
