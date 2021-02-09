@@ -1,0 +1,88 @@
+---
+- project:
+    name: ric-plt-libe2ap-project-view
+    project-name: ric-plt-libe2ap
+    views:
+      - project-view
+
+- project:
+    name: ric-plt-libe2ap-info
+    project: ric-plt/libe2ap
+    project-name: ric-plt-libe2ap
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- libe2ap_common: &libe2ap_common
+    name: libe2ap-common
+    # git repo
+    project: ric-plt/libe2ap
+    # jenkins job name prefix
+    project-name: ric-plt-libe2ap
+    # maven settings file has credentials to archive artifacts
+    mvn-settings: ric-plt-libe2ap-settings
+    # test scripts depend on this name
+    build-dir: $WORKSPACE/build
+    # Use ubuntu base for cmake v3
+    # Use docker variant for packagecloud ruby gem
+    build-node: ubuntu1804-docker-4c-4g
+    # pre-build scripts for CMake templates:
+    # install alien package to build RPMS
+    # install RMR per version file in repo
+    pre-build: !include-raw-escape:
+      - ../shell/install-deb-alien.sh
+      - ../shell/install-deb-rmr.sh
+    # skip install in cmake-build.sh
+    install: false
+
+# verify every commit
+- project:
+    <<: *libe2ap_common
+    name: libe2ap-verify
+    cmake-opts: -DDEV_PKG=1
+    make-opts: package test ARGS=-V
+    jobs:
+      - gerrit-cmake-verify
+    stream:
+      - master:
+          branch: master
+
+# development library - package and publish
+- project:
+    <<: *libe2ap_common
+    name: ric-plt-libe2ap-dev
+    project-name: '{name}'
+    cmake-opts: -DDEV_PKG=1
+    make-opts: package
+    install-prefix: /usr/local
+    jobs:
+      - gerrit-cmake-packagecloud-stage
+    stream:
+      - master:
+          branch: master
+
+# runtime library - package and publish
+- project:
+    <<: *libe2ap_common
+    name: ric-plt-libe2ap-rt
+    project-name: '{name}'
+    cmake-opts: -DDEV_PKG=0
+    make-opts: package
+    install-prefix: /usr/local
+    jobs:
+      - gerrit-cmake-packagecloud-stage
+    stream:
+      - master:
+          branch: master
+
+# promote deb/rpm from staging to release at PackageCloud.io
+- project:
+    <<: *libe2ap_common
+    name: ric-plt-libe2ap-release
+    # release uses sigul which requires centos
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-packagecloud-release-verify
+      - gerrit-packagecloud-release-merge
+
+# no sonar jobs as the library contains only generated code
