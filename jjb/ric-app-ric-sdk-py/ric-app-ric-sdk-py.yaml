@@ -1,0 +1,14 @@
+---
+- project:
+    name: ric-app-ric-sdk-py-project-view
+    project-name: ric-app-ric-sdk-py
+    views:
+      - project-view
+
+- project:
+    name: ric-app-ric-sdk-py-info
+    project: ric-app/ric-sdk-py
+    project-name: ric-app-ric-sdk-py
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
