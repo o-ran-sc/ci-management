@@ -58,7 +58,7 @@
     # image name
     docker-name: 'o-ran-sc/ntsim-ng-manager'
     # dockerfile is in subdir
-    docker-build-args: '--network=host -f ubuntu.Dockerfile'
+    docker-build-args: "--network=host -f Dockerfile --build-arg NTS_BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
     docker-root: ntsimulator/deploy/nts-manager
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -72,7 +72,7 @@
     # image name
     docker-name: ' o-ran-sc/nts-ng-o-ran-fh'
     # dockerfile is in subdir
-    docker-build-args: '--network=host -f ubuntu.Dockerfile'
+    docker-build-args: "--network=host -f Dockerfile --build-arg NTS_BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
     docker-root: ntsimulator/deploy/o-ran
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -86,11 +86,39 @@
     # image name
     docker-name: 'o-ran-sc/nts-ng-x-ran'
     # dockerfile is in subdir
-    docker-build-args: '--network=host -f ubuntu.Dockerfile'
+    docker-build-args: "--network=host -f Dockerfile --build-arg NTS_BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
     docker-root: ntsimulator/deploy/x-ran
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'ntsimulator/deploy/x-ran/.*'
+
+- project:
+    <<: *sim_o1_interface_docker
+    name: sim-o1-interface-ntsim-ng-o-ran-ru-fh
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: ' o-ran-sc/nts-ng-o-ran-ru-fh'
+    # dockerfile is in subdir
+    docker-build-args: "--network=host -f Dockerfile --build-arg NTS_BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+    docker-root: ntsimulator/deploy/o-ran-ru-fh
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ntsimulator/deploy/o-ran-ru-fh/.*'
+
+- project:
+    <<: *sim_o1_interface_docker
+    name: sim-o1-interface-ntsim-ng-o-ran-du
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: ' o-ran-sc/nts-ng-o-ran-du'
+    # dockerfile is in subdir
+    docker-build-args: "--network=host -f Dockerfile --build-arg NTS_BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+    docker-root: ntsimulator/deploy/o-ran-du
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ntsimulator/deploy/o-ran-du/.*'
 
 - project:
     <<: *sim_o1_interface_docker
