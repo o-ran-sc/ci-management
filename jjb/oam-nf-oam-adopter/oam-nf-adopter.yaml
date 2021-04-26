@@ -1,0 +1,80 @@
+---
+- project:
+    name: oam-nf-oam-adopter-project-view
+    project-name: oam-nf-oam-adopter
+    views:
+      - project-view
+
+- project:
+    name: oam-nf-oam-adopter-info
+    project: oam/nf-oam-adopter
+    project-name: oam-nf-oam-adopter
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- oam-nf-oam-adopter: &oam-nf-oam-adopter
+   name: oam-nf-oam-adopter
+   project: oam/nf-oam-adopter
+   project-name: oam-nf-oam-adopter
+   java-version: openjdk11
+   mvn-version: "mvn36"
+   maven-version: "mvn36"
+   mvn-settings: 'nf-oam-adopter-settings'
+   build-node: centos7-builder-1c-1g
+
+- project:
+    <<: *oam-nf-oam-adopter
+    name: oam-nf-oam-adopter-clm
+    jobs:
+      - gerrit-maven-clm
+    nexus-iq-namespace: 'oran-'
+    branch: 'master'
+
+- project:
+    <<: *oam-nf-oam-adopter
+    jobs:
+      - gerrit-maven-verify
+      - gerrit-maven-merge:
+          mvn-params: '-P docker'
+      - gerrit-maven-stage:
+          sign-artifacts: true
+          build-node: centos7-builder-1c-1g
+          maven-versions-plugin: true
+      - gerrit-maven-docker-stage:
+          build-node: centos7-builder-1c-1g
+          maven-versions-plugin: true
+          mvn-params: '-P docker'
+          container-public-registry: nexus3.o-ran-sc.org:10001
+          container-staging-registry: nexus3.o-ran-sc.org:10004
+      - '{project-name}-gerrit-release-jobs':
+          build-node: centos7-builder-1c-1g
+    stream:
+      - 'master':
+          branch: 'master'
+    files: '**'
+    archive-artifacts: ''
+
+- project:
+    <<: *oam-nf-oam-adopter
+    name: oam-nf-oam-adopter-sonar
+    jobs:
+      - gerrit-maven-sonar
+    sonarcloud: true
+    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    sonarcloud-api-token: '{sonarcloud_api_token}'
+    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
+    cron: '@daily'
+    branch: 'master'
+    mvn-goals: 'clean install'
+    mvn-opts: '-Xmx1024m -XX:MaxPermSize=256m'
+    mvn-params: '-Ddocker.skip=true'
+
+- project:
+    <<: *oam-nf-oam-adopter
+    name: oam-nf-oam-adopter-whitesource
+    jobs:
+      - gerrit-whitesource-scan
+    wss-product-name: nf-oam-adopter
+    mvn-clean-install: true
+    branch: master
