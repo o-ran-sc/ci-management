@@ -1,0 +1,94 @@
+---
+- project:
+    name: oam-nf-oam-adopter-project-view
+    project-name: oam-nf-oam-adopter
+    views:
+      - project-view
+
+- project:
+    name: oam-nf-oam-adopter-info
+    project: oam/nf-oam-adopter
+    project-name: oam-nf-oam-adopter
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- project:
+    name: oam-nf-oam-adopter-clm
+    project: oam/nf-oam-adopter
+    project-name: oam-nf-oam-adopter
+    java-version: openjdk11
+    mvn-version: "mvn36"
+    maven-version: "mvn36"
+    jobs:
+      - gerrit-maven-clm
+    nexus-iq-namespace: 'oran-'
+    branch: 'master'
+    mvn-settings: 'nf-oam-adopter-settings'
+    build-node: centos7-builder-1c-1g
+
+- project:
+    name: oam-nf-oam-adopter
+    project: oam/nf-oam-adopter
+    project-name: oam-nf-oam-adopter
+    java-version: openjdk11
+    mvn-version: "mvn36"
+    maven-version: "mvn36"
+    jobs:
+      - gerrit-maven-verify
+      - gerrit-maven-merge:
+          mvn-params: '-P docker'
+      - gerrit-maven-stage:
+          sign-artifacts: true
+          build-node: centos7-builder-1c-1g
+          maven-versions-plugin: true
+      - gerrit-maven-docker-stage:
+          build-node: centos7-builder-1c-1g
+          maven-versions-plugin: true
+          mvn-params: '-P docker'
+          container-public-registry: nexus3.o-ran-sc.org:10001
+          container-staging-registry: nexus3.o-ran-sc.org:10004
+      - '{project-name}-gerrit-release-jobs':
+          build-node: centos7-builder-1c-1g
+    stream:
+      - 'master':
+          branch: 'master'
+    mvn-settings: 'nf-oam-adopter-settings'
+    files: '**'
+    archive-artifacts: ''
+    build-node: centos7-builder-1c-1g
+
+- project:
+    name: oam-nf-oam-adopter-sonar
+    project: oam/nf-oam-adopter
+    project-name: oam-nf-oam-adopter
+    java-version: openjdk11
+    mvn-version: "mvn36"
+    maven-version: "mvn36"
+    jobs:
+      - gerrit-maven-sonar
+    sonarcloud: true
+    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    sonarcloud-api-token: '{sonarcloud_api_token}'
+    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
+    sonar-mvn-goal: '{sonar_mvn_goal}'
+    cron: '@daily'
+    build-node: centos7-builder-1c-1g
+    branch: 'master'
+    mvn-settings: 'nf-oam-adopter-settings'
+    mvn-goals: 'clean install'
+    mvn-opts: '-Xmx1024m -XX:MaxPermSize=256m'
+
+- project:
+    name: oam-nf-oam-adopter-whitesource
+    project: oam/nf-oam-adopter
+    project-name: oam-nf-oam-adopter
+    jobs:
+      - gerrit-whitesource-scan
+    java-version: openjdk11
+    mvn-version: 'mvn36'
+    mvn-settings: 'nf-oam-adopter-settings'
+    wss-product-name: nf-oam-adopter
+    mvn-clean-install: true
+    branch: master
+    build-node: centos7-builder-1c-1g
