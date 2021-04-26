@@ -1,0 +1,14 @@
+---
+- project:
+    name: oam-nf-oam-adopter-project-view
+    project-name: oam-nf-oam-adopter
+    views:
+      - project-view
+
+- project:
+    name: oam-nf-oam-adopter-info
+    project: oam/nf-oam-adopter
+    project-name: oam-nf-oam-adopter
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
