@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "667f36b7_df141b6e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000436
+      },
+      "writtenOn": "2021-04-29T08:24:54Z",
+      "side": 1,
+      "message": "Hi, pom is located in different folder than the root one. I think this should solve the issue. \nLet me know if this wrong, thanks.",
+      "revId": "5d358f0c925735da39ac58177128ee80f8992374",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
