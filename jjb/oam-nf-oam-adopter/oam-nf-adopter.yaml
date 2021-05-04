@@ -19,6 +19,7 @@
    project-name: oam-nf-oam-adopter
    java-version: openjdk11
    mvn-pom: 'ves-nf-oam-adopter/pom.xml'
+   mvn-params: '-f ves-nf-oam-adopter/pom.xml'
    mvn-version: "mvn36"
    maven-version: "mvn36"
    mvn-settings: 'oam-nf-oam-adopter-settings'
