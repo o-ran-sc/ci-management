@@ -38,7 +38,7 @@
     jobs:
       - gerrit-maven-verify
       - gerrit-maven-merge:
-          mvn-params: '-P docker'
+          mvn-params: '-f ves-nf-oam-adopter/pom.xml -P docker'
       - gerrit-maven-stage:
           sign-artifacts: true
           build-node: centos7-builder-1c-1g
@@ -46,7 +46,7 @@
       - gerrit-maven-docker-stage:
           build-node: centos7-builder-1c-1g
           maven-versions-plugin: true
-          mvn-params: '-P docker'
+          mvn-params: '-f ves-nf-oam-adopter/pom.xml -P docker'
           container-public-registry: nexus3.o-ran-sc.org:10001
           container-staging-registry: nexus3.o-ran-sc.org:10004
       - '{project-name}-gerrit-release-jobs':
@@ -70,7 +70,7 @@
     branch: 'master'
     mvn-goals: 'clean install'
     mvn-opts: '-Xmx1024m -XX:MaxPermSize=256m'
-    mvn-params: '-Ddocker.skip=true'
+    mvn-params: '-f ves-nf-oam-adopter/pom.xml -Ddocker.skip=true'
 
 - project:
     <<: *oam-nf-oam-adopter
