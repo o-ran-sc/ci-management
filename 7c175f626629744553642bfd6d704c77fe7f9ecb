@@ -16,6 +16,23 @@
       "message": "New job was verified in the sandbox Jenkins: https://jenkins.o-ran-sc.org/sandbox/view/All/job/sim-o1-interface-ntsim-ng-blank-docker-verify-master/5/",
       "revId": "7c175f626629744553642bfd6d704c77fe7f9ecb",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98484ea5_ce3bf5b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000060
+      },
+      "writtenOn": "2021-05-11T12:44:43Z",
+      "side": 1,
+      "message": "thanks for the new feature and jenkins - going to use it in INT project....",
+      "revId": "7c175f626629744553642bfd6d704c77fe7f9ecb",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
