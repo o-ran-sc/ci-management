@@ -23,7 +23,7 @@
    mvn-version: "mvn36"
    maven-version: "mvn36"
    mvn-settings: 'oam-nf-oam-adopter-settings'
-   build-node: centos7-builder-1c-1g
+   build-node: centos7-docker-2c-8g
 
 - project:
     <<: *oam-nf-oam-adopter
@@ -41,16 +41,16 @@
           mvn-params: '-f ves-nf-oam-adopter/pom.xml -P docker'
       - gerrit-maven-stage:
           sign-artifacts: true
-          build-node: centos7-builder-1c-1g
+          build-node: centos7-docker-2c-8g
           maven-versions-plugin: true
       - gerrit-maven-docker-stage:
-          build-node: centos7-builder-1c-1g
+          build-node: centos7-docker-2c-8g
           maven-versions-plugin: true
           mvn-params: '-f ves-nf-oam-adopter/pom.xml -P docker'
           container-public-registry: nexus3.o-ran-sc.org:10001
           container-staging-registry: nexus3.o-ran-sc.org:10004
       - '{project-name}-gerrit-release-jobs':
-          build-node: centos7-builder-1c-1g
+          build-node: centos7-docker-2c-8g
     stream:
       - 'master':
           branch: 'master'
