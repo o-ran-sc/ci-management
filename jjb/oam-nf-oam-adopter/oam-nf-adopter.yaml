@@ -71,12 +71,3 @@
     mvn-goals: 'clean install'
     mvn-opts: '-Xmx1024m -XX:MaxPermSize=256m'
     mvn-params: '-f ves-nf-oam-adopter/pom.xml -Ddocker.skip=true'
-
-- project:
-    <<: *oam-nf-oam-adopter
-    name: oam-nf-oam-adopter-whitesource
-    jobs:
-      - gerrit-whitesource-scan
-    wss-product-name: nf-oam-adopter
-    mvn-clean-install: true
-    branch: master
