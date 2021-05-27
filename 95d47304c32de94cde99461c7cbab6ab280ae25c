@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3636f1a4_9d6832e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000436
+      },
+      "writtenOn": "2021-05-27T09:31:24Z",
+      "side": 1,
+      "message": "configuration removed, would you take care of remove the jobs?",
+      "revId": "95d47304c32de94cde99461c7cbab6ab280ae25c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
