@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec428a7d_6dc7bc64",
+        "filename": "jjb/oam-nf-oam-adopter/oam-nf-adopter.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2021-05-27T07:41:42Z",
+      "side": 1,
+      "message": "Does o-ran have ws license? Jobs are added with missing config",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 18
+      },
+      "revId": "9d07379a59862bc5527f3568ac05e872c2c6c14e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
