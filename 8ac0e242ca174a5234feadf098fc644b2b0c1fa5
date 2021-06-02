@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric-o-ru-closed-loop-recovery*",
       "revId": "8ac0e242ca174a5234feadf098fc644b2b0c1fa5",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39e7da39_1912be3e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2021-06-02T14:51:24Z",
+      "side": 1,
+      "message": "Link to successful verification job: https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-o-ru-closed-loop-recovery-docker-verify-master/4/\n\nLink to failed merge job: https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-o-ru-closed-loop-recovery-docker-merge-master/3/\nIf ailed with the following error: \nunauthorized: access to the requested resource is not authorized\n\nWhat needs to be done for this?",
+      "revId": "8ac0e242ca174a5234feadf098fc644b2b0c1fa5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
