@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2078f68e_3ce2477f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2021-06-02T14:20:24Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-o-ru-closed-loop-recovery*",
+      "revId": "8ac0e242ca174a5234feadf098fc644b2b0c1fa5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
