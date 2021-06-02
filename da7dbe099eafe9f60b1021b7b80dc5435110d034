@@ -67,6 +67,23 @@
       "message": "jjb-deploy o-ru-closed-loop-recovery",
       "revId": "da7dbe099eafe9f60b1021b7b80dc5435110d034",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "828635f6_f2d776fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2021-06-02T10:49:28Z",
+      "side": 1,
+      "message": "jjb-deploy o-ru-closed-loop-recovery*",
+      "revId": "da7dbe099eafe9f60b1021b7b80dc5435110d034",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
