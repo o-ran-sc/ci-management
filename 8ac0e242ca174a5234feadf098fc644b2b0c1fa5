@@ -51,6 +51,23 @@
       "parentUuid": "39e7da39_1912be3e",
       "revId": "8ac0e242ca174a5234feadf098fc644b2b0c1fa5",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d09d0416_939ec491",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2021-06-03T08:37:58Z",
+      "side": 1,
+      "message": "According to this ticket, https://jira.linuxfoundation.org/plugins/servlet/theme/portal/2/IT-22190, the failure is expected.\n\n",
+      "revId": "8ac0e242ca174a5234feadf098fc644b2b0c1fa5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
