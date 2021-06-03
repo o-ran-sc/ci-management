@@ -98,6 +98,8 @@
 - project:
     <<: *sdl_common
     name: ric-plt-sdl-release
+    # release uses sigul which requires centos
+    build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-packagecloud-release-verify
       - gerrit-packagecloud-release-merge
