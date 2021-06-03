@@ -67,8 +67,8 @@
 
 # promote package from test.pypi.org to pypi.org
 - project:
-    <<: *pylog_common
     <<: *pylog_python
+    <<: *pylog_common
     name: pylog-pypi-release
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
