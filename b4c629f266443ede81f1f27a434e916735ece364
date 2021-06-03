@@ -16,6 +16,23 @@
       "message": "For review. SDL release Jenkins jobs were failed and it seems that the reason was that release jobs were ran in Ubuntu based Jenkins slave node and sigul is not working in there, it needs Centos. To fix it I defined explicit build node \u0027centos7-builder-1c-1g\u0027. I have seen some other JJB files where they have defined explicit build node to de a docker node \u0027centos7-docker-2c-8g\u0027. Not sure what definitions is preferable, I selected \u0027centos7-builder-1c-1g\u0027 but I can change it if you like docker more.\nThanks,\nTimo",
       "revId": "b4c629f266443ede81f1f27a434e916735ece364",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a29fa948_74a71a6b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-06-03T14:41:44Z",
+      "side": 1,
+      "message": "If the change looks good, can you merge it? I do not have access rights to do that, thanks.",
+      "revId": "b4c629f266443ede81f1f27a434e916735ece364",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
