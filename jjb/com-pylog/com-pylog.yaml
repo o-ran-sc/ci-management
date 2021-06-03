@@ -37,8 +37,8 @@
       - master:
           branch: master
     jobs:
-      - gerrit-pypi-verify
       - gerrit-pypi-stage
+
 
 - project:
     <<: *pylog_common
@@ -81,6 +81,18 @@
       - master:
           branch: master
 
+# This job group contains the recommended jobs that should be deployed for
+# a Gerrit-based Python project to test, build and deploy a package.
+- project:
+    name: com-pylog-pypi
+    <<: *pylog_common
+    <<: *pylog_python
+    jobs:
+      - '{project-name}-gerrit-pypi-jobs'
+    stream:
+      - master:
+          branch: master
+
 - project:
     <<: *pylog_common
     <<: *pylog_python
@@ -96,3 +108,4 @@
         sonar.python.coverage.reportPaths=$TOX_DIR/coverage.xml
     jobs:
       - gerrit-tox-sonarqube
+
