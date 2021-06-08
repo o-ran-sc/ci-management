@@ -41,6 +41,8 @@
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'webapp-frontend/.*'
+      - compare-type: REG_EXP
+        pattern: 'docker-compose/.*'
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
@@ -96,6 +98,8 @@
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'nonrtric-gateway/.*'
+      - compare-type: REG_EXP
+        pattern: 'docker-compose/.*'
     build-node: ubuntu1804-docker-4c-4g
     jobs:
       - gerrit-maven-docker-verify
