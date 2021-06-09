@@ -19,7 +19,7 @@
    project-name: oam-nf-oam-adopter
    java-version: openjdk11
    mvn-pom: 'ves-nf-oam-adopter/pom.xml'
-   mvn-params: '-f ves-nf-oam-adopter/pom.xml'
+   mvn-params: '-f ves-nf-oam-adopter/pom.xml -P docker -Dbuild.number=${{BUILD_NUMBER}}'
    mvn-version: "mvn36"
    maven-version: "mvn36"
    mvn-settings: 'oam-nf-oam-adopter-settings'
@@ -38,11 +38,9 @@
     jobs:
       - gerrit-maven-docker-verify
       - gerrit-maven-docker-merge:
-          mvn-params: '-f ves-nf-oam-adopter/pom.xml -P docker'
       - gerrit-maven-docker-stage:
           build-node: centos7-docker-2c-8g
           maven-versions-plugin: true
-          mvn-params: '-f ves-nf-oam-adopter/pom.xml -P docker'
           container-public-registry: nexus3.o-ran-sc.org:10001
           container-staging-registry: nexus3.o-ran-sc.org:10004
       - '{project-name}-gerrit-release-jobs':
