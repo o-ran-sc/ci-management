@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24e842d3_a5c7a3b4",
+        "filename": "jjb/oam-nf-oam-adopter/oam-nf-adopter.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2021-06-14T16:54:29Z",
+      "side": 1,
+      "message": "You might want to make sure this job runs on build-node: centos7-docker-2c-8g\nThis way, the SIGUL signing part wont fail.",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 27
+      },
+      "revId": "b76f586d015630784b42c1c02dbc7e4d79b29d62",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
