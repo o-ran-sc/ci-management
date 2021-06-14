@@ -38,8 +38,9 @@
     jobs:
       - gerrit-maven-docker-verify
       - gerrit-maven-docker-merge:
+      - gerrit-maven-stage:
+          maven-versions-plugin: true
       - gerrit-maven-docker-stage:
-          build-node: centos7-docker-2c-8g
           maven-versions-plugin: true
           container-public-registry: nexus3.o-ran-sc.org:10001
           container-staging-registry: nexus3.o-ran-sc.org:10004
