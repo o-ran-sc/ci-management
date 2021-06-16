@@ -129,6 +129,25 @@
       - cherry:
           branch: cherry
 
+# nonrtric:helm-manager
+# Docker image for helm-manager
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-helm-manager
+    project-name: '{name}'
+    mvn-params: '-f helm-manager'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'helm-manager/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
+
 - project:
     <<: *nonrtric_jdk_common
     name: nonrtric-o-ru-closed-loop-recovery
