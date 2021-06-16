@@ -1,0 +1,8 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Henrik Andersson <henrik.b.andersson@est.tech>
+Code-Review+2: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Wed, 16 Jun 2021 17:39:25 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/6328
+Project: ci-management
+Branch: refs/heads/master
