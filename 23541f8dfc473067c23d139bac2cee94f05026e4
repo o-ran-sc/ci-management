@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric-helm-manager-maven-docker-verify-master-mvn36-openjdk11",
       "revId": "23541f8dfc473067c23d139bac2cee94f05026e4",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc6ffb4d_f9f123a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000128
+      },
+      "writtenOn": "2021-06-16T14:22:08Z",
+      "side": 1,
+      "message": "Successful run in Jenkins sandbox:\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-helm-manager-maven-docker-verify-master-mvn36-openjdk11/5/",
+      "revId": "23541f8dfc473067c23d139bac2cee94f05026e4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
