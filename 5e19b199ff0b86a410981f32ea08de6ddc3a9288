@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "acbd3739_07a84aa5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000404
+      },
+      "writtenOn": "2021-06-18T06:53:10Z",
+      "side": 1,
+      "message": "In order to merge https://gerrit.o-ran-sc.org/r/c/ric-plt/xapp-frame-py/+/4880, jjb needs to be modified. Please confirm.",
+      "revId": "5e19b199ff0b86a410981f32ea08de6ddc3a9288",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
