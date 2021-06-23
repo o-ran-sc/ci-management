@@ -23,6 +23,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
+# create docker image when source changes
 - project:
     <<: *hw-go_common
     name: ric-app-hw-go
@@ -32,9 +33,22 @@
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
     docker-build-args: '--network=host'
+    # trigger on any change other than a file in ./docs
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!docs/|\/COMMIT_MSG).)*$'
     jobs:
       - '{project-name}-gerrit-docker-jobs'
     stream:
       - master:
           branch: master
 
+# push nexus image from staging to release
+- project:
+    <<: *hw-go_common
+    name: ric-app-hw-go-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
