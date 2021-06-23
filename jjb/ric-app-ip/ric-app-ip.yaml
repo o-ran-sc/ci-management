@@ -1,0 +1,94 @@
+---
+- project:
+    name: ric-app-ip-project-view
+    project-name: ric-app-ip
+    views:
+      - project-view
+
+- ip_common: &ip_common
+    # required even though overridden everywhere
+    name: ip-common
+    # git repo
+    project: ric-app/ip
+    # jenkins job name prefix
+    project-name: ric-app-ip
+    # maven settings file has docker credentials
+    mvn-settings: ric-app-ip-settings
+
+- project:
+    <<: *ip_common
+    name: ric-app-ip-info
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- project:
+    <<: *ip_common
+    name: ric-app-ip-docker
+    # image name
+    docker-name: o-ran-sc/ric-app-ip
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use host network
+    docker-build-args: '--network=host'
+    build-node: ubuntu1804-docker-4c-4g
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *ip_common
+    name: ric-app-ip-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- ip_python: &ip_python
+    # settings for python builds
+    name: ip-python
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    pre-build-script: !include-raw-escape:
+      - ../shell/install-deb-rmr.sh
+    # impt for verify and tox etc
+    python-version: python3
+    # no need to verify docs
+    tox-envs: code,flake8
+
+- project:
+    <<: *ip_common
+    <<: *ip_python
+    name: ric-app-ip-py-verify
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
+    jobs:
+      - gerrit-tox-verify
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *ip_common
+    <<: *ip_python
+    name: ric-app-ip-sonarqube
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=ip
+        sonar.python.coverage.reportPaths=coverage.xml
+    jobs:
+      - gerrit-tox-sonarqube
