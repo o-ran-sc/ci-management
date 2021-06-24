@@ -1,32 +1,32 @@
 ---
 - project:
-    name: ric-app-ip-project-view
-    project-name: ric-app-ip
+    name: ric-app-lp-project-view
+    project-name: ric-app-lp
     views:
       - project-view
 
-- ip_common: &ip_common
+- lp_common: &lp_common
     # required even though overridden everywhere
-    name: ip-common
+    name: lp-common
     # git repo
-    project: ric-app/ip
+    project: ric-app/lp
     # jenkins job name prefix
-    project-name: ric-app-ip
+    project-name: ric-app-lp
     # maven settings file has docker credentials
-    mvn-settings: ric-app-ip-settings
+    mvn-settings: ric-app-lp-settings
 
 - project:
-    <<: *ip_common
-    name: ric-app-ip-info
+    <<: *lp_common
+    name: ric-app-lp-info
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
 
 - project:
-    <<: *ip_common
-    name: ric-app-ip-docker
+    <<: *lp_common
+    name: ric-app-lp-docker
     # image name
-    docker-name: o-ran-sc/ric-app-ip
+    docker-name: o-ran-sc/ric-app-lp
     # source of docker tag
     container-tag-method: yaml-file
     # use host network
@@ -43,17 +43,17 @@
           branch: master
 
 - project:
-    <<: *ip_common
-    name: ric-app-ip-release
+    <<: *lp_common
+    name: ric-app-lp-release
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
 
-- ip_python: &ip_python
+- lp_python: &lp_python
     # settings for python builds
-    name: ip-python
+    name: lp-python
     # the install script assumes an ubuntu image
     build-node: ubuntu1804-builder-2c-2g
     pre-build-script: !include-raw-escape:
@@ -64,9 +64,9 @@
     tox-envs: code,flake8
 
 - project:
-    <<: *ip_common
-    <<: *ip_python
-    name: ric-app-ip-py-verify
+    <<: *lp_common
+    <<: *lp_python
+    name: ric-app-lp-py-verify
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
         - compare-type: REG_EXP
@@ -78,9 +78,9 @@
           branch: master
 
 - project:
-    <<: *ip_common
-    <<: *ip_python
-    name: ric-app-ip-sonarqube
+    <<: *lp_common
+    <<: *lp_python
+    name: ric-app-lp-sonarqube
     sonar-project-file: ""
     sonar-properties: |
         sonar.login={sonarcloud_api_token}
@@ -88,7 +88,7 @@
         sonar.projectName={project-name}
         sonar.organization={sonarcloud_project_organization}
         sonar.build.sourceEncoding=UTF-8
-        sonar.sources=ip
+        sonar.sources=lp
         sonar.python.coverage.reportPaths=coverage.xml
     jobs:
       - gerrit-tox-sonarqube
