@@ -30,10 +30,14 @@
     name: ric-app-bouncer
     # image name
     docker-name: 'o-ran-sc/{name}'
+    # docker root
+    docker-root: Bouncer
     # source type of image tag
     container-tag-method: yaml-file
     # use host network
     docker-build-args: '--network=host'
+    # tag file is in subdir
+    container-tag-yaml-dir: Bouncer
     # trigger on any change other than a file in ./docs
     gerrit_trigger_file_paths:
         - compare-type: REG_EXP
