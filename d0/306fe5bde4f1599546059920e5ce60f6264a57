@@ -1,0 +1,7 @@
+Code-Review+2: Eric Ball <eball@linuxfoundation.org>
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Submitted-by: Anil Belur <abelur@linuxfoundation.org>
+Submitted-at: Fri, 09 Jul 2021 01:24:29 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/6489
+Project: ci-management
+Branch: refs/heads/master
