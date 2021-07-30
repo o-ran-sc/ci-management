@@ -50,6 +50,8 @@
     stream:
       - master:
           branch: master
+      - dawn:
+          branch: dawn
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
@@ -89,6 +91,8 @@
     stream:
       - master:
           branch: master
+      - dawn:
+          branch: dawn
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
@@ -108,3 +112,5 @@
     stream:
       - master:
           branch: master
+      - dawn:
+          branch: dawn
