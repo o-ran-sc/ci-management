@@ -61,3 +61,21 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *o_du_l2_common
+    name: o-du-l2-sonarqube
+    make-opts: test ARGS=-V
+    build-timeout: 120
+    sonar-project-file: ""
+    sonar-properties: |
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=src
+      sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output/
+      sonar.cfamily.gcov.reportsPath=test
+    jobs:
+      - gerrit-cmake-sonarqube
