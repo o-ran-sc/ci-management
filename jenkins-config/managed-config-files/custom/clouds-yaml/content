@@ -1,0 +1,11 @@
+---
+clouds:
+  vex:
+    auth:
+      project_name: 340aa2bd-d826-4bc3-b0b7-8f85b7e84294
+      username: $CLOUDS_YAML_USR
+      password: $CLOUDS_YAML_PSW
+      auth_url: 'https://auth.vexxhost.net/v3'
+      user_domain_name: Default
+      project_domain_name: Default
+    region_name: sjc1
