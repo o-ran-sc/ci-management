@@ -1,0 +1,13 @@
+{
+  "cloud_auth_url": "https://auth.vexxhost.net/v3/",
+  "cloud_tenant": "340aa2bd-d826-4bc3-b0b7-8f85b7e84294",
+  "cloud_user": "$PACKER_CLOUD_USR",
+  "cloud_pass": "$PACKER_CLOUD_PSW",
+  "cloud_network": "b9e029b4-9b35-4a83-a4e6-c820eb00c3ec",
+  "cloud_region": "sjc1",
+  "cloud_availability_zone": "nova",
+  "flavor": "v2-highcpu-1",
+  "vm_use_block_storage": "true",
+  "vm_image_disk_format": "raw",
+  "ssh_proxy_host": ""
+}
