@@ -1,0 +1,9 @@
+#!/bin/bash
+gerrit=gerrit.o-ran-sc.org
+until host ${gerrit} &>/dev/null
+do
+  echo "Waiting until ${gerrit} is resolvable..."
+done
+
+git clone --recurse-submodules https://${gerrit}/r/ci-management /opt/ciman
+/opt/ciman/jjb/global-jjb/jenkins-init-scripts/init.sh
