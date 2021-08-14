@@ -1,0 +1,9 @@
+[rtd]
+endpoint = https://readthedocs.org/api/v3/
+token = $READTHEDOCS_TOKEN
+[nexus]
+user=$LFTOOLSINI_NEXUS_USR
+password=$LFTOOLSINI_NEXUS_PSW
+[nexus.o-ran-sc.org]
+username=$LFTOOLSINI_NEXUS_ORAN_SC_USR
+password=$LFTOOLSINI_NEXUS_ORAN_SC_PSW
