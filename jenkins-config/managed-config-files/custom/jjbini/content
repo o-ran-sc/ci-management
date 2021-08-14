@@ -1,0 +1,11 @@
+[job_builder]
+ignore_cache=True
+keep_descriptions=False
+include_path=.:scripts:~/git/
+recursive=True
+query_plugins_info=True
+
+[jenkins]
+user=$JENKINS_JOBBUILDER_USR
+password=$JENKINS_JOBBUILDER_PSW
+url=$JENKINS_JOBBUILDER_URL
