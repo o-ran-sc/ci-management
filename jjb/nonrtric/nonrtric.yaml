@@ -156,9 +156,11 @@
       - compare-type: REG_EXP
         pattern: 'test/usecases/oruclosedlooprecovery/scriptversion/app/.*'
     build-node: ubuntu1804-docker-4c-4g
-    # Includes verify and merge jobs
     jobs:
-      - "{project-name}-gerrit-docker-jobs"
+      - gerrit-maven-verify
+      - gerrit-maven-merge
+      - gerrit-maven-stage
+      - gerrit-maven-clm
     stream:
       - master:
           branch: master
