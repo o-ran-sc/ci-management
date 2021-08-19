@@ -1,0 +1,9 @@
+Code-Review+1: Chengkai Yan <martin.c.yan@est.tech>
+Code-Review+1: John  Keeney <john.keeney@est.tech>
+Code-Review+2: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Thu, 19 Aug 2021 16:52:21 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/6608
+Project: ci-management
+Branch: refs/heads/master
