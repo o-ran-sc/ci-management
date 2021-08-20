@@ -141,6 +141,37 @@
 
 - project:
     <<: *nonrtric_jdk_common
+    name: nonrtric-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-sonar
+    # template goal install builds docker image unnecessarily
+    mvn-params: '-Ddocker.skip=true'
+    sonarcloud: true
+    sonarcloud-api-token: '{sonarcloud_api_token}'
+    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
+    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    jobs:
+      - gerrit-maven-sonar
+
+- use_case_common: &use_case_common
+    # values apply to all projects here
+    name: use_case-common
+    # git repo
+    project: nonrtric
+    # jenkins job name prefix
+    project-name: nonrtric-use-case
+    # maven settings file has docker credentials
+    mvn-settings: nonrtric-settings
+
+- project:
+    <<: *use-case_common
     name: nonrtric-o-ru-closed-loop-recovery
     project-name: '{name}'
     # image name
@@ -167,23 +198,3 @@
       - dawn:
           branch: dawn
 
-- project:
-    <<: *nonrtric_jdk_common
-    name: nonrtric-release
-    # maven release requires sigul which requires centos
-    # container release requires docker
-    build-node: centos7-docker-2c-8g
-    jobs:
-      - '{project-name}-gerrit-release-jobs'
-
-- project:
-    <<: *nonrtric_jdk_common
-    name: nonrtric-sonar
-    # template goal install builds docker image unnecessarily
-    mvn-params: '-Ddocker.skip=true'
-    sonarcloud: true
-    sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
-    jobs:
-      - gerrit-maven-sonar
