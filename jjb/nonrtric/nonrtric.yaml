@@ -141,6 +141,32 @@
 
 - project:
     <<: *nonrtric_jdk_common
+    name: nonrtric-o-ru-closed-loop-recovery
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/nonrtric-o-ru-closed-loop-recovery'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: 'test/usecases/oruclosedlooprecovery/scriptversion/app'
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'test/usecases/oruclosedlooprecovery/scriptversion/app/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+      - dawn:
+          branch: dawn
+
+- project:
+    <<: *nonrtric_jdk_common
     name: nonrtric-release
     # maven release requires sigul which requires centos
     # container release requires docker
@@ -159,42 +185,3 @@
     sonarcloud-project-organization: '{sonarcloud_project_organization}'
     jobs:
       - gerrit-maven-sonar
-
-- use_case_common: &use_case_common
-    # values apply to all use case projects
-    name: use-case-common
-    # git repo
-    project: nonrtric
-    # jenkins job name prefix
-    project-name: nonrtric-use-case
-    # maven settings file has docker credentials
-    mvn-settings: nonrtric-settings
-
-- project:
-    <<: *use_case_common
-    name: nonrtric-o-ru-closed-loop-recovery
-    project-name: '{name}'
-    # image name
-    docker-name: 'o-ran-sc/nonrtric-o-ru-closed-loop-recovery'
-    # get tag from YAML
-    container-tag-method: yaml-file
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
-    # Directory with Dockerfile
-    docker-root: 'test/usecases/oruclosedlooprecovery/scriptversion/app'
-    # Limit build trigger to appropriate files
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'test/usecases/oruclosedlooprecovery/scriptversion/app/.*'
-    build-node: ubuntu1804-docker-4c-4g
-    jobs:
-      - gerrit-maven-verify
-      - gerrit-maven-merge
-      - gerrit-maven-stage
-      - gerrit-maven-clm
-    stream:
-      - master:
-          branch: master
-      - dawn:
-          branch: dawn
-
