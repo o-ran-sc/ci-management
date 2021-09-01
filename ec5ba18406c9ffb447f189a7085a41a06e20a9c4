@@ -18,6 +18,24 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "85243305_9422f518",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 21
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001460
+      },
+      "writtenOn": "2021-09-01T18:31:08Z",
+      "side": 1,
+      "message": "Is this file required even though there isn\u0027t a matching Gerrit repo with same name?",
+      "parentUuid": "9d811196_a830d6ba",
+      "revId": "ec5ba18406c9ffb447f189a7085a41a06e20a9c4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "713a8319_7cd8c8c1",
@@ -31,6 +49,30 @@
       "writtenOn": "2021-08-31T21:37:45Z",
       "side": 1,
       "message": "This credential doesn\u0027t appear to exist on prod right now.",
+      "range": {
+        "startLine": 3,
+        "startChar": 20,
+        "endLine": 3,
+        "endChar": 36
+      },
+      "revId": "ec5ba18406c9ffb447f189a7085a41a06e20a9c4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e11a1b90_d20487ca",
+        "filename": "jenkins-config/managed-config-files/custom/packagecloud_api/customizedCredentialMappings.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1001460
+      },
+      "writtenOn": "2021-09-01T18:31:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "713a8319_7cd8c8c1",
       "range": {
         "startLine": 3,
         "startChar": 20,
@@ -58,6 +100,24 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "062bcc6f_7f29d476",
+        "filename": "jenkins-config/managed-config-files/json/packer-cloud-env/content",
+        "patchSetId": 21
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001460
+      },
+      "writtenOn": "2021-09-01T18:31:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "635b9ec6_9ccd88e4",
+      "revId": "ec5ba18406c9ffb447f189a7085a41a06e20a9c4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "51a54aaa_9eee5039",
@@ -71,6 +131,30 @@
       "writtenOn": "2021-08-31T21:37:45Z",
       "side": 1,
       "message": "This should be \"docker\". Please check all instances of :10001 for this credential.",
+      "range": {
+        "startLine": 12,
+        "startChar": 20,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "ec5ba18406c9ffb447f189a7085a41a06e20a9c4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be1588ea_993e1818",
+        "filename": "jenkins-config/managed-config-files/mavenSettings/smo-ves-settings/serverCredentialMappings.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1001460
+      },
+      "writtenOn": "2021-09-01T18:31:08Z",
+      "side": 1,
+      "message": "Done. I fixed the ones that should have \u0027docker\u0027 ID to mirror what we currently have but there are some that already do not use \u0027docker\u0027. Should all of them use docker for 10001? or we are ok just mirroring what we currently have?",
+      "parentUuid": "51a54aaa_9eee5039",
       "range": {
         "startLine": 12,
         "startChar": 20,
