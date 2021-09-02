@@ -36,6 +36,24 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cef0d6cb_420fccf2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 21
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001460
+      },
+      "writtenOn": "2021-09-02T15:19:59Z",
+      "side": 1,
+      "message": "Done, I confirmed this file is required so I pushed it to this change.",
+      "parentUuid": "85243305_9422f518",
+      "revId": "ec5ba18406c9ffb447f189a7085a41a06e20a9c4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "713a8319_7cd8c8c1",
