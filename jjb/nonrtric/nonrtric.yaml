@@ -167,6 +167,60 @@
 
 - project:
     <<: *nonrtric_jdk_common
+    name: nonrtric-dmaap-mediator-producer
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/nonrtric-dmaap-mediator-producer'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: 'dmaap-mediator-producer'
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'dmaap-mediator-producer/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-dmaap-mediator-producer-sonar
+    # prescan script requires ubuntu
+    # golang is only on docker-enabled nodes
+    build-node: ubuntu1804-docker-4c-4g
+    sonar-prescan-script: !include-raw-escape: prescan-dmaapmediatorproducer-ubuntu.sh
+    sonar-project-file: ""
+    # use sonarcloud values from defaults.yaml
+    sonar-properties: |
+        # Required metadata
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        # Encoding
+        sonar.build.sourceEncoding=UTF-8
+        # Language
+        sonar.language=go
+        # Source
+        sonar.sources=.
+        # Unit tests
+        sonar.go.coverage.reportPaths=./coverage.txt
+        # Inclusions
+        sonar.inclusions=internal/**/**.go
+        # Exclusions
+        sonar.exclusions=main.go,mocks/**.go,internal/**/**_test.go
+    jobs:
+      - gerrit-sonar-prescan-script
+
+- project:
+    <<: *nonrtric_jdk_common
     name: nonrtric-release
     # maven release requires sigul which requires centos
     # container release requires docker
