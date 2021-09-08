@@ -1,9 +1,7 @@
 #!/bin/bash
-gerrit=gerrit.o-ran-sc.org
-until host ${gerrit} &>/dev/null
+until host github.com &>/dev/null
 do
-  echo "Waiting until ${gerrit} is resolvable..."
+    echo "Waiting until github.com is resolvable..."
 done
-
-git clone --recurse-submodules https://${gerrit}/r/ci-management /opt/ciman
-/opt/ciman/jjb/global-jjb/jenkins-init-scripts/init.sh
+git clone https://github.com/lfit/releng-global-jjb.git /opt/global-jjb
+/opt/global-jjb/jenkins-init-scripts/init.sh
