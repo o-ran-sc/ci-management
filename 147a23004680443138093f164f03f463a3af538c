@@ -41,6 +41,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee7ea57c_33fba592",
+        "filename": "jenkins-config/managed-config-files/openstackUserData/jenkins-init-script/content",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1001460
+      },
+      "writtenOn": "2021-09-08T20:00:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "625e3e58_befe3db3",
+      "range": {
+        "startLine": 6,
+        "startChar": 66,
+        "endLine": 6,
+        "endChar": 77
+      },
+      "revId": "147a23004680443138093f164f03f463a3af538c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b7b73074_2eb6d213",
@@ -64,6 +88,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "336f669e_a39dbcae",
+        "filename": "jenkins-config/managed-config-files/openstackUserData/jenkins-init-script/content",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001460
+      },
+      "writtenOn": "2021-09-08T20:00:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7b73074_2eb6d213",
+      "range": {
+        "startLine": 7,
+        "startChar": 11,
+        "endLine": 7,
+        "endChar": 22
+      },
+      "revId": "147a23004680443138093f164f03f463a3af538c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9d419cc3_bb7db0e1",
@@ -77,6 +125,24 @@
       "writtenOn": "2021-09-08T19:50:28Z",
       "side": 1,
       "message": "There is no need to delete the clone",
+      "revId": "147a23004680443138093f164f03f463a3af538c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c793e275_e7cb73b3",
+        "filename": "jenkins-config/managed-config-files/openstackUserData/jenkins-init-script/content",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1001460
+      },
+      "writtenOn": "2021-09-08T20:00:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9d419cc3_bb7db0e1",
       "revId": "147a23004680443138093f164f03f463a3af538c",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
