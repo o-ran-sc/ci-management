@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd3afdb4_16f4aff0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2021-09-08T19:34:05Z",
+      "side": 1,
+      "message": "LGTM. You\u0027ll need to manually fix this issue in order for builders to come up to do the verify and merge jobs.",
+      "revId": "147a23004680443138093f164f03f463a3af538c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
