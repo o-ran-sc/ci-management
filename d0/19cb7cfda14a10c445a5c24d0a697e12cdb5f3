@@ -1,0 +1,7 @@
+Code-Review+2: Kevin Sandi <ksandi@contractor.linuxfoundation.org>
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Submitted-by: Kevin Sandi <ksandi@contractor.linuxfoundation.org>
+Submitted-at: Thu, 09 Sep 2021 16:34:46 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/6658
+Project: ci-management
+Branch: refs/heads/master
