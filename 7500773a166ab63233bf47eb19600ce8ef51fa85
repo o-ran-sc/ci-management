@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric-dmaap-mediator-producer*",
       "revId": "7500773a166ab63233bf47eb19600ce8ef51fa85",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "40b9c9af_7fcf5769",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2021-09-15T06:11:50Z",
+      "side": 1,
+      "message": "Link to successful run in sandbox: https://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/nonrtric-dmaap-mediator-producer-docker-verify-master/3/",
+      "revId": "7500773a166ab63233bf47eb19600ce8ef51fa85",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
