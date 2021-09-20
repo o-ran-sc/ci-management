@@ -8,7 +8,7 @@
   become_method: sudo
 
   vars:
-    golang_version: 1.12
+    golang_version: 1.17
     gopath: '/opt/go/{{golang_version}}/bin'
 
   pre_tasks:
