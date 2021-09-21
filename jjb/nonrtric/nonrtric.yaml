@@ -213,9 +213,9 @@
         # Unit tests
         sonar.go.coverage.reportPaths=./coverage.txt
         # Inclusions
-        sonar.inclusions=internal/**/**.go
+        sonar.inclusions=dmaap-mediator-producer/internal/**/**.go
         # Exclusions
-        sonar.exclusions=main.go,mocks/**.go,internal/**/**_test.go
+        sonar.exclusions=dmaap-mediator-producer/main.go,dmaap-mediator-producer/mocks/**.go,dmaap-mediator-producer/internal/**/**_test.go
     jobs:
       - gerrit-sonar-prescan-script
 
