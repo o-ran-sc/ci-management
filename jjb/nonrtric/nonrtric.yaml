@@ -197,7 +197,7 @@
     build-node: ubuntu1804-docker-4c-4g
     sonar-prescan-script: !include-raw-escape: prescan-dmaapmediatorproducer-ubuntu.sh
     sonar-project-file: ""
-    sonarcloud-java-version: openjdk11
+    java-version: openjdk11
     # use sonarcloud values from defaults.yaml
     sonar-properties: |
         # Required metadata
