@@ -1,4 +1,1 @@
-{
-  "url": "https://packagecloud.io",
-  "token": "$PACKAGE_CLOUD"
-}
+{"url":"https://packagecloud.io","token":"$PACKAGE_CLOUD"}

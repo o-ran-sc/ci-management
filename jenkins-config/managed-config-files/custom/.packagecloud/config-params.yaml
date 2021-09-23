@@ -1,3 +1,3 @@
 ---
 name: ".packagecloud"
-comment: "packagecloud with dummy sandbox token to prevent publishing packages"
+comment: "packagecloud credentials to publish packages"
