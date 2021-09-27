@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bc45174_6e4344f1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2021-09-27T21:29:06Z",
+      "side": 1,
+      "message": "these 3 lines should be 1 single footer. Remove the empty line after Issue-ID.. sorry I didn\u0027t mentioned that before.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 52
+      },
+      "revId": "cc8aecb84817b3ce636da2c4d5eeefdd51b90f03",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
