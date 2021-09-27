@@ -1,8 +1,0 @@
----
-- project:
-    name: com-sctp-info
-    project: com/sctp
-    project-name: com-sctp
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
