@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e170fb97_bbd708af",
+        "filename": "INFO.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2021-09-27T19:02:57Z",
+      "side": 1,
+      "message": "For consistency, Anil and Kevin should have \"The Linux Foundation\" as their company. The other three entries all include \"The\".",
+      "range": {
+        "startLine": 48,
+        "startChar": 13,
+        "endLine": 48,
+        "endChar": 31
+      },
+      "revId": "26f6b6d98d5f6d97eff5fd6474c572f93d3b84f0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
