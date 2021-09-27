@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "378e2fca_462404c4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2021-09-27T21:09:28Z",
+      "side": 1,
+      "message": "Is best to just put \"IT-22893\" instead of the whole URL as \"Issue-ID\"\nAlso, please move this line into the footer right before Signed-off-by and Change-Id",
+      "range": {
+        "startLine": 11,
+        "startChar": 50,
+        "endLine": 11,
+        "endChar": 58
+      },
+      "revId": "8be270ed690d9e9a9a382ccace328fb69993bafd",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
