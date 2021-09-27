@@ -22,6 +22,30 @@
       },
       "revId": "26f6b6d98d5f6d97eff5fd6474c572f93d3b84f0",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "610cb7d8_89a43b3f",
+        "filename": "INFO.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000113
+      },
+      "writtenOn": "2021-09-27T19:04:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e170fb97_bbd708af",
+      "range": {
+        "startLine": 48,
+        "startChar": 13,
+        "endLine": 48,
+        "endChar": 31
+      },
+      "revId": "26f6b6d98d5f6d97eff5fd6474c572f93d3b84f0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
