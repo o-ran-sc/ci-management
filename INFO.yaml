@@ -1,0 +1,42 @@
+---
+project: "ci-management"
+project_creation_date: "2019-03-21"
+project_category: ""
+lifecycle_state: "Incubation"
+project_lead: &oran_ci-management_ptl
+  name: "Andrew Grimberg"
+  email: "agrimberg@linuxfoundation.org"
+  id: "tykeal"
+  company: "The Linux Foundation"
+  timezone: "America/Los_Angeles"
+primary_contact: "*oran_ci-management_ptl"
+issue_tracking:
+  type: "jira"
+  url: "https://jira.o-ran-sc.org/"
+  key: "ACUMOS"
+mailing_list:
+  type: "groups.io"
+  url: "https://lists.o-ran-sc.org/"
+  tag: "<[sub-project_name]>"
+realtime_discussion:
+  type: ""
+  server: ""
+  channel: ""
+meetings:
+  - type: ""
+    agenda: ""
+    url: ""
+    server: "n/a"
+    channel: "n/a"
+    repeats: "n/a"
+    time: "n/a"
+repositories:
+  - "ci-management"
+committers:
+  - <<: *oran_ci-management_ptl
+tsc:
+  approval: "https://wiki.o-ran-sc.org/display/TOC"
+  changes:
+    - type: ""
+      name: ""
+      link: ""
