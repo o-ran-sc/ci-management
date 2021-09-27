@@ -1,8 +1,0 @@
----
-- project:
-    name: ric-plt-resource-status-processor-info
-    project-name: ric-plt-resource-status-processor
-    project: ric-plt/resource-status-processor
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
