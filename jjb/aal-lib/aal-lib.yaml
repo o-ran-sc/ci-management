@@ -1,8 +1,0 @@
----
-- project:
-    name: aal-lib-info
-    project: aal/lib
-    project-name: aal-lib
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
