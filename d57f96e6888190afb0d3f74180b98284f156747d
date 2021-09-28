@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcf87fc6_103e8ed1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001460
+      },
+      "writtenOn": "2021-09-28T00:17:31Z",
+      "side": 1,
+      "message": "Looks good, commit hash is correct for v0.67.1",
+      "revId": "d57f96e6888190afb0d3f74180b98284f156747d",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
