@@ -1,8 +1,0 @@
----
-- project:
-    name: aal-virt-info
-    project: aal/virt
-    project-name: aal-virt
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
