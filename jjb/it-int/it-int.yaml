@@ -1,8 +1,0 @@
----
-- project:
-    name: it-int-info
-    project: it/int
-    project-name: it-int
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
