@@ -1,8 +1,0 @@
----
-- project:
-    name: sim-fh-interface-info
-    project: sim/fh-interface
-    project-name: sim-fh-interface
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
