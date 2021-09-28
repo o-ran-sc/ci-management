@@ -1,8 +1,0 @@
----
-- project:
-    name: gnb-int-src-info
-    project: gnb-int/src
-    project-name: gnb-int-src
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
