@@ -1,8 +1,0 @@
----
-- project:
-    name: ric-nrt-oam-info
-    project: ric-nrt/oam
-    project-name: ric-nrt-oam
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
