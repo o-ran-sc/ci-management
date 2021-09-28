@@ -1,0 +1,61 @@
+---
+project: "ci-management"
+project_creation_date: "2019-03-21"
+project_category: ""
+lifecycle_state: "Incubation"
+project_lead: &oran_ci-management_ptl
+  name: "Andrew Grimberg"
+  email: "agrimberg@linuxfoundation.org"
+  id: "agrimberg"
+  company: "The Linux Foundation"
+  timezone: "America/Los_Angeles"
+primary_contact: *oran_ci-management_ptl
+issue_tracking:
+  type: "jira"
+  url: "https://jira.o-ran-sc.org/"
+  key: ""
+mailing_list:
+  type: "groups.io"
+  url: "https://lists.o-ran-sc.org/"
+realtime_discussion:
+  type: ""
+  server: ""
+  channel: ""
+meetings:
+  - type: ""
+    agenda: ""
+    url: ""
+    server: "n/a"
+    channel: "n/a"
+    repeats: "n/a"
+    time: "n/a"
+repositories:
+  - "ci-management"
+committers:
+  - <<: *oran_ci-management_ptl
+  - name: "Vanessa Valderrama"
+    email: "vvalderrama@linuxfoundation.org"
+    company: "The Linux Foundation"
+    id: "valderrv"
+    timezone: "America/Chicago"
+  - name: "Eric Ball"
+    email: "eball@linuxfoundation.org"
+    company: "The Linux Foundation"
+    id: "eball"
+    timezone: "America/Los_Angeles"
+  - name: "Anil Belur"
+    email: "abelur@linuxfoundation.org"
+    company: "The Linux Foundation"
+    id: "askb"
+    timezone: "Unknown/Unknown"
+  - name: "Kevin Sandi"
+    email: "ksandi@contractor.linuxfoundation.org"
+    company: "The Linux Foundation"
+    id: "kevin.sandi"
+    timezone: "Unknown/Unknown"
+tsc:
+  approval: "https://wiki.o-ran-sc.org/display/TOC"
+  changes:
+    - type: ""
+      name: ""
+      link: ""
