@@ -1,8 +1,0 @@
----
-- project:
-    name: ric-nrt-a1-info
-    project: ric-nrt/a1
-    project-name: ric-nrt-a1
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
