@@ -1,8 +1,0 @@
----
-- project:
-    name: aal-mgmt-info
-    project: aal/mgmt
-    project-name: aal-mgmt
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
