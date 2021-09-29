@@ -192,6 +192,7 @@
 - project:
     <<: *nonrtric_jdk_common
     name: nonrtric-dmaap-mediator-producer-sonar
+    project-name: '{name}'
     # prescan script requires ubuntu
     # golang is only on docker-enabled nodes
     build-node: ubuntu1804-docker-4c-4g
@@ -212,7 +213,7 @@
         # Source
         sonar.sources=.
         # Unit tests
-        sonar.go.coverage.reportPaths=./coverage.txt
+        sonar.go.coverage.reportPaths=dmaap-mediator-producer/coverage.txt
         # Inclusions
         sonar.inclusions=dmaap-mediator-producer/internal/**/**.go
         # Exclusions
@@ -232,6 +233,7 @@
 - project:
     <<: *nonrtric_jdk_common
     name: nonrtric-sonar
+    project-name: '{name}'
     # template goal install builds docker image unnecessarily
     mvn-params: '-Ddocker.skip=true'
     sonarcloud: true
