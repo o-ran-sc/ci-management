@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f7771d6_1824444d",
+        "filename": "jenkins-config/managed-config-files/custom/pypirc/content",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2021-09-29T22:27:33Z",
+      "side": 1,
+      "message": "We dont need an extra blank line here.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 21
+      },
+      "revId": "7856aafb0398cfdbc796eb15ea627706a75dbc92",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
