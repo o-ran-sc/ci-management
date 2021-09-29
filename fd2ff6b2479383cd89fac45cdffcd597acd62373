@@ -22,6 +22,30 @@
       },
       "revId": "fd2ff6b2479383cd89fac45cdffcd597acd62373",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a412ed85_bfb4c319",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2021-09-29T12:23:38Z",
+      "side": 1,
+      "message": "Good question! Looking at how it works right now it seems that the project run last, nonrtric-dmaap-mediator-producer-sonar in this jjb, is the one only presented in Sonar. The reason the Go result is shown sometimes is because that is run in a separate job, so it overwrites the result from the other job. So maybe if we add project name here all projects will be shown. I will add it, and maybe it will help.",
+      "parentUuid": "b10cf985_96b26703",
+      "range": {
+        "startLine": 235,
+        "startChar": 7,
+        "endLine": 235,
+        "endChar": 24
+      },
+      "revId": "fd2ff6b2479383cd89fac45cdffcd597acd62373",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
