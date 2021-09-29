@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "548778ad_6e3deaee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2021-09-29T22:37:48Z",
+      "side": 1,
+      "message": "That\u0027s correct, you\u0027ll need to clone the original JSD issue onto your RELENG board and then use that.\n\nIssue-ID: \u003cURL/path/\u003eRELENG-xxxxx",
+      "parentUuid": "b604021e_2a0d1e6a",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 13
+      },
+      "revId": "7856aafb0398cfdbc796eb15ea627706a75dbc92",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3f7771d6_1824444d",
         "filename": "jenkins-config/managed-config-files/custom/pypirc/content",
         "patchSetId": 2
