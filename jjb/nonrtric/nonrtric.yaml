@@ -203,7 +203,7 @@
     sonar-properties: |
         # Required metadata
         sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectKey={sonarcloud_project_organization}_{name}
         sonar.projectName={project-name}
         sonar.organization={sonarcloud_project_organization}
         # Encoding
