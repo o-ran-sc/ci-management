@@ -3,9 +3,15 @@
 
 [distutils] # this tells distutils what package indexes you can push to
 index-servers =
-  $PYPIRC_URL_USR
+  pypi
+  pypi-test
 
-[$PYPIRC_URL_USR]
-repository: $PYPIRC_URL_PSW
-username: $PYPIRC_USR
-password: $PYPIRC_PSW
+[pypi]
+repository: https://upload.pypi.org/legacy/
+username: $PYPI_RELEASE_USR
+password: $PYPI_RELEASE_PSW
+
+[pypi-test]
+repository: https://test.pypi.org/legacy/
+username: $PYPI_TEST_USR
+password: $PYPI_TEST_PSW
