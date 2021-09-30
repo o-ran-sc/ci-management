@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "268d703e_afcf2d17",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2021-09-30T01:28:57Z",
+      "side": 1,
+      "message": "LGTM, please merge after verify goes through. ",
+      "revId": "e82c9c9ebdc0d97059a7a788c2aeb6813602b723",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
