@@ -191,6 +191,30 @@
 
 - project:
     <<: *nonrtric_jdk_common
+    name: nonrtric-o-ru-closed-loop-consumer
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/nonrtric-o-ru-closed-loop-consumer'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: 'test/usecases/oruclosedlooprecovery/goversion/'
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'test/usecases/oruclosedlooprecovery/goversion/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *nonrtric_jdk_common
     name: nonrtric-dmaap-mediator-producer-sonar
     project-name: '{name}'
     # prescan script requires ubuntu
@@ -218,6 +242,38 @@
         sonar.inclusions=dmaap-mediator-producer/internal/**/**.go
         # Exclusions
         sonar.exclusions=dmaap-mediator-producer/main.go,dmaap-mediator-producer/mocks/**.go,dmaap-mediator-producer/internal/**/**_test.go
+    jobs:
+      - gerrit-sonar-prescan-script
+
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-o-ru-closed-loop-consumer-sonar
+    project-name: '{name}'
+    # prescan script requires ubuntu
+    # golang is only on docker-enabled nodes
+    build-node: ubuntu1804-docker-4c-4g
+    sonar-prescan-script: !include-raw-escape: prescan-oruclosedloopconsumer-ubuntu.sh
+    sonar-project-file: ""
+    java-version: openjdk11
+    # use sonarcloud values from defaults.yaml
+    sonar-properties: |
+        # Required metadata
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        # Encoding
+        sonar.build.sourceEncoding=UTF-8
+        # Language
+        sonar.language=go
+        # Source
+        sonar.sources=.
+        # Unit tests
+        sonar.go.coverage.reportPaths=test/usecases/oruclosedlooprecovery/goversion/coverage.txt
+        # Inclusions
+        sonar.inclusions=test/usecases/oruclosedlooprecovery/goversion/internal/**/**.go
+        # Exclusions
+        sonar.exclusions=test/usecases/oruclosedlooprecovery/goversion/main.go,test/usecases/oruclosedlooprecovery/goversion/mocks/**.go,test/usecases/oruclosedlooprecovery/goversion/internal/**/**_test.go
     jobs:
       - gerrit-sonar-prescan-script
 
