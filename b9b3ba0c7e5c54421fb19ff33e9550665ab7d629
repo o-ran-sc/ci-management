@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "283b881c_00b176fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2021-10-04T14:27:50Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-o-ru-closed-loop-consumer*",
+      "revId": "b9b3ba0c7e5c54421fb19ff33e9550665ab7d629",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
