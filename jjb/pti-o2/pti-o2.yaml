@@ -1,0 +1,14 @@
+---
+- project:
+    name: pti-o2-project-view
+    project-name: pti-o2
+    views:
+      - project-view
+
+- project:
+    name: pti-o2-info
+    project: pti/o2
+    project-name: pti-o2
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
