@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2926248a_8a89b483",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-10-19T13:57:38Z",
+      "side": 1,
+      "message": "New docker image build job added, similar to the previous. Verify job works in Jenkins Sandbox. Merge job works until pushing the image, then fails, which is expected.\n\nMany thanks in advance!",
+      "revId": "da221d48d6fc1a403bd0318453b0ea76cdb52f6b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
