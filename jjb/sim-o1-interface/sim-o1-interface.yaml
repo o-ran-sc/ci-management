@@ -136,6 +136,20 @@
 
 - project:
     <<: *sim_o1_interface_docker
+    name: sim-o1-interface-ntsim-ng-tapi-topology
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: ' o-ran-sc/smo-nts-ng-topology-server'
+    # dockerfile is in subdir
+    docker-build-args: "--network=host -f Dockerfile --build-arg NTS_BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+    docker-root: ntsimulator/deploy/smo-nts-ng-topology-server
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'ntsimulator/deploy/smo-nts-ng-topology-server/.*'
+
+- project:
+    <<: *sim_o1_interface_docker
     name: sim-o1-interface-release
     # maven release requires sigul which requires centos
     # container release requires docker
