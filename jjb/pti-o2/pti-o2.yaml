@@ -62,3 +62,38 @@
         sonar.python.coverage.reportPaths=coverage.xml
     jobs:
       - gerrit-tox-sonarqube
+
+- pti_o2_docker: &pti_o2_docker_common
+    <<: *pti_o2_common
+    # values apply to all pti/o2 docker projects
+    # maven settings file has docker credentials
+    docker-name: 'o-ran-sc/pti-o2imsdms'
+    docker-build-args: '--network=host -f Dockerfile'
+    # source of docker tag
+    container-tag-method: yaml-file
+    # docker-root: src
+    # if no container-tag-yaml-dir is defined, container-tag.yml is taken from the docker-root
+    build-node: ubuntu1804-docker-4c-4g
+
+- project:
+    <<: *pti_o2_docker_common
+    name: pti-o2-imsdms-docker-verify
+    # jenkins job name prefix
+    project-name: '{name}'
+    container-tag-method: latest
+    docker-build-args: '--network=host -f Dockerfile'
+    jobs:
+      - gerrit-docker-verify
+
+- project:
+    <<: *pti_o2_docker_common
+    name: pti-o2-imsdms-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    container-tag-yaml-dir: release
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'release/.*'
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
