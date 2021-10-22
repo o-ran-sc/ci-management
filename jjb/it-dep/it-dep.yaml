@@ -48,6 +48,27 @@
       - all:
           branch: '*'
 
+- project:
+    <<: *it_dep_common
+    # Verify helm charts using a Docker build process.
+    # no image needs to be pushed, so there is no merge job.
+    name: it-dep-smo-install
+    # jenkins job name prefix
+    build-timeout: 120
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # dockerfile is in subdir
+    docker-build-args: -f ci/Dockerfile-smo-install
+    # any tag will do
+    container-tag-method: latest
+    submodule-disable: true
+    jobs:
+      - gerrit-docker-verify
+    stream:
+      - all:
+          branch: '*'
+
 # build and publish packages to PackageCloud.io
 - project:
     <<: *it_dep_common
