@@ -1,0 +1,105 @@
+---
+- project:
+    name: pti-o2-project-view
+    project-name: pti-o2
+    views:
+      - project-view
+
+- project:
+    name: pti-o2-info
+    project: pti/o2
+    project-name: pti-o2
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+# - pti_o2_common: &pti_o2_common
+#     # values apply to all pti/o2 docker projects
+#     name: pti-o2-common
+#     # git repo
+#     project: pti/o2
+#     # jenkins job name prefix
+#     project-name: pti-o2
+#     # maven settings file has credentials
+#     mvn-settings: pti-o2-settings
+#     build-node: ubuntu1804-docker-4c-4g
+#     stream:
+#       - master:
+#           branch: master
+
+# - pti_o2_python: &pti_o2_python
+#     # settings for python builds
+#     name: pti-o2-python
+#     # the install script assumes an ubuntu image
+#     build-node: ubuntu1804-builder-2c-2g
+#     # impt for verify and tox etc
+#     python-version: python3
+#     # no need to verify docs
+#     tox-envs: code,flake8
+
+# - project:
+#     <<: *pti_o2_common
+#     <<: *pti_o2_python
+#     name: pti-o2-imsdms-verify
+#     # do not trigger on changes in docs, releases
+#     gerrit_trigger_file_paths:
+#         - compare-type: REG_EXP
+#           pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
+#     jobs:
+#       - gerrit-tox-verify
+
+
+# - project:
+#     <<: *pti_o2_common
+#     <<: *pti_o2_python
+#     name: pti-o2-imsdms-sonarqube
+#     sonar-project-file: ""
+#     sonar-properties: |
+#         sonar.login={sonarcloud_api_token}
+#         sonar.projectKey={sonarcloud_project_organization}_{project-name}
+#         sonar.projectName={project-name}
+#         sonar.organization={sonarcloud_project_organization}
+#         sonar.build.sourceEncoding=UTF-8
+#         sonar.sources=src
+#         sonar.python.coverage.reportPaths=coverage.xml
+#     jobs:
+#       - gerrit-tox-sonarqube
+
+
+# - pti_o2_docker: &pti_o2_docker_common
+#     <<: *pti_o2_common
+#     # values apply to all pti/o2 docker projects
+#     # maven settings file has docker credentials
+#     # source of docker tag
+#     docker-name: 'o-ran-sc/pti-o2imsdms'
+#     docker-build-args: '--network=host -f Dockerfile'
+#     container-tag-method: yaml-file
+#     # docker-root: src
+#     # if no container-tag-yaml-dir is defined, container-tag.yml is taken from the docker-root
+#     build-node: ubuntu1804-docker-4c-4g
+
+
+# - project:
+#     <<: *pti_o2_docker_common
+#     name: pti-o2-imsdms-docker-verify
+#     # jenkins job name prefix
+#     project-name: '{name}'
+#     container-tag-method: latest
+#     docker-build-args: '--network=host -f Dockerfile'
+#     jobs:
+#       - gerrit-docker-verify
+#     # jobs:
+#     #   - '{project-name}-gerrit-docker-jobs'
+
+# - project:
+#     <<: *pti_o2_docker_common
+#     name: pti-o2-imsdms-release
+#     # maven release requires sigul which requires centos
+#     # container release requires docker
+#     build-node: centos7-docker-2c-8g
+#     container-tag-yaml-dir: release
+#     gerrit_trigger_file_paths:
+#       - compare-type: REG_EXP
+#         pattern: 'release/.*'
+#     jobs:
+#       - '{project-name}-gerrit-release-jobs'
