@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "727b2d4c_aa052b7f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-10-25T02:45:20Z",
+      "side": 1,
+      "message": "This is to add the missing pti-o2-settings file for pti-o2 jjbs, Please help review and merge if possible",
+      "revId": "70e1eb107fa81df8d83da979f8a140d9bffe38dc",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
