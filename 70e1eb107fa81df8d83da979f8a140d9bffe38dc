@@ -33,6 +33,23 @@
       "message": "Credential pti-o2 exists but not the setting file.. was this repo created manually?",
       "revId": "70e1eb107fa81df8d83da979f8a140d9bffe38dc",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f47c98c5_26f8c6a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2021-10-25T14:38:14Z",
+      "side": 1,
+      "message": "i don\u0027t think the merge failure is caused by this change since the previous build also failed:\nhttps://jenkins.o-ran-sc.org/job/ci-management-jenkins-cfg-merge/\n\n@Bin, Can you please report this in an support ticket. We can look into this further. ",
+      "revId": "70e1eb107fa81df8d83da979f8a140d9bffe38dc",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
