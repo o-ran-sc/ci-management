@@ -24,9 +24,16 @@
     mvn-version: mvn36
     java-version: openjdk11
 
+# nonrtric:policy-agent
+# Docker image for nonrtric-policy-agent
 - project:
     <<: *nonrtric_jdk_common
+    name: nonrtric-policy-agent
+    project-name: '{name}'
     mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'policy-agent/.*'
     jobs:
       - gerrit-maven-docker-verify
       - gerrit-maven-docker-merge
@@ -65,6 +72,28 @@
           branch: dawn
 
 # nonrtric:sdnc-a1-controller
+# Docker image for nonrtric-sdnc-a1-controller
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-sdnc-a1-controller
+    project-name: '{name}'
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'sdnc-a1-controller/.*'
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
+      - cherry:
+          branch: cherry
+      - dawn:
+          branch: dawn
+
+# nonrtric:sdnc-a1-controller
 # Maven artifacts for nonrtric-sdnc-a1-controller
 - project:
     <<: *nonrtric_jdk_common
@@ -81,6 +110,28 @@
       - gerrit-maven-merge
       - gerrit-maven-stage
       - gerrit-maven-clm
+    stream:
+      - master:
+          branch: master
+      - cherry:
+          branch: cherry
+      - dawn:
+          branch: dawn
+
+# nonrtric:enrichment-coordinator-service
+# Docker image for nonrtric-enrichment-coordinator-service
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-enrichment-coordinator-service
+    project-name: '{name}'
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'enrichment-coordinator-service/.*'
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
     stream:
       - master:
           branch: master
@@ -115,6 +166,28 @@
           branch: dawn
 
 # nonrtric:r-app-catalogue
+# Docker image for nonrtric-r-app-catalogue
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-r-app-catalogue
+    project-name: '{name}'
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'r-app-catalogue/.*'
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
+      - cherry:
+          branch: cherry
+      - dawn:
+          branch: dawn
+
+# nonrtric:r-app-catalogue
 # Maven artifacts for r-app-catalogue
 - project:
     <<: *nonrtric_jdk_common
@@ -136,6 +209,26 @@
           branch: master
       - cherry:
           branch: cherry
+      - dawn:
+          branch: dawn
+
+# nonrtric:helm-manager
+# Docker image for nonrtric-helm-manager
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-helm-manager
+    project-name: '{name}'
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'helm-manager/.*'
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
       - dawn:
           branch: dawn
 
