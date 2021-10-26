@@ -1,0 +1,14 @@
+---
+- project:
+    name: ric-plt-ricdms-project-view
+    project-name: ric-plt-ricdms
+    views:
+      - project-view
+
+- project:
+    name: ric-plt-ricdms-info
+    project: ric-plt/ricdms
+    project-name: ric-plt-ricdms
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
