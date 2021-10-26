@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc646dc2_ea451aa3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2021-10-26T23:30:59Z",
+      "side": 1,
+      "message": "Why are we adding only empty files here with blank lines?",
+      "revId": "5e5e76357b8d9ec668d9597eb35a8e957e83789e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
