@@ -271,9 +271,9 @@
         # Unit tests
         sonar.go.coverage.reportPaths=test/usecases/oruclosedlooprecovery/goversion/coverage.txt
         # Inclusions
-        sonar.inclusions=test/usecases/oruclosedlooprecovery/goversion/internal/**/**.go
+        sonar.inclusions=test/usecases/oruclosedlooprecovery/goversion/internal/**/**.go,test/usecases/oruclosedlooprecovery/goversion/**.go
         # Exclusions
-        sonar.exclusions=test/usecases/oruclosedlooprecovery/goversion/main.go,test/usecases/oruclosedlooprecovery/goversion/mocks/**.go,test/usecases/oruclosedlooprecovery/goversion/internal/**/**_test.go
+        sonar.exclusions=test/usecases/oruclosedlooprecovery/goversion/mocks/**.go,test/usecases/oruclosedlooprecovery/goversion/internal/**/**_test.go,test/usecases/oruclosedlooprecovery/goversion/simulator/**.go
     jobs:
       - gerrit-sonar-prescan-script
 
