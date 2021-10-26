@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric-sdnc-a1-controller*\n\njjb-deploy nonrtric-enrichment-coordinator-service*\n\njjb-deploy nonrtric-r-app-catalogue*\n\njjb-deploy nonrtric-helm-manager*",
       "revId": "0e41f019e4269add97ea8a2b9ea14838f5645f12",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74999ac7_5f36511d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2021-10-26T16:05:14Z",
+      "side": 1,
+      "message": "Links to successful builds:\nhttps://jenkins.o-ran-sc.org/sandbox/job/nonrtric-enrichment-coordinator-service-maven-verify-master-mvn36-openjdk11/1/\nhttps://jenkins.o-ran-sc.org/sandbox/job/nonrtric-sdnc-a1-controller-maven-verify-master-mvn36-openjdk11/1/\nhttps://jenkins.o-ran-sc.org/sandbox/job/nonrtric-r-app-catalogue-maven-verify-master-mvn36-openjdk11/1/\nhttps://jenkins.o-ran-sc.org/sandbox/job/nonrtric-policy-agent-maven-verify-master-mvn36-openjdk11/1/",
+      "revId": "0e41f019e4269add97ea8a2b9ea14838f5645f12",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
