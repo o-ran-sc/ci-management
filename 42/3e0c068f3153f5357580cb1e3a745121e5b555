@@ -1,0 +1,10 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+2: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Code-Review+1: John  Keeney <john.keeney@est.tech>
+Code-Review+1: Sonia Sangari <sonia.sangari@est.tech>
+Code-Review+1: Patrik Buhr <patrik.buhr@est.tech>
+Submitted-by: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Submitted-at: Tue, 26 Oct 2021 16:51:26 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/6919
+Project: ci-management
+Branch: refs/heads/master
