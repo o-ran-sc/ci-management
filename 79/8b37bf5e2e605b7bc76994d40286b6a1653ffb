@@ -1,0 +1,7 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+2: Bengt Thuree <bthuree@linuxfoundation.org>
+Submitted-by: Bengt Thuree <bthuree@linuxfoundation.org>
+Submitted-at: Wed, 27 Oct 2021 11:05:17 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/6943
+Project: ci-management
+Branch: refs/heads/master
