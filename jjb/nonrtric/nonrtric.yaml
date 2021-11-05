@@ -216,7 +216,7 @@
 - project:
     <<: *nonrtric_jdk_common
     name: nonrtric-dmaap-mediator-producer-sonar
-    project-name: '{name}'
+    project-name: nonrtric-dmaap-mediator-producer-sonar
     # prescan script requires ubuntu
     # golang is only on docker-enabled nodes
     build-node: ubuntu1804-docker-4c-4g
@@ -241,14 +241,14 @@
         # Inclusions
         sonar.inclusions=dmaap-mediator-producer/internal/**/**.go
         # Exclusions
-        sonar.exclusions=dmaap-mediator-producer/main.go,dmaap-mediator-producer/mocks/**.go,dmaap-mediator-producer/internal/**/**_test.go
+        sonar.exclusions=dmaap-mediator-producer/main.go,dmaap-mediator-producer/mocks/**.go,dmaap-mediator-producer/stub/**.go,dmaap-mediator-producer/internal/**/**_test.go
     jobs:
       - gerrit-sonar-prescan-script
 
 - project:
     <<: *nonrtric_jdk_common
     name: nonrtric-o-ru-closed-loop-consumer-sonar
-    project-name: '{name}'
+    project-name: nonrtric-o-ru-closed-loop-consumer-sonar
     # prescan script requires ubuntu
     # golang is only on docker-enabled nodes
     build-node: ubuntu1804-docker-4c-4g
@@ -273,7 +273,7 @@
         # Inclusions
         sonar.inclusions=test/usecases/oruclosedlooprecovery/goversion/internal/**/**.go,test/usecases/oruclosedlooprecovery/goversion/**.go
         # Exclusions
-        sonar.exclusions=test/usecases/oruclosedlooprecovery/goversion/mocks/**.go,test/usecases/oruclosedlooprecovery/goversion/internal/**/**_test.go,test/usecases/oruclosedlooprecovery/goversion/simulator/**.go
+        sonar.exclusions=test/usecases/oruclosedlooprecovery/goversion/mocks/**.go,test/usecases/oruclosedlooprecovery/goversion/internal/**/**_test.go,test/usecases/oruclosedlooprecovery/goversion/internal/**_test.go,test/usecases/oruclosedlooprecovery/goversion/simulator/**.go
     jobs:
       - gerrit-sonar-prescan-script
 
