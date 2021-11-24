@@ -227,7 +227,7 @@
     sonar-properties: |
         # Required metadata
         sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_nonrtric-dmaap-mediator-producer-sonar
+        sonar.projectKey={sonarcloud_project_organization}_nonrtric-dmaap-mediator-producer
         sonar.organization={sonarcloud_project_organization}
         # Encoding
         sonar.build.sourceEncoding=UTF-8
