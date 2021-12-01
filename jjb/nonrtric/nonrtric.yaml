@@ -89,17 +89,17 @@
       - dawn:
           branch: dawn
 
-# nonrtric:enrichment-coordinator-service
-# Maven artifacts for nonrtric-enrichment-coordinator-service
+# nonrtric:information-coordinator-service
+# Maven artifacts for nonrtric-information-coordinator-service
 - project:
     <<: *nonrtric_jdk_common
-    name: nonrtric-enrichment-coordinator-service
+    name: nonrtric-information-coordinator-service
     project-name: '{name}'
     mvn-opts: '-Ddocker.skip=true'
-    mvn-params: '-f enrichment-coordinator-service'
+    mvn-params: '-f information-coordinator-service'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'enrichment-coordinator-service/.*'
+        pattern: 'information-coordinator-service/.*'
     build-node: ubuntu1804-builder-4c-4g
     jobs:
       - gerrit-maven-verify
