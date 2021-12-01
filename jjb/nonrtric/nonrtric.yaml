@@ -167,30 +167,6 @@
 
 - project:
     <<: *nonrtric_jdk_common
-    name: nonrtric-dmaap-mediator-producer
-    project-name: '{name}'
-    # image name
-    docker-name: 'o-ran-sc/nonrtric-dmaap-mediator-producer'
-    # get tag from YAML
-    container-tag-method: yaml-file
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
-    # Directory with Dockerfile
-    docker-root: 'dmaap-mediator-producer'
-    # Limit build trigger to appropriate files
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'dmaap-mediator-producer/.*'
-    build-node: ubuntu1804-docker-4c-4g
-    # Includes verify and merge jobs
-    jobs:
-      - "{project-name}-gerrit-docker-jobs"
-    stream:
-      - master:
-          branch: master
-
-- project:
-    <<: *nonrtric_jdk_common
     name: nonrtric-o-ru-closed-loop-consumer
     project-name: '{name}'
     # image name
