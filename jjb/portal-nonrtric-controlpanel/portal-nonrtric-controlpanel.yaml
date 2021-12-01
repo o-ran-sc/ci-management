@@ -28,25 +28,11 @@
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
-    name: nonrtric-controlpanel-frontend
-    # image name
-    docker-name: 'o-ran-sc/nonrtric-controlpanel'
-    # get tag from YAML
-    container-tag-method: yaml-file
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
-    # Directory with Dockerfile
-    docker-root: 'webapp-frontend'
-    # Limit build trigger to appropriate files
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'webapp-frontend/.*'
-      - compare-type: REG_EXP
-        pattern: 'docker-compose/.*'
-    build-node: ubuntu1804-docker-4c-4g
-    # Includes verify and merge jobs
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
     jobs:
-      - "{project-name}-gerrit-docker-jobs"
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
     stream:
       - master:
           branch: master
@@ -74,43 +60,4 @@
     jobs:
       - gerrit-maven-sonar
 
-- project:
-    <<: *portal_nonrtric_controlpanel_common
-    name: portal-nonrtric-controlpanel-gateway
-    project-name: '{name}'
-    mvn-params: '-f nonrtric-gateway'
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'nonrtric-gateway/.*'
-    build-node: ubuntu1804-builder-4c-4g
-    jobs:
-      - gerrit-maven-verify
-      - gerrit-maven-merge
-      - gerrit-maven-stage
-      - gerrit-maven-clm
-    stream:
-      - master:
-          branch: master
-      - dawn:
-          branch: dawn
 
-- project:
-    <<: *portal_nonrtric_controlpanel_common
-    name: portal-nonrtric-controlpanel-gateway-docker
-    project-name: '{name}'
-    mvn-params: '-P docker -f nonrtric-gateway'
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'nonrtric-gateway/.*'
-      - compare-type: REG_EXP
-        pattern: 'docker-compose/.*'
-    build-node: ubuntu1804-docker-4c-4g
-    jobs:
-      - gerrit-maven-docker-verify
-      - gerrit-maven-docker-merge
-      - gerrit-maven-docker-stage
-    stream:
-      - master:
-          branch: master
-      - dawn:
-          branch: dawn
