@@ -16,6 +16,24 @@
       "message": "The commit that is reverted here is the reason the clm jobs have failed for nonrtric.",
       "revId": "9d5420d26b4880e3972afa5350300a34586baec6",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfa9ca81_a25e2be7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2021-12-02T17:19:35Z",
+      "side": 1,
+      "message": "The original change breaks jjb. \nNo new changes can get merged meanwhile.",
+      "parentUuid": "ceed5f8c_a473f7a9",
+      "revId": "9d5420d26b4880e3972afa5350300a34586baec6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
