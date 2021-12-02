@@ -39,17 +39,17 @@
       - dawn:
           branch: dawn
 
-# nonrtric:a1-policy-management-service/
-# Maven artifacts for nonrtric-a1-policy-management-service/
+# nonrtric:policy-agent
+# Maven artifacts for nonrtric-policy-agent
 - project:
     <<: *nonrtric_jdk_common
-    name: nonrtric-a1-policy-management-service/
+    name: nonrtric-policy-agent
     project-name: '{name}'
     mvn-opts: '-Ddocker.skip=true'
-    mvn-params: '-f a1-policy-management-service/'
+    mvn-params: '-f policy-agent'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'a1-policy-management-service/.*'
+        pattern: 'policy-agent/.*'
     build-node: ubuntu1804-builder-4c-4g
     jobs:
       - gerrit-maven-verify
@@ -89,17 +89,17 @@
       - dawn:
           branch: dawn
 
-# nonrtric:information-coordinator-service
-# Maven artifacts for nonrtric-information-coordinator-service
+# nonrtric:enrichment-coordinator-service
+# Maven artifacts for nonrtric-enrichment-coordinator-service
 - project:
     <<: *nonrtric_jdk_common
-    name: nonrtric-information-coordinator-service
+    name: nonrtric-enrichment-coordinator-service
     project-name: '{name}'
     mvn-opts: '-Ddocker.skip=true'
-    mvn-params: '-f information-coordinator-service'
+    mvn-params: '-f enrichment-coordinator-service'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'information-coordinator-service/.*'
+        pattern: 'enrichment-coordinator-service/.*'
     build-node: ubuntu1804-builder-4c-4g
     jobs:
       - gerrit-maven-verify
