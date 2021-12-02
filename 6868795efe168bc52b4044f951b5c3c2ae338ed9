@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdf30eb1_9b03eb91",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2021-12-02T17:30:40Z",
+      "side": 1,
+      "message": "I don\u0027t this this change did it.. \nhttps://jenkins.o-ran-sc.org/job/ci-management-jjb-merge/505/console\n\nI would recommend reverting this change and continue working on the original change\nhttps://gerrit.o-ran-sc.org/r/c/ci-management/+/7185",
+      "revId": "6868795efe168bc52b4044f951b5c3c2ae338ed9",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
