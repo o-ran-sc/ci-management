@@ -64,41 +64,9 @@
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
-    name: portal-nonrtric-controlpanel-sonar
-    # template goal install builds docker image unnecessarily
-    mvn-params: -Ddocker.skip=true
-    sonarcloud: true
-    sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
-    jobs:
-      - gerrit-maven-sonar
-
-- project:
-    <<: *portal_nonrtric_controlpanel_common
-    name: portal-nonrtric-controlpanel-gateway
-    project-name: '{name}'
-    mvn-params: '-f nonrtric-gateway'
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'nonrtric-gateway/.*'
-    build-node: ubuntu1804-builder-4c-4g
-    jobs:
-      - gerrit-maven-verify
-      - gerrit-maven-merge
-      - gerrit-maven-stage
-      - gerrit-maven-clm
-    stream:
-      - master:
-          branch: master
-      - dawn:
-          branch: dawn
-
-- project:
-    <<: *portal_nonrtric_controlpanel_common
     name: portal-nonrtric-controlpanel-gateway-docker
     project-name: '{name}'
-    mvn-params: '-P docker -f nonrtric-gateway'
+    mvn-params: '-f nonrtric-gateway'
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'nonrtric-gateway/.*'
