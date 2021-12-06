@@ -84,6 +84,23 @@
       "message": "jjb-deploy nonrtric*",
       "revId": "1907f15e12c9c40733f579a86cecee20560abeb9",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10380c3a_e78c2527",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2021-12-06T07:43:06Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-information-coordinator*",
+      "revId": "1907f15e12c9c40733f579a86cecee20560abeb9",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
