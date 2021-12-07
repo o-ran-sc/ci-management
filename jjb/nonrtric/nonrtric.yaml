@@ -43,7 +43,7 @@
 # Maven artifacts for nonrtric-a1-policy-management-service/
 - project:
     <<: *nonrtric_jdk_common
-    name: nonrtric-a1-policy-management-service/
+    name: nonrtric-a1-policy-management-service
     project-name: '{name}'
     mvn-opts: '-Ddocker.skip=true'
     mvn-params: '-f a1-policy-management-service/'
