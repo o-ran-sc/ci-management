@@ -59,6 +59,25 @@
     stream:
       - master:
           branch: master
+
+# nonrtric:policy-agent/
+# Maven artifacts for nonrtric-policy-agent/
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-policy-agent
+    project-name: '{name}'
+    mvn-opts: '-Ddocker.skip=true'
+    mvn-params: '-f policy-agent/'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'policy-agent/.*'
+    build-node: ubuntu1804-builder-4c-4g
+    jobs:
+      - gerrit-maven-verify
+      - gerrit-maven-merge
+      - gerrit-maven-stage
+      - gerrit-maven-clm
+    stream:
       - cherry:
           branch: cherry
       - dawn:
@@ -109,6 +128,25 @@
     stream:
       - master:
           branch: master
+
+# nonrtric:enrichment-coordinator-service
+# Maven artifacts for nonrtric-enrichment-coordinator-service
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-enrichment-coordinator-service
+    project-name: '{name}'
+    mvn-opts: '-Ddocker.skip=true'
+    mvn-params: '-f enrichment-coordinator-service'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'enrichment-coordinator-service/.*'
+    build-node: ubuntu1804-builder-4c-4g
+    jobs:
+      - gerrit-maven-verify
+      - gerrit-maven-merge
+      - gerrit-maven-stage
+      - gerrit-maven-clm
+    stream:
       - cherry:
           branch: cherry
       - dawn:
