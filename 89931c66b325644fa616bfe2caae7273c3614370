@@ -50,6 +50,23 @@
       "message": "This should sort out the issues with renaming \npolicy-agent -\u003e a1-policy-management  \u0026\nenrichment-coordiantor -\u003e information coordinator \n... while still working with old names for cherry \u0026 dawn branches. \n",
       "revId": "89931c66b325644fa616bfe2caae7273c3614370",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc86bd77_4929c9f4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2021-12-08T18:00:28Z",
+      "side": 1,
+      "message": "Given the previous errors we got, can someone please test this on the sandbox?\n\nThe best test to do is to try to post these specific jobs into the sandbox. \n\nRunning \"jenkins-jobs test jjb/\" will not catch an issue with naming.",
+      "revId": "89931c66b325644fa616bfe2caae7273c3614370",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
