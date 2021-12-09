@@ -118,6 +118,23 @@
       "message": "Sorry, the link to the policy agent job should be https://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/nonrtric-policy-agent-maven-clm-dawn/1/",
       "revId": "89931c66b325644fa616bfe2caae7273c3614370",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef62db41_47a29f9e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2021-12-09T16:55:27Z",
+      "side": 1,
+      "message": "For the CLM error, it is related to something else which could be the name change but should not block this change from getting merged. \n\nCould you please report the CLM failure in https://support.linuxfoundation.org/\n\nThanks! ",
+      "revId": "89931c66b325644fa616bfe2caae7273c3614370",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
