@@ -84,6 +84,23 @@
       "message": "When the already existing job \"nonrtric-information-coordinator-service-maven-clm-master\" is run in the sandbox it fails on the build step \"Nexus Policy Evaluation\", see https://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/nonrtric-information-coordinator-service-maven-clm-master/1/console.\n \nWHen the new job \"nonrtric-enrichment-coordinator-service-maven-clm-dawn\", introduced in this commit, is run in the sandbox it fails on exactly the same build step, see https://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/nonrtric-enrichment-coordinator-service-maven-clm-dawn/1/console.\n\nThe same is true for the new job \"nonrtric-policy-agent-maven-clm-dawn\", see https://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/ /1/console.\n\nDoesn\u0027t this show that the new jobs introduced in this commit works because now the names of the products match the names in the different branches?",
       "revId": "89931c66b325644fa616bfe2caae7273c3614370",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49c34686_8dcd3f2e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2021-12-09T06:57:59Z",
+      "side": 1,
+      "message": "The jobs where deployed to the sandbox with the \"jjb-deploy nonrtric*\" command from this commit.",
+      "revId": "89931c66b325644fa616bfe2caae7273c3614370",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
