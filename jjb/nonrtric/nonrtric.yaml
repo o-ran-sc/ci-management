@@ -179,56 +179,6 @@
 
 - project:
     <<: *nonrtric_jdk_common
-    name: nonrtric-o-ru-closed-loop-recovery
-    project-name: '{name}'
-    # image name
-    docker-name: 'o-ran-sc/nonrtric-o-ru-closed-loop-recovery'
-    # get tag from YAML
-    container-tag-method: yaml-file
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
-    # Directory with Dockerfile
-    docker-root: 'test/usecases/oruclosedlooprecovery/scriptversion/app'
-    # Limit build trigger to appropriate files
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'test/usecases/oruclosedlooprecovery/scriptversion/app/.*'
-    build-node: ubuntu1804-docker-4c-4g
-    # Includes verify and merge jobs
-    jobs:
-      - "{project-name}-gerrit-docker-jobs"
-    stream:
-      - master:
-          branch: master
-      - dawn:
-          branch: dawn
-
-- project:
-    <<: *nonrtric_jdk_common
-    name: nonrtric-o-ru-closed-loop-consumer
-    project-name: '{name}'
-    # image name
-    docker-name: 'o-ran-sc/nonrtric-o-ru-closed-loop-consumer'
-    # get tag from YAML
-    container-tag-method: yaml-file
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
-    # Directory with Dockerfile
-    docker-root: 'test/usecases/oruclosedlooprecovery/goversion/'
-    # Limit build trigger to appropriate files
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'test/usecases/oruclosedlooprecovery/goversion/.*'
-    build-node: ubuntu1804-docker-4c-4g
-    # Includes verify and merge jobs
-    jobs:
-      - "{project-name}-gerrit-docker-jobs"
-    stream:
-      - master:
-          branch: master
-
-- project:
-    <<: *nonrtric_jdk_common
     name: nonrtric-dmaap-mediator-producer-sonar
     project-name: nonrtric-dmaap-mediator-producer-sonar
     # prescan script requires ubuntu
@@ -257,6 +207,125 @@
         sonar.exclusions=dmaap-mediator-producer/main.go,dmaap-mediator-producer/mocks/**.go,dmaap-mediator-producer/stub/**.go,dmaap-mediator-producer/internal/**/**_test.go
     jobs:
       - gerrit-sonar-prescan-script
+
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-sonar
+    project-name: '{name}'
+    # template goal install builds docker image unnecessarily
+    mvn-params: '-Ddocker.skip=true'
+    sonarcloud: true
+    sonarcloud-api-token: '{sonarcloud_api_token}'
+    sonarcloud-project-key: '{sonarcloud_project_organization}_nonrtric'
+    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    jobs:
+      - gerrit-maven-sonar
+
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-o-ru-closed-loop-recovery
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/nonrtric-o-ru-closed-loop-recovery'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: 'test/usecases/oruclosedlooprecovery/scriptversion/app'
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'test/usecases/oruclosedlooprecovery/scriptversion/app/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+      - dawn:
+          branch: dawn
+
+# Usecases
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-o-ru-closed-loop-consumer
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/nonrtric-o-ru-closed-loop-consumer'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: 'test/usecases/oruclosedlooprecovery/goversion/'
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'test/usecases/oruclosedlooprecovery/goversion/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
+
+# push nexus image from staging to release
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-o-ru-closed-loop-consumer-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-o-du-slice-assurance
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/nonrtric-o-du-slice-assurance'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: 'test/usecases/odusliceassurance/goversion/'
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'test/usecases/odusliceassurance/goversion/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
+
+# push nexus image from staging to release
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-o-du-slice-assurance-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
 
 - project:
     <<: *nonrtric_jdk_common
@@ -289,24 +358,3 @@
     jobs:
       - gerrit-sonar-prescan-script
 
-- project:
-    <<: *nonrtric_jdk_common
-    name: nonrtric-release
-    # maven release requires sigul which requires centos
-    # container release requires docker
-    build-node: centos7-docker-2c-8g
-    jobs:
-      - '{project-name}-gerrit-release-jobs'
-
-- project:
-    <<: *nonrtric_jdk_common
-    name: nonrtric-sonar
-    project-name: '{name}'
-    # template goal install builds docker image unnecessarily
-    mvn-params: '-Ddocker.skip=true'
-    sonarcloud: true
-    sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{sonarcloud_project_organization}_nonrtric'
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
-    jobs:
-      - gerrit-maven-sonar
