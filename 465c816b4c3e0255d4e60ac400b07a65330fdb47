@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea852964_550337fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2021-12-13T21:33:47Z",
+      "side": 1,
+      "message": "Suggest abandon this one --- \nPlease work with Henrik for this review: https://gerrit.o-ran-sc.org/r/c/ci-management/+/7330 ",
+      "revId": "465c816b4c3e0255d4e60ac400b07a65330fdb47",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
