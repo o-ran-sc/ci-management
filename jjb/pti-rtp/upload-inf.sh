@@ -24,9 +24,13 @@ set -eu -o pipefail
 echo "INFO: creating virtual environment"
 virtualenv -p python3 /tmp/venv
 PATH=/tmp/venv/bin:$PATH
-pipup="python -m pip install -q --upgrade lftools"
-echo "INFO: installing packages: $pipup"
-$pipup
+
+pip_pkgs="pip setuptools lftools"
+for pkg in $pip_pkgs; do
+    cmd_pip="python -m pip install -q --upgrade $pkg"
+    echo "INFO: installing packages: $cmd_pip"
+    $cmd_pip
+done
 
 # NEXUS_URL is set by Jenkins
 nexus_repo_id="images"
