@@ -52,6 +52,8 @@
           branch: master
       - dawn:
           branch: dawn
+      - e-release:
+          branch: e-release
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
@@ -93,6 +95,8 @@
           branch: master
       - dawn:
           branch: dawn
+      - e-release:
+          branch: e-release
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
@@ -114,3 +118,6 @@
           branch: master
       - dawn:
           branch: dawn
+      - e-release:
+          branch: e-release
+
