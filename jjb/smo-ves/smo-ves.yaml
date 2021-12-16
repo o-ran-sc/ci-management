@@ -12,3 +12,35 @@
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- ves_docker_common: &ves_docker_common
+    # values apply to all docker projects
+    name: ves-docker-common
+    # git repo
+    project: smo/ves
+    # jenkins job name prefix
+    project-name: smo-ves
+    # maven settings file has docker credentials
+    mvn-settings: smo-ves-settings
+
+- project:
+    <<: *ves_docker_common
+    name: smo-ves
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # source of docker tag
+    container-tag-method: yaml-file
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *ves_docker_common
+    name: smo-ves-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
