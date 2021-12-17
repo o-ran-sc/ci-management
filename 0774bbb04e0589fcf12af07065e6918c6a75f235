@@ -16,6 +16,23 @@
       "message": "stage-release",
       "revId": "0774bbb04e0589fcf12af07065e6918c6a75f235",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc50858c_6bcc7923",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2021-12-17T02:16:05Z",
+      "side": 1,
+      "message": "job-deploy smo-ves",
+      "revId": "0774bbb04e0589fcf12af07065e6918c6a75f235",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
