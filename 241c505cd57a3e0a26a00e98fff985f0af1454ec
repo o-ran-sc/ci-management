@@ -50,6 +50,23 @@
       "message": "jjb-deploy nonrtric-o-du-slice-assurance*",
       "revId": "241c505cd57a3e0a26a00e98fff985f0af1454ec",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8710a17b_58e2eb66",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2021-12-21T10:02:35Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-o-ru-closed-loop-consumer*",
+      "revId": "241c505cd57a3e0a26a00e98fff985f0af1454ec",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
