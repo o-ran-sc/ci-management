@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "434565ee_69b45007",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2021-12-21T10:04:44Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-dmaap-mediator-producer*",
+      "revId": "d5e317b3142ac5b667625f3f0cccccda720705c2",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
