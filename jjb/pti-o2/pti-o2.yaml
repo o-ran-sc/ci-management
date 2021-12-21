@@ -47,22 +47,6 @@
       - master:
           branch: master
 
-- project:
-    <<: *pti_o2_common
-    <<: *pti_o2_python
-    name: pti-o2-imsdms-sonarqube
-    sonar-project-file: ""
-    sonar-properties: |
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        sonar.build.sourceEncoding=UTF-8
-        sonar.sources=src
-        sonar.python.coverage.reportPaths=coverage.xml
-    jobs:
-      - gerrit-tox-sonarqube
-
 - pti_o2_docker: &pti_o2_docker_common
     <<: *pti_o2_common
     # values apply to all pti/o2 docker projects
@@ -73,6 +57,7 @@
     container-tag-method: yaml-file
     # docker-root: src
     # if no container-tag-yaml-dir is defined, container-tag.yml is taken from the docker-root
+    container-tag-yaml-dir: stages
     build-node: ubuntu1804-docker-4c-4g
     stream:
       - master:
@@ -80,13 +65,16 @@
 
 - project:
     <<: *pti_o2_docker_common
-    name: pti-o2-imsdms-docker-verify
-    # jenkins job name prefix
-    project-name: '{name}'
-    container-tag-method: latest
-    docker-build-args: '--network=host -f Dockerfile'
+    name: pti-o2-imsdms
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
     jobs:
-      - gerrit-docker-verify
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
 
 - project:
     <<: *pti_o2_docker_common
@@ -94,9 +82,9 @@
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
-    container-tag-yaml-dir: release
+    container-tag-yaml-dir: releases
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'release/.*'
+        pattern: 'releases\/.*\.yaml'
     jobs:
       - '{project-name}-gerrit-release-jobs'
