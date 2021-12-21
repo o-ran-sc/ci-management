@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric-o-ru-closed-loop-consumer",
       "revId": "8e9cd4405707585370287eb6372e216e930e3b56",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b85f87db_06de1861",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2021-12-21T07:28:36Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-o-ru-closed-loop-consumer*",
+      "revId": "8e9cd4405707585370287eb6372e216e930e3b56",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
