@@ -33,6 +33,23 @@
       "message": "jjb-deploy nonrtric-dmaap-mediator-producer*",
       "revId": "241c505cd57a3e0a26a00e98fff985f0af1454ec",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "728ce554_2b582776",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2021-12-21T10:00:03Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-o-du-slice-assurance*",
+      "revId": "241c505cd57a3e0a26a00e98fff985f0af1454ec",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
