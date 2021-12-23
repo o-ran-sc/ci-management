@@ -16,6 +16,23 @@
       "message": "PLease review and merge.",
       "revId": "3824aeedfa61f4d2999cd7a4810086d3ae9550c6",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f811d582_62374af1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001460
+      },
+      "writtenOn": "2021-12-23T04:21:43Z",
+      "side": 1,
+      "message": "looks good, however let\u0027s wait for someone else to approve with +2",
+      "revId": "3824aeedfa61f4d2999cd7a4810086d3ae9550c6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
