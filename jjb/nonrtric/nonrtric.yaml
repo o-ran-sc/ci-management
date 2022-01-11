@@ -200,7 +200,7 @@
     # Directory with Dockerfile
     docker-root: 'dmaap-mediator-producer'
     # Directory where go test should be run
-    go-root: 'test/usecases/dmaap-mediator-producer'
+    go-root: 'dmaap-mediator-producer'
     # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
