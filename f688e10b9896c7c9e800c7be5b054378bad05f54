@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28634ada_1c075287",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-01-11T17:55:01Z",
+      "side": 1,
+      "message": "I think you actually want to use !include here instead of !include-raw. If using !include-raw then the included file will _not_ be interpreted further. See https://docs.openstack.org/infra/jenkins-job-builder/definition.html#inclusion-tags\n\nGiven that the split out file still has tokens in it that need translating, I believe this is what you need",
+      "revId": "f688e10b9896c7c9e800c7be5b054378bad05f54",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
