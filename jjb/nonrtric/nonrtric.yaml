@@ -219,7 +219,7 @@
 - project:
     <<: *nonrtric_jdk_common
     name: nonrtric-dmaap-mediator-producer-sonar
-    project-name: nonrtric-dmaap-mediator-producer-sonar
+    project-name: nonrtric-dmaap-mediator-producer
     # prescan script requires ubuntu
     # golang is only on docker-enabled nodes
     build-node: ubuntu1804-docker-4c-4g
@@ -227,23 +227,7 @@
     sonar-project-file: ""
     java-version: openjdk11
     # use sonarcloud values from defaults.yaml
-    sonar-properties: |
-        # Required metadata
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_nonrtric-dmaap-mediator-producer
-        sonar.organization={sonarcloud_project_organization}
-        # Encoding
-        sonar.build.sourceEncoding=UTF-8
-        # Language
-        sonar.language=go
-        # Source
-        sonar.sources=.
-        # Unit tests
-        sonar.go.coverage.reportPaths=dmaap-mediator-producer/coverage.txt
-        # Inclusions
-        sonar.inclusions=dmaap-mediator-producer/internal/**/**.go
-        # Exclusions
-        sonar.exclusions=dmaap-mediator-producer/main.go,dmaap-mediator-producer/mocks/**.go,dmaap-mediator-producer/stub/**.go,dmaap-mediator-producer/internal/**/**_test.go
+    sonar-properties: !include-raw: sonar-project.properties
     jobs:
       - gerrit-sonar-prescan-script
 
@@ -386,4 +370,3 @@
         sonar.exclusions=test/usecases/oruclosedlooprecovery/goversion/mocks/**.go,test/usecases/oruclosedlooprecovery/goversion/internal/**/**_test.go,test/usecases/oruclosedlooprecovery/goversion/**_test.go,test/usecases/oruclosedlooprecovery/goversion/simulator/**.go
     jobs:
       - gerrit-sonar-prescan-script
-
