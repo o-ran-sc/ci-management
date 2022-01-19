@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da481793_889d78f4",
+        "filename": "jenkins-config/global-vars-sandbox.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2022-01-19T15:42:09Z",
+      "side": 1,
+      "message": "Please fix the IP address here as well.",
+      "range": {
+        "startLine": 9,
+        "startChar": 16,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "60f1147626ba4738be07267742a2dc1df791b8cd",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
