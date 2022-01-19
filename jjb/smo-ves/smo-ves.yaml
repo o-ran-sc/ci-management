@@ -48,7 +48,7 @@
       - '{project-name}-gerrit-release-jobs'
 
 - project:
-    <<: *a1_common
+    <<: *ves_docker_common
     name: smo-ves-sonarqube
     python-version: python3
     # the install script assumes an ubuntu image
