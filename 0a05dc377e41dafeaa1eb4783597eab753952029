@@ -33,6 +33,23 @@
       "message": "Linkn to successful job in sandbox: https://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/nonrtric-dmaap-mediator-producer-go-verify-master/5/",
       "revId": "0a05dc377e41dafeaa1eb4783597eab753952029",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ccad0648_9b5bd38b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-01-24T12:27:43Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-dmaap-mediator-producer*",
+      "revId": "0a05dc377e41dafeaa1eb4783597eab753952029",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
