@@ -1,0 +1,14 @@
+---
+- project:
+    name: nonrtric-rapp-healthcheck-project-view
+    project-name: nonrtric-rapp-healthcheck
+    views:
+      - project-view
+
+- project:
+    name: nonrtric-rapp-healthcheck-info
+    project: nonrtric/rapp/healthcheck
+    project-name: nonrtric-rapp-healthcheck
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
