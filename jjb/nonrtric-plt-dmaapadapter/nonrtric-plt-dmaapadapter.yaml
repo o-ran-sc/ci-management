@@ -1,0 +1,14 @@
+---
+- project:
+    name: nonrtric-plt-dmaapadapter-project-view
+    project-name: nonrtric-plt-dmaapadapter
+    views:
+      - project-view
+
+- project:
+    name: nonrtric-plt-dmaapadapter-info
+    project: nonrtric/plt/dmaapadapter
+    project-name: nonrtric-plt-dmaapadapter
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
