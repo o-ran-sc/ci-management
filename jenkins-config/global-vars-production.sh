@@ -9,6 +9,6 @@ RELEASE_EMAIL=collab-it+o-ran-sc-release@linuxfoundation.org
 RELEASE_USERNAME=o-ran-sc-release
 S3_BUCKET=
 SIGUL_BRIDGE_IP=44.232.126.158
-SIGUL_KEY=oran-release-2019
+SIGUL_KEY=oran-release-2022
 SILO=production
 MASTER_RTD_PROJECT=doc
