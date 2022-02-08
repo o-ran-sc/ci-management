@@ -58,11 +58,11 @@ hash=$(git rev-parse --short HEAD || true)
 
 # Build
 
-go build -a -installsuffix cgo -ldflags "-X main.Version=$tag -X main.Hash=$hash" -o ./cmd/*.go
+go build ./...
 
 # Execute UT and measure coverage
 
-go test . -v -coverprofile cover.out || true
+go test ./... -v -coverprofile cover.out || true
 
 echo "--> build_sdlgo_ubuntu.sh ends"
 
