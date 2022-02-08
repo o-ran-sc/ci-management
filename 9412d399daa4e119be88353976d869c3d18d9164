@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e24f802d_ac68b6f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2022-02-08T17:13:55Z",
+      "side": 1,
+      "message": "Hi,\nCan you please review and if it\u0027s looks acceptable submit it also.\nPlease note that I haven\u0027t locally tested these changes if they improve sdlgo coverage reporting or not because I don\u0027t know how to run Sonar reports by myself.\nRegards,\nTimo ",
+      "revId": "9412d399daa4e119be88353976d869c3d18d9164",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
