@@ -60,11 +60,11 @@
         # Source
         sonar.sources=.
         # Unit tests
-        sonar.go.coverage.reportPaths=./cover.out,/internal/sdlgoredis/cover.out
+        sonar.go.coverage.reportPaths=**/cover.out
         # Inclusions
         sonar.inclusions=**/*.go
         # Exclusions
-        sonar.exclusions=**/*_test.go
+        sonar.exclusions=cmd/**.go,example/**.go,internal/mocks/**.go,**/*_test.go
     jobs:
       - gerrit-sonar-prescan-script
 
