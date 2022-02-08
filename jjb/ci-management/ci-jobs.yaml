@@ -14,8 +14,12 @@
     build-node-label-list: ""
 
     jobs:
-      - '{project-name}-ci-jobs'
       - 'gerrit-info-yaml-verify'
+      - gerrit-jenkins-cfg-verify
+      - gerrit-jenkins-sandbox-cleanup
+      - gerrit-jjb-deploy-job
+      - gerrit-jjb-merge
+      - gerrit-jjb-verify
 
     <<: *ci_jobs_common
 
