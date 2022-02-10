@@ -1,0 +1,14 @@
+---
+- project:
+    name: nonrtric-plt-dmaapmediatorproducer-project-view
+    project-name: nonrtric-plt-dmaapmediatorproducer
+    views:
+      - project-view
+
+- project:
+    name: nonrtric-plt-dmaapmediatorproducer-info
+    project: nonrtric/plt/dmaapmediatorproducer
+    project-name: nonrtric-plt-dmaapmediatorproducer
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
