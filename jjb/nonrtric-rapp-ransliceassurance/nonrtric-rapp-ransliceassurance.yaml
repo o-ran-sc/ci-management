@@ -1,0 +1,14 @@
+---
+- project:
+    name: nonrtric-rapp-ransliceassurance-project-view
+    project-name: nonrtric-rapp-ransliceassurance
+    views:
+      - project-view
+
+- project:
+    name: nonrtric-rapp-ransliceassurance-info
+    project: nonrtric/rapp/ransliceassurance
+    project-name: nonrtric-rapp-ransliceassurance
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
