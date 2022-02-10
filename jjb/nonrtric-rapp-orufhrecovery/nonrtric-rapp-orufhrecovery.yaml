@@ -1,0 +1,14 @@
+---
+- project:
+    name: nonrtric-rapp-orufhrecovery-project-view
+    project-name: nonrtric-rapp-orufhrecovery
+    views:
+      - project-view
+
+- project:
+    name: nonrtric-rapp-orufhrecovery-info
+    project: nonrtric/rapp/orufhrecovery
+    project-name: nonrtric-rapp-orufhrecovery
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
