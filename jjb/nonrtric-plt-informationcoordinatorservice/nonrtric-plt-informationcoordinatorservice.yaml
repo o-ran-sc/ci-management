@@ -1,0 +1,14 @@
+---
+- project:
+    name: nonrtric-plt-informationcoordinatorservice-project-view
+    project-name: nonrtric-plt-informationcoordinatorservice
+    views:
+      - project-view
+
+- project:
+    name: nonrtric-plt-informationcoordinatorservice-info
+    project: nonrtric/plt/informationcoordinatorservice
+    project-name: nonrtric-plt-informationcoordinatorservice
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
