@@ -1,0 +1,14 @@
+---
+- project:
+    name: nonrtric-plt-rappcatalogue-project-view
+    project-name: nonrtric-plt-rappcatalogue
+    views:
+      - project-view
+
+- project:
+    name: nonrtric-plt-rappcatalogue-info
+    project: nonrtric/plt/rappcatalogue
+    project-name: nonrtric-plt-rappcatalogue
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
