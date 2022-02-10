@@ -1,0 +1,14 @@
+---
+- project:
+    name: nonrtric-plt-helmmanager-project-view
+    project-name: nonrtric-plt-helmmanager
+    views:
+      - project-view
+
+- project:
+    name: nonrtric-plt-helmmanager-info
+    project: nonrtric/plt/helmmanager
+    project-name: nonrtric-plt-helmmanager
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
