@@ -12,3 +12,69 @@
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- rappcatalogue_jdk_common: &rappcatalogue_jdk_common
+    name: rappcatalogue-jdk-common
+    # git repo
+    project: nonrtric/plt/rappcatalogue
+    # jenkins job name prefix
+    project-name: nonrtric-plt-rappcatalogue
+    # maven settings file has docker credentials
+    mvn-settings: nonrtric-plt-rappcatalogue-settings
+    mvn-version: mvn36
+    java-version: openjdk11
+
+- project:
+    <<: *rappcatalogue_jdk_common
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
+
+# nonrtric:r-app-catalogue
+# Maven artifacts for r-app-catalogue
+- project:
+    <<: *rappcatalogue_jdk_common
+    name: nonrtric-plt-rappcatalogue
+    project-name: '{name}'
+    mvn-opts: '-Ddocker.skip=true'
+    mvn-params: '-f r-app-catalogue'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'r-app-catalogue/.*'
+    build-node: ubuntu1804-builder-4c-4g
+    jobs:
+      - gerrit-maven-verify
+      - gerrit-maven-merge
+      - gerrit-maven-stage
+      - gerrit-maven-clm
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *rappcatalogue_jdk_common
+    name: nonrtric-plt-rappcatalogue-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *rappcatalogue_jdk_common
+    name: nonrtric-plt-rappcatalogue-sonar
+    project-name: '{name}'
+    # template goal install builds docker image unnecessarily
+    mvn-params: '-Ddocker.skip=true'
+    sonarcloud: true
+    sonarcloud-api-token: '{sonarcloud_api_token}'
+    sonarcloud-project-key: '{sonarcloud_project_organization}_nonrtric'
+    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    jobs:
+      - gerrit-maven-sonar
+
