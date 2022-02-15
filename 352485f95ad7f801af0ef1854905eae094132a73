@@ -50,6 +50,23 @@
       "message": "jjb-deploy nonrtric-plt-rappcatalogue*",
       "revId": "352485f95ad7f801af0ef1854905eae094132a73",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f42c7d3_d99fb7ad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-02-15T06:40:37Z",
+      "side": 1,
+      "message": "Link to successful job in sandbox: https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-rappcatalogue-maven-docker-verify-master-mvn36-openjdk11/2/",
+      "revId": "352485f95ad7f801af0ef1854905eae094132a73",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
