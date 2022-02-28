@@ -25,6 +25,6 @@ set -ex
 sudo apt-get update
 
 # build script execution
-bash dmaap-mediator-producer/build-dmaapmediatorproducer-ubuntu.sh
+bash ./build-dmaapmediatorproducer-ubuntu.sh
 
 echo "--> prescan-dmaapmediatorproducer-ubuntu.sh ends"
