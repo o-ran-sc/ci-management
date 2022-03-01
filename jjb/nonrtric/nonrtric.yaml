@@ -162,50 +162,6 @@
 
 - project:
     <<: *nonrtric_jdk_common
-    name: nonrtric-dmaap-mediator-producer
-    project-name: '{name}'
-    # image name
-    docker-name: 'o-ran-sc/nonrtric-dmaap-mediator-producer'
-    # get tag from YAML
-    container-tag-method: yaml-file
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
-    # Directory with Dockerfile
-    docker-root: 'dmaap-mediator-producer'
-    # Directory where go test should be run
-    go-root: 'dmaap-mediator-producer'
-    # Limit build trigger to appropriate files
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'dmaap-mediator-producer/.*'
-    build-node: ubuntu1804-docker-4c-4g
-    # Includes verify and merge jobs
-    jobs:
-      - "{project-name}-gerrit-docker-jobs"
-      - gerrit-go-verify
-    stream:
-      - master:
-          branch: master
-      - e-release:
-          branch: e-release
-
-- project:
-    <<: *nonrtric_jdk_common
-    name: nonrtric-dmaap-mediator-producer-sonar
-    project-name: nonrtric-dmaap-mediator-producer
-    # prescan script requires ubuntu
-    # golang is only on docker-enabled nodes
-    build-node: ubuntu1804-docker-4c-4g
-    sonar-prescan-script: !include-raw-escape: prescan-dmaapmediatorproducer-ubuntu.sh
-    sonar-project-file: ""
-    java-version: openjdk11
-    # use sonarcloud values from defaults.yaml
-    sonar-properties: !include-raw: sonar-project.properties
-    jobs:
-      - gerrit-sonar-prescan-script
-
-- project:
-    <<: *nonrtric_jdk_common
     name: nonrtric-release
     # maven release requires sigul which requires centos
     # container release requires docker
