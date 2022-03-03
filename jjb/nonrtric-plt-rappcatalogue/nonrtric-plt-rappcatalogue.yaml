@@ -42,7 +42,6 @@
     name: nonrtric-plt-rappcatalogue
     project-name: '{name}'
     mvn-opts: '-Ddocker.skip=true'
-    mvn-params: '-f nonrtric-plt-rappcatalogue'
     build-node: ubuntu1804-builder-4c-4g
     jobs:
       - gerrit-maven-verify
