@@ -62,7 +62,7 @@
       sonar.projectName={project-name}
       sonar.organization={sonarcloud_project_organization}
       sonar.build.sourceEncoding=UTF-8
-      sonar.sources=a1
+      sonar.sources=collector
       sonar.python.coverage.reportPaths=coverage.xml
-      jobs:
-        - gerrit-tox-sonarqube
+    jobs:
+      - gerrit-tox-sonarqube
