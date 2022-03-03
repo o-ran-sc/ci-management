@@ -33,6 +33,23 @@
       "message": "Link to sandbox job that builds properly and only fails because sandbox cannot push to Nexus: https://jenkins.o-ran-sc.org/sandbox/job/nonrtric-plt-rappcatalogue-maven-merge-master/",
       "revId": "88c8346435a6c0588967f6e6ef9d34dbd4c0d23c",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d892cc4_1f05e50f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2022-03-03T12:06:32Z",
+      "side": 1,
+      "message": "Thanks Jessica",
+      "revId": "88c8346435a6c0588967f6e6ef9d34dbd4c0d23c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
