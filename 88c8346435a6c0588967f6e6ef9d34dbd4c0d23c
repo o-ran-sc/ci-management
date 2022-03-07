@@ -67,6 +67,23 @@
       "message": "jjb-deploy nonrtric-plt-rappcatalogue-sonar",
       "revId": "88c8346435a6c0588967f6e6ef9d34dbd4c0d23c",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e80ac285_56bd6790",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-03-07T07:09:51Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-plt-rappcatalogue*",
+      "revId": "88c8346435a6c0588967f6e6ef9d34dbd4c0d23c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
