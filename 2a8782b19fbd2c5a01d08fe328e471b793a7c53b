@@ -16,6 +16,23 @@
       "message": "looks good :)",
       "revId": "2a8782b19fbd2c5a01d08fe328e471b793a7c53b",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "999a0612_1b9de047",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-03-07T18:27:06Z",
+      "side": 1,
+      "message": "jjb-deploy smo-ves-sonarqube",
+      "revId": "2a8782b19fbd2c5a01d08fe328e471b793a7c53b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
