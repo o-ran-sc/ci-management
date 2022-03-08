@@ -26,10 +26,43 @@
 - project:
     <<: *ves_docker_common
     name: smo-ves
+    project-name: '{name}'
     # image name
     docker-name: 'smo-collector'
     # Dockerfile is in a subdir
     docker-root: collector
+    # source of docker tag
+    container-tag-method: yaml-file
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *ves_docker_common
+    name: smo-dmaap
+    project-name: '{name}'
+    # image name
+    docker-name: 'smo-dmaap-adapter'
+    # Dockerfile is in a subdir
+    docker-root: dmaapadapter
+    # source of docker tag
+    container-tag-method: yaml-file
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *ves_docker_common
+    name: smo-influxdb
+    project-name: '{name}'
+    # image name
+    docker-name: 'smo-influxdb-connector'
+    # Dockerfile is in a subdir
+    docker-root: influxdb-connector
     # source of docker tag
     container-tag-method: yaml-file
     jobs:
