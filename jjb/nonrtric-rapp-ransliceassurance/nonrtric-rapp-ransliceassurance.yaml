@@ -56,6 +56,29 @@
 
 - project:
     <<: *ransliceassurance_common
+    name: nonrtric-rapp-ransliceassurance-icsversion
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/nonrtric-rapp-ransliceassurance-icsversion'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: 'icsversion'
+    # Directory where go test should be run
+    go-root: 'icsversion'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+      - gerrit-go-verify
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *ransliceassurance_common
     name: nonrtric-rapp-ransliceassurance-sonar
     project-name: nonrtric-rapp-ransliceassurance
     # prescan script requires ubuntu
