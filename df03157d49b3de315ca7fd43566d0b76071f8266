@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7551c142_87e1d9d6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001106
+      },
+      "writtenOn": "2022-03-17T09:28:48Z",
+      "side": 1,
+      "message": "Successful job in sandbox:  \nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-rapp-ransliceassurance-icsversion-docker-verify-master/",
+      "revId": "df03157d49b3de315ca7fd43566d0b76071f8266",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
