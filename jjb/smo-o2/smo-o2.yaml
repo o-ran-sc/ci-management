@@ -1,47 +1,32 @@
 ---
 - project:
-    name: smo-ves-project-view
-    project-name: smo-ves
+    name: smo-o2-project-view
+    project-name: smo-o2
     views:
       - project-view
 
 - project:
-    name: smo-ves-info
-    project: smo/ves
-    project-name: smo-ves
+    name: smo-o2-info
+    project: smo/o2
+    project-name: smo-o2
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
 
-- ves_docker_common: &ves_docker_common
+- smo_o2_docker_common: &smo_o2_docker_common
     # values apply to all docker projects
-    name: ves-docker-common
+    name: smo-o2-docker-common
     # git repo
-    project: smo/ves
+    project: smo/o2
     # jenkins job name prefix
-    project-name: smo-ves
+    project-name: smo-o2
     # maven settings file has docker credentials
-    mvn-settings: smo-ves-settings
+    mvn-settings: smo-o2-settings
 
 - project:
-    <<: *ves_docker_common
-    name: smo-ves
+    <<: *smo_o2_docker_common
+    name: smo-o2-release
     project-name: '{name}'
-    # image name
-    docker-name: 'smo-collector'
-    # Dockerfile is in a subdir
-    docker-root: collector
-    # source of docker tag
-    container-tag-method: yaml-file
-    jobs:
-      - '{project-name}-gerrit-docker-jobs'
-    stream:
-      - master:
-          branch: master
-
-- project:
-    <<: *ves_docker_common
-    name: smo-ves-release
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
@@ -49,9 +34,9 @@
       - '{project-name}-gerrit-release-jobs'
 
 - project:
-    <<: *ves_docker_common
-    name: smo-ves-sonarqube
-    project-name: smo-ves
+    <<: *smo_o2_docker_common
+    name: smo-o2-sonarqube
+    project-name: smo-o2
     python-version: python3
     # the install script assumes an ubuntu image
     build-node: ubuntu1804-builder-2c-2g
