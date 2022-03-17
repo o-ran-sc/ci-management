@@ -26,6 +26,7 @@
 - project:
     <<: *ves_docker_common
     name: smo-ves
+    project-name: '{name}'
     # image name
     docker-name: 'smo-collector'
     # Dockerfile is in a subdir
