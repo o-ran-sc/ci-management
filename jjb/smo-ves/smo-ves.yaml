@@ -26,6 +26,7 @@
 - project:
     <<: *ves_docker_common
     name: smo-ves
+    project-name: '{name}'
     # image name
     docker-name: 'smo-collector'
     # Dockerfile is in a subdir
@@ -50,6 +51,7 @@
 - project:
     <<: *ves_docker_common
     name: smo-ves-sonarqube
+    project-name: smo-ves
     python-version: python3
     # the install script assumes an ubuntu image
     build-node: ubuntu1804-builder-2c-2g
@@ -64,5 +66,5 @@
       sonar.build.sourceEncoding=UTF-8
       sonar.sources=a1
       sonar.python.coverage.reportPaths=coverage.xml
-      jobs:
-        - gerrit-tox-sonarqube
+    jobs:
+      - gerrit-tox-sonarqube
