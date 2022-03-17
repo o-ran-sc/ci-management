@@ -13,6 +13,22 @@
     jobs:
       - gerrit-info-yaml-verify
 
+- project:
+    name: smo-dmaap-info
+    project: smo/ves
+    project-name: smo-dmaap
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- project:
+    name: smo-influxdb-info
+    project: smo/ves
+    project-name: smo-influxdb
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
 - ves_docker_common: &ves_docker_common
     # values apply to all docker projects
     name: ves-docker-common
@@ -103,7 +119,28 @@
 
 - project:
     <<: *ves_docker_common
+    name: smo-dmaap-release
+    project-name: '{name}'
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *ves_docker_common
+    name: smo-influxdb-release
+    project-name: '{name}'
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *ves_docker_common
     name: smo-ves-sonarqube
+    project-name: smo-ves
     python-version: python3
     # the install script assumes an ubuntu image
     build-node: ubuntu1804-builder-2c-2g
@@ -118,5 +155,5 @@
       sonar.build.sourceEncoding=UTF-8
       sonar.sources=a1
       sonar.python.coverage.reportPaths=coverage.xml
-      jobs:
-        - gerrit-tox-sonarqube
+    jobs:
+      - gerrit-tox-sonarqube
