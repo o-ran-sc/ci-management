@@ -1,0 +1,55 @@
+---
+- project:
+    name: smo-o2-project-view
+    project-name: smo-o2
+    views:
+      - project-view
+
+- project:
+    name: smo-o2-info
+    project: smo/o2
+    project-name: smo-o2
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - gerrit-info-yaml-verify
+
+- smo_o2_docker_common: &smo_o2_docker_common
+    # values apply to all docker projects
+    name: smo-o2-docker-common
+    # git repo
+    project: smo/o2
+    # jenkins job name prefix
+    project-name: smo-o2
+    # maven settings file has docker credentials
+    mvn-settings: smo-o2-settings
+
+- project:
+    <<: *smo_o2_docker_common
+    name: smo-o2-release
+    project-name: '{name}'
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *smo_o2_docker_common
+    name: smo-o2-sonarqube
+    project-name: smo-o2
+    python-version: python3
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    # pre-build-script: !include-raw-escape:
+    #   - ../shell/install-deb-rmr.sh
+    sonar-project-file: ""
+    sonar-properties: |
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=a1
+      sonar.python.coverage.reportPaths=coverage.xml
+    jobs:
+      - gerrit-tox-sonarqube
