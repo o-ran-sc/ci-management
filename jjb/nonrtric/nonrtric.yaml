@@ -162,6 +162,50 @@
 
 - project:
     <<: *nonrtric_jdk_common
+    name: nonrtric-auth-token-fetch
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/nonrtric-auth-token-fetch'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: 'auth-token-fetch'
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory where go test should be run
+    go-root: 'auth-token-fetch'
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'auth-token-fetch/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+      - gerrit-go-verify
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-auth-token-fetch-sonar
+    project-name: nonrtric-auth-token-fetch
+    # prescan script requires ubuntu
+    # golang is only on docker-enabled nodes
+    build-node: ubuntu1804-docker-4c-4g
+    sonar-prescan-script: !include-raw-escape: prescan-nonrtric-auth-token-fetch-ubuntu.sh
+    sonar-project-file: ""
+    java-version: openjdk11
+    # use sonarcloud values from defaults.yaml
+    sonar-properties: !include-raw: sonar-project.properties
+    jobs:
+      - gerrit-sonar-prescan-script
+
+- project:
+    <<: *nonrtric_jdk_common
     name: nonrtric-release
     # maven release requires sigul which requires centos
     # container release requires docker
