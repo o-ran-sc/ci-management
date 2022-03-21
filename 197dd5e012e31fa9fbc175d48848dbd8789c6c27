@@ -33,6 +33,23 @@
       "message": "Link to successful run in sandbox: \nhttps://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/nonrtric-auth-token-fetch-docker-verify-master/7/",
       "revId": "197dd5e012e31fa9fbc175d48848dbd8789c6c27",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9eef6027_5ac4309b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-03-21T15:07:26Z",
+      "side": 1,
+      "message": "Link to successful Sonar job in sandbox:\nhttps://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/nonrtric-auth-token-fetch-sonar-prescan-script/1/",
+      "revId": "197dd5e012e31fa9fbc175d48848dbd8789c6c27",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
