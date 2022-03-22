@@ -90,6 +90,30 @@
       },
       "revId": "197dd5e012e31fa9fbc175d48848dbd8789c6c27",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "692dc09b_1e856b85",
+        "filename": "jjb/nonrtric/nonrtric.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000262
+      },
+      "writtenOn": "2022-03-22T08:04:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22dc02b5_8fb1342e",
+      "range": {
+        "startLine": 177,
+        "startChar": 43,
+        "endLine": 177,
+        "endChar": 46
+      },
+      "revId": "197dd5e012e31fa9fbc175d48848dbd8789c6c27",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
