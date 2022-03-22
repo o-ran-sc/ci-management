@@ -33,6 +33,23 @@
       "message": "Link to successful run in sandbox: https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-rapp-ransliceassurance-icsversion-docker-verify-master/1/",
       "revId": "7f29f10bd43bebac958324a65baf3a60931aaeb9",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39da9b00_35af0528",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001106
+      },
+      "writtenOn": "2022-03-22T08:32:27Z",
+      "side": 1,
+      "message": "Link to successful Sonar job in sandbox:\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-rapp-ransliceassurance-sonar-prescan-script/3/",
+      "revId": "7f29f10bd43bebac958324a65baf3a60931aaeb9",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
