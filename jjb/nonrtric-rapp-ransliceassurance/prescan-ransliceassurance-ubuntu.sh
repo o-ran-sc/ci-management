@@ -26,5 +26,6 @@ sudo apt-get update
 
 # build script execution
 bash smoversion/build-ransliceassurance-ubuntu.sh
+bash icsversion/build-ransliceassurance-ubuntu.sh
 
 echo "--> prescan-ransliceassurance-ubuntu.sh ends"
