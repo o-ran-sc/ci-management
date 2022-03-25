@@ -69,7 +69,7 @@
     mvn-params: '-Ddocker.skip=true'
     sonarcloud: true
     sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{sonarcloud_project_organization}_nonrtric'
+    sonarcloud-project-key: '{sonarcloud_project_organization}_nonrtric_plt_rappcatalogue'
     sonarcloud-project-organization: '{sonarcloud_project_organization}'
     jobs:
       - gerrit-maven-sonar
