@@ -12,3 +12,47 @@
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- nonrtric_plt_dmaapadapter_jdk_common: &nonrtric_jdk_common
+    name: nonrtric-plt-dmaapadapter-jdk-common
+    # git repo
+    project: nonrtric/plt/dmaapadapter
+    # jenkins job name prefix
+    project-name: nonrtric-plt-dmaapadapter
+    # maven settings file has docker credentials
+    mvn-settings: nonrtric-plt-dmaapadapter-settings
+    mvn-version: mvn36
+    java-version: openjdk11
+
+- project:
+    <<: *nonrtric_plt_dmaapadapter_jdk_common
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *nonrtric_plt_dmaapadapter_jdk_common
+    name: nonrtric-plt-dmaapadapter-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *nonrtric_plt_dmaapadapter_jdk_common
+    name: nonrtric-plt-dmaapadapter-sonar
+    project-name: '{name}'
+    # template goal install builds docker image unnecessarily
+    mvn-params: '-Ddocker.skip=true'
+    sonarcloud: true
+    sonarcloud-api-token: '{sonarcloud_api_token}'
+    sonarcloud-project-key: '{sonarcloud_project_organization}_nonrtric-plt-dmaapadapter'
+    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    jobs:
+      - gerrit-maven-sonar
