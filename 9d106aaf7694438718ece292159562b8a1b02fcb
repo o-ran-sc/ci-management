@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric*",
       "revId": "9d106aaf7694438718ece292159562b8a1b02fcb",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d16c698_08ee14e4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-03-25T16:13:07Z",
+      "side": 1,
+      "message": "Links to successful jobs in sandbox:\nhttps://jenkins.o-ran-sc.org/sandbox/job/nonrtric-plt-dmaapmediatorproducer-sonar-prescan-script/5/\nhttps://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/nonrtric-plt-rappcatalogue-sonar-sonar/4/\nhttps://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/nonrtric-sonar-sonar/3/\n",
+      "revId": "9d106aaf7694438718ece292159562b8a1b02fcb",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
