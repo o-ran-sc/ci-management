@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric-rapp-healthcheck*",
       "revId": "1ed71f7a49859b64882f36c9fb6693bc771ddece",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a8cd1f4_195cecea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-04-01T10:53:20Z",
+      "side": 1,
+      "message": "Link to successful job in sandbox:\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-rapp-healthcheck-verify-docker-verify-master/2/",
+      "revId": "1ed71f7a49859b64882f36c9fb6693bc771ddece",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
