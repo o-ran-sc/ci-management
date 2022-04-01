@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c474dcef_d8356fa9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-04-01T09:07:25Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-rapp-healthcheck*",
+      "revId": "50fa0f4bb4c2a94a9dfcec4dc66a0485841aba8c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
