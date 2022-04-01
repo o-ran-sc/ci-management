@@ -12,3 +12,31 @@
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- nonrtric-rapp-healthcheck_common: &nonrtric_rapp_healthcheck_common
+    name: nonrtric-rapp-healthcheck-common
+    # git repo
+    project: nonrtric-rapp-healthcheck
+    # jenkins job name prefix
+    project-name: nonrtric-rapp-healthcheck
+    # maven settings file has docker credentials
+    mvn-settings: nonrtric-rapp-healthcheck-settings
+
+- project:
+    <<: *nonrtric_rapp_healthcheck_common
+    name: nonrtric-rapp-healthcheck-verify
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/nonrtric-rapp-healthcheck'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+      - gerrit-go-verify
+    stream:
+      - master:
+          branch: master
