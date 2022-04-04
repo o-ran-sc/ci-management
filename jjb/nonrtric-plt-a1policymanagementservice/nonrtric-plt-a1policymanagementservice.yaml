@@ -12,3 +12,62 @@
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- nonrtric_jdk_common: &a1policymanagementservice_jdk_common
+    name: a1policymanagementservice-jdk-common
+    # git repo
+    project: nonrtric/plt/a1policymanagementservice
+    # jenkins job name prefix
+    project-name: nonrtric-plt-a1policymanagementservice
+    # maven settings file has docker credentials
+    mvn-settings: nonrtric-settings
+    mvn-version: mvn36
+    java-version: openjdk11
+
+- project:
+    <<: *a1policymanagementservice_jdk_common
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
+
+# nonrtric:a1policymanagementservice/
+# Maven artifacts for nonrtric-plt-a1policymanagementservice/
+- project:
+    <<: *a1policymanagementservice_jdk_common
+    name: nonrtric-plt-a1policymanagementservice-service
+    project-name: '{name}'
+    mvn-opts: '-Ddocker.skip=true'
+    build-node: ubuntu1804-builder-4c-4g
+    jobs:
+      - gerrit-maven-stage
+      - gerrit-maven-clm
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *a1policymanagementservice_jdk_common
+    name: nonrtric-plt-a1policymanagementservice-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *a1policymanagementservice_jdk_common
+    name: nonrtric-plt-a1policymanagementservice-sonar
+    project-name: '{name}'
+    # template goal install builds docker image unnecessarily
+    mvn-params: '-Ddocker.skip=true'
+    sonarcloud: true
+    sonarcloud-api-token: '{sonarcloud_api_token}'
+    sonarcloud-project-key: '{sonarcloud_project_organization}_nonrtric-plt-a1policymanagementservice'
+    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    jobs:
+      - gerrit-maven-sonar
