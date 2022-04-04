@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32f725e4_a82d3cab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-04-04T08:28:57Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-plt-a1policymanagementservice*",
+      "revId": "05a1340ee884e5df4b40d04537c1273a96191f96",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
