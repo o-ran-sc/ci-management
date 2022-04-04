@@ -41,29 +41,6 @@
       - e-release:
           branch: e-release
 
-# nonrtric:a1-policy-management-service/
-# Maven artifacts for nonrtric-a1-policy-management-service/
-- project:
-    <<: *nonrtric_jdk_common
-    name: nonrtric-a1-policy-management-service
-    project-name: '{name}'
-    mvn-opts: '-Ddocker.skip=true'
-    mvn-params: '-f a1-policy-management-service/'
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'a1-policy-management-service/.*'
-    build-node: ubuntu1804-builder-4c-4g
-    jobs:
-      - gerrit-maven-verify
-      - gerrit-maven-merge
-      - gerrit-maven-stage
-      - gerrit-maven-clm
-    stream:
-      - master:
-          branch: master
-      - e-release:
-          branch: e-release
-
 # nonrtric:policy-agent/
 # Maven artifacts for nonrtric-policy-agent/
 - project:
