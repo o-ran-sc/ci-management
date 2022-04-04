@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5ad1976_a8494132",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-04-04T11:18:31Z",
+      "side": 1,
+      "message": "Link to successful job in sandbox:\nhttps://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/nonrtric-plt-a1policymanagementservice-maven-docker-verify-master-mvn36-openjdk11/1/",
+      "revId": "f42da767c97882569b3678dba778c8e36f29d677",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
