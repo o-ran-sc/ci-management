@@ -12,3 +12,34 @@
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- helmmanager_jdk_common: &helmmanager_jdk_common
+    name: helmmanager-jdk-common
+    # git repo
+    project: nonrtric/plt/helmmanager
+    # jenkins job name prefix
+    project-name: nonrtric-plt-helmmanager
+    # maven settings file has docker credentials
+    mvn-settings: nonrtric-plt-helmmanager-settings
+    mvn-version: mvn36
+    java-version: openjdk11
+
+- project:
+    <<: *helmmanager_jdk_common
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *helmmanager_jdk_common
+    name: nonrtric-plt-helmmanager-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
