@@ -20,7 +20,7 @@
     # jenkins job name prefix
     project-name: nonrtric-plt-a1policymanagementservice
     # maven settings file has docker credentials
-    mvn-settings: nonrtric-settings
+    mvn-settings: nonrtric-plt-a1policymanagementservice-settings
     mvn-version: mvn36
     java-version: openjdk11
 
