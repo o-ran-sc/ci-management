@@ -12,3 +12,40 @@
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- sdnca1controller_jdk_common: &sdnca1controller_jdk_common
+    name: sdnca1controller-jdk-common
+    # git repo
+    project: nonrtric/plt/sdnca1controller
+    # jenkins job name prefix
+    project-name: nonrtric-plt-sdnca1controller
+    # maven settings file has docker credentials
+    mvn-settings: nonrtric-plt-sdnca1controller-settings
+    mvn-version: mvn36
+    java-version: openjdk11
+
+# nonrtric:nonrtric-plt-sdnca1controller
+# Maven artifacts for nonrtric-plt-sdnca1controller
+- project:
+    <<: *sdnca1controller_jdk_common
+    name: nonrtric-plt-sdnca1controller
+    project-name: '{name}'
+    mvn-opts: '-Ddocker.skip=true'
+    build-node: ubuntu1804-builder-4c-4g
+    jobs:
+      - gerrit-maven-verify
+      - gerrit-maven-merge
+      - gerrit-maven-stage
+      - gerrit-maven-clm
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *sdnca1controller_jdk_common
+    name: nonrtric-plt-sdnca1controller-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
