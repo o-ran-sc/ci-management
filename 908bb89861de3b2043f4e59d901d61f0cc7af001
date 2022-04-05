@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric-plt-sdnca1controller*",
       "revId": "908bb89861de3b2043f4e59d901d61f0cc7af001",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90e21c04_83712f99",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-04-05T15:10:08Z",
+      "side": 1,
+      "message": "Link to successful job in sandbox:\nhttps://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/nonrtric-plt-sdnca1controller-maven-verify-master-mvn36-openjdk11/1/",
+      "revId": "908bb89861de3b2043f4e59d901d61f0cc7af001",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
