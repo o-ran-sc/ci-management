@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a39eeda3_da156b71",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-04-06T07:28:37Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-plt-sdnca1controller*",
+      "revId": "1f19abe3b3f6345af848d42da426ac76fced0402",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
