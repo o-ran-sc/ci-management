@@ -24,6 +24,17 @@
     mvn-version: mvn36
     java-version: openjdk11
 
+- project:
+    <<: *sdnca1controller_jdk_common
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
+
 # nonrtric:nonrtric-plt-sdnca1controller
 # Maven artifacts for nonrtric-plt-sdnca1controller
 - project:
