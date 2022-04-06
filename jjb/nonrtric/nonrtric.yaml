@@ -24,23 +24,6 @@
     mvn-version: mvn36
     java-version: openjdk11
 
-- project:
-    <<: *nonrtric_jdk_common
-    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
-    jobs:
-      - gerrit-maven-docker-verify
-      - gerrit-maven-docker-merge
-      - gerrit-maven-docker-stage
-    stream:
-      - master:
-          branch: master
-      - cherry:
-          branch: cherry
-      - dawn:
-          branch: dawn
-      - e-release:
-          branch: e-release
-
 # nonrtric:policy-agent/
 # Maven artifacts for nonrtric-policy-agent/
 - project:
@@ -59,8 +42,6 @@
       - gerrit-maven-stage
       - gerrit-maven-clm
     stream:
-      - cherry:
-          branch: cherry
       - dawn:
           branch: dawn
 
@@ -82,10 +63,6 @@
       - gerrit-maven-stage
       - gerrit-maven-clm
     stream:
-      - master:
-          branch: master
-      - cherry:
-          branch: cherry
       - dawn:
           branch: dawn
       - e-release:
@@ -109,8 +86,6 @@
       - gerrit-maven-stage
       - gerrit-maven-clm
     stream:
-      - cherry:
-          branch: cherry
       - dawn:
           branch: dawn
 
@@ -166,19 +141,6 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
-
-- project:
-    <<: *nonrtric_jdk_common
-    name: nonrtric-sonar
-    project-name: '{name}'
-    # template goal install builds docker image unnecessarily
-    mvn-params: '-Ddocker.skip=true'
-    sonarcloud: true
-    sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{sonarcloud_project_organization}_nonrtric'
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
-    jobs:
-      - gerrit-maven-sonar
 
 # Usecases
 - project:
