@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb339148_df6032c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-04-08T07:47:41Z",
+      "side": 1,
+      "message": "See the following commits for fix of groupId:\nhttps://gerrit.o-ran-sc.org/r/c/nonrtric/plt/informationcoordinatorservice/+/8061\nhttps://gerrit.o-ran-sc.org/r/c/nonrtric/plt/a1policymanagementservice/+/8060",
+      "revId": "caa3a9cb85d79506d5131462ae0e8c08bc265918",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
