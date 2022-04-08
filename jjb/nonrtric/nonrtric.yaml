@@ -24,6 +24,17 @@
     mvn-version: mvn36
     java-version: openjdk11
 
+- project:
+    <<: *nonrtric_jdk_common
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - e-release:
+          branch: e-release
+
 # nonrtric:policy-agent/
 # Maven artifacts for nonrtric-policy-agent/
 - project:
