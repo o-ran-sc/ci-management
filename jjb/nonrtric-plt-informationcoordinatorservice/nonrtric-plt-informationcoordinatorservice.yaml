@@ -44,6 +44,7 @@
     mvn-opts: '-Ddocker.skip=true'
     build-node: ubuntu1804-builder-4c-4g
     jobs:
+      - gerrit-maven-merge
       - gerrit-maven-stage
       - gerrit-maven-clm
     stream:
