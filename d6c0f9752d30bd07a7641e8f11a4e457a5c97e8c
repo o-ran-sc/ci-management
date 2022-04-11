@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric-rapp-orufhrecovery*",
       "revId": "d6c0f9752d30bd07a7641e8f11a4e457a5c97e8c",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc5bd538_c5a6d307",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-04-11T06:41:13Z",
+      "side": 1,
+      "message": "Links to successful jobs in sandbox:\nhttps://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/nonrtric-rapp-orufhrecovery-consumer-docker-verify-master/2/\nhttps://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/nonrtric-rapp-orufhrecovery-consumer-go-verify-master/1/\nhttps://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/nonrtric-rapp-orufhrecovery-docker-verify-master/2/",
+      "revId": "d6c0f9752d30bd07a7641e8f11a4e457a5c97e8c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
