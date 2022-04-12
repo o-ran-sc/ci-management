@@ -25,6 +25,6 @@ set -ex
 sudo apt-get update
 
 # build script execution
-bash test/usecases/oruclosedlooprecovery/goversion/build-oruclosedloopconsumer-ubuntu.sh
+bash goversion/build-oruclosedloopconsumer-ubuntu.sh
 
 echo "--> prescan-oruclosedloopconsumer-ubuntu.sh ends"
