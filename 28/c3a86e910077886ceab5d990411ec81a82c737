@@ -1,0 +1,10 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Sonia Sangari <sonia.sangari@est.tech>
+Code-Review+1: Bj�rn Magnusson <bjorn.magnusson@est.tech>
+Code-Review+1: Kevin Timoney <kevin.timoney@est.tech>
+Code-Review+2: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Wed, 13 Apr 2022 18:13:33 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/8073
+Project: ci-management
+Branch: refs/heads/master
