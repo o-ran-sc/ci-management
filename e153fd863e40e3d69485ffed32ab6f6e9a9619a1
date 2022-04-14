@@ -16,6 +16,23 @@
       "message": "jjb-deploy smo-o2*",
       "revId": "e153fd863e40e3d69485ffed32ab6f6e9a9619a1",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be8f7e81_cbd86121",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-04-14T13:59:46Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "e153fd863e40e3d69485ffed32ab6f6e9a9619a1",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
