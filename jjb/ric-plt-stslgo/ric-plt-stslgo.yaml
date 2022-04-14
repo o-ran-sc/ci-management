@@ -1,0 +1,15 @@
+---
+project:
+    name: ric-plt-stslgo-project-view
+    project-name: ric-plt-stslgo
+    views:
+      - project-view
+
+project:
+    name: ric-plt-stslgo-info
+    project: ric-plt/stslgo
+    project-name: ric-plt-stslgo
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
