@@ -39,7 +39,7 @@
 # Maven artifacts for nonrtric-plt-a1policymanagementservice/
 - project:
     <<: *a1policymanagementservice_jdk_common
-    name: nonrtric-plt-a1policymanagementservice-service
+    name: nonrtric-plt-a1policymanagementservice
     project-name: '{name}'
     mvn-opts: '-Ddocker.skip=true'
     build-node: ubuntu1804-builder-4c-4g
