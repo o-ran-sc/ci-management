@@ -16,6 +16,23 @@
       "message": "jjb-deploy smo-ves*",
       "revId": "dc6bb0f0b712c98866f51a186ec06758f6e5164a",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac9d3343_0473a717",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-04-14T13:33:37Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "dc6bb0f0b712c98866f51a186ec06758f6e5164a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
