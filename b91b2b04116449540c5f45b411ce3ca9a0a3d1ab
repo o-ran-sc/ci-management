@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ca1267c_d742d882",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-04-18T18:07:48Z",
+      "side": 1,
+      "message": "jjb-deploy smo-dmaap*",
+      "revId": "b91b2b04116449540c5f45b411ce3ca9a0a3d1ab",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
