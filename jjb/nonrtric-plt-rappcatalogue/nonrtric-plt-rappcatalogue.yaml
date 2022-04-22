@@ -50,6 +50,21 @@
       - master:
           branch: master
 
+# nonrtric:rappcatalogue/
+# Maven artifacts for nonrtric-plt-rappcatalogue/
+- project:
+    <<: *rappcatalogue_jdk_common
+    name: nonrtric-plt-rappcatalogue
+    project-name: '{name}'
+    mvn-opts: '-Ddocker.skip=true'
+    build-node: ubuntu1804-builder-4c-4g
+    jobs:
+      - gerrit-maven-stage
+      - gerrit-maven-clm
+    stream:
+      - master:
+          branch: master
+
 - project:
     <<: *rappcatalogue_jdk_common
     name: nonrtric-plt-rappcatalogue-release
