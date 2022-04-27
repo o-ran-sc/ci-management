@@ -356,6 +356,23 @@
       "message": "jjb-deploy smo-ves*",
       "revId": "3be5951cfbebec3418d3b31f49e7f2d1811d5afa",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "876bed01_fa522def",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001000
+      },
+      "writtenOn": "2022-04-27T15:17:23Z",
+      "side": 1,
+      "message": "jjb-deploy smo-influxdb*",
+      "revId": "3be5951cfbebec3418d3b31f49e7f2d1811d5afa",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
