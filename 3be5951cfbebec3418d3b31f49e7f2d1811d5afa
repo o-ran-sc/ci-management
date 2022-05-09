@@ -373,6 +373,23 @@
       "message": "jjb-deploy smo-influxdb*",
       "revId": "3be5951cfbebec3418d3b31f49e7f2d1811d5afa",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43d76988_7293aa17",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-05-09T18:51:58Z",
+      "side": 1,
+      "message": "Hi Jessica, can you take a look at this PR. We have verified with Jenkins Sandbox that the image builds, but will of course not post to Nexus server. Thanks.",
+      "revId": "3be5951cfbebec3418d3b31f49e7f2d1811d5afa",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
