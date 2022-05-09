@@ -53,9 +53,14 @@ committers:
     company: "The Linux Foundation"
     id: "kevin.sandi"
     timezone: "Unknown/Unknown"
+  - name: "Mahesh Jethanandani"
+    email: "mjethanandani@gmail.com"
+    company: "Xoriant Corporation"
+    id: "mjethanandani"
+    timezone: "America/Los_Angeles”
 tsc:
   approval: "https://wiki.o-ran-sc.org/display/TOC"
   changes:
-    - type: ""
-      name: ""
-      link: ""
+    - type: "Committers Rights to ci-mangement repo"
+      name: "Mahesh Jethanandani"
+      link: "ORANSCTechnicalOversightCommittee(TOC)-20220505"
