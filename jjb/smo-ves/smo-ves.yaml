@@ -42,6 +42,7 @@
 - project:
     <<: *ves_docker_common
     name: smo-ves-release
+    project-name: '{name}'
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
