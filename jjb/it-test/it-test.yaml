@@ -78,18 +78,13 @@
     # start in parent directory with shared files
     docker-root:  ric_benchmarking
     # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host -f e2-interface/e2sim/e2sm_examples/kpm_e2sm/Dockerfile'
+    docker-build-args: 'docker-build-args: '--network=host -f e2-interface/e2sim/e2sm_examples/kpm_e2sm/Dockerfile e2-interface/e2sim/e2sm_examples/kpm_e2sm'
     # tag file is in subdir
     container-tag-yaml-dir: ric_benchmarking/e2-interface/e2sim/docker
     # build only on relevant changes
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: '{docker-root}/.*'
-    jobs:
-      - '{project-name}-gerrit-docker-jobs'
-    stream:
-      - master:
-          branch: master
 
 - project:
     <<: *it_test_common
