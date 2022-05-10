@@ -70,6 +70,29 @@
 
 - project:
     <<: *it_test_common
+    name: it-test-ric-benchmarking
+    # jenkins job name prefix
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # start in parent directory with shared files
+    docker-root:  ric_benchmarking
+    # dockerfile is in subdir of docker root
+    docker-build-args: '--network=host -f e2-interface/e2sim/e2sm_examples/kpm_e2sm/Dockerfile'
+    # tag file is in subdir
+    container-tag-yaml-dir: ric_benchmarking/e2-interface/e2sim/docker
+    # build only on relevant changes
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '{docker-root}/.*'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *it_test_common
     name: it-test-release
     # maven release requires sigul which requires centos
     # container release requires docker
