@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a5c7a48_5ac2e83d",
+        "filename": "jjb/it-test/it-test.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1001460
+      },
+      "writtenOn": "2022-05-10T02:02:05Z",
+      "side": 1,
+      "message": "this \u0027stream\u0027 block is the same as the one from it_test_common anchor, so you can remove it to save some lines",
+      "revId": "8ee28b3b2a76e9f350d70609dc6a16d4e292875e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
