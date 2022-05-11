@@ -76,15 +76,15 @@
     # image name
     docker-name: 'o-ran-sc/{name}'
     # start in parent directory with shared files
-    docker-root:  ric_benchmarking
+    docker-root:  ric_benchmarking/e2-interface/e2sim/e2sm_examples/kpm_e2sm
     # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host -f e2-interface/e2sim/e2sm_examples/kpm_e2sm/Dockerfile e2-interface/e2sim/e2sm_examples/kpm_e2sm'
+    docker-build-args: '--network=host -f ric_benchmarking/e2-interface/e2sim/e2sm_examples/kpm_e2sm/Dockerfile'
     # tag file is in subdir
     container-tag-yaml-dir: ric_benchmarking/e2-interface/e2sim/docker
     # build only on relevant changes
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '{docker-root}/.*'
+        pattern: 'ric_benchmarking/e2-interface/.*'
 
 - project:
     <<: *it_test_common
