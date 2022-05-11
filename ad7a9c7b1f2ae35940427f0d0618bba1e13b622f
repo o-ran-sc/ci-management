@@ -16,6 +16,41 @@
       "message": "@Mahesh, can we get another dev\u0027s +1 on this. \nIn O-RAN we usually prefer for another dev\u0027s +1 before submitting the changes. ",
       "revId": "ad7a9c7b1f2ae35940427f0d0618bba1e13b622f",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9331dd0b_c333bc82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-05-11T19:39:27Z",
+      "side": 1,
+      "message": "Hi Jessica, we did get one +1 vote early on from @Martin Skorupski, and the content has not changed since he did. For some reason his vote got dropped along the way.",
+      "parentUuid": "3a277034_a0ed77fe",
+      "revId": "ad7a9c7b1f2ae35940427f0d0618bba1e13b622f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "036d63a3_02cdaaef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-05-11T19:39:27Z",
+      "side": 1,
+      "message": "Cc Martin on the reply, in case he has anything to add.",
+      "revId": "ad7a9c7b1f2ae35940427f0d0618bba1e13b622f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
