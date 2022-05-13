@@ -70,6 +70,21 @@
     stream:
       - master:
           branch: master
+- project:
+    <<: *ves_docker_common
+    name: smo-postconfig
+    project-name: '{name}'
+    # image name
+    docker-name: 'smo-post-config'
+    # Dockerfile is in a subdir
+    docker-root: postconfig
+    # source of docker tag
+    container-tag-method: yaml-file
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
 
 - project:
     <<: *ves_docker_common
