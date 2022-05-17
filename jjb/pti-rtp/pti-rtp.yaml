@@ -62,3 +62,8 @@
         - upload-inf.sh
     jobs:
       - oran-shell-release
+    stream:
+      - master:
+          branch: master
+      - f-release:
+          branch: f-release

@@ -38,17 +38,24 @@ nexus_repo_url="$NEXUS_URL/content/sites/$nexus_repo_id"
 echo "INFO: upload to $nexus_repo_url"
 
 repo_dir="$WORKSPACE/nexus/$nexus_repo_id"
-# TODO: get build or version string; use latest for now
-repo_iso_dir="$repo_dir/org/o-ran-sc/pti/rtp/latest"
-echo "INFO: create staging directory $repo_iso_dir"
-mkdir -p "$repo_iso_dir"
+repo_iso_dir_latest="$repo_dir/org/o-ran-sc/pti/rtp/latest"
+repo_iso_dir_branch="$repo_dir/org/o-ran-sc/pti/rtp/$GERRIT_BRANCH"
+echo "INFO: create staging directory $repo_iso_dir_latest and $repo_iso_dir_branch"
+mkdir -p "$repo_iso_dir_latest" "$repo_iso_dir_branch"
 
-# Expect ISO file: oran-image-inf-host-intel-x86-64.iso
-# in build subdir: workspace/prj_oran-inf/tmp-glibc/deploy/images/intel-x86-64/
-#iso="workspace/prj_oran-inf/tmp-glibc/deploy/images/intel-x86-64/oran-image-inf-host-intel-x86-64.iso"
-iso="workspace/prj_oran_inf_anaconda/tmp-glibc/deploy/images/intel-corei7-64/inf-image-aio-installer-intel-corei7-64.iso"
-echo "INFO: copy $iso to staging directory $repo_iso_dir"
-cp "$iso" "$repo_iso_dir"
+# Expect Yocto based ISO file: inf-image-yocto-aio-x86-64.iso
+# in build subdir: workspace/workspace_yocto/prj_output/
+iso_yocto="workspace/workspace_yocto/prj_output/inf-image-yocto-aio-x86-64.iso"
+
+# Expect CentOS based ISO file: inf-image-centos-all-x86-64.iso
+# in build subdir: workspace/workspace_centos/prj_output/
+iso_centos="workspace/workspace_centos/prj_output/inf-image-centos-all-x86-64.iso"
+
+echo "INFO: copy $iso_yocto and $iso_centos to staging directory $repo_iso_dir_latest"
+cp "$iso_yocto" "$iso_centos" "$repo_iso_dir_latest"
+
+echo "INFO: copy $iso_yocto and $iso_centos to staging directory $repo_iso_dir_branch"
+cp "$iso_yocto" "$iso_centos" "$repo_iso_dir_branch"
 
 cmd="lftools deploy nexus $nexus_repo_url $repo_dir"
 echo "INFO: Upload ISO to Nexus: $cmd"
