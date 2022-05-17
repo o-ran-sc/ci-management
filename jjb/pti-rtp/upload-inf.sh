@@ -52,15 +52,23 @@ mkdir -p "$repo_iso_dir_latest" "$repo_iso_dir_branch"
 # in build subdir: workspace/workspace_yocto/prj_output/
 iso_yocto="workspace/workspace_yocto/prj_output/inf-image-yocto-aio-x86-64.iso"
 
+# Expect Debian based ISO file: inf-image-debian-all-x86-64.iso
+# in build subdir: workspace/workspace_debian/prj_output/
+iso_debian="workspace/workspace_debian/prj_output/inf-image-debian-all-x86-64.iso"
+
 # Expect CentOS based ISO file: inf-image-centos-all-x86-64.iso
 # in build subdir: workspace/workspace_centos/prj_output/
 iso_centos="workspace/workspace_centos/prj_output/inf-image-centos-all-x86-64.iso"
 
-echo "INFO: copy $iso_yocto and $iso_centos to staging directory $repo_iso_dir_latest"
-cp "$iso_yocto" "$iso_centos" "$repo_iso_dir_latest"
-
-echo "INFO: copy $iso_yocto and $iso_centos to staging directory $repo_iso_dir_branch"
-cp "$iso_yocto" "$iso_centos" "$repo_iso_dir_branch"
+for iso_dir in $repo_iso_dir_latest $repo_iso_dir_branch; do
+    echo "INFO: copy ISO images to staging directory $iso_dir"
+    for iso_img in $iso_yocto $iso_centos $iso_debian; do
+        if [[ -f $iso_img ]]; then
+            echo "INFO: copying $iso_img"
+            cp "$iso_img" "$iso_dir"
+        fi
+    done
+done
 
 cmd="lftools deploy nexus $nexus_repo_url $repo_dir"
 echo "INFO: Upload ISO to Nexus: $cmd"
