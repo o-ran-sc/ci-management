@@ -1,0 +1,9 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: santanu de <santanu.de@xoriant.com>
+Code-Review+1: Mahesh Jethanandani <mjethanandani@gmail.com>
+Code-Review+2: Anil Belur <abelur@linuxfoundation.org>
+Submitted-by: Anil Belur <abelur@linuxfoundation.org>
+Submitted-at: Thu, 19 May 2022 06:52:40 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/7959
+Project: ci-management
+Branch: refs/heads/master
