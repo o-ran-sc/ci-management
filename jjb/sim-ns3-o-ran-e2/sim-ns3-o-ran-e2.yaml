@@ -1,0 +1,15 @@
+---
+- project:
+    name: sim-ns3-o-ran-e2-project-view
+    project-name: sim-ns3-o-ran-e2
+    views:
+      - project-view
+
+- project:
+    name: sim-ns3-o-ran-e2-info
+    project: sim/ns3-o-ran-e2
+    project-name: sim-ns3-o-ran-e2
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
