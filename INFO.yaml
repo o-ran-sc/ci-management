@@ -57,10 +57,38 @@ committers:
     email: "mjethanandani@gmail.com"
     company: "Xoriant Corporation"
     id: "mjethanandani"
-    timezone: "America/Los_Angeles”
+    timezone: "America/Los_Angeles"
+  - name: "John Keeney"
+    email: "John.Keeney@est.tech"
+    id: "johnkeeney"
+    company: "Ericsson Software Technology"
+    timezone: "Europe/Dublin"
+  - name: "Martin Skorupski"
+    email: "martin.skorupski@highstreet-technologies.com"
+    id: "demx8as6"
+    company: "highstreet technologies GmbH"
+    timezone: "Germany/Berlin"
+  - name: "Alex Stancu"
+    email: "alexandru.stancu@highstreet-technologies.com"
+    id: "alex.stancu"
+    company: "highstreet technologies GmbH"
+    timezone: "Europe/Bucharest"
 tsc:
   approval: "https://wiki.o-ran-sc.org/display/TOC"
-  changes:
-    - type: "Committers Rights to ci-mangement repo"
-      name: "Mahesh Jethanandani"
-      link: "ORANSCTechnicalOversightCommittee(TOC)-20220505"
+    changes:
+      -
+        type: "promotion"
+        link: "ORANSC TOC 20220505 3.a.i SMO PTL"
+        name: "Mahesh Jethanandani"
+      -
+        type: "promotion"
+        link: "ORANSC TOC 20220505 3.a.i NONRTRIC PTL"
+        name: "John Keeney"
+      -
+        type: "promotion"
+        link: "ORANSC TOC 20220505 3.a.i OAM PTL"
+        name: "Martin Skorupski"
+      -
+        type: "promotion"
+        link: "ORANSC TOC 20220505 3.a.i SIM PTL"
+        name: "Alex Stancu"
