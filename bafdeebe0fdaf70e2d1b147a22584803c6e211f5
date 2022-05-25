@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b6a9ab0_ecaa5d1b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2022-05-25T18:56:58Z",
+      "side": 1,
+      "message": "Ref: https://gerrit.o-ran-sc.org/r/c/ci-management/+/8214 \nThanks. ",
+      "revId": "bafdeebe0fdaf70e2d1b147a22584803c6e211f5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
