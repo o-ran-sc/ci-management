@@ -57,10 +57,20 @@ committers:
     email: "mjethanandani@gmail.com"
     company: "Xoriant Corporation"
     id: "mjethanandani"
-    timezone: "America/Los_Angeles”
-tsc:
+    timezone: "America/Los_Angeles"
+  - name: "John Keeney"
+    email: "John.Keeney@est.tech"
+    id: "johnkeeney"
+    company: "Ericsson Software Technology"
+    timezone: "Europe/Dublin"
+tsc: 
   approval: "https://wiki.o-ran-sc.org/display/TOC"
-  changes:
-    - type: "Committers Rights to ci-mangement repo"
+  changes: 
+    - 
+      link: "ORANSC TOC https://wiki.o-ran-sc.org/display/TOC 20220505 3.a.i SMO PTL"
       name: "Mahesh Jethanandani"
-      link: "ORANSCTechnicalOversightCommittee(TOC)-20220505"
+      type: Addition
+    - 
+      link: "ORANSC TOC https://wiki.o-ran-sc.org/display/TOC 20220505 3.a.i NONRTRIC PTL"
+      name: "John Keeney"
+      type: Addition
