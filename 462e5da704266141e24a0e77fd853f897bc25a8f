@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "646f11e9_4ce7a308",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000237
+      },
+      "writtenOn": "2022-05-25T01:50:39Z",
+      "side": 1,
+      "message": "jjb-deploy pti-rtp-shell-release-*",
+      "revId": "462e5da704266141e24a0e77fd853f897bc25a8f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
