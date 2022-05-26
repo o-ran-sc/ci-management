@@ -122,8 +122,10 @@
     python-version: python3
     # the install script assumes an ubuntu image
     build-node: ubuntu1804-builder-2c-2g
-    # pre-build-script: !include-raw-escape:
-    #   - ../shell/install-deb-rmr.sh
+    pre-build-script: !include-raw-escape:
+      - ../shell/install-deb-rmr.sh
+    # impt for verify and tox etc
+    tox-envs: code,flake8
     sonar-project-file: ""
     sonar-properties: |
       sonar.login={sonarcloud_api_token}
