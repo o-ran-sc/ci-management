@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "45359459_cd3031e8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2022-05-26T12:20:26Z",
+      "side": 1,
+      "message": "Finally. The linter is hard to please (13 patchsets)!.",
+      "revId": "075fdea0b2b47f906f6586d614d8f7d607a5c6c8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
