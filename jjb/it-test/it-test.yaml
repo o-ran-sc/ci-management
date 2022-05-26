@@ -78,7 +78,7 @@
     # start in parent directory with shared files
     docker-root:  ric_benchmarking/e2-interface/e2sim/e2sm_examples/kpm_e2sm
     # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host -f ric_benchmarking/e2-interface/e2sim/e2sm_examples/kpm_e2sm/Dockerfile'
+    docker-build-args: '--network=host -f Dockerfile'
     # tag file is in subdir
     container-tag-yaml-dir: ric_benchmarking/e2-interface/e2sim/docker
     # build only on relevant changes
