@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0765a16c_ca3017db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-06-09T12:00:22Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-rapp-orufhrecovery*",
+      "revId": "08c4cb41f84d156fad7641825e48fa6eab0afe7a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
