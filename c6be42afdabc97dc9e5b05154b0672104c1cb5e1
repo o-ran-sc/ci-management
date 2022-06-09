@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce563f26_5b4877af",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-06-09T13:46:57Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-rapp-ransliceassurance*",
+      "revId": "c6be42afdabc97dc9e5b05154b0672104c1cb5e1",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
