@@ -44,6 +44,7 @@
     # Includes verify and merge jobs
     jobs:
       - "{project-name}-gerrit-docker-jobs"
+      - gerrit-maven-docker-stage
     stream:
       - master:
           branch: master
@@ -71,6 +72,7 @@
     jobs:
       - "{project-name}-gerrit-docker-jobs"
       - gerrit-go-verify
+      - gerrit-maven-docker-stage
     stream:
       - master:
           branch: master
