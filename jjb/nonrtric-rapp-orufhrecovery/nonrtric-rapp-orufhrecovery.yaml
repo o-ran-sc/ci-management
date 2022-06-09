@@ -17,6 +17,15 @@
 
 - project:
     <<: *orufhrecovery_common
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    jobs:
+      - gerrit-maven-docker-stage
+    stream:
+      - e-release:
+          branch: master
+
+- project:
+    <<: *orufhrecovery_common
     name: nonrtric-rapp-orufhrecovery-release
     # maven release requires sigul which requires centos
     # container release requires docker
