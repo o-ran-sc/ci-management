@@ -136,4 +136,4 @@
       sonar.sources=collector
       sonar.python.coverage.reportPaths=coverage.xml
     jobs:
-      - gerrit-tox-sonarqube
+      - gerrit-tox-sonar
