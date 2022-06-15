@@ -50,6 +50,23 @@
       "message": "Approved.\n\nPlease note that this isn\u0027t the standard process for getting community members committer rights in a ci-management repository. However, since the TSC has approved it we\u0027ll go ahead.\n\nA side note. LF Release Engineering requires Non-Author-Code-Review (NACR) for any ci-management repository that has community members in it. This means that the author of the change is _required_ to get the approval of a committer that is not themselves. Basically, this policy blocks a committer from doing self-review and merging.\n\nSubsequently we\u0027ve enabled NACR on this repository.",
       "revId": "075fdea0b2b47f906f6586d614d8f7d607a5c6c8",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca29643f_d0c5e26e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2022-06-15T11:08:48Z",
+      "side": 1,
+      "message": "This change does not seem to have bestowed committer rights according to https://wiki.o-ran-sc.org/display/ORAN/How+to+request+committer+changes\n\nShould I create a ticket? \n\nThanks. ",
+      "revId": "075fdea0b2b47f906f6586d614d8f7d607a5c6c8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
