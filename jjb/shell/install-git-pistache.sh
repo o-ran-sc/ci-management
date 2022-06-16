@@ -16,16 +16,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Installs Debian package 'alien' to support building RPMs
+# Installs Debian package 'pistache' to support building RPMs
 
 echo "---> install-git-pistache.sh"
 
 # stop on error or unbound var, and be chatty
 set -eux
 echo "---> install Pistache dependencies..."
-sudo apt-get update && apt-get install rapidjson-dev meson libssl-dev
+
+if type -P python3 > /dev/null 2>&1
+then
+    echo "Python3 is installed"
+else
+    sudo apt-get install python3
+fi
+
+sudo apt-get update && sudo apt-get install rapidjson-dev libssl-dev
+python3.8 -m pip install meson
 
 echo "---> install Pistache library.."
+
+LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
+
 git clone https://github.com/pistacheio/pistache.git && cd pistache && meson setup build \
     --buildtype=release \
     -DPISTACHE_USE_SSL=true \
@@ -33,9 +45,11 @@ git clone https://github.com/pistacheio/pistache.git && cd pistache && meson set
     -DPISTACHE_BUILD_TESTS=false \
     -DPISTACHE_BUILD_DOCS=false \
     --prefix="$PWD/prefix" \
-     && meson install -C build && \
-     cp -rf prefix/include/pistache /usr/local/include/ && \
-     cp -rf prefix/lib/x86_64-linux-gnu/* /usr/lib/x86_64-linux-gnu/ && \
-     cd .. && rm -rf pistache 
+     meson install -C build && \
+     sudo cp -rf prefix/include/pistache /usr/include/pistache && \
+     sudo cp prefix/lib/x86_64-linux-gnu/libpistache.so.0.0.3 $LIBRARY_PATH && \
+     sudo ln -s $LIBRARY_PATH/libpistache.so.0.0.3 $LIBRARY_PATH/libpistache.so.0 && \
+     sudo ln -s $LIBRARY_PATH/libpistache.so.0 $LIBRARY_PATH/libpistache.so && \
+     sudo ldconfig
 
 echo "---> install-git-pistache.sh ends"
