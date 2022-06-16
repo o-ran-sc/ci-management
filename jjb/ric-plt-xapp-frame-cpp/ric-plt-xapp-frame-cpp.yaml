@@ -32,6 +32,8 @@
     pre-build: !include-raw-escape:
       - ../shell/install-deb-alien.sh
       - ../shell/install-deb-rmr.sh
+      - ../shell/install-deb-cpprest.sh
+      - ../shell/install-git-pistache.sh
     # skip install in cmake-build.sh
     install: false
 
