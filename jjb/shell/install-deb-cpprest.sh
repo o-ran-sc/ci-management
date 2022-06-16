@@ -16,7 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Installs Debian package 'alien' to support building RPMs
+# Installs Debian package 'Cpprest' to support building RPMs
 
 echo "---> install-deb-cpprest.sh"
 
