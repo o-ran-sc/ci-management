@@ -67,6 +67,23 @@
       "message": "This change does not seem to have bestowed committer rights according to https://wiki.o-ran-sc.org/display/ORAN/How+to+request+committer+changes\n\nShould I create a ticket? \n\nThanks. ",
       "revId": "075fdea0b2b47f906f6586d614d8f7d607a5c6c8",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8078be03_75f9091b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2022-06-16T16:49:41Z",
+      "side": 1,
+      "message": "remerge",
+      "revId": "075fdea0b2b47f906f6586d614d8f7d607a5c6c8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
