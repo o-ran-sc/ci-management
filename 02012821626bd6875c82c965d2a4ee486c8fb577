@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9a46c2d_e8211f22",
+        "filename": "jjb/shell/install-git-pistache.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000108
+      },
+      "writtenOn": "2022-06-16T08:35:50Z",
+      "side": 1,
+      "message": "I think we should we run ldconfig here directly after \"meson install\". This creates the shared lib links.",
+      "revId": "02012821626bd6875c82c965d2a4ee486c8fb577",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
