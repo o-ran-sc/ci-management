@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "52901af9_4cf616d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000108
+      },
+      "writtenOn": "2022-06-16T08:38:16Z",
+      "side": 1,
+      "message": "maybe in the commit message mention that the two packages have been added as dependency in xapp-frame-cpp review #8561.",
+      "revId": "02012821626bd6875c82c965d2a4ee486c8fb577",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e9a46c2d_e8211f22",
         "filename": "jjb/shell/install-git-pistache.sh",
         "patchSetId": 1
