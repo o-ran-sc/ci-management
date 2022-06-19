@@ -22,6 +22,6 @@ echo "---> install-deb-cpprest.sh"
 
 # stop on error or unbound var, and be chatty
 set -eux
-sudo apt-get update --fix-misisng && sudo apt-get -q -y install libcpprest-dev
+sudo apt-get update --fix-missing && sudo apt-get -y install libcpprest-dev
 
 echo "---> install-deb-cpprest.sh ends"

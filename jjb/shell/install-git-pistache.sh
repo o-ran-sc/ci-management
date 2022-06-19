@@ -31,8 +31,8 @@ else
     sudo apt-get install python3
 fi
 
-sudo apt-get update && sudo apt-get install rapidjson-dev libssl-dev
-python3.8 -m pip install meson
+sudo apt-get update && sudo apt-get -y install rapidjson-dev libssl-dev
+python3 -m pip install meson
 
 echo "---> install Pistache library.."
 
