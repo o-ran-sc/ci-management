@@ -16,6 +16,23 @@
       "message": "Hi,\n\nPlease help me to review it, I fixed some type error",
       "revId": "59e74e1f3e1bddd21c22445c2dd5e4f3f9539a5e",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95914106_0031d3fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000108
+      },
+      "writtenOn": "2022-06-21T12:11:01Z",
+      "side": 1,
+      "message": "looks good to go and currently blocks progress in https://gerrit.o-ran-sc.org/r/c/ric-plt/xapp-frame-cpp/+/8561",
+      "revId": "59e74e1f3e1bddd21c22445c2dd5e4f3f9539a5e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
