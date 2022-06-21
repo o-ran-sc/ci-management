@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f5bfe25_f71e3577",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001859
+      },
+      "writtenOn": "2022-06-21T11:56:02Z",
+      "side": 1,
+      "message": "Hi,\n\nPlease help me to review it, I fixed some type error",
+      "revId": "59e74e1f3e1bddd21c22445c2dd5e4f3f9539a5e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
