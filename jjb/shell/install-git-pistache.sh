@@ -24,15 +24,18 @@ echo "---> install-git-pistache.sh"
 set -eux
 echo "---> install Pistache dependencies..."
 
-if type -P python3 > /dev/null 2>&1
-then
-    echo "Python3 is installed"
-else
-    sudo apt-get install python3
-fi
-
 sudo apt-get update && sudo apt-get -y install rapidjson-dev libssl-dev
 python3 -m pip install meson
+
+if type -P meson > /dev/null 2>&1
+then
+    echo  "Meson already installed"
+else if type -P ~/.local/bin/meson > /dev/null 2>&1
+then
+    echo  "Meson already installed"
+else
+    echo "Meson is missing"
+fi
 
 echo "---> install Pistache library.."
 
@@ -45,7 +48,7 @@ git clone https://github.com/pistacheio/pistache.git && cd pistache && meson set
     -DPISTACHE_BUILD_TESTS=false \
     -DPISTACHE_BUILD_DOCS=false \
     --prefix="$PWD/prefix" \
-     meson install -C build && \
+     ~/.local/bin/meson install -C build && \
      sudo cp -rf prefix/include/pistache /usr/include/pistache && \
      sudo cp prefix/lib/x86_64-linux-gnu/libpistache.so.0.0.3 $LIBRARY_PATH && \
      sudo ln -s $LIBRARY_PATH/libpistache.so.0.0.3 $LIBRARY_PATH/libpistache.so.0 && \
