@@ -1,0 +1,9 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Thoralf Czichy <thoralf.czichy@nokia.com>
+Code-Review+1: Alexandre Huff <alexandrehuff@utfpr.edu.br>
+Code-Review+2: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Submitted-by: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Submitted-at: Thu, 23 Jun 2022 17:08:15 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/8601
+Project: ci-management
+Branch: refs/heads/master
