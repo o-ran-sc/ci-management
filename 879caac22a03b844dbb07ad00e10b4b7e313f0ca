@@ -73,6 +73,30 @@
       },
       "revId": "879caac22a03b844dbb07ad00e10b4b7e313f0ca",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ccdfad6_fc4699c0",
+        "filename": "jjb/shell/install-git-pistache.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1001859
+      },
+      "writtenOn": "2022-06-28T03:39:09Z",
+      "side": 1,
+      "message": "I think it isnt yet support distro package, I see it is supporting PPA repo but I tried and get many fail result. You can check it in here https://github.com/pistacheio/pistache. If you has any ideas, please let me know.",
+      "parentUuid": "f3331a31_391b8667",
+      "range": {
+        "startLine": 51,
+        "startChar": 5,
+        "endLine": 51,
+        "endChar": 17
+      },
+      "revId": "879caac22a03b844dbb07ad00e10b4b7e313f0ca",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
