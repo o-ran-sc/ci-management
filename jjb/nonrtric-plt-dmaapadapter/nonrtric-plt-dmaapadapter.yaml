@@ -34,6 +34,8 @@
     stream:
       - master:
           branch: master
+      - f-release:
+          branch: f-release
 
 # nonrtric:dmaapadapter/
 # Maven artifacts for nonrtric-plt-dmaapadapter/
@@ -49,6 +51,8 @@
     stream:
       - master:
           branch: master
+      - f-release:
+          branch: f-release
 
 - project:
     <<: *dmaapadapter_jdk_common

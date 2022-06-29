@@ -34,6 +34,8 @@
     stream:
       - master:
           branch: master
+      - f-release:
+          branch: f-release
 
 # nonrtric:informationcoordinatorservice
 # Maven artifacts for nonrtric-plt-informationcoordinatorservice
@@ -49,6 +51,8 @@
     stream:
       - master:
           branch: master
+      - f-release:
+          branch: f-release
 
 - project:
     <<: *informationcoordinatorservice_jdk_common
