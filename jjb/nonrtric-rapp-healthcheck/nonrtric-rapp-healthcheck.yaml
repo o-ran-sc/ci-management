@@ -36,6 +36,4 @@
     # Includes verify and merge jobs
     jobs:
       - "{project-name}-gerrit-docker-jobs"
-    stream:
-      - master:
-          branch: master
+

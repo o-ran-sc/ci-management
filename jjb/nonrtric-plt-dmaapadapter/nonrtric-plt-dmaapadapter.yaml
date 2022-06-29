@@ -31,9 +31,6 @@
       - gerrit-maven-docker-verify
       - gerrit-maven-docker-merge
       - gerrit-maven-docker-stage
-    stream:
-      - master:
-          branch: master
 
 # nonrtric:dmaapadapter/
 # Maven artifacts for nonrtric-plt-dmaapadapter/
@@ -46,9 +43,6 @@
     jobs:
       - gerrit-maven-stage
       - gerrit-maven-clm
-    stream:
-      - master:
-          branch: master
 
 - project:
     <<: *dmaapadapter_jdk_common

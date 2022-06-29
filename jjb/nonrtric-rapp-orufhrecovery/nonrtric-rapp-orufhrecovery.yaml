@@ -45,9 +45,6 @@
     jobs:
       - "{project-name}-gerrit-docker-jobs"
       - gerrit-maven-docker-stage
-    stream:
-      - master:
-          branch: master
 
 - project:
     <<: *orufhrecovery_common
@@ -73,9 +70,6 @@
       - "{project-name}-gerrit-docker-jobs"
       - gerrit-go-verify
       - gerrit-maven-docker-stage
-    stream:
-      - master:
-          branch: master
 
 - project:
     <<: *orufhrecovery_common

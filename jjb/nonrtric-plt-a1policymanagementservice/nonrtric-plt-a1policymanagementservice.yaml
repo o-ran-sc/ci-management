@@ -31,9 +31,6 @@
       - gerrit-maven-docker-verify
       - gerrit-maven-docker-merge
       - gerrit-maven-docker-stage
-    stream:
-      - master:
-          branch: master
 
 # nonrtric:a1policymanagementservice/
 # Maven artifacts for nonrtric-plt-a1policymanagementservice/
@@ -46,9 +43,6 @@
     jobs:
       - gerrit-maven-stage
       - gerrit-maven-clm
-    stream:
-      - master:
-          branch: master
 
 - project:
     <<: *a1policymanagementservice_jdk_common
@@ -58,3 +52,4 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
+
