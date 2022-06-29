@@ -54,6 +54,8 @@
     stream:
       - master:
           branch: master
+      - f-release:
+          branch: f-release
 
 - project:
     <<: *ransliceassurance_common
@@ -78,6 +80,8 @@
     stream:
       - master:
           branch: master
+      - f-release:
+          branch: f-release
 
 - project:
     <<: *ransliceassurance_common

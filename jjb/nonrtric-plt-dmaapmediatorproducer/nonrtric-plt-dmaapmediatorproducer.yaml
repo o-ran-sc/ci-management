@@ -54,6 +54,8 @@
     stream:
       - master:
           branch: master
+      - f-release:
+          branch: f-release
 
 - project:
     <<: *dmaapmediatorproducer_common

@@ -34,6 +34,8 @@
     stream:
       - master:
           branch: master
+      - f-release:
+          branch: f-release
 
 # nonrtric:a1policymanagementservice/
 # Maven artifacts for nonrtric-plt-a1policymanagementservice/
@@ -49,6 +51,8 @@
     stream:
       - master:
           branch: master
+      - f-release:
+          branch: f-release
 
 - project:
     <<: *a1policymanagementservice_jdk_common
@@ -58,3 +62,4 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
+
