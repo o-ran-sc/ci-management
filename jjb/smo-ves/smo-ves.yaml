@@ -145,3 +145,29 @@
       sonar.python.coverage.reportPaths=coverage.xml
     jobs:
       - gerrit-tox-sonar
+
+- project:
+    name: smo-ves-global-verify
+    project-name: smo-ves
+    build-node: centos7-builder-1c-1g
+    default-version: latest
+    tox-dir: "."
+    doc-dir: "docs/_build/html"
+    jobs:
+      - '{project-name}-global-verify'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    name: smo-ves-global-merge
+    project-name: smo-ves
+    default-version: latest
+    tox-dir: "."
+    doc-dir: "docs/_build/html"
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - '{project-name}-global-merge'
+    stream:
+      - master:
+          branch: master
