@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "536234f4_339bd052",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-06-30T19:03:56Z",
+      "side": 1,
+      "message": "Hi Weichen, can you review these changes. I have tried using the example that you have on the O-RAN SC website, but for some reason I am not getting the right syntax.",
+      "revId": "1130d8370595e81a9e6537a1a6cb3a2d331c0fa9",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
