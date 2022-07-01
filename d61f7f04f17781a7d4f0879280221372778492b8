@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a623a491_1b281290",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2022-07-01T03:47:44Z",
+      "side": 1,
+      "message": "Please reformat the git commit message (helps preserve git/scm commit history for maintainers) as per the best practices guide.\n\nhttps://docs.releng.linuxfoundation.org/en/latest/best-practices.html",
+      "revId": "d61f7f04f17781a7d4f0879280221372778492b8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
