@@ -33,6 +33,69 @@
       "message": "Mahesh, I\u0027m sorry. The closest template I could find in that folder are \u0027gerrit-jjb-merge\u0027 and \u0027gerrit-jjb-verify\u0027 I\u0027m not sure if we can use these or using these would work. We will have to wait for Anil or somebody who knows this better.",
       "revId": "f322fb65a44c9ebd42758b971258734eff1ca0f4",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aec81fd5_f2c9cd05",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2022-07-01T07:01:07Z",
+      "side": 1,
+      "message": "You can find the job templates in the global-jjb submodule which is in the root of the ci-man repo.\n\nhttps://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/jjb/lf-rtd-jobs.html\n\nMore details on how to setup the rtd jobs are found in the link above.",
+      "revId": "f322fb65a44c9ebd42758b971258734eff1ca0f4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5030367e_6cc81770",
+        "filename": "jjb/smo-ves/smo-ves.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2022-07-01T07:01:07Z",
+      "side": 1,
+      "message": "{project-name}-rtd-verify-{stream}",
+      "range": {
+        "startLine": 157,
+        "startChar": 9,
+        "endLine": 157,
+        "endChar": 31
+      },
+      "revId": "f322fb65a44c9ebd42758b971258734eff1ca0f4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d61f683_d3d15ce5",
+        "filename": "jjb/smo-ves/smo-ves.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2022-07-01T07:01:07Z",
+      "side": 1,
+      "message": "{project-name}-rtd-merge-{stream}",
+      "range": {
+        "startLine": 170,
+        "startChar": 8,
+        "endLine": 170,
+        "endChar": 30
+      },
+      "revId": "f322fb65a44c9ebd42758b971258734eff1ca0f4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
