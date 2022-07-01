@@ -16,6 +16,24 @@
       "message": "@Anil, thanks for the links. I did go through it, but I am still getting this error after applying the changes you suggested.\n\njenkins_jobs.errors.JenkinsJobsException: Failed to find suitable template named \u0027{project-name}-rtd-verify-{stream}\u0027",
       "revId": "7cdb8b69b8fb78981eb3ffaa2dc33eb58f03fc3c",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37e99f43_3f8b4f28",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2022-07-01T23:59:20Z",
+      "side": 1,
+      "message": "You probably dont need these jobs, since oran is already on rtdv3. All you need todo is setup a docs folder, and link it to the index from the main docs repo.\n\nPlease read through:\nhttps://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/jjb/lf-rtdv3-jobs.html",
+      "parentUuid": "0a72d958_9be17e1a",
+      "revId": "7cdb8b69b8fb78981eb3ffaa2dc33eb58f03fc3c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
