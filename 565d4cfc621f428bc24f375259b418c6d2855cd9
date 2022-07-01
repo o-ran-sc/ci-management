@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e207c7b_cb68de81",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-07-01T06:01:16Z",
+      "side": 1,
+      "message": "I have tried two different job names. Both give me a problem. At this point, I do not know what to put in the jobs field of the project. Jenkins gives me this error.\n\nFailed to find suitable template named \u0027smo-ves-global-merge\u0027\n\nBut if I change this to rtb3-global-merge, as is in the example on the following page, it says that it is a duplicate.\n\nhttps://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/jjb/lf-rtdv3-jobs.html",
+      "revId": "565d4cfc621f428bc24f375259b418c6d2855cd9",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
