@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5843768_1812c778",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2022-07-02T02:56:36Z",
+      "side": 1,
+      "message": "this all you need \n\nhttps://gerrit.o-ran-sc.org/r/c/doc/+/8604",
+      "revId": "6268a2ce7284555db578b08639c1f9d67daad5f3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
