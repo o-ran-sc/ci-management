@@ -88,3 +88,11 @@
         pattern: 'releases\/.*\.yaml'
     jobs:
       - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *pti_o2_docker_common
+    name: pti-o2-nexus-iq
+    build-node: centos7-builder-1c-1g
+    nexus-iq-namespace: oran-
+    jobs:
+      - gerrit-tox-nexus-iq-clm
