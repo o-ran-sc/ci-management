@@ -121,6 +121,30 @@
       },
       "revId": "879caac22a03b844dbb07ad00e10b4b7e313f0ca",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e9c19d0_b0996019",
+        "filename": "jjb/shell/install-git-pistache.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000108
+      },
+      "writtenOn": "2022-07-07T06:20:44Z",
+      "side": 1,
+      "message": "I agree. PPA doesn’t add much esp. if it doesn’t work straightaway. let’s stick with the installation from pip.",
+      "parentUuid": "8a2f7f0a_5f46de3f",
+      "range": {
+        "startLine": 51,
+        "startChar": 5,
+        "endLine": 51,
+        "endChar": 17
+      },
+      "revId": "879caac22a03b844dbb07ad00e10b4b7e313f0ca",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
