@@ -54,6 +54,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6b9a8700_23c4b0cb",
+        "filename": "jjb/shell/install-git-pistache.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000108
+      },
+      "writtenOn": "2022-07-11T13:53:21Z",
+      "side": 1,
+      "message": "This looks now weird. We check where (and if) it\u0027s installed and later in line 44 and 51 we use once from ~/local/bin/meson and once meson from ${PATH}. Maybe safest to change so that the meson binary location gets an environment variable in line 32 and 35 (depending on where it seems to be) and later it\u0027s invoked via that environment variable.",
+      "range": {
+        "startLine": 30,
+        "startChar": 11,
+        "endLine": 30,
+        "endChar": 16
+      },
+      "revId": "879caac22a03b844dbb07ad00e10b4b7e313f0ca",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f3331a31_391b8667",
         "filename": "jjb/shell/install-git-pistache.sh",
         "patchSetId": 1
