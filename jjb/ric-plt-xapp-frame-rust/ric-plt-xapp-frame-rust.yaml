@@ -1,0 +1,15 @@
+---
+- project:
+    name: ric-plt-xapp-frame-rust-project-view
+    project-name: ric-plt-xapp-frame-rust
+    views:
+      - project-view
+
+- project:
+    name: ric-plt-xapp-frame-rust-info
+    project: ric-plt/xapp-frame-rust
+    project-name: ric-plt-xapp-frame-rust
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
