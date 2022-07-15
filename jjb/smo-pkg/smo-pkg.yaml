@@ -1,0 +1,15 @@
+---
+- project:
+    name: smo-pkg-project-view
+    project-name: smo-pkg
+    views:
+      - project-view
+
+- project:
+    name: smo-pkg-info
+    project: smo/pkg
+    project-name: smo-pkg
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
