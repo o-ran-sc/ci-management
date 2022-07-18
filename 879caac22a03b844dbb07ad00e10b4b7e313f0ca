@@ -99,6 +99,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a466921c_c3f32755",
+        "filename": "jjb/shell/install-git-pistache.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000108
+      },
+      "writtenOn": "2022-07-18T06:27:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f8cd2df_30b59fca",
+      "range": {
+        "startLine": 30,
+        "startChar": 11,
+        "endLine": 30,
+        "endChar": 16
+      },
+      "revId": "879caac22a03b844dbb07ad00e10b4b7e313f0ca",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f3331a31_391b8667",
