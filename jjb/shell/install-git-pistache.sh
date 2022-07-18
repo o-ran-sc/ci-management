@@ -24,19 +24,12 @@ echo "---> install-git-pistache.sh"
 set -eux
 echo "---> install Pistache dependencies..."
 
-if type -P python3 > /dev/null 2>&1
-then
-    echo "Python3 is installed"
-else
-    sudo apt-get install python3
-fi
+export PATH=$PATH:~/.local/bin
+export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
 
 sudo apt-get update && sudo apt-get -y install rapidjson-dev libssl-dev
 python3 -m pip install meson
 
-echo "---> install Pistache library.."
-
-LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
 
 git clone https://github.com/pistacheio/pistache.git && cd pistache && meson setup build \
     --buildtype=release \
