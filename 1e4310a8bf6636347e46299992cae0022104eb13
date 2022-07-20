@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cef39975_9b107c3e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001859
+      },
+      "writtenOn": "2022-07-20T07:26:25Z",
+      "side": 1,
+      "message": "Hi,\n\nSo sorry about this, it\u0027s my mistake because I didn\u0027t check it carefully.\n\nAnh Nguyen.",
+      "revId": "1e4310a8bf6636347e46299992cae0022104eb13",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
