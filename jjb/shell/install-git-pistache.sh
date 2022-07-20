@@ -37,7 +37,7 @@ git clone https://github.com/pistacheio/pistache.git && cd pistache && meson set
     -DPISTACHE_BUILD_EXAMPLES=false \
     -DPISTACHE_BUILD_TESTS=false \
     -DPISTACHE_BUILD_DOCS=false \
-    --prefix="$PWD/prefix" \
+    --prefix="$PWD/prefix"  && \
      meson install -C build && \
      sudo cp -rf prefix/include/pistache /usr/include/pistache && \
      sudo cp prefix/lib/x86_64-linux-gnu/libpistache.so.0.0.3 $LIBRARY_PATH && \
