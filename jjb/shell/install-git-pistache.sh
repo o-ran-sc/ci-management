@@ -37,12 +37,9 @@ git clone https://github.com/pistacheio/pistache.git && cd pistache && meson set
     -DPISTACHE_BUILD_EXAMPLES=false \
     -DPISTACHE_BUILD_TESTS=false \
     -DPISTACHE_BUILD_DOCS=false \
-    --prefix="$PWD/prefix" \
-     meson install -C build && \
-     sudo cp -rf prefix/include/pistache /usr/include/pistache && \
-     sudo cp prefix/lib/x86_64-linux-gnu/libpistache.so.0.0.3 $LIBRARY_PATH && \
-     sudo ln -s $LIBRARY_PATH/libpistache.so.0.0.3 $LIBRARY_PATH/libpistache.so.0 && \
-     sudo ln -s $LIBRARY_PATH/libpistache.so.0 $LIBRARY_PATH/libpistache.so && \
-     sudo ldconfig
+    --prefix="/usr/local"  && \
+    meson compile -C build && \
+    meson install -C build && \
+    sudo ldconfig
 
 echo "---> install-git-pistache.sh ends"
