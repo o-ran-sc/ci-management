@@ -27,7 +27,7 @@ echo "---> install Pistache dependencies..."
 export PATH=$PATH:~/.local/bin
 export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
 
-sudo apt-get update && sudo apt-get -y install rapidjson-dev libssl-dev
+sudo apt-get update && sudo apt-get -y install rapidjson-dev libssl-dev ninja-build
 python3 -m pip install meson
 
 
