@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "989315d7_95c5a7db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001859
+      },
+      "writtenOn": "2022-07-26T08:03:01Z",
+      "side": 1,
+      "message": "Hi,\n\nWe are missing ninja-build, so I added it into install-git-pistache.sh script.\n\nAnh Nguyen",
+      "revId": "5225076fb38b92e1ce61ffc86cbfa155c5583f01",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
