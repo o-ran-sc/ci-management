@@ -33,6 +33,23 @@
       "message": "Hi,\nCould you help me to merge this?",
       "revId": "5225076fb38b92e1ce61ffc86cbfa155c5583f01",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c01055bd_e7b7cc63",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000108
+      },
+      "writtenOn": "2022-08-10T06:45:44Z",
+      "side": 1,
+      "message": "this looks good, and I think could be merged by LF",
+      "revId": "5225076fb38b92e1ce61ffc86cbfa155c5583f01",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
