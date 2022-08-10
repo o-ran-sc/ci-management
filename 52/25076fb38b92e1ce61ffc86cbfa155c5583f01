@@ -1,0 +1,8 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Thoralf Czichy <thoralf.czichy@nokia.com>
+Code-Review+2: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Wed, 10 Aug 2022 17:21:18 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/8809
+Project: ci-management
+Branch: refs/heads/master
