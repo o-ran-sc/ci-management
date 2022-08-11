@@ -1,0 +1,15 @@
+---
+- project:
+    name: ric-app-hw-rust-project-view
+    project-name: ric-app-hw-rust
+    views:
+      - project-view
+
+- project:
+    name: ric-app-hw-rust-info
+    project: ric-app/hw-rust
+    project-name: ric-app-hw-rust
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
