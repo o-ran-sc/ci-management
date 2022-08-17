@@ -102,10 +102,10 @@
 
 - project:
     <<: *nonrtric_jdk_common
-    name: nonrtric-auth-token-fetch
+    name: nonrtric-plt-auth-token-fetch
     project-name: '{name}'
     # image name
-    docker-name: 'o-ran-sc/nonrtric-auth-token-fetch'
+    docker-name: 'o-ran-sc/nonrtric-plt-auth-token-fetch'
     # get tag from YAML
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
@@ -131,8 +131,8 @@
 
 - project:
     <<: *nonrtric_jdk_common
-    name: nonrtric-auth-token-fetch-sonar
-    project-name: nonrtric-auth-token-fetch
+    name: nonrtric-plt-auth-token-fetch-sonar
+    project-name: nonrtric-plt-auth-token-fetch
     # prescan script requires ubuntu
     # golang is only on docker-enabled nodes
     build-node: ubuntu1804-docker-4c-4g
