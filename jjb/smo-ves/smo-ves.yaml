@@ -134,6 +134,7 @@
     #  - ../shell/install-deb-rmr.sh
     # impt for verify and tox etc
     tox-envs: code,flake8
+    sonarcloud: true
     sonar-project-file: ""
     sonar-properties: |
       sonar.login={sonarcloud_api_token}
