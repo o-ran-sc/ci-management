@@ -1,0 +1,9 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Verified+1: John  Keeney <john.keeney@est.tech>
+Code-Review+1: Bj�rn Magnusson <bjorn.magnusson@est.tech>
+Code-Review+2: John  Keeney <john.keeney@est.tech>
+Submitted-by: John  Keeney <john.keeney@est.tech>
+Submitted-at: Wed, 17 Aug 2022 13:44:53 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/8900
+Project: ci-management
+Branch: refs/heads/master
