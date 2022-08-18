@@ -128,6 +128,8 @@
     stream:
       - master:
           branch: master
+      - f-release:
+          branch: f-release
 
 - project:
     <<: *nonrtric_jdk_common
