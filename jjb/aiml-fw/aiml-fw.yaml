@@ -1,0 +1,15 @@
+---
+- project:
+    name: aiml-fw-project-view
+    project-name: aiml-fw
+    views:
+      - project-view
+
+- project:
+    name: aiml-fw-info
+    project: aiml-fw
+    project-name: aiml-fw
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
