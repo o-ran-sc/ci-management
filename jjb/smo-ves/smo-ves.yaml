@@ -25,10 +25,10 @@
 
 - project:
     <<: *ves_docker_common
-    name: smo-ves
+    name: smo-collector
     project-name: '{name}'
     # image name
-    docker-name: 'smo-collector'
+    docker-name: 'o-ran-sc/smo-collector'
     # Dockerfile is in a subdir
     docker-root: collector
     # source of docker tag
@@ -41,10 +41,10 @@
 
 - project:
     <<: *ves_docker_common
-    name: smo-dmaap
+    name: smo-dmaap-adapter
     project-name: '{name}'
     # image name
-    docker-name: 'smo-dmaap-adapter'
+    docker-name: 'o-ran-sc/smo-dmaap-adapter'
     # Dockerfile is in a subdir
     docker-root: dmaapadapter
     # source of docker tag
@@ -57,10 +57,10 @@
 
 - project:
     <<: *ves_docker_common
-    name: smo-influxdb
+    name: smo-influxdb-connector
     project-name: '{name}'
     # image name
-    docker-name: 'smo-influxdb-connector'
+    docker-name: 'o-ran-sc/smo-influxdb-connector'
     # Dockerfile is in a subdir
     docker-root: influxdb-connector
     # source of docker tag
@@ -72,10 +72,10 @@
           branch: master
 - project:
     <<: *ves_docker_common
-    name: smo-postconfig
+    name: smo-post-config
     project-name: '{name}'
     # image name
-    docker-name: 'smo-post-config'
+    docker-name: 'o-ran-sc/smo-post-config'
     # Dockerfile is in a subdir
     docker-root: postconfig
     # source of docker tag
@@ -88,7 +88,7 @@
 
 - project:
     <<: *ves_docker_common
-    name: smo-ves-release
+    name: smo-collector-release
     project-name: '{name}'
     # maven release requires sigul which requires centos
     # container release requires docker
@@ -98,7 +98,7 @@
 
 - project:
     <<: *ves_docker_common
-    name: smo-dmaap-release
+    name: smo-dmaap-adapter-release
     project-name: '{name}'
     # maven release requires sigul which requires centos
     # container release requires docker
@@ -108,7 +108,17 @@
 
 - project:
     <<: *ves_docker_common
-    name: smo-influxdb-release
+    name: smo-influxdb-connector-release
+    project-name: '{name}'
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *ves_docker_common
+    name: smo-post-config-release
     project-name: '{name}'
     # maven release requires sigul which requires centos
     # container release requires docker
