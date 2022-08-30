@@ -16,6 +16,29 @@
       "message": "could you from LF merge this review?",
       "revId": "19353a1bc9539f8b1941c83c7a6f7ba0c1893033",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "604ef900_c2f4708f",
+        "filename": "jjb/ric-plt-ricdms/ric-plt-ricdms.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2022-08-30T17:48:34Z",
+      "side": 1,
+      "message": "Please fix the indentation here to match the rest of the file.",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 49
+      },
+      "revId": "19353a1bc9539f8b1941c83c7a6f7ba0c1893033",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
