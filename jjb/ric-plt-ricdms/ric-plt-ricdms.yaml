@@ -5,6 +5,16 @@
     views:
       - project-view
 
+- ricdms_common: &ricdms_common
+    # values apply to all projects
+    name: ricdms-common
+    # git repo
+    project: ric-plt/ricdms
+    # jenkins prefix
+    project-name: ric-plt-ricdms
+    # maven settings file has docker credentials
+    mvn-settings: ric-plt-ricdms-settings
+
 - project:
     name: ric-plt-ricdms-info
     project: ric-plt/ricdms
@@ -12,3 +22,33 @@
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+# create docker image when source changes
+- project:
+    <<: *ricdms_common
+    name: ric-plt-ricdms
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # trigger on any change other than a file in ./docs
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '^((?!docs/|\/COMMIT_MSG).)*$'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+# push nexus image from staging to release
+- project:
+    <<: *ricdms_common
+    name: ric-plt-ricdms-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
