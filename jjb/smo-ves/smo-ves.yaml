@@ -25,106 +25,99 @@
 
 - project:
     <<: *ves_docker_common
-    name: smo-collector
-    project-name: '{name}'
+    name: smo-ves-collector
     # image name
-    docker-name: 'o-ran-sc/smo-collector'
+    docker-name: 'o-ran-sc/{name}'
     # Dockerfile is in a subdir
     docker-root: collector
     # source of docker tag
     container-tag-method: yaml-file
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - '{name}-gerrit-docker-jobs'
     stream:
       - master:
           branch: master
 
 - project:
     <<: *ves_docker_common
-    name: smo-dmaap-adapter
-    project-name: '{name}'
+    name: smo-ves-dmaap-adapter
     # image name
-    docker-name: 'o-ran-sc/smo-dmaap-adapter'
+    docker-name: 'o-ran-sc/{name}'
     # Dockerfile is in a subdir
     docker-root: dmaapadapter
     # source of docker tag
     container-tag-method: yaml-file
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - '{name}-gerrit-docker-jobs'
     stream:
       - master:
           branch: master
 
 - project:
     <<: *ves_docker_common
-    name: smo-influxdb-connector
-    project-name: '{name}'
+    name: smo-ves-influxdb-connector
     # image name
-    docker-name: 'o-ran-sc/smo-influxdb-connector'
+    docker-name: 'o-ran-sc/{name}'
     # Dockerfile is in a subdir
     docker-root: influxdb-connector
     # source of docker tag
     container-tag-method: yaml-file
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - '{name}-gerrit-docker-jobs'
     stream:
       - master:
           branch: master
 - project:
     <<: *ves_docker_common
-    name: smo-post-config
-    project-name: '{name}'
+    name: smo-ves-post-config
     # image name
-    docker-name: 'o-ran-sc/smo-post-config'
+    docker-name: 'o-ran-sc/{name}'
     # Dockerfile is in a subdir
     docker-root: postconfig
     # source of docker tag
     container-tag-method: yaml-file
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - '{name}-gerrit-docker-jobs'
     stream:
       - master:
           branch: master
 
 - project:
     <<: *ves_docker_common
-    name: smo-collector-release
-    project-name: '{name}'
+    name: smo-ves-collector-release
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - '{name}-gerrit-release-jobs'
 
 - project:
     <<: *ves_docker_common
-    name: smo-dmaap-adapter-release
-    project-name: '{name}'
+    name: smo-ves-dmaap-adapter-release
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - '{name}-gerrit-release-jobs'
 
 - project:
     <<: *ves_docker_common
-    name: smo-influxdb-connector-release
-    project-name: '{name}'
+    name: smo-ves-influxdb-connector-release
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - '{name}-gerrit-release-jobs'
 
 - project:
     <<: *ves_docker_common
-    name: smo-post-config-release
+    name: smo-ves-post-config-release
     project-name: '{name}'
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - '{name}-gerrit-release-jobs'
 
 - project:
     <<: *ves_docker_common
