@@ -25,10 +25,10 @@
 
 - project:
     <<: *ves_docker_common
-    name: smo-collector
+    name: smo-ves-collector
     project-name: '{name}'
     # image name
-    docker-name: 'o-ran-sc/smo-collector'
+    docker-name: 'o-ran-sc/{name}'
     # Dockerfile is in a subdir
     docker-root: collector
     # source of docker tag
@@ -41,10 +41,10 @@
 
 - project:
     <<: *ves_docker_common
-    name: smo-dmaap-adapter
+    name: smo-ves-dmaap-adapter
     project-name: '{name}'
     # image name
-    docker-name: 'o-ran-sc/smo-dmaap-adapter'
+    docker-name: 'o-ran-sc/{name}'
     # Dockerfile is in a subdir
     docker-root: dmaapadapter
     # source of docker tag
@@ -57,10 +57,10 @@
 
 - project:
     <<: *ves_docker_common
-    name: smo-influxdb-connector
+    name: smo-ves-influxdb-connector
     project-name: '{name}'
     # image name
-    docker-name: 'o-ran-sc/smo-influxdb-connector'
+    docker-name: 'o-ran-sc/{name}'
     # Dockerfile is in a subdir
     docker-root: influxdb-connector
     # source of docker tag
@@ -72,10 +72,10 @@
           branch: master
 - project:
     <<: *ves_docker_common
-    name: smo-post-config
+    name: smo-ves-post-config
     project-name: '{name}'
     # image name
-    docker-name: 'o-ran-sc/smo-post-config'
+    docker-name: 'o-ran-sc/{name}'
     # Dockerfile is in a subdir
     docker-root: postconfig
     # source of docker tag
@@ -88,7 +88,7 @@
 
 - project:
     <<: *ves_docker_common
-    name: smo-collector-release
+    name: smo-ves-collector-release
     project-name: '{name}'
     # maven release requires sigul which requires centos
     # container release requires docker
@@ -98,7 +98,7 @@
 
 - project:
     <<: *ves_docker_common
-    name: smo-dmaap-adapter-release
+    name: smo-ves-dmaap-adapter-release
     project-name: '{name}'
     # maven release requires sigul which requires centos
     # container release requires docker
@@ -108,7 +108,7 @@
 
 - project:
     <<: *ves_docker_common
-    name: smo-influxdb-connector-release
+    name: smo-ves-influxdb-connector-release
     project-name: '{name}'
     # maven release requires sigul which requires centos
     # container release requires docker
@@ -118,7 +118,7 @@
 
 - project:
     <<: *ves_docker_common
-    name: smo-post-config-release
+    name: smo-ves-post-config-release
     project-name: '{name}'
     # maven release requires sigul which requires centos
     # container release requires docker
