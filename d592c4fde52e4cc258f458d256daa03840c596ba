@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcd45c66_0269e3ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2022-09-12T21:55:13Z",
+      "side": 1,
+      "message": "The commit message doesn\u0027t indicate why this change is being made.",
+      "revId": "d592c4fde52e4cc258f458d256daa03840c596ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
