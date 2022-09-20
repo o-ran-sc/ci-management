@@ -22,6 +22,8 @@
     project-name: smo-ves
     # maven settings file has docker credentials
     mvn-settings: smo-ves-settings
+    sonarcloud-project-key: "smo-ves"
+    sonarcloud-project-organization: "o-ran-sc"
 
 - project:
     <<: *ves_docker_common
