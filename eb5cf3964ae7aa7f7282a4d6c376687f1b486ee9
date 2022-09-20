@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a38c8e15_3b29c664",
+        "filename": "jenkins-config/managed-config-files/mavenSettings/aiml-fw/serverCredentialMappings.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2022-09-20T22:23:35Z",
+      "side": 1,
+      "message": "Wondering if these credentials have been created on the Nexus/Jenkins already or its just a copy and paste from other projects?",
+      "range": {
+        "startLine": 4,
+        "startChar": 19,
+        "endLine": 4,
+        "endChar": 28
+      },
+      "revId": "eb5cf3964ae7aa7f7282a4d6c376687f1b486ee9",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
