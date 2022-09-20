@@ -1,0 +1,15 @@
+---
+- project:
+    name: aiml-fw-athp-data-extraction-project-view
+    project-name: aiml-fw-athp-data-extraction
+    views:
+      - project-view
+
+- project:
+    name: aiml-fw-athp-data-extraction-info
+    project: aiml-fw/athp/data-extraction
+    project-name: aiml-fw-athp-data-extraction
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
