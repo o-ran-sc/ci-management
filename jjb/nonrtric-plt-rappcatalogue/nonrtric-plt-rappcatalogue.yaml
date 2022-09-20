@@ -66,12 +66,12 @@
 - project:
     <<: *rappcatalogue_jdk_common
     name: nonrtric-plt-rappcatalogue-sonar
-    project-name: '{name}'
+    project-name: nonrtric-plt-rappcatalogue
     # template goal install builds docker image unnecessarily
     mvn-params: '-Ddocker.skip=true'
     sonarcloud: true
     sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{sonarcloud_project_organization}_nonrtric_plt_rappcatalogue'
+    sonarcloud-project-key: 'nonrtric_plt_rappcatalogue'
     sonarcloud-project-organization: '{sonarcloud_project_organization}'
     jobs:
       - gerrit-maven-sonar

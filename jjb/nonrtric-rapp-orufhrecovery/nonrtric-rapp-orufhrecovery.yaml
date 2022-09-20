@@ -84,7 +84,7 @@
 - project:
     <<: *orufhrecovery_common
     name: nonrtric-rapp-orufhrecovery-consumer-sonar
-    project-name: '{name}'
+    project-name: 'nonrtric-rapp-orufhrecovery-consumer'
     # prescan script requires ubuntu
     # golang is only on docker-enabled nodes
     build-node: ubuntu1804-docker-4c-4g
@@ -95,7 +95,7 @@
     sonar-properties: |
         # Required metadata
         sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_nonrtric-rapp-orufhrecovery-consumer
+        sonar.projectKey=nonrtric-rapp-orufhrecovery-consumer
         sonar.organization={sonarcloud_project_organization}
         # Encoding
         sonar.build.sourceEncoding=UTF-8

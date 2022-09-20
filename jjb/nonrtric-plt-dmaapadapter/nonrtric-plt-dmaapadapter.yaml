@@ -66,12 +66,12 @@
 - project:
     <<: *dmaapadapter_jdk_common
     name: nonrtric-plt-dmaapadapter-sonar
-    project-name: '{name}'
+    project-name: nonrtric-plt-dmaapadapter
     # template goal install builds docker image unnecessarily
     mvn-params: '-Ddocker.skip=true'
     sonarcloud: true
     sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{sonarcloud_project_organization}_nonrtric-plt-dmaapadapter'
+    sonarcloud-project-key: 'nonrtric-plt-dmaapadapter'
     sonarcloud-project-organization: '{sonarcloud_project_organization}'
     jobs:
       - gerrit-maven-sonar
