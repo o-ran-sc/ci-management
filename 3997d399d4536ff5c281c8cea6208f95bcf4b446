@@ -22,6 +22,30 @@
       },
       "revId": "3997d399d4536ff5c281c8cea6208f95bcf4b446",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f501826_617b82a8",
+        "filename": "jenkins-config/managed-config-files/mavenSettings/aiml-fw-athp-data-extraction/serverCredentialMappings.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2022-09-21T07:11:49Z",
+      "side": 1,
+      "message": "What does that mean? these are all new repos. I think there is no same credentialsID. But one thing is weird. Even the gerrit repo is not created yet, the mirroring github already exists. Could you please check this situation?",
+      "parentUuid": "dc6e4675_b5a03a13",
+      "range": {
+        "startLine": 6,
+        "startChar": 20,
+        "endLine": 6,
+        "endChar": 48
+      },
+      "revId": "3997d399d4536ff5c281c8cea6208f95bcf4b446",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
