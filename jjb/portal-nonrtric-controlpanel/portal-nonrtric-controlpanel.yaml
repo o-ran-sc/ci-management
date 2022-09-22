@@ -66,15 +66,34 @@
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
-    name: portal-nonrtric-controlpanel-sonar
+    name: portal-nonrtric-controlpanel-gateway-sonar
     # template goal install builds docker image unnecessarily
-    mvn-params: -Ddocker.skip=true
+    mvn-params: '-Ddocker.skip=true -f nonrtric-gateway'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'nonrtric-gateway/.*'
     sonarcloud: true
     sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
+    sonarcloud-project-key: '{project-name}-gateway'
     sonarcloud-project-organization: '{sonarcloud_project_organization}'
     jobs:
       - gerrit-maven-sonar
+
+- project:
+    <<: *portal_nonrtric_controlpanel_common
+    name: portal-nonrtric-controlpanel-frontend-sonar
+    # prescan script requires ubuntu
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'webapp-frontend/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    sonar-prescan-script: !include-raw-escape: frontend-prescan-controlpanel-ubuntu.sh
+    sonar-project-file: ""
+    java-version: openjdk11
+    # use sonarcloud values from defaults.yaml
+    sonar-properties: !include-raw: frontend-sonar-project.properties
+    jobs:
+      - gerrit-sonar-prescan-script
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
