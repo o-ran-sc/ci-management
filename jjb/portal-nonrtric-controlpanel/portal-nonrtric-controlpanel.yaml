@@ -25,6 +25,8 @@
     # defaults.yaml value is NOT used due to value set in lf-maven-jobs.yaml
     java-version: openjdk11
     mvn-version: mvn36
+    sonarcloud-project-key: "portal-nonrtric-controlpanel"
+    sonarcloud-project-organization: "o-ran-sc"
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
@@ -66,15 +68,39 @@
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
-    name: portal-nonrtric-controlpanel-sonar
+    name: portal-nonrtric-controlpanel-gateway-sonar
     # template goal install builds docker image unnecessarily
-    mvn-params: -Ddocker.skip=true
+    mvn-params: '-Ddocker.skip=true -f nonrtric-gateway'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'nonrtric-gateway/.*'
     sonarcloud: true
     sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
+    sonarcloud-project-key: '{project-name}-gateway'
     sonarcloud-project-organization: '{sonarcloud_project_organization}'
     jobs:
       - gerrit-maven-sonar
+
+- project:
+    <<: *portal_nonrtric_controlpanel_common
+    name: portal-nonrtric-controlpanel-frontend-sonar
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'webapp-frontend/.*'
+    build-node: ubuntu1804-builder-2c-2g
+    sonarcloud: true
+    sonar-project-file: ""
+    sonar-properties: |
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.exclusions=**/node_modules/** ,**/nonrtric-gateway/**
+      sonar.sources=collector
+      sonar.typescript.lcov.reportPaths=coverage/lcov.info
+    jobs:
+      - gerrit-cli-sonar
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
