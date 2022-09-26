@@ -16,6 +16,23 @@
       "message": "jjb-deploy portal-nonrtric-controlpanel*",
       "revId": "f4b540aa032a9e89434e32256e4206b044b492ce",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8f7ce3d_a461bc2d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-09-26T05:37:31Z",
+      "side": 1,
+      "message": "jjb-deploy portal-nonrtric-controlpanel*",
+      "revId": "f4b540aa032a9e89434e32256e4206b044b492ce",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
