@@ -16,6 +16,23 @@
       "message": "jjb-deploy portal-nonrtric-controlpanel*",
       "revId": "3db0f75c4c6f7ee822b45d4c41016ff8fd5d36a4",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc4fac17_9c9141d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 29
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-10-03T07:21:40Z",
+      "side": 1,
+      "message": "Links to succesful jobs in sandbox:\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/portal-nonrtric-controlpanel-cli-sonar/2/\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/portal-nonrtric-controlpanel-sonar/2/",
+      "revId": "3db0f75c4c6f7ee822b45d4c41016ff8fd5d36a4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
