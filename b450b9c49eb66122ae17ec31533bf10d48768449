@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a0a0f82_494fee60",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 30
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-10-03T07:42:43Z",
+      "side": 1,
+      "message": "jjb-deploy portal-nonrtric-controlpanel*",
+      "revId": "b450b9c49eb66122ae17ec31533bf10d48768449",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
