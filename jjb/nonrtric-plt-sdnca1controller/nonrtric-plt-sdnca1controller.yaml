@@ -34,8 +34,6 @@
     stream:
       - master:
           branch: master
-      - f-release:
-          branch: f-release
 
 # nonrtric:nonrtric-plt-sdnca1controller
 # Maven artifacts for nonrtric-plt-sdnca1controller
@@ -51,8 +49,6 @@
     stream:
       - master:
           branch: master
-      - f-release:
-          branch: f-release
 
 - project:
     <<: *sdnca1controller_jdk_common
