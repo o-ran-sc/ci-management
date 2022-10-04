@@ -1,0 +1,15 @@
+---
+- project:
+    name: aiml-fw-awmf-tm-project-view
+    project-name: aiml-fw-awmf-tm
+    views:
+      - project-view
+
+- project:
+    name: aiml-fw-awmf-tm-info
+    project: aiml-fw/awmf/tm
+    project-name: aiml-fw-awmf-tm
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
