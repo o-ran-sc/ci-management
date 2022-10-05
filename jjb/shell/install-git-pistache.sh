@@ -40,8 +40,8 @@ git clone https://github.com/pistacheio/pistache.git && cd pistache && meson set
     --prefix="$PWD/prefix"  && \
      meson install -C build && \
      sudo cp -rf prefix/include/pistache /usr/include/pistache && \
-     sudo cp prefix/lib/x86_64-linux-gnu/libpistache.so.0.0.3 $LIBRARY_PATH && \
-     sudo ln -s $LIBRARY_PATH/libpistache.so.0.0.3 $LIBRARY_PATH/libpistache.so.0 && \
+     sudo cp prefix/lib/x86_64-linux-gnu/libpistache.so.0.0.5 $LIBRARY_PATH && \
+     sudo ln -s $LIBRARY_PATH/libpistache.so.0.0.5 $LIBRARY_PATH/libpistache.so.0 && \
      sudo ln -s $LIBRARY_PATH/libpistache.so.0 $LIBRARY_PATH/libpistache.so && \
      sudo ldconfig
 
