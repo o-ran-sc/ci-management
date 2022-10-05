@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50a63167_ce38d499",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000108
+      },
+      "writtenOn": "2022-10-05T15:27:48Z",
+      "side": 1,
+      "message": "tested in sandbox with latest commit of xapp-frame-cpp (refs/changes/61/8561/21) of review https://gerrit.o-ran-sc.org/r/c/ric-plt/xapp-frame-cpp/+/8561 .\n\nSee build #9 in Sandbox that shows that it works:\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/ric-plt-xapp-frame-cpp-cmake-verify-master/\n\n",
+      "revId": "f4a4cb9d594425275d7fbe3db140785630707296",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
