@@ -1,0 +1,15 @@
+---
+- project:
+    name: aiml-fw-athp-tps-kubeflow-adapter-project-view
+    project-name: aiml-fw-athp-tps-kubeflow-adapter
+    views:
+      - project-view
+
+- project:
+    name: aiml-fw-athp-tps-kubeflow-adapter-info
+    project: aiml-fw/athp/tps/kubeflow-adapter
+    project-name: aiml-fw-athp-tps-kubeflow-adapter
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
