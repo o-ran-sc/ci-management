@@ -33,6 +33,23 @@
       "message": "recheck",
       "revId": "17fd8ff8f3db2d6db0fa202d6556a263a1538acf",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73402340_e1eadf96",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-10-10T09:34:55Z",
+      "side": 1,
+      "message": "Waiting for discussion about release",
+      "revId": "17fd8ff8f3db2d6db0fa202d6556a263a1538acf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
