@@ -24,6 +24,14 @@
 
 - project:
     <<: *nonrtric_rapp_healthcheck_common
+    name: nonrtric-rapp-healthcheck-release
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *nonrtric_rapp_healthcheck_common
     name: nonrtric-rapp-healthcheck-verify
     project-name: '{name}'
     # image name
