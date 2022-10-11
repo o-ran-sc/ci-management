@@ -16,6 +16,24 @@
       "message": "Are these not separate jobs because they are separate images that get posted on the nexus repository?",
       "revId": "469954514606479ab4ff2fa9272a2b88d04acec1",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc8ddf24_761fee31",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001000
+      },
+      "writtenOn": "2022-10-11T07:30:21Z",
+      "side": 1,
+      "message": "Single job is capable to push all 4 container images to the Nexus repository.",
+      "parentUuid": "0df43fa4_3b2bd186",
+      "revId": "469954514606479ab4ff2fa9272a2b88d04acec1",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
