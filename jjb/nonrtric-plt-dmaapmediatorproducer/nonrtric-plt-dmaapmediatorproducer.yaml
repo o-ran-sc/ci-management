@@ -50,7 +50,6 @@
     jobs:
       - "{project-name}-gerrit-docker-jobs"
       - gerrit-go-verify
-      - gerrit-maven-docker-stage
     stream:
       - master:
           branch: master
