@@ -90,37 +90,7 @@
 
 - project:
     <<: *ves_docker_common
-    name: smo-ves-collector-release
-    project-name: '{name}'
-    # maven release requires sigul which requires centos
-    # container release requires docker
-    build-node: centos7-docker-2c-8g
-    jobs:
-      - '{project-name}-gerrit-release-jobs'
-
-- project:
-    <<: *ves_docker_common
-    name: smo-ves-dmaap-adapter-release
-    project-name: '{name}'
-    # maven release requires sigul which requires centos
-    # container release requires docker
-    build-node: centos7-docker-2c-8g
-    jobs:
-      - '{project-name}-gerrit-release-jobs'
-
-- project:
-    <<: *ves_docker_common
-    name: smo-ves-influxdb-connector-release
-    project-name: '{name}'
-    # maven release requires sigul which requires centos
-    # container release requires docker
-    build-node: centos7-docker-2c-8g
-    jobs:
-      - '{project-name}-gerrit-release-jobs'
-
-- project:
-    <<: *ves_docker_common
-    name: smo-ves-post-config-release
+    name: smo-ves-release
     project-name: '{name}'
     # maven release requires sigul which requires centos
     # container release requires docker
