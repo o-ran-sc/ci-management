@@ -1,0 +1,15 @@
+---
+- project:
+    name: aiml-fw-athp-sdk-model-storage-project-view
+    project-name: aiml-fw-athp-sdk-model-storage
+    views:
+      - project-view
+
+- project:
+    name: aiml-fw-athp-sdk-model-storage-info
+    project: aiml-fw/athp/sdk/model-storage
+    project-name: aiml-fw-athp-sdk-model-storage
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
