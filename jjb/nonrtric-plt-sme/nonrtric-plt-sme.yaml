@@ -13,3 +13,59 @@
     branch: master
     jobs:
       - gerrit-info-yaml-verify
+      
+- sme_common: &sme_common
+    name: sme-common
+    # git repo
+    project: nonrtric/plt/sme
+    # jenkins job name prefix
+    project-name: nonrtric-plt-sme
+    # maven settings file has docker credentials
+    mvn-settings: nonrtric-plt-sme-settings
+
+- project:
+    <<: *sme_common
+    name: nonrtric-plt-sme-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *sme_common
+    name: nonrtric-plt-sme
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/nonrtric-plt-sme'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: '.'
+    # Directory where go test should be run
+    go-root: '.'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+      - gerrit-go-verify
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *sme_common
+    name: nonrtric-plt-sme-sonar
+    project-name: nonrtric-plt-sme
+    # prescan script requires ubuntu
+    # golang is only on docker-enabled nodes
+    build-node: ubuntu1804-docker-4c-4g
+    sonar-prescan-script: !include-raw-escape: prescan-sme-ubuntu.sh
+    sonar-project-file: ""
+    java-version: openjdk11
+    # use sonarcloud values from defaults.yaml
+    sonar-properties: !include-raw: sonar-project.properties
+    jobs:
+      - gerrit-sonar-prescan-script
