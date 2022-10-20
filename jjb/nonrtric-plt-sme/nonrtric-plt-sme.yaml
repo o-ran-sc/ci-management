@@ -25,27 +25,23 @@
 
 - project:
     <<: *sme_common
-    name: nonrtric-plt-sme-release
-    # maven release requires sigul which requires centos
-    # container release requires docker
-    build-node: centos7-docker-2c-8g
-    jobs:
-      - '{project-name}-gerrit-release-jobs'
-
-- project:
-    <<: *sme_common
-    name: nonrtric-plt-sme
+    name: nonrtric-plt-sme-capifcore
     project-name: '{name}'
     # image name
-    docker-name: 'o-ran-sc/nonrtric-plt-sme'
+    docker-name: 'o-ran-sc/nonrtric-plt-capifcore'
     # get tag from YAML
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
     docker-build-args: '--network=host'
     # Directory with Dockerfile
-    docker-root: '.'
+    # Directory with Dockerfile
+    docker-root: 'capifcore'
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'capifcore/.*'
     # Directory where go test should be run
-    go-root: '.'
+    go-root: 'capifcore'
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
@@ -57,12 +53,15 @@
 
 - project:
     <<: *sme_common
-    name: nonrtric-plt-sme-sonar
-    project-name: nonrtric-plt-sme
+    name: nonrtric-plt-capifcore-sonar
+    project-name: nonrtric-plt-capifcore
     # prescan script requires ubuntu
     # golang is only on docker-enabled nodes
     build-node: ubuntu1804-docker-4c-4g
-    sonar-prescan-script: !include-raw-escape: prescan-sme-ubuntu.sh
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'capifcore/.*'
+    sonar-prescan-script: !include-raw-escape: capifcore/prescan-capifcore-ubuntu.sh
     sonar-project-file: ""
     java-version: openjdk11
     # use sonarcloud values from defaults.yaml
