@@ -25,6 +25,6 @@ set -ex
 sudo apt-get update
 
 # build script execution
-bash ./build-sme-ubuntu.sh
+bash capifcore/build-capifcore-ubuntu.sh
 
 echo "--> prescan-sme-ubuntu.sh ends"
