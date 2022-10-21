@@ -90,6 +90,30 @@
       },
       "revId": "ebfcafef3848e59693f69564cf3953369bfa36c0",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5484fd82_96bcccab",
+        "filename": "jjb/nonrtric-plt-sme/nonrtric-plt-sme.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-10-21T06:46:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c02bafc1_0952d737",
+      "range": {
+        "startLine": 36,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 31
+      },
+      "revId": "ebfcafef3848e59693f69564cf3953369bfa36c0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
