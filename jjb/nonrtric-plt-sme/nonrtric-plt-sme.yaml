@@ -18,7 +18,7 @@
 
 - project:
     <<: *sme_common
-    name: nonrtric-plt-capifcore
+    name: nonrtric-plt-sme-capifcore
     project-name: '{name}'
     # image name
     docker-name: 'o-ran-sc/nonrtric-plt-capifcore'
@@ -45,8 +45,8 @@
 
 - project:
     <<: *sme_common
-    name: nonrtric-plt-capifcore-sonar
-    project-name: nonrtric-plt-capifcore
+    name: nonrtric-plt-sme-capifcore-sonar
+    project-name: nonrtric-plt-sme-capifcore
     # prescan script requires ubuntu
     # golang is only on docker-enabled nodes
     build-node: ubuntu1804-docker-4c-4g
