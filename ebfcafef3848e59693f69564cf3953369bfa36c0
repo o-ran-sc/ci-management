@@ -52,6 +52,23 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a47f372_ffd713a3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-10-21T06:31:18Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-plt-capifcore*",
+      "revId": "ebfcafef3848e59693f69564cf3953369bfa36c0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c02bafc1_0952d737",
