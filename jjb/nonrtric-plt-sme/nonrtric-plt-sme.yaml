@@ -47,16 +47,9 @@
     <<: *sme_common
     name: nonrtric-plt-sme-capifcore-sonar
     project-name: nonrtric-plt-sme-capifcore
-    # prescan script requires ubuntu
-    # golang is only on docker-enabled nodes
     build-node: ubuntu1804-docker-4c-4g
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: 'capifcore/.*'
-    sonar-prescan-script: !include-raw-escape: prescan-capifcore-ubuntu.sh
-    sonar-project-file: ""
     java-version: openjdk11
-    # use sonarcloud values from defaults.yaml
-    sonar-properties: !include-raw: sonar-project.properties
+        sonarcloud: true
+    sonar-project-file: ""
     jobs:
-      - gerrit-sonar-prescan-script
+      - gerrit-cli-sonar
