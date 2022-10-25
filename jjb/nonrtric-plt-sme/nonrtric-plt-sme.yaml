@@ -54,5 +54,6 @@
     sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
     sonarcloud-project-name: '{project-name}'
     sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    sonarcloud-api-token: '{sonarcloud_api_token}'
     jobs:
       - gerrit-cli-sonar
