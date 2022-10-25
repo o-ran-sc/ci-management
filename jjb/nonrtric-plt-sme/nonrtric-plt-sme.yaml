@@ -45,8 +45,8 @@
 
 - project:
     <<: *sme_common
-    name: nonrtric-plt-sme-capifcore-sonar
-    project-name: nonrtric-plt-sme-capifcore
+    name: nonrtric-plt-sme-sonar
+    project-name: nonrtric-plt-sme
     build-node: ubuntu1804-docker-4c-4g
     java-version: openjdk11
     sonarcloud: true
