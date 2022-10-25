@@ -5,7 +5,7 @@
     views:
       - project-view
 
-- project: &sme_common
+- project:
     name: nonrtric-plt-sme-info
     project: nonrtric/plt/sme
     project-name: nonrtric-plt-sme
@@ -16,8 +16,23 @@
     jobs:
       - gerrit-info-yaml-verify
 
+- nonrtric_plt_sme_common: &nonrtric_plt_sme_common
+    # values apply to all projects here
+    name: nonrtric-plt-sme-common
+    # git repo
+    project: nonrtric/plt/sme
+    # jenkins job name prefix
+    project-name: nonrtric-plt-sme
+    # maven settings file has docker credentials
+    mvn-settings: nonrtric-plt-sme-settings
+    # defaults.yaml value is NOT used due to value set in lf-maven-jobs.yaml
+    java-version: openjdk11
+    mvn-version: mvn36
+    sonarcloud-project-key: "nonrtric-plt-sme"
+    sonarcloud-project-organization: "o-ran-sc"
+
 - project:
-    <<: *sme_common
+    <<: *nonrtric_plt_sme_common
     name: nonrtric-plt-sme-capifcore
     project-name: '{name}'
     # image name
@@ -44,15 +59,13 @@
           branch: master
 
 - project:
-    <<: *sme_common
+    <<: *nonrtric_plt_sme_common
     name: nonrtric-plt-sme-capifcore-sonar
-    project-name: nonrtric-plt-sme-capifcore
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'capifcore/.*'
     build-node: ubuntu1804-docker-4c-4g
-    java-version: openjdk11
     sonarcloud: true
     sonar-project-file: ""
-    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
-    sonarcloud-project-name: '{project-name}'
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
     jobs:
       - gerrit-cli-sonar
