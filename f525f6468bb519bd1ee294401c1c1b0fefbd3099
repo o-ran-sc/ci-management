@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9743f99_1a753c52",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-10-27T08:30:43Z",
+      "side": 1,
+      "message": "Link to successful job in sandbox:\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-sme-sonar-prescan-script/1/",
+      "revId": "f525f6468bb519bd1ee294401c1c1b0fefbd3099",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
