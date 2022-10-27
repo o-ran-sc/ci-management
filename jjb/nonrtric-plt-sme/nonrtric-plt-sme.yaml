@@ -27,9 +27,6 @@
     # defaults.yaml value is NOT used due to value set in lf-maven-jobs.yaml
     java-version: openjdk11
     mvn-version: mvn36
-    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
-    sonarcloud-project-name: '{project-name}'
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
 
 - project:
     <<: *nonrtric_plt_sme_common
@@ -61,11 +58,16 @@
 - project:
     <<: *nonrtric_plt_sme_common
     name: nonrtric-plt-sme-capifcore-sonar
+    # prescan script requires ubuntu
+    # golang is only on docker-enabled nodes
+    build-node: ubuntu1804-docker-4c-4g
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'capifcore/.*'
-    build-node: ubuntu1804-docker-4c-4g
-    sonarcloud: true
+    sonar-prescan-script: !include-raw-escape: prescan-capifcore-ubuntu.sh
     sonar-project-file: ""
+    java-version: openjdk11
+    # use sonarcloud values from defaults.yaml
+    sonar-properties: !include-raw: sonar-project.properties
     jobs:
-      - gerrit-cli-sonar
+      - gerrit-sonar-prescan-script
