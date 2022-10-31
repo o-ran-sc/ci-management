@@ -13,3 +13,47 @@
     branch: master
     jobs:
       - gerrit-info-yaml-verify
+
+- aiml_tm_docker_common: &aiml_tm_docker_common
+    # values apply to all training manager projects
+    name: aiml-tm-docker-common
+    # git repo
+    project: aiml-fw/awmf/tm
+    # jenkins job name prefix
+    project-name: aiml-fw-awmf-tm
+    # maven settings file has docker credentials
+    #mvn-settings: ric-plt-e2mgr-settings
+
+- project:
+    <<: *aiml_tm_docker_common
+    name: aiml-fw/awmf/tm
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # Dockerfile is in a subdir
+    docker-root: tm
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *aiml_tm_docker_common
+    name: aiml-fw-awmf-tm-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *py_common
+    name: aiml-fw-awmf-tm--py-nexus-iq
+    build-node: centos7-builder-1c-1g
+    nexus-iq-namespace: oran-
+    jobs:
+      - gerrit-tox-nexus-iq-clm
