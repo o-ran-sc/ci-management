@@ -22,7 +22,7 @@
     # jenkins job name prefix
     project-name: aiml-fw-awmf-tm
     # maven settings file has docker credentials
-    #mvn-settings: ric-plt-e2mgr-settings
+    mvn-settings: aiml-fw-awmf-tm-settings
 
 - project:
     <<: *aiml_tm_docker_common
