@@ -51,7 +51,7 @@
       - '{project-name}-gerrit-release-jobs'
 
 - project:
-    <<: *py_common
+    <<: *aiml_tm_docker_common
     name: aiml-fw-awmf-tm--py-nexus-iq
     build-node: centos7-builder-1c-1g
     nexus-iq-namespace: oran-
