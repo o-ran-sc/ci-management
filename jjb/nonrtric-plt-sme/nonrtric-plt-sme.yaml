@@ -30,6 +30,15 @@
 
 - project:
     <<: *nonrtric_plt_sme_common
+    name: nonrtric-plt-sme-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *nonrtric_plt_sme_common
     name: nonrtric-plt-sme-capifcore
     project-name: '{name}'
     # image name
