@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb4ee7e3_ae9fb506",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2022-11-02T18:00:00Z",
+      "side": 1,
+      "message": "Henrik ... Sandeep asked if you could have a look if this looks ok ... \nTo run verify tests for a Python project. ",
+      "revId": "b1dda5c18f2021ffc5d8e4d4f228123da72fdae2",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
