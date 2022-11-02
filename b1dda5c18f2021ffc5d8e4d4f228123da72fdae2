@@ -33,6 +33,24 @@
       "message": "You don\u0027t seem to have a verify job ... \nIm not sure how to run a verify job for python projects. Sorry. \nperhaps have a look at https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/jjb/lf-python-jobs.html to see some sample that use existing LF job templates? ",
       "revId": "b1dda5c18f2021ffc5d8e4d4f228123da72fdae2",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d305dbe_e010f30d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2022-11-02T19:47:24Z",
+      "side": 1,
+      "message": "The job pti-o2-imsdms-verify\nin https://gerrit.o-ran-sc.org/r/gitweb?p\u003dci-management.git;a\u003dblob;f\u003djjb/pti-o2/pti-o2.yaml \nlooks like a good example",
+      "parentUuid": "a31aaf9f_5531487d",
+      "revId": "b1dda5c18f2021ffc5d8e4d4f228123da72fdae2",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
