@@ -33,6 +33,23 @@
       "message": "Once these changes are merged into ci repo, I shall check-in the codes in aiml/tm repo for building the images (Dockerfiles etc)",
       "revId": "b656af9a4ca813732edabd6d48c73576b3da025e",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "befa7bf4_cfeea8fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-11-03T11:09:34Z",
+      "side": 1,
+      "message": "Here is a link to the instructions for how to verify new jobs in the sandbox:\nhttps://wiki.o-ran-sc.org/display/ORAN/O-RAN+Developer%27s+Guide+to+CI+Resources+and+Processes+at+the+LF#ORANDeveloper\u0027sGuidetoCIResourcesandProcessesattheLF-TestingJJBTemplates",
+      "revId": "b656af9a4ca813732edabd6d48c73576b3da025e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
