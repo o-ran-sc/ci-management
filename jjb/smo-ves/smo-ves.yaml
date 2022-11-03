@@ -55,7 +55,26 @@
       - '{project-name}-gerrit-docker-jobs'
     stream:
       - master:
+          b-sc/{name}'
+    # Dockerfile is in a subdir
+    docker-root: postconfig
+    # source of docker tag
+    container-tag-method: yaml-file
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
           branch: master
+
+- project:
+    <<: *ves_docker_common
+    name: smo-ves-release
+    project-name: '{name}'
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'ranch: master
 
 - project:
     <<: *ves_docker_common
@@ -77,26 +96,7 @@
     name: smo-ves-post-config
     project-name: '{name}'
     # image name
-    docker-name: 'o-ran-sc/{name}'
-    # Dockerfile is in a subdir
-    docker-root: postconfig
-    # source of docker tag
-    container-tag-method: yaml-file
-    jobs:
-      - '{project-name}-gerrit-docker-jobs'
-    stream:
-      - master:
-          branch: master
-
-- project:
-    <<: *ves_docker_common
-    name: smo-ves-release
-    project-name: '{name}'
-    # maven release requires sigul which requires centos
-    # container release requires docker
-    build-node: centos7-docker-2c-8g
-    jobs:
-      - '{project-name}-gerrit-release-jobs'
+    docker-name: 'o-ran
 
 - project:
     <<: *ves_docker_common
