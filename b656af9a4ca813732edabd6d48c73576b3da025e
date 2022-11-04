@@ -67,6 +67,23 @@
       "message": "PTLs should have commit access ... Check with Hoejoo Lee\nIf she doesn\u0027t have access she should create a support request to LF; or repeat the process in https://gerrit.o-ran-sc.org/r/c/ci-management/+/8407 - which will automatically give her access. \n\nI suggest you double-check with Eric Ball (eball@linuxfoundation.org), Andrew Grimberg (agrimberg@linuxfoundation.org), Jessica Wagantall (jwagantall@linuxfoundation.org). \nPerhaps add them as reviewers here? \n\nIf you wish I can merge. We were strictly warned to only merge stuff related to our own projects - but i will if you want. ",
       "revId": "b656af9a4ca813732edabd6d48c73576b3da025e",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a6a6dd3_0b24c7c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001940
+      },
+      "writtenOn": "2022-11-04T06:22:33Z",
+      "side": 1,
+      "message": "jjb-deploy gerrit-info-yaml-verify",
+      "revId": "b656af9a4ca813732edabd6d48c73576b3da025e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
