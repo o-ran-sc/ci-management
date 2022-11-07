@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2819881_014b042f",
+        "filename": "INFO.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2022-11-07T15:18:33Z",
+      "side": 1,
+      "message": "I think you need to add an entry pointing to TOC approval for this change. \n\nThe vote in \"ORANSC TOC 20220505 3.a.i\"  was that all PTL should be allowed committer access.",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 25
+      },
+      "revId": "296c3eb1800055f70fa3a37990a9e53e1ff69d32",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
