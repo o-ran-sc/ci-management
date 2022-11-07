@@ -1,15 +1,131 @@
 ---
 - project:
-    name: aiml-fw-awmf-tm-project-view
-    project-name: aiml-fw-awmf-tm
+    name: smo-ves-project-view
+    project-name: smo-ves
     views:
       - project-view
 
 - project:
-    name: aiml-fw-awmf-tm-info
-    project: aiml-fw/awmf/tm
-    project-name: aiml-fw-awmf-tm
+    name: smo-ves-info
+    project: smo/ves
+    project-name: smo-ves
     build-node: centos7-builder-1c-1g
-    branch: master
     jobs:
       - gerrit-info-yaml-verify
+
+- ves_docker_common: &ves_docker_common
+    # values apply to all docker projects
+    name: ves-docker-common
+    # git repo
+    project: smo/ves
+    # jenkins job name prefix
+    project-name: smo-ves
+    # maven settings file has docker credentials
+    mvn-settings: smo-ves-settings
+    sonarcloud-project-key: "smo-ves"
+    sonarcloud-project-organization: "o-ran-sc"
+
+- project:
+    <<: *ves_docker_common
+    name: smo-ves-collector
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # Dockerfile is in a subdir
+    docker-root: collector
+    # source of docker tag
+    container-tag-method: yaml-file
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *ves_docker_common
+    name: smo-ves-dmaap-adapter
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # Dockerfile is in a subdir
+    docker-root: dmaapadapter
+    # source of docker tag
+    container-tag-method: yaml-file
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *ves_docker_common
+    name: smo-ves-influxdb-connector
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # Dockerfile is in a subdir
+    docker-root: influxdb-connector
+    # source of docker tag
+    container-tag-method: yaml-file
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+- project:
+    <<: *ves_docker_common
+    name: smo-ves-post-config
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # Dockerfile is in a subdir
+    docker-root: postconfig
+    # source of docker tag
+    container-tag-method: yaml-file
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *ves_docker_common
+    name: smo-ves-release
+    project-name: '{name}'
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *ves_docker_common
+    name: smo-ves-nexus-iq
+    build-node: centos7-builder-1c-1g
+    nexus-iq-namespace: oran-
+    jobs:
+      - gerrit-tox-nexus-iq-clm
+
+- project:
+    <<: *ves_docker_common
+    name: smo-ves-sonarqube
+    python-version: python3
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    #pre-build-script: !include-raw-escape:
+    #  - ../shell/install-deb-rmr.sh
+    # impt for verify and tox etc
+    tox-envs: code,flake8
+    sonarcloud: true
+    sonar-project-file: ""
+    sonar-properties: |
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=collector
+      sonar.python.coverage.reportPaths=coverage.xml
+    jobs:
+      - gerrit-tox-sonar
+      - gerrit-cli-sonar
