@@ -73,6 +73,11 @@ committers:
     id: "alex.stancu"
     company: "highstreet technologies GmbH"
     timezone: "Europe/Bucharest"
+  - name: "Hoejoo Lee"
+    email: "hoejoo.lee@samsung.com"
+    id: "cromee"
+    company: "Samsung Electronics"
+    timezone: "Asia/Seoul"
 tsc:
   # yamllint disable rule:line-length
   approval: "https://wiki.o-ran-sc.org/display/TOC"
