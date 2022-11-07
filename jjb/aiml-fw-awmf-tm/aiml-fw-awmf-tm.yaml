@@ -13,3 +13,41 @@
     branch: master
     jobs:
       - gerrit-info-yaml-verify
+
+- aiml_tm_docker_common: &aiml_tm_docker_common
+    # values apply to all training manager projects
+    name: aiml-fw-awmf-tm-docker-common
+    # git repo
+    project: aiml-fw/awmf/tm
+    # jenkins job name prefix
+    project-name: aiml-fw-awmf-tm
+    # maven settings file has docker credentials
+    mvn-settings: aiml-fw-awmf-tm-settings
+
+- project:
+    <<: *dmaapmediatorproducer_common
+    name: aiml-fw-awmf-tm-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *aiml_tm_docker_common
+    name: aiml-fw-awmf-tm
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # Dockerfile is in a subdir
+    docker-root: '.'
+    # source of docker tag
+    # dockerfile is in subdir of docker root
+    docker-build-args: '--network=host'
+    container-tag-method: yaml-file
+    build-node: ubuntu1804-docker-4c-4g
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
