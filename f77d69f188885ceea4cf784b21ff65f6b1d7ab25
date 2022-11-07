@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5e7f18a_c8b558d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001940
+      },
+      "writtenOn": "2022-11-07T07:11:59Z",
+      "side": 1,
+      "message": "jjb-deploy aiml-fw*",
+      "revId": "f77d69f188885ceea4cf784b21ff65f6b1d7ab25",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
