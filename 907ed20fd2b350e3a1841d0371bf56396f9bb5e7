@@ -16,6 +16,23 @@
       "message": "jjb-deploy aiml-fw*",
       "revId": "907ed20fd2b350e3a1841d0371bf56396f9bb5e7",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fa08836_7341e4e1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001940
+      },
+      "writtenOn": "2022-11-08T16:30:19Z",
+      "side": 1,
+      "message": "docker verify job is successful in sandbox \nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/aiml-fw-awmf-tm-docker-docker-verify-master/1/",
+      "revId": "907ed20fd2b350e3a1841d0371bf56396f9bb5e7",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
