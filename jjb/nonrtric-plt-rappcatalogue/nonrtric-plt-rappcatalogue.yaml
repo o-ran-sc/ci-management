@@ -76,3 +76,23 @@
     jobs:
       - gerrit-maven-sonar
 
+- project:
+    <<: *rappcatalogue_jdk_common
+    name: nonrtric-plt-rappcatalogue-enhanced-verify
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    python-version: python3.8
+    # skip docs on verify
+    tox-envs: code
+    tox-dir: catalogue-enhanced
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'catalogue-enhanced/.*'
+    stream:
+      # run verify on all branches
+      # the ANT pattern is **/{branch}, we are exploiting that.
+      - all:
+          branch: '*'
+    jobs:
+      - gerrit-tox-verify
