@@ -46,6 +46,30 @@
       },
       "revId": "a6f4d8507103324c39e7244cf78f2efc51bb7b5e",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9e5d2c4_9389eab8",
+        "filename": "jjb/nonrtric-plt-rappcatalogue/nonrtric-plt-rappcatalogue.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1001877
+      },
+      "writtenOn": "2022-11-09T18:06:40Z",
+      "side": 1,
+      "message": "The job that creates build nodes installs java in the node by default. It is not controlled based on the configuration given in the verify job. So mentioning the version doesn\u0027t add any load to the job.",
+      "parentUuid": "03946332_cf3f0ba2",
+      "range": {
+        "startLine": 80,
+        "startChar": 9,
+        "endLine": 80,
+        "endChar": 33
+      },
+      "revId": "a6f4d8507103324c39e7244cf78f2efc51bb7b5e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
