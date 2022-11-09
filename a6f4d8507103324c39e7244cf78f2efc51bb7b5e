@@ -22,6 +22,30 @@
       },
       "revId": "a6f4d8507103324c39e7244cf78f2efc51bb7b5e",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "03946332_cf3f0ba2",
+        "filename": "jjb/nonrtric-plt-rappcatalogue/nonrtric-plt-rappcatalogue.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1001815
+      },
+      "writtenOn": "2022-11-09T17:17:07Z",
+      "side": 1,
+      "message": "This is a verify job, not an installation.\nit does not do with java/maven. In order not to duplicate common definitions, it is re-used here and will do differentiate tox files using gerrit_trigger_file_paths tag for catalogue-enhanced module.",
+      "parentUuid": "8717b80b_384cabc1",
+      "range": {
+        "startLine": 80,
+        "startChar": 9,
+        "endLine": 80,
+        "endChar": 33
+      },
+      "revId": "a6f4d8507103324c39e7244cf78f2efc51bb7b5e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
