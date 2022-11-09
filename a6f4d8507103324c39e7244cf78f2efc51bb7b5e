@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6d0691ea_883807b2",
+        "filename": "jjb/nonrtric-plt-rappcatalogue/nonrtric-plt-rappcatalogue.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2022-11-09T18:08:19Z",
+      "side": 1,
+      "message": "Do you need to add a  gerrit_trigger_file_paths: to only trigger these jobs for the older java project?",
+      "range": {
+        "startLine": 51,
+        "startChar": 3,
+        "endLine": 51,
+        "endChar": 11
+      },
+      "revId": "a6f4d8507103324c39e7244cf78f2efc51bb7b5e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8717b80b_384cabc1",
         "filename": "jjb/nonrtric-plt-rappcatalogue/nonrtric-plt-rappcatalogue.yaml",
         "patchSetId": 4
