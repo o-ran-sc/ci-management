@@ -1,14 +1,14 @@
 ---
 - project:
-    name: portal-aiml-dashboard-project-view
-    project-name: portal-aiml-dashboard
+    name: portal-aiml-notebook-project-view
+    project-name: portal-aiml-notebook
     views:
       - project-view
 
 - project:
-    name: portal-aiml-dashboard-info
+    name: portal-aiml-notebook-info
     project: portal/aiml-dashboard
-    project-name: portal-aiml-dashboard
+    project-name: portal-aiml-notebook
     build-node: centos7-builder-1c-1g
     branch: master
     jobs:
@@ -16,17 +16,17 @@
 
 - aiml_dashboard_docker_common: &aiml_dashboard_docker_common
     # values apply to all training manager projects
-    name: portal-aiml-dashboard-docker-common
+    name: portal-aiml-notebook-docker-common
     # git repo
     project: portal/aiml-dashboard
     # jenkins job name prefix
-    project-name: portal-aiml-dashboard
+    project-name: portal-aiml-notebook
     # maven settings file has docker credentials
-    mvn-settings: portal-aiml-dashboard-settings
+    mvn-settings: portal-aiml-notebook-settings
 
 - project:
     <<: *aiml_dashboard_docker_common
-    name: portal-aiml-dashboard-release
+    name: portal-aiml-notebook-release
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
@@ -35,12 +35,13 @@
 
 - project:
     <<: *aiml_dashboard_docker_common
-    name: portal-aiml-dashboard-docker
+    name: portal-aiml-notebook-docker
     project-name: '{name}'
     # image name
     docker-name: 'o-ran-sc/{name}'
     # Dockerfile is in a subdir
-    docker-root: '.'
+    docker-root: 'kf-pipelines'
+    container-tag-yaml-dir: 'kf-pipelines'
     # source of docker tag
     # dockerfile is in subdir of docker root
     docker-build-args: '--network=host'
