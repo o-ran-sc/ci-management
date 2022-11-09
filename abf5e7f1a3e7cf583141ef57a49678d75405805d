@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric-plt-enhanced-rappcatalogue*",
       "revId": "abf5e7f1a3e7cf583141ef57a49678d75405805d",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77850ab4_faf8fb34",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001815
+      },
+      "writtenOn": "2022-11-09T14:55:05Z",
+      "side": 1,
+      "message": "link to the successful job in sandbox https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-rappcatalogue-tox-verify-all/1/",
+      "revId": "abf5e7f1a3e7cf583141ef57a49678d75405805d",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
