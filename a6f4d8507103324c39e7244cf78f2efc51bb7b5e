@@ -18,6 +18,23 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "754818dc_9456c2a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001815
+      },
+      "writtenOn": "2022-11-09T18:53:48Z",
+      "side": 1,
+      "message": "https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-rappcatalogue-tox-verify-all/1/console\n\nAravindan you can please check the above verify job logs to see if any java has been installed or not. This is triggered by this config.",
+      "revId": "a6f4d8507103324c39e7244cf78f2efc51bb7b5e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6d0691ea_883807b2",
