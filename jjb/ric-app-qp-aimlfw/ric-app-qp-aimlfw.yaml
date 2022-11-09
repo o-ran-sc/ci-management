@@ -1,0 +1,15 @@
+---
+- project:
+    name: ric-app-qp-aimlfw-project-view
+    project-name: ric-app-qp-aimlfw
+    views:
+      - project-view
+
+- project:
+    name: ric-app-qp-aimlfw-info
+    project: ric-app/qp-aimlfw
+    project-name: ric-app-qp-aimlfw
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
