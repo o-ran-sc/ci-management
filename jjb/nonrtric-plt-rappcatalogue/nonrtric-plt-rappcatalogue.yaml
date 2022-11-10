@@ -106,6 +106,8 @@
     container-tag-method: yaml-file
     # use host network
     docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: 'catalogue-enhanced'
     build-node: ubuntu1804-docker-4c-4g
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
@@ -116,3 +118,25 @@
           branch: master
     jobs:
       - '{project-name}-gerrit-docker-jobs'
+
+- project:
+    <<: *rappcatalogue_jdk_common
+    name: nonrtric-plt-rappcatalogue-enhanced-sonarqube
+    python-version: python3
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'catalogue-enhanced/.*'
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=catalogue-enhanced/
+        sonar.python.coverage.reportPaths=catalogue-enhanced/coverage.xml
+    jobs:
+      - gerrit-tox-sonarqube
