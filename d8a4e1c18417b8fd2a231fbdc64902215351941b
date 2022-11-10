@@ -16,6 +16,23 @@
       "message": "jj-deploy nonrtric-plt-sme*",
       "revId": "d8a4e1c18417b8fd2a231fbdc64902215351941b",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebba7161_832bf0c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-11-10T12:05:55Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-plt-sme*",
+      "revId": "d8a4e1c18417b8fd2a231fbdc64902215351941b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
