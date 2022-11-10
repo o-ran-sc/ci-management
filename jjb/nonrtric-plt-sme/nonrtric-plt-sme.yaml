@@ -45,6 +45,7 @@
     docker-name: 'o-ran-sc/nonrtric-plt-capifcore'
     # get tag from YAML
     container-tag-method: yaml-file
+    container-tag-yaml-dir: capifcore
     # use host network to clone from our gerrit
     docker-build-args: '--network=host'
     # Directory with Dockerfile
