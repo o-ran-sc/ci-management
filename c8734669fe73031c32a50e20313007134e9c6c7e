@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a1ad3b0_a80b4282",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001815
+      },
+      "writtenOn": "2022-11-10T11:15:07Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-plt-enhanced-rappcatalogue*",
+      "revId": "c8734669fe73031c32a50e20313007134e9c6c7e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
