@@ -50,6 +50,23 @@
       "message": "Link to successful job in sandbox: https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-sme-capifcore-docker-verify-master/1/console",
       "revId": "d8a4e1c18417b8fd2a231fbdc64902215351941b",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d165b28_f5803e82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2022-11-10T12:20:35Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "d8a4e1c18417b8fd2a231fbdc64902215351941b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
