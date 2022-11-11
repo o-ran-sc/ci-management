@@ -96,3 +96,23 @@
           branch: '*'
     jobs:
       - gerrit-tox-verify
+
+- project:
+    <<: *rappcatalogue_jdk_common
+    name: nonrtric-plt-rappcatalogue-enhanced-docker
+    # image name
+    docker-name: 'o-ran-sc/nonrtric-plt-rappcatalogue-enhanced'
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use host network
+    docker-build-args: '--network=host'
+    build-node: ubuntu1804-docker-4c-4g
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'catalogue-enhanced/.*'
+    stream:
+      - master:
+          branch: master
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
