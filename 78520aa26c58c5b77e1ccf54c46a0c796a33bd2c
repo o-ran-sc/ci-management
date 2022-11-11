@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric-plt-rappcatalogue*",
       "revId": "78520aa26c58c5b77e1ccf54c46a0c796a33bd2c",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99ec359f_5aa7fe83",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2022-11-11T11:52:15Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "78520aa26c58c5b77e1ccf54c46a0c796a33bd2c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
