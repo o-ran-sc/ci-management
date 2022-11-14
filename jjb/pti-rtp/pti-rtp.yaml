@@ -67,3 +67,5 @@
           branch: master
       - f-release:
           branch: f-release
+      - g-release:
+          branch: g-release
