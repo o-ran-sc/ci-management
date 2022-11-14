@@ -123,6 +123,7 @@
     <<: *rappcatalogue_jdk_common
     name: nonrtric-plt-rappcatalogue-enhanced-sonarqube
     python-version: python3
+    tox-dir: catalogue-enhanced
     # the install script assumes an ubuntu image
     build-node: ubuntu1804-builder-2c-2g
     # do not trigger on changes in docs, releases
