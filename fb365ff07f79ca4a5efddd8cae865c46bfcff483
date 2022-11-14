@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15b8b158_6adbb365",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2022-11-14T17:09:02Z",
+      "side": 1,
+      "message": "Adding additional PTLs as reviewer. \n\nPTLs: If you have not already done so, and you would like more responsibility and control over your CI tasks,  I recommend you add yourself with a similar change. \n\nSee OSC TOC 20220505 #3.a.i https://wiki.o-ran-sc.org/pages/viewpage.action?pageId\u003d57377718#id-2022Q2(Apr,May,Jun)-20220505",
+      "revId": "fb365ff07f79ca4a5efddd8cae865c46bfcff483",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
