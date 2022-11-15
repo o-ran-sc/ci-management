@@ -21,16 +21,21 @@ echo "--> upload-inf.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
-echo "INFO: creating virtual environment"
-virtualenv -p python3 /tmp/venv
-PATH=/tmp/venv/bin:$PATH
-
-pip_pkgs="pip setuptools lftools"
-for pkg in $pip_pkgs; do
-    cmd_pip="python -m pip install -q --upgrade $pkg"
-    echo "INFO: installing packages: $cmd_pip"
-    $cmd_pip
-done
+if [[ -f ~/lf-env.sh ]]; then
+    source ~/lf-env.sh
+    lf-activate-venv --python python3 lftools
+else
+    echo "INFO: creating virtual environment"
+    virtualenv -p python3 /tmp/venv
+    PATH=/tmp/venv/bin:$PATH
+    
+    pip_pkgs="pip setuptools lftools"
+    for pkg in $pip_pkgs; do
+        cmd_pip="python -m pip install --upgrade $pkg"
+        echo "INFO: installing packages: $cmd_pip"
+        $cmd_pip
+    done
+fi
 
 # NEXUS_URL is set by Jenkins
 nexus_repo_id="images"
