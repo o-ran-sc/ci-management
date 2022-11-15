@@ -73,6 +73,11 @@ committers:
     id: "alex.stancu"
     company: "highstreet technologies GmbH"
     timezone: "Europe/Bucharest"
+  - name: "Hoejoo Lee"
+    email: "hoejoo.lee@samsung.com"
+    id: "cromee"
+    company: "samsung electronics"
+    timezone: "Asia/Seoul"
 tsc:
   # yamllint disable rule:line-length
   approval: "https://wiki.o-ran-sc.org/display/TOC"
@@ -93,3 +98,7 @@ tsc:
       type: "Addition"
       link: "ORANSC TOC 20220505 3.a.i SIM PTL"
       name: "Alex Stancu"
+    -
+      type: "Addition"
+      link: "ORANSC TOC 20220505 3.a.i AIMLFW PTL"
+      name: "Hoejoo Lee"
