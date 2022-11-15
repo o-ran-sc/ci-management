@@ -78,6 +78,11 @@ committers:
     id: "cromee"
     company: "samsung electronics"
     timezone: "Asia/Seoul"
+  - name: "Jackie Huang"
+    email: "jackie.huang@windriver.com"
+    id: "jackiehjm"
+    company: "Wind River"
+    timezone: "Asia/Shanghai"
 tsc:
   # yamllint disable rule:line-length
   approval: "https://wiki.o-ran-sc.org/display/TOC"
