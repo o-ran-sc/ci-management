@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1366dbfd_02d3f046",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001940
+      },
+      "writtenOn": "2022-11-17T08:55:50Z",
+      "side": 1,
+      "message": "Docker verify successful \nDocker merge (Image build successful but nexus3 upload fails because jenkin sandbox doesn\u0027t have nexus3 credentials)\n\ndata extraction -\u003e https://jenkins.o-ran-sc.org/sandbox/view/All/job/aiml-fw-athp-data-extraction-docker-docker-verify-master/1/\n\t\t   https://jenkins.o-ran-sc.org/sandbox/view/All/job/aiml-fw-athp-data-extraction-docker-docker-merge-master/1 \n\nKubeflow adapter --\u003e https://jenkins.o-ran-sc.org/sandbox/view/All/job/aiml-fw-athp-tps-kubeflow-adapter-docker-docker-verify-master/1/\n\nPortal dashboard --\u003e https://jenkins.o-ran-sc.org/sandbox/view/All/job/portal-aiml-dashboard-docker-docker-verify-master/1/console\n\nPortal notebook --\u003e https://jenkins.o-ran-sc.org/sandbox/view/All/job/portal-aiml-notebook-docker-docker-verify-master/2/console\n\n",
+      "revId": "5a8739dc2ad72b7ec65fbd78cbb4eb6ea0ef37d6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
