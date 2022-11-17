@@ -139,5 +139,7 @@
         sonar.build.sourceEncoding=UTF-8
         sonar.sources=catalogue-enhanced/
         sonar.python.coverage.reportPaths=catalogue-enhanced/coverage.xml
+        sonar.inclusions=catalogue-enhanced/src/**.py
+        sonar.exclusions=catalogue-enhanced/tests/**.py
     jobs:
       - gerrit-tox-sonarqube
