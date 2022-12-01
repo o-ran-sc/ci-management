@@ -90,9 +90,7 @@
         sonar.projectName={project-name}
         sonar.organization={sonarcloud_project_organization}
         sonar.build.sourceEncoding=UTF-8
-        sonar.sources=trainingmgr/
-        sonar.python.coverage.reportPaths=trainingmgr/coverage.xml
-        sonar.inclusions=trainingmgr/**.py
-        sonar.exclusions=tests/**.py
+        sonar.sources=trainingmgr
+        sonar.python.coverage.reportPaths=coverage.xml
     jobs:
       - gerrit-tox-sonarqube
