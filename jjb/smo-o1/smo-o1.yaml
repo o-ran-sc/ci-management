@@ -12,3 +12,47 @@
     build-node: centos7-builder-1c-1g
     jobs:
       - gerrit-info-yaml-verify
+
+- smo_o1_common: &smo_o1_common
+    # values apply to all projects
+    name: smo-o1-common
+    # git repo
+    project: smo/o1
+    # jenkins job name prefix
+    project-name: smo-o1
+    # maven settings file has docker credentials
+    mvn-settings: smo-o1-settings
+    # Sonar settings
+    sonarcloud-project-key: "smo-o1"
+    sonarcloud-project-organization: "o-ran-sc"
+
+- project:
+    <<: *smo_o1_common
+    name: smo-o1-release
+    project-name: '{name}'
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *smo_o1_common
+    name: smo-o1-sonarqube
+    python-version: python3
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    # impt for verify and tox etc
+    tox-envs: code,flake8
+    sonarcloud: true
+    sonar-project-file: ""
+    sonar-properties: |
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=collector
+      sonar.python.coverage.reportPaths=coverage.xml
+    jobs:
+      - gerrit-cli-sonar
