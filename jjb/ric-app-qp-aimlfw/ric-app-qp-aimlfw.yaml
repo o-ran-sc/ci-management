@@ -1,0 +1,77 @@
+---
+- project:
+    name: ric-app-qp-aimlfw-project-view
+    project-name: ric-app-qp-aimlfw
+    views:
+      - project-view
+
+- project:
+    name: ric-app-qp-aimlfw-info
+    project: ric-app/qp-aimlfw
+    project-name: ric-app-qp-aimlfw
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs: 
+      - gerrit-info-yaml-verify
+
+- qp_aimlfw_docker_common: &qp_aimlfw_docker_common
+    # values apply to all training manager projects
+    name: ric-app-qp-aimlfw-docker-common
+    # git repo
+    project: ric-app/qp-aimlfw
+    # jenkins job name prefix
+    project-name: ric-app-qp-aimlfw
+    # maven settings file has docker credentials
+    mvn-settings: ric-app-qp-aimlfw-settings
+
+- project:
+    <<: *qp_aimlfw_docker_common
+    name: ric-app-qp-aimlfw-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+- project:
+    <<: *qp_aimlfw_docker_common
+    name: ric-app-qp-aimlfw-docker
+    project-name: '{name}'
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # Dockerfile is in a subdir
+    docker-root: '.'
+    # source of docker tag
+    # dockerfile is in subdir of docker root
+    docker-build-args: '--network=host'
+    container-tag-method: yaml-file
+    build-node: ubuntu1804-docker-4c-4g
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *qp_aimlfw_docker_common
+    name: ric-app-qp-aimlfw-sonarqube
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: './.*'
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project_name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceencoding=UTF-8
+        sonar.sources=.
+        sonar.language=go
+        sonar.go.coverage.reportPaths=**/cover.out
+        sonar.inclusions=**/*.go
+        sonar.exclusions=**/*_test.go
+    jobs:
+      - gerrit-tox-sonarqube
+  
