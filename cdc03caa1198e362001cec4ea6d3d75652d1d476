@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d24bfd6a_b2bc2d40",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001071
+      },
+      "writtenOn": "2022-12-03T05:40:05Z",
+      "side": 1,
+      "message": "Thanks Mahesh for quick action. My comment may also be relevant for the o1 patch (9931).",
+      "revId": "cdc03caa1198e362001cec4ea6d3d75652d1d476",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86cb1ac6_c62fac8a",
+        "filename": "jjb/smo-o2/smo-o2.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001071
+      },
+      "writtenOn": "2022-12-03T05:40:05Z",
+      "side": 1,
+      "message": "Comparing to what has been done for VES project (https://github.com/o-ran-sc/ci-management/blob/master/jjb/smo-ves/smo-ves.yaml) sonarcloud-project-key \u0026 sonarcloud-project-organisation seem to be missing",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 0
+      },
+      "revId": "cdc03caa1198e362001cec4ea6d3d75652d1d476",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
