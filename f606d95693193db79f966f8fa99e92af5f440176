@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab4f0ba1_bb4cb199",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001476
+      },
+      "writtenOn": "2022-12-05T18:25:56Z",
+      "side": 1,
+      "message": "Kindly merger this",
+      "revId": "f606d95693193db79f966f8fa99e92af5f440176",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
