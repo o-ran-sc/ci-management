@@ -50,6 +50,24 @@
       "message": "recheck",
       "revId": "f606d95693193db79f966f8fa99e92af5f440176",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96b2b376_11723ec4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001476
+      },
+      "writtenOn": "2022-12-06T15:10:23Z",
+      "side": 1,
+      "message": "Already Tested this, kindly merge it",
+      "parentUuid": "b8985241_52a86844",
+      "revId": "f606d95693193db79f966f8fa99e92af5f440176",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
