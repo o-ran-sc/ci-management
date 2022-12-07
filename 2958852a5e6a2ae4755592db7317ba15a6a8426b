@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9fbae262_4777e5af",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001948
+      },
+      "writtenOn": "2022-12-07T10:22:54Z",
+      "side": 1,
+      "message": "jjb-deploy aiml-fw-athp-sdk-model-storage*",
+      "revId": "2958852a5e6a2ae4755592db7317ba15a6a8426b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
