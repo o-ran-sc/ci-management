@@ -16,6 +16,23 @@
       "message": "jjb-deploy aiml-fw-athp-sdk-model-storage*",
       "revId": "a93114fb9efae59a506241ac9c8050ac2d3d6f54",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da74e777_b914eb9e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001948
+      },
+      "writtenOn": "2022-12-07T11:12:19Z",
+      "side": 1,
+      "message": "jjb-deploy aiml-fw-athp-sdk-feature-store*",
+      "revId": "a93114fb9efae59a506241ac9c8050ac2d3d6f54",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
