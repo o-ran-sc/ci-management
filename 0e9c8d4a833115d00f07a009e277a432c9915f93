@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "221f9ff6_9f12b0fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001844
+      },
+      "writtenOn": "2022-12-09T00:20:27Z",
+      "side": 1,
+      "message": "This is a CI configuration intended to run the ci/Dockerfile on the ric-plt/xapp-frame-rust repo, which will be introduced with https://gerrit.o-ran-sc.org/r/c/ric-plt/xapp-frame-rust/+/9767",
+      "revId": "0e9c8d4a833115d00f07a009e277a432c9915f93",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
