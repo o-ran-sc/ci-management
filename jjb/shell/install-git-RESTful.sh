@@ -34,14 +34,14 @@ sudo apt-get install -y  g++ git libboost-atomic-dev libboost-thread-dev libboos
 
 sudo git clone https://github.com/Microsoft/cpprestsdk.git casablanca && \
     cd casablanca && \
-    mkdir build && \
+    sudo mkdir build && \
     cd build && \
-    cmake -G Ninja .. -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF -DBUILD_SAMPLES=OFF -DCMAKE_INSTALL_PREFIX=/usr/local .. && \
-    ninja && \
-    ninja install && \
-    cmake -G Ninja .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=0 -DBUILD_TESTS=OFF -DBUILD_SAMPLES=OFF -DCMAKE_INSTALL_PREFIX=/usr/local .. && \
-    ninja && \
-    ninja install
+    sudo cmake -G Ninja .. -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF -DBUILD_SAMPLES=OFF -DCMAKE_INSTALL_PREFIX=/usr/local .. && \
+    sudo ninja && \
+    sudo ninja install && \
+    sudo cmake -G Ninja .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=0 -DBUILD_TESTS=OFF -DBUILD_SAMPLES=OFF -DCMAKE_INSTALL_PREFIX=/usr/local .. && \
+    sudo ninja && \
+    sudo ninja install
 
 cd ../../
 
@@ -49,24 +49,24 @@ cd ../../
 
 #installing all dependicies for pistache
 sudo apt-get update && sudo apt-get -y install ninja-build python python3-pip libcurl4-openssl-dev libssl-dev pkg-config
-python3 -m pip install meson
+sudo python3 -m pip install meson
 
 
 git clone https://github.com/Tencent/rapidjson && \
         cd rapidjson && \
-        mkdir build && \
+        sudo mkdir build && \
         cd build && \
-        cmake -DCMAKE_INSTALL_PREFIX=/usr/local .. && \
-        make install
+        sudo cmake -DCMAKE_INSTALL_PREFIX=/usr/local .. && \
+        sudo make install
 
 cd ../../
 
 
 #building and installing pistache
-git clone https://github.com/pistacheio/pistache.git
+sudo git clone https://github.com/pistacheio/pistache.git
 
 cd pistache && \
-    meson setup build \
+    sudo meson setup build \
     --buildtype=release \
     -DPISTACHE_USE_SSL=true \
     -DPISTACHE_BUILD_EXAMPLES=true \
@@ -75,18 +75,18 @@ cd pistache && \
     --prefix="/usr/local"
 
 cd build && \
-   ninja && \
-   ninja install
-cp /usr/local/lib/x86_64-linux-gnu/libpistache* /usr/local/lib/
-cp /usr/local/lib/x86_64-linux-gnu/pkgconfig/libpistache.pc /usr/local/lib/pkgconfig
+   sudo ninja && \
+   sudo ninja install
+sudo cp /usr/local/lib/x86_64-linux-gnu/libpistache* /usr/local/lib/
+sudo cp /usr/local/lib/x86_64-linux-gnu/pkgconfig/libpistache.pc /usr/local/lib/pkgconfig
 cd ../../
 
 
 #install nlohmann json
-git clone https://github.com/nlohmann/json.git && cd json && cmake . && make install
+sudo git clone https://github.com/nlohmann/json.git && cd json && sudo cmake . && sudo make install
 cd ../
 #install json-schema-validator
-git clone https://github.com/pboettch/json-schema-validator.git && cd json-schema-validator &&mkdir build &&cd build && cmake .. && make install
+sudo git clone https://github.com/pboettch/json-schema-validator.git && cd json-schema-validator &&sudo mkdir build &&cd build && sudo cmake .. && sudo make install
 cd ../
 
 
