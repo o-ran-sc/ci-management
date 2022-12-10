@@ -13,3 +13,57 @@
     branch: master
     jobs:
       - gerrit-info-yaml-verify
+
+- aiml_fssdk_docker_common: &aiml_fssdk_docker_common
+    # values apply to all training manager projects
+    name: aiml-fw-athp-sdk-feature-store-docker-common
+    # git repo
+    project: aiml-fw/athp/sdk/feature-store
+    # jenkins job name prefix
+    project-name: aiml-fw-athp-sdk-feature-store
+    # maven settings file has docker credentials
+    mvn-settings: aiml-fw-athp-sdk-feature-store-settings
+
+- project:
+    <<: *aiml_fssdk_docker_common
+    name: aiml-fw-athp-sdk-feature-store-tox-verify
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    python-version: python3
+    # skip docs on verify
+    tox-envs: code
+    tox-dir: '.'
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'featurestoresdk/.*'
+    stream:
+      # run verify on all branches
+      # the ANT pattern is **/{branch}, we are exploiting that.
+      - all:
+          branch: master
+    jobs:
+      - gerrit-tox-verify
+
+- project:
+    <<: *aiml_fssdk_docker_common
+    name: aiml-fw-athp-sdk-feature-store-sonarqube
+    python-version: python3
+    tox-dir: '.'
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'featurestoresdk/.*'
+    sonar-project-file: ""
+    sonar-properties: |
+        sonar.login={sonarcloud_api_token}
+        sonar.projectKey={sonarcloud_project_organization}_{project-name}
+        sonar.projectName={project-name}
+        sonar.organization={sonarcloud_project_organization}
+        sonar.build.sourceEncoding=UTF-8
+        sonar.sources=featurestoresdk
+        sonar.python.coverage.reportPaths=coverage.xml
+    jobs:
+      - gerrit-tox-sonarqube
