@@ -50,6 +50,24 @@
       "message": "Error message in sandbox\nhttps://jenkins.o-ran-sc.org/sandbox/me/my-views/view/all/job/smo-o2-cli-sonar/1/console:\nERROR: Could not find credentials entry with ID \u0027sonar-token-smo-o2\u0027\n\nAdding Jessica as reviewer\nhttps://gerrit.linuxfoundation.org/infra/c/releng/global-jjb/+/70790\n",
       "revId": "1cc816034dedfbed0044b6ea17710f58cc41e5a8",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf7cd5eb_3eecdb15",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2022-12-12T18:33:42Z",
+      "side": 1,
+      "message": "Sorry for the delay, this is actually an expected behavior from Sandbox. The intent of snadbox is not to post any reports or releases in Nexus and Sonar on purpose. Unfortunately to see the sonar report, we will need to get this change into production. \n\nThe change looks good to me otherwise, but we will need to re-run verify",
+      "parentUuid": "10dcb81f_6a03970a",
+      "revId": "1cc816034dedfbed0044b6ea17710f58cc41e5a8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
