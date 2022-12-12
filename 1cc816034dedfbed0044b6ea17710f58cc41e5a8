@@ -102,6 +102,23 @@
       "message": "@Bertrand\n\nThe verify passed, shall we get this merged? is it ready?",
       "revId": "1cc816034dedfbed0044b6ea17710f58cc41e5a8",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7f93772_1e606780",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-12-12T18:50:16Z",
+      "side": 1,
+      "message": "Hi Jessica, you will notice up in Patchset 2, that Bertrand had already given a Code-Review +1. We were eating for someone other than me to approve the commit. Thanks.",
+      "revId": "1cc816034dedfbed0044b6ea17710f58cc41e5a8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
