@@ -1,0 +1,9 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Anssi Mannila <anssi.mannila@nokia.com>
+Code-Review+1: Thoralf Czichy <thoralf.czichy@nokia.com>
+Code-Review+2: Vanessa Valderrama <vvalderrama@linuxfoundation.org>
+Submitted-by: Vanessa Valderrama <vvalderrama@linuxfoundation.org>
+Submitted-at: Mon, 12 Dec 2022 13:19:23 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/10050
+Project: ci-management
+Branch: refs/heads/master
