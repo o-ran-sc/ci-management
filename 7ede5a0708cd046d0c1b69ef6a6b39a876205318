@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f2b2103_0f5b7614",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001476
+      },
+      "writtenOn": "2022-12-12T09:10:58Z",
+      "side": 1,
+      "message": "This I have tested in Jenkins sandbox, just waiting it to be merged.",
+      "revId": "7ede5a0708cd046d0c1b69ef6a6b39a876205318",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
