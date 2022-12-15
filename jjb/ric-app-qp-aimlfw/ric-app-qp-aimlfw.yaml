@@ -26,15 +26,6 @@
 
 - project:
     <<: *qp_aimlfw_docker_common
-    name: ric-app-qp-aimlfw-release
-    # maven release requires sigul which requires centos
-    # container release requires docker
-    build-node: centos7-docker-2c-8g
-    jobs:
-      - '{project-name}-gerrit-release-jobs'
-
-- project:
-    <<: *qp_aimlfw_docker_common
     name: ric-app-qp-aimlfw-docker
     project-name: '{name}'
     # image name
@@ -56,10 +47,8 @@
     <<: *qp_aimlfw_docker_common
     name: ric-app-qp-aimlfw-sonarqube
     # the install script assumes an ubuntu image
-    build-node: ubuntu1804-builder-2c-2g
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: './.*'
+    build-node: ubuntu1804-builder-4c-4g
+    sonar-prescan-script: !include-raw-escape: prescan-ric-app-qp-aimlfw-ubuntu.sh
     sonar-project-file: ""
     sonar-properties: |
         sonar.login={sonarcloud_api_token}
@@ -73,5 +62,12 @@
         sonar.inclusions=**/*.go
         sonar.exclusions=**/*_test.go
     jobs:
-      - gerrit-tox-sonarqube
+      - gerrit-sonar-prescan-script
+
+- project:
+    <<: *qp_aimlfw_docker_common
+    name: ric-app-qp-aimlfw-release
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
   
