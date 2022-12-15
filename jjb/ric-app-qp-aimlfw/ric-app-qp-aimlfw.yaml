@@ -36,7 +36,6 @@
     # dockerfile is in subdir of docker root
     docker-build-args: '--network=host'
     container-tag-method: yaml-file
-    build-node: ubuntu1804-docker-4c-4g
     jobs:
       - "{project-name}-gerrit-docker-jobs"
     stream:
@@ -47,7 +46,7 @@
     <<: *qp_aimlfw_docker_common
     name: ric-app-qp-aimlfw-sonarqube
     # the install script assumes an ubuntu image
-    build-node: ubuntu1804-builder-4c-4g
+    build-node: ubuntu1804-docker-4c-4g
     sonar-prescan-script: !include-raw-escape: prescan-ric-app-qp-aimlfw-ubuntu.sh
     sonar-project-file: ""
     sonar-properties: |
