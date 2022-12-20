@@ -33,9 +33,7 @@
       - gerrit-maven-docker-stage
     stream:
       - master:
-          branch: master
-      - f-release:
-          branch: f-release
+          branch: *
 
 # nonrtric:rappcatalogue
 # Maven artifacts for rappcatalogue
@@ -50,9 +48,7 @@
       - gerrit-maven-clm
     stream:
       - master:
-          branch: master
-      - f-release:
-          branch: f-release
+          branch: *
 
 - project:
     <<: *rappcatalogue_jdk_common
@@ -115,7 +111,7 @@
         pattern: 'catalogue-enhanced/.*'
     stream:
       - master:
-          branch: master
+          branch: *
     jobs:
       - '{project-name}-gerrit-docker-jobs'
 
