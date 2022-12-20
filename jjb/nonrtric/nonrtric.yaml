@@ -26,79 +26,138 @@
 
 - project:
     <<: *nonrtric_jdk_common
-    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
-    jobs:
-      - gerrit-maven-docker-verify
-      - gerrit-maven-docker-merge
-      - gerrit-maven-docker-stage
-    stream:
-      - e-release:
-          branch: e-release
-
-# nonrtric:policy-agent/
-# Maven artifacts for nonrtric-policy-agent/
-- project:
-    <<: *nonrtric_jdk_common
-    name: nonrtric-policy-agent
+    name: nonrtric-test-kafka-procon
     project-name: '{name}'
-    mvn-opts: '-Ddocker.skip=true'
-    mvn-params: '-f policy-agent/'
+    # image name
+    docker-name: 'kafka-procon'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: 'kafka-procon'
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory where go test should be run
+    # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'policy-agent/.*'
-    build-node: ubuntu1804-builder-4c-4g
+        pattern: 'kafka-procon/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
     jobs:
-      - gerrit-maven-verify
-      - gerrit-maven-merge
-      - gerrit-maven-stage
-      - gerrit-maven-clm
+      - "{project-name}-gerrit-docker-verify"
     stream:
-      - dawn:
-          branch: dawn
+      - all:
+          branch: '*'
 
-# nonrtric:sdnc-a1-controller
-# Maven artifacts for nonrtric-sdnc-a1-controller
 - project:
     <<: *nonrtric_jdk_common
-    name: nonrtric-sdnc-a1-controller
+    name: nonrtric-test-http-https-proxy
     project-name: '{name}'
-    mvn-opts: '-Ddocker.skip=true'
-    mvn-params: '-f sdnc-a1-controller/northbound'
+    # image name
+    docker-name: 'http-https-proxy'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: 'http-https-proxy'
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory where go test should be run
+    # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'sdnc-a1-controller/northbound/.*'
-    build-node: ubuntu1804-builder-4c-4g
+        pattern: 'http-https-proxy/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
     jobs:
-      - gerrit-maven-verify
-      - gerrit-maven-merge
-      - gerrit-maven-stage
-      - gerrit-maven-clm
+      - "{project-name}-gerrit-docker-verify"
     stream:
-      - dawn:
-          branch: dawn
-      - e-release:
-          branch: e-release
+      - all:
+          branch: '*'
 
-# nonrtric:enrichment-coordinator-service
-# Maven artifacts for nonrtric-enrichment-coordinator-service
 - project:
     <<: *nonrtric_jdk_common
-    name: nonrtric-enrichment-coordinator-service
+    name: nonrtric-test-cr
     project-name: '{name}'
-    mvn-opts: '-Ddocker.skip=true'
-    mvn-params: '-f enrichment-coordinator-service'
+    # image name
+    docker-name: 'cr'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: 'cr'
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory where go test should be run
+    # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'enrichment-coordinator-service/.*'
-    build-node: ubuntu1804-builder-4c-4g
+        pattern: 'cr/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
     jobs:
-      - gerrit-maven-verify
-      - gerrit-maven-merge
-      - gerrit-maven-stage
-      - gerrit-maven-clm
+      - "{project-name}-gerrit-docker-verify"
     stream:
-      - dawn:
-          branch: dawn
+      - all:
+          branch: '*'
+
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-test-prodstub
+    project-name: '{name}'
+    # image name
+    docker-name: 'prodstub'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: 'prodstub'
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory where go test should be run
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'prodstub/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-verify"
+    stream:
+      - all:
+          branch: '*'
+
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-test-mrstub
+    project-name: '{name}'
+    # image name
+    docker-name: 'mrstub'
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory with Dockerfile
+    docker-root: 'mrstub'
+    # use host network to clone from our gerrit
+    docker-build-args: '--network=host'
+    # Directory where go test should be run
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'mrstub/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-verify"
+    stream:
+      - all:
+          branch: '*'
 
 - project:
     <<: *nonrtric_jdk_common
@@ -126,10 +185,8 @@
       - "{project-name}-gerrit-docker-jobs"
       - gerrit-go-verify
     stream:
-      - master:
-          branch: master
-      - f-release:
-          branch: f-release
+      - all:
+          branch: '*'
 
 - project:
     <<: *nonrtric_jdk_common
