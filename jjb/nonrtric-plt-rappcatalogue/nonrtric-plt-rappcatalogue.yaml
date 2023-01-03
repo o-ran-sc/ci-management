@@ -36,6 +36,8 @@
           branch: master
       - f-release:
           branch: f-release
+      - g-release:
+          branch: g-release
 
 # nonrtric:rappcatalogue
 # Maven artifacts for rappcatalogue
@@ -53,6 +55,8 @@
           branch: master
       - f-release:
           branch: f-release
+      - g-release:
+          branch: g-release
 
 - project:
     <<: *rappcatalogue_jdk_common
@@ -116,6 +120,8 @@
     stream:
       - master:
           branch: master
+      - g-release:
+          branch: g-release
     jobs:
       - '{project-name}-gerrit-docker-jobs'
 

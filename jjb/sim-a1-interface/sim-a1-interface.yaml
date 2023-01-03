@@ -39,6 +39,8 @@
           branch: master
       - f-release:
           branch: f-release
+      - g-release:
+          branch: g-release
     jobs:
       - '{project-name}-gerrit-docker-jobs'
 
@@ -66,10 +68,5 @@
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
-    stream:
-      - master:
-          branch: master
-      - f-release:
-          branch: f-release
     jobs:
       - '{project-name}-gerrit-release-jobs'

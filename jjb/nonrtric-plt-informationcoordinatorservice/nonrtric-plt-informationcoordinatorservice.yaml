@@ -36,6 +36,8 @@
           branch: master
       - f-release:
           branch: f-release
+      - g-release:
+          branch: g-release
 
 # nonrtric:informationcoordinatorservice
 # Maven artifacts for nonrtric-plt-informationcoordinatorservice
@@ -53,6 +55,8 @@
           branch: master
       - f-release:
           branch: f-release
+      - g-release:
+          branch: g-release
 
 - project:
     <<: *informationcoordinatorservice_jdk_common

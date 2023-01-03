@@ -49,6 +49,8 @@
           branch: master
       - f-release:
           branch: f-release
+      - g-release:
+          branch: g-release
 
 - project:
     <<: *orufhrecovery_common
@@ -78,6 +80,8 @@
           branch: master
       - f-release:
           branch: f-release
+      - g-release:
+          branch: g-release
 
 - project:
     <<: *orufhrecovery_common

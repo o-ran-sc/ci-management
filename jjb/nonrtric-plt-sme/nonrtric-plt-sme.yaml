@@ -64,6 +64,8 @@
     stream:
       - master:
           branch: master
+      - g-release:
+          branch: g-release
 
 - project:
     <<: *nonrtric_plt_sme_common
