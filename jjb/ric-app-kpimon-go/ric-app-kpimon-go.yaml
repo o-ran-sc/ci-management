@@ -5,6 +5,17 @@
     views:
       - project-view
 
+- kpimon-go_common: &kpimon-go_common
+    # values apply to all projects
+    name: kpimon-go-common
+    # git repo
+    project: ric-app/kpimon-go
+    # jenkins prefix
+    project-name: ric-app-kpimon-go
+    # maven settings file has docker credentials
+    mvn-settings: ric-app-kpimon-go-settings
+
+# verify INFO.yaml changes when INFO.yaml changes
 - project:
     name: ric-app-kpimon-go-info
     project: ric-app/kpimon-go
@@ -13,3 +24,34 @@
     branch: master
     jobs:
       - gerrit-info-yaml-verify
+
+# create docker image when source changes
+- project:
+    <<: *kpimon-go_common
+    # also used as image name
+    name: ric-app-kpimon-go
+    # image name
+    docker-name: 'o-ran-sc/{name}'
+    # source type of image tag
+    container-tag-method: yaml-file
+    # use host network
+    docker-build-args: '--network=host'
+    # trigger on any change other than a file in ./docs
+    gerrit_trigger_file_paths:
+        - compare-type: REG_EXP
+          pattern: '^((?!docs/|\/COMMIT_MSG).)*$'
+    jobs:
+        - '{project-name}-gerrit-docker-jobs'
+    stream:
+        - master:
+            branch: master
+
+# push nexus image from staging to release 
+- project:
+    <<: *kpimon-go_common
+    name: ric-app-kpimon-go-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
