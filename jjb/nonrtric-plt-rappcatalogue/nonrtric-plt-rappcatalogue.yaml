@@ -82,7 +82,8 @@
 
 - project:
     <<: *rappcatalogue_jdk_common
-    name: nonrtric-plt-enhanced-rappcatalogue-verify
+    name: nonrtric-plt-rappcatalogue-enhanced-verify
+    project-name: nonrtric-plt-rappcatalogue-enhanced
     # the install script assumes an ubuntu image
     build-node: ubuntu1804-builder-2c-2g
     python-version: python3.8
@@ -94,16 +95,17 @@
       - compare-type: REG_EXP
         pattern: 'catalogue-enhanced/.*'
     stream:
-      # run verify on all branches
-      # the ANT pattern is **/{branch}, we are exploiting that.
-      - all:
-          branch: '*'
+      - master:
+          branch: master
+      - g-release:
+          branch: g-release
     jobs:
       - gerrit-tox-verify
 
 - project:
     <<: *rappcatalogue_jdk_common
-    name: nonrtric-plt-rappcatalogue-enhanced-docker
+    name: nonrtric-plt-rappcatalogue-enhanced
+    project-name: nonrtric-plt-rappcatalogue-enhanced
     # image name
     docker-name: 'o-ran-sc/nonrtric-plt-rappcatalogue-enhanced'
     # source of docker tag
@@ -128,6 +130,7 @@
 - project:
     <<: *rappcatalogue_jdk_common
     name: nonrtric-plt-rappcatalogue-enhanced-sonarqube
+    project-name: nonrtric-plt-rappcatalogue-enhanced
     python-version: python3
     tox-dir: catalogue-enhanced
     # the install script assumes an ubuntu image
