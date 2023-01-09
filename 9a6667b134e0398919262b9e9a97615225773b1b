@@ -50,6 +50,23 @@
       "message": "Links to successful jobs in sandbox:\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-rappcatalogue-enhanced-docker-verify-g-release/2/\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-rappcatalogue-enhanced-docker-verify-master/2/\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-rappcatalogue-enhanced-tox-verify-g-release/2/\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-rappcatalogue-enhanced-tox-verify-master/2/\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-rappcatalogue-enhanced-tox-sonarqube/1/",
       "revId": "9a6667b134e0398919262b9e9a97615225773b1b",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe75b35e_188ce53a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000201
+      },
+      "writtenOn": "2023-01-09T08:14:00Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "9a6667b134e0398919262b9e9a97615225773b1b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
