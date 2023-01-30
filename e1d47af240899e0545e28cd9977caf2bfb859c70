@@ -16,6 +16,24 @@
       "message": "Sorry, is this change still needed?",
       "revId": "e1d47af240899e0545e28cd9977caf2bfb859c70",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1446add_6d5d027c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001571
+      },
+      "writtenOn": "2023-01-30T06:09:10Z",
+      "side": 1,
+      "message": "Yes, the CLM job is still needed.",
+      "parentUuid": "159101e9_abd1ca7b",
+      "revId": "e1d47af240899e0545e28cd9977caf2bfb859c70",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
