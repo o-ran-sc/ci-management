@@ -47,3 +47,17 @@
       sonar.python.coverage.reportPaths=coverage.xml
     jobs:
       - gerrit-cli-sonar
+
+- project:
+    <<: *smo_o2_common
+    name: smo-o2-tacker
+    project: smo/o2
+    project-name: smo-o2
+    # runs about 40 min
+    build-timeout: 60
+    #  the install script assumes an ubuntu image
+    build-node: ubuntu2004-devstack-4c-16g
+    script: !include-raw-escape:
+        - xtesting-verify.sh
+    jobs:
+      - oran-shell-verify
