@@ -1,0 +1,14 @@
+---
+- job-template:
+    name: job
+    id: job-one
+    description: 'job one'
+    project-type: freestyle
+    builders:
+      - shell: '{command}'
+
+- project:
+    name: project-one
+    jobs:
+      - job-one:
+           command: df -h 
