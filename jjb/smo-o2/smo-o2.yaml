@@ -16,6 +16,7 @@
     # Sonar settings
     sonarcloud-project-key: "smo-o2"
     sonarcloud-project-organization: "o-ran-sc"
+    archive-artifacts: "*.log"
 
 - project:
     <<: *smo_o2_common
@@ -47,3 +48,18 @@
       sonar.python.coverage.reportPaths=coverage.xml
     jobs:
       - gerrit-cli-sonar
+
+- project:
+    <<: *smo_o2_common
+    name: smo-o2-tacker
+    # runs about 40 min
+    build-timeout: 60
+    #  the install script assumes an ubuntu image
+    stream:
+      - master:
+          branch: master
+    build-node: ubuntu2004-builder-4c-4g
+    script: !include-raw-escape:
+      - xtesting-verify.sh
+    jobs:
+      - oran-shell-verify
