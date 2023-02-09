@@ -56,3 +56,16 @@
       sonar.python.coverage.reportPaths=coverage.xml
     jobs:
       - gerrit-cli-sonar
+
+- project:
+    <<: *smo_o2_common
+    name: smo-o2-tacker
+    project: smo/o2
+    project-name: smo-o2
+    stream: master
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-docker-2c-8g
+    script: !include-raw-escape:
+        - xtesting-verify.sh
+    jobs:
+      - oran-shell-verify
