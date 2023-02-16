@@ -13,3 +13,29 @@
     branch: master
     jobs:
       - gerrit-info-yaml-verify
+
+- xapp_frame_rust_docker_common: &xapp_frame_rust_docker_common
+    # values apply to all xapp-frame docker projects
+    name: xapp-frame-rust-docker-common
+    # git repo
+    project: ric-plt/xapp-frame-rust
+    # jenkins job name prefix
+    project-name: ric-plt-xapp-frame-rust
+    # maven settings file has docker credentials
+    mvn-settings: ric-plt-xapp-frame-rust-settings
+
+# runs unit tests on verify only
+- project:
+    <<: *xapp_frame_rust_docker_common
+    name: ric-plt-xapp-frame-rust
+    # image name, altho it is never pushed
+    docker-name: '{name}'
+    # use host network
+    docker-build-args: '--network=host -f ci/Dockerfile'
+    # image tag; use a fixed value
+    container-tag-method: latest
+    jobs:
+      - gerrit-docker-verify
+    stream:
+      - master:
+          branch: master
