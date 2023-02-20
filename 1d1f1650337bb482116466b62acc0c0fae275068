@@ -50,6 +50,24 @@
       "message": "Not clear what this commit is doing to trigger the Jenkins job. The Jenkins output does not seem to indicate that it ran the particular project that has been added.",
       "revId": "1d1f1650337bb482116466b62acc0c0fae275068",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1cecf1c_5a92c9ba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-02-20T09:45:28Z",
+      "side": 1,
+      "message": "In my understanding, this commit does not run a particular job but only defines it.\nAfter merging this commit into master branch, the job should be start running in Jenkins.\nI would like to ask also ci-management project members about if my understanding is correct or not.",
+      "parentUuid": "f0ac2bf6_fc1edfc7",
+      "revId": "1d1f1650337bb482116466b62acc0c0fae275068",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
