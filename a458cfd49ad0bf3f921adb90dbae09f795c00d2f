@@ -33,6 +33,23 @@
       "message": "recheck\n",
       "revId": "a458cfd49ad0bf3f921adb90dbae09f795c00d2f",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e5f95c6_eae9f955",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-02-22T16:57:46Z",
+      "side": 1,
+      "message": "Successful execution in sandbox: \nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-pm-pmlogger-influx-maven-verify-master-mvn36-openjdk11/3/\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-pm-pmlogger-influx-maven-verify-master-mvn36-openjdk11/\n\n(Run using patchset 11 of https://gerrit.o-ran-sc.org/r/c/nonrtric/+/10477/ refs/changes/77/10477/11)",
+      "revId": "a458cfd49ad0bf3f921adb90dbae09f795c00d2f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
