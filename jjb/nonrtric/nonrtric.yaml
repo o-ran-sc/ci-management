@@ -24,6 +24,27 @@
     mvn-version: mvn36
     java-version: openjdk11
 
+# nonrtric:pm-pmlogger-influx
+# Maven artifacts for nonrtric:pm-pmlogger-influx
+- project:
+    <<: *nonrtric_jdk_common
+    name: nonrtric-plt-pm-pmlogger-influx
+    project-name: '{name}'
+    mvn-opts: '-Ddocker.skip=true'
+    mvn-params: '-f pmlog -Dbuild.number=${{BUILD_NUMBER}}'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'pmlog/.*'
+    build-node: ubuntu1804-builder-4c-4g
+    jobs:
+      - gerrit-maven-verify
+      - gerrit-maven-merge
+      # Disable stage for now (Will move to another repo before release)     - gerrit-maven-stage
+      # Disable clm for now  (Will move to another repo before release)     - gerrit-maven-clm
+    stream:
+      - master:
+          branch: master
+
 - project:
     <<: *nonrtric_jdk_common
     name: nonrtric-test-kafka-procon
