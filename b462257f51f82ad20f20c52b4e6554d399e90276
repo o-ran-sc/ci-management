@@ -16,6 +16,23 @@
       "message": "jjb-deploy  *informationcoordinatorservice*",
       "revId": "b462257f51f82ad20f20c52b4e6554d399e90276",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a4c7b6b_9a839445",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-02-23T11:52:31Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-plt-informationcoordinatorservice-maven-clm-master",
+      "revId": "b462257f51f82ad20f20c52b4e6554d399e90276",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
