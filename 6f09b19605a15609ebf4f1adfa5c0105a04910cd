@@ -135,6 +135,23 @@
       "message": "jjb-deploy nonrtric-plt-informationcoordinatorservice*",
       "revId": "6f09b19605a15609ebf4f1adfa5c0105a04910cd",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fd3c5df_a2b63cb6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-02-23T18:51:50Z",
+      "side": 1,
+      "message": "recheck\n",
+      "revId": "6f09b19605a15609ebf4f1adfa5c0105a04910cd",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
