@@ -38,6 +38,8 @@
     stream:
       - master:
           branch: master
+      - sch_slice_based:
+          branch: sch_slice_based
 
 - project:
     <<: *o_du_l2_common
@@ -52,6 +54,8 @@
     stream:
       - master:
           branch: master
+      - sch_slice_based:
+          branch: sch_slice_based
 
 - project:
     <<: *o_du_l2_common
