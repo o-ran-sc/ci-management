@@ -13,8 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- o_du_l2_common: &o_du_l2_common
-    # values apply to all o-du/l2 docker projects
+- o_du_l2_common: &o_du_l2_common # values apply to all o-du/l2 docker projects
     name: o-du-l2-common
     # git repo
     project: o-du/l2
@@ -29,29 +28,33 @@
     <<: *o_du_l2_common
     name: o-du-l2
     # jenkins job name prefix
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
-    docker-build-args: '--network=host'
+    docker-name: "o-ran-sc/{name}"
+    docker-build-args: "--network=host"
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
+      - sch_slice_based:
+          branch: sch_slice_based
 
 - project:
     <<: *o_du_l2_common
     name: o-du-l2-cu-stub
     # jenkins job name prefix
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
-    docker-build-args: '--network=host -f Dockerfile-cu-stub'
+    docker-name: "o-ran-sc/{name}"
+    docker-build-args: "--network=host -f Dockerfile-cu-stub"
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
+      - sch_slice_based:
+          branch: sch_slice_based
 
 - project:
     <<: *o_du_l2_common
@@ -60,7 +63,7 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *o_du_l2_common
