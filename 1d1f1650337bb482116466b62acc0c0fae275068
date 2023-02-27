@@ -68,6 +68,23 @@
       "parentUuid": "f0ac2bf6_fc1edfc7",
       "revId": "1d1f1650337bb482116466b62acc0c0fae275068",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea501b36_7405994f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-02-27T01:20:57Z",
+      "side": 1,
+      "message": "jjb-deploy smo-o2*",
+      "revId": "1d1f1650337bb482116466b62acc0c0fae275068",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
