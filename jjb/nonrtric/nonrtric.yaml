@@ -22,7 +22,7 @@
     # maven settings file has docker credentials
     mvn-settings: nonrtric-settings
     mvn-version: mvn36
-    java-version: openjdk11
+    java-version: openjdk17
 
 # nonrtric:pm-pmlogger-influx
 # Maven artifacts for nonrtric:pm-pmlogger-influx
@@ -206,9 +206,13 @@
       - "{project-name}-gerrit-docker-jobs"
       - gerrit-go-verify
     stream:
-      - all:
-          branch: '*'
+      - master:
+          branch: master
+      - f-release:
+          java-version: openjdk11
+          branch: f-release
       - g-release:
+          java-version: openjdk11
           branch: g-release
 
 - project:
