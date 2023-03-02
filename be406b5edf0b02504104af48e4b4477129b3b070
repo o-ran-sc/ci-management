@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11cffdb4_495f8bf1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-03-02T19:08:56Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric*auth-token-fetch*verify*f-release",
+      "revId": "be406b5edf0b02504104af48e4b4477129b3b070",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
