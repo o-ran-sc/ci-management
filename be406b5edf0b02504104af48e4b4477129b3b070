@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric*auth-token-fetch*verify*f-release",
       "revId": "be406b5edf0b02504104af48e4b4477129b3b070",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad710cbe_5d449f15",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-03-02T19:21:38Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "be406b5edf0b02504104af48e4b4477129b3b070",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
