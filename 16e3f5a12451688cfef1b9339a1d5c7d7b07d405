@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39bbe50b_78223a93",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002096
+      },
+      "writtenOn": "2023-03-02T11:22:11Z",
+      "side": 1,
+      "message": "jjb-deploy smo-o2-shell-verify-master",
+      "revId": "16e3f5a12451688cfef1b9339a1d5c7d7b07d405",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
