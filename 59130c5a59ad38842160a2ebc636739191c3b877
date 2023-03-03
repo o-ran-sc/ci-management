@@ -16,6 +16,23 @@
       "message": "Removing the `ric-plt-xapp-frame-rust-settings/*` files. ",
       "revId": "59130c5a59ad38842160a2ebc636739191c3b877",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92bee0b4_bf6a3155",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002108
+      },
+      "writtenOn": "2023-03-03T17:29:04Z",
+      "side": 1,
+      "message": "I don\u0027t think this is going to work. Some jobs need a pointer to the settings files by design. The job will fail if there is no file to fetch, even if the project itself is not having any settings. These files are also needed to pass on repository locations and credentials for deliverables \n",
+      "revId": "59130c5a59ad38842160a2ebc636739191c3b877",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
