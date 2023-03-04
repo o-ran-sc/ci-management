@@ -51,6 +51,24 @@
       "parentUuid": "92bee0b4_bf6a3155",
       "revId": "59130c5a59ad38842160a2ebc636739191c3b877",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "234769c7_8fbd29fa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002108
+      },
+      "writtenOn": "2023-03-04T01:00:34Z",
+      "side": 1,
+      "message": "No problem, this sounds like the credentials either got missed in Jenkins or they do not have the correct password assigned. \nThese files basically just call the credential but will not be able to point out if there is something wrong with them. They will only fail if the actual credential in Jenkins is missing. \n\nDo you have a JSD where you reported the build failure. I can look into the actual build failure if you have one and work on a fix.",
+      "parentUuid": "24df63a0_01320c9e",
+      "revId": "59130c5a59ad38842160a2ebc636739191c3b877",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
