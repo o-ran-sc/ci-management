@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "107c403d_16991b44",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-03-06T22:01:18Z",
+      "side": 1,
+      "message": "jjb-deploy *nonrtric-plt-ranpm*verify*",
+      "revId": "b29b427340a4239a402c0f2aea3b036ea05b4878",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
