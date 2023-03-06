@@ -13,3 +13,45 @@
     branch: master
     jobs:
       - gerrit-info-yaml-verify
+
+- nonrtric-plt-ranpm_common: &nonrtric_plt_ranpm_jdk_common
+    name: nonrtric-plt-ranpm-common
+    # git repo
+    project: nonrtric/plt/ranpm
+    # jenkins job name prefix
+    project-name: nonrtric-plt-ranpm
+    # maven settings file has docker credentials
+    mvn-settings: nonrtric-plt-ranpm-settings
+    mvn-version: mvn36
+    java-version: openjdk17
+
+- project:
+    <<: *nonrtric_plt_ranpm_jdk_common
+    name: nonrtric-plt-ranpm-gerrit-release
+    project-name: nonrtric-plt-ranpm
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
+
+# Jobs for nonrtric-plt-ranpm-datafilecollector
+- project:
+    <<: *nonrtric_plt_ranpm_jdk_common
+    name: nonrtric-plt-ranpm-datafilecollector-gerrit-maven-docker
+    #job name prefix
+    project-name: nonrtric-plt-ranpm-datafilecollector
+    mvn-params: '-f datafilecollector -Dbuild.number=${{BUILD_NUMBER}}'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'datafilecollector/.*'
+    jobs:
+      - gerrit-maven-clm
+      - gerrit-maven-verify-dependencies
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+      - gerrit-maven-docker-verify
+    stream:
+      - master:
+          branch: master
+
