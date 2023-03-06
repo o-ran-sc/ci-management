@@ -22,7 +22,7 @@
     # maven settings file has docker credentials
     mvn-settings: nonrtric-plt-a1policymanagementservice-settings
     mvn-version: mvn36
-    java-version: openjdk11
+    java-version: openjdk17
 
 - project:
     <<: *a1policymanagementservice_jdk_common
@@ -35,8 +35,10 @@
       - master:
           branch: master
       - f-release:
+          java-version: openjdk11
           branch: f-release
       - g-release:
+          java-version: openjdk11
           branch: g-release
 
 # nonrtric:a1policymanagementservice/
@@ -54,8 +56,10 @@
       - master:
           branch: master
       - f-release:
+          java-version: openjdk11
           branch: f-release
       - g-release:
+          java-version: openjdk11
           branch: g-release
 
 - project:
