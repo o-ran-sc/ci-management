@@ -16,6 +16,23 @@
       "message": "\nSuccessful runs in sandbox\n* https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-dmaapadapter-maven-docker-verify-f-release-mvn36-openjdk11/1/\n* https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-dmaapadapter-maven-docker-verify-g-release-mvn36-openjdk11/1/\n* https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-dmaapadapter-maven-docker-verify-master-mvn36-openjdk17/1/\n* https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-pm-pmlogger-influx-maven-verify-master-mvn36-openjdk17/2/\n\n",
       "revId": "29d54119d172c70c9f47f8b38555baf88515dc66",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b6b68da_94421f66",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-03-07T17:28:15Z",
+      "side": 1,
+      "message": "Please have a look. \nThis is needed for an downstream activity :-) \n\n",
+      "revId": "29d54119d172c70c9f47f8b38555baf88515dc66",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
