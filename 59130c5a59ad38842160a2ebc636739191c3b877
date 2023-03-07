@@ -123,6 +123,23 @@
       "parentUuid": "37ee4c57_9d58bdaf",
       "revId": "59130c5a59ad38842160a2ebc636739191c3b877",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c212127f_b3fe231d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2023-03-07T18:56:03Z",
+      "side": 1,
+      "message": "I looked more into this issue, the credentials should match exactly the name of the repo. In this case, we only need the \"ric-plt-xapp-frame\" credential and not \"ric-plt-xapp-frame-rust\" I will work on fixing these credentials in the repo itself",
+      "revId": "59130c5a59ad38842160a2ebc636739191c3b877",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
