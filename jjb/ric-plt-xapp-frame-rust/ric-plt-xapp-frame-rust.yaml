@@ -22,7 +22,7 @@
     # jenkins job name prefix
     project-name: ric-plt-xapp-frame-rust
     # maven settings file has docker credentials
-    mvn-settings: ric-plt-xapp-frame-rust-settings
+    mvn-settings: ric-plt-xapp-frame-settings
 
 # runs unit tests on verify only
 - project:
