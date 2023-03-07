@@ -16,6 +16,23 @@
       "message": "jjb-deploy *nonrtric-plt-ranpm*verify*",
       "revId": "5c8660637f7d0e180d4708c9b8d4b5693b0627fa",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d51f0422_d84e2e21",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-03-07T17:03:33Z",
+      "side": 1,
+      "message": "Tasks gerrit-maven-docker-verify run in sandbox. \n\n* https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-ranpm-datafilecollector-maven-docker-verify-master-mvn36-openjdk17/6/\n* https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-ranpm-influxlogger-maven-docker-verify-master-mvn36-openjdk17/1/\n* https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-ranpm-pmproducer-maven-docker-verify-master-mvn36-openjdk17/1/",
+      "revId": "5c8660637f7d0e180d4708c9b8d4b5693b0627fa",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
