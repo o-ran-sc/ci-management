@@ -105,6 +105,24 @@
       "parentUuid": "6402b026_a9f8e47d",
       "revId": "59130c5a59ad38842160a2ebc636739191c3b877",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3af0994_89edbfba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002108
+      },
+      "writtenOn": "2023-03-07T18:43:58Z",
+      "side": 1,
+      "message": "Abhijit, my apologies for the delay. JSD is the system that users access to submit issues to the LF. The site is support.linuxfoundation.org\n\nI noticed Anil was also working in your change https://gerrit.o-ran-sc.org/r/c/ric-plt/xapp-frame-rust/+/10405\n\nFor now, I have created the ticket for you in https://jira.linuxfoundation.org/plugins/servlet/desk/portal/2/IT-25277\n\nI will work on this and update the status there. This way is easier to track what happened.",
+      "parentUuid": "37ee4c57_9d58bdaf",
+      "revId": "59130c5a59ad38842160a2ebc636739191c3b877",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
