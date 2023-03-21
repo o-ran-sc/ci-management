@@ -1,0 +1,15 @@
+---
+- project:
+    name: ric-app-ad-cell-project-view
+    project-name: ric-app-ad-cell
+    views:
+      - project-view
+
+- project:
+    name: ric-app-ad-cell-info
+    project: ric-app/ad-cell
+    project-name: ric-app-ad-cell
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
