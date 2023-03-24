@@ -23,7 +23,7 @@
     # maven settings file has docker credentials
     mvn-settings: portal-nonrtric-controlpanel-settings
     # defaults.yaml value is NOT used due to value set in lf-maven-jobs.yaml
-    java-version: openjdk11
+    java-version: openjdk17
     mvn-version: mvn36
     sonarcloud-project-key: "portal-nonrtric-controlpanel"
     sonarcloud-project-organization: "o-ran-sc"
@@ -52,11 +52,8 @@
     stream:
       - master:
           branch: master
-      - dawn:
-          branch: dawn
-      - e-release:
-          branch: e-release
       - g-release:
+          java-version: openjdk11
           branch: g-release
 
 - project:
@@ -113,11 +110,8 @@
     stream:
       - master:
           branch: master
-      - dawn:
-          branch: dawn
-      - e-release:
-          branch: e-release
       - g-release:
+          java-version: openjdk11
           branch: g-release
 
 - project:
@@ -138,10 +132,7 @@
     stream:
       - master:
           branch: master
-      - dawn:
-          branch: dawn
-      - e-release:
-          branch: e-release
       - g-release:
+          java-version: openjdk11
           branch: g-release
 
