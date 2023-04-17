@@ -33,7 +33,7 @@
           - ../shell/export-packages.sh
 
 # Different name, same content as lf_docker_common
-- oran_docker_common: &oran_docker_common
+- _oran_docker_common: &oran_docker_common
     name: oran-docker-ci-common
 
     project-type: freestyle
@@ -84,7 +84,7 @@
     publishers:
       - lf-infra-publish
 
-- oran_docker_ci_pc_merge_common: &oran_docker_ci_pc_merge_common
+- _oran_docker_ci_pc_merge_common: &oran_docker_ci_pc_merge_common
     name: oran-docker-ci-pc-merge-common
     cron: ""
 

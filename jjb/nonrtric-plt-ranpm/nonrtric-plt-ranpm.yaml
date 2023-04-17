@@ -14,7 +14,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- nonrtric-plt-ranpm_common: &nonrtric_plt_ranpm_jdk_common
+- _nonrtric-plt-ranpm_common: &nonrtric_plt_ranpm_jdk_common
     name: nonrtric-plt-ranpm-common
     # git repo
     project: nonrtric/plt/ranpm
@@ -94,4 +94,3 @@
     stream:
       - master:
           branch: master
-

@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- golog_docker_common: &golog_docker_common
+- _golog_docker_common: &golog_docker_common
     # values apply to all golog docker projects
     name: golog-docker-common
     # git repo

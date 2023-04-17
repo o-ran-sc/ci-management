@@ -15,7 +15,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- nonrtric_plt_sme_common: &nonrtric_plt_sme_common
+- _nonrtric_plt_sme_common: &nonrtric_plt_sme_common
     # values apply to all projects here
     name: nonrtric-plt-sme-common
     # git repo
@@ -80,6 +80,6 @@
     sonar-project-file: ""
     java-version: openjdk11
     # use sonarcloud values from defaults.yaml
-    sonar-properties: !include-raw: sonar-project.properties
+    sonar-properties: !include-raw-escape: sonar-project.properties
     jobs:
       - gerrit-sonar-prescan-script

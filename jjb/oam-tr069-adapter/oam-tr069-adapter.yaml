@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- tr069-adapter-jdk08: &tr069-adapter-jdk08
+- _tr069-adapter-jdk08: &tr069-adapter-jdk08
     # values apply to all projects here
     name: tr069-adapter-jdk08
     # git repo
@@ -56,4 +56,3 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
-

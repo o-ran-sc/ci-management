@@ -1,5 +1,5 @@
 ---
-- ci_packer_common: &ci_packer_common
+- _ci_packer_common: &ci_packer_common
     name: ci-packer-common
     # Defines common ci-packer configuration
 

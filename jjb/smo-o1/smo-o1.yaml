@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- smo_o1_common: &smo_o1_common
+- _smo_o1_common: &smo_o1_common
     # values apply to all projects
     name: smo-o1-common
     # git repo

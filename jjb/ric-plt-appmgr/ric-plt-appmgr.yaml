@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- appmgr_docker_common: &appmgr_docker_common
+- _appmgr_docker_common: &appmgr_docker_common
     # values apply to all appmgr docker projects
     name: appmgr-docker-common
     # git repo
@@ -75,4 +75,3 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
-

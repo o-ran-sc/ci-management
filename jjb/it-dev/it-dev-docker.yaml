@@ -2,7 +2,7 @@
 # Job configurations for base docker build images
 
 # This macro factors out common configuration
-- it_dev_docker_common: &it_dev_docker_common
+- _it_dev_docker_common: &it_dev_docker_common
     name: it-dev-docker-common
     # git repo
     project: it/dev

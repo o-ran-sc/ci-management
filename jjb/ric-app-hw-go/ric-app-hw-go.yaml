@@ -5,7 +5,7 @@
     views:
       - project-view
 
-- hw-go_common: &hw-go_common
+- _hw-go_common: &hw-go_common
     # values apply to all projects
     name: hw-go-common
     # git repo
