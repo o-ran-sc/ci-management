@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _pti_o2_common: &pti_o2_common
+- pti_o2_common: &pti_o2_common
     # values apply to all pti/o2 projects
     name: pti-o2-common
     # git repo
@@ -23,7 +23,7 @@
     # maven settings file has credentials
     mvn-settings: pti-o2-settings
 
-- _pti_o2_python: &pti_o2_python
+- pti_o2_python: &pti_o2_python
     # settings for python builds
     name: pti-o2-python
     # the install script assumes an ubuntu image
@@ -47,7 +47,7 @@
       - master:
           branch: master
 
-- _pti_o2_docker: &pti_o2_docker_common
+- pti_o2_docker: &pti_o2_docker_common
     <<: *pti_o2_common
     # values apply to all pti/o2 docker projects
     # maven settings file has docker credentials

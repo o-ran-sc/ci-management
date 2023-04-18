@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _nonrtric_jdk_common: &a1policymanagementservice_jdk_common
+- nonrtric_jdk_common: &a1policymanagementservice_jdk_common
     name: a1policymanagementservice-jdk-common
     # git repo
     project: nonrtric/plt/a1policymanagementservice
@@ -70,3 +70,4 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
+

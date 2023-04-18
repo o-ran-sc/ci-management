@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _sim_e2_interface_common: &sim_e2_interface_common
+- sim_e2_interface_common: &sim_e2_interface_common
     # values apply to all projects here
     name: sim-e2-interface-common
     # git repo

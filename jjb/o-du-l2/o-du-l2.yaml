@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _o_du_l2_common: &o_du_l2_common
+- o_du_l2_common: &o_du_l2_common
     # values apply to all o-du/l2 docker projects
     name: o-du-l2-common
     # git repo

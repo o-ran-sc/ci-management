@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _pti_rtp_common: &pti_rtp_common
+- pti_rtp_common: &pti_rtp_common
     name: pti-rtp-common
     # git repo
     project: pti/rtp

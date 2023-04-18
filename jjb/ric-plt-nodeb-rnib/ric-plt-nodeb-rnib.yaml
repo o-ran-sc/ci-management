@@ -5,7 +5,7 @@
     views:
       - project-view
 
-- _nodeb_rnib_common: &nodeb_rnib_common
+- nodeb_rnib_common: &nodeb_rnib_common
     # values apply to all projects
     name: nodeb-rnib-common
     # git repo

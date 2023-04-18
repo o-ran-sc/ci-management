@@ -5,7 +5,7 @@
     views:
       - project-view
 
-- _kpimon_common: &kpimon_common
+- kpimon_common: &kpimon_common
     # values apply to all projects
     name: kpimon-common
     # git repo

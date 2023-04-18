@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _nonrtric-rapp-healthcheck_common: &nonrtric_rapp_healthcheck_common
+- nonrtric-rapp-healthcheck_common: &nonrtric_rapp_healthcheck_common
     name: nonrtric-rapp-healthcheck-common
     # git repo
     project: nonrtric/rapp/healthcheck

@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _oam-nf-oam-adopter: &oam-nf-oam-adopter
+- oam-nf-oam-adopter: &oam-nf-oam-adopter
    name: oam-nf-oam-adopter
    project: oam/nf-oam-adopter
    project-name: oam-nf-oam-adopter

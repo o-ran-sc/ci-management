@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _portal_nonrtric_controlpanel_common: &portal_nonrtric_controlpanel_common
+- portal_nonrtric_controlpanel_common: &portal_nonrtric_controlpanel_common
     # values apply to all projects here
     name: portal-nonrtric-controlpanel-common
     # git repo
@@ -135,3 +135,4 @@
       - g-release:
           java-version: openjdk11
           branch: g-release
+

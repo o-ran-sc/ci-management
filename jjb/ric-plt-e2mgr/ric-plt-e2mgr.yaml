@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _e2mgr_docker_common: &e2mgr_docker_common
+- e2mgr_docker_common: &e2mgr_docker_common
     # values apply to all E2MGR docker projects
     name: e2mgr-docker-common
     # git repo

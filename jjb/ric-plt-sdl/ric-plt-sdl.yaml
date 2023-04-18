@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _sdl_common: &sdl_common
+- sdl_common: &sdl_common
     # values apply to all ric-plt/sdl projects
     name: sdl-common
     # git repo
@@ -37,7 +37,7 @@
           branch: master
 
 # common settings for building DEB and RPM packages
-- _sdl_pkg_common: &sdl_pkg_common
+- sdl_pkg_common: &sdl_pkg_common
     name: ric-plt-pkg-cmn
     pre-build: !include-raw-escape: setup-sdl-build-deb.sh
     # directory with package files
