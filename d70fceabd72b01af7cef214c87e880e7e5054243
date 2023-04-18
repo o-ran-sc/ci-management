@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "735afc2e_b3c15c65",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2023-04-18T01:17:02Z",
+      "side": 1,
+      "message": "Bypassing verification to revert this. It will not verify because the job is using the newer version of JJB, and the old code is not compatible with this version. But this change will also take us back to an older JJB version, so it should be safe to merge.",
+      "revId": "d70fceabd72b01af7cef214c87e880e7e5054243",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
