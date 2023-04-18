@@ -5,7 +5,7 @@
     views:
       - project-view
 
-- bouncer_common: &bouncer_common
+- _bouncer_common: &bouncer_common
     # values apply to all projects
     name: bouncer-common
     # git repo

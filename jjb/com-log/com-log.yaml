@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- com_log_common: &com_log_common
+- _com_log_common: &com_log_common
     # values apply to all com/log projects
     name: com-log-common
     # git repo
@@ -42,7 +42,7 @@
           branch: master
 
 # common settings for building DEB and RPM packages
-- com_log_pkg_common: &com_log_pkg_common
+- _com_log_pkg_common: &com_log_pkg_common
     name: com-log-pkg-common
     # directory with package files
     build-dir: pkg
@@ -107,4 +107,3 @@
     jobs:
       - gerrit-packagecloud-release-verify
       - gerrit-packagecloud-release-merge
-

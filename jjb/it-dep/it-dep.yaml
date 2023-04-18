@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- it_dep_common: &it_dep_common
+- _it_dep_common: &it_dep_common
     # values apply to all it/dep projects
     name: it-dep-docker-common
     # git repo

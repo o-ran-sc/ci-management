@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- pylog_common: &pylog_common
+- _pylog_common: &pylog_common
     name: pylog-common
     # git repo
     project: com/pylog
@@ -54,7 +54,7 @@
     # do not trigger on changes in docs, releases
 
 
-- pylog_python: &pylog_python
+- _pylog_python: &pylog_python
     # settings for python builds
     name: com-pylog-python
     # the install script assumes an ubuntu image

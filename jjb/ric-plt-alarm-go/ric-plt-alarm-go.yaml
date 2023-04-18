@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- alarm_go_common: &alarm_go_common
+- _alarm_go_common: &alarm_go_common
     # values apply to all projects
     name: alarm-go-common
     # git repo

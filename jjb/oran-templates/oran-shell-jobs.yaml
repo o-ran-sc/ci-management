@@ -12,7 +12,7 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 ---
-- oran_shell_common: &oran_shell_common
+- _oran_shell_common: &oran_shell_common
     name: oran-shell-common
 
     ######################
@@ -223,4 +223,3 @@
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
               file-paths: '{obj:gerrit_release_file_paths}'
-

@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- nonrtric_jdk_common: &nonrtric_jdk_common
+- _nonrtric_jdk_common: &nonrtric_jdk_common
     name: nonrtric-jdk-common
     # git repo
     project: nonrtric
@@ -205,7 +205,7 @@
     sonar-project-file: ""
     java-version: openjdk11
     # use sonarcloud values from defaults.yaml
-    sonar-properties: !include-raw: sonar-project.properties
+    sonar-properties: !include-raw-escape: sonar-project.properties
     jobs:
       - gerrit-sonar-prescan-script
 

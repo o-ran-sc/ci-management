@@ -11,10 +11,10 @@
     project-name: ric-app-qp-aimlfw
     build-node: centos7-builder-1c-1g
     branch: master
-    jobs: 
+    jobs:
       - gerrit-info-yaml-verify
 
-- qp_aimlfw_docker_common: &qp_aimlfw_docker_common
+- _qp_aimlfw_docker_common: &qp_aimlfw_docker_common
     # values apply to all training manager projects
     name: ric-app-qp-aimlfw-docker-common
     # git repo
@@ -69,4 +69,3 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
-  

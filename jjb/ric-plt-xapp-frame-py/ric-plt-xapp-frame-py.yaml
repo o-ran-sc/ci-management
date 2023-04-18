@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- py_common: &py_common
+- _py_common: &py_common
     name: xapp-frame-py-common
     # git repo
     project: ric-plt/xapp-frame-py

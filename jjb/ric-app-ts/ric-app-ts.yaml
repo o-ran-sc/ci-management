@@ -5,7 +5,7 @@
     views:
       - project-view
 
-- ts_common: &ts_common
+- _ts_common: &ts_common
     # values apply to all projects
     name: ts-common
     # git repo

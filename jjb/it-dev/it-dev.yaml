@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- it_dev_xo_common: &it_dev_xo_common
+- _it_dev_xo_common: &it_dev_xo_common
     name: it-dev-xo-common
     # git repo
     project: it/dev
@@ -22,7 +22,7 @@
     # maven settings file has docker credentials
     mvn-settings: it-dev-settings
 
-- it_dev_xo_py_common: &it_dev_xo_py_common
+- _it_dev_xo_py_common: &it_dev_xo_py_common
     name: it-dev-xo-py-common
     python-version: python3.6
     tox-dir: xapp_onboarder

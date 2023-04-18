@@ -5,7 +5,7 @@
     views:
       - project-view
 
-- kpimon-go_common: &kpimon-go_common
+- _kpimon-go_common: &kpimon-go_common
     # values apply to all projects
     name: kpimon-go-common
     # git repo
@@ -46,7 +46,7 @@
         - master:
             branch: master
 
-# push nexus image from staging to release 
+# push nexus image from staging to release
 - project:
     <<: *kpimon-go_common
     name: ric-app-kpimon-go-release

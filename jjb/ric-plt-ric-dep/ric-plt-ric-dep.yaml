@@ -5,7 +5,7 @@
     views:
       - project-view
 
-- dep_common: &dep_common
+- _dep_common: &dep_common
     name: dep-common
     # git repo
     project: ric-plt/ric-dep
