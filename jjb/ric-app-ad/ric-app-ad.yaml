@@ -5,7 +5,7 @@
     views:
       - project-view
 
-- _ad_common: &ad_common
+- ad_common: &ad_common
     # required even though overridden everywhere
     name: ad-common
     # git repo
@@ -51,7 +51,7 @@
     jobs:
       - '{project-name}-gerrit-release-jobs'
 
-- _ad_python: &ad_python
+- ad_python: &ad_python
     # settings for python builds
     name: ad-python
     # the install script assumes an ubuntu image

@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _dbaas_docker_common: &dbaas_docker_common
+- dbaas_docker_common: &dbaas_docker_common
     # values apply to all dbaas docker projects
     name: dbaas-docker-common
     # git repo

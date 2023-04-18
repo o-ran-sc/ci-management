@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _it_test_common: &it_test_common
+- it_test_common: &it_test_common
     # values apply to all it/test docker projects
     name: it-test-docker-common
     # git repo

@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _sdlgo_docker_common: &sdlgo_docker_common
+- sdlgo_docker_common: &sdlgo_docker_common
     # values apply to all sdlgo docker projects
     name: sdlgo-docker-common
     # git repo

@@ -1,5 +1,5 @@
 ---
-- _ci_jobs_common: &ci_jobs_common
+- ci_jobs_common: &ci_jobs_common
     name: ci-jobs-common
     # Defines common ci-jobs configuration
 

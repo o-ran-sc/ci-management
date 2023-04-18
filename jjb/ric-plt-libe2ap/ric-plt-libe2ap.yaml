@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _libe2ap_common: &libe2ap_common
+- libe2ap_common: &libe2ap_common
     name: libe2ap-common
     # git repo
     project: ric-plt/libe2ap

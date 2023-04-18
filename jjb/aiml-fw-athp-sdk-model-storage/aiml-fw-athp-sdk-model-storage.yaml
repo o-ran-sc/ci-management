@@ -13,8 +13,8 @@
     branch: master
     jobs:
       - gerrit-info-yaml-verify
-
-- _aiml_mssdk_docker_common: &aiml_mssdk_docker_common
+      
+- aiml_mssdk_docker_common: &aiml_mssdk_docker_common
     # values apply to all training manager projects
     name: aiml-fw-athp-sdk-model-storage-docker-common
     # git repo

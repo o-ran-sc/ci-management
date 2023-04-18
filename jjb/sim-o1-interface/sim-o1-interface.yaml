@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _sim_o1_interface_docker: &sim_o1_interface_docker
+- sim_o1_interface_docker: &sim_o1_interface_docker
     # values apply to all sim/o1-interface docker projects
     name: sim-o1-interface-common
     # git repo

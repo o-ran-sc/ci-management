@@ -2,7 +2,7 @@
 # Job configurations for base docker build images
 
 # This macro factors out common configuration
-- _ci_docker_common: &ci_docker_common
+- ci_docker_common: &ci_docker_common
     name: ci-docker-common
     # git repo
     project: ci-management
