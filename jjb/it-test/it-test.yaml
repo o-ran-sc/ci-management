@@ -13,7 +13,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _it_test_common: &it_test_common # values apply to all it/test docker projects
+- _it_test_common: &it_test_common
+    # values apply to all it/test docker projects
     name: it-test-docker-common
     # git repo
     project: it/test
@@ -22,11 +23,11 @@
     # source of docker tag
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
-    docker-build-args: "--network=host"
+    docker-build-args: '--network=host'
     # maven settings file has docker credentials
     mvn-settings: it-test-settings
     jobs:
-      - "{project-name}-gerrit-docker-jobs"
+      - '{project-name}-gerrit-docker-jobs'
     stream:
       - master:
           branch: master
@@ -35,55 +36,58 @@
     <<: *it_test_common
     name: it-test-nanobot
     # jenkins job name prefix
-    project-name: "{name}"
+    project-name: '{name}'
     # image name
-    docker-name: "o-ran-sc/{name}"
+    docker-name: 'o-ran-sc/{name}'
     # start in parent directory with shared files
     docker-root: ric_robot_suite
     # dockerfile is in subdir of docker root
-    docker-build-args: "--network=host -f docker/nanobot/Dockerfile"
+    docker-build-args: '--network=host -f docker/nanobot/Dockerfile'
     # tag file is in subdir
     container-tag-yaml-dir: ric_robot_suite/docker/nanobot
     # build only on relevant changes
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: "{docker-root}/.*"
+        pattern: '{docker-root}/.*'
 
 - project:
     <<: *it_test_common
     name: it-test-ric-robot
     # jenkins job name prefix
-    project-name: "{name}"
+    project-name: '{name}'
     # image name
-    docker-name: "o-ran-sc/{name}"
+    docker-name: 'o-ran-sc/{name}'
     # start in parent directory with shared files
     docker-root: ric_robot_suite
     # dockerfile is in subdir of docker root
-    docker-build-args: "--network=host -f docker/ric-robot/Dockerfile"
+    docker-build-args: '--network=host -f docker/ric-robot/Dockerfile'
     # tag file is in subdir
     container-tag-yaml-dir: ric_robot_suite/docker/ric-robot
     # build only on relevant changes
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: "{docker-root}/.*"
+        pattern: '{docker-root}/.*'
 
 - project:
     <<: *it_test_common
     name: it-test-ric-benchmarking
     # jenkins job name prefix
-    project-name: "{name}"
+    project-name: '{name}'
     # image name
-    docker-name: "o-ran-sc/{name}"
+    docker-name: 'o-ran-sc/{name}'
     # start in parent directory with shared files
-    docker-root: ric_benchmarking/e2-interface/e2sim/e2sm_examples/kpm_e2sm
+    docker-root:  ric_benchmarking/e2-interface/e2sim/e2sm_examples/kpm_e2sm
     # dockerfile is in subdir of docker root
-    docker-build-args: "--network=host -f Dockerfile"
+    docker-build-args: '--network=host -f Dockerfile'
     # tag file is in subdir
     container-tag-yaml-dir: ric_benchmarking/e2-interface/e2sim/docker
     # build only on relevant changes
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: "ric_benchmarking/e2-interface/.*"
+        pattern: 'ric_benchmarking/e2-interface/.*'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'test_scripts/O2IMS_Compliance_Test/.*'
 
 - project:
     <<: *it_test_common
@@ -92,4 +96,4 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - "{project-name}-gerrit-release-jobs"
+      - '{project-name}-gerrit-release-jobs'
