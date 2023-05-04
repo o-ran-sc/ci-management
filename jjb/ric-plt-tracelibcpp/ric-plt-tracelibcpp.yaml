@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- tracelibcpp_common: &tracelibcpp_common
+- _tracelibcpp_common: &tracelibcpp_common
     name: tracelibcpp-common
     # git  repo
     project: ric-plt/tracelibcpp

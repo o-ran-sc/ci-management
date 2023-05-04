@@ -13,7 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- submgr_docker_common: &submgr_docker_common
+- _submgr_docker_common: &submgr_docker_common
     # values apply to all submgr docker projects
     name: submgr-docker-common
     # git repo
@@ -75,4 +75,3 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
-

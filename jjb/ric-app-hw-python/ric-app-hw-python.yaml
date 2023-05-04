@@ -5,7 +5,7 @@
     views:
       - project-view
 
-- hw-python_common: &hw-python_common
+- _hw-python_common: &hw-python_common
     # values apply to all projects
     name: hw-python-common
     # git repo
@@ -52,4 +52,3 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - '{project-name}-gerrit-release-jobs'
-

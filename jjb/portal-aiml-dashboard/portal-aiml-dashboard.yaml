@@ -14,7 +14,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- aiml_dashboard_docker_common: &aiml_dashboard_docker_common
+- _aiml_dashboard_docker_common: &aiml_dashboard_docker_common
     # values apply to all training manager projects
     name: portal-aiml-dashboard-docker-common
     # git repo
