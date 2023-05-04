@@ -85,6 +85,9 @@
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: 'ric_benchmarking/e2-interface/.*'
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'test_scripts/O2IMS_Compliance_Test/.*'
 
 - project:
     <<: *it_test_common
