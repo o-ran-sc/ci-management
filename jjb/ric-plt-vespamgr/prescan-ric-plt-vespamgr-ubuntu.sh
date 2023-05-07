@@ -1,5 +1,3 @@
-echo "--> prescan-ric-plt-vespamgr-ubuntu.sh starts"
-
 #!/bin/bash
 #
 #  Copyright (c) 2019 AT&T Intellectual Property.
@@ -21,6 +19,7 @@ echo "--> prescan-ric-plt-vespamgr-ubuntu.sh starts"
 #   platform project (RICP).
 #
 
+echo "--> prescan-ric-plt-vespamgr-ubuntu.sh starts"
 
 set -e
 set -x

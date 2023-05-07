@@ -5,8 +5,7 @@
     views:
       - project-view
 
-- _nodeb_rnib_common: &nodeb_rnib_common
-    # values apply to all projects
+- _nodeb_rnib_common: &nodeb_rnib_common # values apply to all projects
     name: nodeb-rnib-common
     # git repo
     project: ric-plt/nodeb-rnib
@@ -30,10 +29,10 @@
     # need docker
     build-node: ubuntu1804-docker-4c-4g
     # image is not pushed, use simple name and tag
-    docker-name: '{name}'
+    docker-name: "{name}"
     container-tag-method: latest
     # use host network for network resources
-    docker-build-args: '--network=host -f ci/Dockerfile'
+    docker-build-args: "--network=host -f ci/Dockerfile"
     jobs:
       - gerrit-docker-verify
       - oran-gerrit-docker-ci-pc-merge

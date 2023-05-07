@@ -14,8 +14,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _aiml_tm_docker_common: &aiml_tm_docker_common
-    # values apply to all training manager projects
+- _aiml_tm_docker_common:
+    &aiml_tm_docker_common # values apply to all training manager projects
     name: aiml-fw-awmf-tm-docker-common
     # git repo
     project: aiml-fw/awmf/tm
@@ -31,19 +31,19 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *aiml_tm_docker_common
     name: aiml-fw-awmf-tm-docker
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # Dockerfile is in a subdir
-    docker-root: '.'
+    docker-root: "."
     # source of docker tag
     # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     container-tag-method: yaml-file
     build-node: ubuntu1804-docker-4c-4g
     jobs:
@@ -59,11 +59,11 @@
     python-version: python3
     # skip docs on verify
     tox-envs: code
-    tox-dir: '.'
+    tox-dir: "."
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'trainingmgr/.*'
+        pattern: "trainingmgr/.*"
     stream:
       # run verify on all branches
       # the ANT pattern is **/{branch}, we are exploiting that.
@@ -76,21 +76,21 @@
     <<: *aiml_tm_docker_common
     name: aiml-fw-awmf-tm-sonarqube
     python-version: python3
-    tox-dir: '.'
+    tox-dir: "."
     # the install script assumes an ubuntu image
     build-node: ubuntu1804-builder-2c-2g
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'trainingmgr/.*'
+        pattern: "trainingmgr/.*"
     sonar-project-file: ""
     sonar-properties: |
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        sonar.build.sourceEncoding=UTF-8
-        sonar.sources=trainingmgr
-        sonar.python.coverage.reportPaths=coverage.xml
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=trainingmgr
+      sonar.python.coverage.reportPaths=coverage.xml
     jobs:
       - gerrit-tox-sonarqube

@@ -13,8 +13,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _portal_nonrtric_controlpanel_common: &portal_nonrtric_controlpanel_common
-    # values apply to all projects here
+- _portal_nonrtric_controlpanel_common:
+    &portal_nonrtric_controlpanel_common # values apply to all projects here
     name: portal-nonrtric-controlpanel-common
     # git repo
     project: portal/nonrtric-controlpanel
@@ -32,19 +32,19 @@
     <<: *portal_nonrtric_controlpanel_common
     name: nonrtric-controlpanel-frontend
     # image name
-    docker-name: 'o-ran-sc/nonrtric-controlpanel'
+    docker-name: "o-ran-sc/nonrtric-controlpanel"
     # get tag from YAML
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # Directory with Dockerfile
-    docker-root: 'webapp-frontend'
+    docker-root: "webapp-frontend"
     # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'webapp-frontend/.*'
+        pattern: "webapp-frontend/.*"
       - compare-type: REG_EXP
-        pattern: 'docker-compose/.*'
+        pattern: "docker-compose/.*"
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
@@ -63,20 +63,20 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
     name: portal-nonrtric-controlpanel-gateway-sonar
     # template goal install builds docker image unnecessarily
-    mvn-params: '-Ddocker.skip=true -f nonrtric-gateway'
+    mvn-params: "-Ddocker.skip=true -f nonrtric-gateway"
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'nonrtric-gateway/.*'
+        pattern: "nonrtric-gateway/.*"
     sonarcloud: true
-    sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{project-name}-gateway'
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    sonarcloud-api-token: "{sonarcloud_api_token}"
+    sonarcloud-project-key: "{project-name}-gateway"
+    sonarcloud-project-organization: "{sonarcloud_project_organization}"
     jobs:
       - gerrit-maven-sonar
 
@@ -85,7 +85,7 @@
     name: portal-nonrtric-controlpanel-frontend-sonar
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'webapp-frontend/.*'
+        pattern: "webapp-frontend/.*"
     build-node: ubuntu1804-docker-4c-4g
     java-version: openjdk11
     sonarcloud: true
@@ -96,11 +96,11 @@
 - project:
     <<: *portal_nonrtric_controlpanel_common
     name: portal-nonrtric-controlpanel-gateway
-    project-name: '{name}'
-    mvn-params: '-f nonrtric-gateway'
+    project-name: "{name}"
+    mvn-params: "-f nonrtric-gateway"
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'nonrtric-gateway/.*'
+        pattern: "nonrtric-gateway/.*"
     build-node: ubuntu1804-builder-4c-4g
     jobs:
       - gerrit-maven-verify
@@ -117,13 +117,13 @@
 - project:
     <<: *portal_nonrtric_controlpanel_common
     name: portal-nonrtric-controlpanel-gateway-docker
-    project-name: '{name}'
-    mvn-params: '-P docker -f nonrtric-gateway'
+    project-name: "{name}"
+    mvn-params: "-P docker -f nonrtric-gateway"
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'nonrtric-gateway/.*'
+        pattern: "nonrtric-gateway/.*"
       - compare-type: REG_EXP
-        pattern: 'docker-compose/.*'
+        pattern: "docker-compose/.*"
     build-node: ubuntu1804-docker-4c-4g
     jobs:
       - gerrit-maven-docker-verify

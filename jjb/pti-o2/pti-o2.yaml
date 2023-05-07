@@ -13,8 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _pti_o2_common: &pti_o2_common
-    # values apply to all pti/o2 projects
+- _pti_o2_common: &pti_o2_common # values apply to all pti/o2 projects
     name: pti-o2-common
     # git repo
     project: pti/o2
@@ -23,8 +22,7 @@
     # maven settings file has credentials
     mvn-settings: pti-o2-settings
 
-- _pti_o2_python: &pti_o2_python
-    # settings for python builds
+- _pti_o2_python: &pti_o2_python # settings for python builds
     name: pti-o2-python
     # the install script assumes an ubuntu image
     build-node: ubuntu1804-builder-2c-2g
@@ -39,8 +37,8 @@
     name: pti-o2-imsdms-verify
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
-        - compare-type: REG_EXP
-          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
+      - compare-type: REG_EXP
+        pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
     jobs:
       - gerrit-tox-verify
     stream:
@@ -51,8 +49,8 @@
     <<: *pti_o2_common
     # values apply to all pti/o2 docker projects
     # maven settings file has docker credentials
-    docker-name: 'o-ran-sc/pti-o2imsdms'
-    docker-build-args: '--network=host -f Dockerfile'
+    docker-name: "o-ran-sc/pti-o2imsdms"
+    docker-build-args: "--network=host -f Dockerfile"
     # source of docker tag
     container-tag-method: yaml-file
     # docker-root: src
@@ -68,10 +66,10 @@
     name: pti-o2-imsdms
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
-        - compare-type: REG_EXP
-          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
+      - compare-type: REG_EXP
+        pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
@@ -87,7 +85,7 @@
       - compare-type: REG_EXP
         pattern: 'releases\/.*\.yaml'
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *pti_o2_docker_common

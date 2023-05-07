@@ -3,12 +3,13 @@
 echo "---> cmake-sonarqube.sh starts"
 
 CMAKE_OPTS=
-BUILD_DIR=$WORKSPACE/src
-BUILD_WRAP_DIR=$WORKSPACE/bw-output
+BUILD_DIR="${WORKSPACE}"/src
+BUILD_WRAP_DIR="${WORKSPACE}"/bw-output
 
 
-build_dir="${BUILD_DIR:-$WORKSPACE/build}"
-build_wrap_dir="${BUILD_WRAP_DIR:-$WORKSPACE/bw-output}"
+build_dir="${BUILD_DIR:-${WORKSPACE}/build}"
+build_wrap_dir="${BUILD_WRAP_DIR:-${WORKSPACE}/bw-output}"
+# shellcheck disable=SC2034
 cmake_opts="${CMAKE_OPTS:-}"
 make_opts="${MAKE_OPTS:-}"
 

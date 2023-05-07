@@ -13,8 +13,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _golog_docker_common: &golog_docker_common
-    # values apply to all golog docker projects
+- _golog_docker_common:
+    &golog_docker_common # values apply to all golog docker projects
     name: golog-docker-common
     # git repo
     project: com/golog
@@ -28,9 +28,9 @@
     <<: *golog_docker_common
     name: com-golog
     # image name, altho it is never pushed
-    docker-name: '{name}'
+    docker-name: "{name}"
     # use host network
-    docker-build-args: '--network=host -f ci/Dockerfile'
+    docker-build-args: "--network=host -f ci/Dockerfile"
     # image tag; use a fixed value
     container-tag-method: latest
     jobs:
@@ -48,23 +48,23 @@
     sonar-project-file: ""
     # use sonarcloud values from defaults.yaml
     sonar-properties: |
-        # Required metadata
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        # Encoding
-        sonar.build.sourceEncoding=UTF-8
-        # Language
-        sonar.language=go
-        # Source
-        sonar.sources=.
-        # Unit tests
-        sonar.go.coverage.reportPaths=**/cover.out
-        # Inclusions
-        sonar.inclusions=**/*.go
-        # Exclusions
-        sonar.exclusions=**/*_test.go
+      # Required metadata
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      # Encoding
+      sonar.build.sourceEncoding=UTF-8
+      # Language
+      sonar.language=go
+      # Source
+      sonar.sources=.
+      # Unit tests
+      sonar.go.coverage.reportPaths=**/cover.out
+      # Inclusions
+      sonar.inclusions=**/*.go
+      # Exclusions
+      sonar.exclusions=**/*_test.go
     jobs:
       - gerrit-sonar-prescan-script
 
@@ -73,4 +73,4 @@
     name: com-golog-go-release
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"

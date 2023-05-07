@@ -27,22 +27,20 @@
 - project:
     <<: *nonrtric_jdk_common
     name: nonrtric-test-kafka-procon
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'kafka-procon'
+    docker-name: "kafka-procon"
     # get tag from YAML
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # Directory with Dockerfile
-    docker-root: 'test/kafka-procon'
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-root: "test/kafka-procon"
     # Directory where go test should be run
     # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'test/kafka-procon/.*'
+        pattern: "test/kafka-procon/.*"
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
@@ -54,22 +52,20 @@
 - project:
     <<: *nonrtric_jdk_common
     name: nonrtric-test-http-https-proxy
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'http-https-proxy'
+    docker-name: "http-https-proxy"
     # get tag from YAML
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # Directory with Dockerfile
-    docker-root: 'test/http-https-proxy'
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-root: "test/http-https-proxy"
     # Directory where go test should be run
     # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'test/http-https-proxy/.*'
+        pattern: "test/http-https-proxy/.*"
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
@@ -81,22 +77,20 @@
 - project:
     <<: *nonrtric_jdk_common
     name: nonrtric-test-cr
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'cr'
+    docker-name: "cr"
     # get tag from YAML
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # Directory with Dockerfile
-    docker-root: 'test/cr'
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-root: "test/cr"
     # Directory where go test should be run
     # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'test/cr/.*'
+        pattern: "test/cr/.*"
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
@@ -108,22 +102,20 @@
 - project:
     <<: *nonrtric_jdk_common
     name: nonrtric-test-prodstub
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'prodstub'
+    docker-name: "prodstub"
     # get tag from YAML
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # Directory with Dockerfile
-    docker-root: 'test/prodstub'
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-root: "test/prodstub"
     # Directory where go test should be run
     # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'test/prodstub/.*'
+        pattern: "test/prodstub/.*"
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
@@ -135,22 +127,20 @@
 - project:
     <<: *nonrtric_jdk_common
     name: nonrtric-test-mrstub
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'mrstub'
+    docker-name: "mrstub"
     # get tag from YAML
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # Directory with Dockerfile
-    docker-root: 'test/mrstub'
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-root: "test/mrstub"
     # Directory where go test should be run
     # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'test/mrstub/.*'
+        pattern: "test/mrstub/.*"
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
@@ -162,23 +152,21 @@
 - project:
     <<: *nonrtric_jdk_common
     name: nonrtric-plt-auth-token-fetch
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/nonrtric-plt-auth-token-fetch'
+    docker-name: "o-ran-sc/nonrtric-plt-auth-token-fetch"
     # get tag from YAML
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # Directory with Dockerfile
-    docker-root: 'auth-token-fetch'
-    # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-root: "auth-token-fetch"
     # Directory where go test should be run
-    go-root: 'auth-token-fetch'
+    go-root: "auth-token-fetch"
     # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'auth-token-fetch/.*'
+        pattern: "auth-token-fetch/.*"
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
@@ -216,4 +204,4 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"

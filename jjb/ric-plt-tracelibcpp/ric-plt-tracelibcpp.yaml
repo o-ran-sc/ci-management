@@ -50,7 +50,7 @@
 - project:
     <<: *tracelibcpp_common
     name: ric-plt-tracelibcpp-dev
-    project-name: '{name}'
+    project-name: "{name}"
     cmake-opts: -DDEV_PKG=1
     make-opts: package
     install-prefix: /usr/local
@@ -64,7 +64,7 @@
 - project:
     <<: *tracelibcpp_common
     name: ric-plt-tracelibcpp-rt
-    project-name: '{name}'
+    project-name: "{name}"
     cmake-opts: -DDEV_PKG=0
     make-opts: package
     install-prefix: /usr/local
@@ -91,14 +91,14 @@
     make-opts: -j8 all
     sonar-project-file: ""
     sonar-properties: |
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        sonar.scanner.force-deprecated-java-version=true
-        sonar.build.sourceEncoding=UTF-8
-        sonar.sources=src
-        sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
-        sonar.cfamily.gcov.reportsPath=test
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.scanner.force-deprecated-java-version=true
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=src
+      sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
+      sonar.cfamily.gcov.reportsPath=test
     jobs:
       - gerrit-cmake-sonarqube

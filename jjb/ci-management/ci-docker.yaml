@@ -9,25 +9,25 @@
     # maven settings file has docker credentials
     mvn-settings: ci-management-settings
     # build every Saturday
-    cron: 'H H * * 6'
+    cron: "H H * * 6"
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # get tag from YAML
     container-tag-method: yaml-file
     # name key is overridden by project template
     # Jenkins job prefix
-    project-name: '{project}-{name}'
+    project-name: "{project}-{name}"
     # Docker image name
-    docker-name: '{name}'
+    docker-name: "{name}"
     # Directory with Dockerfile
-    docker-root: 'docker/{name}'
+    docker-root: "docker/{name}"
     # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'docker/{name}/.*'
+        pattern: "docker/{name}/.*"
     # Includes verify and merge jobs
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     # Only build master branch
     stream:
       - master:

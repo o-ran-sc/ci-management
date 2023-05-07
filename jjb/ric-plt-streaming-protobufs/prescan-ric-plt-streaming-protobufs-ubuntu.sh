@@ -1,5 +1,3 @@
-echo "starting prescan-ric-plt-streaming-protobufs-ubuntu.sh"
-
 #!/bin/sh
 #
 #  Copyright (c) 2019 AT&T Intellectual Property.
@@ -20,15 +18,15 @@ echo "starting prescan-ric-plt-streaming-protobufs-ubuntu.sh"
 #   This source code is part of the near-RT RIC (RAN Intelligent Controller)
 #   platform project (RICP).
 # Go install, build, etc
+echo "--> starting prescan-ric-plt-streaming-protobufs-ubuntu.sh"
+
 set -e
-
-
-cd $WORKSPACE/protogen/go/streaming_protobufs
+cd "${WORKSPACE}"/protogen/go/streaming_protobufs
 
 export GO111MODULE=on
 go mod download
 #No _test.go file for coverage report
 
-go test $WORKSPACE/protogen/go/streaming_protobufs/ -v -coverprofile cover.out
+go test "${WORKSPACE}"/protogen/go/streaming_protobufs/ -v -coverprofile cover.out
 
-echo " prescan-ric-plt-streaming-protobufs-ubuntu.sh ends"
+echo "prescan-ric-plt-streaming-protobufs-ubuntu.sh ends"
