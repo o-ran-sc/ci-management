@@ -24,4 +24,4 @@
       - rtdv3-global-merge
     stream:
       - master:
-          branch: '*'
+          branch: "*"

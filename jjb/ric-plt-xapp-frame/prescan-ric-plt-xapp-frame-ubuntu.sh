@@ -20,5 +20,5 @@
 
 docker --version
 echo "Unit Test"
-cd $WORKSPACE
+cd "${WORKSPACE}" || return
 docker build --network=host -f ci/Dockerfile -t nexus3.o-ran-sc.org:10004/ric-plt-xapp-frame:latest .

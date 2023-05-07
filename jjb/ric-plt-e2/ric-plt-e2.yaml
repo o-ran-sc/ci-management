@@ -13,8 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _e2_docker_common: &e2_docker_common
-    # values apply to all E2 docker projects
+- _e2_docker_common: &e2_docker_common # values apply to all E2 docker projects
     name: e2-docker-common
     # git repo
     project: ric-plt/e2
@@ -27,15 +26,15 @@
     <<: *e2_docker_common
     name: ric-plt-e2
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # subdirectory
     docker-root: RIC-E2-TERMINATION
     # source of docker tag
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
@@ -47,4 +46,4 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"

@@ -13,8 +13,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _submgr_docker_common: &submgr_docker_common
-    # values apply to all submgr docker projects
+- _submgr_docker_common:
+    &submgr_docker_common # values apply to all submgr docker projects
     name: submgr-docker-common
     # git repo
     project: ric-plt/submgr
@@ -27,13 +27,13 @@
     <<: *submgr_docker_common
     name: ric-plt-submgr
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # source of docker tag
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
@@ -47,23 +47,23 @@
     sonar-project-file: ""
     # use sonarcloud values from defaults.yaml
     sonar-properties: |
-        # Required metadata
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        # Encoding
-        sonar.build.sourceEncoding=UTF-8
-        # Language
-        sonar.language=go
-        # Source
-        sonar.sources=.
-        # Unit tests
-        sonar.go.coverage.reportPaths=**/cover.out
-        # Inclusions
-        sonar.inclusions=**/*.go
-        # Exclusions
-        sonar.exclusions=**/*_test.go
+      # Required metadata
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      # Encoding
+      sonar.build.sourceEncoding=UTF-8
+      # Language
+      sonar.language=go
+      # Source
+      sonar.sources=.
+      # Unit tests
+      sonar.go.coverage.reportPaths=**/cover.out
+      # Inclusions
+      sonar.inclusions=**/*.go
+      # Exclusions
+      sonar.exclusions=**/*_test.go
     jobs:
       - gerrit-sonar-prescan-script
 
@@ -74,4 +74,4 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"

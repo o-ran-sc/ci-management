@@ -5,8 +5,7 @@
     views:
       - project-view
 
-- _bouncer_common: &bouncer_common
-    # values apply to all projects
+- _bouncer_common: &bouncer_common # values apply to all projects
     name: bouncer-common
     # git repo
     project: ric-app/bouncer
@@ -29,26 +28,26 @@
     # also used as image name
     name: ric-app-bouncer
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # docker root
     docker-root: Bouncer
     # source type of image tag
     container-tag-method: yaml-file
     # use host network
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # tag file is in subdir
     container-tag-yaml-dir: Bouncer
     # trigger on any change other than a file in ./docs
     gerrit_trigger_file_paths:
-        - compare-type: REG_EXP
-          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
-        - compare-type: REG_EXP
-          pattern: 'bouncer/.*'
+      - compare-type: REG_EXP
+        pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
+      - compare-type: REG_EXP
+        pattern: "bouncer/.*"
     jobs:
-        - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
-        - master:
-            branch: master
+      - master:
+          branch: master
 
 # push nexus image from staging to release
 - project:
@@ -58,4 +57,4 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"

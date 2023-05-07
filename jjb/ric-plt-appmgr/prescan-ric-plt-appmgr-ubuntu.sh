@@ -1,3 +1,4 @@
+#!/bin/sh
 #
 #   Copyright (c) 2020 HCL Technology Pvt Ltd
 #
@@ -18,14 +19,14 @@
 
 
 echo "--> prescan-ric-plt-appmgr-ubuntu.sh starts"
-cd $WORKSPACE
+cd "${WORKSPACE}" || return
 #docker build --network=host -t nexus3.o-ran-sc.org:10004/o-ran-sc/ric-plt-appmgr:0.5.0 .
 
 sed -i 's,-cover,-coverprofile cover.out,' Dockerfile
 
 docker  build --network=host -t tmpimg --target=appmgr-build .
 CONTAINER=$(docker create tmpimg)
-docker cp $CONTAINER:/go/src/ws/cover.out cover.out
-docker rm $CONTAINER
+docker cp "${CONTAINER}":/go/src/ws/cover.out cover.out
+docker rm "${CONTAINER}"
 
 echo "--> prescan-ric-plt-appmgr-ubuntu.sh ends"

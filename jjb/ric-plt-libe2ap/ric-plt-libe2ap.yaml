@@ -51,7 +51,7 @@
 - project:
     <<: *libe2ap_common
     name: ric-plt-libe2ap-dev
-    project-name: '{name}'
+    project-name: "{name}"
     cmake-opts: -DDEV_PKG=1
     make-opts: package
     install-prefix: /usr/local
@@ -65,7 +65,7 @@
 - project:
     <<: *libe2ap_common
     name: ric-plt-libe2ap-rt
-    project-name: '{name}'
+    project-name: "{name}"
     cmake-opts: -DDEV_PKG=0
     make-opts: package
     install-prefix: /usr/local
@@ -84,5 +84,4 @@
     jobs:
       - gerrit-packagecloud-release-verify
       - gerrit-packagecloud-release-merge
-
 # no sonar jobs as the library contains only generated code

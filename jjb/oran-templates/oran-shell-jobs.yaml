@@ -24,11 +24,11 @@
     branch: master
     build-days-to-keep: 30
     build-timeout: 15
-    cron: ''
+    cron: ""
     concurrent: false
     disable-job: false
     gerrit-skip-vote: false
-    git-url: '$GIT_URL/$GERRIT_PROJECT'
+    git-url: "$GIT_URL/$GERRIT_PROJECT"
     mvn-global-settings: global-settings
     stream: master
     submodule-disable: false
@@ -37,34 +37,34 @@
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '.*'
+        pattern: ".*"
 
     #####################
     # Job Configuration #
     #####################
 
     project-type: freestyle
-    node: '{build-node}'
-    disabled: '{disable-job}'
+    node: "{build-node}"
+    disabled: "{disable-job}"
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
 
     parameters:
       - lf-infra-parameters:
-          project: '{project}'
-          branch: '{branch}'
-          stream: '{stream}'
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
       - string:
           name: ARCHIVE_ARTIFACTS
-          default: '{archive-artifacts}'
+          default: "{archive-artifacts}"
           description: Artifacts to archive to the logs server.
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: '{build-timeout}'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     builders:
       - lf-infra-pre-build
@@ -73,7 +73,7 @@
           settings-file: "{mvn-settings}"
       - lf-infra-create-netrc:
           server-id: "{mvn-site-id}"
-      - shell: '{script}'
+      - shell: "{script}"
       - lf-provide-maven-settings-cleanup
 
     publishers:
@@ -91,7 +91,7 @@
 #   branch:         git branch pattern, defaults to master
 #   stream:         friendly stream name (often same as branch), defaults to master
 - job-template:
-    name: '{project-name}-shell-verify-{stream}'
+    name: "{project-name}-shell-verify-{stream}"
     id: oran-shell-verify
     <<: *oran_shell_common
 
@@ -106,32 +106,32 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: gerrit
 
     triggers:
-      - timed: '{obj:cron}'
+      - timed: "{obj:cron}"
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_verify_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_verify_triggers}"
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
           skip-vote:
-            successful: '{gerrit-skip-vote}'
-            failed: '{gerrit-skip-vote}'
-            unstable: '{gerrit-skip-vote}'
-            notbuilt: '{gerrit-skip-vote}'
+            successful: "{gerrit-skip-vote}"
+            failed: "{gerrit-skip-vote}"
+            unstable: "{gerrit-skip-vote}"
+            notbuilt: "{gerrit-skip-vote}"
 
 # Build from gerrit by shell script.
 # Triggered automatically by merge; can be run on any branch.
@@ -145,7 +145,7 @@
 #   branch:         git branch pattern, defaults to master
 #   stream:         friendly stream name (often same as branch), defaults to master
 - job-template:
-    name: '{project-name}-shell-merge-{stream}'
+    name: "{project-name}-shell-merge-{stream}"
     id: oran-shell-merge
     <<: *oran_shell_common
 
@@ -156,27 +156,27 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
 
     triggers:
-      - timed: '{obj:cron}'
+      - timed: "{obj:cron}"
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_merge_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_merge_triggers}"
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
 
 # Build and publish artifact from gerrit by shell script.
 # Triggered automatically by merging specific release file;
@@ -192,7 +192,7 @@
 #   stream:         friendly stream name (often same as branch), defaults to master
 #   gerrit_release_file_paths: Pathname pattern of the release file to trigger this job
 - job-template:
-    name: '{project-name}-shell-release-{stream}'
+    name: "{project-name}-shell-release-{stream}"
     id: oran-shell-release
     <<: *oran_shell_common
 
@@ -202,24 +202,24 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
 
     triggers:
       - gerrit:
-          server-name: '{gerrit-server-name}'
+          server-name: "{gerrit-server-name}"
           trigger-on:
             - change-merged-event
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_release_file_paths}'
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_release_file_paths}"

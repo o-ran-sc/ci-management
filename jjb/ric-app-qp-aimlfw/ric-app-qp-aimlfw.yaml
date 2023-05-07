@@ -14,8 +14,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _qp_aimlfw_docker_common: &qp_aimlfw_docker_common
-    # values apply to all training manager projects
+- _qp_aimlfw_docker_common:
+    &qp_aimlfw_docker_common # values apply to all training manager projects
     name: ric-app-qp-aimlfw-docker-common
     # git repo
     project: ric-app/qp-aimlfw
@@ -27,14 +27,14 @@
 - project:
     <<: *qp_aimlfw_docker_common
     name: ric-app-qp-aimlfw
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # Dockerfile is in a subdir
-    docker-root: '.'
+    docker-root: "."
     # source of docker tag
     # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     container-tag-method: yaml-file
     jobs:
       - "{project-name}-gerrit-docker-jobs"
@@ -50,16 +50,16 @@
     sonar-prescan-script: !include-raw-escape: prescan-ric-app-qp-aimlfw-ubuntu.sh
     sonar-project-file: ""
     sonar-properties: |
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        sonar.build.sourceEncoding=UTF-8
-        sonar.sources=.
-        sonar.language=go
-        sonar.go.coverage.reportPaths=**/cover.out
-        sonar.inclusions=**/*.go
-        sonar.exclusions=**/*_test.go
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=.
+      sonar.language=go
+      sonar.go.coverage.reportPaths=**/cover.out
+      sonar.inclusions=**/*.go
+      sonar.exclusions=**/*_test.go
     jobs:
       - gerrit-sonar-prescan-script
 
@@ -68,4 +68,4 @@
     name: ric-app-qp-aimlfw-release
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"

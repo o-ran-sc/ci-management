@@ -13,29 +13,28 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _it_otf_common: &it_otf_common
-    # values apply to all it/otf docker projects
+- _it_otf_common: &it_otf_common # values apply to all it/otf docker projects
     name: it_otf_common
     # git repo
     project: it/otf
     # jenkins job name prefix
-    project-name: '{name}'
+    project-name: "{name}"
     # source of docker tag
     container-tag-method: yaml-file
     # maven settings file has docker credentials
     mvn-settings: it-otf-settings
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host -f ./docker/Dockerfile'
+    docker-build-args: "--network=host -f ./docker/Dockerfile"
     # tag file is in subdir
-    container-tag-yaml-dir: '{docker-root}/docker'
+    container-tag-yaml-dir: "{docker-root}/docker"
     # build only on relevant changes
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '{docker-root}/.*'
+        pattern: "{docker-root}/.*"
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
@@ -46,9 +45,9 @@
     # start in parent directory with shared files
     docker-root: oran-ric-test-head
     # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # tag file is in subdir
-    container-tag-yaml-dir: '{docker-root}'
+    container-tag-yaml-dir: "{docker-root}"
 
 - project:
     <<: *it_otf_common
@@ -56,9 +55,9 @@
     # start in parent directory with shared files
     docker-root: otf-frontend
     # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # tag file is in subdir
-    container-tag-yaml-dir: '{docker-root}'
+    container-tag-yaml-dir: "{docker-root}"
 
 - project:
     <<: *it_otf_common
@@ -66,9 +65,9 @@
     # start in parent directory with shared files
     docker-root: otf-ping-test-head
     # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # tag file is in subdir
-    container-tag-yaml-dir: '{docker-root}'
+    container-tag-yaml-dir: "{docker-root}"
 
 - project:
     <<: *it_otf_common
@@ -76,9 +75,9 @@
     # start in parent directory with shared files
     docker-root: otf-robot-test-head
     # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # tag file is in subdir
-    container-tag-yaml-dir: '{docker-root}'
+    container-tag-yaml-dir: "{docker-root}"
 
 - project:
     <<: *it_otf_common
@@ -86,9 +85,9 @@
     # start in parent directory with shared files
     docker-root: otf-ssh-test-head
     # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # tag file is in subdir
-    container-tag-yaml-dir: '{docker-root}'
+    container-tag-yaml-dir: "{docker-root}"
 
 - project:
     <<: *it_otf_common
@@ -145,4 +144,4 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"

@@ -46,8 +46,8 @@
 - project:
     <<: *helmmanager_jdk_common
     name: nonrtric-plt-helmmanager
-    project-name: '{name}'
-    mvn-opts: '-Ddocker.skip=true'
+    project-name: "{name}"
+    mvn-opts: "-Ddocker.skip=true"
     build-node: ubuntu1804-builder-4c-4g
     jobs:
       - gerrit-maven-stage
@@ -69,4 +69,4 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"

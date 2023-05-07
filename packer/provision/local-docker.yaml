@@ -9,7 +9,7 @@
 
   vars:
     golang_version: 1.19
-    gopath: '/opt/go/{{golang_version}}/bin'
+    gopath: "/opt/go/{{golang_version}}/bin"
 
   pre_tasks:
     - include_role: name=lfit.system-update
@@ -26,8 +26,8 @@
         ruby_download_url: http://cache.ruby-lang.org/pub/ruby/2.5/ruby-2.5.1.tar.gz
         ruby_version: 2.5.1
 
-    - name: 'Install PackageCloud'
-      command: 'gem install package_cloud'
+    - name: "Install PackageCloud"
+      command: "gem install package_cloud"
       become: true
 
     - include_role:

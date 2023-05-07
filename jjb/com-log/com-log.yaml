@@ -13,8 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _com_log_common: &com_log_common
-    # values apply to all com/log projects
+- _com_log_common: &com_log_common # values apply to all com/log projects
     name: com-log-common
     # git repo
     project: com/log
@@ -33,8 +32,8 @@
     make-opts: -j 2 test
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
-        - compare-type: REG_EXP
-          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
+      - compare-type: REG_EXP
+        pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
     jobs:
       - gerrit-autotools-verify
     stream:
@@ -59,7 +58,7 @@
     <<: *com_log_common
     <<: *com_log_pkg_common
     name: com-log-deb
-    project-name: '{name}'
+    project-name: "{name}"
     configure-opts: --with-deb-dir={build-dir}
     make-opts: -j4 deb-pkg
 
@@ -68,7 +67,7 @@
     <<: *com_log_common
     <<: *com_log_pkg_common
     name: com-log-rpm
-    project-name: '{name}'
+    project-name: "{name}"
     configure-opts: --with-rpm-dir={build-dir}
     # parallel jobs (option -j) fail on rpm build
     # https://bugzilla.redhat.com/show_bug.cgi?id=1398405
@@ -85,16 +84,16 @@
     make-opts: -j4 test_gcov
     sonar-project-file: ""
     sonar-properties: |
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        sonar.build.sourceEncoding=UTF-8
-        sonar.sources=src
-        sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
-        sonar.cfamily.cache.enabled=false
-        sonar.cfamily.gcov.reportsPath=gcov_report
-        sonar.cfamily.threads=4
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=src
+      sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
+      sonar.cfamily.cache.enabled=false
+      sonar.cfamily.gcov.reportsPath=gcov_report
+      sonar.cfamily.threads=4
     jobs:
       - gerrit-autotools-sonarqube
 

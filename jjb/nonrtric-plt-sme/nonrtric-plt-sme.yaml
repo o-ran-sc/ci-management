@@ -15,8 +15,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _nonrtric_plt_sme_common: &nonrtric_plt_sme_common
-    # values apply to all projects here
+- _nonrtric_plt_sme_common:
+    &nonrtric_plt_sme_common # values apply to all projects here
     name: nonrtric-plt-sme-common
     # git repo
     project: nonrtric/plt/sme
@@ -35,27 +35,27 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *nonrtric_plt_sme_common
     name: nonrtric-plt-sme-capifcore
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/nonrtric-plt-capifcore'
+    docker-name: "o-ran-sc/nonrtric-plt-capifcore"
     # get tag from YAML
     container-tag-method: yaml-file
     container-tag-yaml-dir: capifcore
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # Directory with Dockerfile
-    docker-root: 'capifcore'
+    docker-root: "capifcore"
     # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'capifcore/.*'
+        pattern: "capifcore/.*"
     # Directory where go test should be run
-    go-root: 'capifcore'
+    go-root: "capifcore"
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
@@ -75,7 +75,7 @@
     build-node: ubuntu1804-docker-4c-4g
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'capifcore/.*'
+        pattern: "capifcore/.*"
     sonar-prescan-script: !include-raw-escape: prescan-capifcore-ubuntu.sh
     sonar-project-file: ""
     java-version: openjdk11

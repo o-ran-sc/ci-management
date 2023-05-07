@@ -92,23 +92,18 @@ tsc:
   # yamllint disable rule:line-length
   approval: "https://wiki.o-ran-sc.org/display/TOC"
   changes:
-    -
-      type: "Addition"
+    - type: "Addition"
       link: "ORANSC TOC 20220505 3.a.i SMO PTL"
       name: "Mahesh Jethanandani"
-    -
-      type: "Addition"
+    - type: "Addition"
       link: "ORANSC TOC 20220505 3.a.i NONRTRIC PTL"
       name: "John Keeney"
-    -
-      type: "Addition"
+    - type: "Addition"
       link: "ORANSC TOC 20220505 3.a.i OAM PTL"
       name: "Martin Skorupski"
-    -
-      type: "Addition"
+    - type: "Addition"
       link: "ORANSC TOC 20220505 3.a.i SIM PTL"
       name: "Alex Stancu"
-    -
-      type: "Addition"
+    - type: "Addition"
       link: "ORANSC TOC 20220505 3.a.i AIMLFW PTL"
       name: "Hoejoo Lee"
