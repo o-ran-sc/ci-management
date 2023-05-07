@@ -52,7 +52,7 @@
 - project:
     <<: *xapp_frame_cpp_common
     name: ric-plt-xapp-frame-cpp-dev
-    project-name: '{name}'
+    project-name: "{name}"
     cmake-opts: -DDEV_PKG=1
     make-opts: package
     install-prefix: /usr/local
@@ -66,7 +66,7 @@
 - project:
     <<: *xapp_frame_cpp_common
     name: ric-plt-xapp-frame-cpp-rt
-    project-name: '{name}'
+    project-name: "{name}"
     cmake-opts: -DDEV_PKG=0
     make-opts: package
     install-prefix: /usr/local
@@ -93,13 +93,13 @@
     make-opts: test ARGS=-V
     sonar-project-file: ""
     sonar-properties: |
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        sonar.build.sourceEncoding=UTF-8
-        sonar.sources=src
-        sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
-        sonar.cfamily.gcov.reportsPath=test
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=src
+      sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
+      sonar.cfamily.gcov.reportsPath=test
     jobs:
       - gerrit-cmake-sonarqube

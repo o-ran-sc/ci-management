@@ -12,7 +12,7 @@ are defined in the defaults.yaml file.
 
 Custom JJB templates are defined for projects that use Docker to
 compile code and build DEB/RPM packages, then push the packages to
-PackageCloud.io.  These projects should use the following jobs in
+PackageCloud.io. These projects should use the following jobs in
 their respective project.yaml file::
 
     jobs:
@@ -22,7 +22,7 @@ their respective project.yaml file::
 ## Testing the templates
 
 These instructions explain how to test the templates using the Jenkins
-sandbox.  This catches errors before submitting the changes as Gerrit
+sandbox. This catches errors before submitting the changes as Gerrit
 reviews.
 
 ### Prerequisites
@@ -49,10 +49,10 @@ oran-jenkins-sandbox-access) at the Jenkins sandbox:
     https://jenkins.o-ran-sc.org/sandbox
 
 Get the authentication token from the sandbox:
-    a) click on your user name (top right)
-    b) click Configure (left menu)
-    c) under API Token, click Add new Token (button)
-    d) copy the token string
+a) click on your user name (top right)
+b) click Configure (left menu)
+c) under API Token, click Add new Token (button)
+d) copy the token string
 
 Create a config file jenkins.ini using the following template and your
 credentials (user name and API token from above)::
@@ -82,13 +82,13 @@ parameters" in left menu.
 ### How to build from a Gerrit review branch
 
 This explains how to launch a "verify" job in the Sandbox on an open
-review.  Most "verify" jobs accept parameters to build code in a
-review submitted to Gerrit.  You must specify the change ref spec,
-which is a Git branch name.  Get this by inspecting Gerrit's
-"download" links at the top right.  The branch name will be something
+review. Most "verify" jobs accept parameters to build code in a
+review submitted to Gerrit. You must specify the change ref spec,
+which is a Git branch name. Get this by inspecting Gerrit's
+"download" links at the top right. The branch name will be something
 like this:
 
-	refs/changes/78/578/2
+    refs/changes/78/578/2
 
 The first number is a mystery to me; the second number is the Gerrit
 change number; the third number is the patch set within the change.

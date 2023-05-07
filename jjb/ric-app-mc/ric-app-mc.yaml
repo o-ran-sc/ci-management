@@ -3,7 +3,7 @@
     name: ric-app-mc-project-view
     project-name: ric-app-mc
     views:
-        - project-view
+      - project-view
 
 - project:
     name: ric-app-mc-info
@@ -11,10 +11,9 @@
     project-name: ric-app-mc
     build-node: centos7-builder-1c-1g
     jobs:
-        - gerrit-info-yaml-verify
+      - gerrit-info-yaml-verify
 
-- _mc_common: &mc_common
-    # values apply to all MC projects
+- _mc_common: &mc_common # values apply to all MC projects
     name: mc-common
     # git repo
     project: ric-app/mc
@@ -32,45 +31,45 @@
     <<: *mc_common
     name: ric-app-mc
     # jenkins job name prefix
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     docker-root: mc-core
     # source of docker tag
     container-tag-method: yaml-file
-    container-tag-yaml-dir: '{docker-root}'
+    container-tag-yaml-dir: "{docker-root}"
     # use host network
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     gerrit_trigger_file_paths:
-        - compare-type: REG_EXP
-          pattern: '{docker-root}/.*'
+      - compare-type: REG_EXP
+        pattern: "{docker-root}/.*"
     jobs:
-        - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
-        - master:
-            branch: master
+      - master:
+          branch: master
 
 - project:
     <<: *mc_common
     name: ric-app-mc-listener
     # jenkins job name prefix
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     docker-root: sidecars/listener
     # source of docker tag
     container-tag-method: yaml-file
-    container-tag-yaml-dir: '{docker-root}'
+    container-tag-yaml-dir: "{docker-root}"
     # use host network
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     gerrit_trigger_file_paths:
-        - compare-type: REG_EXP
-          pattern: '{docker-root}/.*'
+      - compare-type: REG_EXP
+        pattern: "{docker-root}/.*"
     jobs:
-        - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
-        - master:
-            branch: master
+      - master:
+          branch: master
 
 - project:
     <<: *mc_common
@@ -80,7 +79,7 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 # drive unit tests from root CMake file to gen/analyse coverage data
 - project:
@@ -91,14 +90,14 @@
     make-opts: test ARGS=-V
     sonar-project-file: ""
     sonar-properties: |
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        sonar.build.sourceEncoding=UTF-8
-        sonar.sources=sidecars/listener/src,mc-core/mc/mcnib
-        sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
-        sonar.cfamily.gcov.reportsPath=/tmp/gcov_rpts
-        sonar.cfamily.threads=2
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=sidecars/listener/src,mc-core/mc/mcnib
+      sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
+      sonar.cfamily.gcov.reportsPath=/tmp/gcov_rpts
+      sonar.cfamily.threads=2
     jobs:
       - gerrit-cmake-sonarqube

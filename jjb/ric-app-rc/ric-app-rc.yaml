@@ -5,8 +5,7 @@
     views:
       - project-view
 
-- _rc_common: &rc_common
-    # values apply to all projects
+- _rc_common: &rc_common # values apply to all projects
     name: rc-common
     # git repo
     project: ric-app/rc
@@ -29,20 +28,20 @@
     # also used as image name
     name: ric-app-rc
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # source type of image tag
     container-tag-method: yaml-file
     # use host network
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # trigger on any change other than a file in ./docs
     gerrit_trigger_file_paths:
-        - compare-type: REG_EXP
-          pattern: '^((?!docs/|\/COMMIT_MSG).)*$'
+      - compare-type: REG_EXP
+        pattern: '^((?!docs/|\/COMMIT_MSG).)*$'
     jobs:
-        - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
-        - master:
-            branch: master
+      - master:
+          branch: master
 
 # push nexus image from staging to release
 - project:
@@ -52,4 +51,4 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"

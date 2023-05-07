@@ -22,13 +22,14 @@ echo "--> upload-inf.sh"
 set -eu -o pipefail
 
 if [[ -f ~/lf-env.sh ]]; then
-    source ~/lf-env.sh
+    # shellcheck source=/dev/null
+    . ~/lf-env.sh
     lf-activate-venv --python python3 lftools
 else
     echo "INFO: creating virtual environment"
     virtualenv -p python3 /tmp/venv
     PATH=/tmp/venv/bin:$PATH
-    
+
     pip_pkgs="pip setuptools lftools"
     for pkg in $pip_pkgs; do
         cmd_pip="python -m pip install --upgrade $pkg"

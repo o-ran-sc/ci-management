@@ -13,7 +13,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _informationcoordinatorservice_jdk_common: &informationcoordinatorservice_jdk_common
+- _informationcoordinatorservice_jdk_common:
+    &informationcoordinatorservice_jdk_common
     name: informationcoordinatorservice-jdk-common
     # git repo
     project: nonrtric/plt/informationcoordinatorservice
@@ -46,8 +47,8 @@
 - project:
     <<: *informationcoordinatorservice_jdk_common
     name: nonrtric-plt-informationcoordinatorservice
-    project-name: '{name}'
-    mvn-opts: '-Ddocker.skip=true'
+    project-name: "{name}"
+    mvn-opts: "-Ddocker.skip=true"
     build-node: ubuntu1804-builder-4c-4g
     jobs:
       - gerrit-maven-stage
@@ -69,17 +70,17 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *informationcoordinatorservice_jdk_common
     name: nonrtric-plt-informationcoordinatorservice-sonar
     project-name: nonrtric-plt-informationcoordinatorservice
     # template goal install builds docker image unnecessarily
-    mvn-params: '-Ddocker.skip=true'
+    mvn-params: "-Ddocker.skip=true"
     sonarcloud: true
-    sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: 'nonrtric-plt-informationcoordinatorservice'
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    sonarcloud-api-token: "{sonarcloud_api_token}"
+    sonarcloud-project-key: "nonrtric-plt-informationcoordinatorservice"
+    sonarcloud-project-organization: "{sonarcloud_project_organization}"
     jobs:
       - gerrit-maven-sonar

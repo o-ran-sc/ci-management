@@ -33,7 +33,7 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 # Jobs for nonrtric-plt-ranpm-datafilecollector
 - project:
@@ -41,10 +41,10 @@
     name: nonrtric-plt-ranpm-datafilecollector-gerrit-maven-docker
     #job name prefix
     project-name: nonrtric-plt-ranpm-datafilecollector
-    mvn-params: '-f datafilecollector -Dbuild.number=${{BUILD_NUMBER}}'
+    mvn-params: "-f datafilecollector -Dbuild.number=${{BUILD_NUMBER}}"
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'datafilecollector/.*'
+        pattern: "datafilecollector/.*"
     jobs:
       - gerrit-maven-clm
       - gerrit-maven-verify-dependencies
@@ -61,10 +61,10 @@
     name: nonrtric-plt-ranpm-pmproducer-gerrit-maven-docker
     #job name prefix
     project-name: nonrtric-plt-ranpm-pmproducer
-    mvn-params: '-f pmproducer -Dbuild.number=${{BUILD_NUMBER}}'
+    mvn-params: "-f pmproducer -Dbuild.number=${{BUILD_NUMBER}}"
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'pmproducer/.*'
+        pattern: "pmproducer/.*"
     jobs:
       - gerrit-maven-clm
       - gerrit-maven-verify-dependencies
@@ -81,10 +81,10 @@
     name: nonrtric-plt-ranpm-influxlogger-gerrit-maven-docker
     #job name prefix
     project-name: nonrtric-plt-ranpm-influxlogger
-    mvn-params: '-f influxlogger -Dbuild.number=${{BUILD_NUMBER}}'
+    mvn-params: "-f influxlogger -Dbuild.number=${{BUILD_NUMBER}}"
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'influxlogger/.*'
+        pattern: "influxlogger/.*"
     jobs:
       - gerrit-maven-clm
       - gerrit-maven-verify-dependencies

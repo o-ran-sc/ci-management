@@ -13,8 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _ves_docker_common: &ves_docker_common
-    # values apply to all docker projects
+- _ves_docker_common: &ves_docker_common # values apply to all docker projects
     name: ves-docker-common
     # git repo
     project: smo/ves
@@ -28,15 +27,15 @@
 - project:
     <<: *ves_docker_common
     name: smo-ves-collector
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # Dockerfile is in a subdir
     docker-root: collector
     # source of docker tag
     container-tag-method: yaml-file
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
@@ -44,15 +43,15 @@
 - project:
     <<: *ves_docker_common
     name: smo-ves-dmaap-adapter
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # Dockerfile is in a subdir
     docker-root: dmaapadapter
     # source of docker tag
     container-tag-method: yaml-file
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
@@ -60,30 +59,30 @@
 - project:
     <<: *ves_docker_common
     name: smo-ves-influxdb-connector
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # Dockerfile is in a subdir
     docker-root: influxdb-connector
     # source of docker tag
     container-tag-method: yaml-file
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
 - project:
     <<: *ves_docker_common
     name: smo-ves-post-config
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # Dockerfile is in a subdir
     docker-root: postconfig
     # source of docker tag
     container-tag-method: yaml-file
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
@@ -91,12 +90,12 @@
 - project:
     <<: *ves_docker_common
     name: smo-ves-release
-    project-name: '{name}'
+    project-name: "{name}"
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *ves_docker_common

@@ -14,23 +14,23 @@
       - gerrit-info-yaml-verify
 
 - _oam-nf-oam-adopter: &oam-nf-oam-adopter
-   name: oam-nf-oam-adopter
-   project: oam/nf-oam-adopter
-   project-name: oam-nf-oam-adopter
-   java-version: openjdk11
-   mvn-pom: 'ves-nf-oam-adopter/pom.xml'
-   mvn-params: '-f ves-nf-oam-adopter/pom.xml -P docker -Dbuild.number=${{BUILD_NUMBER}}'
-   mvn-version: "mvn36"
-   mvn-settings: 'oam-nf-oam-adopter-settings'
-   build-node: centos7-docker-2c-8g
+    name: oam-nf-oam-adopter
+    project: oam/nf-oam-adopter
+    project-name: oam-nf-oam-adopter
+    java-version: openjdk11
+    mvn-pom: "ves-nf-oam-adopter/pom.xml"
+    mvn-params: "-f ves-nf-oam-adopter/pom.xml -P docker -Dbuild.number=${{BUILD_NUMBER}}"
+    mvn-version: "mvn36"
+    mvn-settings: "oam-nf-oam-adopter-settings"
+    build-node: centos7-docker-2c-8g
 
 - project:
     <<: *oam-nf-oam-adopter
     name: oam-nf-oam-adopter-clm
     jobs:
       - gerrit-maven-clm
-    nexus-iq-namespace: 'oran-'
-    branch: 'master'
+    nexus-iq-namespace: "oran-"
+    branch: "master"
 
 - project:
     <<: *oam-nf-oam-adopter
@@ -48,13 +48,13 @@
           maven-versions-plugin: true
           container-public-registry: nexus3.o-ran-sc.org:10001
           container-staging-registry: nexus3.o-ran-sc.org:10004
-      - '{project-name}-gerrit-release-jobs':
+      - "{project-name}-gerrit-release-jobs":
           build-node: centos7-docker-2c-8g
     stream:
-      - 'master':
-          branch: 'master'
-    files: '**'
-    archive-artifacts: ''
+      - "master":
+          branch: "master"
+    files: "**"
+    archive-artifacts: ""
 
 - project:
     <<: *oam-nf-oam-adopter
@@ -62,12 +62,12 @@
     jobs:
       - gerrit-maven-sonar
     sonarcloud: true
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
-    sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
-    sonar.build.sourceEncoding: 'UTF-8'
-    cron: '@daily'
-    branch: 'master'
-    mvn-goals: 'clean install'
-    mvn-opts: '-Xmx1024m -XX:MaxPermSize=256m'
-    mvn-params: '-f ves-nf-oam-adopter/pom.xml -Ddocker.skip=true'
+    sonarcloud-project-organization: "{sonarcloud_project_organization}"
+    sonarcloud-api-token: "{sonarcloud_api_token}"
+    sonarcloud-project-key: "{sonarcloud_project_organization}_{project-name}"
+    sonar.build.sourceEncoding: "UTF-8"
+    cron: "@daily"
+    branch: "master"
+    mvn-goals: "clean install"
+    mvn-opts: "-Xmx1024m -XX:MaxPermSize=256m"
+    mvn-params: "-f ves-nf-oam-adopter/pom.xml -Ddocker.skip=true"
