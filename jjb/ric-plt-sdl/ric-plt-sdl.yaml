@@ -13,8 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _sdl_common: &sdl_common
-    # values apply to all ric-plt/sdl projects
+- _sdl_common: &sdl_common # values apply to all ric-plt/sdl projects
     name: sdl-common
     # git repo
     project: ric-plt/sdl
@@ -55,7 +54,7 @@
     <<: *sdl_common
     <<: *sdl_pkg_common
     name: ric-plt-sdl-deb
-    project-name: '{name}'
+    project-name: "{name}"
     configure-opts: --with-deb-dir={build-dir}
     make-opts: -j4 deb-pkg
 
@@ -64,7 +63,7 @@
     <<: *sdl_common
     <<: *sdl_pkg_common
     name: ric-plt-sdl-rpm
-    project-name: '{name}'
+    project-name: "{name}"
     configure-opts: --with-rpm-dir={build-dir}
     # parallel jobs (option -j) fail on rpm build
     # https://bugzilla.redhat.com/show_bug.cgi?id=1398405
@@ -82,16 +81,16 @@
     make-opts: -j4 test_gcov
     sonar-project-file: ""
     sonar-properties: |
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        sonar.build.sourceEncoding=UTF-8
-        sonar.sources=src
-        sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
-        sonar.cfamily.cache.enabled=false
-        sonar.cfamily.gcov.reportsPath=gcov_report
-        sonar.cfamily.threads=4
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=src
+      sonar.cfamily.build-wrapper-output=$WORKSPACE/bw-output
+      sonar.cfamily.cache.enabled=false
+      sonar.cfamily.gcov.reportsPath=gcov_report
+      sonar.cfamily.threads=4
     jobs:
       - gerrit-autotools-sonarqube
 

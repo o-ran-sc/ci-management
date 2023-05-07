@@ -13,8 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _a1_common: &a1_common
-    # values apply to all A1 projects
+- _a1_common: &a1_common # values apply to all A1 projects
     name: a1-common
     # git repo
     project: ric-plt/a1
@@ -27,21 +26,21 @@
     <<: *a1_common
     name: ric-plt-a1-docker
     # image name
-    docker-name: 'o-ran-sc/ric-plt-a1'
+    docker-name: "o-ran-sc/ric-plt-a1"
     # source of docker tag
     container-tag-method: yaml-file
     # use host network
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     build-node: ubuntu1804-docker-4c-4g
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
-        - compare-type: REG_EXP
-          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
+      - compare-type: REG_EXP
+        pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
     stream:
       - master:
           branch: master
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
 
 - project:
     <<: *a1_common
@@ -50,4 +49,4 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"

@@ -14,8 +14,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _xapp_frame_rust_docker_common: &xapp_frame_rust_docker_common
-    # values apply to all xapp-frame docker projects
+- _xapp_frame_rust_docker_common:
+    &xapp_frame_rust_docker_common # values apply to all xapp-frame docker projects
     name: xapp-frame-rust-docker-common
     # git repo
     project: ric-plt/xapp-frame-rust
@@ -29,9 +29,9 @@
     <<: *xapp_frame_rust_docker_common
     name: ric-plt-xapp-frame-rust
     # image name, altho it is never pushed
-    docker-name: '{name}'
+    docker-name: "{name}"
     # use host network
-    docker-build-args: '--network=host -f ci/Dockerfile'
+    docker-build-args: "--network=host -f ci/Dockerfile"
     # image tag; use a fixed value
     container-tag-method: latest
     jobs:

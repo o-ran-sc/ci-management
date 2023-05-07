@@ -5,8 +5,7 @@
     views:
       - project-view
 
-- _hw-go_common: &hw-go_common
-    # values apply to all projects
+- _hw-go_common: &hw-go_common # values apply to all projects
     name: hw-go-common
     # git repo
     project: ric-app/hw-go
@@ -28,17 +27,17 @@
     <<: *hw-go_common
     name: ric-app-hw-go
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # source of docker tag
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # trigger on any change other than a file in ./docs
     gerrit_trigger_file_paths:
-        - compare-type: REG_EXP
-          pattern: '^((?!docs/|\/COMMIT_MSG).)*$'
+      - compare-type: REG_EXP
+        pattern: '^((?!docs/|\/COMMIT_MSG).)*$'
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
@@ -51,4 +50,4 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"

@@ -13,8 +13,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _sim_e2_interface_common: &sim_e2_interface_common
-    # values apply to all projects here
+- _sim_e2_interface_common:
+    &sim_e2_interface_common # values apply to all projects here
     name: sim-e2-interface-common
     # git repo
     project: sim/e2-interface
@@ -29,18 +29,18 @@
     build-node: ubuntu1804-docker-4c-4g
     container-tag-method: yaml-file
     # image name
-    docker-name: 'o-ran-sc/ntsim-e2-simulator'
+    docker-name: "o-ran-sc/ntsim-e2-simulator"
     # docker root
     docker-root: e2sim
     # dockerfile is in subdir
-    docker-build-args: '--network=host -f docker/Dockerfile'
+    docker-build-args: "--network=host -f docker/Dockerfile"
     # tag file is in subdir
     container-tag-yaml-dir: e2sim/docker
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '{docker-root}/.*'
+        pattern: "{docker-root}/.*"
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
@@ -52,4 +52,4 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"

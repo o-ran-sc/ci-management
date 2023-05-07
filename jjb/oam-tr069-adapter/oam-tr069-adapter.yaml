@@ -13,8 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _tr069-adapter-jdk08: &tr069-adapter-jdk08
-    # values apply to all projects here
+- _tr069-adapter-jdk08: &tr069-adapter-jdk08 # values apply to all projects here
     name: tr069-adapter-jdk08
     # git repo
     project: oam/tr069-adapter
@@ -42,9 +41,9 @@
     # template goal install builds docker image unnecessarily
     mvn-params: -Ddocker.skip=true
     sonarcloud: true
-    sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    sonarcloud-api-token: "{sonarcloud_api_token}"
+    sonarcloud-project-key: "{sonarcloud_project_organization}_{project-name}"
+    sonarcloud-project-organization: "{sonarcloud_project_organization}"
     jobs:
       - gerrit-maven-sonar
 
@@ -55,4 +54,4 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"

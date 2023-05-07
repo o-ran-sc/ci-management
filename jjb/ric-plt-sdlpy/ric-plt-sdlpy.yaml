@@ -30,7 +30,7 @@
     <<: *sdlpy_common
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'ricsdl-package/.*'
+        pattern: "ricsdl-package/.*"
     tox-dir: ricsdl-package
     jobs:
       - gerrit-pypi-verify
@@ -44,7 +44,7 @@
     name: ric-plt-sdlpy-release
     <<: *sdlpy_common
     jobs:
-      - '{project-name}-gerrit-pypi-release-jobs'
+      - "{project-name}-gerrit-pypi-release-jobs"
 
 # analyze unit test coverage
 - project:
@@ -52,9 +52,9 @@
     <<: *sdlpy_common
     branch: master
     sonarcloud: true
-    sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: '{sonarcloud_project_organization}_{project-name}'
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    sonarcloud-api-token: "{sonarcloud_api_token}"
+    sonarcloud-project-key: "{sonarcloud_project_organization}_{project-name}"
+    sonarcloud-project-organization: "{sonarcloud_project_organization}"
     tox-dir: ricsdl-package
     mvn-params: -f ricsdl-package
     jobs:

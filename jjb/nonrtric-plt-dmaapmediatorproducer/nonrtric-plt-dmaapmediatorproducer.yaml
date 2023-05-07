@@ -29,22 +29,22 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *dmaapmediatorproducer_common
     name: nonrtric-plt-dmaapmediatorproducer
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/nonrtric-plt-dmaapmediatorproducer'
+    docker-name: "o-ran-sc/nonrtric-plt-dmaapmediatorproducer"
     # get tag from YAML
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # Directory with Dockerfile
-    docker-root: '.'
+    docker-root: "."
     # Directory where go test should be run
-    go-root: '.'
+    go-root: "."
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:

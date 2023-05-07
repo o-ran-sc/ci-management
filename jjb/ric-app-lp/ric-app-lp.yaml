@@ -5,8 +5,7 @@
     views:
       - project-view
 
-- _lp_common: &lp_common
-    # required even though overridden everywhere
+- _lp_common: &lp_common # required even though overridden everywhere
     name: lp-common
     # git repo
     project: ric-app/lp
@@ -30,14 +29,14 @@
     # source of docker tag
     container-tag-method: yaml-file
     # use host network
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     build-node: ubuntu1804-docker-4c-4g
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
-        - compare-type: REG_EXP
-          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
+      - compare-type: REG_EXP
+        pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
@@ -49,10 +48,9 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
-- _lp_python: &lp_python
-    # settings for python builds
+- _lp_python: &lp_python # settings for python builds
     name: lp-python
     # the install script assumes an ubuntu image
     build-node: ubuntu1804-builder-2c-2g
@@ -69,8 +67,8 @@
     name: ric-app-lp-py-verify
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
-        - compare-type: REG_EXP
-          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
+      - compare-type: REG_EXP
+        pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
     jobs:
       - gerrit-tox-verify
     stream:
@@ -83,12 +81,12 @@
     name: ric-app-lp-sonarqube
     sonar-project-file: ""
     sonar-properties: |
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        sonar.build.sourceEncoding=UTF-8
-        sonar.sources=lp
-        sonar.python.coverage.reportPaths=coverage.xml
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=lp
+      sonar.python.coverage.reportPaths=coverage.xml
     jobs:
       - gerrit-tox-sonarqube

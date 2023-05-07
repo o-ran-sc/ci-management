@@ -9,7 +9,7 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 echo "---> cmake-sonarqube.sh"
-cd mgxapp
+cd mgxapp || return
 docker build -t ric-plt-utils -f Dockerfile.build .
 docker create --name  ric-plt-utils ric-plt-utils
 docker cp ric-plt-utils:/playpen/build/test/ .

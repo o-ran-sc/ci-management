@@ -46,8 +46,8 @@
 - project:
     <<: *rappcatalogue_jdk_common
     name: nonrtric-plt-rappcatalogue
-    project-name: '{name}'
-    mvn-opts: '-Ddocker.skip=true'
+    project-name: "{name}"
+    mvn-opts: "-Ddocker.skip=true"
     build-node: ubuntu1804-builder-4c-4g
     jobs:
       - gerrit-maven-stage
@@ -69,18 +69,18 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *rappcatalogue_jdk_common
     name: nonrtric-plt-rappcatalogue-sonar
     project-name: nonrtric-plt-rappcatalogue
     # template goal install builds docker image unnecessarily
-    mvn-params: '-Ddocker.skip=true'
+    mvn-params: "-Ddocker.skip=true"
     sonarcloud: true
-    sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: 'nonrtric_plt_rappcatalogue'
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    sonarcloud-api-token: "{sonarcloud_api_token}"
+    sonarcloud-project-key: "nonrtric_plt_rappcatalogue"
+    sonarcloud-project-organization: "{sonarcloud_project_organization}"
     jobs:
       - gerrit-maven-sonar
 
@@ -97,7 +97,7 @@
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'catalogue-enhanced/.*'
+        pattern: "catalogue-enhanced/.*"
     stream:
       - master:
           branch: master
@@ -111,25 +111,25 @@
     name: nonrtric-plt-rappcatalogue-enhanced
     project-name: nonrtric-plt-rappcatalogue-enhanced
     # image name
-    docker-name: 'o-ran-sc/nonrtric-plt-rappcatalogue-enhanced'
+    docker-name: "o-ran-sc/nonrtric-plt-rappcatalogue-enhanced"
     # source of docker tag
     container-tag-method: yaml-file
     # use host network
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # Directory with Dockerfile
-    docker-root: 'catalogue-enhanced'
+    docker-root: "catalogue-enhanced"
     build-node: ubuntu1804-docker-4c-4g
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'catalogue-enhanced/.*'
+        pattern: "catalogue-enhanced/.*"
     stream:
       - master:
           branch: master
       - g-release:
           branch: g-release
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
 
 - project:
     <<: *rappcatalogue_jdk_common
@@ -142,17 +142,17 @@
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'catalogue-enhanced/.*'
+        pattern: "catalogue-enhanced/.*"
     sonar-project-file: ""
     sonar-properties: |
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        sonar.build.sourceEncoding=UTF-8
-        sonar.sources=catalogue-enhanced/
-        sonar.python.coverage.reportPaths=catalogue-enhanced/coverage.xml
-        sonar.inclusions=catalogue-enhanced/src/**.py
-        sonar.exclusions=catalogue-enhanced/tests/**.py
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=catalogue-enhanced/
+      sonar.python.coverage.reportPaths=catalogue-enhanced/coverage.xml
+      sonar.inclusions=catalogue-enhanced/src/**.py
+      sonar.exclusions=catalogue-enhanced/tests/**.py
     jobs:
       - gerrit-tox-sonarqube

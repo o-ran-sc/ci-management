@@ -44,6 +44,7 @@ export PATH=$GOPATH/bin:$PATH
 export CFG_FILE=../config/config-file.json
 export RMR_SEED_RT=../config/uta_rtg.rt
 
+# shellcheck disable=SC2034
 GO111MODULE=on GO_ENABLED=0 GOOS=linux
 
 # setup version tag

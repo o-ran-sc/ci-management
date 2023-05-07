@@ -13,8 +13,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _rtmgr_docker_common: &rtmgr_docker_common
-    # values apply to all rtmgr docker projects
+- _rtmgr_docker_common:
+    &rtmgr_docker_common # values apply to all rtmgr docker projects
     name: rtmgr-docker-common
     # git repo
     project: ric-plt/rtmgr
@@ -27,13 +27,13 @@
     <<: *rtmgr_docker_common
     name: ric-plt-rtmgr
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # source of docker tag
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
@@ -45,7 +45,7 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *rtmgr_docker_common
@@ -57,22 +57,22 @@
     sonar-project-file: ""
     # use sonarcloud values from defaults.yaml
     sonar-properties: |
-        # Required metadata
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        # Encoding
-        sonar.build.sourceEncoding=UTF-8
-        # Language
-        sonar.language=go
-        # Source
-        sonar.sources=.
-        # Unit tests
-        sonar.go.coverage.reportPaths=./coverage.txt
-        # Inclusions
-        sonar.inclusions=pkg/**/**.go
-        # Exclusions
-        sonar.exclusions=cmd/**.go,pkg/stub/**.go,pkg/**/**_test.go
+      # Required metadata
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      # Encoding
+      sonar.build.sourceEncoding=UTF-8
+      # Language
+      sonar.language=go
+      # Source
+      sonar.sources=.
+      # Unit tests
+      sonar.go.coverage.reportPaths=./coverage.txt
+      # Inclusions
+      sonar.inclusions=pkg/**/**.go
+      # Exclusions
+      sonar.exclusions=cmd/**.go,pkg/stub/**.go,pkg/**/**_test.go
     jobs:
       - gerrit-sonar-prescan-script
