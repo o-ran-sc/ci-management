@@ -13,8 +13,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _sim_a1_interface_common: &sim_a1_interface_common
-    # values apply to all projects here
+- _sim_a1_interface_common:
+    &sim_a1_interface_common # values apply to all projects here
     name: sim-a1-interface-common
     # git repo
     project: sim/a1-interface
@@ -27,12 +27,12 @@
     <<: *sim_a1_interface_common
     name: a1-simulator
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # source of docker tag
     container-tag-method: yaml-file
     docker-root: near-rt-ric-simulator
     # use host network
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     build-node: ubuntu1804-docker-4c-4g
     stream:
       - master:
@@ -42,7 +42,7 @@
       - g-release:
           branch: g-release
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
 
 - project:
     <<: *sim_a1_interface_common
@@ -51,16 +51,15 @@
     build-node: ubuntu1804-builder-2c-2g
     sonar-project-file: ""
     sonar-properties: |
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        sonar.build.sourceEncoding=UTF-8
-        sonar.sources=near-rt-ric-simulator
-        sonar.python.coverage.reportPaths=coverage.xml
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=near-rt-ric-simulator
+      sonar.python.coverage.reportPaths=coverage.xml
     jobs:
       - gerrit-tox-sonarqube
-
 
 - project:
     <<: *sim_a1_interface_common
@@ -69,4 +68,4 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"

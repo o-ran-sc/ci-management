@@ -13,8 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _o1_docker_common: &o1_docker_common
-    # values apply to all docker projects
+- _o1_docker_common: &o1_docker_common # values apply to all docker projects
     name: o1-docker-common
     # git repo
     project: ric-plt/o1
@@ -27,13 +26,13 @@
     <<: *o1_docker_common
     name: ric-plt-o1
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # source of docker tag
     container-tag-method: yaml-file
     # use host for network access
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
@@ -45,4 +44,4 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"

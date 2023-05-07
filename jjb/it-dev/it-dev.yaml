@@ -32,7 +32,7 @@
     <<: *it_dev_xo_common
     name: it-dev-xapp-onboarder-docker
     # image name
-    docker-name: 'o-ran-sc/xapp-onboarder'
+    docker-name: "o-ran-sc/xapp-onboarder"
     # source of docker tag
     container-tag-method: yaml-file
     # dockerfile is in subdir
@@ -41,9 +41,9 @@
     container-tag-yaml-dir: ci/xapp_onboarder
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'xapp_onboarder/.*'
+        pattern: "xapp_onboarder/.*"
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
@@ -57,7 +57,7 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *it_dev_xo_common
@@ -65,14 +65,14 @@
     name: it-dev-xapp-onboarder-sonarqube
     sonar-project-file: ""
     sonar-properties: |
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        sonar.build.sourceEncoding=UTF-8
-        sonar.sources=xapp_onboarder
-        sonar.exclusions=setup.py,xapp_onboarder/tests/*.py
-        sonar.python.coverage.reportPaths=xapp_onboarder/coverage.xml
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=xapp_onboarder
+      sonar.exclusions=setup.py,xapp_onboarder/tests/*.py
+      sonar.python.coverage.reportPaths=xapp_onboarder/coverage.xml
     jobs:
       - gerrit-tox-sonarqube
 
@@ -81,8 +81,8 @@
     <<: *it_dev_xo_py_common
     name: it-dev-xapp-onboarder-pypi
     gerrit_trigger_file_paths:
-     - compare-type: REG_EXP
-       pattern: 'xapp_onboarder/.*'
+      - compare-type: REG_EXP
+        pattern: "xapp_onboarder/.*"
     parallel: false
     jobs:
       - gerrit-pypi-verify

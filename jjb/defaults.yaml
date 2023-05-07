@@ -13,7 +13,7 @@
     build-days-to-keep: 30
 
     # pattern for build files to archive
-    archive-artifacts: ''
+    archive-artifacts: ""
 
     # most jobs invoke docker
     build-node: ubuntu1804-docker-4c-4g
@@ -24,16 +24,16 @@
     container-staging-registry: nexus3.o-ran-sc.org:10004
     # templates use the push registry key;
     # counter-intuitively, the quotes here are REQUIRED
-    container-push-registry: '{container-staging-registry}'
+    container-push-registry: "{container-staging-registry}"
 
     # Don't define default java version here,
     # it will not be used by lf-maven-jobs.
     # Default maven version
     mvn-version: mvn35
     # Default maven goals
-    mvn-goals: 'clean install'
+    mvn-goals: "clean install"
     # Default JVM invocation options
-    mvn-opts: ''
+    mvn-opts: ""
     mvn-site-id: site
     mvn-staging-id: staging
     mvn-snapshot-id: snapshots

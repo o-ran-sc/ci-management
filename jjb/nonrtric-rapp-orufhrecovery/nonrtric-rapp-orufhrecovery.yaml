@@ -22,24 +22,24 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *orufhrecovery_common
     name: nonrtric-rapp-orufhrecovery
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/nonrtric-rapp-orufhrecovery'
+    docker-name: "o-ran-sc/nonrtric-rapp-orufhrecovery"
     # get tag from YAML
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # Directory with Dockerfile
-    docker-root: 'scriptversion/app'
+    docker-root: "scriptversion/app"
     # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'scriptversion/app/.*'
+        pattern: "scriptversion/app/.*"
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
@@ -55,21 +55,21 @@
 - project:
     <<: *orufhrecovery_common
     name: nonrtric-rapp-orufhrecovery-consumer
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/nonrtric-rapp-orufhrecovery-consumer'
+    docker-name: "o-ran-sc/nonrtric-rapp-orufhrecovery-consumer"
     # get tag from YAML
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # Directory with Dockerfile
-    docker-root: 'goversion'
+    docker-root: "goversion"
     # Directory where go test should be run
-    go-root: 'goversion'
+    go-root: "goversion"
     # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'goversion/.*'
+        pattern: "goversion/.*"
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
@@ -86,30 +86,31 @@
 - project:
     <<: *orufhrecovery_common
     name: nonrtric-rapp-orufhrecovery-consumer-sonar
-    project-name: 'nonrtric-rapp-orufhrecovery-consumer'
+    project-name: "nonrtric-rapp-orufhrecovery-consumer"
     # prescan script requires ubuntu
     # golang is only on docker-enabled nodes
     build-node: ubuntu1804-docker-4c-4g
-    sonar-prescan-script: !include-raw-escape: prescan-oruclosedloopconsumer-ubuntu.sh
+    sonar-prescan-script: !include-raw-escape:
+      - prescan-oruclosedloopconsumer-ubuntu.sh
     sonar-project-file: ""
     java-version: openjdk11
     # use sonarcloud values from defaults.yaml
     sonar-properties: |
-        # Required metadata
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey=nonrtric-rapp-orufhrecovery-consumer
-        sonar.organization={sonarcloud_project_organization}
-        # Encoding
-        sonar.build.sourceEncoding=UTF-8
-        # Language
-        sonar.language=go
-        # Source
-        sonar.sources=.
-        # Unit tests
-        sonar.go.coverage.reportPaths=goversion/coverage.txt
-        # Inclusions
-        sonar.inclusions=goversion/internal/**/**.go,goversion/**.go
-        # Exclusions
-        sonar.exclusions=goversion/mocks/**.go,goversion/internal/**/**_test.go,goversion/**_test.go,goversion/simulator/**.go
+      # Required metadata
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey=nonrtric-rapp-orufhrecovery-consumer
+      sonar.organization={sonarcloud_project_organization}
+      # Encoding
+      sonar.build.sourceEncoding=UTF-8
+      # Language
+      sonar.language=go
+      # Source
+      sonar.sources=.
+      # Unit tests
+      sonar.go.coverage.reportPaths=goversion/coverage.txt
+      # Inclusions
+      sonar.inclusions=goversion/internal/**/**.go,goversion/**.go
+      # Exclusions
+      sonar.exclusions=goversion/mocks/**.go,goversion/internal/**/**_test.go,goversion/**_test.go,goversion/simulator/**.go
     jobs:
       - gerrit-sonar-prescan-script

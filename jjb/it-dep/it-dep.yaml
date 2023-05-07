@@ -13,8 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _it_dep_common: &it_dep_common
-    # values apply to all it/dep projects
+- _it_dep_common: &it_dep_common # values apply to all it/dep projects
     name: it-dep-docker-common
     # git repo
     project: it/dep
@@ -23,7 +22,7 @@
     # maven settings file has docker credentials
     mvn-settings: it-dep-settings
     # use host network to clone from our gerrit
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     # source of docker tag
     container-tag-method: yaml-file
 
@@ -34,9 +33,9 @@
     name: it-dep-helm
     # jenkins job name prefix
     build-timeout: 120
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # dockerfile is in subdir
     docker-build-args: -f ci/Dockerfile
     # any tag will do
@@ -46,7 +45,7 @@
       - gerrit-docker-verify
     stream:
       - all:
-          branch: '*'
+          branch: "*"
 
 - project:
     <<: *it_dep_common
@@ -55,9 +54,9 @@
     name: it-dep-smo-install
     # jenkins job name prefix
     build-timeout: 120
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # dockerfile is in subdir
     docker-build-args: -f ci/Dockerfile-smo-install
     # any tag will do
@@ -67,23 +66,23 @@
       - gerrit-docker-verify
     stream:
       - all:
-          branch: '*'
+          branch: "*"
 
 # build and publish packages to PackageCloud.io
 - project:
     <<: *it_dep_common
     name: it-dep-package
     # jenkins job name prefix
-    project-name: '{name}'
+    project-name: "{name}"
     # image is not pushed, use trivial tag
     container-tag-method: latest
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # use host network for network resources
-    docker-build-args: '--network=host -f ci/Dockerfile-package'
+    docker-build-args: "--network=host -f ci/Dockerfile-package"
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'ci/package-tag.yaml'
+        pattern: "ci/package-tag.yaml"
     jobs:
       - gerrit-docker-verify
       - oran-gerrit-docker-ci-pc-merge
@@ -95,17 +94,17 @@
     <<: *it_dep_common
     name: it-dep-secret
     # jenkins job name prefix
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # root of docker build
     docker-root: ci/tiller-secret-gen
     # build only on relevant changes
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '{docker-root}/.*'
+        pattern: "{docker-root}/.*"
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
@@ -114,16 +113,16 @@
     <<: *it_dep_common
     name: it-dep-init
     # jenkins job name prefix
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # root of docker build
     docker-root: ric-common/Initcontainer/docker
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '{docker-root}/.*'
+        pattern: "{docker-root}/.*"
     jobs:
-      - '{project-name}-gerrit-docker-jobs'
+      - "{project-name}-gerrit-docker-jobs"
     stream:
       - master:
           branch: master
@@ -135,12 +134,11 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
-
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *it_dep_common
     name: it-dep-packagecloud-release
     jobs:
-      - 'gerrit-packagecloud-release-verify'
-      - 'gerrit-packagecloud-release-merge'
+      - "gerrit-packagecloud-release-verify"
+      - "gerrit-packagecloud-release-merge"

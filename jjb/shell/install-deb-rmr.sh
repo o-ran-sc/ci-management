@@ -42,7 +42,7 @@ if [[ -z $ver ]]; then
 fi
 # default to release repo; accept override to use staging repo
 repo=${repo:-"release"}
-# 
+#
 for deb in "rmr_${ver}_amd64.deb" "rmr-dev_${ver}_amd64.deb"; do
     wget -nv --content-disposition "https://packagecloud.io/o-ran-sc/${repo}/packages/debian/stretch/${deb}/download.deb"
     sudo dpkg -i "${deb}"

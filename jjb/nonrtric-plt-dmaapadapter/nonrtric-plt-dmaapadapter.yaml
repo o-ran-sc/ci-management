@@ -46,8 +46,8 @@
 - project:
     <<: *dmaapadapter_jdk_common
     name: nonrtric-plt-dmaapadapter
-    project-name: '{name}'
-    mvn-opts: '-Ddocker.skip=true'
+    project-name: "{name}"
+    mvn-opts: "-Ddocker.skip=true"
     build-node: ubuntu1804-builder-4c-4g
     jobs:
       - gerrit-maven-stage
@@ -69,17 +69,17 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *dmaapadapter_jdk_common
     name: nonrtric-plt-dmaapadapter-sonar
     project-name: nonrtric-plt-dmaapadapter
     # template goal install builds docker image unnecessarily
-    mvn-params: '-Ddocker.skip=true'
+    mvn-params: "-Ddocker.skip=true"
     sonarcloud: true
-    sonarcloud-api-token: '{sonarcloud_api_token}'
-    sonarcloud-project-key: 'nonrtric-plt-dmaapadapter'
-    sonarcloud-project-organization: '{sonarcloud_project_organization}'
+    sonarcloud-api-token: "{sonarcloud_api_token}"
+    sonarcloud-project-key: "nonrtric-plt-dmaapadapter"
+    sonarcloud-project-organization: "{sonarcloud_project_organization}"
     jobs:
       - gerrit-maven-sonar

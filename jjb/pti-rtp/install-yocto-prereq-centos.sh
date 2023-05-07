@@ -25,10 +25,10 @@ pkgs="gawk make wget tar bzip2 gzip python unzip perl patch \
      diffutils diffstat cpp gcc gcc-c++ glibc-devel texinfo chrpath socat \
      perl-Data-Dumper perl-Text-ParseWords perl-Thread-Queue perl-Digest-SHA \
      python3-pip xz which SDL-devel xterm"
-echo "INFO: installing epel-release and packages $pkgs"
+echo "INFO: installing epel-release and packages ${pkgs}"
 sudo yum install -y epel-release \
   && sudo yum makecache \
-  && sudo yum install -y $pkgs
+  && sudo yum install -y "${pkgs}"
 
 git config --global user.name "oran inf builder"
 git config --global user.email "oran.inf@windriver.com"

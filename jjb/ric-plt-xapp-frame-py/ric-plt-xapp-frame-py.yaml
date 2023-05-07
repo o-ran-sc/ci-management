@@ -33,8 +33,8 @@
     <<: *py_common
     # do not trigger on changes in docs, releases
     gerrit_trigger_file_paths:
-        - compare-type: REG_EXP
-          pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
+      - compare-type: REG_EXP
+        pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
     jobs:
       - gerrit-pypi-verify
       - gerrit-pypi-stage
@@ -48,21 +48,21 @@
     # release requires sigul which requires centos
     build-node: centos7-builder-1c-1g
     jobs:
-      - '{project-name}-gerrit-pypi-release-jobs'
+      - "{project-name}-gerrit-pypi-release-jobs"
 
 - project:
     name: ric-plt-xapp-frame-py-sonarqube
     <<: *py_common
     sonar-project-file: ""
     sonar-properties: |
-        sonar.login={sonarcloud_api_token}
-        sonar.projectKey={sonarcloud_project_organization}_{project-name}
-        sonar.projectName={project-name}
-        sonar.organization={sonarcloud_project_organization}
-        sonar.build.sourceEncoding=UTF-8
-        sonar.sources=ricxappframe
-        sonar.exclusions=setup.py,tests/*.py
-        sonar.python.coverage.reportPaths=coverage.xml
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.projectName={project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.sources=ricxappframe
+      sonar.exclusions=setup.py,tests/*.py
+      sonar.python.coverage.reportPaths=coverage.xml
     jobs:
       - gerrit-tox-sonarqube
 

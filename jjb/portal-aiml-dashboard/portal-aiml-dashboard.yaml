@@ -14,8 +14,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _aiml_dashboard_docker_common: &aiml_dashboard_docker_common
-    # values apply to all training manager projects
+- _aiml_dashboard_docker_common:
+    &aiml_dashboard_docker_common # values apply to all training manager projects
     name: portal-aiml-dashboard-docker-common
     # git repo
     project: portal/aiml-dashboard
@@ -31,19 +31,19 @@
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *aiml_dashboard_docker_common
     name: portal-aiml-dashboard-docker
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # Dockerfile is in a subdir
-    docker-root: '.'
+    docker-root: "."
     # source of docker tag
     # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     container-tag-method: yaml-file
     build-node: ubuntu1804-docker-4c-4g
     jobs:
@@ -55,15 +55,15 @@
 - project:
     <<: *aiml_dashboard_docker_common
     name: portal-aiml-notebook-docker
-    project-name: '{name}'
+    project-name: "{name}"
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # Dockerfile is in a subdir
-    docker-root: 'kf-pipelines'
-    container-tag-yaml-dir: 'kf-pipelines'
+    docker-root: "kf-pipelines"
+    container-tag-yaml-dir: "kf-pipelines"
     # source of docker tag
     # dockerfile is in subdir of docker root
-    docker-build-args: '--network=host'
+    docker-build-args: "--network=host"
     container-tag-method: yaml-file
     build-node: ubuntu1804-docker-4c-4g
     jobs:

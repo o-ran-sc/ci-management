@@ -24,12 +24,12 @@
 - project:
     <<: *dep_common
     name: ric-plt-ric-dep-chart
-    project-name: '{name}'
+    project-name: "{name}"
     build-node: ubuntu1804-builder-2c-2g
     script: "cd bin && bash verify-ric-charts"
     # limit scope to subdir with helm charts
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: 'helm/.*'
+        pattern: "helm/.*"
     jobs:
       - oran-shell-verify

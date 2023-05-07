@@ -13,8 +13,7 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _smo_o2_common: &smo_o2_common
-    # values apply to all projects
+- _smo_o2_common: &smo_o2_common # values apply to all projects
     name: smo-o2-common
     # git repo
     project: smo/o2
@@ -29,12 +28,12 @@
 - project:
     <<: *smo_o2_common
     name: smo-o2-release
-    project-name: '{name}'
+    project-name: "{name}"
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *smo_o2_common

@@ -1,3 +1,4 @@
+#!/bin/sh
 #==================================================================================
 #      Copyright (c) 2022 Samsung Electronics Co., Ltd. All Rights Reserved.
 #
@@ -19,12 +20,12 @@ echo "--> prescan-ric-app-qp-aimlfw-ubuntu.sh"
 
 docker --version
 echo "Unit Test"
-cd $WORKSPACE
+cd "${WORKSPACE}" || return
 
 
 docker build --network=host -t tmpimg --target=qpaimlfwbuild .
 CONTAINER=$(docker create tmpimg)
-docker cp $CONTAINER:/tmp/qp_cover.out cover.out
-docker rm $CONTAINER
+docker cp "${CONTAINER}":/tmp/qp_cover.out cover.out
+docker rm "${CONTAINER}"
 
 echo "--> prescan-ric-app-qp-aimlfw.sh ends"

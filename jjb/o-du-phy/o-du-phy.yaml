@@ -13,8 +13,8 @@
     jobs:
       - gerrit-info-yaml-verify
 
-- _o_du_phy_common: &o_du_phy_common
-    # values apply to all o-du/phy docker projects
+- _o_du_phy_common:
+    &o_du_phy_common # values apply to all o-du/phy docker projects
     name: o-du-phy-docker-common
     # git repo
     project: o-du/phy
@@ -28,13 +28,13 @@
     <<: *o_du_phy_common
     name: o-du-phy-package
     # jenkins job name prefix
-    project-name: '{name}'
+    project-name: "{name}"
     # image is not pushed, use trivial tag
     container-tag-method: latest
     # image name
-    docker-name: 'o-ran-sc/{name}'
+    docker-name: "o-ran-sc/{name}"
     # use host network for network resources
-    docker-build-args: '--network=host -f Dockerfile'
+    docker-build-args: "--network=host -f Dockerfile"
     jobs:
       - gerrit-docker-verify
     #  - oran-gerrit-docker-ci-pc-merge

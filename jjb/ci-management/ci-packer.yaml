@@ -16,7 +16,6 @@
 
     <<: *ci_packer_common
 
-
 - project:
     name: packer-builder-jobs
     jobs:

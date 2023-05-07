@@ -44,6 +44,7 @@ export PATH=$GOPATH/bin:$PATH
 export CFG_FILE=../config/config-file.json
 export RMR_SEED_RT=../config/uta_rtg.rt
 
+# shellcheck disable=SC2034
 GO111MODULE=on GO_ENABLED=0 GOOS=linux
 
 # setup version tag
@@ -51,9 +52,11 @@ if [ -f container-tag.yaml ]
 then
     tag=$(grep "tag:" container-tag.yaml | awk '{print $2}')
 else
+    # shellcheck disable=SC2034
     tag="no-tag-found"
 fi
 
+# shellcheck disable=SC2034
 hash=$(git rev-parse --short HEAD || true)
 
 # Build
