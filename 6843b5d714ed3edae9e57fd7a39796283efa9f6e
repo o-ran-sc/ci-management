@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e27d3f27_28ecb42b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-05-09T13:42:03Z",
+      "side": 1,
+      "message": "Forcing verified since this is required to fix the urllib issue",
+      "revId": "6843b5d714ed3edae9e57fd7a39796283efa9f6e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
