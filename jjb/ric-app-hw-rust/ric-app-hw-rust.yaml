@@ -5,8 +5,7 @@
     views:
       - project-view
 
-- hw-rust_common: &hw-rust_common
-    # values apply to all projects
+- _hw-rust_common: &hw-rust_common # values apply to all projects
     name: hw-rust-common
     # git repo
     project: ric-app/hw-rust
