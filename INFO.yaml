@@ -88,6 +88,11 @@ committers:
     company: "The Linux Foundation"
     id: "jwagantall"
     timezone: "America/Los_Angeles"
+  - name: "Joseph Thaliath"
+    email: "jo.thaliath@samsung.com"
+    id: "josephthaliath"
+    company: "samsung electronics"
+    timezone: "Asia/Seoul"
 tsc:
   # yamllint disable rule:line-length
   approval: "https://wiki.o-ran-sc.org/display/TOC"
@@ -107,3 +112,6 @@ tsc:
     - type: "Addition"
       link: "ORANSC TOC 20220505 3.a.i AIMLFW PTL"
       name: "Hoejoo Lee"
+    - type: "Addition"
+      link: "ORANSC TOC 20220505 3.a.i AIMLFW PTL"
+      name: "Joseph Thaliath"
