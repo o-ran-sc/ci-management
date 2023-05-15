@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bc59c99_f01e8da1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2023-05-15T16:19:03Z",
+      "side": 1,
+      "message": "The approval link dates to 2022. \nYou need to request a more recent TSC approval",
+      "revId": "1bc79795a32a707961b514ac8bf9839d7153d584",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
