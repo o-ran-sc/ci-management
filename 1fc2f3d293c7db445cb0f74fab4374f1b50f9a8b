@@ -50,6 +50,23 @@
       "message": "recheck",
       "revId": "1fc2f3d293c7db445cb0f74fab4374f1b50f9a8b",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17dff4fb_ebaa122b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2023-05-16T19:58:00Z",
+      "side": 1,
+      "message": "I need to submit a proper fix for https://jenkins.o-ran-sc.org/job/ci-management-jjb-deploy-job/\n\nthe verify job is working fine in Jenkins. GHA might have a small issue, will need to overrite for now.",
+      "revId": "1fc2f3d293c7db445cb0f74fab4374f1b50f9a8b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
