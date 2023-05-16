@@ -16,6 +16,23 @@
       "message": "jjb-deploy *pm-file-converter*",
       "revId": "1fc2f3d293c7db445cb0f74fab4374f1b50f9a8b",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09015a28_a9d62171",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-05-16T18:39:05Z",
+      "side": 1,
+      "message": "2 Issues: \n\n* jjb-deploy to sandbox fails (urllib3 SSH issue) \n** ref: https://jenkins.o-ran-sc.org/view/ci-management/job/ci-management-jjb-deploy-job/441/console\n* Github \"gerrit-verify\" action fails to find patchsets\n** ref: https://github.com/o-ran-sc/ci-management/actions/runs/4995408056/jobs/8947240065",
+      "revId": "1fc2f3d293c7db445cb0f74fab4374f1b50f9a8b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
