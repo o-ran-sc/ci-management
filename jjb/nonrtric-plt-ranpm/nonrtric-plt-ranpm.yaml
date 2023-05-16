@@ -94,3 +94,29 @@
     stream:
       - master:
           branch: master
+
+- project:
+    <<: *nonrtric_plt_ranpm_jdk_common
+    name: nonrtric-plt-ranpm-pm-file-converter
+    project-name: "{name}"
+    # image name
+    docker-name: "o-ran-sc/nonrtric-plt-ranpm-pm-file-converter"
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: "--network=host"
+    # Directory with Dockerfile
+    docker-root: "pm-file-converter"
+    # Directory where go test should be run
+    go-root: "pm-file-converter"
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+      - pattern: 'pm-file-converter/.*'
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+      - gerrit-go-verify
+    stream:
+      - master:
+          branch: master
