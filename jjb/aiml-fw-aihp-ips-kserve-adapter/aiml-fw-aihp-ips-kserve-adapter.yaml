@@ -13,3 +13,41 @@
     branch: master
     jobs:
       - gerrit-info-yaml-verify
+
+- _aiml_kserve_adapter_docker_common:
+    &aiml_kserve_adapter_docker_common # values apply to all kserve adapter projects
+    name: aiml-fw-kserve-adapter-docker-common
+    # git repo
+    project: aiml-fw/aihp/ips/kserve-adapter
+    # jenkins job name prefix
+    project-name: aiml-fw-aihp-ips-kserve-adapter
+    # maven settings file has docker credentials
+    mvn-settings: aiml-fw-aihp-ips-kserve-adapter
+
+- project:
+    <<: *aiml_kserve_adapter_docker_common 
+    name: aiml-fw-aihp-ips-kserve-adapter-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - "{project-name}-gerrit-release-jobs"
+
+- project:
+    <<: *aiml_kserve_adapter_docker_common
+    name: aiml-fw-aihp-ips-kserve-adapter-docker
+    project-name: "{name}"
+    # image name
+    docker-name: "o-ran-sc/{name}"
+    # Dockerfile is in a subdir
+    docker-root: "."
+    # source of docker tag
+    # dockerfile is in subdir of docker root
+    docker-build-args: "--network=host"
+    container-tag-method: yaml-file
+    build-node: ubuntu1804-docker-4c-4g
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
