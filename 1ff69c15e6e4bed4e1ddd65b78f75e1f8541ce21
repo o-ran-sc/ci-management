@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0ce539c_df219d9d",
+        "filename": "jjb/ci-management/ci-packer.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1001460
+      },
+      "writtenOn": "2023-05-31T00:18:50Z",
+      "side": 1,
+      "message": "please remove extra blank spaces",
+      "revId": "1ff69c15e6e4bed4e1ddd65b78f75e1f8541ce21",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
