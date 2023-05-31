@@ -16,6 +16,24 @@
       "message": "please remove extra blank spaces",
       "revId": "1ff69c15e6e4bed4e1ddd65b78f75e1f8541ce21",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4f3837d_072bef79",
+        "filename": "jjb/ci-management/ci-packer.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2023-05-31T00:21:33Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a0ce539c_df219d9d",
+      "revId": "1ff69c15e6e4bed4e1ddd65b78f75e1f8541ce21",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
