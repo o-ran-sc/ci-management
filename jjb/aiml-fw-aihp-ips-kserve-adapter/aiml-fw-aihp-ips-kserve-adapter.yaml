@@ -22,7 +22,7 @@
     # jenkins job name prefix
     project-name: aiml-fw-aihp-ips-kserve-adapter
     # maven settings file has docker credentials
-    mvn-settings: aiml-fw-aihp-ips-kserve-adapter-settings
+    mvn-settings: aiml-fw-aihp-ips-kserve-adapter
 
 - project:
     <<: *aiml_kserve_adapter_docker_common
