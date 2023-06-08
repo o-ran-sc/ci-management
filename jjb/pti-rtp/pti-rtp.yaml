@@ -33,7 +33,6 @@
     # runs about 50~80 minutes
     build-timeout: 120
     script: !include-raw-escape:
-      - install-yocto-prereq-centos.sh
       - verify-inf.sh
     jobs:
       - oran-shell-verify
@@ -44,7 +43,6 @@
     # runs about 50~80 minutes
     build-timeout: 120
     script: !include-raw-escape:
-      - install-yocto-prereq-centos.sh
       - verify-inf.sh
     jobs:
       - oran-shell-merge
@@ -57,7 +55,6 @@
     # runs about 48 hours
     build-timeout: 2880
     script: !include-raw-escape:
-      - install-yocto-prereq-centos.sh
       - build-inf.sh
       - upload-inf.sh
     jobs:
