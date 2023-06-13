@@ -16,6 +16,24 @@
       "message": "These both have an extra \u0027Z\u0027 in the image name.",
       "revId": "c0d8a73966d78600a8f63e9cc39161560955097f",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6defef54_42cf17bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2023-06-13T23:09:44Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "4b388fa6_103d933a",
+      "revId": "c0d8a73966d78600a8f63e9cc39161560955097f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
