@@ -33,6 +33,23 @@
       "message": "jjb-deploy xapp-frame-cpp-verify",
       "revId": "86bb9cb37b35ce81e70e3d31e7216acc75366767",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cfcbe9c_5ea65d5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000108
+      },
+      "writtenOn": "2023-06-14T14:08:53Z",
+      "side": 1,
+      "message": "jjb-deploy *xapp-frame-cpp-r*",
+      "revId": "86bb9cb37b35ce81e70e3d31e7216acc75366767",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
