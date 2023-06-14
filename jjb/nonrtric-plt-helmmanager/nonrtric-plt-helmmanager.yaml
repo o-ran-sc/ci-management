@@ -35,11 +35,14 @@
       - master:
           branch: master
       - f-release:
+          # keep f release jobs for now since that is the last release
           java-version: openjdk11
           branch: f-release
       - g-release:
           java-version: openjdk11
           branch: g-release
+      - h-release:
+          branch: h-release
 
 # nonrtric:helmmanager
 # Maven artifacts for helmmanager
@@ -56,11 +59,14 @@
       - master:
           branch: master
       - f-release:
+          # keep f release jobs for now since that is the last release
           java-version: openjdk11
           branch: f-release
       - g-release:
           java-version: openjdk11
           branch: g-release
+      - h-release:
+          branch: h-release
 
 - project:
     <<: *helmmanager_jdk_common

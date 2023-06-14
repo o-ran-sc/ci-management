@@ -54,6 +54,8 @@
     stream:
       - master:
           branch: master
+      - h-release:
+          branch: h-release
 
 # Jobs for nonrtric-plt-ranpm-pmproducer
 - project:
@@ -74,6 +76,8 @@
     stream:
       - master:
           branch: master
+      - h-release:
+          branch: h-release
 
 # Jobs for nonrtric-plt-ranpm-influxlogger
 - project:
@@ -94,6 +98,8 @@
     stream:
       - master:
           branch: master
+      - h-release:
+          branch: h-release
 
 - project:
     <<: *nonrtric_plt_ranpm_jdk_common
@@ -120,3 +126,5 @@
     stream:
       - master:
           branch: master
+      - h-release:
+          branch: h-release
