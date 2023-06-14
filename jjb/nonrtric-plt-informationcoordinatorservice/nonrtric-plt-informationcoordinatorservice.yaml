@@ -35,12 +35,11 @@
     stream:
       - master:
           branch: master
-      - f-release:
-          java-version: openjdk11
-          branch: f-release
       - g-release:
           java-version: openjdk11
           branch: g-release
+      - h-release:
+          branch: h-release
 
 # nonrtric:informationcoordinatorservice
 # Maven artifacts for nonrtric-plt-informationcoordinatorservice
@@ -56,12 +55,11 @@
     stream:
       - master:
           branch: master
-      - f-release:
-          java-version: openjdk11
-          branch: f-release
       - g-release:
           java-version: openjdk11
           branch: g-release
+      - h-release:
+          branch: h-release
 
 - project:
     <<: *informationcoordinatorservice_jdk_common
