@@ -37,10 +37,10 @@
     stream:
       - master:
           branch: master
-      - f-release:
-          branch: f-release
       - g-release:
           branch: g-release
+      - g-release:
+          branch: h-release
     jobs:
       - "{project-name}-gerrit-docker-jobs"
 

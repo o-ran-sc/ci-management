@@ -35,11 +35,14 @@
       - master:
           branch: master
       - f-release:
+          # will keep f release for now since that is the previous release
           java-version: openjdk11
           branch: f-release
       - g-release:
           java-version: openjdk11
           branch: g-release
+      - h-release:
+          branch: h-release
 
 # nonrtric:rappcatalogue
 # Maven artifacts for rappcatalogue
@@ -56,11 +59,14 @@
       - master:
           branch: master
       - f-release:
+          # will keep f release for now since that is the previous release
           java-version: openjdk11
           branch: f-release
       - g-release:
           java-version: openjdk11
           branch: g-release
+      - h-release:
+          branch: h-release
 
 - project:
     <<: *rappcatalogue_jdk_common
@@ -84,6 +90,7 @@
     jobs:
       - gerrit-maven-sonar
 
+
 - project:
     <<: *rappcatalogue_jdk_common
     name: nonrtric-plt-rappcatalogue-enhanced-verify
@@ -103,6 +110,8 @@
           branch: master
       - g-release:
           branch: g-release
+      - h-release:
+          branch: h-release
     jobs:
       - gerrit-tox-verify
 
@@ -128,6 +137,8 @@
           branch: master
       - g-release:
           branch: g-release
+      - h-release:
+          branch: h-release
     jobs:
       - "{project-name}-gerrit-docker-jobs"
 
