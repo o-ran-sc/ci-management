@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9fe7c19_a36acf12",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000108
+      },
+      "writtenOn": "2023-06-14T15:34:45Z",
+      "side": 1,
+      "message": "jjb-deploy *xapp-frame-cpp-cmake-verify-m*",
+      "revId": "b5e2856e411ad52b078054d1e3bd18643dcf0453",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
