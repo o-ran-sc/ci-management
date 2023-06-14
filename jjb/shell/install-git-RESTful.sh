@@ -86,7 +86,7 @@ cd ../../
 sudo git clone https://github.com/nlohmann/json.git && cd json && sudo cmake . && sudo make install
 cd ../
 #install json-schema-validator
-sudo git clone https://github.com/pboettch/json-schema-validator.git && cd json-schema-validator &&sudo mkdir build &&cd build && sudo cmake .. && sudo make install
+sudo git clone https://github.com/pboettch/json-schema-validator.git && cd json-schema-validator && sudo git checkout cae6fad80001510077a7f40e68477a31ec443add  &&sudo mkdir build &&cd build && sudo cmake .. && sudo make install
 cd ../
 
 
