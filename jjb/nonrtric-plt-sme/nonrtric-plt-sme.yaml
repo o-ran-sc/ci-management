@@ -66,6 +66,8 @@
           branch: master
       - g-release:
           branch: g-release
+      - h-release:
+          branch: h-release
 
 - project:
     <<: *nonrtric_plt_sme_common
