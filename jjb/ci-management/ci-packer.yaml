@@ -46,3 +46,27 @@
       - centos-cs-9
       - ubuntu-18.04
       - ubuntu-20.04
+
+- project:
+    name: packer-devstack-jobs
+    jobs:
+      - gerrit-packer-merge
+
+    <<: *ci_packer_common
+
+    templates: devstack
+    platforms:
+      - centos-cs-8
+      - centos-cs-9
+
+- project:
+    name: packer-devstack-pre-pip-yoga-jobs
+    jobs:
+      - gerrit-packer-merge
+
+    <<: *ci_packer_common
+
+    templates: devstack-pre-pip-yoga
+    platforms:
+      - centos-cs-8
+      - centos-cs-9
