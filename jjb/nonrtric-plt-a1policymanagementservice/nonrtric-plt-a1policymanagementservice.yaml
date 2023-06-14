@@ -34,12 +34,11 @@
     stream:
       - master:
           branch: master
-      - f-release:
-          java-version: openjdk11
-          branch: f-release
       - g-release:
           java-version: openjdk11
           branch: g-release
+      - h-release:
+          branch: h-release
 
 # nonrtric:a1policymanagementservice/
 # Maven artifacts for nonrtric-plt-a1policymanagementservice/
@@ -55,12 +54,11 @@
     stream:
       - master:
           branch: master
-      - f-release:
-          java-version: openjdk11
-          branch: f-release
       - g-release:
           java-version: openjdk11
           branch: g-release
+      - h-release:
+          branch: h-release
 
 - project:
     <<: *a1policymanagementservice_jdk_common

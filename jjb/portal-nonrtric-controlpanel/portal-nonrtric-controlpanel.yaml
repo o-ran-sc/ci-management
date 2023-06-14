@@ -55,6 +55,8 @@
       - g-release:
           java-version: openjdk11
           branch: g-release
+      - h-release:
+          branch: h-release
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
@@ -113,6 +115,8 @@
       - g-release:
           java-version: openjdk11
           branch: g-release
+      - h-release:
+          branch: h-release
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
@@ -135,3 +139,5 @@
       - g-release:
           java-version: openjdk11
           branch: g-release
+      - h-release:
+          branch: h-release
