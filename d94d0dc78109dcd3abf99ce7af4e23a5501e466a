@@ -16,6 +16,23 @@
       "message": "jjb-deploy *xapp-frame-cpp-cmake-verify-m*",
       "revId": "d94d0dc78109dcd3abf99ce7af4e23a5501e466a",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c999d89_82c0d56c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000108
+      },
+      "writtenOn": "2023-06-15T11:03:31Z",
+      "side": 1,
+      "message": "could you merge this?\n\nI tested this with the sandbox in https://jenkins.o-ran-sc.org/sandbox/view/All/job/ric-plt-xapp-frame-cpp-cmake-verify-master/",
+      "revId": "d94d0dc78109dcd3abf99ce7af4e23a5501e466a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
