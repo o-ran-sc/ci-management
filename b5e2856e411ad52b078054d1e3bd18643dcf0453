@@ -39,6 +39,30 @@
       },
       "revId": "b5e2856e411ad52b078054d1e3bd18643dcf0453",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f677580_d497ae3f",
+        "filename": "jjb/ric-plt-xapp-frame-cpp/ric-plt-xapp-frame-cpp.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000108
+      },
+      "writtenOn": "2023-06-15T11:06:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "077c239e_65911dc9",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 0
+      },
+      "revId": "b5e2856e411ad52b078054d1e3bd18643dcf0453",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
