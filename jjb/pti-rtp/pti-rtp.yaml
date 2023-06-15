@@ -68,3 +68,5 @@
           branch: g-release
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
