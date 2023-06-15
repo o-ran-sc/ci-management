@@ -175,12 +175,11 @@
     stream:
       - master:
           branch: master
-      - f-release:
-          java-version: openjdk11
-          branch: f-release
       - g-release:
           java-version: openjdk11
           branch: g-release
+      - h-release:
+          branch: h-release
 
 - project:
     <<: *nonrtric_jdk_common
