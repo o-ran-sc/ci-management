@@ -1,0 +1,16 @@
+---
+- project:
+    name: nonrtric-plt-rappmanager-project-view
+    project-name: nonrtric-plt-rappmanager
+    views:
+      - project-view
+
+- project:
+    name: nonrtric-plt-rappmanager-info
+    project: nonrtric/plt/rappmanager
+    project-name: nonrtric-plt-rappmanager
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
+
