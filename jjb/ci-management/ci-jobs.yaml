@@ -18,8 +18,10 @@
       - gerrit-jenkins-cfg-verify
       - gerrit-jenkins-sandbox-cleanup
       - gerrit-jjb-deploy-job
-      - gerrit-jjb-merge
-      - gerrit-jjb-verify
+      - gerrit-jjb-merge:
+          disable-job: true
+      - gerrit-jjb-verify:
+          disable-job: true
 
     <<: *ci_jobs_common
 
