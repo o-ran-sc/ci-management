@@ -8,6 +8,7 @@
     build-node: centos7-builder-1c-1g
     build-timeout: 90
     cron: "00 H 1 * *"
+    packer-cloud-settings: packer-cloud-env-hcl
 
 - project:
     name: packer-verify
