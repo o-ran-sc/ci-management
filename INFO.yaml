@@ -87,7 +87,7 @@ committers:
     email: "jwagantall@linuxfoundation.org"
     company: "The Linux Foundation"
     id: "jwagantall"
-    timezone: "America/Los_Angeles"
+    timezone: ""
 tsc:
   # yamllint disable rule:line-length
   approval: "https://wiki.o-ran-sc.org/display/TOC"
