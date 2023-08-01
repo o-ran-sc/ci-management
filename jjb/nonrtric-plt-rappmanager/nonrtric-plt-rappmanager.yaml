@@ -13,3 +13,49 @@
     branch: master
     jobs:
       - gerrit-info-yaml-verify
+
+- _nonrtric_jdk_common: &rappmanager_jdk_common
+    name: rappmanager-jdk-common
+    # git repo
+    project: nonrtric/plt/rappmanager
+    # jenkins job name prefix
+    project-name: nonrtric-plt-rappmanager
+    # maven settings file has docker credentials
+    mvn-settings: nonrtric-plt-rappmanager-settings
+    mvn-version: mvn36
+    java-version: openjdk17
+
+- project:
+    <<: *rappmanager_jdk_common
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
+
+# nonrtric:rappmanager/
+# Maven artifacts for nonrtric-plt-rappmanager/
+- project:
+    <<: *rappmanager_jdk_common
+    name: nonrtric-plt-rappmanager
+    project-name: "{name}"
+    mvn-opts: "-Ddocker.skip=true"
+    build-node: ubuntu1804-builder-4c-4g
+    jobs:
+      - gerrit-maven-stage
+      - gerrit-maven-clm
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *rappmanager_jdk_common
+    name: nonrtric-plt-rappmanager-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - "{project-name}-gerrit-release-jobs"
