@@ -58,3 +58,7 @@
 - project:
     name: bldr-ubuntu20-c-go
     <<: *it_dev_docker_common
+
+- project:
+    name: bldr-ubuntu22-c-go
+    <<: *it_dev_docker_common
