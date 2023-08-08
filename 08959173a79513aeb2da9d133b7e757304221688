@@ -50,6 +50,23 @@
       "message": "Successful build in sandbox https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-rappmanager-maven-docker-verify-master-mvn36-openjdk17/5/",
       "revId": "08959173a79513aeb2da9d133b7e757304221688",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8577b314_029ce0b7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001877
+      },
+      "writtenOn": "2023-08-08T10:40:27Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-plt-rappmanager*",
+      "revId": "08959173a79513aeb2da9d133b7e757304221688",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
