@@ -67,6 +67,23 @@
       "message": "jjb-deploy nonrtric-plt-rappmanager*",
       "revId": "08959173a79513aeb2da9d133b7e757304221688",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc493771_eacda355",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2023-08-08T16:48:36Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "08959173a79513aeb2da9d133b7e757304221688",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
