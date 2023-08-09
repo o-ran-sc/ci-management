@@ -16,6 +16,46 @@
       "message": "jjb-deploy nonrtric-plt-ranpm-pm-file-converter-sonar",
       "revId": "1f6b75fa21a8d65a4fd762f2594bcf7415530ec2",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd1efe42_d8667c5c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001589
+      },
+      "writtenOn": "2023-08-09T15:14:21Z",
+      "side": 1,
+      "message": "left 1 minor comment",
+      "revId": "1f6b75fa21a8d65a4fd762f2594bcf7415530ec2",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1edfecb0_dd3fda34",
+        "filename": "jjb/nonrtric-plt-ranpm/prescan-pm-file-converter-ubuntu.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1001589
+      },
+      "writtenOn": "2023-08-09T15:14:21Z",
+      "side": 1,
+      "message": "you could change this to 2023",
+      "range": {
+        "startLine": 4,
+        "startChar": 18,
+        "endLine": 4,
+        "endChar": 22
+      },
+      "revId": "1f6b75fa21a8d65a4fd762f2594bcf7415530ec2",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
