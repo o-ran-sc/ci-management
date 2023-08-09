@@ -128,3 +128,21 @@
           branch: master
       - h-release:
           branch: h-release
+
+# Jobs for nonrtric-plt-ranpm-pm-file-converter SONAR
+- project:
+    <<: *nonrtric_plt_ranpm_jdk_common
+    name: nonrtric-plt-ranpm-pm-file-converter-sonar
+    # prescan script requires ubuntu
+    # golang is only on docker-enabled nodes
+    build-node: ubuntu1804-docker-4c-4g
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "pm-file-converter/.*"
+    sonar-prescan-script: !include-raw-escape: prescan-pm-file-converter-ubuntu.sh
+    sonar-project-file: ""
+    java-version: openjdk11
+    # use sonarcloud values from defaults.yaml
+    sonar-properties: !include-raw-escape: sonar-project.properties
+    jobs:
+      - gerrit-sonar-prescan-script
