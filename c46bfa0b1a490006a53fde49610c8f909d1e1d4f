@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9553a359_6c5232ee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-08-09T16:29:50Z",
+      "side": 1,
+      "message": "jjb-deploy *nonrtric-plt-ranpm-pm-file-converter*",
+      "revId": "c46bfa0b1a490006a53fde49610c8f909d1e1d4f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
