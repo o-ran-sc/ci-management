@@ -146,3 +146,16 @@
     sonar-properties: !include-raw-escape: sonar-project.properties
     jobs:
       - gerrit-sonar-prescan-script
+
+- project:
+    <<: *nonrtric_plt_ranpm_jdk_common
+    name: nonrtric-plt-ranpm-datafilecollector-sonar
+    project-name: nonrtric-plt-ranpm-datafilecollector
+    # template goal install builds docker image unnecessarily
+    mvn-params: "-Ddocker.skip=true"
+    sonarcloud: true
+    sonarcloud-api-token: "{sonarcloud_api_token}"
+    sonarcloud-project-key: "nonrtric-plt-ranpm-datafilecollector"
+    sonarcloud-project-organization: "{sonarcloud_project_organization}"
+    jobs:
+      - gerrit-maven-sonar
