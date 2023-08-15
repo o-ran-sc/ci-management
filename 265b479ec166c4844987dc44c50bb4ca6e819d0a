@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric-plt-ranpm-pm-file-converter-sonar",
       "revId": "265b479ec166c4844987dc44c50bb4ca6e819d0a",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7b5311e_111d2d73",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002202
+      },
+      "writtenOn": "2023-08-15T12:50:09Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-plt-ranpm-datafilecollector-sonar",
+      "revId": "265b479ec166c4844987dc44c50bb4ca6e819d0a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
