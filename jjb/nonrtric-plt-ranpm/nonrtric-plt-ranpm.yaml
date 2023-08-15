@@ -133,6 +133,7 @@
 - project:
     <<: *nonrtric_plt_ranpm_jdk_common
     name: nonrtric-plt-ranpm-pm-file-converter-sonar
+    project-name: nonrtric-plt-ranpm-pm-file-converter
     # prescan script requires ubuntu
     # golang is only on docker-enabled nodes
     build-node: ubuntu1804-docker-4c-4g
@@ -155,7 +156,7 @@
     mvn-params: "-Ddocker.skip=true"
     sonarcloud: true
     sonarcloud-api-token: "{sonarcloud_api_token}"
-    sonarcloud-project-key: "nonrtric-plt-ranpm-datafilecollector"
+    sonarcloud-project-key: "{sonarcloud_project_organization}_{project-name}"
     sonarcloud-project-organization: "{sonarcloud_project_organization}"
     jobs:
       - gerrit-maven-sonar
