@@ -144,7 +144,17 @@
     sonar-project-file: ""
     java-version: openjdk11
     # use sonarcloud values from defaults.yaml
-    sonar-properties: !include-raw-escape: sonar-project.properties
+    sonar-properties: |
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.projectName={project-name}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.language=go
+      sonar.sources=.
+      sonar.go.coverage.reportPaths=pm-file-converter/coverage.txt
+      sonar.inclusions=pm-file-converter/main.go,pm-file-converter/common/**/**.go,pm-file-converter/components/**/**.go
+      sonar.exclusions=pm-file-converter/components/xmltransform/xmltransform_test.go
     jobs:
       - gerrit-sonar-prescan-script
 
@@ -154,9 +164,12 @@
     project-name: nonrtric-plt-ranpm-datafilecollector
     # template goal install builds docker image unnecessarily
     mvn-params: "-Ddocker.skip=true"
-    sonarcloud: true
-    sonarcloud-api-token: "{sonarcloud_api_token}"
-    sonarcloud-project-key: "{sonarcloud_project_organization}_{project-name}"
-    sonarcloud-project-organization: "{sonarcloud_project_organization}"
+    cron: "30 13 * * * "
+    sonar-properties: |
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.projectName={project-name}
+      sonar.build.sourceEncoding=UTF-8
     jobs:
       - gerrit-maven-sonar
