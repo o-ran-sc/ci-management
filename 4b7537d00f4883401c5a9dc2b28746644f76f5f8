@@ -22,6 +22,30 @@
       },
       "revId": "4b7537d00f4883401c5a9dc2b28746644f76f5f8",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f500d8b9_9d450130",
+        "filename": "jjb/nonrtric-plt-ranpm/nonrtric-plt-ranpm.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-08-17T10:59:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fd5283db_24121995",
+      "range": {
+        "startLine": 167,
+        "startChar": 4,
+        "endLine": 167,
+        "endChar": 24
+      },
+      "revId": "4b7537d00f4883401c5a9dc2b28746644f76f5f8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
