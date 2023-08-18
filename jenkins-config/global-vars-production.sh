@@ -12,3 +12,4 @@ SIGUL_BRIDGE_IP=54.71.144.162
 SIGUL_KEY=oran-release-2022
 SILO=production
 MASTER_RTD_PROJECT=doc
+SONAR_URL=https://sonarcloud.io
