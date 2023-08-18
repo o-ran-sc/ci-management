@@ -163,7 +163,10 @@
     name: nonrtric-plt-ranpm-datafilecollector-sonar
     project-name: nonrtric-plt-ranpm-datafilecollector
     # template goal install builds docker image unnecessarily
-    mvn-params: "-Ddocker.skip=true"
+    mvn-params: "-f datafilecollector -Ddocker.skip=true"
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "datafilecollector/.*"
     sonar-properties: |
       sonar.login={sonarcloud_api_token}
       sonar.projectKey={sonarcloud_project_organization}_{project-name}
