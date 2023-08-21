@@ -167,11 +167,9 @@
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: "datafilecollector/.*"
-    sonar-properties: |
-      sonar.login={sonarcloud_api_token}
-      sonar.projectKey={sonarcloud_project_organization}_{project-name}
-      sonar.organization={sonarcloud_project_organization}
-      sonar.projectName={project-name}
-      sonar.build.sourceEncoding=UTF-8
+    sonarcloud: true
+    sonarcloud-api-token: "{sonarcloud_api_token}"
+    sonarcloud-project-key: "nonrtric-plt-ranpm-datafilecollector"
+    sonarcloud-project-organization: "{sonarcloud_project_organization}"
     jobs:
       - gerrit-maven-sonar
