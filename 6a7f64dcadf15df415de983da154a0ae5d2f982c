@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52576bbe_1b045b25",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-08-21T15:32:51Z",
+      "side": 1,
+      "message": "Double check the name, group, artifact ID, description in pom file before merging.",
+      "revId": "6a7f64dcadf15df415de983da154a0ae5d2f982c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
