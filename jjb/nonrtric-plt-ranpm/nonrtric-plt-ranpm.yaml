@@ -173,3 +173,35 @@
     sonarcloud-project-organization: "{sonarcloud_project_organization}"
     jobs:
       - gerrit-maven-sonar
+
+- project:
+    <<: *nonrtric_plt_ranpm_jdk_common
+    name: nonrtric-plt-ranpm-pmproducer-sonar
+    project-name: nonrtric-plt-ranpm-pmproducer
+    # template goal install builds docker image unnecessarily
+    mvn-params: "-f pmproducer -Ddocker.skip=true"
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "pmproducer/.*"
+    sonarcloud: true
+    sonarcloud-api-token: "{sonarcloud_api_token}"
+    sonarcloud-project-key: "nonrtric-plt-ranpm-pmproducer"
+    sonarcloud-project-organization: "{sonarcloud_project_organization}"
+    jobs:
+      - gerrit-maven-sonar
+
+- project:
+    <<: *nonrtric_plt_ranpm_jdk_common
+    name: nonrtric-plt-ranpm-influxlogger-sonar
+    project-name: nonrtric-plt-ranpm-influxlogger
+    # template goal install builds docker image unnecessarily
+    mvn-params: "-f influxlogger -Ddocker.skip=true"
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "influxlogger/.*"
+    sonarcloud: true
+    sonarcloud-api-token: "{sonarcloud_api_token}"
+    sonarcloud-project-key: "nonrtric-plt-ranpm-influxlogger"
+    sonarcloud-project-organization: "{sonarcloud_project_organization}"
+    jobs:
+      - gerrit-maven-sonar
