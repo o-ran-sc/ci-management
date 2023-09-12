@@ -59,6 +59,7 @@
     platforms:
       - centos-cs-8
       - centos-cs-9
+      - ubuntu-20.04
 
 - project:
     name: packer-devstack-pre-pip-yoga-jobs
