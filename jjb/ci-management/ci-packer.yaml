@@ -7,7 +7,7 @@
     project-name: ci-management
     build-node: centos7-builder-1c-1g
     build-timeout: 90
-    cron: "00 H 1 * *"
+    cron: '00 H 1 * *'
     packer-cloud-settings: packer-cloud-env-hcl
 
 - project:
@@ -59,6 +59,7 @@
     platforms:
       - centos-cs-8
       - centos-cs-9
+      - ubuntu-20.04
 
 - project:
     name: packer-devstack-pre-pip-yoga-jobs
