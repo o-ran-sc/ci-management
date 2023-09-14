@@ -1,0 +1,15 @@
+---
+- project:
+    name: ric-app-ccc-project-view
+    project-name: ric-app-ccc
+    views:
+      - project-view
+
+- project:
+    name: ric-app-ccc-info
+    project: ric-app/ccc
+    project-name: ric-app-ccc
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
