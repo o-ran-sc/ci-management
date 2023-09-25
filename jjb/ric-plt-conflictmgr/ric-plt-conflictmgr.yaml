@@ -1,0 +1,15 @@
+---
+- project:
+    name: ric-plt-conflictmgr-project-view
+    project-name: ric-plt-conflictmgr
+    views:
+      - project-view
+
+- project:
+    name: ric-plt-conflictmgr-info
+    project: ric-plt/conflictmgr
+    project-name: ric-plt-conflictmgr
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
