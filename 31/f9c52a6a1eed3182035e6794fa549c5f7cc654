@@ -1,0 +1,9 @@
+Verified+1: o-ran-sc release <collab-it+o-ran-sc-release@linuxfoundation.org>
+Code-Review+1: Sonia Sangari <sonia.sangari@est.tech>
+Code-Review+2: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Submitted-by: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Submitted-at: Mon, 02 Oct 2023 13:51:11 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/11840
+Project: ci-management
+Branch: refs/heads/master
