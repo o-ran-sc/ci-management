@@ -151,9 +151,10 @@
       sonar.projectName={project-name}
       sonar.build.sourceEncoding=UTF-8
       sonar.language=go
-      sonar.go.coverage.reportPaths=pm-file-converter/coverage.txt
-      sonar.inclusions=pm-file-converter/**/*.go
-      sonar.exclusions=pm-file-converter/**/*_test.go
+      sonar.projectBaseDir=pm-file-converter
+      sonar.go.coverage.reportPaths=coverage.txt
+      sonar.inclusions=**/*.go
+      sonar.exclusions=**/*_test.go
     jobs:
       - gerrit-sonar-prescan-script
 
