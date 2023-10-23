@@ -65,7 +65,7 @@
     <<: *informationcoordinatorservice_jdk_common
     name: nonrtric-plt-informationcoordinatorservice-release
     # maven release requires sigul which requires centos
-    # container release requires docker
+    # container release requires docker.
     build-node: centos7-docker-2c-8g
     jobs:
       - "{project-name}-gerrit-release-jobs"
