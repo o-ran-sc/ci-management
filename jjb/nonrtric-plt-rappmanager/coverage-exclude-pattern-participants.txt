@@ -1,0 +1,1 @@
+com/oransc/participant/dme/*.class, com/oransc/participant/dme/rest/**, com/oransc/participant/dme/auth/**, com/oransc/participant/dme/data/**
