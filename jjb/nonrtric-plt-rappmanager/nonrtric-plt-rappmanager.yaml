@@ -73,3 +73,65 @@
     sonarcloud-project-organization: "{sonarcloud_project_organization}"
     jobs:
       - gerrit-maven-sonar
+
+- _nonrtric_jdk_common: &acm_participants_jdk_common
+    name: acm_participants_jdk_common
+    # git repo
+    project: nonrtric/plt/rappmanager
+    # jenkins job name prefix
+    project-name: nonrtric-plt-participants
+    # maven settings file has docker credentials
+    mvn-settings: nonrtric-plt-rappmanager-settings
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "participants/.*"
+    mvn-version: mvn36
+    java-version: openjdk17
+
+- project:
+    <<: *acm_participants_jdk_common
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
+
+# nonrtric:rappmanager/
+# Maven artifacts for nonrtric-plt-rappmanager/
+- project:
+    <<: *acm_participants_jdk_common
+    name: nonrtric-plt-participants
+    project-name: "{name}"
+    mvn-opts: "-Ddocker.skip=true"
+    build-node: ubuntu1804-builder-4c-4g
+    jobs:
+      - gerrit-maven-stage
+      - gerrit-maven-clm
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *acm_participants_jdk_common
+    name: nonrtric-plt-participants-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - "{project-name}-gerrit-release-jobs"
+
+- project:
+    <<: *acm_participants_jdk_common
+    name: nonrtric-plt-participants-sonar
+    project-name: nonrtric-plt-participants
+    # template goal install builds docker image unnecessarily
+    mvn-params: "-Ddocker.skip=true"
+    sonarcloud: true
+    sonarcloud-api-token: "{sonarcloud_api_token}"
+    sonarcloud-project-key: "nonrtric-plt-rappmanager"
+    sonarcloud-project-organization: "{sonarcloud_project_organization}"
+    jobs:
+      - gerrit-maven-sonar
