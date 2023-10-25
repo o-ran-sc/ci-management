@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71c54d83_93de60fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001877
+      },
+      "writtenOn": "2023-10-25T12:30:56Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-plt-rappmanager*",
+      "revId": "5cf72dce9f2125e8515d7f7b85267696eb5866f2",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
