@@ -135,7 +135,7 @@
     mvn-params: "-Ddocker.skip=true -f participants"
     sonarcloud: true
     sonarcloud-api-token: "{sonarcloud_api_token}"
-    sonarcloud-project-key: "nonrtric-plt-rappmanager"
+    sonarcloud-project-key: "nonrtric-plt-participants"
     sonarcloud-project-organization: "{sonarcloud_project_organization}"
     jobs:
       - gerrit-maven-sonar
