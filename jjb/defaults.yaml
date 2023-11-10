@@ -26,6 +26,9 @@
     # counter-intuitively, the quotes here are REQUIRED
     container-push-registry: "{container-staging-registry}"
 
+    # Default branch
+    branch: master
+
     # Don't define default java version here,
     # it will not be used by lf-maven-jobs.
     # Default maven version
