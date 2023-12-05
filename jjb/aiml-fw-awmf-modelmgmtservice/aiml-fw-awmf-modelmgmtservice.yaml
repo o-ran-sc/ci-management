@@ -1,0 +1,52 @@
+---
+- project:
+    name: aiml-fw-awmf-modelmgmtservice-project-view
+    project-name: aiml-fw-awmf-modelmgmtservice
+    views:
+      - project-view
+
+- project:
+    name: aiml-fw-awmf-modelmgmtservice-info
+    project: aiml-fw/awmf/modelmgmtservice
+    project-name: aiml-fw-awmf-modelmgmtservice
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
+
+- _aiml-modelmgmtservice_docker_common: &aiml-modelmgmtservice_docker_common
+    name: aiml-fw-awmf-modelmgmtservice-docker-common
+    # git repo
+    project: aiml-fw/awmf/modelmgmtservice
+    # jenkins job name prefix
+    project-name: aiml-fw-awmf-modelmgmtservice
+    # maven settings file has docker credentials
+    mvn-settings: aiml-fw-awmf-modelmgmtservice-settings
+
+- project:
+    <<: *aiml-modelmgmtservice_docker_common
+    name: aiml-fw-awmf-modelmgmtservice-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - "{project-name}-gerrit-release-jobs"
+
+- project:
+    <<: *aiml-modelmgmtservice_docker_common
+    name: aiml-fw-awmf-modelmgmtservice-docker
+    project-name: "{name}"
+    # image name
+    docker-name: "o-ran-sc/{name}"
+    # Dockerfile is in a subdir
+    docker-root: "."
+    # source of docker tag
+    # dockerfile is in subdir of docker root
+    docker-build-args: "--network=host"
+    container-tag-method: yaml-file
+    build-node: ubuntu1804-docker-4c-4g
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
