@@ -16,6 +16,46 @@
       "message": "Could you please review the changes for new repo jenkin job.",
       "revId": "649bbf49a022c4d73d257463e5a5fdda3c5412a2",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68ac7a45_e54ab678",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-12-06T13:47:03Z",
+      "side": 1,
+      "message": "Left one comment. \nFeel free to ignore if you wish",
+      "revId": "649bbf49a022c4d73d257463e5a5fdda3c5412a2",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7f68547_350b919a",
+        "filename": "jjb/aiml-fw-awmf-modelmgmtservice/aiml-fw-awmf-modelmgmtservice.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-12-06T13:47:03Z",
+      "side": 1,
+      "message": "do you want \"-docker\" in the docker image name?",
+      "range": {
+        "startLine": 37,
+        "startChar": 40,
+        "endLine": 37,
+        "endChar": 46
+      },
+      "revId": "649bbf49a022c4d73d257463e5a5fdda3c5412a2",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
