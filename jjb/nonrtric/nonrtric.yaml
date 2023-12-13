@@ -205,6 +205,8 @@
           branch: g-release
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
 
 - project:
     <<: *nonrtric_jdk_common

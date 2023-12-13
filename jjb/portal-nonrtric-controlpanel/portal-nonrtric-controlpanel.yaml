@@ -57,6 +57,8 @@
           branch: g-release
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
@@ -117,6 +119,8 @@
           branch: g-release
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
 
 - project:
     <<: *portal_nonrtric_controlpanel_common
@@ -141,3 +145,5 @@
           branch: g-release
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release

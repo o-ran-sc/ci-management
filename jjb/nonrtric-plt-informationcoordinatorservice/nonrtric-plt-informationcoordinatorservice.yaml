@@ -40,6 +40,8 @@
           branch: g-release
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
 
 # nonrtric:informationcoordinatorservice
 # Maven artifacts for nonrtric-plt-informationcoordinatorservice
@@ -60,6 +62,8 @@
           branch: g-release
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
 
 - project:
     <<: *informationcoordinatorservice_jdk_common

@@ -41,6 +41,8 @@
           branch: g-release
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
     jobs:
       - "{project-name}-gerrit-docker-jobs"
 

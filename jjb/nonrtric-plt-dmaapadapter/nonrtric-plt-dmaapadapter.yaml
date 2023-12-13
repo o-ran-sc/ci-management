@@ -39,6 +39,8 @@
           branch: g-release
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
 
 # nonrtric:dmaapadapter/
 # Maven artifacts for nonrtric-plt-dmaapadapter/
@@ -59,6 +61,8 @@
           branch: g-release
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
 
 - project:
     <<: *dmaapadapter_jdk_common

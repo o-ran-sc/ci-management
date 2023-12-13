@@ -43,6 +43,8 @@
           branch: g-release
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
 
 # nonrtric:helmmanager
 # Maven artifacts for helmmanager
@@ -67,6 +69,8 @@
           branch: g-release
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
 
 - project:
     <<: *helmmanager_jdk_common
