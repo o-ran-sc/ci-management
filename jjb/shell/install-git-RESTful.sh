@@ -66,6 +66,7 @@ cd ../../
 sudo git clone https://github.com/pistacheio/pistache.git
 
 cd pistache && \
+    sudo git checkout 363629b8804177a1e743cecfb880eed552922729 && \
     sudo meson setup build \
     --buildtype=release \
     -DPISTACHE_USE_SSL=true \
