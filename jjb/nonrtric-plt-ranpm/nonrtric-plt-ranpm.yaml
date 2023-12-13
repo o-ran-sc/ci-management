@@ -56,6 +56,8 @@
           branch: master
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
 
 # Jobs for nonrtric-plt-ranpm-pmproducer
 - project:
@@ -78,6 +80,8 @@
           branch: master
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
 
 # Jobs for nonrtric-plt-ranpm-influxlogger
 - project:
@@ -100,6 +104,8 @@
           branch: master
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
 
 - project:
     <<: *nonrtric_plt_ranpm_jdk_common
@@ -128,6 +134,8 @@
           branch: master
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
 
 # Jobs for nonrtric-plt-ranpm-pm-file-converter SONAR
 - project:
