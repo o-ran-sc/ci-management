@@ -151,6 +151,31 @@
 
 - project:
     <<: *nonrtric_jdk_common
+    name: nonrtric-test-servicestub
+    project-name: "{name}"
+    # image name
+    docker-name: "servicestub"
+    # get tag from YAML
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: "--network=host"
+    # Directory with Dockerfile
+    docker-root: "test/servicestub"
+    # Directory where go test should be run
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "test/servicestub/.*"
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+          
+- project:
+    <<: *nonrtric_jdk_common
     name: nonrtric-test-mrstub
     project-name: "{name}"
     # image name
@@ -205,6 +230,8 @@
           branch: g-release
       - h-release:
           branch: h-release
+      - i-release:
+          branch: i-release
 
 - project:
     <<: *nonrtric_jdk_common
