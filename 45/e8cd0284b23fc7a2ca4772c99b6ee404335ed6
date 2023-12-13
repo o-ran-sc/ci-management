@@ -1,0 +1,8 @@
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Verified+1: o-ran-sc release <collab-it+o-ran-sc-release@linuxfoundation.org>
+Code-Review+2: Alex Stancu <alexandru.stancu@highstreet-technologies.com>
+Submitted-by: John Keeney <john.keeney@est.tech>
+Submitted-at: Wed, 13 Dec 2023 16:10:08 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/12275
+Project: ci-management
+Branch: refs/heads/master
