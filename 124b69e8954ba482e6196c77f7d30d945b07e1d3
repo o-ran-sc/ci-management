@@ -33,6 +33,23 @@
       "message": "See https://jenkins.o-ran-sc.org/sandbox/view/all/job/ric-plt-xapp-frame-cpp-cmake-verify-master/2/ for confirmation this works with latest xapp-frame-cpp repo.",
       "revId": "124b69e8954ba482e6196c77f7d30d945b07e1d3",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6fa2fe4_91842201",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000108
+      },
+      "writtenOn": "2023-12-13T18:09:32Z",
+      "side": 1,
+      "message": "Could you merge this. This is currently blocking the release work for xapp-frame-cpp",
+      "revId": "124b69e8954ba482e6196c77f7d30d945b07e1d3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
