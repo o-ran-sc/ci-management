@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a24ec3b_52e5fdce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-12-16T00:59:17Z",
+      "side": 1,
+      "message": "Requesting a +2 \nCannot +2 my own reviews. \nThanks.",
+      "revId": "0fe8720e600cd0d9af41b6602bcaccfb12786ac4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
