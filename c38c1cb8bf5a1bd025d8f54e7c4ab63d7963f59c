@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9adde41_90eb65e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2023-12-17T18:25:28Z",
+      "side": 1,
+      "message": "jjb-deploy *rappcatalogue*",
+      "revId": "c38c1cb8bf5a1bd025d8f54e7c4ab63d7963f59c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
