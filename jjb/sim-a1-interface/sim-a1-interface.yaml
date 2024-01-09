@@ -25,6 +25,19 @@
 
 - project:
     <<: *sim_a1_interface_common
+    name: a1-simulator-verify
+    # the install script assumes an ubuntu image
+    build-node: ubuntu1804-builder-2c-2g
+    python-version: python3
+    tox-envs: code
+    stream:
+      - master:
+          branch: master
+    jobs:
+      - gerrit-tox-verify
+
+- project:
+    <<: *sim_a1_interface_common
     name: a1-simulator
     # image name
     docker-name: "o-ran-sc/{name}"
