@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d37e0f15_aa4c5f8f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001877
+      },
+      "writtenOn": "2024-01-09T16:20:58Z",
+      "side": 1,
+      "message": "Verified in sandbox with the job https://jenkins.o-ran-sc.org/sandbox/view/all/job/sim-a1-interface-tox-verify-master/2/",
+      "revId": "059b41a151f24c13bdc3e246c3181e1b6e37c1a9",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
