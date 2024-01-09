@@ -1,0 +1,10 @@
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Code-Review+2: John Keeney <john.keeney@est.tech>
+Verified+1: o-ran-sc release <collab-it+o-ran-sc-release@linuxfoundation.org>
+Code-Review+2: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Code-Review+1: Rohith Rajneesh <rohith.rajneesh@est.tech>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Tue, 09 Jan 2024 16:57:40 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/12428
+Project: ci-management
+Branch: refs/heads/master
