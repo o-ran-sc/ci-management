@@ -16,13 +16,6 @@
 
 - project:
     <<: *ad_common
-    name: ric-app-ad-info
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
-- project:
-    <<: *ad_common
     name: ric-app-ad-docker
     # image name
     docker-name: o-ran-sc/ric-app-ad

@@ -14,16 +14,6 @@
     # maven settings file has docker credentials
     mvn-settings: ric-app-kpimon-go-settings
 
-# verify INFO.yaml changes when INFO.yaml changes
-- project:
-    name: ric-app-kpimon-go-info
-    project: ric-app/kpimon-go
-    project-name: ric-app-kpimon-go
-    build-node: centos7-builder-1c-1g
-    branch: master
-    jobs:
-      - gerrit-info-yaml-verify
-
 # create docker image when source changes
 - project:
     <<: *kpimon-go_common

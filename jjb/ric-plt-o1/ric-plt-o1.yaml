@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: ric-plt-o1-info
-    project: ric-plt/o1
-    project-name: ric-plt-o1
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _o1_docker_common: &o1_docker_common # values apply to all docker projects
     name: o1-docker-common
     # git repo

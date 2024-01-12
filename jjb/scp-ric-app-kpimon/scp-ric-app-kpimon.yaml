@@ -14,14 +14,6 @@
     # maven settings file has docker credentials
     mvn-settings: scp-ric-app-kpimon-settings
 
-# verify INFO.yaml changes
-- project:
-    <<: *kpimon_common
-    name: scp-ric-app-kpimon-verify
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 # create docker image when source changes
 - project:
     <<: *kpimon_common

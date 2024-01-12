@@ -5,15 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: aiml-fw-athp-tps-kubeflow-adapter-info
-    project: aiml-fw/athp/tps/kubeflow-adapter
-    project-name: aiml-fw-athp-tps-kubeflow-adapter
-    build-node: centos7-builder-1c-1g
-    branch: master
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _aiml_kfc_docker_common:
     &aiml_kfc_docker_common # values apply to all training manager projects
     name: aiml-fw-athp-tps-kubeflow-adapter-docker-common

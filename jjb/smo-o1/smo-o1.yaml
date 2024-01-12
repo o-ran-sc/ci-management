@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: smo-o1-info
-    project: smo/o1
-    project-name: smo-o1
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _smo_o1_common: &smo_o1_common # values apply to all projects
     name: smo-o1-common
     # git repo

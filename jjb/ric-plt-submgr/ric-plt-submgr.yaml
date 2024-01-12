@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: ric-plt-submgr-info
-    project: ric-plt/submgr
-    project-name: ric-plt-submgr
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _submgr_docker_common:
     &submgr_docker_common # values apply to all submgr docker projects
     name: submgr-docker-common

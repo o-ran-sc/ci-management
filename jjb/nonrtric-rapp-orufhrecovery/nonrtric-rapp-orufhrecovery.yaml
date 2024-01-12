@@ -5,16 +5,6 @@
     views:
       - project-view
 
-- project: &orufhrecovery_common
-    name: nonrtric-rapp-orufhrecovery-info
-    project: nonrtric/rapp/orufhrecovery
-    project-name: nonrtric-rapp-orufhrecovery
-    # maven settings file has docker credentials
-    mvn-settings: nonrtric-rapp-orufhrecovery-settings
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - project:
     <<: *orufhrecovery_common
     name: nonrtric-rapp-orufhrecovery-release

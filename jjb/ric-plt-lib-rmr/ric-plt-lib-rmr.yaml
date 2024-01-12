@@ -6,14 +6,6 @@
     views:
       - project-view
 
-- project:
-    name: ric-plt-lib-rmr-info
-    project: ric-plt/lib/rmr
-    project-name: ric-plt-lib-rmr
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _rmr_common: &rmr_common
     name: rmr-common
     # git repo

@@ -5,15 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: aiml-fw-awmf-tm-info
-    project: aiml-fw/awmf/tm
-    project-name: aiml-fw-awmf-tm
-    build-node: centos7-builder-1c-1g
-    branch: master
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _aiml_tm_docker_common:
     &aiml_tm_docker_common # values apply to all training manager projects
     name: aiml-fw-awmf-tm-docker-common

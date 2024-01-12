@@ -16,13 +16,6 @@
 
 - project:
     <<: *dep_common
-    name: ric-plt-ric-dep-info
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
-- project:
-    <<: *dep_common
     name: ric-plt-ric-dep-chart
     project-name: "{name}"
     build-node: ubuntu1804-builder-2c-2g

@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: it-test-info
-    project: it/test
-    project-name: it-test
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _it_test_common: &it_test_common # values apply to all it/test docker projects
     name: it-test-docker-common
     # git repo

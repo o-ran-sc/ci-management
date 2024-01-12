@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: ric-plt-e2-info
-    project: ric-plt/e2
-    project-name: ric-plt-e2
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _e2_docker_common: &e2_docker_common # values apply to all E2 docker projects
     name: e2-docker-common
     # git repo

@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: ric-plt-sdl-info
-    project: ric-plt/sdl
-    project-name: ric-plt-sdl
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _sdl_common: &sdl_common # values apply to all ric-plt/sdl projects
     name: sdl-common
     # git repo

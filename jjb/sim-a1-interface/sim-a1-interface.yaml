@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: sim-a1-interface-info
-    project: sim/a1-interface
-    project-name: sim-a1-interface
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _sim_a1_interface_common:
     &sim_a1_interface_common # values apply to all projects here
     name: sim-a1-interface-common

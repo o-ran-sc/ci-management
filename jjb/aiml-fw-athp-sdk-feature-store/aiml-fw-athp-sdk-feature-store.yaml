@@ -5,15 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: aiml-fw-athp-sdk-feature-store-info
-    project: aiml-fw/athp/sdk/feature-store
-    project-name: aiml-fw-athp-sdk-feature-store
-    build-node: centos7-builder-1c-1g
-    branch: master
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _aiml_fssdk_docker_common:
     &aiml_fssdk_docker_common # values apply to all training manager projects
     name: aiml-fw-athp-sdk-feature-store-docker-common

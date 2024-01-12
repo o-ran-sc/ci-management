@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: nonrtric-plt-sdnca1controller-info
-    project: nonrtric/plt/sdnca1controller
-    project-name: nonrtric-plt-sdnca1controller
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _sdnca1controller_jdk_common: &sdnca1controller_jdk_common
     name: sdnca1controller-jdk-common
     # git repo
