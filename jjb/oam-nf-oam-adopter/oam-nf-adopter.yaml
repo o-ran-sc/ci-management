@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: oam-nf-oam-adopter-info
-    project: oam/nf-oam-adopter
-    project-name: oam-nf-oam-adopter
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _oam-nf-oam-adopter: &oam-nf-oam-adopter
     name: oam-nf-oam-adopter
     project: oam/nf-oam-adopter

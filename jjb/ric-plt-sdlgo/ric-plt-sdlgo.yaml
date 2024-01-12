@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: ric-plt-sdlgo-info
-    project: ric-plt/sdlgo
-    project-name: ric-plt-sdlgo
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _sdlgo_docker_common:
     &sdlgo_docker_common # values apply to all sdlgo docker projects
     name: sdlgo-docker-common

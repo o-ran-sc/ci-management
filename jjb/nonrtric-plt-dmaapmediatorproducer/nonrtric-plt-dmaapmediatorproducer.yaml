@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: nonrtric-plt-dmaapmediatorproducer-info
-    project: nonrtric/plt/dmaapmediatorproducer
-    project-name: nonrtric-plt-dmaapmediatorproducer
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _dmaapmediatorproducer_common: &dmaapmediatorproducer_common
     name: dmaapmediatorproducer-common
     # git repo

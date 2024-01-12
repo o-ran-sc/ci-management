@@ -5,15 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: portal-aiml-dashboard-info
-    project: portal/aiml-dashboard
-    project-name: portal-aiml-dashboard
-    build-node: centos7-builder-1c-1g
-    branch: master
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _aiml_dashboard_docker_common:
     &aiml_dashboard_docker_common # values apply to all training manager projects
     name: portal-aiml-dashboard-docker-common

@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: com-golog-info
-    project: com/golog
-    project-name: com-golog
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _golog_docker_common:
     &golog_docker_common # values apply to all golog docker projects
     name: golog-docker-common

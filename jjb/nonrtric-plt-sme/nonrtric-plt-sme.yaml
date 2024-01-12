@@ -5,16 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: nonrtric-plt-sme-info
-    project: nonrtric/plt/sme
-    project-name: nonrtric-plt-sme
-    # maven settings file has docker credentials
-    build-node: centos7-builder-1c-1g
-    branch: master
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _nonrtric_plt_sme_common:
     &nonrtric_plt_sme_common # values apply to all projects here
     name: nonrtric-plt-sme-common

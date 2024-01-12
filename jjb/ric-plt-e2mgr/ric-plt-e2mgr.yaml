@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: ric-plt-e2mgr-info
-    project: ric-plt/e2mgr
-    project-name: ric-plt-e2mgr
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _e2mgr_docker_common:
     &e2mgr_docker_common # values apply to all E2MGR docker projects
     name: e2mgr-docker-common

@@ -5,15 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: aiml-fw-aihp-ips-kserve-adapter-info
-    project: aiml-fw/aihp/ips/kserve-adapter
-    project-name: aiml-fw-aihp-ips-kserve-adapter
-    build-node: centos7-builder-1c-1g
-    branch: master
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _aiml_kserve_adapter_docker_common:
     &aiml_kserve_adapter_docker_common # values apply to all kserve adapter projects
     name: aiml-fw-kserve-adapter-docker-common

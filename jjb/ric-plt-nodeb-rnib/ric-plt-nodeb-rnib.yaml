@@ -13,14 +13,6 @@
     project-name: ric-plt-nodeb-rnib
     # maven settings file has docker credentials
     mvn-settings: ric-plt-nodeb-rnib-settings
-
-- project:
-    <<: *nodeb_rnib_common
-    name: ric-plt-nodeb-rnib-info
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 # build deb/rpm using Docker and publish to PackageCloud.io
 # on merge to master branch
 - project:

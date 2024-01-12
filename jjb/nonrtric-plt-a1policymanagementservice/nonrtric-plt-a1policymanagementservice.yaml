@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: nonrtric-plt-a1policymanagementservice-info
-    project: nonrtric/plt/a1policymanagementservice
-    project-name: nonrtric-plt-a1policymanagementservice
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _nonrtric_jdk_common: &a1policymanagementservice_jdk_common
     name: a1policymanagementservice-jdk-common
     # git repo

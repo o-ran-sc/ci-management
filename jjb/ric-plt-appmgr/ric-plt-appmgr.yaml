@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: ric-plt-appmgr-info
-    project: ric-plt/appmgr
-    project-name: ric-plt-appmgr
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _appmgr_docker_common:
     &appmgr_docker_common # values apply to all appmgr docker projects
     name: appmgr-docker-common
