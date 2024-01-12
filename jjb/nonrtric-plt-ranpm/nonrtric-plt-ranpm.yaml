@@ -6,14 +6,6 @@
       - project-view
 
 - project:
-    name: nonrtric-plt-ranpm-info
-    project: nonrtric/plt/ranpm
-    project-name: nonrtric-plt-ranpm
-    build-node: centos7-builder-1c-1g
-    branch: master
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _nonrtric-plt-ranpm_common: &nonrtric_plt_ranpm_jdk_common
     name: nonrtric-plt-ranpm-common
     # git repo

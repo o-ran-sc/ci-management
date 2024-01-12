@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: nonrtric-rapp-healthcheck-info
-    project: nonrtric/rapp/healthcheck
-    project-name: nonrtric-rapp-healthcheck
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _nonrtric-rapp-healthcheck_common: &nonrtric_rapp_healthcheck_common
     name: nonrtric-rapp-healthcheck-common
     # git repo

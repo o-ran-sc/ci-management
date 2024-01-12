@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: nonrtric-plt-informationcoordinatorservice-info
-    project: nonrtric/plt/informationcoordinatorservice
-    project-name: nonrtric-plt-informationcoordinatorservice
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _informationcoordinatorservice_jdk_common:
     &informationcoordinatorservice_jdk_common
     name: informationcoordinatorservice-jdk-common

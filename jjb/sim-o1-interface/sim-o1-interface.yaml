@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: sim-o1-interface-info
-    project: sim/o1-interface
-    project-name: sim-o1-interface
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _sim_o1_interface_docker:
     &sim_o1_interface_docker # values apply to all sim/o1-interface docker projects
     name: sim-o1-interface-common

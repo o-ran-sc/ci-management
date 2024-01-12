@@ -13,14 +13,6 @@
     project-name: ric-plt-ric-dep
     # maven settings file has credentials
     mvn-settings: ric-plt-ric-dep-settings
-
-- project:
-    <<: *dep_common
-    name: ric-plt-ric-dep-info
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - project:
     <<: *dep_common
     name: ric-plt-ric-dep-chart

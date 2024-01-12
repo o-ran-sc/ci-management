@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: ric-plt-dbaas-info
-    project: ric-plt/dbaas
-    project-name: ric-plt-dbaas
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _dbaas_docker_common:
     &dbaas_docker_common # values apply to all dbaas docker projects
     name: dbaas-docker-common

@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: nonrtric-info
-    project: nonrtric
-    project-name: nonrtric
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _nonrtric_jdk_common: &nonrtric_jdk_common
     name: nonrtric-jdk-common
     # git repo

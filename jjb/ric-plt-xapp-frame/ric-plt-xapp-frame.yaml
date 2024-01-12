@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: ric-plt-xapp-frame-info
-    project: ric-plt/xapp-frame
-    project-name: ric-plt-xapp-frame
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _xapp_frame_docker_common:
     &xapp_frame_docker_common # values apply to all xapp-frame docker projects
     name: xapp-frame-docker-common

@@ -6,14 +6,6 @@
       - project-view
 
 - project:
-    name: ric-plt-xapp-frame-rust-info
-    project: ric-plt/xapp-frame-rust
-    project-name: ric-plt-xapp-frame-rust
-    build-node: centos7-builder-1c-1g
-    branch: master
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _xapp_frame_rust_docker_common:
     &xapp_frame_rust_docker_common # values apply to all xapp-frame docker projects
     name: xapp-frame-rust-docker-common

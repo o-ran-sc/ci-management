@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: ric-plt-xapp-frame-py-info
-    project: ric-plt/xapp-frame-py
-    project-name: ric-plt-xapp-frame-py
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _py_common: &py_common
     name: xapp-frame-py-common
     # git repo

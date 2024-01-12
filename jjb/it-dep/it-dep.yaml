@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: it-dep-info
-    project: it/dep
-    project-name: it-dep
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _it_dep_common: &it_dep_common # values apply to all it/dep projects
     name: it-dep-docker-common
     # git repo

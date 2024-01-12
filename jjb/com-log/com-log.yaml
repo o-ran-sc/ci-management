@@ -5,14 +5,6 @@
     views:
       - project-view
 
-- project:
-    name: com-log-info
-    project: com/log
-    project-name: com-log
-    build-node: centos7-builder-1c-1g
-    jobs:
-      - gerrit-info-yaml-verify
-
 - _com_log_common: &com_log_common # values apply to all com/log projects
     name: com-log-common
     # git repo
