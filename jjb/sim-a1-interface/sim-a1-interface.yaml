@@ -55,7 +55,7 @@
     <<: *sim_a1_interface_common
     name: sim-a1-interface-sonarqube
     python-version: python3
-    build-node: ubuntu1804-builder-2c-2g
+    build-node: ubuntu2004-builder-2c-2g
     sonar-project-file: ""
     sonarcloud-java-version: openjdk17
     sonar-properties: |
