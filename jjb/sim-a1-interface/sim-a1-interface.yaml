@@ -14,6 +14,7 @@
     project-name: sim-a1-interface
     # maven settings file has docker credentials
     mvn-settings: sim-a1-interface-settings
+    java-version: openjdk17
 
 - project:
     <<: *sim_a1_interface_common
@@ -57,7 +58,7 @@
     python-version: python3
     build-node: ubuntu2004-builder-2c-2g
     sonar-project-file: ""
-    sonarcloud-java-version: openjdk17
+    sonar-jdk: openjdk17
     sonar-properties: |
       sonar.login={sonarcloud_api_token}
       sonar.projectKey={sonarcloud_project_organization}_{project-name}
