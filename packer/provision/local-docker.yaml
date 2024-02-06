@@ -5,10 +5,10 @@
 
 - hosts: all
   become_user: root
-  ansible_user: root
   become_method: sudo
 
   vars:
+    ansible_user: root
     golang_version: 1.19
     gopath: "/opt/go/{{golang_version}}/bin"
 
