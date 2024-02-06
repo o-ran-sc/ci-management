@@ -5,7 +5,6 @@
 
 - hosts: all
   become_user: root
-  ansible_user: root
   become_method: sudo
 
   vars:
