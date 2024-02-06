@@ -1,0 +1,9 @@
+Verified+1: o-ran-sc release <collab-it+o-ran-sc-release@linuxfoundation.org>
+Code-Review+2: Anil Belur <abelur@linuxfoundation.org>
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Submitted-by: Anil Belur <abelur@linuxfoundation.org>
+Submitted-at: Tue, 06 Feb 2024 03:33:51 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/12503
+Project: ci-management
+Branch: refs/heads/master
