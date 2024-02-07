@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67278032_20497158",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2024-02-07T17:49:56Z",
+      "side": 1,
+      "message": "Reverting for now since it caused builds to finish unstable\nhttps://jenkins.o-ran-sc.org/job/ci-management-jenkins-cfg-verify/204/console\n\nWill debug this in the Sandbox",
+      "revId": "c156322a36953c7b93958b84ae7766496834a42a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
