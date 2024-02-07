@@ -27,6 +27,10 @@
         ruby_download_url: http://cache.ruby-lang.org/pub/ruby/2.5/ruby-2.5.1.tar.gz
         ruby_version: 2.5.1
 
+    - name: "Install dependency version of domain_name for PackageCloud"
+      command: "gem install domain_name -v 0.5.20190701"
+      become: true
+
     - name: "Install PackageCloud"
       command: "gem install package_cloud"
       become: true
