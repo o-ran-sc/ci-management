@@ -84,6 +84,23 @@
       "message": "jjb-deploy smo-o2-shell-verify-master",
       "revId": "e275d58c824425037975f63c3b214aca76550615",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c81bca85_a1fe4fb0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 67
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001777
+      },
+      "writtenOn": "2024-02-21T18:09:09Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "e275d58c824425037975f63c3b214aca76550615",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
