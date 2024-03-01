@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fbc3fa2c_ccaa2090",
+        "filename": "jjb/nonrtric-plt-sme/nonrtric-plt-sme.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2024-03-01T16:49:12Z",
+      "side": 1,
+      "message": "did you meant \"nonrtric-plt-sme-servicemanager\" here?",
+      "range": {
+        "startLine": 121,
+        "startChar": 18,
+        "endLine": 121,
+        "endChar": 44
+      },
+      "revId": "4b228a86c95cdc14f36869b9703926df0ab84af5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
