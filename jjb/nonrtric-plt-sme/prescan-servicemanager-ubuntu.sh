@@ -1,7 +1,6 @@
 #!/bin/sh
 ##############################################################################
 #
-#   Copyright (C) 2022: Nordix Foundation
 #   Copyright (C) 2024: OpenInfra Foundation Europe. All rights reserved.
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +17,7 @@
 #
 ##############################################################################
 
-echo "--> prescan-sme-capifcore-ubuntu.sh"
+echo "--> prescan-sme-servicemanager-ubuntu.sh"
 
 set -ex
 
@@ -26,6 +25,6 @@ set -ex
 sudo apt-get update
 
 # build script execution
-bash capifcore/build-capifcore-ubuntu.sh
+bash servicemanager/build-servicemanager-ubuntu.sh
 
-echo "--> prescan-sme-capifcore-ubuntu.sh ends"
+echo "--> prescan-sme-servicemanager-ubuntu.sh ends"

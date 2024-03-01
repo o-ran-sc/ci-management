@@ -64,8 +64,7 @@
 - project:
     <<: *nonrtric_plt_sme_common
     name: nonrtric-plt-sme-capifcore-sonar
-    # prescan script requires ubuntu
-    # golang is only on docker-enabled nodes
+    project-name: nonrtric-plt-sme-capifcore
     build-node: ubuntu1804-docker-4c-4g
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -73,7 +72,70 @@
     sonar-prescan-script: !include-raw-escape: prescan-capifcore-ubuntu.sh
     sonar-project-file: ""
     java-version: openjdk11
-    # use sonarcloud values from defaults.yaml
-    sonar-properties: !include-raw-escape: sonar-project.properties
+    sonar-properties: |
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.projectName={project-name}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.language=go
+      sonar.projectBaseDir=capifcore
+      sonar.go.coverage.reportPaths=coverage.txt
+      sonar.inclusions=**/*.go
+      sonar.exclusions=**/*_test.go
     jobs:
       - gerrit-sonar-prescan-script
+
+
+- project:
+    <<: *nonrtric_plt_sme_common
+    name: nonrtric-plt-sme-servicemanager
+    project-name: "{name}"
+    # image name
+    docker-name: "o-ran-sc/nonrtric-plt-servicemanager"
+    # get tag from YAML
+    container-tag-method: yaml-file
+    container-tag-yaml-dir: servicemanager
+    # use host network to clone from our gerrit
+    docker-build-args: "--network=host"
+    # Directory with Dockerfile
+    docker-root: "servicemanager"
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "servicemanager/.*"
+    # Directory where go test should be run
+    go-root: "servicemanager"
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+      - gerrit-go-verify
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *nonrtric_plt_sme_common
+    name: nonrtric-plt-sme-servicemanager-sonar
+    project-name: nonrtric-plt-sme-capifcore
+    build-node: ubuntu1804-docker-4c-4g
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "servicemanager/.*"
+    sonar-prescan-script: !include-raw-escape: prescan-servicemanager-ubuntu.sh
+    sonar-project-file: ""
+    java-version: openjdk11
+    jobs:
+      - gerrit-sonar-prescan-script
+    sonar-properties: |
+      sonar.login={sonarcloud_api_token}
+      sonar.projectKey={sonarcloud_project_organization}_{project-name}
+      sonar.organization={sonarcloud_project_organization}
+      sonar.projectName={project-name}
+      sonar.build.sourceEncoding=UTF-8
+      sonar.language=go
+      sonar.projectBaseDir=servicemanager
+      sonar.go.coverage.reportPaths=coverage.txt
+      sonar.inclusions=**/*.go
+      sonar.exclusions=**/*_test.go
