@@ -6,7 +6,6 @@
       - project-view
 
 - _nonrtric_jdk_common: &nonrtric_jdk_common
-    name: nonrtric-jdk-common
     # git repo
     project: nonrtric
     # jenkins job name prefix
@@ -15,167 +14,30 @@
     mvn-settings: nonrtric-settings
     mvn-version: mvn36
     java-version: openjdk17
-
-- project:
+    
+- _nonrtric_docker_common: &nonrtric_docker_common
     <<: *nonrtric_jdk_common
-    name: nonrtric-test-kafka-procon
-    project-name: "{name}"
-    # image name
-    docker-name: "kafka-procon"
     # get tag from YAML
     container-tag-method: yaml-file
     # use host network to clone from our gerrit
     docker-build-args: "--network=host"
-    # Directory with Dockerfile
-    docker-root: "test/kafka-procon"
-    # Directory where go test should be run
-    # Limit build trigger to appropriate files
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: "test/kafka-procon/.*"
-    build-node: ubuntu1804-docker-4c-4g
-    # Includes verify and merge jobs
-    jobs:
-      - "{project-name}-gerrit-docker-jobs"
-    stream:
-      - master:
-          branch: master
-
+    
 - project:
     <<: *nonrtric_jdk_common
-    name: nonrtric-test-http-https-proxy
-    project-name: "{name}"
-    # image name
-    docker-name: "http-https-proxy"
-    # get tag from YAML
-    container-tag-method: yaml-file
-    # use host network to clone from our gerrit
-    docker-build-args: "--network=host"
-    # Directory with Dockerfile
-    docker-root: "test/http-https-proxy"
-    # Directory where go test should be run
-    # Limit build trigger to appropriate files
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: "test/http-https-proxy/.*"
-    build-node: ubuntu1804-docker-4c-4g
-    # Includes verify and merge jobs
+    name: nonrtric-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
     jobs:
-      - "{project-name}-gerrit-docker-jobs"
-    stream:
-      - master:
-          branch: master
+      - "{project-name}-gerrit-release-jobs"
 
+# Jobs to verify / build / sonar for functional releaseable funtions 
 - project:
-    <<: *nonrtric_jdk_common
-    name: nonrtric-test-cr
-    project-name: "{name}"
-    # image name
-    docker-name: "cr"
-    # get tag from YAML
-    container-tag-method: yaml-file
-    # use host network to clone from our gerrit
-    docker-build-args: "--network=host"
-    # Directory with Dockerfile
-    docker-root: "test/cr"
-    # Directory where go test should be run
-    # Limit build trigger to appropriate files
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: "test/cr/.*"
-    build-node: ubuntu1804-docker-4c-4g
-    # Includes verify and merge jobs
-    jobs:
-      - "{project-name}-gerrit-docker-jobs"
-    stream:
-      - master:
-          branch: master
-
-- project:
-    <<: *nonrtric_jdk_common
-    name: nonrtric-test-prodstub
-    project-name: "{name}"
-    # image name
-    docker-name: "prodstub"
-    # get tag from YAML
-    container-tag-method: yaml-file
-    # use host network to clone from our gerrit
-    docker-build-args: "--network=host"
-    # Directory with Dockerfile
-    docker-root: "test/prodstub"
-    # Directory where go test should be run
-    # Limit build trigger to appropriate files
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: "test/prodstub/.*"
-    build-node: ubuntu1804-docker-4c-4g
-    # Includes verify and merge jobs
-    jobs:
-      - "{project-name}-gerrit-docker-jobs"
-    stream:
-      - master:
-          branch: master
-
-- project:
-    <<: *nonrtric_jdk_common
-    name: nonrtric-test-servicestub
-    project-name: "{name}"
-    # image name
-    docker-name: "servicestub"
-    # get tag from YAML
-    container-tag-method: yaml-file
-    # use host network to clone from our gerrit
-    docker-build-args: "--network=host"
-    # Directory with Dockerfile
-    docker-root: "test/servicestub"
-    # Directory where go test should be run
-    # Limit build trigger to appropriate files
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: "test/servicestub/.*"
-    build-node: ubuntu1804-docker-4c-4g
-    # Includes verify and merge jobs
-    jobs:
-      - "{project-name}-gerrit-docker-jobs"
-    stream:
-      - master:
-          branch: master
-
-- project:
-    <<: *nonrtric_jdk_common
-    name: nonrtric-test-mrstub
-    project-name: "{name}"
-    # image name
-    docker-name: "mrstub"
-    # get tag from YAML
-    container-tag-method: yaml-file
-    # use host network to clone from our gerrit
-    docker-build-args: "--network=host"
-    # Directory with Dockerfile
-    docker-root: "test/mrstub"
-    # Directory where go test should be run
-    # Limit build trigger to appropriate files
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: "test/mrstub/.*"
-    build-node: ubuntu1804-docker-4c-4g
-    # Includes verify and merge jobs
-    jobs:
-      - "{project-name}-gerrit-docker-jobs"
-    stream:
-      - master:
-          branch: master
-
-- project:
-    <<: *nonrtric_jdk_common
+    <<: *nonrtric_docker_common
     name: nonrtric-plt-auth-token-fetch
     project-name: "{name}"
     # image name
     docker-name: "o-ran-sc/nonrtric-plt-auth-token-fetch"
-    # get tag from YAML
-    container-tag-method: yaml-file
-    # use host network to clone from our gerrit
-    docker-build-args: "--network=host"
     # Directory with Dockerfile
     docker-root: "auth-token-fetch"
     # Directory where go test should be run
@@ -215,11 +77,144 @@
     jobs:
       - gerrit-sonar-prescan-script
 
+# Jobs to verify / build sample uService images
 - project:
-    <<: *nonrtric_jdk_common
-    name: nonrtric-release
-    # maven release requires sigul which requires centos
-    # container release requires docker
-    build-node: centos7-docker-2c-8g
+    <<: *nonrtric_docker_common
+    name: nonrtric-sample-helloworld-sme-invoker
+    project-name: "{name}"
+    # image name
+    docker-name: "nonrtric-sample-helloworld-sme-invoker"
+    # Directory with Dockerfile
+    docker-root: "sample-services/hello-world-sme-invoker"
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "sample-services/hello-world-sme-invoker/.*"
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
     jobs:
-      - "{project-name}-gerrit-release-jobs"
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *nonrtric_docker_common
+    name: nonrtric-sample-helloworld
+    project-name: "{name}"
+    # image name
+    docker-name: "nonrtric-sample-helloworld"
+    # Directory with Dockerfile
+    docker-root: "sample-services/hello-world"
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "sample-services/hello-world/.*"
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
+# Jobs to verify / build images for testing 
+- project:
+    <<: *nonrtric_docker_common
+    name: nonrtric-test-kafka-procon
+    project-name: "{name}"
+    # image name
+    docker-name: "kafka-procon"
+    # Directory with Dockerfile
+    docker-root: "test/kafka-procon"
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "test/kafka-procon/.*"
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *nonrtric_docker_common
+    name: nonrtric-test-http-https-proxy
+    project-name: "{name}"
+    # image name
+    docker-name: "http-https-proxy"
+    # Directory with Dockerfile
+    docker-root: "test/http-https-proxy"
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "test/http-https-proxy/.*"
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *nonrtric_docker_common
+    name: nonrtric-test-cr
+    project-name: "{name}"
+    # image name
+    docker-name: "cr"
+    # Directory with Dockerfile
+    docker-root: "test/cr"
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "test/cr/.*"
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *nonrtric_docker_common
+    name: nonrtric-test-prodstub
+    project-name: "{name}"
+    # image name
+    docker-name: "prodstub"
+    # Directory with Dockerfile
+    docker-root: "test/prodstub"
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "test/prodstub/.*"
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *nonrtric_docker_common
+    name: nonrtric-test-mrstub
+    project-name: "{name}"
+    # image name
+    docker-name: "mrstub"
+    # Directory with Dockerfile
+    docker-root: "test/mrstub"
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "test/mrstub/.*"
+    build-node: ubuntu1804-docker-4c-4g
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
