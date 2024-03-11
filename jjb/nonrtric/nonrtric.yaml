@@ -134,7 +134,7 @@
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
-      - "{project-name}-gerrit-docker-jobs"
+      - gerrit-docker-verify
     stream:
       - master:
           branch: master
@@ -144,7 +144,7 @@
     name: nonrtric-test-http-https-proxy
     project-name: "{name}"
     # image name
-    docker-name: "http-https-proxy"
+    docker-name: "nodejs-kube-proxy"
     # Directory with Dockerfile
     docker-root: "test/http-https-proxy"
     # Limit build trigger to appropriate files
@@ -154,7 +154,7 @@
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
-      - "{project-name}-gerrit-docker-jobs"
+      - gerrit-docker-verify
     stream:
       - master:
           branch: master
@@ -164,7 +164,7 @@
     name: nonrtric-test-cr
     project-name: "{name}"
     # image name
-    docker-name: "cr"
+    docker-name: "callback-receiver"
     # Directory with Dockerfile
     docker-root: "test/cr"
     # Limit build trigger to appropriate files
@@ -174,7 +174,7 @@
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
-      - "{project-name}-gerrit-docker-jobs"
+      - gerrit-docker-verify
     stream:
       - master:
           branch: master
@@ -184,7 +184,7 @@
     name: nonrtric-test-prodstub
     project-name: "{name}"
     # image name
-    docker-name: "prodstub"
+    docker-name: "producer-stub"
     # Directory with Dockerfile
     docker-root: "test/prodstub"
     # Limit build trigger to appropriate files
@@ -194,7 +194,7 @@
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
-      - "{project-name}-gerrit-docker-jobs"
+      - gerrit-docker-verify
     stream:
       - master:
           branch: master
@@ -214,7 +214,7 @@
     build-node: ubuntu1804-docker-4c-4g
     # Includes verify and merge jobs
     jobs:
-      - "{project-name}-gerrit-docker-jobs"
+      - gerrit-docker-verify
     stream:
       - master:
           branch: master
