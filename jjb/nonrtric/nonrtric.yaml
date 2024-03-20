@@ -103,7 +103,7 @@
     name: nonrtric-sample-helloworld
     project-name: "{name}"
     # image name
-    docker-name: "o-ranc-sc/nonrtric-sample-helloworld"
+    docker-name: "o-ran-sc/nonrtric-sample-helloworld"
     # Directory with Dockerfile
     docker-root: "sample-services/hello-world"
     # Limit build trigger to appropriate files
