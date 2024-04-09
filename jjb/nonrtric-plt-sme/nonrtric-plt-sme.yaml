@@ -71,9 +71,9 @@
     container-tag-method: yaml-file
     container-tag-yaml-dir: servicemanager
     # use host network to clone from our gerrit
-    docker-build-args: "--network=host"
-    # Directory with Dockerfile
-    docker-root: "servicemanager"
+    docker-build-args: "--network=host -f servicemanager/Dockerfile"
+    # Dockerfile is in a subdir
+    docker-root: "."
     # Limit build trigger to appropriate files
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
