@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09c2fa6a_d14cefd2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002433
+      },
+      "writtenOn": "2024-04-11T10:05:19Z",
+      "side": 1,
+      "message": "I have doubts on the test script. I clone from master, so it will not have the changes in the review?",
+      "revId": "f2a4d053ce982f63701b509e048b8b5c2a9a5531",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
