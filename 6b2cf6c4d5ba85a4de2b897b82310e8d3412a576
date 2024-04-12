@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fa64462_5b630b9a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002433
+      },
+      "writtenOn": "2024-04-12T09:58:37Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-sample-producer https://gerrit.o-ran-sc.org/r/c/nonrtric/+/12676",
+      "revId": "6b2cf6c4d5ba85a4de2b897b82310e8d3412a576",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
