@@ -33,6 +33,23 @@
       "message": "jjb-deploy nonrtric-sample-producer GERRIT_REFSPEC\u003drefs/changes/76/12676/6",
       "revId": "6b2cf6c4d5ba85a4de2b897b82310e8d3412a576",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8c2a326_5c920ced",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2024-04-15T09:38:27Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-sample-producer",
+      "revId": "6b2cf6c4d5ba85a4de2b897b82310e8d3412a576",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
