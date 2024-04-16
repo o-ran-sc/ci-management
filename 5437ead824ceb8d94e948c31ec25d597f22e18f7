@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "844e1ff3_a728541f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2024-04-16T19:39:08Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-sample-*",
+      "revId": "5437ead824ceb8d94e948c31ec25d597f22e18f7",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
