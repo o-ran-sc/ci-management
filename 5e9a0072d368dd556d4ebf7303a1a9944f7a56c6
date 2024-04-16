@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric-sample-producer",
       "revId": "5e9a0072d368dd556d4ebf7303a1a9944f7a56c6",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6637faf2_b99f1beb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002433
+      },
+      "writtenOn": "2024-04-16T08:38:15Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-sample-producer-gerrit-docker-jobs",
+      "revId": "5e9a0072d368dd556d4ebf7303a1a9944f7a56c6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
