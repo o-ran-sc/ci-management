@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric-sample-*",
       "revId": "d54d810a40a932185d33967a2063ef998bf4b792",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b09928d_f90a3f53",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002433
+      },
+      "writtenOn": "2024-04-22T06:23:36Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-sample-*",
+      "revId": "d54d810a40a932185d33967a2063ef998bf4b792",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
