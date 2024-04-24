@@ -33,6 +33,23 @@
       "message": "jjb-deploy nonrtric-sample-*",
       "revId": "d54d810a40a932185d33967a2063ef998bf4b792",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcb6e0aa_b1bc3f19",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2024-04-24T16:12:24Z",
+      "side": 1,
+      "message": "ready?\nIf so you can remove WIP so we can try it.",
+      "revId": "d54d810a40a932185d33967a2063ef998bf4b792",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
