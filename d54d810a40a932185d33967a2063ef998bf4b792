@@ -50,6 +50,24 @@
       "message": "ready?\nIf so you can remove WIP so we can try it.",
       "revId": "d54d810a40a932185d33967a2063ef998bf4b792",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d402d5ca_27ab35a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2024-04-24T16:18:14Z",
+      "side": 1,
+      "message": "Actally ... I think you were going to abandon this one in favor of https://gerrit.o-ran-sc.org/r/c/ci-management/+/12768 ?",
+      "parentUuid": "bcb6e0aa_b1bc3f19",
+      "revId": "d54d810a40a932185d33967a2063ef998bf4b792",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
