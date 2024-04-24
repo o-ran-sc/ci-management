@@ -28,7 +28,7 @@ echo "---> install-deb-rmr.sh"
 set -eux
 
 version_file=rmr-version.yaml
-if [[ -f $version_file ]]; then
+if [ -f "$version_file" ]; then
     # pipeline is less elegant than yq but that requires venv and pip install
     repo=$(grep "^repo:" "$version_file" | cut -d: -f2 | xargs )
     ver=$(grep "^version:" "$version_file" | cut -d: -f2 | xargs)
@@ -36,7 +36,7 @@ else
     echo "File $version_file not found."
     exit 1
 fi
-if [[ -z $ver ]]; then
+if [ -z "$ver" ]; then
     echo "Failed to get RMR version string from file $version_file"
     exit 1
 fi
