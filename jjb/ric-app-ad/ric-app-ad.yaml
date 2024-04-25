@@ -57,20 +57,6 @@
 - project:
     <<: *ad_common
     <<: *ad_python
-    name: ric-app-ad-py-verify
-    # do not trigger on changes in docs, releases
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
-    jobs:
-      - gerrit-tox-verify
-    stream:
-      - master:
-          branch: master
-
-- project:
-    <<: *ad_common
-    <<: *ad_python
     name: ric-app-ad-sonarqube
     sonar-project-file: ""
     sonar-properties: |

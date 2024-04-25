@@ -66,7 +66,6 @@
         pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
     jobs:
       - "{project-name}-gerrit-pypi-release-jobs"
-      - gerrit-tox-verify
     stream:
       - master:
           branch: master

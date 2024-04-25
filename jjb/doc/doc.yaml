@@ -4,11 +4,3 @@
     project-name: doc
     views:
       - project-view
-
-- project:
-    name: doc-verify
-    project: doc
-    project-name: doc
-    python-version: python3
-    jobs:
-      - gerrit-tox-verify
