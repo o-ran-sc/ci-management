@@ -97,8 +97,6 @@
       - compare-type: REG_EXP
         pattern: "catalogue-enhanced/.*"
     stream:
-      - master:
-          branch: master
       - g-release:
           branch: g-release
       - h-release:

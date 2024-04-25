@@ -23,20 +23,6 @@
     # no need to verify docs
     tox-envs: code,flake8
 
-- project:
-    <<: *pti_o2_common
-    <<: *pti_o2_python
-    name: pti-o2-imsdms-verify
-    # do not trigger on changes in docs, releases
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
-    jobs:
-      - gerrit-tox-verify
-    stream:
-      - master:
-          branch: master
-
 - _pti_o2_docker: &pti_o2_docker_common
     <<: *pti_o2_common
     # values apply to all pti/o2 docker projects

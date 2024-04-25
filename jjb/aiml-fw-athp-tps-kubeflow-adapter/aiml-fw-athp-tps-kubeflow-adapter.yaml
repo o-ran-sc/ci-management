@@ -45,27 +45,6 @@
 
 - project:
     <<: *aiml_kfc_docker_common
-    name: aiml-fw-athp-tps-kubeflow-adapter-tox-verify
-    # the install script assumes an ubuntu image
-    build-node: ubuntu1804-builder-2c-2g
-    python-version: python3
-    # skip docs on verify
-    tox-envs: code
-    tox-dir: "."
-    # do not trigger on changes in docs, releases
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: "kfadapter/.*"
-    stream:
-      # run verify on all branches
-      # the ANT pattern is **/{branch}, we are exploiting that.
-      - all:
-          branch: master
-    jobs:
-      - gerrit-tox-verify
-
-- project:
-    <<: *aiml_kfc_docker_common
     name: aiml-fw-athp-tps-kubeflow-adapter-sonarqube
     python-version: python3
     tox-dir: "."
