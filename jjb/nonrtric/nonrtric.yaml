@@ -118,6 +118,50 @@
       - master:
           branch: master
 
+- project:
+    <<: *nonrtric_docker_common
+    name: nonrtric-sample-icsproducer
+    project-name: "{name}"
+    # image name
+    docker-name: "o-ran-sc/nonrtric-sample-icsproducer"
+    # Directory with Dockerfile
+    docker-root: "sample-services/ics-producer-consumer/producer"
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "sample-services/ics-producer-consumer/producer/.*"
+    build-node: ubuntu1804-docker-4c-4g
+    post_docker_build_script: !include-raw-escape:
+      - ics-producer-consumer-tests.sh
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *nonrtric_docker_common
+    name: nonrtric-sample-icsconsumer
+    project-name: "{name}"
+    # image name
+    docker-name: "o-ran-sc/nonrtric-sample-icsconsumer"
+    # Directory with Dockerfile
+    docker-root: "sample-services/ics-producer-consumer/consumer"
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "sample-services/ics-producer-consumer/consumer/.*"
+    build-node: ubuntu1804-docker-4c-4g
+    post_docker_build_script: !include-raw-escape:
+      - ics-producer-consumer-tests.sh
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
 # Jobs to verify / build images for testing
 - project:
     <<: *nonrtric_docker_common
