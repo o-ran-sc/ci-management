@@ -14,26 +14,3 @@
     project-name: aiml-fw-athp-sdk-model-storage
     # maven settings file has docker credentials
     mvn-settings: aiml-fw-athp-sdk-model-storage-settings
-
-- project:
-    <<: *aiml_mssdk_docker_common
-    name: aiml-fw-athp-sdk-model-storage-sonarqube
-    python-version: python3
-    tox-dir: "."
-    # the install script assumes an ubuntu image
-    build-node: ubuntu1804-builder-2c-2g
-    # do not trigger on changes in docs, releases
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: "modelmetricsdk/.*"
-    sonar-project-file: ""
-    sonar-properties: |
-      sonar.login={sonarcloud_api_token}
-      sonar.projectKey={sonarcloud_project_organization}_{project-name}
-      sonar.projectName={project-name}
-      sonar.organization={sonarcloud_project_organization}
-      sonar.build.sourceEncoding=UTF-8
-      sonar.sources=modelmetricsdk
-      sonar.python.coverage.reportPaths=coverage.xml
-    jobs:
-      - gerrit-tox-sonarqube

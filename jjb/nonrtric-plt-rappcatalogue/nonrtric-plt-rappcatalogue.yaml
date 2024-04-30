@@ -71,19 +71,6 @@
 
 - project:
     <<: *rappcatalogue_jdk_common
-    name: nonrtric-plt-rappcatalogue-sonar
-    project-name: nonrtric-plt-rappcatalogue
-    # template goal install builds docker image unnecessarily
-    mvn-params: "-Ddocker.skip=true"
-    sonarcloud: true
-    sonarcloud-api-token: "{sonarcloud_api_token}"
-    sonarcloud-project-key: "nonrtric_plt_rappcatalogue"
-    sonarcloud-project-organization: "{sonarcloud_project_organization}"
-    jobs:
-      - gerrit-maven-sonar
-
-- project:
-    <<: *rappcatalogue_jdk_common
     name: nonrtric-plt-rappcatalogue-enhanced-verify
     project-name: nonrtric-plt-rappcatalogue-enhanced
     # the install script assumes an ubuntu image
@@ -134,29 +121,3 @@
           branch: i-release
     jobs:
       - "{project-name}-gerrit-docker-jobs"
-
-- project:
-    <<: *rappcatalogue_jdk_common
-    name: nonrtric-plt-rappcatalogue-enhanced-sonarqube
-    project-name: nonrtric-plt-rappcatalogue-enhanced
-    python-version: python3
-    tox-dir: catalogue-enhanced
-    # the install script assumes an ubuntu image
-    build-node: ubuntu1804-builder-2c-2g
-    # do not trigger on changes in docs, releases
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: "catalogue-enhanced/.*"
-    sonar-project-file: ""
-    sonar-properties: |
-      sonar.login={sonarcloud_api_token}
-      sonar.projectKey={sonarcloud_project_organization}_{project-name}
-      sonar.projectName={project-name}
-      sonar.organization={sonarcloud_project_organization}
-      sonar.build.sourceEncoding=UTF-8
-      sonar.sources=catalogue-enhanced/
-      sonar.python.coverage.reportPaths=catalogue-enhanced/coverage.xml
-      sonar.inclusions=catalogue-enhanced/src/**.py
-      sonar.exclusions=catalogue-enhanced/tests/**.py
-    jobs:
-      - gerrit-tox-sonarqube

@@ -26,24 +26,3 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - "{project-name}-gerrit-release-jobs"
-
-- project:
-    <<: *smo_o1_common
-    name: smo-o1-sonarqube
-    python-version: python3
-    # the install script assumes an ubuntu image
-    build-node: ubuntu1804-builder-2c-2g
-    # impt for verify and tox etc
-    tox-envs: code,flake8
-    sonarcloud: true
-    sonar-project-file: ""
-    sonar-properties: |
-      sonar.login={sonarcloud_api_token}
-      sonar.projectKey={sonarcloud_project_organization}_{project-name}
-      sonar.projectName={project-name}
-      sonar.organization={sonarcloud_project_organization}
-      sonar.build.sourceEncoding=UTF-8
-      sonar.sources=collector
-      sonar.python.coverage.reportPaths=coverage.xml
-    jobs:
-      - gerrit-cli-sonar

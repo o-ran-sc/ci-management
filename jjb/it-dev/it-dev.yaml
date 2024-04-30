@@ -54,23 +54,6 @@
 - project:
     <<: *it_dev_xo_common
     <<: *it_dev_xo_py_common
-    name: it-dev-xapp-onboarder-sonarqube
-    sonar-project-file: ""
-    sonar-properties: |
-      sonar.login={sonarcloud_api_token}
-      sonar.projectKey={sonarcloud_project_organization}_{project-name}
-      sonar.projectName={project-name}
-      sonar.organization={sonarcloud_project_organization}
-      sonar.build.sourceEncoding=UTF-8
-      sonar.sources=xapp_onboarder
-      sonar.exclusions=setup.py,xapp_onboarder/tests/*.py
-      sonar.python.coverage.reportPaths=xapp_onboarder/coverage.xml
-    jobs:
-      - gerrit-tox-sonarqube
-
-- project:
-    <<: *it_dev_xo_common
-    <<: *it_dev_xo_py_common
     name: it-dev-xapp-onboarder-pypi
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP

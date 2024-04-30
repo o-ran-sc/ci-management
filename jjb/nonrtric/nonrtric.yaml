@@ -62,21 +62,6 @@
       - i-release:
           branch: i-release
 
-- project:
-    <<: *nonrtric_jdk_common
-    name: nonrtric-plt-auth-token-fetch-sonar
-    project-name: nonrtric-plt-auth-token-fetch
-    # prescan script requires ubuntu
-    # golang is only on docker-enabled nodes
-    build-node: ubuntu1804-docker-4c-4g
-    sonar-prescan-script: !include-raw-escape: prescan-nonrtric-auth-token-fetch-ubuntu.sh
-    sonar-project-file: ""
-    java-version: openjdk11
-    # use sonarcloud values from defaults.yaml
-    sonar-properties: !include-raw-escape: sonar-project.properties
-    jobs:
-      - gerrit-sonar-prescan-script
-
 # Jobs to verify / build sample uService images
 - project:
     <<: *nonrtric_docker_common

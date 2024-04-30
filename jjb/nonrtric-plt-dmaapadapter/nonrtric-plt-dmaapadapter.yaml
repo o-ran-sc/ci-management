@@ -64,16 +64,3 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - "{project-name}-gerrit-release-jobs"
-
-- project:
-    <<: *dmaapadapter_jdk_common
-    name: nonrtric-plt-dmaapadapter-sonar
-    project-name: nonrtric-plt-dmaapadapter
-    # template goal install builds docker image unnecessarily
-    mvn-params: "-Ddocker.skip=true"
-    sonarcloud: true
-    sonarcloud-api-token: "{sonarcloud_api_token}"
-    sonarcloud-project-key: "nonrtric-plt-dmaapadapter"
-    sonarcloud-project-organization: "{sonarcloud_project_organization}"
-    jobs:
-      - gerrit-maven-sonar

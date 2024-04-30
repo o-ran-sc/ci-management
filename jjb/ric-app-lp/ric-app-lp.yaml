@@ -52,19 +52,3 @@
     python-version: python3
     # no need to verify docs
     tox-envs: code,flake8
-
-- project:
-    <<: *lp_common
-    <<: *lp_python
-    name: ric-app-lp-sonarqube
-    sonar-project-file: ""
-    sonar-properties: |
-      sonar.login={sonarcloud_api_token}
-      sonar.projectKey={sonarcloud_project_organization}_{project-name}
-      sonar.projectName={project-name}
-      sonar.organization={sonarcloud_project_organization}
-      sonar.build.sourceEncoding=UTF-8
-      sonar.sources=lp
-      sonar.python.coverage.reportPaths=coverage.xml
-    jobs:
-      - gerrit-tox-sonarqube
