@@ -16,6 +16,23 @@
       "message": "jjb-deploy smo-o2-tacker",
       "revId": "fba76f7a440585d38a7945024aa3502542f596bd",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7dbab82_ddaeb5b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 81
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002096
+      },
+      "writtenOn": "2024-05-16T18:37:34Z",
+      "side": 1,
+      "message": "jjb-deploy smo-o2-tacker",
+      "revId": "fba76f7a440585d38a7945024aa3502542f596bd",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
