@@ -1,0 +1,8 @@
+Verified+1: o-ran-sc release <collab-it+o-ran-sc-release@linuxfoundation.org>
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Code-Review+2: John Keeney <john.keeney@est.tech>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Thu, 06 Jun 2024 16:01:22 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/12858
+Project: ci-management
+Branch: refs/heads/master
