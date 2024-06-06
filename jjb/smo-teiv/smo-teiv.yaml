@@ -1,0 +1,15 @@
+---
+- project:
+    name: smo-teiv-project-view
+    project-name: smo-teiv
+    views:
+      - project-view
+
+- project:
+    name: smo-teiv-info
+    project: smo/teiv
+    project-name: smo-teiv
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
