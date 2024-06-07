@@ -33,6 +33,24 @@
       "message": "Hi Jessica. \nI\u0027m having trouble with the verify job (smo-teiv-maven-docker-verify-master-mvn36-openjdk17).\nSee sandbox job https://jenkins.o-ran-sc.org/sandbox/view/All/job/smo-teiv-maven-docker-verify-master-mvn36-openjdk17/1/console\nIs there an issue getting the maven credentials from the maven config folder, or something similar? \nOr maybe Im just doing something silly :-) \nThanks.",
       "revId": "24e0f2a434f01c3d93b089377e7b12df297be865",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e5e57d6_2d3799cf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2024-06-07T15:41:49Z",
+      "side": 1,
+      "message": "16:10:12 not able to provide the file [ManagedFile: id\u003dsmo-teiv-settings, targetLocation\u003d, variable\u003dSETTINGS_FILE], can\u0027t be resolved by any provider - maybe it got deleted by an administrator?\n...\n16:10:12 ERROR: not able to provide the file [ManagedFile: id\u003dsmo-teiv-settings, targetLocation\u003d, variable\u003dSETTINGS_FILE], can\u0027t be resolved by any provider - maybe it got deleted by an administrator?",
+      "parentUuid": "435650d9_9195bfe1",
+      "revId": "24e0f2a434f01c3d93b089377e7b12df297be865",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
