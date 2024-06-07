@@ -13,3 +13,62 @@
     branch: master
     jobs:
       - gerrit-info-yaml-verify
+
+- _smo_teiv_jdk_common: &smo_teiv_jdk_common
+    name: smo-teiv-jdk-common
+    # git repo
+    project: smo/teiv
+    # jenkins job name prefix
+    project-name: smo-teiv
+    # maven settings file has docker credentials
+    mvn-settings: smo-teiv-settings
+    mvn-version: mvn36
+    java-version: openjdk17
+
+- project:
+    <<: *smo_teiv_jdk_common
+    name: smo-teiv
+    mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
+    jobs:
+      - gerrit-maven-docker-verify
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
+
+# smo:teiv/
+# Maven artifacts for smo-teiv/
+- project:
+    <<: *smo_teiv_jdk_common
+    name: smo-teiv
+    mvn-opts: "-Ddocker.skip=true"
+    build-node: ubuntu1804-builder-4c-4g
+    jobs:
+      - gerrit-maven-stage
+      - gerrit-maven-clm
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *smo_teiv_jdk_common
+    name: smo-teiv-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - "{project-name}-gerrit-release-jobs"
+
+- project:
+    <<: *smo_teiv_jdk_common
+    name: smo-teiv-sonar
+    project-name: smo-teiv
+    # template goal install builds docker image unnecessarily
+    mvn-params: "-Ddocker.skip=true"
+    sonarcloud: true
+    sonarcloud-api-token: "{sonarcloud_api_token}"
+    sonarcloud-project-key: "smo-teiv"
+    sonarcloud-project-organization: "{sonarcloud_project_organization}"
+    jobs:
+      - gerrit-maven-sonar
