@@ -33,6 +33,23 @@
       "message": "Chatted with Matt, we can only see these config changes after the change is merged... JCASC takes some time to reload.",
       "revId": "853ea6e051cc61055779ee34dd08ef5516ff648f",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ec94b53_c4f2e1db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000059
+      },
+      "writtenOn": "2024-06-18T16:06:09Z",
+      "side": 1,
+      "message": "remerge",
+      "revId": "853ea6e051cc61055779ee34dd08ef5516ff648f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ],
   "submitRequirementResults": [
