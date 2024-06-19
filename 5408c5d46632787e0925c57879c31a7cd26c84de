@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52171998_1fff2d1c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2024-06-19T14:27:02Z",
+      "side": 1,
+      "message": "Hi Jessica \u0026 Matt. \nDo we need to explicitly add these jobs to support Maven POM/Jar releases from this repo? \nThanks.",
+      "revId": "5408c5d46632787e0925c57879c31a7cd26c84de",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
