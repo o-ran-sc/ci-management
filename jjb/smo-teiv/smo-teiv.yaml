@@ -47,6 +47,10 @@
     jobs:
       - gerrit-maven-stage
       - gerrit-maven-clm
+      - gerrit-maven-merge
+      - gerrit-maven-release
+      - gerrit-maven-verify
+      - gerrit-maven-verify-dependencies
     stream:
       - master:
           branch: master
