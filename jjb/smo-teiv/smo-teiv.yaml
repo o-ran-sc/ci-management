@@ -44,7 +44,7 @@
     name: smo-teiv-maven
     # unlike other repos, maven verify/stage does require docker,
     #    so is on same node as docker jobs
-    # mvn-opts: "-Ddocker.skip=true"
+    mvn-opts: "-Ddocker.skip=true"
     # build-node: ubuntu1804-builder-4c-4g
     build-node: ubuntu1804-docker-4c-4g
     jobs:
