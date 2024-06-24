@@ -36,6 +36,8 @@
     stream:
       - master:
           branch: master
+      - j-release:
+          branch: j-release
 
 # smo:teiv/
 # Maven artifacts for smo-teiv/
@@ -55,6 +57,8 @@
     stream:
       - master:
           branch: master
+      - j-release:
+          branch: j-release
 
 - project:
     <<: *smo_teiv_jdk_common

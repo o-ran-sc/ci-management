@@ -54,12 +54,12 @@
     stream:
       - master:
           branch: master
-      - g-release:
-          branch: g-release
       - h-release:
           branch: h-release
       - i-release:
           branch: i-release
+      - j-release:
+          branch: j-release
 
 - project:
     <<: *nonrtric_plt_sme_common
@@ -88,6 +88,8 @@
     stream:
       - master:
           branch: master
+      - j-release:
+          branch: j-release
 
 - project:
     <<: *nonrtric_plt_sme_common

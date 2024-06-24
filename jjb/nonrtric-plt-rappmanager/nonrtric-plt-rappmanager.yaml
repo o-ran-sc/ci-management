@@ -38,6 +38,8 @@
           branch: master
       - i-release:
           branch: i-release
+      - j-release:
+          branch: j-release
 
 # nonrtric:rappmanager/
 # Maven artifacts for nonrtric-plt-rappmanager/
@@ -55,6 +57,8 @@
           branch: master
       - i-release:
           branch: i-release
+      - j-release:
+          branch: j-release
 
 - project:
     <<: *rappmanager_jdk_common
@@ -107,6 +111,8 @@
           branch: master
       - i-release:
           branch: i-release
+      - j-release:
+          branch: j-release
 
 # nonrtric:rappmanager/
 # Maven artifacts for nonrtric-plt-rappmanager/
@@ -124,6 +130,8 @@
           branch: master
       - i-release:
           branch: i-release
+      - j-release:
+          branch: j-release
 
 - project:
     <<: *acm_participants_jdk_common

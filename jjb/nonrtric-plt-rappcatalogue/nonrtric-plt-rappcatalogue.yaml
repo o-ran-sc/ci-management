@@ -84,12 +84,12 @@
       - compare-type: REG_EXP
         pattern: "catalogue-enhanced/.*"
     stream:
-      - g-release:
-          branch: g-release
       - h-release:
           branch: h-release
       - i-release:
           branch: i-release
+      - j-release:
+          branch: j-release
     jobs:
       - gerrit-tox-verify
 
@@ -113,11 +113,11 @@
     stream:
       - master:
           branch: master
-      - g-release:
-          branch: g-release
       - h-release:
           branch: h-release
       - i-release:
           branch: i-release
+      - j-release:
+          branch: j-release
     jobs:
       - "{project-name}-gerrit-docker-jobs"

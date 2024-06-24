@@ -26,13 +26,12 @@
     stream:
       - master:
           branch: master
-      - g-release:
-          java-version: openjdk11
-          branch: g-release
       - h-release:
           branch: h-release
       - i-release:
           branch: i-release
+      - j-release:
+          branch: j-release
 
 # nonrtric:dmaapadapter/
 # Maven artifacts for nonrtric-plt-dmaapadapter/
@@ -48,13 +47,12 @@
     stream:
       - master:
           branch: master
-      - g-release:
-          java-version: openjdk11
-          branch: g-release
       - h-release:
           branch: h-release
       - i-release:
           branch: i-release
+      - j-release:
+          branch: j-release
 
 - project:
     <<: *dmaapadapter_jdk_common
