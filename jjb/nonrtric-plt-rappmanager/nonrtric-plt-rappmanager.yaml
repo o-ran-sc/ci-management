@@ -52,6 +52,9 @@
     jobs:
       - gerrit-maven-stage
       - gerrit-maven-clm
+      - gerrit-maven-verify
+      - gerrit-maven-verify-dependencies
+
     stream:
       - master:
           branch: master
@@ -125,6 +128,8 @@
     jobs:
       - gerrit-maven-stage
       - gerrit-maven-clm
+      - gerrit-maven-verify
+      - gerrit-maven-verify-dependencies
     stream:
       - master:
           branch: master
