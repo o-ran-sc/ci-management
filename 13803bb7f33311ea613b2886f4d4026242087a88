@@ -51,6 +51,24 @@
       "message": "jjb-deploy *smo-teiv*",
       "revId": "13803bb7f33311ea613b2886f4d4026242087a88",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a63ad2ed_571ae6b6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001877
+      },
+      "writtenOn": "2024-06-28T14:03:56Z",
+      "side": 1,
+      "message": "Maven verify and docker verify jobs are successful in Sandbox\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/smo-teiv-maven-verify-master-mvn36-openjdk17/1/\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/smo-teiv-maven-docker-verify-master-mvn36-openjdk17/1/",
+      "parentUuid": "3f439c89_1e23b2b9",
+      "revId": "13803bb7f33311ea613b2886f4d4026242087a88",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
