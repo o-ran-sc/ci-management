@@ -24,6 +24,7 @@
     mvn-settings: smo-teiv-settings
     mvn-version: mvn36
     java-version: openjdk17
+    jacoco-exclude-pattern: !include-raw-escape: coverage-exclude-pattern.txt
 
 - project:
     <<: *smo_teiv_jdk_common
