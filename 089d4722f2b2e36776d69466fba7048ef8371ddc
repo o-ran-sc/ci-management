@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48802751_e82ee030",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001877
+      },
+      "writtenOn": "2024-09-02T16:23:07Z",
+      "side": 1,
+      "message": "Successfully ran in sandbox https://jenkins.o-ran-sc.org/sandbox/view/All/job/it-dep-nonrtric-helm-docker-verify-all/14/console",
+      "revId": "089d4722f2b2e36776d69466fba7048ef8371ddc",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
