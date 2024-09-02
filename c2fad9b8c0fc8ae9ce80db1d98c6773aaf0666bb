@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "afef5900_f28c4346",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001877
+      },
+      "writtenOn": "2024-09-02T14:09:21Z",
+      "side": 1,
+      "message": "jjb-deploy *it-dep-*",
+      "revId": "c2fad9b8c0fc8ae9ce80db1d98c6773aaf0666bb",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
