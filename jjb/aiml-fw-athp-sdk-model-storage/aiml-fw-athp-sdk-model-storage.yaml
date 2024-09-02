@@ -14,3 +14,26 @@
     project-name: aiml-fw-athp-sdk-model-storage
     # maven settings file has docker credentials
     mvn-settings: aiml-fw-athp-sdk-model-storage-settings
+
+
+- project:
+    name: aiml_mssdk-pypi
+    <<: *aiml_mssdk_docker_common
+    # do not trigger on changes in docs, releases
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '^((?!docs\/|releases\/|\/COMMIT_MSG).)*$'
+    jobs:
+      - gerrit-pypi-verify
+      - gerrit-pypi-stage
+    stream:
+      - master:
+          branch: master
+
+- project:
+    name: aiml_mssdk-release
+    <<: *aiml_mssdk_docker_common
+    # release requires sigul which requires centos
+    build-node: centos7-builder-1c-1g
+    jobs:
+      - "{project-name}-gerrit-pypi-release-jobs"
