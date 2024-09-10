@@ -22,7 +22,7 @@
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: "^((?!participants\/).)*$"
-    mvn-version: mvn36
+    mvn-version: mvn39 #Back to 3.6
     java-version: openjdk17
     jacoco-exclude-pattern: !include-raw-escape: coverage-exclude-pattern.txt
 
@@ -48,7 +48,7 @@
     name: nonrtric-plt-rappmanager
     project-name: "{name}"
     mvn-opts: "-Ddocker.skip=true"
-    build-node: ubuntu1804-docker-4c-4g
+    build-node: ubuntu2004-builder-4c-4g
     jobs:
       - gerrit-maven-stage
       - gerrit-maven-clm
@@ -58,6 +58,7 @@
     stream:
       - master:
           branch: master
+          mvn-version: mvn39
       - i-release:
           branch: i-release
       - j-release:
