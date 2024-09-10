@@ -22,7 +22,7 @@
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: "^((?!participants\/).)*$"
-    mvn-version: mvn36
+    mvn-version: mvn39
     java-version: openjdk17
     jacoco-exclude-pattern: !include-raw-escape: coverage-exclude-pattern.txt
 
