@@ -16,6 +16,23 @@
       "message": "Successfully ran in sandbox https://jenkins.o-ran-sc.org/sandbox/view/All/job/it-dep-nonrtric-helm-docker-verify-all/14/console",
       "revId": "089d4722f2b2e36776d69466fba7048ef8371ddc",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "40c662d9_357c4bc7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002240
+      },
+      "writtenOn": "2024-09-24T14:23:19Z",
+      "side": 1,
+      "message": "jjb-deploy *it-dep*",
+      "revId": "089d4722f2b2e36776d69466fba7048ef8371ddc",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ],
   "submitRequirementResults": [
