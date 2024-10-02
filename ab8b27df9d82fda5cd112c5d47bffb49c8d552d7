@@ -50,6 +50,23 @@
       "message": "Latest maven version included now.\nSandbox builds are working fine. https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-rappmanager-maven-verify-master-mvn39-openjdk17/",
       "revId": "ab8b27df9d82fda5cd112c5d47bffb49c8d552d7",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab09ea7e_d42c7477",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001877
+      },
+      "writtenOn": "2024-10-02T15:34:47Z",
+      "side": 1,
+      "message": "jjb-deploy *nonrtric-plt-sme*",
+      "revId": "ab8b27df9d82fda5cd112c5d47bffb49c8d552d7",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ],
   "submitRequirementResults": [
