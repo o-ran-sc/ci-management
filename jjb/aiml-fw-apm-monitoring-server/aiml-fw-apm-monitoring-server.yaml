@@ -1,0 +1,15 @@
+---
+- project:
+    name: aiml-fw-apm-monitoring-server-project-view
+    project-name: aiml-fw-apm-monitoring-server
+    views:
+      - project-view
+
+- project:
+    name: aiml-fw-apm-monitoring-server-info
+    project: aiml-fw/apm/monitoring-server
+    project-name: aiml-fw-apm-monitoring-server
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
