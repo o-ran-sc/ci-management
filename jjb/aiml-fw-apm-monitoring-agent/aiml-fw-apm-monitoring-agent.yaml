@@ -1,0 +1,15 @@
+---
+- project:
+    name: aiml-fw-apm-monitoring-agent-project-view
+    project-name: aiml-fw-apm-monitoring-agent
+    views:
+      - project-view
+
+- project:
+    name: aiml-fw-apm-monitoring-agent-info
+    project: aiml-fw/apm/monitoring-agent
+    project-name: aiml-fw-apm-monitoring-agent
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
