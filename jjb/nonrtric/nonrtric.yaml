@@ -54,13 +54,12 @@
     stream:
       - master:
           branch: master
-      - g-release:
-          java-version: openjdk11
-          branch: g-release
       - h-release:
           branch: h-release
       - i-release:
           branch: i-release
+      - j-release:
+          branch: j-release
 
 # Jobs to verify / build sample uService images
 - project:
@@ -82,6 +81,8 @@
     stream:
       - master:
           branch: master
+      - j-release:
+          branch: j-release
 
 - project:
     <<: *nonrtric_docker_common
@@ -102,6 +103,8 @@
     stream:
       - master:
           branch: master
+      - j-release:
+          branch: j-release
 
 - project:
     <<: *nonrtric_docker_common
@@ -124,6 +127,8 @@
     stream:
       - master:
           branch: master
+      - j-release:
+          branch: j-release
 
 - project:
     <<: *nonrtric_docker_common
@@ -137,6 +142,52 @@
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: "sample-services/ics-producer-consumer/consumer/.*"
+    build-node: ubuntu1804-docker-4c-4g
+    post_docker_build_script: !include-raw-escape:
+      - ics-producer-consumer-tests.sh
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+      - j-release:
+          branch: j-release
+
+- project:
+    <<: *nonrtric_docker_common
+    name: nonrtric-sample-simplekafkaproducer
+    project-name: "{name}"
+    # image name
+    docker-name: "o-ran-sc/nonrtric-sample-simplekafkaproducer"
+    # Directory with Dockerfile
+    docker-root: "sample-services/ics-simple-producer-consumer/kafka-producer"
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "sample-services/ics-simple-producer-consumer/.*"
+    build-node: ubuntu1804-docker-4c-4g
+    post_docker_build_script: !include-raw-escape:
+      - ics-producer-consumer-tests.sh
+    # Includes verify and merge jobs
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *nonrtric_docker_common
+    name: nonrtric-sample-simplekafconsumer
+    project-name: "{name}"
+    # image name
+    docker-name: "o-ran-sc/nonrtric-sample-simplekafconsumer"
+    # Directory with Dockerfile
+    docker-root: "sample-services/ics-simple-producer-consumer/kafka-consumer"
+    # Limit build trigger to appropriate files
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: "sample-services/ics-simple-producer-consumer/.*"
     build-node: ubuntu1804-docker-4c-4g
     post_docker_build_script: !include-raw-escape:
       - ics-producer-consumer-tests.sh
@@ -167,6 +218,8 @@
     stream:
       - master:
           branch: master
+      - j-release:
+          branch: j-release
 
 - project:
     <<: *nonrtric_docker_common
@@ -187,6 +240,8 @@
     stream:
       - master:
           branch: master
+      - j-release:
+          branch: j-release
 
 - project:
     <<: *nonrtric_docker_common
@@ -207,6 +262,8 @@
     stream:
       - master:
           branch: master
+      - j-release:
+          branch: j-release
 
 - project:
     <<: *nonrtric_docker_common
@@ -227,6 +284,8 @@
     stream:
       - master:
           branch: master
+      - j-release:
+          branch: j-release
 
 - project:
     <<: *nonrtric_docker_common
@@ -247,3 +306,5 @@
     stream:
       - master:
           branch: master
+      - j-release:
+          branch: j-release
