@@ -25,6 +25,13 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - "{project-name}-gerrit-release-jobs"
+    stream:
+      - master:
+          branch: master
+      - i-release:
+          branch: i-release
+      - j-release:
+          branch: j-release
 
 # Jobs for nonrtric-plt-ranpm-datafilecollector
 - project:
