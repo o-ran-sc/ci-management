@@ -159,7 +159,7 @@
     name: nonrtric-sample-simplekafkaproducer
     project-name: "{name}"
     # image name
-    docker-name: "o-ran-sc/nonrtric-simple-icsproducer"
+    docker-name: "o-ran-sc/nonrtric-sample-simple-icsproducer"
     # Directory with Dockerfile
     docker-root: "sample-services/ics-simple-producer-consumer/kafka-producer"
     # Limit build trigger to appropriate files
@@ -181,7 +181,7 @@
     name: nonrtric-sample-simplekafkaconsumer
     project-name: "{name}"
     # image name
-    docker-name: "o-ran-sc/nonrtric-simple-icsconsumer"
+    docker-name: "o-ran-sc/nonrtric-sample-simple-icsconsumer"
     # Directory with Dockerfile
     docker-root: "sample-services/ics-simple-producer-consumer/kafka-consumer"
     # Limit build trigger to appropriate files
