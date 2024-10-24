@@ -33,6 +33,7 @@
           branch: i-release
       - j-release:
           branch: j-release
+          mvn-version: mvn39
 
 # nonrtric:a1policymanagementservice/
 # Maven artifacts for nonrtric-plt-a1policymanagementservice/
@@ -55,6 +56,7 @@
           branch: i-release
       - j-release:
           branch: j-release
+          mvn-version: mvn39
 
 - project:
     <<: *a1policymanagementservice_jdk_common
