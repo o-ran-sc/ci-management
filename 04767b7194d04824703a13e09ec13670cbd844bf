@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76cc0e06_0ef5f180",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002240
+      },
+      "writtenOn": "2024-10-24T10:03:50Z",
+      "side": 1,
+      "message": "jjb-deploy",
+      "revId": "04767b7194d04824703a13e09ec13670cbd844bf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
