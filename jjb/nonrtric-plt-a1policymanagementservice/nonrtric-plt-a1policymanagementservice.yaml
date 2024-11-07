@@ -66,3 +66,9 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - "{project-name}-gerrit-release-jobs"
+    stream:
+      - master:
+          branch: master
+          mvn-version: mvn39
+      - j-release:
+          branch: j-release
