@@ -1,0 +1,15 @@
+---
+- project:
+    name: aiml-fw-apm-analysis-module-project-view
+    project-name: aiml-fw-apm-analysis-module
+    views:
+      - project-view
+
+- project:
+    name: aiml-fw-apm-analysis-module-info
+    project: aiml-fw/apm/analysis-module
+    project-name: aiml-fw-apm-analysis-module
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
