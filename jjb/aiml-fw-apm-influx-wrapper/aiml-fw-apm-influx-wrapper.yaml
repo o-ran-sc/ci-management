@@ -1,0 +1,15 @@
+---
+- project:
+    name: aiml-fw-apm-influx-wrapper-project-view
+    project-name: aiml-fw-apm-influx-wrapper
+    views:
+      - project-view
+
+- project:
+    name: aiml-fw-apm-influx-wrapper-info
+    project: aiml-fw/apm/influx-wrapper
+    project-name: aiml-fw-apm-influx-wrapper
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
