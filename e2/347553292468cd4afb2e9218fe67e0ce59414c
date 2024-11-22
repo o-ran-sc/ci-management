@@ -1,0 +1,9 @@
+Code-Review+1: Thanh Ha <thanh.ha@linuxfoundation.org>
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Verified+1: o-ran-sc release <collab-it+o-ran-sc-release@linuxfoundation.org>
+Code-Review+2: Kevin Sandi <ksandi@contractor.linuxfoundation.org>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Fri, 22 Nov 2024 20:12:43 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/13771
+Project: ci-management
+Branch: refs/heads/master
