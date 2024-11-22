@@ -11,6 +11,7 @@
     project: nonrtric/plt/a1policymanagementservice
     # jenkins job name prefix
     project-name: nonrtric-plt-a1policymanagementservice
+    jacoco-exclude-pattern: !include-raw-escape: coverage-exclude-pattern.txt
     # maven settings file has docker credentials
     mvn-settings: nonrtric-plt-a1policymanagementservice-settings
     mvn-version: mvn36
@@ -72,3 +73,16 @@
           mvn-version: mvn39
       - j-release:
           branch: j-release
+
+- project:
+    <<: *a1policymanagementservice_jdk_common
+    name: nonrtric-plt-a1policymanagementservice-sonar
+    project-name: nonrtric-plt-a1policymanagementservice
+    # template goal install builds docker image unnecessarily
+    mvn-params: "-Ddocker.skip=true"
+    sonarcloud: true
+    sonarcloud-api-token: "{sonarcloud_api_token}"
+    sonarcloud-project-key: "nonrtric-plt-a1policymanagementservice"
+    sonarcloud-project-organization: "{sonarcloud_project_organization}"
+    jobs:
+      - gerrit-maven-sonar
