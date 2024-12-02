@@ -1,5 +1,69 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78a672dd_0a248627",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2024-12-02T14:26:52Z",
+      "side": 1,
+      "message": "Please enable a later version of maven for the SONAR jobs.",
+      "revId": "37116018224f838f0a18dba59214db6d9dfa27c0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a6c1f68_13b1c07c",
+        "filename": "jjb/nonrtric-plt-a1policymanagementservice/nonrtric-plt-a1policymanagementservice.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2024-12-02T14:26:52Z",
+      "side": 1,
+      "message": "please add a line: \n\nmvn-version: mvn39",
+      "range": {
+        "startLine": 82,
+        "startChar": 4,
+        "endLine": 83,
+        "endChar": 20
+      },
+      "revId": "37116018224f838f0a18dba59214db6d9dfa27c0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92f974de_833890a7",
+        "filename": "jjb/nonrtric-plt-informationcoordinatorservice/nonrtric-plt-informationcoordinatorservice.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2024-12-02T14:26:52Z",
+      "side": 1,
+      "message": "please add a line: \n\nmvn-version: mvn39",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 20
+      },
+      "revId": "37116018224f838f0a18dba59214db6d9dfa27c0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
