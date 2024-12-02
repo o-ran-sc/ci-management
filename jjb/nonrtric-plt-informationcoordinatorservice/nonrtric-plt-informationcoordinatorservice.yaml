@@ -71,6 +71,7 @@
     # template goal install builds docker image unnecessarily
     mvn-params: "-Ddocker.skip=true"
     sonarcloud: true
+    mvn-version: mvn39
     sonarcloud-api-token: "{sonarcloud_api_token}"
     sonarcloud-project-key: "nonrtric-plt-informationcoordinatorservice"
     sonarcloud-project-organization: "{sonarcloud_project_organization}"
