@@ -16,6 +16,23 @@
       "message": "jjb-deploy nonrtric-plt-a1policymanagementservice-maven-docker-verify-master-mvn39-openjdk17",
       "revId": "6e2845deea27e0c84143293d9423665b5ac584fe",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e698259c_82c1d3c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002433
+      },
+      "writtenOn": "2024-12-03T16:10:31Z",
+      "side": 1,
+      "message": "run-sonar",
+      "revId": "6e2845deea27e0c84143293d9423665b5ac584fe",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
