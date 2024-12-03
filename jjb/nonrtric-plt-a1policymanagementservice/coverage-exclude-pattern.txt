@@ -1,1 +1,1 @@
-org.onap.ccsdk.oran.a1policymanagementservice.models.v2/**.class,org.onap.ccsdk.oran.a1policymanagementservice.models.v3/**.class
+org.onap.ccsdk.oran.a1policymanagementservice.models.v2/**.class,org.onap.ccsdk.oran.a1policymanagementservice.models.v3/**.class,org.onap.ccsdk.oran.a1policymanagementservice.models.**
