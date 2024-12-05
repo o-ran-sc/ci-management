@@ -24,6 +24,7 @@
       - gerrit-maven-docker-verify
       - gerrit-maven-docker-merge
       - gerrit-maven-docker-stage
+      - gerrit-maven-clm
     stream:
       - master:
           branch: master
@@ -46,7 +47,6 @@
     build-node: ubuntu1804-builder-4c-4g
     jobs:
       - gerrit-maven-stage
-      - gerrit-maven-clm
     stream:
       - master:
           branch: master
