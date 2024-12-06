@@ -1,0 +1,41 @@
+---
+- project:
+    name: ric-plt-rtmgr-project-view
+    project-name: ric-plt-conflictmgr
+    views:
+      - project-view
+
+- _conflictmgr_docker_common:
+    &rtmgr_docker_common # values apply to all rtmgr docker projects
+    name: conflictmgr-docker-common
+    # git repo
+    project: ric-plt/conflictmgr
+    # jenkins job name prefix
+    project-name: ric-plt-conflictmgr
+    # maven settings file has docker credentials
+    mvn-settings: ric-plt-conflictmgr-settings
+
+- project:
+    <<: *conflictmgr_docker_common
+    name: ric-plt-conflictmgr
+    # image name
+    docker-name: "o-ran-sc/{name}"
+    # source of docker tag
+    container-tag-method: yaml-file
+    # use host network to clone from our gerrit
+    docker-build-args: "--network=host"
+    jobs:
+      - "{project-name}-gerrit-docker-jobs"
+    stream:
+      - master:
+          branch: master
+
+- project:
+    <<: *conflictmgr_docker_common
+    name: ric-plt-conflictmgr-release
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - "{project-name}-gerrit-release-jobs"
+
