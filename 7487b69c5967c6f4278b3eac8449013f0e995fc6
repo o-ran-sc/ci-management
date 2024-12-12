@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "682b9f5a_c20ddd9a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2024-12-12T18:48:29Z",
+      "side": 1,
+      "message": "jjb-deploy nonrtric-plt-a1policymanagementservice-maven-stage-master",
+      "revId": "7487b69c5967c6f4278b3eac8449013f0e995fc6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
