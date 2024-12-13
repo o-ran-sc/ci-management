@@ -39,6 +39,8 @@
           branch: master
       - j-release:
           branch: j-release
+      - k-release:
+          branch: k-release
 
 # smo:teiv/
 # Maven artifacts for smo-teiv/
@@ -60,6 +62,8 @@
           branch: master
       - j-release:
           branch: j-release
+      - k-release:
+          branch: k-release
 
 - project:
     <<: *smo_teiv_jdk_common
