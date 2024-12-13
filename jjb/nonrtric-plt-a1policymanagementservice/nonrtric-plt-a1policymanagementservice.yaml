@@ -14,29 +14,45 @@
     jacoco-exclude-pattern: !include-raw-escape: coverage-exclude-pattern.txt
     # maven settings file has docker credentials
     mvn-settings: nonrtric-plt-a1policymanagementservice-settings
-    mvn-version: mvn36
+    mvn-version: mvn39
     java-version: openjdk17
 
 - project:
     <<: *a1policymanagementservice_jdk_common
+    name: a1policymanagementservice-jdk-docker
     mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
     jobs:
       - gerrit-maven-docker-verify
       - gerrit-maven-docker-merge
       - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
+      - i-release:
+          branch: i-release
+          mvn-version: mvn36
+      - j-release:
+          branch: j-release
+      - k-release:
+          branch: k-release
+
+- project:
+    <<: *a1policymanagementservice_jdk_common
+    name: a1policymanagementservice-jdk-maven
+    mvn-params: "-Dbuild.number=${{BUILD_NUMBER}} -Ddocker.skip=true"
+    jobs:
       - gerrit-maven-clm
       - gerrit-maven-stage
     stream:
       - master:
           branch: master
-          mvn-version: mvn39
-      - h-release:
-          branch: h-release
       - i-release:
           branch: i-release
+          mvn-version: mvn36
       - j-release:
           branch: j-release
-          mvn-version: mvn39
+      - k-release:
+          branch: k-release
 
 - project:
     <<: *a1policymanagementservice_jdk_common
@@ -49,7 +65,6 @@
     stream:
       - master:
           branch: master
-          mvn-version: mvn39
       - j-release:
           branch: j-release
 
@@ -60,7 +75,6 @@
     # template goal install builds docker image unnecessarily
     mvn-params: "-Ddocker.skip=true"
     sonarcloud: true
-    mvn-version: mvn39
     sonarcloud-api-token: "{sonarcloud_api_token}"
     sonarcloud-project-key: "nonrtric-plt-a1policymanagementservice"
     sonarcloud-project-organization: "{sonarcloud_project_organization}"
