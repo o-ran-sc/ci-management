@@ -1,0 +1,8 @@
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Verified+1: o-ran-sc release <collab-it+o-ran-sc-release@linuxfoundation.org>
+Code-Review+2: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Fri, 13 Dec 2024 18:06:10 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/13869
+Project: ci-management
+Branch: refs/heads/master
