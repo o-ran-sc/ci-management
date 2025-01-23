@@ -1,0 +1,15 @@
+---
+- project:
+    name: sim-o1-ofhmp-interfaces-project-view
+    project-name: sim-o1-ofhmp-interfaces
+    views:
+      - project-view
+
+- project:
+    name: sim-o1-ofhmp-interfaces-info
+    project: sim/o1-ofhmp-interfaces
+    project-name: sim-o1-ofhmp-interfaces
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
