@@ -32,6 +32,7 @@
       - centos-cs-9
       - ubuntu-18.04
       - ubuntu-20.04
+      - ubuntu-22.04
 
 - project:
     name: packer-docker-jobs
@@ -47,6 +48,7 @@
       - centos-cs-9
       - ubuntu-18.04
       - ubuntu-20.04
+      - ubuntu-22.04
 
 - project:
     name: packer-devstack-jobs
@@ -60,6 +62,7 @@
       - centos-cs-8
       - centos-cs-9
       - ubuntu-20.04
+      - ubuntu-22.04
 
 - project:
     name: packer-devstack-pre-pip-yoga-jobs
