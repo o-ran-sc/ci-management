@@ -22,7 +22,7 @@
     project-name: smo-teiv
     # maven settings file has docker credentials
     mvn-settings: smo-teiv-settings
-    mvn-version: mvn36
+    mvn-version: mvn39
     java-version: openjdk17
     jacoco-exclude-pattern: !include-raw-escape: coverage-exclude-pattern.txt
 
