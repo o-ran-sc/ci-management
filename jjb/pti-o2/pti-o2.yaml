@@ -38,6 +38,8 @@
     stream:
       - master:
           branch: master
+      - k-release:
+          branch: k-release
 
 - project:
     <<: *pti_o2_docker_common
