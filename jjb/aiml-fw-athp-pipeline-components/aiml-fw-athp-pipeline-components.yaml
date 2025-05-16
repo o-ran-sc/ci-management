@@ -1,0 +1,15 @@
+---
+- project:
+    name: aiml-fw-athp-pipeline-components-project-view
+    project-name: aiml-fw-athp-pipeline-components
+    views:
+      - project-view
+
+- project:
+    name: aiml-fw-athp-pipeline-components-info
+    project: aiml-fw/athp/pipeline-components
+    project-name: aiml-fw-athp-pipeline-components
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
