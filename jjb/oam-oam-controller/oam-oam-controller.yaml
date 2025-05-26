@@ -1,0 +1,15 @@
+---
+- project:
+    name: oam-oam-controller-project-view
+    project-name: oam-oam-controller
+    views:
+      - project-view
+
+- project:
+    name: oam-oam-controller-info
+    project: oam/oam-controller
+    project-name: oam-oam-controller
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
