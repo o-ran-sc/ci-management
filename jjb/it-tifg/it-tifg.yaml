@@ -1,0 +1,15 @@
+---
+- project:
+    name: it-tifg-project-view
+    project-name: it-tifg
+    views:
+      - project-view
+
+- project:
+    name: it-tifg-info
+    project: it/tifg
+    project-name: it-tifg
+    build-node: centos7-builder-1c-1g
+    branch: master
+    jobs:
+      - gerrit-info-yaml-verify
