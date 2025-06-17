@@ -1,0 +1,9 @@
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Verified+1: o-ran-sc release <collab-it+o-ran-sc-release@linuxfoundation.org>
+Code-Review+2: Kevin Sandi <ksandi@contractor.linuxfoundation.org>
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Submitted-by: Kevin Sandi <ksandi@contractor.linuxfoundation.org>
+Submitted-at: Tue, 17 Jun 2025 23:17:51 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/14569
+Project: ci-management
+Branch: refs/heads/master
