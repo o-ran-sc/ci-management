@@ -30,12 +30,12 @@
     stream:
       - master:
           branch: master
-      - h-release:
-          branch: h-release
-      - i-release:
-          branch: i-release
       - j-release:
           branch: j-release
+      - k-release:
+          branch: k-release
+      - l-release:
+          branch: l-release
     jobs:
       - "{project-name}-gerrit-docker-jobs"
 
@@ -68,9 +68,9 @@
     stream:
       - master:
           branch: master
-      - h-release:
-          branch: h-release
-      - i-release:
-          branch: i-release
       - j-release:
           branch: j-release
+      - k-release:
+          branch: k-release
+      - l-release:
+          branch: l-release

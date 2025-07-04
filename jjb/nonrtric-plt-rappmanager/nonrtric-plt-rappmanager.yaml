@@ -36,10 +36,12 @@
     stream:
       - master:
           branch: master
-      - i-release:
-          branch: i-release
       - j-release:
           branch: j-release
+      - k-release:
+          branch: k-release
+      - l-release:
+          branch: l-release
 
 # nonrtric:rappmanager/
 # Maven artifacts for nonrtric-plt-rappmanager/
@@ -58,10 +60,12 @@
     stream:
       - master:
           branch: master
-      - i-release:
-          branch: i-release
       - j-release:
           branch: j-release
+      - k-release:
+          branch: k-release
+      - l-release:
+          branch: l-release
 
 - project:
     <<: *rappmanager_jdk_common
@@ -112,10 +116,12 @@
     stream:
       - master:
           branch: master
-      - i-release:
-          branch: i-release
       - j-release:
           branch: j-release
+      - k-release:
+          branch: k-release
+      - l-release:
+          branch: l-release
 
 # nonrtric:rappmanager/
 # Maven artifacts for nonrtric-plt-rappmanager/
@@ -133,10 +139,12 @@
     stream:
       - master:
           branch: master
-      - i-release:
-          branch: i-release
       - j-release:
           branch: j-release
+      - k-release:
+          branch: k-release
+      - l-release:
+          branch: l-release
 
 - project:
     <<: *acm_participants_jdk_common

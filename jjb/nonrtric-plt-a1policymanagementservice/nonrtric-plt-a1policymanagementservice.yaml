@@ -28,13 +28,12 @@
     stream:
       - master:
           branch: master
-      - i-release:
-          branch: i-release
-          mvn-version: mvn36
       - j-release:
           branch: j-release
       - k-release:
           branch: k-release
+      - l-release:
+          branch: l-release
 
 - project:
     <<: *a1policymanagementservice_jdk_common
@@ -46,13 +45,12 @@
     stream:
       - master:
           branch: master
-      - i-release:
-          branch: i-release
-          mvn-version: mvn36
       - j-release:
           branch: j-release
       - k-release:
           branch: k-release
+      - l-release:
+          branch: l-release
 
 - project:
     <<: *a1policymanagementservice_jdk_common
@@ -67,6 +65,10 @@
           branch: master
       - j-release:
           branch: j-release
+      - k-release:
+          branch: k-release
+      - l-release:
+          branch: l-release
 
 - project:
     <<: *a1policymanagementservice_jdk_common
