@@ -33,6 +33,24 @@
       "message": "The verification script is checking to see if the flavor is valid. Our workaround to the issue of SJC having different hardware IDs breaks this, since these aren\u0027t official flavor names. However, this step is not very useful, since we\u0027re translating flavor names to hardware IDs anyway. I believe the correct move here would be to remove the flavor name check from the verify job.",
       "revId": "d26099d7a270280025ce60ec8b2a2681be7c96aa",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3942b91a_7e52d854",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2025-07-30T22:17:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec722a18_d232a527",
+      "revId": "d26099d7a270280025ce60ec8b2a2681be7c96aa",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
