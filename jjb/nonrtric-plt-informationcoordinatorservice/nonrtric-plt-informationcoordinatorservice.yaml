@@ -14,7 +14,7 @@
     project-name: nonrtric-plt-informationcoordinatorservice
     # maven settings file has docker credentials
     mvn-settings: nonrtric-plt-informationcoordinatorservice-settings
-    mvn-version: mvn36
+    mvn-version: mvn39
     java-version: openjdk17
 
 - project:
