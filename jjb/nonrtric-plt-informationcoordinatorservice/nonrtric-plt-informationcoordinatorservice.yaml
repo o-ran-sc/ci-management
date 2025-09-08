@@ -63,6 +63,13 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - "{project-name}-gerrit-release-jobs"
+    stream:
+      - master:
+          branch: master
+      - i-release:
+          branch: i-release
+      - j-release:
+          branch: j-release
 
 - project:
     <<: *informationcoordinatorservice_jdk_common
@@ -71,7 +78,6 @@
     # template goal install builds docker image unnecessarily
     mvn-params: "-Ddocker.skip=true"
     sonarcloud: true
-    mvn-version: mvn39
     sonarcloud-api-token: "{sonarcloud_api_token}"
     sonarcloud-project-key: "nonrtric-plt-informationcoordinatorservice"
     sonarcloud-project-organization: "{sonarcloud_project_organization}"
