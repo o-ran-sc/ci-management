@@ -34,6 +34,8 @@
           branch: k-release
       - l-release:
           branch: l-release
+      - m-release:
+          branch: m-release
 
 - project:
     <<: *a1policymanagementservice_jdk_common
@@ -51,6 +53,8 @@
           branch: k-release
       - l-release:
           branch: l-release
+      - m-release:
+          branch: m-release
 
 - project:
     <<: *a1policymanagementservice_jdk_common
@@ -69,6 +73,8 @@
           branch: k-release
       - l-release:
           branch: l-release
+      - m-release:
+          branch: m-release
 
 - project:
     <<: *a1policymanagementservice_jdk_common
