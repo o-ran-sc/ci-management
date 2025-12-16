@@ -11,6 +11,7 @@
     views:
       - project-view
 
+# Common default parent for rAppManager & whole repo (but not participants)
 - _nonrtric_jdk_common: &rappmanager_jdk_common
     name: rappmanager-jdk-common
     # git repo
@@ -26,6 +27,19 @@
     java-version: openjdk17
     jacoco-exclude-pattern: !include-raw-escape: coverage-exclude-pattern.txt
 
+# Release jobs for whole repo 
+- project:
+    <<: *rappmanager_jdk_common
+    name: nonrtric-plt-rappmanager-release
+    project-name: nonrtric-plt-rappmanager
+    # Job is common for the entire repo
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - "{project-name}-gerrit-release-jobs"
+
+# Maven&docker for whole repo 
 - project:
     <<: *rappmanager_jdk_common
     mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
@@ -42,19 +56,9 @@
           branch: k-release
       - l-release:
           branch: l-release
+      - m-release:
+          branch: m-release
 
-- project:
-    <<: *rappmanager_jdk_common
-    name: nonrtric-plt-rappmanager-release
-    project-name: nonrtric-plt-rappmanager
-    # Job is common for the entire repo
-    # maven release requires sigul which requires centos
-    # container release requires docker
-    build-node: centos7-docker-2c-8g
-    jobs:
-      - "{project-name}-gerrit-release-jobs"
-
-# nonrtric:rappmanager/
 # Maven artifacts for nonrtric-plt-rappmanager/
 - project:
     <<: *rappmanager_jdk_common
@@ -77,7 +81,10 @@
           branch: k-release
       - l-release:
           branch: l-release
+      - m-release:
+          branch: m-release
 
+# Sonar for nonrtric-plt-rappmanager/
 - project:
     <<: *rappmanager_jdk_common
     name: nonrtric-plt-rappmanager-sonar
@@ -91,6 +98,7 @@
     jobs:
       - gerrit-maven-sonar
 
+# Common parent for participants
 - _nonrtric_jdk_common: &acm_participants_jdk_common
     name: acm_participants_jdk_common
     # git repo
@@ -106,6 +114,7 @@
     java-version: openjdk17
     jacoco-exclude-pattern: !include-raw-escape: coverage-exclude-pattern-participants.txt
 
+# Maven&docker for nonrtric-plt-participants
 - project:
     <<: *acm_participants_jdk_common
     project-name: nonrtric-plt-participants
@@ -123,9 +132,10 @@
           branch: k-release
       - l-release:
           branch: l-release
+      - m-release:
+          branch: m-release
 
-# nonrtric:rappmanager/
-# Maven artifacts for nonrtric-plt-rappmanager/
+# Maven artifacts for nonrtric-plt-participants
 - project:
     <<: *acm_participants_jdk_common
     name: nonrtric-plt-participants
@@ -146,7 +156,10 @@
           branch: k-release
       - l-release:
           branch: l-release
+      - m-release:
+          branch: m-release
 
+# Sonar for  nonrtric-plt-participants
 - project:
     <<: *acm_participants_jdk_common
     name: nonrtric-plt-participants-sonar
