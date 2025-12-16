@@ -43,6 +43,17 @@
       - l-release:
           branch: l-release
 
+- project:
+    <<: *rappmanager_jdk_common
+    name: nonrtric-plt-rappmanager-release
+    project-name: nonrtric-plt-rappmanager
+    # Job is common for the entire repo
+    # maven release requires sigul which requires centos
+    # container release requires docker
+    build-node: centos7-docker-2c-8g
+    jobs:
+      - "{project-name}-gerrit-release-jobs"
+
 # nonrtric:rappmanager/
 # Maven artifacts for nonrtric-plt-rappmanager/
 - project:
@@ -66,16 +77,6 @@
           branch: k-release
       - l-release:
           branch: l-release
-
-- project:
-    <<: *rappmanager_jdk_common
-    name: nonrtric-plt-rappmanager-release
-    project-name: nonrtric-plt-rappmanager
-    # maven release requires sigul which requires centos
-    # container release requires docker
-    build-node: centos7-docker-2c-8g
-    jobs:
-      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *rappmanager_jdk_common
@@ -145,16 +146,6 @@
           branch: k-release
       - l-release:
           branch: l-release
-
-- project:
-    <<: *acm_participants_jdk_common
-    name: nonrtric-plt-participants-release
-    project-name: nonrtric-plt-participants
-    # maven release requires sigul which requires centos
-    # container release requires docker
-    build-node: centos7-docker-2c-8g
-    jobs:
-      - "{project-name}-gerrit-release-jobs"
 
 - project:
     <<: *acm_participants_jdk_common
