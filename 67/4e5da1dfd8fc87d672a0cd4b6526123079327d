@@ -1,0 +1,8 @@
+Code-Review+2: Matthew Watkins <mwatkins@linuxfoundation.org>
+Verified+1: o-ran-sc release <collab-it+o-ran-sc-release@linuxfoundation.org>
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Submitted-by: Eric Ball <eball@linuxfoundation.org>
+Submitted-at: Wed, 14 Jan 2026 16:23:02 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ci-management/+/15468
+Project: ci-management
+Branch: refs/heads/master
