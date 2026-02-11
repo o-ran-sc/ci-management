@@ -72,11 +72,10 @@
     mvn-opts: "-Ddocker.skip=true"
     build-node: ubuntu1804-docker-4c-4g
     jobs:
-      - gerrit-maven-stage
       - gerrit-maven-clm
       - gerrit-maven-verify
       - gerrit-maven-verify-dependencies
-
+      - gerrit-maven-stage
     stream:
       - master:
           branch: master
@@ -119,6 +118,51 @@
     java-version: openjdk17
     jacoco-exclude-pattern: !include-raw-escape: coverage-exclude-pattern-participants.txt
 
+# Maven&docker stage jobs for participants (needs to be separate)
+- project:
+    <<: *acm_participants_jdk_common
+    project-name: nonrtric-plt-participants
+    mvn-params: "-Dbuild.number=${{BUILD_NUMBER}} -f participants"
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: ".*"
+    jobs:
+      - gerrit-maven-docker-stage
+    stream:
+      - master:
+          branch: master
+      - j-release:
+          branch: j-release
+      - k-release:
+          branch: k-release
+      - l-release:
+          branch: l-release
+      - m-release:
+          branch: m-release
+
+- project:
+    <<: *acm_participants_jdk_common
+    name: nonrtric-plt-participants
+    project-name: nonrtric-plt-participants
+    mvn-params: "-Ddocker.skip=true -f participants"
+    build-node: ubuntu1804-docker-4c-4g
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: ".*"
+    jobs:
+      - gerrit-maven-stage
+    stream:
+      - master:
+          branch: master
+      - j-release:
+          branch: j-release
+      - k-release:
+          branch: k-release
+      - l-release:
+          branch: l-release
+      - m-release:
+          branch: m-release
+
 # Maven&docker for nonrtric-plt-participants
 - project:
     <<: *acm_participants_jdk_common
@@ -127,7 +171,6 @@
     jobs:
       - gerrit-maven-docker-verify
       - gerrit-maven-docker-merge
-      - gerrit-maven-docker-stage
     stream:
       - master:
           branch: master
@@ -148,7 +191,6 @@
     mvn-params: "-Ddocker.skip=true -f participants"
     build-node: ubuntu1804-docker-4c-4g
     jobs:
-      - gerrit-maven-stage
       - gerrit-maven-clm
       - gerrit-maven-verify
       - gerrit-maven-verify-dependencies
