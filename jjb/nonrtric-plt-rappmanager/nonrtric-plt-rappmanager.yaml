@@ -27,7 +27,7 @@
     java-version: openjdk17
     jacoco-exclude-pattern: !include-raw-escape: coverage-exclude-pattern.txt
 
-# Release jobs for whole repo
+# Release jobs for whole repo 
 - project:
     <<: *rappmanager_jdk_common
     name: nonrtric-plt-rappmanager-release
@@ -39,7 +39,7 @@
     jobs:
       - "{project-name}-gerrit-release-jobs"
 
-# Maven&docker for whole repo
+# Maven&docker for whole repo 
 - project:
     <<: *rappmanager_jdk_common
     mvn-params: -Dbuild.number=${{BUILD_NUMBER}}
