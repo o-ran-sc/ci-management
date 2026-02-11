@@ -38,6 +38,11 @@
     build-node: centos7-docker-2c-8g
     jobs:
       - "{project-name}-gerrit-release-jobs"
+    stream:
+      - master:
+          branch: master
+      - m-release:
+          branch: m-release
 
 # Maven&docker for whole repo
 - project:
