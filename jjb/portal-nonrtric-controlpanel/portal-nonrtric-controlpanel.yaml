@@ -59,6 +59,7 @@
     # maven release requires sigul which requires centos
     # container release requires docker
     build-node: centos7-docker-2c-8g
+    mvn-version: mvn39
     jobs:
       - "{project-name}-gerrit-release-jobs"
 
@@ -91,6 +92,7 @@
       - gerrit-maven-clm
     stream:
       - master:
+          mvn-version: mvn39
           branch: master
       - g-release:
           java-version: openjdk11
@@ -117,6 +119,7 @@
       - gerrit-maven-docker-stage
     stream:
       - master:
+          mvn-version: mvn39
           branch: master
       - g-release:
           java-version: openjdk11
