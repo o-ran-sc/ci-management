@@ -24,18 +24,20 @@ set -eu -o pipefail
 if [[ -f ~/lf-env.sh ]]; then
     # shellcheck source=/dev/null
     . ~/lf-env.sh
-    lf-activate-venv --python python3 lftools
-else
-    echo "INFO: creating virtual environment"
-    virtualenv -p python3 /tmp/venv
-    PATH=/tmp/venv/bin:$PATH
+fi
 
-    pip_pkgs="pip setuptools lftools"
-    for pkg in $pip_pkgs; do
-        cmd_pip="python -m pip install --upgrade $pkg"
-        echo "INFO: installing packages: $cmd_pip"
-        $cmd_pip
-    done
+# An agent's ~/lf-env.sh is copied when it boots, so may predate lftools-uv.
+if ! declare -F lftools-uv > /dev/null; then
+    lf_env="$(mktemp)"
+    lf_env_url="https://raw.githubusercontent.com/lfit/releng-global-jjb"
+    wget -nv -O "$lf_env" "$lf_env_url/${GLOBAL_JJB_VERSION:-master}/jenkins-init-scripts/lf-env.sh" || true
+    # shellcheck source=/dev/null
+    . "$lf_env"
+    rm -f "$lf_env"
+    if ! declare -F lftools-uv > /dev/null; then
+        echo "ERROR: lf-env.sh has no lftools-uv function" >&2
+        exit 1
+    fi
 fi
 
 # NEXUS_URL is set by Jenkins
@@ -71,8 +73,9 @@ for iso_dir in $repo_iso_dir_latest $repo_iso_dir_branch; do
     done
 done
 
-cmd="lftools deploy nexus $nexus_repo_url $repo_dir"
-echo "INFO: Upload ISO to Nexus: $cmd"
-$cmd
+echo "INFO: Upload ISO to Nexus: lftools-uv deploy nexus --allow-empty $nexus_repo_url $repo_dir"
+# lftools-uv fails a deploy with nothing to upload, which legacy lftools
+# allowed: no ISO is staged when a build produces none.
+lftools-uv deploy nexus --allow-empty "$nexus_repo_url" "$repo_dir"
 
 echo "--> upload-inf.sh ends"
